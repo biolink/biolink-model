@@ -68,6 +68,10 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
+ * [qualifier](qualifier.md)  <sub>0..1</sub>
+     * Description: grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)

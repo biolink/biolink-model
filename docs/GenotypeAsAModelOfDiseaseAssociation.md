@@ -15,7 +15,7 @@ URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseAssociationMixin],[GenotypeToDiseaseAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeAsAModelOfDiseaseAssociation%7Cpredicate(i):predicate_type;frequency_qualifier(i):frequency_value%20%3F;negated(i):boolean%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GenotypeToDiseaseAssociation]%5E-[GenotypeAsAModelOfDiseaseAssociation],[Genotype],[EvidenceType],[EntityToDiseaseAssociationMixin],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseAssociationMixin],[GenotypeToDiseaseAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeAsAModelOfDiseaseAssociation%7Cpredicate(i):predicate_type;frequency_qualifier(i):frequency_value%20%3F;negated(i):boolean%20%3F;qualifier(i):string%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GenotypeToDiseaseAssociation]%5E-[GenotypeAsAModelOfDiseaseAssociation],[Genotype],[EvidenceType],[EntityToDiseaseAssociationMixin],[Attribute])
 
 ---
 
@@ -55,6 +55,10 @@ URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
+ * [qualifier](qualifier.md)  <sub>0..1</sub>
+     * Description: grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)

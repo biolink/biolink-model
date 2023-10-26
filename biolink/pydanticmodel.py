@@ -3,7 +3,6 @@ from datetime import datetime, date
 from enum import Enum
 from typing import List, Dict, Optional, Any, Union
 from pydantic import BaseModel as BaseModel, Field
-from linkml_runtime.linkml_model import Decimal
 import sys
 if sys.version_info >= (3, 8):
     from typing import Literal
@@ -408,7 +407,6 @@ class MappingCollection(ConfiguredBaseModel):
     predicate_mappings: Optional[List[PredicateMapping]] = Field(None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can  be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
     
 
-
 class PredicateMapping(ConfiguredBaseModel):
     """
     A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
@@ -436,7 +434,6 @@ class PredicateMapping(ConfiguredBaseModel):
     broad_match: Optional[List[str]] = Field(None, description="""a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.""")
     
 
-
 class OntologyClass(ConfiguredBaseModel):
     """
     a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
@@ -444,14 +441,12 @@ class OntologyClass(ConfiguredBaseModel):
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     
 
-
 class Annotation(ConfiguredBaseModel):
     """
     Biolink Model root class for entity annotations.
     """
     None
     
-
 
 class QuantityValue(Annotation):
     """
@@ -461,24 +456,20 @@ class QuantityValue(Annotation):
     has_numeric_value: Optional[float] = Field(None, description="""connects a quantity value to a number""")
     
 
-
 class RelationshipQuantifier(ConfiguredBaseModel):
     
     None
     
-
 
 class SensitivityQuantifier(RelationshipQuantifier):
     
     None
     
 
-
 class SpecificityQuantifier(RelationshipQuantifier):
     
     None
     
-
 
 class PathognomonicityQuantifier(SpecificityQuantifier):
     """
@@ -486,7 +477,6 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
     """
     None
     
-
 
 class FrequencyQuantifier(RelationshipQuantifier):
     
@@ -496,12 +486,10 @@ class FrequencyQuantifier(RelationshipQuantifier):
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     
 
-
 class ChemicalOrDrugOrTreatment(ConfiguredBaseModel):
     
     None
     
-
 
 class Entity(ConfiguredBaseModel):
     """
@@ -519,7 +507,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class NamedThing(Entity):
     """
@@ -541,7 +528,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Attribute(NamedThing, OntologyClass):
     """
@@ -567,7 +553,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ChemicalRole(Attribute):
     """
     	A role played by the molecular entity or part thereof within a chemical context.
@@ -592,7 +577,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class BiologicalSex(Attribute):
     
     name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
@@ -614,7 +598,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class PhenotypicSex(BiologicalSex):
     """
@@ -640,7 +623,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
@@ -664,7 +646,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class SeverityValue(Attribute):
     """
@@ -690,7 +671,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class RelationshipType(OntologyClass):
     """
     An OWL property used as an edge label
@@ -698,14 +678,12 @@ class RelationshipType(OntologyClass):
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     
 
-
 class TaxonomicRank(OntologyClass):
     """
     A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
     """
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     
-
 
 class OrganismTaxon(NamedThing):
     """
@@ -728,7 +706,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Event(NamedThing):
     """
     Something that happens at a given place and time.
@@ -750,7 +727,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class AdministrativeEntity(NamedThing):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -769,7 +745,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Agent(AdministrativeEntity):
     """
@@ -793,7 +768,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class InformationContentEntity(NamedThing):
     """
@@ -820,7 +794,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class StudyResult(InformationContentEntity):
     """
     A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
@@ -845,7 +818,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class StudyVariable(InformationContentEntity):
     """
@@ -872,7 +844,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class CommonDataElement(InformationContentEntity):
     """
     A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
@@ -897,7 +868,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ConceptCountAnalysisResult(StudyResult):
     """
@@ -924,7 +894,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     """
     A result of a observed expected frequency analysis.
@@ -949,7 +918,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class RelativeFrequencyAnalysisResult(StudyResult):
     """
@@ -976,7 +944,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class TextMiningResult(StudyResult):
     """
     A result of text mining.
@@ -1001,7 +968,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChiSquaredAnalysisResult(StudyResult):
     """
@@ -1028,7 +994,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class LogOddsAnalysisResult(StudyResult):
     """
     A result of a log odds ratio analysis.
@@ -1053,7 +1018,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Dataset(InformationContentEntity):
     """
@@ -1080,7 +1044,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DatasetDistribution(InformationContentEntity):
     """
     an item that holds distribution level information about a dataset.
@@ -1106,7 +1069,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class DatasetVersion(InformationContentEntity):
     """
@@ -1136,7 +1098,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DatasetSummary(InformationContentEntity):
     """
     an item that holds summary level information about a dataset.
@@ -1164,7 +1125,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ConfidenceLevel(InformationContentEntity):
     """
     Level of confidence in a statement
@@ -1190,7 +1150,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EvidenceType(InformationContentEntity):
     """
     Class of evidence that supports an association
@@ -1215,7 +1174,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Publication(InformationContentEntity):
     """
@@ -1247,7 +1205,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Book(Publication):
     """
     This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
@@ -1277,7 +1234,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class BookChapter(Publication):
     
@@ -1309,7 +1265,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Serial(Publication):
     """
@@ -1343,7 +1298,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Article(Publication):
     """
@@ -1379,7 +1333,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class JournalArticle(Article):
     """
     an article, typically presenting results of research, that is published  in an issue of a scientific journal.
@@ -1414,7 +1367,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Patent(Publication):
     """
     a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
@@ -1444,7 +1396,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class WebPage(Publication):
     """
@@ -1476,7 +1427,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PreprintPublication(Publication):
     """
     a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
@@ -1506,7 +1456,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class DrugLabel(Publication):
     """
@@ -1538,7 +1487,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class RetrievalSource(InformationContentEntity):
     """
     Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
@@ -1567,7 +1515,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PhysicalEssenceOrOccurrent(ConfiguredBaseModel):
     """
     Either a physical or processual entity.
@@ -1575,14 +1522,12 @@ class PhysicalEssenceOrOccurrent(ConfiguredBaseModel):
     None
     
 
-
 class PhysicalEssence(PhysicalEssenceOrOccurrent):
     """
     Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
     """
     None
     
-
 
 class PhysicalEntity(PhysicalEssence, NamedThing):
     """
@@ -1605,7 +1550,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Occurrent(PhysicalEssenceOrOccurrent):
     """
     A processual entity.
@@ -1613,14 +1557,12 @@ class Occurrent(PhysicalEssenceOrOccurrent):
     None
     
 
-
 class ActivityAndBehavior(Occurrent):
     """
     Activity or behavior of any independent integral living, organization or mechanical actor in the world
     """
     None
     
-
 
 class Activity(ActivityAndBehavior, NamedThing):
     """
@@ -1643,7 +1585,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Study(Activity):
     """
     a detailed investigation and/or analysis
@@ -1664,7 +1605,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Procedure(ActivityAndBehavior, NamedThing):
     """
@@ -1687,7 +1627,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Phenomenon(Occurrent, NamedThing):
     """
     a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -1708,7 +1647,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Device(NamedThing):
     """
@@ -1731,7 +1669,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DiagnosticAid(NamedThing):
     """
     A device or substance used to help diagnose disease or injury
@@ -1753,14 +1690,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class SubjectOfInvestigation(ConfiguredBaseModel):
     """
     An entity that has the role of being studied in an investigation, study, or experiment
     """
     None
     
-
 
 class MaterialSample(SubjectOfInvestigation, PhysicalEntity):
     """
@@ -1783,7 +1718,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PlanetaryEntity(NamedThing):
     """
     Any entity or process that exists at the level of the whole planet
@@ -1805,7 +1739,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EnvironmentalProcess(PlanetaryEntity, Occurrent):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1825,7 +1758,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EnvironmentalFeature(PlanetaryEntity):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1844,7 +1776,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeographicLocation(PlanetaryEntity):
     """
@@ -1868,7 +1799,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeographicLocationAtTime(GeographicLocation):
     """
@@ -1894,7 +1824,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ThingWithTaxon(ConfiguredBaseModel):
     """
     A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
@@ -1902,7 +1831,6 @@ class ThingWithTaxon(ConfiguredBaseModel):
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     
-
 
 class BiologicalEntity(ThingWithTaxon, NamedThing):
     
@@ -1925,18 +1853,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GenomicEntity(ConfiguredBaseModel):
     
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     
 
-
 class EpigenomicEntity(ConfiguredBaseModel):
     
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     
-
 
 class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     """
@@ -1964,7 +1889,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     """
     An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -1990,7 +1914,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     """
@@ -2018,7 +1941,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Pathway(BiologicalProcess, OntologyClass):
     
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2042,7 +1964,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class PhysiologicalProcess(BiologicalProcess, OntologyClass):
     
@@ -2068,7 +1989,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
     
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2092,7 +2012,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class OrganismAttribute(Attribute):
     """
@@ -2118,7 +2037,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PhenotypicQuality(OrganismAttribute):
     """
     A property of a phenotype
@@ -2143,7 +2061,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneticInheritance(BiologicalEntity):
     """
     The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
@@ -2166,7 +2083,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
     """
@@ -2191,7 +2107,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class Bacterium(OrganismalEntity):
     """
     A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
@@ -2214,7 +2129,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class Virus(OrganismalEntity, SubjectOfInvestigation):
     """
@@ -2239,7 +2153,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2260,7 +2173,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class Mammal(CellularOrganism, SubjectOfInvestigation):
     """
@@ -2285,7 +2197,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class Human(Mammal, SubjectOfInvestigation):
     """
     A member of the the species Homo sapiens.
@@ -2309,7 +2220,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class Plant(CellularOrganism):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2330,7 +2240,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class Invertebrate(CellularOrganism):
     """
@@ -2355,7 +2264,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class Vertebrate(CellularOrganism):
     """
     A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
@@ -2378,7 +2286,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class Fungus(CellularOrganism):
     """
@@ -2403,7 +2310,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
@@ -2426,7 +2332,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     """
@@ -2451,7 +2356,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
     """
     A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
@@ -2474,7 +2378,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class StudyPopulation(PopulationOfIndividualOrganisms):
     """
@@ -2499,7 +2402,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
     Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
@@ -2522,7 +2424,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Disease(DiseaseOrPhenotypicFeature):
     """
@@ -2547,7 +2448,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
@@ -2570,7 +2470,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class BehavioralFeature(PhenotypicFeature):
     """
@@ -2595,7 +2494,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class AnatomicalEntity(OrganismalEntity, PhysicalEssence):
     """
     A subcellular location, cell type or gross anatomical part
@@ -2618,7 +2516,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class CellularComponent(AnatomicalEntity):
     """
@@ -2643,7 +2540,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class Cell(AnatomicalEntity):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2664,7 +2560,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class CellLine(OrganismalEntity, SubjectOfInvestigation):
     
@@ -2687,7 +2582,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class GrossAnatomicalStructure(AnatomicalEntity):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2709,14 +2603,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class ChemicalEntityOrGeneOrGeneProduct(ConfiguredBaseModel):
     """
     A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
     """
     None
     
-
 
 class RegulatoryRegion(ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -2742,7 +2634,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, PhysicalEssence, OntologyClass):
     """
     A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
@@ -2766,7 +2657,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, PhysicalEssence, OntologyClass):
     """
@@ -2792,14 +2682,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ChemicalEntityOrProteinOrPolypeptide(ConfiguredBaseModel):
     """
     A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
     """
     None
     
-
 
 class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, NamedThing, ChemicalOrDrugOrTreatment):
     """
@@ -2826,7 +2714,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class MolecularEntity(ChemicalEntity):
     """
@@ -2855,7 +2742,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class SmallMolecule(MolecularEntity):
     """
     A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
@@ -2882,7 +2768,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalMixture(ChemicalEntity):
     """
@@ -2914,7 +2799,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, PhysicalEssence, OntologyClass):
     """
     A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
@@ -2944,7 +2828,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class MolecularMixture(ChemicalMixture):
     """
@@ -2976,7 +2859,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ComplexMolecularMixture(ChemicalMixture):
     """
     A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
@@ -3006,7 +2888,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ProcessedMaterial(ChemicalMixture):
     """
@@ -3038,7 +2919,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     """
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -3069,7 +2949,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EnvironmentalFoodContaminant(ChemicalEntity):
     
     trade_name: Optional[str] = Field(None)
@@ -3094,7 +2973,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class FoodAdditive(ChemicalEntity):
     
     trade_name: Optional[str] = Field(None)
@@ -3118,7 +2996,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Food(ChemicalMixture):
     """
@@ -3150,7 +3027,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MacromolecularMachineMixin(ConfiguredBaseModel):
     """
     A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
@@ -3158,14 +3034,12 @@ class MacromolecularMachineMixin(ConfiguredBaseModel):
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
 
-
 class GeneOrGeneProduct(MacromolecularMachineMixin):
     """
     A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
     """
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
-
 
 class Gene(GeneOrGeneProduct, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3192,7 +3066,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneProductMixin(GeneOrGeneProduct):
     """
     The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
@@ -3202,7 +3075,6 @@ class GeneProductMixin(GeneOrGeneProduct):
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
 
-
 class GeneProductIsoformMixin(GeneProductMixin):
     """
     This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
@@ -3211,7 +3083,6 @@ class GeneProductIsoformMixin(GeneProductMixin):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
-
 
 class MacromolecularComplex(MacromolecularMachineMixin, BiologicalEntity):
     """
@@ -3235,7 +3106,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicEntity, BiologicalEntity):
     """
@@ -3261,7 +3131,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
     A genome is the sum of genetic material within a cell or virion.
@@ -3286,7 +3155,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Exon(BiologicalEntity):
     """
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
@@ -3309,7 +3177,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Transcript(BiologicalEntity):
     """
@@ -3334,7 +3201,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class CodingSequence(GenomicEntity, BiologicalEntity):
     
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
@@ -3356,7 +3222,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Polypeptide(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
@@ -3381,7 +3246,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Protein(Polypeptide, GeneProductMixin):
     """
     A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
@@ -3404,7 +3268,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ProteinIsoform(Protein, GeneProductIsoformMixin):
     """
@@ -3429,7 +3292,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
     """
     A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.
@@ -3452,7 +3314,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class NucleicAcidSequenceMotif(BiologicalEntity):
     """
@@ -3477,7 +3338,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class RNAProduct(Transcript, GeneProductMixin):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
@@ -3498,7 +3358,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     """
@@ -3523,7 +3382,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class NoncodingRNAProduct(RNAProduct):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
@@ -3545,7 +3403,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MicroRNA(NoncodingRNAProduct):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
@@ -3566,7 +3423,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class SiRNA(NoncodingRNAProduct):
     """
@@ -3591,14 +3447,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneGroupingMixin(ConfiguredBaseModel):
     """
     any grouping of multiple genes or gene products
     """
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
     
-
 
 class ProteinDomain(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
@@ -3624,7 +3478,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
@@ -3646,7 +3499,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
@@ -3672,7 +3524,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Zygosity(Attribute):
     
     name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
@@ -3694,7 +3545,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3721,7 +3571,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
     A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -3745,7 +3594,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3772,7 +3620,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Snv(SequenceVariant):
     """
     SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
@@ -3798,7 +3645,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
     A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
@@ -3822,7 +3668,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ClinicalAttribute(Attribute):
     """
@@ -3848,7 +3693,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ClinicalMeasurement(ClinicalAttribute):
     """
     A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
@@ -3872,7 +3716,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ClinicalModifier(ClinicalAttribute):
     """
@@ -3898,7 +3741,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ClinicalCourse(ClinicalAttribute):
     """
     The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
@@ -3922,7 +3764,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class Onset(ClinicalCourse):
     """
@@ -3948,7 +3789,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ClinicalEntity(NamedThing):
     """
     Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
@@ -3970,7 +3810,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ClinicalTrial(ClinicalEntity):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3990,7 +3829,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ClinicalIntervention(ClinicalEntity):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4009,7 +3847,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ClinicalFinding(PhenotypicFeature):
     """
@@ -4034,7 +3871,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Hospitalization(ClinicalIntervention):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4053,7 +3889,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class SocioeconomicAttribute(Attribute):
     """
@@ -4079,7 +3914,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Case(IndividualOrganism, SubjectOfInvestigation):
     """
     An individual (human) organism that has a patient role in some clinical context.
@@ -4102,7 +3936,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class Cohort(StudyPopulation, SubjectOfInvestigation):
     """
@@ -4127,7 +3960,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
-
 class ExposureEvent(OntologyClass):
     """
     A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
@@ -4135,7 +3967,6 @@ class ExposureEvent(OntologyClass):
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     
-
 
 class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity, ThingWithTaxon, PhysicalEssence, Attribute, OntologyClass):
     """
@@ -4166,14 +3997,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PathologicalEntityMixin(ConfiguredBaseModel):
     """
     A pathological (abnormal) structure or process.
     """
     None
     
-
 
 class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     """
@@ -4201,7 +4030,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PathologicalProcessExposure(ExposureEvent, Attribute):
     """
     A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -4227,7 +4055,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity):
     """
     An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
@@ -4250,7 +4077,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
-
 
 class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     """
@@ -4277,7 +4103,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent, Attribute):
     """
     A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
@@ -4302,7 +4127,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalExposure(ExposureEvent, Attribute):
     """
@@ -4329,7 +4153,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ComplexChemicalExposure(Attribute):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
@@ -4353,7 +4176,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class DrugExposure(ChemicalExposure, ExposureEvent):
     """
@@ -4379,7 +4201,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     """
@@ -4407,7 +4228,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
@@ -4432,7 +4252,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class BioticExposure(ExposureEvent, Attribute):
     """
@@ -4459,7 +4278,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EnvironmentalExposure(ExposureEvent, Attribute):
     """
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
@@ -4484,7 +4302,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     """
@@ -4511,7 +4328,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class BehavioralExposure(ExposureEvent, Attribute):
     """
     A behavioral exposure is a factor relating to behavior impacting an individual.
@@ -4536,7 +4352,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class SocioeconomicExposure(ExposureEvent, Attribute):
     """
@@ -4563,14 +4378,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: List[str] = Field(..., description="""connects any entity to an attribute""")
     
 
-
 class Outcome(ConfiguredBaseModel):
     """
     An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
     """
     None
     
-
 
 class PathologicalProcessOutcome(Outcome):
     """
@@ -4579,14 +4392,12 @@ class PathologicalProcessOutcome(Outcome):
     None
     
 
-
 class PathologicalAnatomicalOutcome(Outcome):
     """
     An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
     """
     None
     
-
 
 class DiseaseOrPhenotypicFeatureOutcome(Outcome):
     """
@@ -4595,14 +4406,12 @@ class DiseaseOrPhenotypicFeatureOutcome(Outcome):
     None
     
 
-
 class BehavioralOutcome(Outcome):
     """
     An outcome resulting from an exposure event which is the manifestation of human behavior.
     """
     None
     
-
 
 class HospitalizationOutcome(Outcome):
     """
@@ -4611,14 +4420,12 @@ class HospitalizationOutcome(Outcome):
     None
     
 
-
 class MortalityOutcome(Outcome):
     """
     An outcome of death from resulting from an exposure event.
     """
     None
     
-
 
 class EpidemiologicalOutcome(Outcome):
     """
@@ -4627,14 +4434,12 @@ class EpidemiologicalOutcome(Outcome):
     None
     
 
-
 class SocioeconomicOutcome(Outcome):
     """
     An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
     """
     None
     
-
 
 class Association(Entity):
     """
@@ -4678,7 +4483,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ChemicalEntityAssessesNamedThingAssociation(Association):
     
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -4718,7 +4522,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ContributorAssociation(Association):
     """
@@ -4762,7 +4565,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
@@ -4804,7 +4606,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GenotypeToGeneAssociation(Association):
     """
@@ -4848,7 +4649,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
@@ -4890,7 +4690,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeneToGeneAssociation(Association):
     """
@@ -4934,7 +4733,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
     A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
@@ -4976,7 +4774,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeneToGeneFamilyAssociation(Association):
     """
@@ -5020,7 +4817,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneExpressionMixin(ConfiguredBaseModel):
     """
     Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
@@ -5030,7 +4826,6 @@ class GeneExpressionMixin(ConfiguredBaseModel):
     stage_qualifier: Optional[str] = Field(None, description="""stage during which gene or protein expression of takes place.""")
     phenotypic_state: Optional[str] = Field(None, description="""in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.""")
     
-
 
 class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociation):
     """
@@ -5078,7 +4873,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
@@ -5120,7 +4914,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     """
@@ -5165,14 +4958,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class CellLineToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An relationship between a cell line and another entity
     """
     None
     
-
 
 class ChemicalEntityToEntityAssociationMixin(ConfiguredBaseModel):
     """
@@ -5181,14 +4972,12 @@ class ChemicalEntityToEntityAssociationMixin(ConfiguredBaseModel):
     None
     
 
-
 class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a drug and another entity
     """
     None
     
-
 
 class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
@@ -5197,14 +4986,12 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     None
     
 
-
 class CaseToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An abstract association for use where the case is the subject
     """
     None
     
-
 
 class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Association):
     """
@@ -5247,7 +5034,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     
@@ -5292,7 +5078,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
@@ -5335,7 +5120,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
@@ -5387,7 +5171,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MolecularActivityToPathwayAssociation(Association):
     """
     Association that holds the relationship between a reaction and the pathway it participates in.
@@ -5429,7 +5212,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association):
     """
@@ -5473,7 +5255,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -5513,7 +5294,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Association):
     """
@@ -5564,7 +5344,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalAffectsGeneAssociation(Association):
     """
@@ -5621,7 +5400,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneAffectsChemicalAssociation(Association):
     """
     Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
@@ -5677,7 +5455,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     """
     An interaction between a drug and a gene or gene product.
@@ -5720,14 +5497,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MaterialSampleToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An association between a material sample and something.
     """
     None
     
-
 
 class MaterialSampleDerivationAssociation(Association):
     """
@@ -5771,12 +5546,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DiseaseToEntityAssociationMixin(ConfiguredBaseModel):
     
     None
     
-
 
 class EntityToExposureEventAssociationMixin(ConfiguredBaseModel):
     """
@@ -5784,7 +5557,6 @@ class EntityToExposureEventAssociationMixin(ConfiguredBaseModel):
     """
     None
     
-
 
 class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, DiseaseToEntityAssociationMixin, Association):
     """
@@ -5828,14 +5600,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EntityToOutcomeAssociationMixin(ConfiguredBaseModel):
     """
     An association between some entity and an outcome
     """
     None
     
-
 
 class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Association):
     """
@@ -5881,14 +5651,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class FrequencyQualifierMixin(ConfiguredBaseModel):
     """
     Qualifier for frequency type associations
     """
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     """
@@ -5898,7 +5666,6 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin, FrequencyQuantifier):
     
@@ -5911,7 +5678,6 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class InformationContentEntityToNamedThingAssociation(Association):
     """
@@ -5955,7 +5721,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     """
     mixin class for any association whose object (target node) is a disease
@@ -5965,12 +5730,10 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(ConfiguredBaseModel):
     
     None
     
-
 
 class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
     """
@@ -6014,7 +5777,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
     """
     An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
@@ -6057,12 +5819,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(ConfiguredBaseModel):
     
     None
     
-
 
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, CellLineToEntityAssociationMixin, Association):
     """
@@ -6106,7 +5866,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin, Association):
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -6148,7 +5907,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin, Association):
     """
@@ -6193,7 +5951,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
@@ -6237,7 +5994,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, MaterialSampleToEntityAssociationMixin, Association):
     """
     An association between a material sample and a disease or phenotype.
@@ -6280,12 +6036,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GenotypeToEntityAssociationMixin(ConfiguredBaseModel):
     
     None
     
-
 
 class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     """
@@ -6337,7 +6091,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, Association):
     """
     Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
@@ -6387,7 +6140,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin, Association):
     """
@@ -6439,7 +6191,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin, Association):
     """
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
@@ -6489,7 +6240,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, Association):
     """
@@ -6541,12 +6291,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class GeneToEntityAssociationMixin(ConfiguredBaseModel):
     
     None
     
-
 
 class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     """
@@ -6590,12 +6338,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class VariantToEntityAssociationMixin(ConfiguredBaseModel):
     
     None
     
-
 
 class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     
@@ -6647,7 +6393,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin):
     
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
@@ -6697,7 +6442,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
@@ -6749,7 +6493,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
@@ -6799,7 +6542,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
@@ -6851,7 +6593,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
@@ -6902,7 +6643,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     """
     An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
@@ -6944,7 +6684,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressionMixin):
     """
@@ -6991,7 +6730,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQualifierMixin, Association, FrequencyQuantifier):
     """
@@ -7040,7 +6778,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class PopulationToPopulationAssociation(Association):
     """
     An association between a two populations
@@ -7082,7 +6819,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     
@@ -7132,7 +6868,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
     
     subject: str = Field(..., description="""a sequence variant in which the allele state is associated in some way with the disease state""")
@@ -7175,7 +6910,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
     
@@ -7220,14 +6954,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
     """
     This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     """
     None
     
-
 
 class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
@@ -7279,7 +7011,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, VariantToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
     subject: str = Field(..., description="""A variant that has a role in modeling the disease.""")
@@ -7322,7 +7053,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GenotypeToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
@@ -7367,7 +7097,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellLineToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseAssociationMixin):
     
     subject: str = Field(..., description="""A cell line derived from an organismal entity with a disease state that is used as a model of that disease.""")
@@ -7410,7 +7139,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
-
 
 class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin, Association):
     
@@ -7455,7 +7183,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class OrganismToOrganismAssociation(Association):
     
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7496,7 +7223,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class TaxonToTaxonAssociation(Association):
     
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7536,7 +7262,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     
@@ -7589,7 +7314,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-
 class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and a gene expression site, possibly qualified by stage/timing info.
@@ -7634,7 +7358,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class SequenceVariantModulatesTreatmentAssociation(Association):
     """
     An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
@@ -7676,7 +7399,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class FunctionalAssociation(Association):
     """
@@ -7720,14 +7442,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MacromolecularMachineToEntityAssociationMixin(ConfiguredBaseModel):
     """
     an association which has a macromolecular machine mixin as a subject
     """
     None
     
-
 
 class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
     """
@@ -7771,7 +7491,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
@@ -7813,7 +7532,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
     """
@@ -7857,7 +7575,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class MolecularActivityToChemicalEntityAssociation(Association):
     """
     Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
@@ -7899,7 +7616,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class MolecularActivityToMolecularActivityAssociation(Association):
     """
@@ -7943,7 +7659,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneToGoTermAssociation(FunctionalAssociation):
     
     subject: str = Field(..., description="""gene, product or macromolecular complex that has the function associated with the GO term""")
@@ -7983,7 +7698,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class EntityToDiseaseAssociation(Association):
     
@@ -8026,7 +7740,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class EntityToPhenotypicFeatureAssociation(Association):
     
     FDA_approval_status: Optional[FDAApprovalStatusEnum] = Field(None)
@@ -8067,7 +7780,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class SequenceAssociation(Association):
     """
@@ -8110,7 +7822,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class GenomicSequenceLocalization(SequenceAssociation):
     """
@@ -8159,7 +7870,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
@@ -8201,7 +7911,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
@@ -8245,7 +7954,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
@@ -8288,7 +7996,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
@@ -8330,7 +8037,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
@@ -8375,7 +8081,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -8415,7 +8120,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
@@ -8459,7 +8163,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
     A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
@@ -8502,14 +8205,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class OrganismTaxonToEntityAssociation(ConfiguredBaseModel):
     """
     An association between an organism taxon and another entity
     """
     None
     
-
 
 class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, Association):
     """
@@ -8553,7 +8254,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAssociation):
     """
     A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
@@ -8595,7 +8295,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssociation):
     """
@@ -8640,7 +8339,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-
 class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, Association):
     
     subject: str = Field(..., description="""the taxon that is the subject of the association""")
@@ -8680,7 +8378,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
-
 
 
 # Update forward refs

@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[ReactionToParticipantAssociation],[Publication],[OntologyClass],[NamedThing],[EvidenceType],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalEntity]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]%5E-[ReactionToParticipantAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalEntity],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[ReactionToParticipantAssociation],[Publication],[OntologyClass],[NamedThing],[EvidenceType],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalEntity]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;qualifier(i):string%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]%5E-[ReactionToParticipantAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalEntity],[Attribute],[Association])
 
 ---
 
@@ -59,6 +59,10 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
+ * [qualifier](qualifier.md)  <sub>0..1</sub>
+     * Description: grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)
