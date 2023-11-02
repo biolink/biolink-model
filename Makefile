@@ -13,7 +13,7 @@ SOURCE_SCHEMA_PATH = $(shell ${SHELL} ./utils/get-value.sh source_schema_path)
 SOURCE_SCHEMA_DIR = $(dir $(SOURCE_SCHEMA_PATH))
 SRC = src
 DEST = project
-PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
+PYMODEL = $(SRC)/biolink_model/datamodel
 DOCDIR = docs
 EXAMPLEDIR = examples
 SHEET_MODULE = personinfo_enums
@@ -93,6 +93,13 @@ deploy: all mkd-gh-deploy
 # In future this will be done by conversion
 gen-examples:
 	cp src/data/examples/* $(EXAMPLEDIR)
+
+infores:
+	poetry run gen-python information-resource.yaml > information_resource.py
+
+id-prefixes:
+	poetry run gen-python class_prefixes.yaml > src/scripts/biolink_model/classprefixes.py
+	cd scripts && poetry run python id_prefixes.py
 
 # generates all project files
 
