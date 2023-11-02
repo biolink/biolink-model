@@ -97,6 +97,7 @@ gen-examples:
 # generates all project files
 
 gen-project: $(PYMODEL)
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 	# keep these in sync between PROJECT_FOLDERS and the includes/excludes for gen-project and test-schema
 	$(RUN) gen-project \
 		--exclude excel \
@@ -104,6 +105,7 @@ gen-project: $(PYMODEL)
 		--include jsonld \
 		--exclude markdown \
 		--include proto \
+		--include prefix-map \
 		--exclude shacl \
 		--include shex \
 		--exclude sqlddl \
@@ -115,19 +117,22 @@ gen-project: $(PYMODEL)
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel.py
 	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel_v2.py
-	cp src/biolink_model/schema/biolink-model.yaml biolink-model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 
 
 
 test: test-schema test-python test-examples
 
 test-schema:
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
 test-python:
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 	$(RUN) python -m unittest discover
 
 lint:
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
 
 check-config:
@@ -167,6 +172,8 @@ $(DOCDIR):
 	mkdir -p $@
 
 gendoc: $(DOCDIR)
+	# put the model where it needs to go in order to generate the doc correctly
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 	# added copying of images and renaming of TEMP.md
 	$(RUN) generate_viz_json
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
