@@ -1,0 +1,40 @@
+---
+site_name: "Biolink Model Documentation"
+theme:
+  name: material
+  # palette:
+  #  scheme: slate
+  #  primary: cyan
+  logo: images/biolink-logo.png
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2
+nav:
+  # - Home: home.md
+  - Model Components: index.md
+  - Visualize Categories: categories.html
+  - Visualize Predicates: predicates.html
+  - Visualize Aspects: aspects.html
+  - Overview: understanding-the-model.md
+  - Using the LinkML Modeling Language: using-the-modeling-language.md
+  - Working with Biolink: working-with-the-model.md
+  - Infores: information-resource-registry.md
+  - Associations with Qualifiers: association-examples-with-qualifiers.md
+  - Interpreting a Fully Qualified Edge: reading-a-qualifier-based-statement.md
+  - Curating Biolink: curating-the-model.md
+  - Maintaining Biolink: maintaining-the-model.md
+  - FAQ: faq.md
+site_url: https://sierra-moxon.github.io/testviz
+repo_url: https://github.com/sierra-moxon/testviz
+extra_css:
+  - style.css
+
+
+# Uncomment this block to enable use of Google Analytics.
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

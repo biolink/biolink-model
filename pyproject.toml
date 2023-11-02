@@ -1,35 +1,37 @@
 [tool.poetry]
-name = "biolink-model"
-version = "3.3.3.post25.dev0+93c02412c"
-description = "Entity and association taxonomy and datamodel for life-sciences data"
-authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
-license = "https://creativecommons.org/publicdomain/zero/1.0/"
+name = "testviz"
+version = "0.1.0"
+description = "This is the project description."
+authors = ["My Name <my-name@my-org.org>"]
+license = "MIT"
 readme = "README.md"
+include = ["README.md", "src/testviz/schema", "project"]
 
-packages = [{include = "biolink"}]
+[tool.poetry.scripts]
+generate_viz_json = "src.testviz.scripts.generate_json:generate_viz_json"
 
 
 [tool.poetry.dependencies]
-python = "^3.9"
-linkml = ">=1.6.1"
-curies = "^0.5.2"
-prefixmaps = "^0.1.4"
-pytest = "^7.3.1"
-bs4 = "^0.0.1"
+python = "^3.10.1"
+linkml-runtime = "^1.1.24"
+rdflib = "6.0.0"
+pyyaml = "^6.0.1"
 
 [tool.poetry-dynamic-versioning]
-enable = false
+enable = true
 vcs = "git"
 style = "pep440"
 
 [tool.poetry.dev-dependencies]
-codespell = "^2.2.5"
-yamllint = "^1.30.0"
+linkml = "^1.3.5"
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.0.12"
+mkdocs-mermaid2-plugin = "^0.6.0"
+schemasheets = "^0.1.14"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
 
-[tool.codespell]
-skip = 'SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*,'
-ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
+[tool.poetry.extras]
+docs = ["mkdocs-material"]

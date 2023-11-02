@@ -1,1 +1,1 @@
-refresh_files = False
+"""Tests for testviz."""

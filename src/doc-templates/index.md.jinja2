@@ -1,0 +1,87 @@
+# {{ schema.name }} A datamodel for life-sciences data.
+
+The Biolink Model is a high-level data model designed to standardize types and relationships in biological knowledge
+graphs, covering entities like genes, diseases, chemical substances, organisms, genomics, phenotypes, and more.
+It is expressed as a YAML schema, which is then translated into various formats including OWL ontology, Python
+dataclasses, and JSON schema. The model divides into entities, associations, and slots, where entities represent nodes
+in a property graph, associations define edges with evidence and provenance, and slots are properties of nodes and
+edges. It also includes a comprehensive list of CURIE prefix mappings and provides guidelines for using the model with
+different graph representations like Neo4J and RDF. The goal of the Biolink Model is to provide a consistent framework
+for representing biological knowledge across various databases and formats.
+
+Visualize [Class Hierarchy](categories.html)
+
+Visualize [Predicate Hierarchy](predicates.html)
+
+#### Citing Biolink Model
+Unni DR, Moxon SAT, Bada M, Brush M, Bruskiewich R, Caufield JH, Clemons PA, Dancik V, Dumontier M, Fecho K, Glusman G, Hadlock JJ, Harris NL, Joshi A, Putman T, Qin G, Ramsey SA, Shefchek KA, Solbrig H, Soman K, Thessen AE, Haendel MA, Bizon C, Mungall CJ, The Biomedical Data Translator Consortium (2022).
+Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, and translational science. Clin Transl Sci. Wiley; 2022 Jun 6; [https://onlinelibrary.wiley.com/doi/10.1111/cts.13302](https://onlinelibrary.wiley.com/doi/10.1111/cts.13302)
+
+## Classes (nodes)
+
+| Class | Description |
+{% for c in schemaview.all_classes(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'association' not in schemaview.class_ancestors(c.name) and not schemaview.is_mixin(c.name) -%}
+| --- | --- |
+| {{gen.link(c)}} | {{c.description}} |
+{%- endif -%}
+{% endfor %}
+
+
+## Class (node) Properties
+
+View the [Predicate Hierarchy](predicates.html) Visualization
+
+| Property | Description |
+{% for np in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'node property' in schemaview.slot_ancestors(np.name) -%}
+| --- | --- |
+| {{gen.link(np)}} | {{np.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Associations (edges)
+
+| Association | Description |
+{% for a in schemaview.all_classes(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'association'  in schemaview.class_ancestors(a.name) and not schemaview.is_mixin(a.name) -%}
+| --- | --- |
+| {{gen.link(a)}} | {{a.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Predicates
+
+| Property | Description | Inverse |
+{% for s in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'related to' in schemaview.slot_ancestors(s.name) -%}
+| --- | --- | --- |
+| {{gen.link(s)}} | {{s.description}} | {%- if not s.symmetric -%} {{schemaview.inverse(s.name)}} {%- else %} symmetric {%- endif -%} |
+{%- endif -%}
+{% endfor %}
+
+## Annotation (edge) Properties
+
+| Property | Description |
+{% for ep in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'association slot' in schemaview.slot_ancestors(ep.name) -%}
+| --- | --- |
+| {{gen.link(ep)}} | {{ep.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Enumerations
+
+| Enumeration | Description |
+| --- | --- |
+{% for e in schemaview.all_enums().values()|sort(attribute='name') -%}
+| {{gen.link(e)}} | {{e.description}} |
+{% endfor %}
+
+## Subsets
+
+| Subset | Description |
+| --- | --- |
+{% for ss in schemaview.all_subsets().values()|sort(attribute='name') -%}
+| {{gen.link(ss)}} | {{ss.description}} |
+{% endfor %}
