@@ -141,9 +141,7 @@ tests:
 
 test: test-schema test-python test-examples lint
 
-test-schema:
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
-	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
+test-schema: gen-project
 
 test-python:
 	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
