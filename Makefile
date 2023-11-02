@@ -104,6 +104,7 @@ gen-project: $(PYMODEL)
 		--include graphql \
 		--include jsonld \
 		--exclude markdown \
+		--include prefixmap \
 		--include proto \
 		--exclude shacl \
 		--include shex \
