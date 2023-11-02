@@ -22,6 +22,40 @@ class ConfiguredBaseModel(BaseModel,
     pass
 
 
+class ClinicalApprovalStatusEnum(str, Enum):
+    
+    
+    approved_for_condition = "approved_for_condition"
+    
+    fda_approved_for_condition = "fda_approved_for_condition"
+    
+    not_approved_for_condition = "not_approved_for_condition"
+    
+    post_approval_withdrawal = "post_approval_withdrawal"
+    
+    not_provided = "not_provided"
+    
+    
+
+class MaxResearchPhaseEnum(str, Enum):
+    
+    # Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.
+    preclinical_research_phase = "preclinical_research_phase"
+    # Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
+    clinical_trial_phase = "clinical_trial_phase"
+    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.
+    clinical_trial_phase_1 = "clinical_trial_phase_1"
+    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.
+    clinical_trial_phase_2 = "clinical_trial_phase_2"
+    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.
+    clinical_trial_phase_3 = "clinical_trial_phase_3"
+    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
+    clinical_trial_phase_4 = "clinical_trial_phase_4"
+    
+    not_provided = "not_provided"
+    
+    
+
 class DirectionQualifierEnum(str, Enum):
     
     
@@ -343,41 +377,6 @@ class ResourceRoleEnum(str, Enum):
     aggregator_knowledge_source = "aggregator_knowledge_source"
     
     supporting_data_source = "supporting_data_source"
-    
-    
-
-class FDAApprovalStatusEnum(str, Enum):
-    
-    # Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.
-    discovery_and_development_phase = "discovery_and_development_phase"
-    # Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-    preclinical_research_phase = "preclinical_research_phase"
-    # Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
-    fda_clinical_research_phase = "fda_clinical_research_phase"
-    # FDA Review
-    fda_review_phase_4 = "fda_review_phase_4"
-    # FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.
-    fda_post_market_safety_review = "fda_post_market_safety_review"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.
-    fda_clinical_research_phase_1 = "fda_clinical_research_phase_1"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.
-    fda_clinical_research_phase_2 = "fda_clinical_research_phase_2"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.
-    fda_clinical_research_phase_3 = "fda_clinical_research_phase_3"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
-    fda_clinical_research_phase_4 = "fda_clinical_research_phase_4"
-    # Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-    fda_fast_track = "fda_fast_track"
-    # Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-    fda_breakthrough_therapy = "fda_breakthrough_therapy"
-    # When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-    fda_accelerated_approval = "fda_accelerated_approval"
-    # Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-    fda_priority_review = "fda_priority_review"
-    # Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.
-    regular_fda_approval = "regular_fda_approval"
-    
-    post_approval_withdrawal = "post_approval_withdrawal"
     
     
 
@@ -2770,7 +2769,7 @@ class ChemicalMixture(ChemicalEntity):
     A chemical mixture is a chemical entity composed of two or more molecular entities.
     """
     is_supplement: Optional[str] = Field(None)
-    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'""")
+    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[str] = Field(None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     routes_of_delivery: Optional[List[DrugDeliveryEnum]] = Field(None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(None)
@@ -2830,7 +2829,7 @@ class MolecularMixture(ChemicalMixture):
     A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
     """
     is_supplement: Optional[str] = Field(None)
-    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'""")
+    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[str] = Field(None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     routes_of_delivery: Optional[List[DrugDeliveryEnum]] = Field(None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(None)
@@ -2860,7 +2859,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
     """
     is_supplement: Optional[str] = Field(None)
-    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'""")
+    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[str] = Field(None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     routes_of_delivery: Optional[List[DrugDeliveryEnum]] = Field(None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(None)
@@ -2890,7 +2889,7 @@ class ProcessedMaterial(ChemicalMixture):
     A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
     """
     is_supplement: Optional[str] = Field(None)
-    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'""")
+    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[str] = Field(None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     routes_of_delivery: Optional[List[DrugDeliveryEnum]] = Field(None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(None)
@@ -2921,7 +2920,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     """
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     is_supplement: Optional[str] = Field(None)
-    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'""")
+    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[str] = Field(None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     routes_of_delivery: Optional[List[DrugDeliveryEnum]] = Field(None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(None)
@@ -2998,7 +2997,7 @@ class Food(ChemicalMixture):
     A substance consumed by a living organism as a source of nutrition
     """
     is_supplement: Optional[str] = Field(None)
-    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'""")
+    highest_FDA_approval_status: Optional[str] = Field(None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[str] = Field(None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     routes_of_delivery: Optional[List[DrugDeliveryEnum]] = Field(None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(None)
@@ -3151,17 +3150,24 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-class Exon(BiologicalEntity):
+class Exon(NucleicAcidEntity):
     """
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
     """
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/Exon","biolink:Exon"]] = Field(["biolink:Exon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3174,17 +3180,24 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-class Transcript(BiologicalEntity):
+class Transcript(NucleicAcidEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     """
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/Transcript","biolink:Transcript"]] = Field(["biolink:Transcript"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3197,16 +3210,22 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
-class CodingSequence(GenomicEntity, BiologicalEntity):
+class CodingSequence(NucleicAcidEntity):
     
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/CodingSequence","biolink:CodingSequence"]] = Field(["biolink:CodingSequence"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3338,11 +3357,18 @@ class RNAProduct(Transcript, GeneProductMixin):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/RNAProduct","biolink:RNAProduct"]] = Field(["biolink:RNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3361,11 +3387,18 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/RNAProductIsoform","biolink:RNAProductIsoform"]] = Field(["biolink:RNAProductIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3382,11 +3415,18 @@ class NoncodingRNAProduct(RNAProduct):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/NoncodingRNAProduct","biolink:NoncodingRNAProduct"]] = Field(["biolink:NoncodingRNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3403,11 +3443,18 @@ class MicroRNA(NoncodingRNAProduct):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/MicroRNA","biolink:MicroRNA"]] = Field(["biolink:MicroRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3426,11 +3473,18 @@ class SiRNA(NoncodingRNAProduct):
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    is_metabolite: Optional[bool] = Field(None, description="""indicates whether a molecular entity is a metabolite""")
+    trade_name: Optional[str] = Field(None)
+    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
+    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
+    is_toxic: Optional[bool] = Field(None)
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
-    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/SiRNA","biolink:SiRNA"]] = Field(["biolink:SiRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -5398,7 +5452,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class GeneAffectsChemicalAssociation(Association):
     """
-    Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
+    Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
     """
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
@@ -7697,7 +7751,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class EntityToDiseaseAssociation(Association):
     
-    FDA_approval_status: Optional[FDAApprovalStatusEnum] = Field(None)
+    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(None)
+    max_research_phase: Optional[MaxResearchPhaseEnum] = Field(None)
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7738,7 +7793,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class EntityToPhenotypicFeatureAssociation(Association):
     
-    FDA_approval_status: Optional[FDAApprovalStatusEnum] = Field(None)
+    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(None)
+    max_research_phase: Optional[MaxResearchPhaseEnum] = Field(None)
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")

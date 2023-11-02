@@ -1,1 +1,1 @@
-from .biolink import *
+from .model import *

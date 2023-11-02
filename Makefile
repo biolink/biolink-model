@@ -101,6 +101,9 @@ id-prefixes:
 	poetry run gen-python class_prefixes.yaml > src/scripts/biolink_model/classprefixes.py
 	cd scripts && poetry run python id_prefixes.py
 
+spell:
+	poetry run codespell
+
 # generates all project files
 
 gen-project: $(PYMODEL)
@@ -123,12 +126,20 @@ gen-project: $(PYMODEL)
 		--include rdf \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink-model.yaml $(DEST)/prefixmap/biolink-model-prefix-map.json
+	mv src/biolink_model/datamodel/biolink-model.py src/biolink_model/datamodel/model.py
 	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel.py
 	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
 
+tests:
+	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	$(RUN) python -m unittest discover -p 'test_*.py'
+	$(RUN) codespell
+	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
+	$(RUN) yamllint -c .yamllint-config infores_catalog.yaml
+	$(RUN) python scripts/verify_infores.py
 
-test: test-schema test-python test-examples
+test: test-schema test-python test-examples lint
 
 test-schema:
 	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
@@ -136,7 +147,7 @@ test-schema:
 
 test-python:
 	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
-	$(RUN) python -m unittest discover
+	$(RUN) python -m unittest discover -p 'test_*.py'
 
 lint:
 	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
