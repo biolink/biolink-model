@@ -105,7 +105,6 @@ gen-project: $(PYMODEL)
 		--include jsonld \
 		--exclude markdown \
 		--include proto \
-		--include prefix-map \
 		--exclude shacl \
 		--include shex \
 		--exclude sqlddl \
@@ -118,7 +117,6 @@ gen-project: $(PYMODEL)
 	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel.py
 	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
-
 
 
 test: test-schema test-python test-examples
