@@ -39,7 +39,7 @@ jobs:
 
       - name: Run tests
         run: |
-          poetry run python -m unittest discover -p 'test_*.py'
+          make test
           poetry run codespell
           poetry run yamllint -c .yamllint-config biolink-model.yaml
           poetry run yamllint -c .yamllint-config infores_catalog.yaml
