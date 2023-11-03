@@ -36,3 +36,7 @@ build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry.extras]
 docs = ["mkdocs-material"]
+
+[tool.codespell]
+skip = 'project,SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,docs,json-schema,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*,'
+ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
