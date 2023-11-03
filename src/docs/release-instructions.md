@@ -15,7 +15,8 @@ and the latest commit on the `master` branch.
 
 ## Update version in biolink-model.yaml
 
-Update the `version` in [biolink-model.yaml]() to reflect the new release (if not already up-to-date).
+Update the `version` in [biolink-model.yaml](biolink-model.yaml), [information-resource.yaml](information-resource.yaml), 
+[semmed-exclude-list-model.yaml](semmed-exclude-list-model.yaml) to reflect the new release (if not already up-to-date).
 
 Commit the changes to `master` branch.
 
@@ -25,13 +26,6 @@ Wait for all the artifacts to be regenerated.
 ## Update changelog
 
 Update [ChangeLog]() and add the changes that are part of this release.
-
-Commit the changes to `master` branch.
-
-
-## Update setup.py with new version
-
-Update setup.py to capture the new version.
 
 Commit the changes to `master` branch.
 
@@ -52,14 +46,4 @@ Push latest branch
 
 ### Releasing on PyPI
 
-To ensure this is successful, make sure you have relevant permissions to biolink-model package on [PyPI](https://pypi.org/project/biolink-model/).
-
-Also, be sure to install [twine](https://pypi.org/project/twine/) and [wheel](https://pypi.org/project/wheel/)
-
-Now, run the following commands:
-
-```sh
-rm -rf dist/
-python setup.py sdist bdist_wheel
-twine upload --repository-url https://upload.pypi.org/legacy/ --username __token__ dist/*
-```
+GitHub actions will build and push the package to PyPI automatically when a new release is created.

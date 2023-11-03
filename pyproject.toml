@@ -1,12 +1,11 @@
 [tool.poetry]
-name = "testviz"
-version = "0.1.0"
-description = "This is the project description."
-authors = ["My Name <my-name@my-org.org>"]
+name = "biolink-model"
+version = "0.0.0"
+description = "The Biolink Model is a high-level data model designed to standardize types and relationships in biological knowledgebases."
+authors = ["Sierra Moxon <smoxon@lbl.gov>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/testviz/schema", "project"]
-
+include = ["README.md", "src/biolink_model/schema", "project", "src/biolink_model/datamodel", "src/biolink_model/scripts"]
 [tool.poetry.scripts]
 generate_viz_json = "src.testviz.scripts.generate_json:generate_viz_json"
 
