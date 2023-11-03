@@ -1,12 +1,10 @@
-# Class: {{ gen.name(element) }}
-{% if element.deprecated %}
-* <span style="color: red;"><strong>* __DEPRECATED__ </strong>:</span>
-{% endif %}
+# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong>* __DEPRECATED__ </strong>:</span> {% endif %}
+
+{% if element.aliases %} aliases: {{ element.aliases | join(', ') }} {% endif %}
 
 {%- if header -%}
 {{header}}
 {%- endif -%}
-
 
 {% if element.description %}
 {% set element_description_lines = element.description.split('\n') %}

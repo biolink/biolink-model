@@ -1,7 +1,6 @@
-# Slot: {{ gen.name(element) }}
-{% if element.deprecated %}
-* <span style="color: red;"><strong>* __DEPRECATED__ </strong>:</span>
-{% endif %}
+# Slot: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong>* __DEPRECATED__ </strong>:</span> {% endif %}
+
+{% if element.aliases %} aliases: {{ element.aliases | join(', ') }} {% endif %}
 
 {%- if header -%}
 {{header}}
@@ -14,6 +13,8 @@
 _{{ element_description_line }}_
 {% endfor %}
 {% endif %}
+
+
 
 URI: {{ gen.uri_link(element) }}
 
