@@ -7,24 +7,33 @@ nav_order: 7
 
 # Curating the Biolink Model
 
-Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [LinkML](https://github.com/linkml).
+Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [LinkML](https://github.com/linkml) and its
+metamodel components.  Like many modeling frameworks, LinkML comes with a controlled vocabulary of 
+[terms](https://linkml.io/linkml-model/latest/) that are used to describe the model.  While the modeling language
+is robust and might seem overwhelming, understanding just a few basic components like: 
+- [classes](https://linkml.io/linkml-model/latest/ClassDefinition.html)
+- [slots](https://linkml.io/linkml-model/latest/SlotDefinition.html)
+- [exact_mappings](https://linkml.io/linkml-model/latest/docs/exact_mappings/)
+- [aliases](https://linkml.io/linkml-model/latest/docs/aliases/)
+- [is_a](https://linkml.io/linkml-model/latest/docs/is_a/)
+- [range](https://linkml.io/linkml-model/latest/docs/range/)
+- [domain](https://linkml.io/linkml-model/latest/docs/domain/)
+
+will be extremely helpful.  For more information on LinkML refer to [Using the Modeling Language](using-the-modeling-language.md).
+For more information about LinkML, please refer to the tutorial [here](https://linkml.github.io/linkml-tutorial/).
 
 In Biolink Model all the curation should happen in one place: [biolink-model.yaml](../../biolink-model.yaml)
 This is the one source of truth for the model.
 
-## PR Guidelines
+### PR Guidelines
 
 - All of our modeling and example data should be as clear as possible. 
-- Textual annotations on classes, slots and enumerations should be written with minimal jargon
+- Textual annotations on classes, slots and enumerations should be written with minimal jargon.
 - If it is necessary to retain external content as-is, like descriptions, they should be attributed using the 
-appropriate LinkML meta-slots, and we should also strive to provide clarification in appropriate meta-slots
-- The structural definitions of elements (relationships with other elements) should agree with the textual description
-(and vice versa)
+appropriate LinkML meta-slots, and we should also strive to provide clarification in appropriate meta-slots.
 - Team members  adding new modeling bear the responsibility of re-using existing elements or demonstrating to the team 
-how their proposed alternative modeling is generally superior. When there are disagreements about modeling style, the 
-disagreeing parties should each prepare two different implementations of the required modeling and talk through the 
-advantages and disadvantages of each. This can be simplified by keeping pull requests small. Diligent modeling efforts 
-should be acknowledged, especially for newer contributors. A decision to not merge
+how their proposed alternative modeling is generally superior. This can be simplified by keeping pull requests small. 
+Diligent modeling efforts should be acknowledged, especially for newer contributors. A decision to not merge
 in part of the work does not mean that the work isn’t appreciated or has been thrown away, as closed but unmerged pull 
 requests could be revisited in the future.
 
@@ -231,7 +240,7 @@ As an example, let's consider the slot `name` which is a node property:
       - gpi:DB_Object_Name
 ```
 
-For more information, refer to [Using the Modeling Language](using-the-modeling-language.md).
+For more information about LinkML refer to [Using the Modeling Language](using-the-modeling-language.md).
 
 
 ### Managing mappings
@@ -258,3 +267,6 @@ narrow mapping
 as a broad mapping
 - If an external concept is distantly related to a Biolink Model class or slot then it can be treated as a 
 related mapping
+
+
+For more information see: [Maintaining The model](maintaining-the-model.md)
