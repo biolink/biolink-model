@@ -287,7 +287,7 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 name = "codespell"
 version = "2.2.6"
 description = "Codespell"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -1209,25 +1209,26 @@ files = [
 
 [[package]]
 name = "mkdocs-mermaid2-plugin"
-version = "0.6.0"
+version = "1.1.1"
 description = "A MkDocs plugin for including mermaid graphs in markdown sources"
 category = "dev"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 files = [
-    {file = "mkdocs-mermaid2-plugin-0.6.0.tar.gz", hash = "sha256:99cca6db7c6b4a954a701dcb6b507191bc32a7b0b47eacf2885c1bacf77d1af1"},
-    {file = "mkdocs_mermaid2_plugin-0.6.0-py3-none-any.whl", hash = "sha256:ffbe8a7daa7ed718cb800c44c5ce4c0ff413caebf7b8b63d9c4a998dfd78a64d"},
+    {file = "mkdocs-mermaid2-plugin-1.1.1.tar.gz", hash = "sha256:bea5f3cbe6cb76bad21b81e49a01e074427ed466666c5d404e62fe8698bc2d7c"},
+    {file = "mkdocs_mermaid2_plugin-1.1.1-py3-none-any.whl", hash = "sha256:4e25876b59d1e151ca33a467207b346404b4a246f4f24af5e44c32408e175882"},
 ]
 
 [package.dependencies]
 beautifulsoup4 = ">=4.6.3"
 jsbeautifier = "*"
 mkdocs = ">=1.0.4"
-mkdocs-material = "*"
 pymdown-extensions = ">=8.0"
-pyyaml = "*"
 requests = "*"
 setuptools = ">=18.5"
+
+[package.extras]
+test = ["mkdocs-material"]
 
 [[package]]
 name = "more-click"
@@ -2781,4 +2782,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10.1"
-content-hash = "5a1bfc968bff0369828ec1d80df22e2d1ba264ee8ef21e0ebbd71eb606a2a9d1"
+content-hash = "939f55154846516950ad7467ed754f6f50947c2e757485a429cedd003bfbf767"
