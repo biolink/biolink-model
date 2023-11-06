@@ -13,7 +13,7 @@ generate_viz_json = "src.biolink_model.scripts.generate_json:generate_viz_json"
 
 [tool.poetry.dependencies]
 python = "^3.10.1"
-linkml-runtime = "^1.1.24"
+linkml-runtime = "^1.6.1"
 rdflib = "6.0.0"
 pyyaml = "^6.0.1"
 
@@ -23,9 +23,9 @@ vcs = "git"
 style = "pep440"
 
 [tool.poetry.dev-dependencies]
-linkml = "^1.3.5"
+linkml = "^1.6.1"
 mkdocs = "^1.4.2"
-mkdocs-material = "^9.0.12"
+mkdocs-material = "^9.4.8"
 mkdocs-mermaid2-plugin = "^1.1.1"
 schemasheets = "^0.1.14"
 codespell = "^2.2.6"
