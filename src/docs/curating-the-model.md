@@ -37,6 +37,11 @@ Diligent modeling efforts should be acknowledged, especially for newer contribut
 in part of the work does not mean that the work isn’t appreciated or has been thrown away, as closed but unmerged pull 
 requests could be revisited in the future.
 
+Please run `make test` before submitting a PR to ensure that the model is valid.
+Please resolve conflicts before submitting a PR to help aid the PR reviewer. Note: if you have conflicts in 
+files in the `project` directory, running `make test` after a `master` (main) branch merge into your branch 
+will clear them.  Please feel free to commit the regenerated artifacts.
+
 ### Adding an Entity class
 
 To add an entity class to Biolink Model you need to determine the following:
