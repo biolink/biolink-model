@@ -6,8 +6,9 @@ authors = ["Chris Mungall <cjm@berkeleybop.org>", "Deepak Unni <deepak.unni3@gma
 license = "MIT"
 readme = "README.md"
 include = ["README.md", "src/biolink_model/schema", "project", "src/biolink_model/datamodel", "src/biolink_model/scripts"]
+
 [tool.poetry.scripts]
-generate_viz_json = "src.testviz.scripts.generate_json:generate_viz_json"
+generate_viz_json = "src.biolink_model.scripts.generate_json:generate_viz_json"
 
 
 [tool.poetry.dependencies]

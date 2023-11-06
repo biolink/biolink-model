@@ -5,7 +5,7 @@ name: Regenerate Biolink Model Artifacts
 on:
   push:
     branches:
-      - master
+      - main
   repository_dispatch:
     types: trigger-build-artifacts
 
