@@ -127,12 +127,12 @@ gen-project: $(PYMODEL)
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink-model.yaml $(DEST)/prefixmap/biolink-model-prefix-map.json
 	mv src/biolink_model/datamodel/biolink-model.py src/biolink_model/datamodel/model.py
-	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel.py
-	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink-model.yaml > $(PYMODEL)/pydanticmodel_v2.py
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel.py
+	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 
 tests:
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(RUN) python -m unittest discover -p 'test_*.py'
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
@@ -144,11 +144,11 @@ test: test-schema test-python test-examples lint
 test-schema: gen-project
 
 test-python:
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(RUN) python -m unittest discover -p 'test_*.py'
 
 lint:
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
 
 check-config:
@@ -166,7 +166,7 @@ examples/%.ttl: src/data/examples/%.yaml
 
 test-examples: examples/output
 
-examples/output: src/biolink_model/schema/biolink-model.yaml
+examples/output: src/biolink_model/schema/biolink_model.yaml
 	mkdir -p $@
 	$(RUN) linkml-run-examples \
 		--output-formats json \
@@ -189,7 +189,7 @@ $(DOCDIR):
 
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	# added copying of images and renaming of TEMP.md
 	$(RUN) generate_viz_json
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
