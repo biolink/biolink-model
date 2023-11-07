@@ -1,5 +1,7 @@
-# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong>* __DEPRECATED__ </strong>:</span> {% endif %}
-
+# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong>:</span> {% endif %}
+{% if element.abstract %}
+<span style="color: purple;"><strong> ABSTRACT </strong>:</span>
+{% endif %}
 {% if element.aliases %} aliases: {{ element.aliases | join(', ') }} {% endif %}
 
 {%- if header -%}
@@ -11,10 +13,6 @@
 {% for element_description_line in element_description_lines %}
 _{{ element_description_line }}_
 {% endfor %}
-{% endif %}
-
-{% if element.abstract %}
-* __NOTE__: this is an abstract class and should not be instantiated directly
 {% endif %}
 
 URI: {{ gen.uri_link(element) }}

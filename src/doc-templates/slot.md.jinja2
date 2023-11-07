@@ -1,5 +1,7 @@
 # Slot: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong>* __DEPRECATED__ </strong>:</span> {% endif %}
-
+{% if element.abstract %}
+<span style="color: purple;"><strong> ABSTRACT </strong>:</span>
+{% endif %}
 {% if element.aliases %} aliases: {{ element.aliases | join(', ') }} {% endif %}
 
 {%- if header -%}
