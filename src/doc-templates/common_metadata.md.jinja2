@@ -39,13 +39,11 @@
 
 Instances of this class *should* have identifiers with one of the following prefixes, ordered with the most preferred first:
 
-| ID Prefix | Namespace URL |
+| ID Prefix | Usage |
 |-----------|---------------|
 {% for p in element.id_prefixes %}
-| {{ p }} | {{ schemaview.get_url_for_prefix(p) }} |
+| {{ p }} | {{ schemaview.get_elements_applicable_by_prefix(p) }} |
 {% endfor %}
-{% endif %}
-
 {% endif %}
 
 
