@@ -1,4 +1,4 @@
-# Auto generated from biolink-model.yaml by pythongen.py version: 0.0.1
+# Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
 # Generation date: 2023-11-07T09:13:16
 # Schema: Biolink-Model
 #

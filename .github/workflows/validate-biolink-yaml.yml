@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Validate YAML file
-        run: yamllint -c .yamllint-config biolink-model.yaml
+        run: yamllint -c .yamllint-config biolink_model.yaml

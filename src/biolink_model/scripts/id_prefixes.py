@@ -18,7 +18,7 @@ class IDPrefixes:
 
     def dump(self):
 
-        prefixmap = PrefixGenerator('../biolink-model.yaml')
+        prefixmap = PrefixGenerator('../biolink_model.yaml')
         bpcc = BiolinkClassPrefixesCollection()
         for cls, clsdef in self.sv.all_classes().items():
             prefix_map = []

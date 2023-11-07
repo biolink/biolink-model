@@ -1,8 +1,7 @@
 from collections import defaultdict
 import json
-from typing import Any, List
+from typing import Any, List, Union
 from linkml_runtime.utils.schemaview import SchemaView
-
 
 
 file_path = 'src/biolink_model/schema/biolink_model.yaml'
@@ -39,7 +38,7 @@ def get_tree_node_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
     return root_node
 
 
-def load_predicate_tree_data(return_parent_to_child_dict: bool = False) -> list[list[Any] | dict]:
+def load_predicate_tree_data(return_parent_to_child_dict: bool = False) -> Union[List[List[Any]], dict]:
     """
     Load the predicate tree data from the model.
 
