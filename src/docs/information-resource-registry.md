@@ -7,7 +7,7 @@ nav_order: 10
 
 ### The Information Resource Registry (infores) data model
 An information resource is defined as a web-accessible resource that provides data. An InformationResource 
-(designated by its identifier in curie form, e.g. 'infores:monarch-intiative') is a Biolink Model class that provides 
+(designated by its identifier in curie form, e.g. 'infores:monarchintiative') is a Biolink Model class that provides 
 a standard way to identify and describe information resources. The InformationResource class details can be found here:
 [information-resource.yaml](../../information-resource.yaml) and contains the following properties:
 - **id**: the identifier of the information resource (e.g. 'infores:monarch-intiative')
