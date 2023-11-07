@@ -107,7 +107,7 @@ spell:
 # generates all project files
 
 gen-project: $(PYMODEL)
-	cp biolink-model.yaml src/biolink_model/schema/biolink-model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	# keep these in sync between PROJECT_FOLDERS and the includes/excludes for gen-project and test-schema
 	$(RUN) gen-project \
 		--exclude excel \
