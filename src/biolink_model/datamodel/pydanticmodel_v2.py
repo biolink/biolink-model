@@ -2,7 +2,7 @@ from __future__ import annotations
 from datetime import datetime, date
 from enum import Enum
 from typing import List, Dict, Optional, Any, Union
-from pydantic import BaseModel as BaseModel, Field
+from pydantic import BaseModel as BaseModel, ConfigDict, Field
 import sys
 if sys.version_info >= (3, 8):
     from typing import Literal
@@ -13,13 +13,13 @@ else:
 metamodel_version = "None"
 version = "3.5.4"
 
-class ConfiguredBaseModel(BaseModel,
-                validate_assignment = True,
-                validate_default = True,
-                extra = 'forbid',
-                arbitrary_types_allowed = True,
-                use_enum_values = True):
-    pass
+class ConfiguredBaseModel(BaseModel):
+    model_config = ConfigDict(
+        validate_assignment=True,
+        validate_default=True,
+        extra='forbid',
+        arbitrary_types_allowed=True,
+        use_enum_values = True)
 
 
 class ClinicalApprovalStatusEnum(str, Enum):
@@ -8736,4 +8736,4 @@ OrganismTaxonToOrganismTaxonAssociation.model_rebuild()
 OrganismTaxonToOrganismTaxonSpecialization.model_rebuild()
 OrganismTaxonToOrganismTaxonInteraction.model_rebuild()
 OrganismTaxonToEnvironmentAssociation.model_rebuild()
-    
+
