@@ -5,36 +5,46 @@ layout: default
 nav_order: 6
 ---
 
+### How do I map my data source's components to Biolink Model? 
+
+The diversity of both content and technical distribution of biological data can be overwhelming.  Sometimes the 
+hardest part of using a shared model, is the art and science of mapping an existing concept to that model.  
+Biolink Model is not an exception to this rule, but it does provide more metadata about each element in the model
+to help guide this process.  Biolink Model classes and slots have descriptions, mappings, and class have 
+expected id_prefixes for identifiers that define an instance of that class. 
+
+The [Biolink Model Toolkit](https://github.com/biolink/biolink-model-toolkit) (bmt) provides some very helpful functions
+for programmatically interacting with the model.  For example, bmt can be used to find all the classes that have
+a particular id_prefix, or all of the slots that have a particular range.  It can find all the classes mapped to an 
+identifier from a certain ontology or namespace. 
+
+Ultimately, the Biolink Modeling team is here to help.  Please submit a ticket to our repository or reach out
+directly. We are happy to meet with you!
+
 ### What happens if I have a concept, property, or edge in a graph that is not in the Biolink Model?
 
-Please submit a ticket to our issue tracker: https://github.com/biolink/biolink-model/issues or submit
-a pull request with your changes to the Biolink Model.
+The Biolink Modeling team welcomes all contributions to the model, including new classes, new slots, new mappings, etc.
+Please submit a ticket to our [issue tracker](https://github.com/biolink/biolink-model/issues).  We also welcome
+pull requests (PRs)!  In general, an issue or a PR will be addressed faster by the modeling team by following these guidelines:
 
-Note: a PR or ticket will be addressed faster by the modeling team by following these guidelines:
-
-- All of our modeling and example data should be as clear as possible. 
-- Textual annotations on classes, slots and enumerations should be written with minimal jargon
-- If it is necessary to retain external content as-is, like descriptions, they should be attributed using the 
-appropriate LinkML meta-slots, and we should also strive to provide clarification in appropriate meta-slots
-- The structural definitions of elements (relationships with other elements) should agree with the textual description
-(and vice versa)
-- Team members  adding new modeling bear the responsibility of re-using existing elements or demonstrating to the team 
-how their proposed alternative modeling is generally superior. When there are disagreements about modeling style, the 
-disagreeing parties should each prepare two different implementations of the required modeling and talk through the 
-advantages and disadvantages of each. This can be simplified by keeping pull requests small. Diligent modeling efforts 
-should be acknowledged, especially for newer contributors. A decision to not merge
+* All of our modeling and example data should be as clear as possible.
+* Textual annotations on classes, slots and enumerations should be written with minimal jargon.  Of course, jargon
+is hard to define. We encourage contributors to use their best judgement here, but expect that there are a wide
+variety of people using and interacting with Biolink Model.  Our language here should be interpretable by people
+with many different expertises.  Examples are the key to good PRs.
+* Team members  adding new modeling bear the responsibility of re-using existing elements or demonstrating to the team 
+how their proposed alternative modeling is generally superior. This can be simplified by keeping pull requests small. 
+Diligent modeling efforts should be acknowledged, especially for newer contributors. A decision to not merge
 in part of the work does not mean that the work isn’t appreciated or has been thrown away, as closed but unmerged pull 
 requests could be revisited in the future.
-- LinkML provides micro-crediting metaslots. They can be used to acknowledge contributors outside of GitHub pull
+   * LinkML provides micro-crediting metaslots. They can be used to acknowledge contributors outside of GitHub pull
 request crediting and to time-stamp additions and changes.  They should be employed whenever possible, giving by default,
 maximum credit to all parties that have significantly contributed to the model element.
-https://linkml.io/linkml-model/latest/docs/contributors/
-https://linkml.io/linkml-model/latest/docs/created_by/
-https://linkml.io/linkml-model/latest/docs/created_on/
-https://linkml.io/linkml-model/latest/docs/modified_by/
-https://linkml.io/linkml-model/latest/docs/last_updated_on/
-
-
+      * https://linkml.io/linkml-model/latest/docs/contributors/
+      * https://linkml.io/linkml-model/latest/docs/created_by/
+      * https://linkml.io/linkml-model/latest/docs/created_on/
+      * https://linkml.io/linkml-model/latest/docs/modified_by/ 
+      * https://linkml.io/linkml-model/latest/docs/last_updated_on/
 
 
 ### What is the difference between `predicate` and `category`?
@@ -42,17 +52,6 @@ https://linkml.io/linkml-model/latest/docs/last_updated_on/
 - `predicate` is an association slot and must have a value from the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to)
 - `category` (or `rdf:type`) is a slot and must have a value from the [`named thing`](https://biolink.github.io/biolink-model/docs/NamedThing)
 or the [`association`](https://biolink.github.io/biolink-model/docs/Association) hierarchy.
-
-
-### How do I assign Biolink classes and slots (e.g. nodes and attributes) to my data source?
-
-Many data sources have their own data model that is not Biolink Model. They have their own objects and properties that 
-might use different syntax, capture data at a different semantic level or a different granularity, or use different
-identifiers.
-
-Biolink Model uses components from the LinkML metamodel components (like `id_prefixes`, `exact, narrow, related, 
-broad mappings`, `aliases`, `descriptions`) to help convey the concepts in the model to users.  However, this process
-is often not automated and requires human curation.  Sometimes, capturing a higher level 
 
 
 ### What are some examples of Biolink Model usage?
