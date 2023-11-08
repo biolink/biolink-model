@@ -10,12 +10,13 @@ An information resource is defined as a web-accessible resource that provides da
 (designated by its identifier in curie form, e.g. 'infores:monarchintiative') is a Biolink Model class that provides 
 a standard way to identify and describe information resources. The InformationResource class details can be found here:
 [information-resource.yaml](../../information-resource.yaml) and contains the following properties:
-- **id**: the identifier of the information resource (e.g. 'infores:monarch-intiative')
-- **name**: the name of the information resource (e.g. 'Monarch Initiative')
-- **description**: a description of the information resource (e.g. 'Monarch is a platform for biomedical data discovery and integration')
-- **url**: the url of the information resource (e.g. 'https://monarchinitiative.org/')
-- **status**: the status of the information resource (e.g. 'released', 'deprecated', etc.  Please see the enumeration listed 
-in the model yaml for more information)
+* **id**: the identifier of the information resource (e.g. 'infores:monarchintiative')
+* **name**: the name of the information resource (e.g. 'Monarch Initiative')
+* **description**: a description of the information resource (e.g. 'Monarch is a platform for biomedical data discovery 
+and integration')
+* **url**: the url of the information resource (e.g. 'https://monarchinitiative.org/')
+* **status**: the status of the information resource (e.g. 'released', 'deprecated', etc.  Please see the enumeration 
+listed in the model yaml for more information)
 
 
 ### Modifying an existing Information Resource entry in the registry:
@@ -26,7 +27,7 @@ changed, it MUST be treated as a new entry and the old entry MUST be deprecated.
 ### Adding a new Information Resource entry to the registry: 
 Adding a new entry to the registry is as easy as adding a stanza to the information-resource.yaml file in the biolink-model
 repository and submitting the change via pull request in the repository.  Alternatively, making a ticket for a new
-resource in the biolink-model github repository will also work.  
+resource in the biolink-model GitHub repository will also work.  
 
 #### Minting new Information Resource identifiers:
 

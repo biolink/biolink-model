@@ -51,7 +51,7 @@ Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, 
 | Property | Description | Inverse |
 | --- | --- | --- |
 {% for s in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
-{%- if 'related to' in schemaview.slot_ancestors(s.name) -%}
+{%- if 'related to' in schemaview.slot_ancestors(s.name) or if 'related_to' in schemaview.slot_ancestors(s.name) -%}
 | {{gen.link(s)}} | {{s.description}} | {%- if not s.symmetric -%} {{schemaview.inverse(s.name)}} {%- else %} symmetric {%- endif -%} |
 {%- endif -%}
 {% endfor %}
