@@ -14,7 +14,7 @@ and describe how they would be represented in Biolink Model.
 
 "Methionine deficiency results in increased expression of ADRB2 in adipose tissue"
 
-In keeping with our modeling paradigms ([Curating The Model](guidelines/curating-the-model.md))
+In keeping with our modeling paradigms ([Curating The Model](curating-the-model.md))
 - Nodes should represent core domain concepts
 - Use qualifiers to compose full node semantics
 - The ‘core triple’ should remain true if qualifiers are ignored. (except 'negation', 'negation' should never be ignored)
@@ -73,7 +73,7 @@ to subject, predicate, object and qualifiers.  It can also have other slots, suc
 "publications" that express the evidence and provenance of this statement. 
 
 More information on knowledge source retrieval provenance can be found in the 
-[Knowledge Source Retrieval](guidelines/knowledge-source-retrieval.md) guidelines.
+[Knowledge Source Retrieval](knowledge-source-retrieval.md) guidelines.
 
 - KGX flat file (edges.tsv)
 ```tsv
