@@ -49,9 +49,9 @@ maximum credit to all parties that have significantly contributed to the model e
 
 ### What is the difference between `predicate` and `category`?
 
-- `predicate` is an association slot and must have a value from the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to)
-- `category` (or `rdf:type`) is a slot and must have a value from the [`named thing`](https://biolink.github.io/biolink-model/docs/NamedThing)
-or the [`association`](https://biolink.github.io/biolink-model/docs/Association) hierarchy.
+- `predicate` is an association slot and must have a value from the [`related to` hierarchy](https://biolink.github.io/biolink-model/related_to)
+- `category` (or `rdf:type`) is a slot and must have a value from the [`named thing`](https://biolink.github.io/biolink-model/NamedThing)
+or the [`association`](https://biolink.github.io/biolink-model/Association) hierarchy.
 
 
 ### What are some examples of Biolink Model usage?
