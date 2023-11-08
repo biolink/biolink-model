@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sierra-moxon.github.io/testviz/subject_label_closure/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Slot: subject_label_closure - Biolink Model Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="black" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#slot-subject_label_closure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Biolink Model Documentation" class="md-header__button md-logo" aria-label="Biolink Model Documentation" data-md-component="logo">
+      
+  <img src="../images/biolink-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Biolink Model Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Slot: subject_label_closure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sierra-moxon/testviz" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Biolink Model Documentation" class="md-nav__button md-logo" aria-label="Biolink Model Documentation" data-md-component="logo">
+      
+  <img src="../images/biolink-logo.png" alt="logo">
+
+    </a>
+    Biolink Model Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sierra-moxon/testviz" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-the-modeling-language/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the LinkML Modeling Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../information-resource-registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../association-examples-with-qualifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations with Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-a-qualifier-based-statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreting a Fully Qualified Edge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curating-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curating Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintaining Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../categories.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../predicates.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Predicates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Aspects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    Inheritance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    Applicable Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    Identifier and Mapping Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    Schema Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    LinkML Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="slot-subject_label_closure">Slot: subject_label_closure</h1>
+<p><em>Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.</em></p>
+<p>URI: <a href="https://w3id.org/biolink/vocab/subject_label_closure">biolink:subject_label_closure</a></p>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../association_slot/">association_slot</a><ul>
+<li><strong>subject_label_closure</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Association/">Association</a></td>
+<td>A typed association between two entities, supported by evidence</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
+<td>Any association between an entity (such as a publication) and various agents ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
+<td>Any association between one genotype and a genotypic entity that is a sub-com...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
+<td>Any association between a genotype and a gene</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
+<td>Any association between a genotype and a sequence variant</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td>abstract parent class for different kinds of gene-gene or gene product to gen...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
+<td>A homology association between two genes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td>Set membership of a gene in a family of genes related by common evolutionary ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
+<td>Indicates that two genes are co-expressed, generally under the same condition...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
+<td>An interaction between two genes or two gene products</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
+<td>An interaction at the molecular level between two physical entities</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>An relationship between a cell line and a disease or a phenotype, where the c...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td>A relationship between two chemical entities</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td>A causal relationship between two chemical entities, where the subject repres...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>An interaction between a chemical entity and a phenotype or disease, where th...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>This association defines a relationship between a chemical or treatment (or p...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>This association defines a relationship between a chemical or treatment (or p...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
+<td>An interaction between a gene or gene product and a biological process or pat...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
+<td>Association that holds the relationship between a reaction and the pathway it...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td>An interaction between a chemical entity and a biological process or pathway</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td>describes a physical interaction between a chemical entity and a gene or gene...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td>Describes an effect that a chemical has on a gene or gene product (e</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
+<td>An interaction between a drug and a gene or gene product</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td>An association between a material sample and the material entity from which i...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>An association between a material sample and a disease or phenotype</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
+<td>An association between an exposure event and a disease</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
+<td>An association between an exposure event and an outcome</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
+<td>association between a named thing and a information content entity where the ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
+<td>An association between either a disease or a phenotypic feature and an anatom...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
+<td>An association between either a disease or a phenotypic feature and its mode ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td>Any association between one genotype and a phenotypic feature, where having t...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td>Any association between an environment and a phenotypic feature, where being ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td>An association between a disease and a phenotypic feature in which the phenot...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td>An association between a case (e</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td>An association between an mixture behavior and a behavioral feature manifeste...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
+<td>An association between a variant and a gene, where the variant has a genetic ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
+<td>An association between a variant and expression of a gene (i</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
+<td>An association between a variant and a population, where the variant has part...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
+<td>An association between a two populations</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
+<td>An association between a gene and a gene expression site, possibly qualified ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
+<td>An association between a sequence variant and a treatment or health intervent...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
+<td>An association between a macromolecular machine mixin (gene, gene product or ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td>A functional association between a macromolecular machine (gene, gene product...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td>A functional association between a macromolecular machine (gene, gene product...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td>A functional association between a macromolecular machine (gene, gene product...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
+<td>Added in response to capturing relationship between microbiome activities as ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
+<td>Added in response to capturing relationship between microbiome activities as ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
+<td>An association between a sequence feature and a nucleic acid entity it is loc...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
+<td>A relationship between a sequence feature and a nucleic acid entity it is loc...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
+<td>For example, a particular exon is part of a particular transcript or gene</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
+<td>A gene is a collection of transcripts</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
+<td>A gene is transcribed and potentially translated to a gene product</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
+<td>A transcript is formed from multiple exons</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td>A regulatory relationship between two genes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityPartOfAssociation/">AnatomicalEntityToAnatomicalEntityPartOfAssociation</a></td>
+<td>A relationship between two anatomical entities where the relationship is mere...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td>A relationship between two anatomical entities where the relationship is onto...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
+<td>A relationship between two organism taxon nodes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
+<td>A child-parent relationship between two taxa</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
+<td>An interaction relationship between two taxa</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
+<td></td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<ul>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>['BRACA1']</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>denormalized</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/biolink/biolink-model</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>biolink:subject_label_closure</td>
+</tr>
+<tr>
+<td>native</td>
+<td>biolink:subject_label_closure</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: subject label closure
+annotations:
+  denormalized:
+    tag: denormalized
+    value: true
+description: Used to hold the subject label closure of an association. This is a denormalized  field
+  used primarily in the SQL serialization of a knowledge graph via KGX.
+examples:
+- value: '[''BRACA1'']'
+  description: The subject label closure of the association between the gene 'BRCA1'
+    and the disease 'breast cancer' is the set of all labels that are ancestors of
+    'BRCA1' in the biolink model.
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: association slot
+domain: association
+multivalued: true
+alias: subject_label_closure
+domain_of:
+- association
+range: string
+
+</code></pre>
+
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+    
+  </body>
+</html>
