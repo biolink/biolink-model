@@ -191,8 +191,9 @@ gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	# added copying of images and renaming of TEMP.md
-	$(RUN) generate_viz_json
-	cp infores_catalog.yaml $(DOCDIR) \
+	$(RUN) generate_viz_json \
+    cp *.yaml $(DOCDIR) ; \
+    cp *.json $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	cp -r $(SRC)/docs/images $(DOCDIR)/images ; \
 	# the .json cp here is the data required for the d3 visualizations
