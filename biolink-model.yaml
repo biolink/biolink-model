@@ -637,7 +637,6 @@ slots:
       - oboInOwl:hasRelatedSynonym
 
   deprecated:
-    is_a: node property
     range: boolean
     exact_mappings:
       - oboInOwl:ObsoleteClass
@@ -6006,6 +6005,7 @@ classes:
       - name
       - description
       - has attribute
+      - deprecated
        # evidence code(s)?
 
   named thing:
@@ -6016,7 +6016,6 @@ classes:
       - xref
       - full name
       - synonym
-      - deprecated
     slot_usage:
       category:
         required: true
