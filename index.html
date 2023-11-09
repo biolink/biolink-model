@@ -2007,14 +2007,944 @@ Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, 
 <tr>
 <th>Property</th>
 <th>Description</th>
-<th>Inverse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="active_in/">active_in</a></td>
 <td>None</td>
-<td>has active component</td>
+</tr>
+<tr>
+<td><a href="actively_involved_in/">actively_involved_in</a></td>
+<td>holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes</td>
+</tr>
+<tr>
+<td><a href="actively_involves/">actively_involves</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="acts_upstream_of/">acts_upstream_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="acts_upstream_of_negative_effect/">acts_upstream_of_negative_effect</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="acts_upstream_of_or_within/">acts_upstream_of_or_within</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="acts_upstream_of_or_within_negative_effect/">acts_upstream_of_or_within_negative_effect</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="acts_upstream_of_or_within_positive_effect/">acts_upstream_of_or_within_positive_effect</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="acts_upstream_of_positive_effect/">acts_upstream_of_positive_effect</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="adverse_event_of/">adverse_event_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="affected_by/">affected_by</a></td>
+<td>describes an entity of which the state or quality is affected by another existing entity.</td>
+</tr>
+<tr>
+<td><a href="affects/">affects</a></td>
+<td>Describes an entity that has an effect on the state or quality of another existing entity.</td>
+</tr>
+<tr>
+<td><a href="affects_likelihood_of/">affects_likelihood_of</a></td>
+<td>Holds between two entities where the presence or application of one alters the chance that the other will come to be.</td>
+</tr>
+<tr>
+<td><a href="affects_response_to/">affects_response_to</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="ameliorates_condition/">ameliorates_condition</a></td>
+<td>Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.</td>
+</tr>
+<tr>
+<td><a href="amount_or_activity_decreased_by/">amount_or_activity_decreased_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="amount_or_activity_increased_by/">amount_or_activity_increased_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="assesses/">assesses</a></td>
+<td>The effect of a thing on a target was interrogated in some assay. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.</td>
+</tr>
+<tr>
+<td><a href="associated_with/">associated_with</a></td>
+<td>Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).</td>
+</tr>
+<tr>
+<td><a href="associated_with_decreased_likelihood_of/">associated_with_decreased_likelihood_of</a></td>
+<td>Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable.</td>
+</tr>
+<tr>
+<td><a href="associated_with_increased_likelihood_of/">associated_with_increased_likelihood_of</a></td>
+<td>Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable.</td>
+</tr>
+<tr>
+<td><a href="associated_with_likelihood_of/">associated_with_likelihood_of</a></td>
+<td>A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infraction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI.</td>
+</tr>
+<tr>
+<td><a href="associated_with_resistance_to/">associated_with_resistance_to</a></td>
+<td>A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.</td>
+</tr>
+<tr>
+<td><a href="associated_with_sensitivity_to/">associated_with_sensitivity_to</a></td>
+<td>A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.</td>
+</tr>
+<tr>
+<td><a href="author/">author</a></td>
+<td>an instance of one (co-)creator primarily responsible for a written work</td>
+</tr>
+<tr>
+<td><a href="beneficial_in_models_for/">beneficial_in_models_for</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/  phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).</td>
+</tr>
+<tr>
+<td><a href="binds/">binds</a></td>
+<td>A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.</td>
+</tr>
+<tr>
+<td><a href="biomarker_for/">biomarker_for</a></td>
+<td>holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.</td>
+</tr>
+<tr>
+<td><a href="broad_match/">broad_match</a></td>
+<td>a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.</td>
+</tr>
+<tr>
+<td><a href="can_be_carried_out_by/">can_be_carried_out_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="capable_of/">capable_of</a></td>
+<td>holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.</td>
+</tr>
+<tr>
+<td><a href="catalyzes/">catalyzes</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="caused_by/">caused_by</a></td>
+<td>holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other</td>
+</tr>
+<tr>
+<td><a href="causes/">causes</a></td>
+<td>holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other</td>
+</tr>
+<tr>
+<td><a href="chemically_similar_to/">chemically_similar_to</a></td>
+<td>holds between one small molecule entity and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.</td>
+</tr>
+<tr>
+<td><a href="close_match/">close_match</a></td>
+<td>a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).</td>
+</tr>
+<tr>
+<td><a href="coexists_with/">coexists_with</a></td>
+<td>holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region</td>
+</tr>
+<tr>
+<td><a href="coexpressed_with/">coexpressed_with</a></td>
+<td>holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.</td>
+</tr>
+<tr>
+<td><a href="colocalizes_with/">colocalizes_with</a></td>
+<td>holds between two entities that are observed to be located in the same place.</td>
+</tr>
+<tr>
+<td><a href="completed_by/">completed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="composed_primarily_of/">composed_primarily_of</a></td>
+<td>x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.</td>
+</tr>
+<tr>
+<td><a href="condition_ameliorated_by/">condition_ameliorated_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="condition_associated_with_gene/">condition_associated_with_gene</a></td>
+<td>holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products</td>
+</tr>
+<tr>
+<td><a href="condition_exacerbated_by/">condition_exacerbated_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="condition_predisposed_by/">condition_predisposed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="condition_prevented_by/">condition_prevented_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="consumed_by/">consumed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="consumes/">consumes</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="contains_process/">contains_process</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="contraindicated_in/">contraindicated_in</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.</td>
+</tr>
+<tr>
+<td><a href="contributes_to/">contributes_to</a></td>
+<td>holds between two entities where the occurrence, existence, or activity of one contributes to the occurrence or generation of the other</td>
+</tr>
+<tr>
+<td><a href="contribution_from/">contribution_from</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="contributor/">contributor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="correlated_with/">correlated_with</a></td>
+<td>A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.</td>
+</tr>
+<tr>
+<td><a href="decreased_amount_in/">decreased_amount_in</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="decreased_likelihood_associated_with/">decreased_likelihood_associated_with</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="decreases_amount_or_activity_of/">decreases_amount_or_activity_of</a></td>
+<td>A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.</td>
+</tr>
+<tr>
+<td><a href="decreases_response_to/">decreases_response_to</a></td>
+<td>holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</td>
+</tr>
+<tr>
+<td><a href="derives_from/">derives_from</a></td>
+<td>holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</td>
+</tr>
+<tr>
+<td><a href="derives_into/">derives_into</a></td>
+<td>holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</td>
+</tr>
+<tr>
+<td><a href="develops_from/">develops_from</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="develops_into/">develops_into</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="diagnoses/">diagnoses</a></td>
+<td>a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.</td>
+</tr>
+<tr>
+<td><a href="directly_physically_interacts_with/">directly_physically_interacts_with</a></td>
+<td>A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).</td>
+</tr>
+<tr>
+<td><a href="disease_has_basis_in/">disease_has_basis_in</a></td>
+<td>A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.</td>
+</tr>
+<tr>
+<td><a href="disease_has_location/">disease_has_location</a></td>
+<td>A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.</td>
+</tr>
+<tr>
+<td><a href="disrupted_by/">disrupted_by</a></td>
+<td>describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.</td>
+</tr>
+<tr>
+<td><a href="disrupts/">disrupts</a></td>
+<td>describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.</td>
+</tr>
+<tr>
+<td><a href="editor/">editor</a></td>
+<td>editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).</td>
+</tr>
+<tr>
+<td><a href="enabled_by/">enabled_by</a></td>
+<td>holds between a process and a physical entity, where the physical entity executes the process</td>
+</tr>
+<tr>
+<td><a href="enables/">enables</a></td>
+<td>holds between a physical entity and a process, where the physical entity executes the process</td>
+</tr>
+<tr>
+<td><a href="exacerbates_condition/">exacerbates_condition</a></td>
+<td>Holds between a substance, procedure, or activity and an existing medical condition, a disease or phenotypic  feature, where the substance, procedure, or activity worsens some or all aspects of the condition.</td>
+</tr>
+<tr>
+<td><a href="exact_match/">exact_match</a></td>
+<td>holds between two entities that have strictly equivalent meanings, with a high degree of confidence</td>
+</tr>
+<tr>
+<td><a href="expressed_in/">expressed_in</a></td>
+<td>holds between a gene or gene product and an anatomical entity in which it is expressed</td>
+</tr>
+<tr>
+<td><a href="expresses/">expresses</a></td>
+<td>holds between an anatomical entity and gene or gene product that is expressed there</td>
+</tr>
+<tr>
+<td><a href="food_component_of/">food_component_of</a></td>
+<td>holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)</td>
+</tr>
+<tr>
+<td><a href="gene_associated_with_condition/">gene_associated_with_condition</a></td>
+<td>holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with</td>
+</tr>
+<tr>
+<td><a href="gene_product_of/">gene_product_of</a></td>
+<td>definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x</td>
+</tr>
+<tr>
+<td><a href="gene_fusion_with/">gene_fusion_with</a></td>
+<td>holds between two independent genes that have fused through  translocation, interstitial deletion, or chromosomal inversion to  form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.</td>
+</tr>
+<tr>
+<td><a href="genetic_association/">genetic_association</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="genetic_neighborhood_of/">genetic_neighborhood_of</a></td>
+<td>holds between two genes located nearby one another on a chromosome.</td>
+</tr>
+<tr>
+<td><a href="genetically_associated_with/">genetically_associated_with</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genetically_interacts_with/">genetically_interacts_with</a></td>
+<td>holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.</td>
+</tr>
+<tr>
+<td><a href="has_active_component/">has_active_component</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_active_ingredient/">has_active_ingredient</a></td>
+<td>holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component</td>
+</tr>
+<tr>
+<td><a href="has_adverse_event/">has_adverse_event</a></td>
+<td>An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.</td>
+</tr>
+<tr>
+<td><a href="has_author/">has_author</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_biomarker/">has_biomarker</a></td>
+<td>holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.</td>
+</tr>
+<tr>
+<td><a href="has_catalyst/">has_catalyst</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_chemical_role/">has_chemical_role</a></td>
+<td>A role is particular behaviour which a chemical entity may exhibit.</td>
+</tr>
+<tr>
+<td><a href="has_completed/">has_completed</a></td>
+<td>holds between an entity and a process that the entity is capable of and has completed</td>
+</tr>
+<tr>
+<td><a href="has_contraindication/">has_contraindication</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_contributor/">has_contributor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_decreased_amount/">has_decreased_amount</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_editor/">has_editor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_excipient/">has_excipient</a></td>
+<td>holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component</td>
+</tr>
+<tr>
+<td><a href="has_food_component/">has_food_component</a></td>
+<td>holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)</td>
+</tr>
+<tr>
+<td><a href="has_frameshift_variant/">has_frameshift_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_gene_product/">has_gene_product</a></td>
+<td>holds between a gene and a transcribed and/or translated product generated from it</td>
+</tr>
+<tr>
+<td><a href="has_increased_amount/">has_increased_amount</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_input/">has_input</a></td>
+<td>holds between a process and a continuant, where the continuant is an input into the process</td>
+</tr>
+<tr>
+<td><a href="has_manifestation/">has_manifestation</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_member/">has_member</a></td>
+<td>Defines a mereological relation between a collection and an item.</td>
+</tr>
+<tr>
+<td><a href="has_metabolite/">has_metabolite</a></td>
+<td>holds between two molecular entities in which the second one is derived from the first one as a product of metabolism</td>
+</tr>
+<tr>
+<td><a href="has_missense_variant/">has_missense_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_mode_of_inheritance/">has_mode_of_inheritance</a></td>
+<td>Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).</td>
+</tr>
+<tr>
+<td><a href="has_molecular_consequence/">has_molecular_consequence</a></td>
+<td>connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583</td>
+</tr>
+<tr>
+<td><a href="has_nearby_variant/">has_nearby_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_negative_upstream_actor/">has_negative_upstream_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_negative_upstream_or_within_actor/">has_negative_upstream_or_within_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_non_coding_variant/">has_non_coding_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_nonsense_variant/">has_nonsense_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_not_completed/">has_not_completed</a></td>
+<td>holds between an entity and a process that the entity is capable of, but has not completed</td>
+</tr>
+<tr>
+<td><a href="has_nutrient/">has_nutrient</a></td>
+<td>one or more nutrients which are growth factors for a living organism</td>
+</tr>
+<tr>
+<td><a href="has_output/">has_output</a></td>
+<td>holds between a process and a continuant, where the continuant is an output of the process</td>
+</tr>
+<tr>
+<td><a href="has_part/">has_part</a></td>
+<td>holds between wholes and their parts (material entities or processes)</td>
+</tr>
+<tr>
+<td><a href="has_participant/">has_participant</a></td>
+<td>holds between a process and a continuant, where the continuant is somehow involved in the process</td>
+</tr>
+<tr>
+<td><a href="has_phenotype/">has_phenotype</a></td>
+<td>holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.</td>
+</tr>
+<tr>
+<td><a href="has_plasma_membrane_part/">has_plasma_membrane_part</a></td>
+<td>Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.</td>
+</tr>
+<tr>
+<td><a href="has_positive_upstream_actor/">has_positive_upstream_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_positive_upstream_or_within_actor/">has_positive_upstream_or_within_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_provider/">has_provider</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_publisher/">has_publisher</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_sequence_location/">has_sequence_location</a></td>
+<td>holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.</td>
+</tr>
+<tr>
+<td><a href="has_sequence_variant/">has_sequence_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_side_effect/">has_side_effect</a></td>
+<td>An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.</td>
+</tr>
+<tr>
+<td><a href="has_splice_site_variant/">has_splice_site_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_substrate/">has_substrate</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_synonymous_variant/">has_synonymous_variant</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_target/">has_target</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_upstream_actor/">has_upstream_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_upstream_or_within_actor/">has_upstream_or_within_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_variant_part/">has_variant_part</a></td>
+<td>holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it</td>
+</tr>
+<tr>
+<td><a href="homologous_to/">homologous_to</a></td>
+<td>holds between two biological entities that have common evolutionary origin</td>
+</tr>
+<tr>
+<td><a href="in_cell_population_with/">in_cell_population_with</a></td>
+<td>holds between two genes or gene products that are expressed in the same cell type or population</td>
+</tr>
+<tr>
+<td><a href="in_clinical_trials_for/">in_clinical_trials_for</a></td>
+<td>Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place).</td>
+</tr>
+<tr>
+<td><a href="in_complex_with/">in_complex_with</a></td>
+<td>holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex</td>
+</tr>
+<tr>
+<td><a href="in_linkage_disequilibrium_with/">in_linkage_disequilibrium_with</a></td>
+<td>holds between two sequence variants, the presence of which are correlated in a population</td>
+</tr>
+<tr>
+<td><a href="in_pathway_with/">in_pathway_with</a></td>
+<td>holds between two genes or gene products that are part of in the same biological pathway</td>
+</tr>
+<tr>
+<td><a href="in_preclinical_trials_for/">in_preclinical_trials_for</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical  study has been performed specifically to test the potential of the  substance, procedure, or activity to treat  the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce  the risk of it manifesting in the first place).</td>
+</tr>
+<tr>
+<td><a href="in_taxon/">in_taxon</a></td>
+<td>connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'</td>
+</tr>
+<tr>
+<td><a href="increased_amount_of/">increased_amount_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="increased_likelihood_associated_with/">increased_likelihood_associated_with</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="increases_amount_or_activity_of/">increases_amount_or_activity_of</a></td>
+<td>A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object.</td>
+</tr>
+<tr>
+<td><a href="increases_response_to/">increases_response_to</a></td>
+<td>holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</td>
+</tr>
+<tr>
+<td><a href="indirectly_physically_interacts_with/">indirectly_physically_interacts_with</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="interacts_with/">interacts_with</a></td>
+<td>holds between any two entities that directly or indirectly interact with each other</td>
+</tr>
+<tr>
+<td><a href="is_active_ingredient_of/">is_active_ingredient_of</a></td>
+<td>holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component</td>
+</tr>
+<tr>
+<td><a href="is_assessed_by/">is_assessed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_diagnosed_by/">is_diagnosed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_excipient_of/">is_excipient_of</a></td>
+<td>holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component</td>
+</tr>
+<tr>
+<td><a href="is_frameshift_variant_of/">is_frameshift_variant_of</a></td>
+<td>holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.</td>
+</tr>
+<tr>
+<td><a href="is_input_of/">is_input_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_metabolite_of/">is_metabolite_of</a></td>
+<td>holds between two molecular entities in which the first one is derived from the second one as a product of metabolism</td>
+</tr>
+<tr>
+<td><a href="is_missense_variant_of/">is_missense_variant_of</a></td>
+<td>holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.</td>
+</tr>
+<tr>
+<td><a href="is_molecular_consequence_of/">is_molecular_consequence_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_nearby_variant_of/">is_nearby_variant_of</a></td>
+<td>holds between a sequence variant and a gene sequence that the variant is genomically close to.</td>
+</tr>
+<tr>
+<td><a href="is_non_coding_variant_of/">is_non_coding_variant_of</a></td>
+<td>holds between a sequence variant and a gene, where the variant does not affect the coding sequence</td>
+</tr>
+<tr>
+<td><a href="is_nonsense_variant_of/">is_nonsense_variant_of</a></td>
+<td>holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon</td>
+</tr>
+<tr>
+<td><a href="is_output_of/">is_output_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_sequence_variant_of/">is_sequence_variant_of</a></td>
+<td>holds between a sequence variant and a nucleic acid entity</td>
+</tr>
+<tr>
+<td><a href="is_side_effect_of/">is_side_effect_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_splice_site_variant_of/">is_splice_site_variant_of</a></td>
+<td>holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.</td>
+</tr>
+<tr>
+<td><a href="is_substrate_of/">is_substrate_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="is_synonymous_variant_of/">is_synonymous_variant_of</a></td>
+<td>holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence</td>
+</tr>
+<tr>
+<td><a href="lacks_part/">lacks_part</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="likelihood_affected_by/">likelihood_affected_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="likelihood_associated_with/">likelihood_associated_with</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="located_in/">located_in</a></td>
+<td>holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)</td>
+</tr>
+<tr>
+<td><a href="location_of/">location_of</a></td>
+<td>holds between material entity or site and a material entity that is located within it (but not considered a part of it)</td>
+</tr>
+<tr>
+<td><a href="location_of_disease/">location_of_disease</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="manifestation_of/">manifestation_of</a></td>
+<td>that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome</td>
+</tr>
+<tr>
+<td><a href="member_of/">member_of</a></td>
+<td>Defines a mereological relation between a item and a collection.</td>
+</tr>
+<tr>
+<td><a href="mentioned_by/">mentioned_by</a></td>
+<td>refers to is a relation between one named thing and the information content entity that it makes reference to.</td>
+</tr>
+<tr>
+<td><a href="mentions/">mentions</a></td>
+<td>refers to is a relation between one information content entity and the named thing that it makes reference to.</td>
+</tr>
+<tr>
+<td><a href="missing_from/">missing_from</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="mode_of_inheritance_of/">mode_of_inheritance_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="model_of/">model_of</a></td>
+<td>holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.</td>
+</tr>
+<tr>
+<td><a href="models/">models</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="narrow_match/">narrow_match</a></td>
+<td>a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.</td>
+</tr>
+<tr>
+<td><a href="negatively_correlated_with/">negatively_correlated_with</a></td>
+<td>A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of  one correlates with a decrease or absence of the other).</td>
+</tr>
+<tr>
+<td><a href="not_completed_by/">not_completed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="nutrient_of/">nutrient_of</a></td>
+<td>holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)</td>
+</tr>
+<tr>
+<td><a href="occurs_in/">occurs_in</a></td>
+<td>holds between a process and a material entity or site within which the process occurs</td>
+</tr>
+<tr>
+<td><a href="occurs_in_disease/">occurs_in_disease</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="occurs_together_in_literature_with/">occurs_together_in_literature_with</a></td>
+<td>holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.</td>
+</tr>
+<tr>
+<td><a href="opposite_of/">opposite_of</a></td>
+<td>x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) &lt;= M(x,y) or M(y,z) &lt;= M(y,x). (This description is from RO. Needs to be rephrased).</td>
+</tr>
+<tr>
+<td><a href="orthologous_to/">orthologous_to</a></td>
+<td>a homology relationship between entities (typically genes) that diverged after a speciation event.</td>
+</tr>
+<tr>
+<td><a href="overlaps/">overlaps</a></td>
+<td>holds between entities that overlap in their extents (materials or processes)</td>
+</tr>
+<tr>
+<td><a href="paralogous_to/">paralogous_to</a></td>
+<td>a homology relationship that holds between entities (typically genes) that diverged after a duplication event.</td>
+</tr>
+<tr>
+<td><a href="part_of/">part_of</a></td>
+<td>holds between parts and wholes (material entities or processes)</td>
+</tr>
+<tr>
+<td><a href="participates_in/">participates_in</a></td>
+<td>holds between a continuant and a process, where the continuant is somehow involved in the process</td>
+</tr>
+<tr>
+<td><a href="phenotype_of/">phenotype_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="physically_interacts_with/">physically_interacts_with</a></td>
+<td>holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.</td>
+</tr>
+<tr>
+<td><a href="plasma_membrane_part_of/">plasma_membrane_part_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="positively_correlated_with/">positively_correlated_with</a></td>
+<td>A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or  presence of one correlates with an increase or presence of the other).</td>
+</tr>
+<tr>
+<td><a href="preceded_by/">preceded_by</a></td>
+<td>holds between two processes, where the other is completed before the one begins</td>
+</tr>
+<tr>
+<td><a href="precedes/">precedes</a></td>
+<td>holds between two processes, where one completes before the other begins</td>
+</tr>
+<tr>
+<td><a href="predisposes_to_condition/">predisposes_to_condition</a></td>
+<td>Holds between two entities where the presence or application of one increases the chance that the other will come to be.</td>
+</tr>
+<tr>
+<td><a href="preventative_for_condition/">preventative_for_condition</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.</td>
+</tr>
+<tr>
+<td><a href="primarily_composed_of/">primarily_composed_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="produced_by/">produced_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="produces/">produces</a></td>
+<td>holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity</td>
+</tr>
+<tr>
+<td><a href="promotes_condition/">promotes_condition</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.</td>
+</tr>
+<tr>
+<td><a href="provider/">provider</a></td>
+<td>person, group, organization or project that provides a piece of information (e.g. a knowledge association).</td>
+</tr>
+<tr>
+<td><a href="publisher/">publisher</a></td>
+<td>organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).</td>
+</tr>
+<tr>
+<td><a href="regulated_by/">regulated_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="regulates/">regulates</a></td>
+<td>A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.</td>
+</tr>
+<tr>
+<td><a href="related_condition/">related_condition</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="related_to/">related_to</a></td>
+<td>A relationship that is asserted between two named things</td>
+</tr>
+<tr>
+<td><a href="related_to_at_concept_level/">related_to_at_concept_level</a></td>
+<td>Represents a relationship held between terminology components that describe the conceptual model of a domain.</td>
+</tr>
+<tr>
+<td><a href="related_to_at_instance_level/">related_to_at_instance_level</a></td>
+<td>Represents a relationship held between two instances of a data classes.  Much like an assertion component, in an ABox, these represent facts associated with the conceptual model.</td>
+</tr>
+<tr>
+<td><a href="resistance_associated_with/">resistance_associated_with</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="response_affected_by/">response_affected_by</a></td>
+<td>holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.</td>
+</tr>
+<tr>
+<td><a href="response_decreased_by/">response_decreased_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="response_increased_by/">response_increased_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="same_as/">same_as</a></td>
+<td>holds between two entities that are considered equivalent to each other</td>
+</tr>
+<tr>
+<td><a href="sensitivity_associated_with/">sensitivity_associated_with</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="sequence_location_of/">sequence_location_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="similar_to/">similar_to</a></td>
+<td>holds between an entity and some other entity with similar features.</td>
+</tr>
+<tr>
+<td><a href="studied_for_treatment_with/">studied_for_treatment_with</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="studied_to_treat/">studied_to_treat</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place).</td>
+</tr>
+<tr>
+<td><a href="subclass_of/">subclass_of</a></td>
+<td>holds between two classes where the domain class is a specialization of the range class</td>
+</tr>
+<tr>
+<td><a href="superclass_of/">superclass_of</a></td>
+<td>holds between two classes where the domain class is a super class of the range class</td>
+</tr>
+<tr>
+<td><a href="target_for/">target_for</a></td>
+<td>A gene is a target of a disease when its products are druggable and when a drug interaction with the gene product could have a therapeutic effect</td>
+</tr>
+<tr>
+<td><a href="taxon_of/">taxon_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="temporally_related_to/">temporally_related_to</a></td>
+<td>holds between two entities with a temporal relationship</td>
+</tr>
+<tr>
+<td><a href="transcribed_from/">transcribed_from</a></td>
+<td>x is transcribed from y if and only if x is synthesized from template y</td>
+</tr>
+<tr>
+<td><a href="transcribed_to/">transcribed_to</a></td>
+<td>inverse of transcribed from</td>
+</tr>
+<tr>
+<td><a href="translates_to/">translates_to</a></td>
+<td>x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)</td>
+</tr>
+<tr>
+<td><a href="translation_of/">translation_of</a></td>
+<td>inverse of translates to</td>
+</tr>
+<tr>
+<td><a href="variant_part_of/">variant_part_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="was_applied_to_treat/">was_applied_to_treat</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</td>
+</tr>
+<tr>
+<td><a href="xenologous_to/">xenologous_to</a></td>
+<td>a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.</td>
 </tr>
 </tbody>
 </table>
