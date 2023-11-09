@@ -45,7 +45,7 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for c in gen.all_class_objects()|sort(attribute=sort_by) -%}
 {%- if element.name in c.in_subset -%}
-| {{gen.link(c)}} | {{c.description|enshorten}} |
+| {{gen.link(c)}} | {{c.description}} |
 {% endif -%}
 {% endfor %}
 
@@ -67,7 +67,7 @@ URI: {{ gen.uri_link(element) }}
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
 {% for s in filtered_slots -%}
-| {{gen.link(s)}} | {{ gen.cardinality(s) }} <br/> {{gen.link(s.range)}}  | {{s.description|enshorten}} {% if s.identifier %}**identifier**{% endif %}  |
+| {{gen.link(s)}} | {{ gen.cardinality(s) }} <br/> {{gen.link(s.range)}}  | {{s.description}} {% if s.identifier %}**identifier**{% endif %}  |
 {% endfor %}
 {%- endif %}
 
@@ -85,7 +85,7 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for s in slots_in_subset|sort(attribute=sort_by) -%}
 {%- if element.name in s.in_subset -%}
-| {{ gen.link(s) }} | {{ s.description|enshorten }} |
+| {{ gen.link(s) }} | {{ s.description }} |
 {%- endif %}
 {% endfor %}
 
@@ -99,7 +99,7 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for e in enums_in_subset|sort(attribute='name') -%}
 {%- if element.name in e.in_subset %}
-| {{ gen.link(e) }} | {{ e.description|enshorten }} |
+| {{ gen.link(e) }} | {{ e.description }} |
 {%- endif %}
 {% endfor %}
 
