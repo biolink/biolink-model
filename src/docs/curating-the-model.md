@@ -12,8 +12,8 @@ metamodel components.  Like many modeling frameworks, LinkML comes with a contro
 [terms](https://linkml.io/linkml-model/latest/) that are used to describe the model.  While the modeling language
 is robust and might seem overwhelming, understanding just a few basic components like: 
 
-* [classes](https://linkml.io/linkml-model/latest/ClassDefinition.html)
-* [slots](https://linkml.io/linkml-model/latest/SlotDefinition.html)
+* [classes](https://linkml.io/linkml-model/latest/docs/ClassDefinition.html)
+* [slots](https://linkml.io/linkml-model/latest/docs/SlotDefinition.html)
 * [exact_mappings](https://linkml.io/linkml-model/latest/docs/exact_mappings/)
 * [aliases](https://linkml.io/linkml-model/latest/docs/aliases/)
 * [is_a](https://linkml.io/linkml-model/latest/docs/is_a/)
