@@ -48,11 +48,11 @@ Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, 
 
 ## Predicates ([Visualization](predicates.html))
 
-| Property | Description | Inverse |
-| --- | --- | --- |
-{% for s in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
-{%- if 'related to' in schemaview.slot_ancestors(s.name) -%}
-| {{gen.link(s)}} | {{s.description}} | {{schemaview.inverse(s.name)}} |
+| Property | Description |
+{% for p in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'related to' in schemaview.slot_ancestors(p.name) -%}
+| --- | --- |
+| {{gen.link(p)}} | {{p.description}} |
 {%- endif -%}
 {% endfor %}
 
