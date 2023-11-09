@@ -360,57 +360,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example 1:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2" class="md-nav__link">
-    Example 2:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-3" class="md-nav__link">
-    Example 3:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-4" class="md-nav__link">
-    Example 4:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-5" class="md-nav__link">
-    Example 5:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-6" class="md-nav__link">
-    Example 6:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-7" class="md-nav__link">
-    Example 7:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-8" class="md-nav__link">
-    Example 8:
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -594,57 +545,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example 1:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2" class="md-nav__link">
-    Example 2:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-3" class="md-nav__link">
-    Example 3:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-4" class="md-nav__link">
-    Example 4:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-5" class="md-nav__link">
-    Example 5:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-6" class="md-nav__link">
-    Example 6:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-7" class="md-nav__link">
-    Example 7:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-8" class="md-nav__link">
-    Example 8:
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -677,7 +579,8 @@
 <h2 id="chemical-affects-gene-association">Chemical affects Gene Association</h2>
 <p>Here we take some real-world examples of knowledge statements from a variety of sources
 and describe how they would be represented in Biolink Model.</p>
-<h3 id="example-1">Example 1:</h3>
+<h3 id="examples">Examples</h3>
+<p>Example 1: </p>
 <p>"Methionine deficiency results in increased expression of ADRB2 in adipose tissue"</p>
 <p>In keeping with our modeling paradigms (<a href="../curating-the-model/">Curating The Model</a>)
 - Nodes should represent core domain concepts
@@ -791,7 +694,7 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
   }
 }
 </code></pre>
-<h3 id="example-2">Example 2:</h3>
+<p>Example 2:</p>
 <p>"Fenofibrate binds to PPARA protein"  - This is a simple <code>Chemical interacts with Gene</code> statement (no qualifiers needed)</p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
@@ -801,7 +704,7 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
   &quot;object&quot;: &quot;NCBIGene:5465&quot;  # PPARA
 }
 </code></pre>
-<h3 id="example-3">Example 3:</h3>
+<p>Example 3:</p>
 <p>"Cyclophosphamide affects the hydroxylation of CYP2B6" - A simple chemical affects gene (aspect) Statement  - no direction to the effect. </p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
@@ -812,7 +715,7 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
   &quot;object_aspect_qualifier&quot;: &quot;hydroxylation&quot;
 }
 </code></pre>
-<h3 id="example-4">Example 4:</h3>
+<p>Example 4:</p>
 <p>"Bisphenol A results in decreased degradation of ESR1 protein" - A Statement where the effect has a direction (decreased)</p>
 <pre><code class="language-json">    {
     &quot;id&quot;: &quot;e0&quot;,
@@ -825,7 +728,7 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
     &quot;object_direction_qualifier&quot;: &quot;decreased&quot;
     }
 </code></pre>
-<h3 id="example-5">Example 5:</h3>
+<p>Example 5: </p>
 <p>"Bisphenol A is associated with decreased degradation of ESR1 protein" - A (hypothetical) chemical associated_with 
 gene (aspect)  Statement with same S/O concepts as above</p>
 <pre><code class="language-json">{
@@ -838,7 +741,7 @@ gene (aspect)  Statement with same S/O concepts as above</p>
   &quot;object_direction_qualifier&quot;: &quot;decreased&quot;
 }
 </code></pre>
-<h3 id="example-6">Example 6:</h3>
+<p>Example 6:</p>
 <p>"Progesterone metabolites cause decreased methylation of APP promoter mutant forms" - A more complex example where a 
 metabolite of the specified chemical is the effector of a heavily qualified Statement object.</p>
 <pre><code class="language-json">{
@@ -854,7 +757,7 @@ metabolite of the specified chemical is the effector of a heavily qualified Stat
   &quot;object_form_or_variant_qualifier&quot;: &quot;mutant&quot;
 }
 </code></pre>
-<h3 id="example-7">Example 7:</h3>
+<p>Example 7:</p>
 <p>“Hexachlorobenzene analog causes increased methylation of CDKN2A enhancer alternative form”  - Another complex example 
 where an analog of a specified chemical is the effector of a heavily qualified Statement object.</p>
 <pre><code class="language-json">{
@@ -871,7 +774,7 @@ where an analog of a specified chemical is the effector of a heavily qualified S
   &quot;object_form_or_variant_qualifier&quot;: &quot;modified&quot;
 }
 </code></pre>
-<h3 id="example-8">Example 8:</h3>
+<p>Example 8:</p>
 <p>"Fenofibrate is an agonist of PPARA protein” - Chemical increases'  gene activity, via a specific control mechanism (agonist)</p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
