@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,240.79,123"];
+	node [label="\N"];
+	"mapping collection"	[height=0.5,
+		label="mapping collection",
+		pos="98.791,105",
+		width=2.7442];
+	"predicate mappings"	[color=blue,
+		height=0.5,
+		label="predicate mapping",
+		pos="98.791,18",
+		width=2.7261];
+	"mapping collection" -> "predicate mappings"	[color=blue,
+		label="predicate mappings",
+		lp="169.79,61.5",
+		pos="e,98.791,36.175 98.791,86.799 98.791,75.163 98.791,59.548 98.791,46.237",
+		style=solid];
+}

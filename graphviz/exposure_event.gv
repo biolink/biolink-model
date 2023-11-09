@@ -1,0 +1,34 @@
+digraph {
+	graph [bb="0,0,376.94,123"];
+	node [label="\N"];
+	"exposure event"	[height=0.5,
+		label="exposure event",
+		pos="209.69,105",
+		width=2.2748];
+	"ontology class"	[height=0.5,
+		pos="76.693,18",
+		width=2.1304];
+	"exposure event" -> "ontology class"	[label=is_a,
+		lp="165.69,61.5",
+		pos="e,101.93,35.128 184.36,87.812 163.38,74.401 133.38,55.226 110.37,40.523"];
+	id	[color=blue,
+		height=0.5,
+		label=string,
+		pos="209.69,18",
+		width=1.0652];
+	"exposure event" -> id	[color=blue,
+		label=id,
+		lp="216.69,61.5",
+		pos="e,209.69,36.175 209.69,86.799 209.69,75.163 209.69,59.548 209.69,46.237",
+		style=solid];
+	timepoint	[color=blue,
+		height=0.5,
+		label="time type",
+		pos="321.69,18",
+		width=1.5346];
+	"exposure event" -> timepoint	[color=blue,
+		label=timepoint,
+		lp="307.69,61.5",
+		pos="e,300.92,34.764 231.29,87.611 248.79,74.332 273.6,55.499 292.81,40.923",
+		style=solid];
+}

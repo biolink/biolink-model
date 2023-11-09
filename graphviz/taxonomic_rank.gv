@@ -1,0 +1,24 @@
+digraph {
+	graph [bb="0,0,248.04,123"];
+	node [label="\N"];
+	"taxonomic rank"	[height=0.5,
+		label="taxonomic rank",
+		pos="142.69,105",
+		width=2.2929];
+	"ontology class"	[height=0.5,
+		pos="76.693,18",
+		width=2.1304];
+	"taxonomic rank" -> "ontology class"	[label=is_a,
+		lp="127.69,61.5",
+		pos="e,89.706,35.758 129.65,87.207 120.07,74.866 106.89,57.894 96.08,43.967"];
+	id	[color=blue,
+		height=0.5,
+		label=string,
+		pos="209.69,18",
+		width=1.0652];
+	"taxonomic rank" -> id	[color=blue,
+		label=id,
+		lp="186.69,61.5",
+		pos="e,196.94,35.182 155.93,87.207 165.78,74.706 179.38,57.452 190.44,43.426",
+		style=solid];
+}
