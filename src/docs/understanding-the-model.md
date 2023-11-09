@@ -27,10 +27,10 @@ linkML is a general purpose modeling language that follows object-oriented and o
 Models are authored in YAML;  using linkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.
 
 The modeling language provides the following idioms,
-* **Class definition** : Used to define classes
-* **Slot definition** : Used to define class properties
-* **Type definition** : Used to define data types
-* **Schema definition** : Used to define properties of the model itself
+- **Class definition** : Used to define classes
+- **Slot definition** : Used to define class properties
+- **Type definition** : Used to define data types
+- **Schema definition** : Used to define properties of the model itself
 
 Refer to [linkML on GitHub](https://github.com/linkml) for a more detailed guide on LinkML.
 
@@ -42,24 +42,24 @@ The model also defines node properties, edge properties, and types.
 The model itself is organized using linkML Class definition (class), Slot definition (slot), Type definition (type) 
 and Schema definition.
 
-**Conventions**
+#### Conventions
 
 In [Biolink Model YAML](biolink_model.yaml) any class, slot, or type is defined in `sentence case` form. When this model is compiled
-to various forms (like JSON-Schema, OWL, Markdown) the representation is based on the following convention,
-* classes are named in `CamelCase` form
-* slots are named in `snake_case` form
-* types are named in `snake_case` form
+to various forms (like JSON-Schema, OWL, Markdown) the representation is based on the following convention, 
+- classes are named in `CamelCase` form
+- slots are named in `snake_case` form
+- types are named in `snake_case` form
 
 At a glance the structure is as follows,
-* [Classes](#classes)
-  * [Entities](#Named-Things)
-  * [Associations](#associations)
-  * [Mixins](#mixins)
-* [Slots](#slots)
-  * [Predicates](#predicates)
-  * [Node Properties](#node-properties)
-  * [Edge Properties](#edge-properties)
-* [Types](#types)
+- [Classes](#classes)
+  - [Entities](#Named-Things)
+  - [Associations](#associations)
+  - [Mixins](#mixins)
+- [Slots](#slots)
+  - [Predicates](#predicates)
+  - [Node Properties](#node-properties)
+  - [Edge Properties](#edge-properties)
+- [Types](#types)
 
 
 ### Classes
