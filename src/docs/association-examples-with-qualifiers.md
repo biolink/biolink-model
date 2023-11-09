@@ -10,7 +10,9 @@ nav_order: 2
 Here we take some real-world examples of knowledge statements from a variety of sources
 and describe how they would be represented in Biolink Model.
 
-### Example 1: 
+### Examples
+
+Example 1: 
 
 "Methionine deficiency results in increased expression of ADRB2 in adipose tissue"
 
@@ -137,7 +139,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 
 
 
-### Example 2:
+Example 2:
 
 "Fenofibrate binds to PPARA protein"  - This is a simple `Chemical interacts with Gene` statement (no qualifiers needed)
 
@@ -151,7 +153,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 }
 ```
 
-### Example 3:
+Example 3:
 
 "Cyclophosphamide affects the hydroxylation of CYP2B6" - A simple chemical affects gene (aspect) Statement  - no direction to the effect. 
 
@@ -166,7 +168,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 }
 ```
 
-### Example 4:
+Example 4:
 
 "Bisphenol A results in decreased degradation of ESR1 protein" - A Statement where the effect has a direction (decreased)
     
@@ -183,7 +185,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
     }
 ```
 
-### Example 5: 
+Example 5: 
 
 "Bisphenol A is associated with decreased degradation of ESR1 protein" - A (hypothetical) chemical associated_with 
 gene (aspect)  Statement with same S/O concepts as above
@@ -200,7 +202,7 @@ gene (aspect)  Statement with same S/O concepts as above
 }
 ```
 
-### Example 6:
+Example 6:
 
 "Progesterone metabolites cause decreased methylation of APP promoter mutant forms" - A more complex example where a 
 metabolite of the specified chemical is the effector of a heavily qualified Statement object.
@@ -220,7 +222,7 @@ metabolite of the specified chemical is the effector of a heavily qualified Stat
 }
 ```
 
-### Example 7:
+Example 7:
 
 “Hexachlorobenzene analog causes increased methylation of CDKN2A enhancer alternative form”  - Another complex example 
 where an analog of a specified chemical is the effector of a heavily qualified Statement object.
@@ -241,7 +243,7 @@ where an analog of a specified chemical is the effector of a heavily qualified S
 }
 ```
 
-### Example 8:
+Example 8:
 
 "Fenofibrate is an agonist of PPARA protein” - Chemical increases'  gene activity, via a specific control mechanism (agonist)
 
