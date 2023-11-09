@@ -494,6 +494,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#classes" class="md-nav__link">
     Classes
   </a>
@@ -606,32 +613,32 @@ schema for labelled property graphs (Neo4j) or for edge labelled graphs (RDF). <
 <p>linkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in addition to the standard object-oriented hierarchy of a data model.</p>
 <p>Models are authored in YAML;  using linkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.</p>
 <p>The modeling language provides the following idioms,
-* <strong>Class definition</strong> : Used to define classes
-* <strong>Slot definition</strong> : Used to define class properties
-* <strong>Type definition</strong> : Used to define data types
-* <strong>Schema definition</strong> : Used to define properties of the model itself</p>
+- <strong>Class definition</strong> : Used to define classes
+- <strong>Slot definition</strong> : Used to define class properties
+- <strong>Type definition</strong> : Used to define data types
+- <strong>Schema definition</strong> : Used to define properties of the model itself</p>
 <p>Refer to <a href="https://github.com/linkml">linkML on GitHub</a> for a more detailed guide on LinkML.</p>
 <h2 id="structure-of-the-model">Structure of the Model</h2>
 <p>Biolink Model is a high-level data model where entities, associations, and predicates are arranged in a hierarchy. 
 The model also defines node properties, edge properties, and types.</p>
 <p>The model itself is organized using linkML Class definition (class), Slot definition (slot), Type definition (type) 
 and Schema definition.</p>
-<p><strong>Conventions</strong></p>
+<h4 id="conventions">Conventions</h4>
 <p>In <a href="biolink_model.yaml">Biolink Model YAML</a> any class, slot, or type is defined in <code>sentence case</code> form. When this model is compiled
-to various forms (like JSON-Schema, OWL, Markdown) the representation is based on the following convention,
-* classes are named in <code>CamelCase</code> form
-* slots are named in <code>snake_case</code> form
-* types are named in <code>snake_case</code> form</p>
+to various forms (like JSON-Schema, OWL, Markdown) the representation is based on the following convention, 
+- classes are named in <code>CamelCase</code> form
+- slots are named in <code>snake_case</code> form
+- types are named in <code>snake_case</code> form</p>
 <p>At a glance the structure is as follows,
-* <a href="#classes">Classes</a>
-  * <a href="#Named-Things">Entities</a>
-  * <a href="#associations">Associations</a>
-  * <a href="#mixins">Mixins</a>
-* <a href="#slots">Slots</a>
-  * <a href="#predicates">Predicates</a>
-  * <a href="#node-properties">Node Properties</a>
-  * <a href="#edge-properties">Edge Properties</a>
-* <a href="#types">Types</a></p>
+- <a href="#classes">Classes</a>
+  - <a href="#Named-Things">Entities</a>
+  - <a href="#associations">Associations</a>
+  - <a href="#mixins">Mixins</a>
+- <a href="#slots">Slots</a>
+  - <a href="#predicates">Predicates</a>
+  - <a href="#node-properties">Node Properties</a>
+  - <a href="#edge-properties">Edge Properties</a>
+- <a href="#types">Types</a></p>
 <h3 id="classes">Classes</h3>
 <p>A class represents an entity or an association. A class can have one more slots (properties).</p>
 <p>In RDF sense, a class is basically <code>rdfs:Class</code>.</p>
