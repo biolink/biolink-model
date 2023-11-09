@@ -9,12 +9,6 @@ The model provides class and edge attributes and associations that guide how ent
 The goal of the Biolink Model is to provide a consistent framework for representing biological knowledge across various
 databases and formats.  For more information, see: [understanding the model](understanding-the-model.md)
 
-###### Citing Biolink Model
-Unni DR, Moxon SAT, Bada M, Brush M, Bruskiewich R, Caufield JH, Clemons PA, Dancik V, Dumontier M, Fecho K, Glusman G,
-Hadlock JJ, Harris NL, Joshi A, Putman T, Qin G, Ramsey SA, Shefchek KA, Solbrig H, Soman K, Thessen AE, Haendel MA,
-Bizon C, Mungall CJ, The Biomedical Data Translator Consortium (2022).
-Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, and translational science. Clin Transl Sci. Wiley; 2022 Jun 6; [https://onlinelibrary.wiley.com/doi/10.1111/cts.13302](https://onlinelibrary.wiley.com/doi/10.1111/cts.13302)
-
 ## Classes (nodes) ([Visualization](categories.html))
 
 | Class | Description |
@@ -81,3 +75,9 @@ Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, 
 {% for ss in schemaview.all_subsets().values()|sort(attribute='name') -%}
 | {{gen.link(ss)}} | {{ss.description}} |
 {% endfor %}
+
+###### Citing Biolink Model
+Unni DR, Moxon SAT, Bada M, Brush M, Bruskiewich R, Caufield JH, Clemons PA, Dancik V, Dumontier M, Fecho K, Glusman G,
+Hadlock JJ, Harris NL, Joshi A, Putman T, Qin G, Ramsey SA, Shefchek KA, Solbrig H, Soman K, Thessen AE, Haendel MA,
+Bizon C, Mungall CJ, The Biomedical Data Translator Consortium (2022).
+Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, and translational science. Clin Transl Sci. Wiley; 2022 Jun 6; [https://onlinelibrary.wiley.com/doi/10.1111/cts.13302](https://onlinelibrary.wiley.com/doi/10.1111/cts.13302)
