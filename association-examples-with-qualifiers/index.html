@@ -580,13 +580,11 @@
 <p>Here we take some real-world examples of knowledge statements from a variety of sources
 and describe how they would be represented in Biolink Model.</p>
 <h3 id="examples">Examples</h3>
-<p>Example 1: </p>
 <p>"Methionine deficiency results in increased expression of ADRB2 in adipose tissue"</p>
-<p>In keeping with our modeling paradigms (<a href="../curating-the-model/">Curating The Model</a>)
+<p>In keeping with our modeling paradigms (<a href="../curating-the-model/">Curating The Model</a>),
 - Nodes should represent core domain concepts
 - Use qualifiers to compose full node semantics
-- The ‘core triple’ should remain true if qualifiers are ignored. (except 'negation', 'negation' should never be ignored)
-- Control predicate proliferation
+- The ‘core triple’ should remain true if qualifiers are ignored. (except 'negation')
 - Represent information consistently</p>
 <p>We need to break this statement into its core components that are most likely going to be shared across many statements
 and data sources.  In this example sentence, we can first break it apart into three parts or core components:
@@ -613,7 +611,7 @@ qualifier that applies to the entirety of the fully qualified statement, an "ana
 that this statement all takes place in the "adipose tissue."</p>
 <p>Therefore, the fully qualified statement, using our core triple would be: </p>
 <ul>
-<li>json</li>
+<li>in JSON format:</li>
 </ul>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
@@ -694,7 +692,6 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
   }
 }
 </code></pre>
-<p>Example 2:</p>
 <p>"Fenofibrate binds to PPARA protein"  - This is a simple <code>Chemical interacts with Gene</code> statement (no qualifiers needed)</p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
@@ -704,7 +701,6 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
   &quot;object&quot;: &quot;NCBIGene:5465&quot;  # PPARA
 }
 </code></pre>
-<p>Example 3:</p>
 <p>"Cyclophosphamide affects the hydroxylation of CYP2B6" - A simple chemical affects gene (aspect) Statement  - no direction to the effect. </p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
@@ -715,7 +711,6 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
   &quot;object_aspect_qualifier&quot;: &quot;hydroxylation&quot;
 }
 </code></pre>
-<p>Example 4:</p>
 <p>"Bisphenol A results in decreased degradation of ESR1 protein" - A Statement where the effect has a direction (decreased)</p>
 <pre><code class="language-json">    {
     &quot;id&quot;: &quot;e0&quot;,
@@ -728,7 +723,6 @@ CHEBI:16811, biolink:affects, NCBIGene:154, biolink:causes, abundance, decreased
     &quot;object_direction_qualifier&quot;: &quot;decreased&quot;
     }
 </code></pre>
-<p>Example 5: </p>
 <p>"Bisphenol A is associated with decreased degradation of ESR1 protein" - A (hypothetical) chemical associated_with 
 gene (aspect)  Statement with same S/O concepts as above</p>
 <pre><code class="language-json">{
@@ -741,7 +735,6 @@ gene (aspect)  Statement with same S/O concepts as above</p>
   &quot;object_direction_qualifier&quot;: &quot;decreased&quot;
 }
 </code></pre>
-<p>Example 6:</p>
 <p>"Progesterone metabolites cause decreased methylation of APP promoter mutant forms" - A more complex example where a 
 metabolite of the specified chemical is the effector of a heavily qualified Statement object.</p>
 <pre><code class="language-json">{
@@ -757,7 +750,6 @@ metabolite of the specified chemical is the effector of a heavily qualified Stat
   &quot;object_form_or_variant_qualifier&quot;: &quot;mutant&quot;
 }
 </code></pre>
-<p>Example 7:</p>
 <p>“Hexachlorobenzene analog causes increased methylation of CDKN2A enhancer alternative form”  - Another complex example 
 where an analog of a specified chemical is the effector of a heavily qualified Statement object.</p>
 <pre><code class="language-json">{
@@ -774,7 +766,6 @@ where an analog of a specified chemical is the effector of a heavily qualified S
   &quot;object_form_or_variant_qualifier&quot;: &quot;modified&quot;
 }
 </code></pre>
-<p>Example 8:</p>
 <p>"Fenofibrate is an agonist of PPARA protein” - Chemical increases'  gene activity, via a specific control mechanism (agonist)</p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;e0&quot;,
