@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../working-with-the-model/">
+        <link rel="next" href="../association-examples-with-qualifiers/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -262,6 +262,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Using the LinkML Modeling Language
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -272,44 +283,265 @@
 
       </a>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../working-with-the-model/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Working with Biolink
-  </span>
-  
 
-      </a>
-    </li>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
-
+  
+  
     
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-      
+        <li class="md-nav__item">
+  <a href="#inheritance-related-slots" class="md-nav__link">
+    Inheritance Related Slots
+  </a>
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../information-resource-registry/" class="md-nav__link">
+    <nav class="md-nav" aria-label="Inheritance Related Slots">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#is_a" class="md-nav__link">
+    is_a
+  </a>
   
-  <span class="md-ellipsis">
-    Infores Identifier Registry
-  </span>
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    abstract
+  </a>
   
-
-      </a>
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    mixins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identification-descriptive-and-indexing-related-slots" class="md-nav__link">
+    Identification, Descriptive and Indexing Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Identification, Descriptive and Indexing Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_uri" class="md-nav__link">
+    slot_uri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in_subset" class="md-nav__link">
+    in_subset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_prefixes" class="md-nav__link">
+    id_prefixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-class-composition" class="md-nav__link">
+    Slots Relating to Class Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Class Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining_slots" class="md-nav__link">
+    defining_slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_usage" class="md-nav__link">
+    slot_usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-constraints-on-slot-composition" class="md-nav__link">
+    Slots Relating to Constraints on Slot Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Constraints on Slot Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-semantic-mappings-and-anchoring-to-external-ontology" class="md-nav__link">
+    Slots Relating Semantic Mappings and Anchoring to External Ontology
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating Semantic Mappings and Anchoring to External Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric_1" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse" class="md-nav__link">
+    inverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact_mappings" class="md-nav__link">
+    exact_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_mappings" class="md-nav__link">
+    close_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#narrow_mappings" class="md-nav__link">
+    narrow_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broad_mappings" class="md-nav__link">
+    broad_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related_mappings" class="md-nav__link">
+    related_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproperty_of" class="md-nav__link">
+    subproperty_of
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subclass_of" class="md-nav__link">
+    subclass_of
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -382,6 +614,44 @@
   
   <span class="md-ellipsis">
     Maintaining Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../information-resource-registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infores Identifier Registry
   </span>
   
 
@@ -486,6 +756,254 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance-related-slots" class="md-nav__link">
+    Inheritance Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Inheritance Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_a" class="md-nav__link">
+    is_a
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    abstract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    mixins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identification-descriptive-and-indexing-related-slots" class="md-nav__link">
+    Identification, Descriptive and Indexing Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Identification, Descriptive and Indexing Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_uri" class="md-nav__link">
+    slot_uri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in_subset" class="md-nav__link">
+    in_subset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_prefixes" class="md-nav__link">
+    id_prefixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-class-composition" class="md-nav__link">
+    Slots Relating to Class Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Class Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining_slots" class="md-nav__link">
+    defining_slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_usage" class="md-nav__link">
+    slot_usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-constraints-on-slot-composition" class="md-nav__link">
+    Slots Relating to Constraints on Slot Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Constraints on Slot Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-semantic-mappings-and-anchoring-to-external-ontology" class="md-nav__link">
+    Slots Relating Semantic Mappings and Anchoring to External Ontology
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating Semantic Mappings and Anchoring to External Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric_1" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse" class="md-nav__link">
+    inverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact_mappings" class="md-nav__link">
+    exact_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_mappings" class="md-nav__link">
+    close_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#narrow_mappings" class="md-nav__link">
+    narrow_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broad_mappings" class="md-nav__link">
+    broad_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related_mappings" class="md-nav__link">
+    related_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproperty_of" class="md-nav__link">
+    subproperty_of
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subclass_of" class="md-nav__link">
+    subclass_of
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -503,50 +1021,6 @@
 
 
 <h1 id="using-the-modeling-language">Using the Modeling Language</h1>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#inheritance-related-slots">Inheritance Related Slots</a><ul>
-<li><a href="#is_a">is_a</a></li>
-<li><a href="#abstract">abstract</a></li>
-<li><a href="#mixin">mixin</a></li>
-<li><a href="#mixins">mixins</a></li>
-</ul>
-</li>
-<li><a href="#identification-descriptive-and-indexing-related-slots">Identification, Descriptive and Indexing Related Slots</a><ul>
-<li><a href="#aliases">aliases</a></li>
-<li><a href="#description">description</a></li>
-<li><a href="#slot_uri">slot_uri</a></li>
-<li><a href="#in_subset">in_subset</a></li>
-<li><a href="#id_prefixes">id_prefixes</a></li>
-</ul>
-</li>
-<li><a href="#slots-relating-to-class-composition">Slots Relating to Class Composition</a><ul>
-<li><a href="#slots">slots</a></li>
-<li><a href="#defining_slots">defining_slots</a></li>
-<li><a href="#slot_usage">slot_usage</a></li>
-<li><a href="#required">required</a></li>
-</ul>
-</li>
-<li><a href="#slots-relating-to-constraints-on-slot-composition">Slots Relating to Constraints on Slot Composition</a><ul>
-<li><a href="#domain">domain</a></li>
-<li><a href="#range">range</a></li>
-<li><a href="#symmetric">symmetric</a></li>
-</ul>
-</li>
-<li><a href="#slots-relating-semantic-mappings-and-anchoring-to-external-ontology">Slots Relating Semantic Mappings and Anchoring to External Ontology</a><ul>
-<li><a href="#symmetric">symmetric</a></li>
-<li><a href="#inverse">inverse</a></li>
-<li><a href="#exact_mappings">exact_mappings</a></li>
-<li><a href="#close_mappings">close_mappings</a></li>
-<li><a href="#narrow_mappings">narrow_mappings</a></li>
-<li><a href="#broad_mappings">broad_mappings</a></li>
-<li><a href="#related_mappings">related_mappings</a></li>
-<li><a href="#subproperty_of">subproperty_of</a></li>
-<li><a href="#subclass_of">subclass_of</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="overview">Overview</h1>
 <p>The linkML provides a variety of slots to define the semantics of your Biolink Model class and slots.</p>
 <p>This document tries to address on how to use most of these slots in Biolink Model.</p>
 <p>Please refer to <a href="https://linkml.github.io/linkml-model/docs/">linkML documentation</a> for an exhaustive list of slots provided by the modeling language.</p>
