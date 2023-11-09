@@ -506,6 +506,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class NamedThing(Entity):
@@ -527,6 +528,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Attribute(NamedThing, OntologyClass):
@@ -551,6 +553,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalRole(Attribute):
@@ -575,6 +578,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class BiologicalSex(Attribute):
@@ -597,6 +601,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PhenotypicSex(BiologicalSex):
@@ -621,6 +626,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenotypicSex(BiologicalSex):
@@ -645,6 +651,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SeverityValue(Attribute):
@@ -669,6 +676,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class RelationshipType(OntologyClass):
@@ -704,6 +712,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Event(NamedThing):
@@ -725,6 +734,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class AdministrativeEntity(NamedThing):
@@ -744,6 +754,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Agent(AdministrativeEntity):
@@ -767,6 +778,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""it is recommended that an author's 'name' property be formatted as \"surname, firstname initial.\"""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class InformationContentEntity(NamedThing):
@@ -792,6 +804,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class StudyResult(InformationContentEntity):
@@ -817,6 +830,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class StudyVariable(InformationContentEntity):
@@ -842,6 +856,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class CommonDataElement(InformationContentEntity):
@@ -867,6 +882,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ConceptCountAnalysisResult(StudyResult):
@@ -892,6 +908,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ObservedExpectedFrequencyAnalysisResult(StudyResult):
@@ -917,6 +934,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class RelativeFrequencyAnalysisResult(StudyResult):
@@ -942,6 +960,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class TextMiningResult(StudyResult):
@@ -967,6 +986,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChiSquaredAnalysisResult(StudyResult):
@@ -992,6 +1012,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class LogOddsAnalysisResult(StudyResult):
@@ -1017,6 +1038,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Dataset(InformationContentEntity):
@@ -1042,6 +1064,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DatasetDistribution(InformationContentEntity):
@@ -1068,6 +1091,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DatasetVersion(InformationContentEntity):
@@ -1096,6 +1120,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DatasetSummary(InformationContentEntity):
@@ -1123,6 +1148,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ConfidenceLevel(InformationContentEntity):
@@ -1148,6 +1174,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EvidenceType(InformationContentEntity):
@@ -1173,6 +1200,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Publication(InformationContentEntity):
@@ -1203,6 +1231,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Book(Publication):
@@ -1233,6 +1262,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class BookChapter(Publication):
@@ -1264,6 +1294,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Serial(Publication):
@@ -1297,6 +1328,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Article(Publication):
@@ -1331,6 +1363,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class JournalArticle(Article):
@@ -1365,6 +1398,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Patent(Publication):
@@ -1395,6 +1429,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class WebPage(Publication):
@@ -1425,6 +1460,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PreprintPublication(Publication):
@@ -1455,6 +1491,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DrugLabel(Publication):
@@ -1485,6 +1522,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class RetrievalSource(InformationContentEntity):
@@ -1513,6 +1551,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PhysicalEssenceOrOccurrent(ConfiguredBaseModel):
@@ -1548,6 +1587,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Occurrent(PhysicalEssenceOrOccurrent):
@@ -1583,6 +1623,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Study(Activity):
@@ -1604,6 +1645,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Procedure(ActivityAndBehavior, NamedThing):
@@ -1625,6 +1667,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Phenomenon(Occurrent, NamedThing):
@@ -1646,6 +1689,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Device(NamedThing):
@@ -1667,6 +1711,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DiagnosticAid(NamedThing):
@@ -1688,6 +1733,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SubjectOfInvestigation(ConfiguredBaseModel):
@@ -1716,6 +1762,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PlanetaryEntity(NamedThing):
@@ -1737,6 +1784,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EnvironmentalProcess(PlanetaryEntity, Occurrent):
@@ -1756,6 +1804,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EnvironmentalFeature(PlanetaryEntity):
@@ -1775,6 +1824,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeographicLocation(PlanetaryEntity):
@@ -1798,6 +1848,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeographicLocationAtTime(GeographicLocation):
@@ -1822,6 +1873,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ThingWithTaxon(ConfiguredBaseModel):
@@ -1851,6 +1903,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenomicEntity(ConfiguredBaseModel):
@@ -1887,6 +1940,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
@@ -1913,6 +1967,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
@@ -1939,6 +1994,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Pathway(BiologicalProcess, OntologyClass):
@@ -1963,6 +2019,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PhysiologicalProcess(BiologicalProcess, OntologyClass):
@@ -1987,6 +2044,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
@@ -2011,6 +2069,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class OrganismAttribute(Attribute):
@@ -2035,6 +2094,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PhenotypicQuality(OrganismAttribute):
@@ -2059,6 +2119,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneticInheritance(BiologicalEntity):
@@ -2082,6 +2143,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
@@ -2105,6 +2167,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Bacterium(OrganismalEntity):
@@ -2128,6 +2191,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Virus(OrganismalEntity, SubjectOfInvestigation):
@@ -2151,6 +2215,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
@@ -2172,6 +2237,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Mammal(CellularOrganism, SubjectOfInvestigation):
@@ -2195,6 +2261,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Human(Mammal, SubjectOfInvestigation):
@@ -2218,6 +2285,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Plant(CellularOrganism):
@@ -2239,6 +2307,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Invertebrate(CellularOrganism):
@@ -2262,6 +2331,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Vertebrate(CellularOrganism):
@@ -2285,6 +2355,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Fungus(CellularOrganism):
@@ -2308,6 +2379,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class LifeStage(OrganismalEntity):
@@ -2331,6 +2403,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
@@ -2354,6 +2427,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
@@ -2377,6 +2451,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class StudyPopulation(PopulationOfIndividualOrganisms):
@@ -2400,6 +2475,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
@@ -2423,6 +2499,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Disease(DiseaseOrPhenotypicFeature):
@@ -2446,6 +2523,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
@@ -2469,6 +2547,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class BehavioralFeature(PhenotypicFeature):
@@ -2492,6 +2571,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class AnatomicalEntity(OrganismalEntity, PhysicalEssence):
@@ -2515,6 +2595,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class CellularComponent(AnatomicalEntity):
@@ -2538,6 +2619,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Cell(AnatomicalEntity):
@@ -2559,6 +2641,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class CellLine(OrganismalEntity, SubjectOfInvestigation):
@@ -2580,6 +2663,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GrossAnatomicalStructure(AnatomicalEntity):
@@ -2601,6 +2685,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalEntityOrGeneOrGeneProduct(ConfiguredBaseModel):
@@ -2632,6 +2717,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, PhysicalEssence, OntologyClass):
@@ -2656,6 +2742,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, PhysicalEssence, OntologyClass):
@@ -2680,6 +2767,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalEntityOrProteinOrPolypeptide(ConfiguredBaseModel):
@@ -2713,6 +2801,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MolecularEntity(ChemicalEntity):
@@ -2740,6 +2829,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SmallMolecule(MolecularEntity):
@@ -2767,6 +2857,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalMixture(ChemicalEntity):
@@ -2797,6 +2888,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, PhysicalEssence, OntologyClass):
@@ -2827,6 +2919,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MolecularMixture(ChemicalMixture):
@@ -2857,6 +2950,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ComplexMolecularMixture(ChemicalMixture):
@@ -2887,6 +2981,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ProcessedMaterial(ChemicalMixture):
@@ -2917,6 +3012,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
@@ -2947,6 +3043,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EnvironmentalFoodContaminant(ChemicalEntity):
@@ -2971,6 +3068,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class FoodAdditive(ChemicalEntity):
@@ -2995,6 +3093,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Food(ChemicalMixture):
@@ -3025,6 +3124,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MacromolecularMachineMixin(ConfiguredBaseModel):
@@ -3064,6 +3164,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneProductMixin(GeneOrGeneProduct):
@@ -3105,6 +3206,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicEntity, BiologicalEntity):
@@ -3129,6 +3231,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
@@ -3153,6 +3256,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Exon(BiologicalEntity):
@@ -3176,6 +3280,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Transcript(BiologicalEntity):
@@ -3199,6 +3304,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class CodingSequence(GenomicEntity, BiologicalEntity):
@@ -3221,6 +3327,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Polypeptide(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
@@ -3244,6 +3351,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Protein(Polypeptide, GeneProductMixin):
@@ -3267,6 +3375,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ProteinIsoform(Protein, GeneProductIsoformMixin):
@@ -3290,6 +3399,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
@@ -3313,6 +3423,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class NucleicAcidSequenceMotif(BiologicalEntity):
@@ -3336,6 +3447,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class RNAProduct(Transcript, GeneProductMixin):
@@ -3357,6 +3469,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
@@ -3380,6 +3493,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class NoncodingRNAProduct(RNAProduct):
@@ -3401,6 +3515,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MicroRNA(NoncodingRNAProduct):
@@ -3422,6 +3537,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SiRNA(NoncodingRNAProduct):
@@ -3445,6 +3561,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneGroupingMixin(ConfiguredBaseModel):
@@ -3476,6 +3593,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
@@ -3498,6 +3616,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
@@ -3522,6 +3641,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Zygosity(Attribute):
@@ -3544,6 +3664,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
@@ -3569,6 +3690,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
@@ -3593,6 +3715,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
@@ -3618,6 +3741,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Snv(SequenceVariant):
@@ -3643,6 +3767,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
@@ -3667,6 +3792,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalAttribute(Attribute):
@@ -3691,6 +3817,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalMeasurement(ClinicalAttribute):
@@ -3715,6 +3842,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalModifier(ClinicalAttribute):
@@ -3739,6 +3867,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalCourse(ClinicalAttribute):
@@ -3763,6 +3892,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Onset(ClinicalCourse):
@@ -3787,6 +3917,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalEntity(NamedThing):
@@ -3808,6 +3939,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalTrial(ClinicalEntity):
@@ -3827,6 +3959,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalIntervention(ClinicalEntity):
@@ -3846,6 +3979,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ClinicalFinding(PhenotypicFeature):
@@ -3869,6 +4003,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Hospitalization(ClinicalIntervention):
@@ -3888,6 +4023,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SocioeconomicAttribute(Attribute):
@@ -3912,6 +4048,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Case(IndividualOrganism, SubjectOfInvestigation):
@@ -3935,6 +4072,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Cohort(StudyPopulation, SubjectOfInvestigation):
@@ -3958,6 +4096,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ExposureEvent(OntologyClass):
@@ -3995,6 +4134,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PathologicalEntityMixin(ConfiguredBaseModel):
@@ -4028,6 +4168,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PathologicalProcessExposure(ExposureEvent, Attribute):
@@ -4053,6 +4194,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity):
@@ -4076,6 +4218,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
@@ -4101,6 +4244,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent, Attribute):
@@ -4126,6 +4270,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalExposure(ExposureEvent, Attribute):
@@ -4151,6 +4296,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ComplexChemicalExposure(Attribute):
@@ -4175,6 +4321,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DrugExposure(ChemicalExposure, ExposureEvent):
@@ -4200,6 +4347,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
@@ -4226,6 +4374,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
@@ -4251,6 +4400,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class BioticExposure(ExposureEvent, Attribute):
@@ -4276,6 +4426,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EnvironmentalExposure(ExposureEvent, Attribute):
@@ -4301,6 +4452,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeographicExposure(EnvironmentalExposure, ExposureEvent):
@@ -4326,6 +4478,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class BehavioralExposure(ExposureEvent, Attribute):
@@ -4351,6 +4504,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SocioeconomicExposure(ExposureEvent, Attribute):
@@ -4376,6 +4530,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: List[str] = Field(..., description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class Outcome(ConfiguredBaseModel):
@@ -4482,6 +4637,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalEntityAssessesNamedThingAssociation(Association):
@@ -4523,6 +4679,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ContributorAssociation(Association):
@@ -4566,6 +4723,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenotypeToGenotypePartAssociation(Association):
@@ -4609,6 +4767,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenotypeToGeneAssociation(Association):
@@ -4652,6 +4811,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenotypeToVariantAssociation(Association):
@@ -4695,6 +4855,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneToGeneAssociation(Association):
@@ -4738,6 +4899,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
@@ -4781,6 +4943,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneToGeneFamilyAssociation(Association):
@@ -4824,6 +4987,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneExpressionMixin(ConfiguredBaseModel):
@@ -4881,6 +5045,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
@@ -4924,6 +5089,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
@@ -4968,6 +5134,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class CellLineToEntityAssociationMixin(ConfiguredBaseModel):
@@ -5046,6 +5213,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
@@ -5090,6 +5258,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
@@ -5134,6 +5303,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
@@ -5185,6 +5355,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MolecularActivityToPathwayAssociation(Association):
@@ -5228,6 +5399,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association):
@@ -5271,6 +5443,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
@@ -5312,6 +5485,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Association):
@@ -5363,6 +5537,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalAffectsGeneAssociation(Association):
@@ -5419,6 +5594,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneAffectsChemicalAssociation(Association):
@@ -5475,6 +5651,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
@@ -5518,6 +5695,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MaterialSampleToEntityAssociationMixin(ConfiguredBaseModel):
@@ -5568,6 +5746,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DiseaseToEntityAssociationMixin(ConfiguredBaseModel):
@@ -5623,6 +5802,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EntityToOutcomeAssociationMixin(ConfiguredBaseModel):
@@ -5675,6 +5855,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class FrequencyQualifierMixin(ConfiguredBaseModel):
@@ -5746,6 +5927,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
@@ -5803,6 +5985,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
@@ -5846,6 +6029,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(ConfiguredBaseModel):
@@ -5894,6 +6078,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin, Association):
@@ -5937,6 +6122,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin, Association):
@@ -5981,6 +6167,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin):
@@ -6025,6 +6212,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, MaterialSampleToEntityAssociationMixin, Association):
@@ -6068,6 +6256,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenotypeToEntityAssociationMixin(ConfiguredBaseModel):
@@ -6117,6 +6306,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6168,6 +6358,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6219,6 +6410,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6270,6 +6462,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6321,6 +6514,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6376,6 +6570,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class VariantToEntityAssociationMixin(ConfiguredBaseModel):
@@ -6425,6 +6620,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6476,6 +6672,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6527,6 +6724,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6578,6 +6776,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6629,6 +6828,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6680,6 +6880,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6730,6 +6931,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressionMixin):
@@ -6777,6 +6979,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQualifierMixin, Association, FrequencyQuantifier):
@@ -6825,6 +7028,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class PopulationToPopulationAssociation(Association):
@@ -6868,6 +7072,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
@@ -6910,6 +7115,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -6958,6 +7164,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -7002,6 +7209,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -7056,6 +7264,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -7104,6 +7313,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -7148,6 +7358,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -7192,6 +7403,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -7236,6 +7448,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -7280,6 +7493,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class TaxonToTaxonAssociation(Association):
@@ -7321,6 +7535,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
@@ -7366,6 +7581,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
@@ -7418,6 +7634,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SequenceVariantModulatesTreatmentAssociation(Association):
@@ -7461,6 +7678,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class FunctionalAssociation(Association):
@@ -7504,6 +7722,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MacromolecularMachineToEntityAssociationMixin(ConfiguredBaseModel):
@@ -7554,6 +7773,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
@@ -7597,6 +7817,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
@@ -7640,6 +7861,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MolecularActivityToChemicalEntityAssociation(Association):
@@ -7683,6 +7905,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class MolecularActivityToMolecularActivityAssociation(Association):
@@ -7726,6 +7949,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneToGoTermAssociation(FunctionalAssociation):
@@ -7767,6 +7991,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EntityToDiseaseAssociation(Association):
@@ -7809,6 +8034,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class EntityToPhenotypicFeatureAssociation(Association):
@@ -7851,6 +8077,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SequenceAssociation(Association):
@@ -7894,6 +8121,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GenomicSequenceLocalization(SequenceAssociation):
@@ -7942,6 +8170,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class SequenceFeatureRelationship(Association):
@@ -7985,6 +8214,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class TranscriptToGeneRelationship(SequenceFeatureRelationship):
@@ -8028,6 +8258,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class GeneToGeneProductRelationship(SequenceFeatureRelationship):
@@ -8071,6 +8302,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
@@ -8114,6 +8346,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
@@ -8158,6 +8391,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
@@ -8199,6 +8433,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
@@ -8242,6 +8477,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
@@ -8285,6 +8521,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class OrganismTaxonToEntityAssociation(ConfiguredBaseModel):
@@ -8335,6 +8572,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAssociation):
@@ -8378,6 +8616,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssociation):
@@ -8422,6 +8661,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, Association):
@@ -8463,6 +8703,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
     
 
 

@@ -24,6 +24,10 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
+- id: deprecated
+  description: A boolean flag indicating that an entity is no longer considered current
+    or valid.
+  display_name: deprecated
 - id: provided_by
   description: The value in this node property represents the knowledge provider that
     created or assembled the node and all of its attributes.  Used internally to represent

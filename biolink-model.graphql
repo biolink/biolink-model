@@ -8,6 +8,7 @@ type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGenePro
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -26,6 +27,7 @@ type Activity implements ActivityAndBehavior
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -45,6 +47,7 @@ interface AdministrativeEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -58,6 +61,7 @@ type Agent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -76,6 +80,7 @@ type AnatomicalEntity implements PhysicalEssence
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -93,6 +98,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -130,6 +136,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -167,6 +174,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -207,6 +215,7 @@ type Article
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -237,6 +246,7 @@ type Association
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -273,6 +283,7 @@ type Attribute implements OntologyClass
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -292,6 +303,7 @@ type Bacterium
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -310,6 +322,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -329,6 +342,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -373,6 +387,7 @@ type BehavioralExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -394,6 +409,7 @@ type BehavioralFeature
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -415,6 +431,7 @@ type BiologicalEntity implements ThingWithTaxon
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -432,6 +449,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -452,6 +470,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -470,6 +489,7 @@ type BiologicalSex
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -488,6 +508,7 @@ type BioticExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -506,6 +527,7 @@ type Book
     iri: IriType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -532,6 +554,7 @@ type BookChapter
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -561,6 +584,7 @@ type Case implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -583,6 +607,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -628,6 +653,7 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -675,6 +701,7 @@ type Cell
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -692,6 +719,7 @@ type CellLine implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -709,6 +737,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
@@ -749,6 +778,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
@@ -791,6 +821,7 @@ type CellularComponent
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -808,6 +839,7 @@ type CellularOrganism implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -825,6 +857,7 @@ type ChemicalAffectsGeneAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -878,6 +911,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -897,6 +931,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -938,6 +973,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -984,6 +1020,7 @@ type ChemicalExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1004,6 +1041,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1050,6 +1088,7 @@ type ChemicalMixture
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1077,6 +1116,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
@@ -1115,6 +1155,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
@@ -1152,6 +1193,7 @@ type ChemicalRole
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1171,6 +1213,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
@@ -1208,6 +1251,7 @@ type ChemicalToChemicalDerivationAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1246,6 +1290,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
@@ -1288,6 +1333,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -1326,6 +1372,7 @@ type ChiSquaredAnalysisResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1343,6 +1390,7 @@ type ClinicalAttribute
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1361,6 +1409,7 @@ type ClinicalCourse
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1381,6 +1430,7 @@ type ClinicalEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1395,6 +1445,7 @@ type ClinicalFinding
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1413,6 +1464,7 @@ type ClinicalIntervention
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1426,6 +1478,7 @@ type ClinicalMeasurement
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1444,6 +1497,7 @@ type ClinicalModifier
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1464,6 +1518,7 @@ type ClinicalTrial
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1479,6 +1534,7 @@ type CodingSequence implements GenomicEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1496,6 +1552,7 @@ type Cohort implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1514,6 +1571,7 @@ type CommonDataElement
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1531,6 +1589,7 @@ type ComplexChemicalExposure
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1551,6 +1610,7 @@ type ComplexMolecularMixture
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1575,6 +1635,7 @@ type ConceptCountAnalysisResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1594,6 +1655,7 @@ type ConfidenceLevel
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1612,6 +1674,7 @@ type ContributorAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     publications: [Publication]
@@ -1649,6 +1712,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1697,6 +1761,7 @@ type Dataset
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1716,6 +1781,7 @@ type DatasetDistribution
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1736,6 +1802,7 @@ type DatasetSummary
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1757,6 +1824,7 @@ type DatasetVersion
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1779,6 +1847,7 @@ type Device
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1794,6 +1863,7 @@ type DiagnosticAid
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1809,6 +1879,7 @@ type Disease
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1826,6 +1897,7 @@ type DiseaseOrPhenotypicFeature
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1841,6 +1913,7 @@ type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEn
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -1870,6 +1943,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     negated: Boolean
     qualifier: String
@@ -1907,6 +1981,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
@@ -1949,6 +2024,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -1986,6 +2062,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -2032,6 +2109,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2054,6 +2132,7 @@ type DrugExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2073,6 +2152,7 @@ type DrugLabel
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -2104,6 +2184,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
@@ -2140,6 +2221,7 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2161,6 +2243,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2210,6 +2293,7 @@ interface Entity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
   }
 
 type EntityToDiseaseAssociation
@@ -2219,6 +2303,7 @@ type EntityToDiseaseAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -2287,6 +2372,7 @@ type EntityToPhenotypicFeatureAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -2337,6 +2423,7 @@ type EnvironmentalExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2358,6 +2445,7 @@ type EnvironmentalFeature
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2373,6 +2461,7 @@ type EnvironmentalFoodContaminant
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2393,6 +2482,7 @@ type EnvironmentalProcess implements Occurrent
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2417,6 +2507,7 @@ type Event
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2432,6 +2523,7 @@ type EvidenceType
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2451,6 +2543,7 @@ type Exon
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2467,6 +2560,7 @@ type ExonToTranscriptRelationship
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -2510,6 +2604,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -2549,6 +2644,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
@@ -2595,6 +2691,7 @@ type Food
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2619,6 +2716,7 @@ type FoodAdditive
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2651,6 +2749,7 @@ type FunctionalAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -2688,6 +2787,7 @@ type Fungus
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2706,6 +2806,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -2724,6 +2825,7 @@ type GeneAffectsChemicalAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2777,6 +2879,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2833,6 +2936,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -2855,6 +2959,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2922,6 +3027,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2969,6 +3075,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3021,6 +3128,7 @@ type GeneToExpressionSiteAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3060,6 +3168,7 @@ interface GeneToGeneAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -3097,6 +3206,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3138,6 +3248,7 @@ type GeneToGeneFamilyAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3175,6 +3286,7 @@ type GeneToGeneHomologyAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3212,6 +3324,7 @@ type GeneToGeneProductRelationship
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3249,6 +3362,7 @@ type GeneToGoTermAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -3286,6 +3400,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -3323,6 +3438,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3371,6 +3487,7 @@ type GeneticInheritance
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3388,6 +3505,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3404,6 +3522,7 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3433,6 +3552,7 @@ type GenomicSequenceLocalization
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3476,6 +3596,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3494,6 +3615,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3534,6 +3656,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3579,6 +3702,7 @@ type GenotypeToGeneAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3616,6 +3740,7 @@ type GenotypeToGenotypePartAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3653,6 +3778,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -3698,6 +3824,7 @@ type GenotypeToVariantAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3734,6 +3861,7 @@ type GenotypicSex
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3752,6 +3880,7 @@ type GeographicExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3773,6 +3902,7 @@ type GeographicLocation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3790,6 +3920,7 @@ type GeographicLocationAtTime
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3807,6 +3938,7 @@ type GrossAnatomicalStructure
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3825,6 +3957,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3843,6 +3976,7 @@ type Hospitalization
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3861,6 +3995,7 @@ type Human implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3878,6 +4013,7 @@ type IndividualOrganism implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3896,6 +4032,7 @@ interface InformationContentEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3914,6 +4051,7 @@ type InformationContentEntityToNamedThingAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3951,6 +4089,7 @@ type Invertebrate
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -3967,6 +4106,7 @@ type JournalArticle
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -3997,6 +4137,7 @@ type LifeStage
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4015,6 +4156,7 @@ type LogOddsAnalysisResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4034,6 +4176,7 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4055,6 +4198,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4092,6 +4236,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4134,6 +4279,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4171,6 +4317,7 @@ type Mammal implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4194,6 +4341,7 @@ type MaterialSample implements SubjectOfInvestigation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4208,6 +4356,7 @@ type MaterialSampleDerivationAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4245,6 +4394,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -4288,6 +4438,7 @@ type MicroRNA
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4311,6 +4462,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4330,6 +4482,7 @@ type MolecularActivityToChemicalEntityAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4367,6 +4520,7 @@ type MolecularActivityToMolecularActivityAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4404,6 +4558,7 @@ type MolecularActivityToPathwayAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4442,6 +4597,7 @@ type MolecularEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4463,6 +4619,7 @@ type MolecularMixture
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4491,6 +4648,7 @@ type NamedThing
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4505,6 +4663,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
@@ -4547,6 +4706,7 @@ type NoncodingRNAProduct
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4564,6 +4724,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4588,6 +4749,7 @@ type NucleicAcidSequenceMotif
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4605,6 +4767,7 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4623,6 +4786,7 @@ type ObservedExpectedFrequencyAnalysisResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4644,6 +4808,7 @@ type Onset
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4667,6 +4832,7 @@ type OrganismAttribute
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4687,6 +4853,7 @@ type OrganismTaxon
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4707,6 +4874,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4744,6 +4912,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4781,6 +4950,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4819,6 +4989,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4856,6 +5027,7 @@ type OrganismToOrganismAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -4893,6 +5065,7 @@ type OrganismalEntity implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -4910,6 +5083,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
@@ -4954,6 +5128,7 @@ type PairwiseGeneToGeneInteraction
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4990,6 +5165,7 @@ type PairwiseMolecularInteraction
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5028,6 +5204,7 @@ type Patent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -5057,6 +5234,7 @@ type PathologicalAnatomicalExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5081,6 +5259,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5103,6 +5282,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5121,6 +5301,7 @@ type PathologicalProcessExposure implements ExposureEvent
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5146,6 +5327,7 @@ type Pathway implements OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5166,6 +5348,7 @@ type Phenomenon implements Occurrent
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5181,6 +5364,7 @@ type PhenotypicFeature
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5196,6 +5380,7 @@ type PhenotypicQuality
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5214,6 +5399,7 @@ type PhenotypicSex
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5234,6 +5420,7 @@ type PhysicalEntity implements PhysicalEssence
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5257,6 +5444,7 @@ type PhysiologicalProcess implements OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5277,6 +5465,7 @@ type PlanetaryEntity
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5291,6 +5480,7 @@ type Plant
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5309,6 +5499,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5325,6 +5516,7 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5342,6 +5534,7 @@ type PopulationToPopulationAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5380,6 +5573,7 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5420,6 +5614,7 @@ type PreprintPublication
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -5447,6 +5642,7 @@ type Procedure implements ActivityAndBehavior
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5462,6 +5658,7 @@ type ProcessedMaterial
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5486,6 +5683,7 @@ type Protein implements GeneProductMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5503,6 +5701,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5521,6 +5720,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5539,6 +5739,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5554,6 +5755,7 @@ type Publication
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -5586,6 +5788,7 @@ type ReactionToCatalystAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -5626,6 +5829,7 @@ type ReactionToParticipantAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -5667,6 +5871,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5685,6 +5890,7 @@ type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduc
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5712,6 +5918,7 @@ type RelativeFrequencyAnalysisResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5731,6 +5938,7 @@ type RetrievalSource
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -5753,6 +5961,7 @@ type RNAProduct implements GeneProductMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5770,6 +5979,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5790,6 +6000,7 @@ type SequenceAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -5827,6 +6038,7 @@ type SequenceFeatureRelationship
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -5864,6 +6076,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5883,6 +6096,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -5918,6 +6132,7 @@ type Serial
     iri: IriType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -5947,6 +6162,7 @@ type SeverityValue
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5967,6 +6183,7 @@ type SiRNA
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -5983,6 +6200,7 @@ type SmallMolecule
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6004,6 +6222,7 @@ type Snv
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6022,6 +6241,7 @@ type SocioeconomicAttribute
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6039,6 +6259,7 @@ type SocioeconomicExposure implements ExposureEvent
     id: String!
     type: [String]
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6069,6 +6290,7 @@ type Study
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6083,6 +6305,7 @@ type StudyPopulation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6101,6 +6324,7 @@ interface StudyResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6120,6 +6344,7 @@ type StudyVariable
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6142,6 +6367,7 @@ type TaxonToTaxonAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -6185,6 +6411,7 @@ type TextMiningResult
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6210,6 +6437,7 @@ type Transcript
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6226,6 +6454,7 @@ type TranscriptToGeneRelationship
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -6264,6 +6493,7 @@ type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGe
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6282,6 +6512,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6300,6 +6531,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -6340,6 +6572,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -6385,6 +6618,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     negated: Boolean
     qualifier: String
@@ -6422,6 +6656,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     subject: NamedThing!
     negated: Boolean
     qualifier: String
@@ -6463,6 +6698,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
@@ -6508,6 +6744,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
     qualifier: String
@@ -6550,6 +6787,7 @@ type Vertebrate
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6567,6 +6805,7 @@ type Virus implements SubjectOfInvestigation
     type: [String]
     name: LabelType
     description: NarrativeText
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType
@@ -6583,6 +6822,7 @@ type WebPage
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
@@ -6608,6 +6848,7 @@ type Zygosity
     type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
+    deprecated: Boolean
     providedBy: [String]
     xref: [Uriorcurie]
     fullName: LabelType

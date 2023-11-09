@@ -1223,7 +1223,8 @@ linkml:Sparqlpath xsd:string
           <type> @linkml:String * ;
           <name> @<LabelType> ? ;
           <description> @<NarrativeText> ? ;
-          <has_attribute> @<Attribute> *
+          <has_attribute> @<Attribute> * ;
+          <deprecated> @linkml:Boolean ?
        ) ;
        rdf:type [ <Entity> ]
     )

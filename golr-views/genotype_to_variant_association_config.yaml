@@ -23,6 +23,10 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
+- id: deprecated
+  description: A boolean flag indicating that an entity is no longer considered current
+    or valid.
+  display_name: deprecated
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
