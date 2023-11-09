@@ -11,13 +11,14 @@ Before curating the Biolink Model, we recommend that you familiarize yourself wi
 metamodel components.  Like many modeling frameworks, LinkML comes with a controlled vocabulary of 
 [terms](https://linkml.io/linkml-model/latest/) that are used to describe the model.  While the modeling language
 is robust and might seem overwhelming, understanding just a few basic components like: 
-- [classes](https://linkml.io/linkml-model/latest/ClassDefinition.html)
-- [slots](https://linkml.io/linkml-model/latest/SlotDefinition.html)
-- [exact_mappings](https://linkml.io/linkml-model/latest/docs/exact_mappings/)
-- [aliases](https://linkml.io/linkml-model/latest/docs/aliases/)
-- [is_a](https://linkml.io/linkml-model/latest/docs/is_a/)
-- [range](https://linkml.io/linkml-model/latest/docs/range/)
-- [domain](https://linkml.io/linkml-model/latest/docs/domain/)
+
+* [classes](https://linkml.io/linkml-model/latest/ClassDefinition.html)
+* [slots](https://linkml.io/linkml-model/latest/SlotDefinition.html)
+* [exact_mappings](https://linkml.io/linkml-model/latest/docs/exact_mappings/)
+* [aliases](https://linkml.io/linkml-model/latest/docs/aliases/)
+* [is_a](https://linkml.io/linkml-model/latest/docs/is_a/)
+* [range](https://linkml.io/linkml-model/latest/docs/range/)
+* [domain](https://linkml.io/linkml-model/latest/docs/domain/)
 
 will be extremely helpful.  For more information on LinkML refer to [Using the Modeling Language](using-the-modeling-language.md).
 For more information about LinkML, please refer to the tutorial [here](https://linkml.github.io/linkml-tutorial/).
