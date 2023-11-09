@@ -1,0 +1,1479 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/using-the-modeling-language/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../association-examples-with-qualifiers/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Using the Modeling Language - Biolink Model Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J23SCD6JB8"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J23SCD6JB8",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J23SCD6JB8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="black" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-the-modeling-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Biolink Model Documentation" class="md-header__button md-logo" aria-label="Biolink Model Documentation" data-md-component="logo">
+      
+  <img src="../images/biolink-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Biolink Model Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using the Modeling Language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/biolink/biolink-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Biolink Model Documentation" class="md-nav__button md-logo" aria-label="Biolink Model Documentation" data-md-component="logo">
+      
+  <img src="../images/biolink-logo.png" alt="logo">
+
+    </a>
+    Biolink Model Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/biolink/biolink-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Using the LinkML Modeling Language
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Using the LinkML Modeling Language
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance-related-slots" class="md-nav__link">
+    Inheritance Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Inheritance Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_a" class="md-nav__link">
+    is_a
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    abstract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    mixins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identification-descriptive-and-indexing-related-slots" class="md-nav__link">
+    Identification, Descriptive and Indexing Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Identification, Descriptive and Indexing Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_uri" class="md-nav__link">
+    slot_uri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in_subset" class="md-nav__link">
+    in_subset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_prefixes" class="md-nav__link">
+    id_prefixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-class-composition" class="md-nav__link">
+    Slots Relating to Class Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Class Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining_slots" class="md-nav__link">
+    defining_slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_usage" class="md-nav__link">
+    slot_usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-constraints-on-slot-composition" class="md-nav__link">
+    Slots Relating to Constraints on Slot Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Constraints on Slot Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-semantic-mappings-and-anchoring-to-external-ontology" class="md-nav__link">
+    Slots Relating Semantic Mappings and Anchoring to External Ontology
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating Semantic Mappings and Anchoring to External Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric_1" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse" class="md-nav__link">
+    inverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact_mappings" class="md-nav__link">
+    exact_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_mappings" class="md-nav__link">
+    close_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#narrow_mappings" class="md-nav__link">
+    narrow_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broad_mappings" class="md-nav__link">
+    broad_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related_mappings" class="md-nav__link">
+    related_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproperty_of" class="md-nav__link">
+    subproperty_of
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subclass_of" class="md-nav__link">
+    subclass_of
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../association-examples-with-qualifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations with Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-a-qualifier-based-statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreting a Fully Qualified Edge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curating-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curating Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintaining Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../information-resource-registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infores Identifier Registry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../categories.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../predicates.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Predicates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Aspects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance-related-slots" class="md-nav__link">
+    Inheritance Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Inheritance Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_a" class="md-nav__link">
+    is_a
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    abstract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    mixins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identification-descriptive-and-indexing-related-slots" class="md-nav__link">
+    Identification, Descriptive and Indexing Related Slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Identification, Descriptive and Indexing Related Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_uri" class="md-nav__link">
+    slot_uri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in_subset" class="md-nav__link">
+    in_subset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_prefixes" class="md-nav__link">
+    id_prefixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-class-composition" class="md-nav__link">
+    Slots Relating to Class Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Class Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining_slots" class="md-nav__link">
+    defining_slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_usage" class="md-nav__link">
+    slot_usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-to-constraints-on-slot-composition" class="md-nav__link">
+    Slots Relating to Constraints on Slot Composition
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating to Constraints on Slot Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-relating-semantic-mappings-and-anchoring-to-external-ontology" class="md-nav__link">
+    Slots Relating Semantic Mappings and Anchoring to External Ontology
+  </a>
+  
+    <nav class="md-nav" aria-label="Slots Relating Semantic Mappings and Anchoring to External Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric_1" class="md-nav__link">
+    symmetric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse" class="md-nav__link">
+    inverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact_mappings" class="md-nav__link">
+    exact_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_mappings" class="md-nav__link">
+    close_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#narrow_mappings" class="md-nav__link">
+    narrow_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broad_mappings" class="md-nav__link">
+    broad_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related_mappings" class="md-nav__link">
+    related_mappings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproperty_of" class="md-nav__link">
+    subproperty_of
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subclass_of" class="md-nav__link">
+    subclass_of
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="using-the-modeling-language">Using the Modeling Language</h1>
+<p>The linkML provides a variety of slots to define the semantics of your Biolink Model class and slots.</p>
+<p>This document tries to address on how to use most of these slots in Biolink Model.</p>
+<p>Please refer to <a href="https://linkml.github.io/linkml-model/docs/">linkML documentation</a> for an exhaustive list of slots provided by the modeling language.</p>
+<h2 id="inheritance-related-slots">Inheritance Related Slots</h2>
+<h3 id="is_a">is_a</h3>
+<p>The <code>is_a</code> slot can be used to define a hierarchy for your Biolink Model class, mixin or slot where a new class, mixin or slot is defined as a subclass of another defined class, mixin or slot.</p>
+<pre><code class="language-yaml">gene:
+  is_a: gene or gene product
+</code></pre>
+<p>Here we define that the entity class <code>gene</code> is a sub-class of <code>gene or gene product</code>. Note that <code>is_a</code> has the characteristics of homeomorphicity: <code>is_a</code> <strong>SHOULD</strong> only connect either (1) two mixins (2) two classes (3) two slots.</p>
+<h3 id="abstract">abstract</h3>
+<p>A model class (or slot) may be tagged with its <code>abstract</code> slot set to the boolean value <code>true</code>, to define whether it is abstract. This has comparable meaning to that in the computing science Object Oriented Paradigm: another class (or slot) can use the abstract class (or slot) as part of its inheritance hierarchy, but the abstract class itself <em>cannot</em> be directly instantiated.</p>
+<pre><code class="language-yaml">  cell line to thing association:
+    is_a: association
+    defining_slots:
+      - subject
+    abstract: true
+    description: &gt;-
+      A relationship between a cell line and another entity
+    slot_usage:
+      subject:
+        range: cell line
+</code></pre>
+<p>Here we define that the association class <code>cell line to thing association</code> is an abstract class. In this case, the class simply constrains its child subclasses to have a subject range of <code>biolink:CellLine</code>.</p>
+<h3 id="mixin">mixin</h3>
+<p>The <code>mixin:true</code> demarkation is used to extend the properties (or slots) of a class, without changing its
+position in the class hierarchy.  Mixins can be extremely helpful in a number of ways: 1) to generalize a set
+of attributes that can apply to classes in different parts of the class hierarchy, 2) reduce duplication of
+shared attributes between classes that do not inherit from one another and 3) to prevent the sometimes confusing nature
+of multiple inheritance noted in the '[diamond problem]'(https://tinyurl.com/4zdw9tsb).</p>
+<p>In general, while mixin slots and classes should not be directly instantiated, or used directly as a slot in a class,
+KGs can use them as a substitute for multiple inheritance. For example, a KG might wish to determine what are the parents
+of a certain class.  In this case, the KG should navigate a mixin used in a domain or range of a class or slot, as it 
+would the "is_a" demarkation.  </p>
+<pre><code class="language-yaml">  thing with taxon:
+    mixin: true
+    description: &gt;-
+      A mixin that can be used on any entity with a taxon
+    slots:
+      - in taxon
+</code></pre>
+<p>Here we define the class <code>thing with taxon</code> as a mixin class with a slot <code>in taxon</code>.   </p>
+<pre><code class="language-yaml">  molecular entity:
+    is_a: biological entity
+    mixins:
+      - thing with taxon
+      - physical essence
+      - ontology class
+    aliases: ['bioentity']
+</code></pre>
+<p>In the class <code>molecular entity</code>, we use the <code>thing with taxon</code> mixin in order to add the 'in taxon' attribute (slot)
+to the molecular entity class.  The other way to do this would be to duplicate the 'in taxon' attribute in every class
+manually (duplicative), or have hierarchy/parent that had the <code>in taxon</code> slot (but this parent would be a sister-class to 
+'named thing' as not all named-things are taxon based).  Mixins simplify modeling and should be used when necessary.</p>
+<pre><code class="language-yaml">  regulates:
+    is_a: affects
+    comments:
+      - This is a grouping for process-process and entity-entity relations
+    mixin: true
+</code></pre>
+<p>Here we define the slot <code>regulates</code> as a mixin slot. This slot can be used as a <code>mixin</code> by other slots. </p>
+<p>Mixins can also be hierarchical.  For example:</p>
+<pre><code class="language-yaml">  frequency qualifier mixin:
+    mixin: true
+    description: &gt;-
+      Qualifier for frequency type associations
+    slots:
+      - frequency qualifier
+
+</code></pre>
+<p>Here we define the mixin <code>frequency qualifier mixin</code> to hold the parent slot, <code>frequency qualifier.</code><br />
+The slot, <code>frequency qualifier</code> is then inherited by every class in the subsequent <code>is_a</code> hierarchy of 
+<code>entity to feature or disease qualifiers mixin.</code>  The <code>frequency quantifier</code> mixin was created with similar 
+intentions (favoring consistency in modeling similar domains), though its reuse is not as evident in the model yet. </p>
+<p>Mixins provide the means of reusing semantics, generally by the inclusion of specific property slots or 
+other semantic constraint, in different classes or slots, without the need to tie slots to the 
+hierarchy of the class itself.</p>
+<pre><code class="language-yaml">positively regulates:
+    comments:
+      - This is a grouping for positive process-process and entity-entity regulation.
+    is_a: regulates
+    inverse: positively regulated by
+    mixin: true
+    close_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - RO:0002336
+    exact_mappings:
+      - RO:0002213
+    narrow_mappings:
+      - CHEMBL.MECHANISM:activator
+      - DGIdb:activator
+      - RO:0004032
+      - RO:0004034
+      - RO:0002629
+      - SEMMEDDB:augments
+</code></pre>
+<p><code>positively regulates</code> is another example of a mixin.  In this case, a mixin is used to store meta data about a 
+predicate or relationship between two entities at a general level.  Its subsequent children, inherit these definitions
+and attributes, whether or not the parent mixin class has any slots.</p>
+<h3 id="mixins">mixins</h3>
+<p>The <code>mixins</code> slot can be used to specify a list of mixins that a class (or slot) can use to 
+include the added semantics of the mixins.</p>
+<p>The <code>mixins</code> are separate from the <code>is_a</code> hierarchy and the mixin classes do not contribute to a 
+classes inheritance hierarchy.</p>
+<pre><code class="language-yaml">  individual organism:
+    is_a: organismal entity
+    mixins:
+      - thing with taxon
+</code></pre>
+<p>Here we define an entity class <code>individual organism</code> that uses the mixin class <code>thing with taxon</code>. 
+By virtue of the mixin, the class <code>individual organism</code> will have an <code>in taxon</code> slot in addition to 
+all its own slots, its parent slots, and its ancestor slots.</p>
+<h2 id="identification-descriptive-and-indexing-related-slots">Identification, Descriptive and Indexing Related Slots</h2>
+<h3 id="aliases">aliases</h3>
+<p>The <code>aliases</code> slot can be used to define a list of aliases for a Biolink Model class (or slot). This is useful for adding synonymous names to your class (or slot).</p>
+<pre><code class="language-yaml">gene:
+  is_a: gene or gene product
+  aliases:
+    - locus
+</code></pre>
+<p>Here we define that the entity class <code>gene</code> has an alias <code>locus</code>.</p>
+<h3 id="description">description</h3>
+<p>The <code>description</code> slot can be used to provide a human-readable description of a class (or slot).</p>
+<pre><code class="language-yaml">  genetically interacts with:
+    is_a: interacts with
+    description: &gt;-
+      holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
+    domain: gene
+    range: gene
+</code></pre>
+<p>Here we define a human readable description that describes the predicate slot <code>genetically interacts with</code> and its purpose.</p>
+<h3 id="slot_uri">slot_uri</h3>
+<p>The <code>slot_uri</code> slot can be used to define a canonical URI that is the true representation for that particular slot. That is, the value of <code>slot_uri</code> can be used interchangeably with the slot being defined.</p>
+<pre><code class="language-yaml">  name:
+    is_a: node property
+    aliases: ['label', 'display name']
+    domain: named thing
+    range: label type
+    slot_uri: rdfs:label
+</code></pre>
+<p>Here we define <code>rdfs:label</code> as the canonical URI for the property slot <code>name</code>. When serializing a graph into RDF, the name of an instance of entity class <code>named thing</code> will be represented using <code>rdfs:label</code> instead of <code>biolink:name</code>.</p>
+<p>This is to ensure that we use certain core RDF predicates as is.</p>
+<h3 id="in_subset">in_subset</h3>
+<p>The <code>in_subset</code> slot can be used tag your class (or slot) to belong to a pre-defined subset.</p>
+<p>The actual subset names are defined as part of the Schema definition.</p>
+<pre><code class="language-yaml">  genetically interacts with:
+    is_a: interacts with
+    domain: gene
+    range: gene
+    in_subset:
+      - translator_minimal
+</code></pre>
+<p>Here we define the predicate slot <code>genetically interacts with</code> as part of the <code>translator_minimal</code> subset.</p>
+<h3 id="id_prefixes">id_prefixes</h3>
+<p>The <code>id_prefixes</code> slot can be used to define a list of valid ID prefixes that instances of this class ought to have as part of their CURIE.</p>
+<p>The order of the list matters since its a prioritized list with the ID prefix with the highest priority appearing at the top of the list.</p>
+<pre><code class="language-yaml">  gene:
+    is_a: gene or gene product
+    aliases: ['locus']
+    slots:
+      - id
+      - name
+      - symbol
+      - description
+      - synonym
+      - xref
+    mappings:
+      - SO:0000704
+      - SIO:010035
+      - WIKIDATA:Q7187
+    id_prefixes:
+      - NCBIGene
+      - ENSEMBL
+      - HGNC
+      - UniProtKB
+      - MGI
+      - ZFIN
+      - dictyBase
+      - WB
+      - WormBase
+      - FlyBase
+      - FB
+      - RGD
+      - SGD
+      - PomBase
+</code></pre>
+<p>Here we define the entity class <code>gene</code> to have a list of ID prefixes with <code>NCBIGene</code> having the highest priority.</p>
+<h2 id="slots-relating-to-class-composition">Slots Relating to Class Composition</h2>
+<h3 id="slots">slots</h3>
+<p>The <code>slot</code> property list enumerates the names of slots which a given class, mixin or its subclasses are generally permitted to have. Unless it is designated as one of the <code>defining_slots</code> (see below) or <code>slot_usage</code> (see below) specifies that a given slot is <code>required: true</code> (see below), then it is <em>not</em> mandatory that such a slot is instantiated in all instances of the given class, mixin or subclass inheriting it.</p>
+<h3 id="defining_slots">defining_slots</h3>
+<p>The <code>defining_slots</code> slot can be used to specify which slots of an instance are necessary for defining an instance as a member of a class.</p>
+<pre><code class="language-yaml">  gene to gene association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+</code></pre>
+<p>Here we specify that an association can be determined to be an instance of class <code>gene to gene association</code> based on the semantics of two of its slots: <code>subject</code> and <code>object</code>. </p>
+<p>i.e. One can infer an association to be an instance of <code>gene to gene association</code> if both its <code>subject</code> and its <code>object</code> are an instances of class <code>gene</code>.</p>
+<p>Listing a slot as one of the <code>defining_slots</code> slots effectively makes it <code>required: true</code> (see below).</p>
+<h3 id="slot_usage">slot_usage</h3>
+<p>The <code>slot_usage</code> slot can be used to specify how a particular slot ought to be used in a class.</p>
+<p>This is useful for documenting what a particular slot means for instances of a particular class.</p>
+<pre><code class="language-yaml">  gene to gene association:
+    aliases: ['molecular or genetic interaction']
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    description: &gt;-
+      abstract parent class for different kinds of gene-gene or gene product to gene product relationships.
+      Includes homology and interaction.
+    slot_usage:
+      subject:
+        range: gene or gene product
+        description: &gt;-
+          the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary.
+          We allow a gene product to stand as proxy for the gene or vice versa
+      object:
+        range: gene or gene product
+        description: &gt;-
+          the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
+          We allow a gene product to stand as proxy for the gene or vice versa
+</code></pre>
+<p>Here we document the association class <code>gene to gene association</code> with information on how the slot <code>subject</code> and <code>object</code> ought to be used to represent this association properly.</p>
+<p>In the <code>slot_usage</code> section we define the range and provide a description for the slot <code>subject</code> and <code>object</code>.</p>
+<h3 id="required">required</h3>
+<p>The <code>required</code> slot can be used to define whether a slot is required.</p>
+<p>When a slot is declared as required, any class that uses that slot must have a value for that slot.</p>
+<pre><code class="language-yaml">  id:
+    is_a: node property
+    required: true
+    domain: named thing
+    mappings:
+      - alliancegenome:primaryId
+      - gff3:ID
+      - gpi:DB_Object_ID
+</code></pre>
+<p>Here we define the property slot <code>id</code> as a required field for all instances of the entity class <code>named thing</code>.</p>
+<h2 id="slots-relating-to-constraints-on-slot-composition">Slots Relating to Constraints on Slot Composition</h2>
+<h3 id="domain">domain</h3>
+<p>The <code>domain</code> slot mimics the idea of <code>rdfs:domain</code> where you constrain the type of classes that a given Biolink Model slot can be a part of.</p>
+<pre><code class="language-yaml">  genetically interacts with:
+    is_a: interacts with
+    domain: gene
+</code></pre>
+<p>Here we define that the subject (source node) of the predicate slot <code>genetically interacts with</code> must be an instance of class <code>gene</code>.</p>
+<h3 id="range">range</h3>
+<p>The <code>range</code> slot mimics the idea of <code>rdfs:range</code> where you can constrain the type of classes (or data types) a given Biolink Model slot can have as its value.</p>
+<pre><code class="language-yaml">  genetically interacts with:
+    is_a: interacts with
+    domain: gene
+    range: gene
+</code></pre>
+<p>Here we define that both the subject (source node) and object (target node) of the predicate slot <code>genetically interacts with</code> must be instances of class <code>gene</code>.</p>
+<h3 id="symmetric">symmetric</h3>
+<p>The <code>symmetric</code> slot can be used to specify whether a Biolink Model predicate slot is symmetric in its semantics.</p>
+<p>i.e. if <code>A -[r]-&gt; B</code> and <code>r</code> is symmetric then one can infer <code>B -[r]-&gt; A</code></p>
+<pre><code class="language-yaml">  genetically interacts with:
+    is_a: interacts with
+    domain: gene
+    range: gene
+    in_subset:
+      - translator_minimal
+    symmetric: true
+</code></pre>
+<p>Here we define that the predicate slot <code>genetically interacts with</code> is symmetric.</p>
+<p><strong>Note:</strong> This property is not inherited by descendants of this predicate slot. You will have to explicitly define every predicate slot that should be considered as symmetric.</p>
+<h2 id="slots-relating-semantic-mappings-and-anchoring-to-external-ontology">Slots Relating Semantic Mappings and Anchoring to External Ontology</h2>
+<h3 id="symmetric_1">symmetric</h3>
+<p>The <code>symmetric</code> slot can be used to specify whether a given predicate slot is symmetric.</p>
+<pre><code class="language-yaml">  interacts with:
+    domain: named thing
+    range: named thing
+    description: &gt;-
+      holds between any two entities that directly or indirectly interact with each other
+    is_a: related to
+    in_subset:
+      - translator_minimal
+    symmetric: true
+</code></pre>
+<p><strong>Note:</strong> The symmetric nature of the predicate is not inherited by descendants of the predicate.</p>
+<h3 id="inverse">inverse</h3>
+<p>The <code>inverse</code> slot can be used to specify the inverse predicate of a given predicate slot relationship.</p>
+<pre><code class="language-yaml">  affects:
+    is_a: related to
+    description: &gt;-
+      describes an entity that has a direct affect on the state or quality
+      of another existing entity. Use of the 'affects' predicate implies that
+      the affected entity already exists, unlike predicates such as
+      'affects risk for' and 'prevents, where the outcome is something
+      that may or may not come to be.
+    inverse: affected by
+    in_subset:
+      - translator_minimal
+</code></pre>
+<h3 id="exact_mappings">exact_mappings</h3>
+<p>The <code>exact_mappings</code> slot can be used to define external concepts, predicates, or properties which are considered to be exact mappings to the class (or slot) being defined.</p>
+<pre><code class="language-yaml">  same as:
+    is_a: exact match
+    description: &gt;-
+      holds between two entities that are considered equivalent to each other
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - owl:sameAs
+      - skos:exactMatch
+      - WIKIDATA_PROPERTY:P2888
+      - CHEMBL.MECHANISM:equivalent_to
+      - MONDO:equivalentTo
+</code></pre>
+<p>Here we define a list of 5 predicates that are semantically equivalent to the Biolink Model predicate slot <code>same as</code>.</p>
+<h3 id="close_mappings">close_mappings</h3>
+<p>The <code>close_mappings</code> slot can be used to define external concepts, predicates, or properties which are considered to be close mappings to the class (or slot) being defined.</p>
+<pre><code class="language-yaml">  same as:
+    is_a: exact match
+    description: &gt;-
+      holds between two entities that are considered equivalent to each other
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - owl:sameAs
+      - skos:exactMatch
+      - WIKIDATA_PROPERTY:P2888
+      - CHEMBL.MECHANISM:equivalent_to
+      - MONDO:equivalentTo
+    close_mappings:
+      - owl:equivalentClass
+</code></pre>
+<p>Here we define <code>owl:equivalentClass</code> as being a close match to the Biolink Model predicate slot <code>same as</code>.</p>
+<h3 id="narrow_mappings">narrow_mappings</h3>
+<p>The <code>narrow_mappings</code> slot can be used to define external concepts, predicates, or properties which are considered to be narrow mappings to the class (or slot) being defined.</p>
+<pre><code class="language-yaml">  same as:
+    is_a: exact match
+    description: &gt;-
+      holds between two entities that are considered equivalent to each other
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - owl:equivalentClass
+    exact_mappings:
+      - owl:sameAs
+      - skos:exactMatch
+      - WIKIDATA_PROPERTY:P2888
+      - CHEMBL.MECHANISM:equivalent_to
+      - MONDO:equivalentTo
+    narrow_mappings:
+      - DRUGBANK:external-identifier
+</code></pre>
+<p>Here we define <code>DRUGBANK:external-identifier</code> as being a narrow match to the predicate slot <code>same as</code>.</p>
+<p>By narrow we mean that the scope of <code>DRUGBANK:external-identifier</code> is more narrower and restrictive than <code>same as</code>.</p>
+<p>If we were to create a new predicate slot as a proxy for <code>DRUGBANK:external-identifier</code> then that new slot would be a child of <code>same as</code>.</p>
+<h3 id="broad_mappings">broad_mappings</h3>
+<p>The <code>broad_mappings</code> slot can be used to define external concepts, predicates, or properties which are considered to be broad mappings to the class (or slot) being defined.</p>
+<pre><code class="language-yaml">  in complex with:
+    description: &gt;-
+      holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+    is_a: coexists with
+    domain: gene or gene product
+    range: gene or gene product
+    in_subset:
+      - translator_minimal
+    broad_mappings:
+      - SIO:010285
+</code></pre>
+<p>Here we define <code>SIO:010285</code> (molecular complex formation) as a broad mapping to the predicate slot <code>in complex with</code>. </p>
+<p>By broad we mean that the scope of <code>SIO:010285</code> is more broad and relaxed than <code>in complex with</code>.</p>
+<p>If we were to create a new predicate slot as a proxy for <code>SIO:010285</code> then that new slot would be a parent of <code>in complex with</code>.</p>
+<h3 id="related_mappings">related_mappings</h3>
+<p>The <code>related_mappings</code> slot can be used to define external concepts, predicates, or properties which are considered to be related mappings to the class (or slot) being defined.</p>
+<pre><code class="language-yaml">  in complex with:
+    description: &gt;-
+      holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+    is_a: coexists with
+    domain: gene or gene product
+    range: gene or gene product
+    in_subset:
+      - translator_minimal
+    broad_mappings:
+      - SIO:010285
+    related_mappings:
+      - SIO:010497
+</code></pre>
+<p>Here we define <code>SIO:010497</code> (protein complex) as a related mapping to the predicate slot <code>in complex with</code>.</p>
+<p>By related we mean that the scope of <code>SIO:010497</code> is related to the predicate slot <code>in complex with</code> and it's difficult to infer any further granularity.</p>
+<h3 id="subproperty_of">subproperty_of</h3>
+<p>The <code>subproperty_of</code> slot can be used (typically, under <code>slot_usage</code>) to anchor the values of a Biolink <code>predicate</code> slot of an association to a particular predicate (and its subclasses) <em>other than</em> the top-most predicate, <code>biolink:related_to</code>.</p>
+<pre><code class="language-yaml">  gene to gene homology association:
+    is_a: gene to gene association
+    slot_usage:
+      predicate:
+        subproperty_of: homologous to
+</code></pre>
+<p>Here, the <code>predicate</code> of the  <code>biolink:GeneToGeneHomologyAssociation</code> is constrained to a value the subtree of predicates of <code>biolink:homologous_to</code> or its subclasses.</p>
+<h3 id="subclass_of">subclass_of</h3>
+<p>The <code>subclass_of</code> slot can be used to anchor the semantics of a Biolink class to a particular term in an external 3rd party ontology.</p>
+<pre><code class="language-yaml">  named thing:
+    description: &quot;a databased entity or concept/class&quot;
+    slots:
+      - id
+      - name
+      - category
+    subclass_of: BFO:0000001
+</code></pre>
+<p>Here, <code>biolink:NamedThing</code> is anchored to ontology term <code>BFO:0000001</code> - <strong>Entity</strong> of the <em>Basic Formal Ontology</em> which implies all <code>is_a</code> specified subclasses of <code>biolink:NamedThing</code> are also a subclasses of <code>BFO:0000001</code>.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+    
+  </body>
+</html>
