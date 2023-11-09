@@ -44,7 +44,7 @@ and Schema definition.
 
 **Conventions**
 
-In [Biolink Model YAML](../../biolink-model.yaml) any class, slot, or type is defined in `sentence case` form. When this model is compiled
+In [Biolink Model YAML](biolink_model.yaml) any class, slot, or type is defined in `sentence case` form. When this model is compiled
 to various forms (like JSON-Schema, OWL, Markdown) the representation is based on the following convention,
 * classes are named in `CamelCase` form
 * slots are named in `snake_case` form
