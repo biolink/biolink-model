@@ -22,7 +22,7 @@ is robust and might seem overwhelming, understanding just a few basic components
 will be extremely helpful.  For more information on LinkML refer to [Using the Modeling Language](using-the-modeling-language.md).
 For more information about LinkML, please refer to the tutorial [here](https://linkml.github.io/linkml-tutorial/).
 
-In Biolink Model all the curation should happen in one place: [biolink-model.yaml](../../biolink-model.yaml)
+In Biolink Model all the curation should happen in one place: [biolink-model.yaml](biolink-model.yaml)
 This is the one source of truth for the model.
 
 ### PR Guidelines
@@ -47,7 +47,7 @@ will clear them.  Please feel free to commit the regenerated artifacts.
 To add an entity class to Biolink Model you need to determine the following:
   - What is an appropriate name for this entity?
     - The name for an entity should be clear and concise. It should describe instances of this class
-  - Where in the [`named thing` hierarchy](https://biolink.github.io/biolink-model/docs/NamedThing) does the new class fit?
+  - Where in the [`named thing` hierarchy](https://biolink.github.io/biolink-model/NamedThing) does the new class fit?
     - Determine what the immediate parent for this class is going to be
   - What are the slots that this class can have (in addition to its inherited slots)?
     - Determine what additional properties that this class ought to have
@@ -180,7 +180,7 @@ To add a predicate to Biolink Model you need to determine the following:
   - What is an appropriate name for this predicate?
     - A human-readable name for this predicate that captures the nature of the relationship
   - Where in the hierarchy does the new slot fit?
-    - Determine where in the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to) this new predicate slot fits
+    - Determine where in the [`related to` hierarchy](https://biolink.github.io/biolink-model/related_to) this new predicate slot fits
   - What are the domain and range constraints (if any)?
     - Determine which type of entity classes this predicate can link
   - What are the mapping(s) for this slot?
@@ -210,8 +210,8 @@ To add a node/edge property to Biolink Model you need to determine the following
     - Determine whether the property is a node or an edge property
   - Where in the hierarchy does the new property fit?
     - Determine where in the property hierarchy does this new property fit
-    - If you want to add a node property then it should be added as part of the [`node property` hierarchy](https://biolink.github.io/biolink-model/docs/node_property)
-    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy](https://biolink.github.io/biolink-model/docs/association_slot)
+    - If you want to add a node property then it should be added as part of the [`node property` hierarchy](https://biolink.github.io/biolink-model/node_property)
+    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy](https://biolink.github.io/biolink-model/association_slot)
   - Is this a required property?
     - Determine whether all instances of a class must have a value for this property
   - What are the domain and range constraints (if any)?
