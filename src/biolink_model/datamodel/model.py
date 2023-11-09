@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-11-07T09:13:16
+# Generation date: 2023-11-09T08:54:26
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8164,14 +8164,8 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
-    object represents the downstream. For any such association there is an implicit reaction:
-    IF
-    R has-input C1 AND
-    R has-output C2 AND
-    R enabled-by P AND
-    R type Reaction
-    THEN
-    C1 derives-into C2 <<catalyst qualifier P>>
+    object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R
+    has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
     """
     _inherited_slots: ClassVar[List[str]] = []
 
