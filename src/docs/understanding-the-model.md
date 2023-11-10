@@ -18,13 +18,17 @@ Biolink Model was built with the following aims:
 * Extensible, self-documenting, and unambiguous
 * Maps to external ontologies, thesauri, controlled vocabularies, and taxonomies
 
-To that end, Biolink Model makes use of [linkML](https://github.com/linkml) (Biolink Modeling Language) for defining the various semantics of the model.
+To that end, Biolink Model makes use of [LinkML](https://linkml.github.io/linkml) (the inked open data modeling 
+framework) for defining the various semantics of the model.
 
 ## Understanding the Biolink Modeling Language
 
-linkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in addition to the standard object-oriented hierarchy of a data model.
+LinkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling 
+language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in 
+addition to the standard object-oriented hierarchy of a data model.
 
-Models are authored in YAML;  using linkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.
+Models are authored in YAML and using linkML, JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and 
+Markdown docs are also generated.
 
 The modeling language provides the following idioms,
 - **Class definition** : Used to define classes
