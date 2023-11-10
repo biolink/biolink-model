@@ -31,7 +31,7 @@ The schema assumes a property graph, where nodes represent individual entities, 
 between entities. Biolink Model provides a schema for representing both nodes and edges.
 
 
-The model itself can be divided into a few parts,
+The model itself can be divided into a few parts:
 * Entities (subjects and objects)
 * Predicates (relationships between core concepts)
 * Associations (statements including evidence and provenance)
@@ -61,7 +61,7 @@ For more detailed typing, one can use specific terms from an ontology.
 ### Associations
 
 A typed association between two entities, usually supported by evidence and provenance. 
-An association is represented as an edge/relationship between two nodes, in a property graph.
+An association is represented as an edge/relationship between two nodes in a property graph.
 
 All edges are a sub-class of [Association](docs/Association).
 
@@ -74,9 +74,9 @@ Certain associations can have additional properties like [provided_by](docs/prov
 
 ### Slots
 
-[Slots](docs#slots) are used to collectively refer to, both, node and edge properties.
+[Slots](docs#slots) are used to collectively refer to both node and edge properties.
 
-There are two types of slots defined in the model,
+There are two types of slots defined in the model:
 - [node property](docs/node_property) - all node properties are a sub-class of [node property](docs/node_property)
 - [association slot](docs/association_slot) - all edge properties are a sub-class of [association slot](docs/association_slot)
 
@@ -106,7 +106,7 @@ tag at the top of the YAML.
 
 # Biolink Model representation
 
-Biolink Model aims at representing knowledge in a graph form regardless of the graph representation used.
+Biolink Model aims to represent knowledge in a graph form regardless of the graph representation used.
 
 Following are some recommendations when attempting to use Biolink Model with each style of representation. 
 
