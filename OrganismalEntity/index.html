@@ -295,6 +295,8 @@
 
       OrganismalEntity : category
 
+      OrganismalEntity : deprecated
+
       OrganismalEntity : description
 
       OrganismalEntity : full_name
@@ -435,6 +437,12 @@
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
 <td>may often be an organism attribute</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../deprecated/">deprecated</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>A boolean flag indicating that an entity is no longer considered current or valid.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 </tbody>

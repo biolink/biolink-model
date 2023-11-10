@@ -282,6 +282,8 @@
 
       Activity : category
 
+      Activity : deprecated
+
       Activity : description
 
       Activity : full_name
@@ -394,6 +396,12 @@
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
 <td>connects any entity to an attribute</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../deprecated/">deprecated</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>A boolean flag indicating that an entity is no longer considered current or valid.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 </tbody>

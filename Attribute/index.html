@@ -308,6 +308,8 @@
 
       Attribute : category
 
+      Attribute : deprecated
+
       Attribute : description
 
       Attribute : full_name
@@ -418,7 +420,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a></td>
@@ -466,6 +468,12 @@
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>0..* <br/> <a href="./">Attribute</a></td>
 <td>connects any entity to an attribute</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../deprecated/">deprecated</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>A boolean flag indicating that an entity is no longer considered current or valid.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 </tbody>
