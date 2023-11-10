@@ -608,10 +608,14 @@ schema for labelled property graphs (Neo4j) or for edge labelled graphs (RDF). <
 * Focus on the actual schema and its semantics instead of being weighed down by limitations of a technology
 * Extensible, self-documenting, and unambiguous
 * Maps to external ontologies, thesauri, controlled vocabularies, and taxonomies</p>
-<p>To that end, Biolink Model makes use of <a href="https://github.com/linkml">linkML</a> (Biolink Modeling Language) for defining the various semantics of the model.</p>
+<p>To that end, Biolink Model makes use of <a href="https://linkml.github.io/linkml">LinkML</a> (the inked open data modeling 
+framework) for defining the various semantics of the model.</p>
 <h2 id="understanding-the-biolink-modeling-language">Understanding the Biolink Modeling Language</h2>
-<p>linkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in addition to the standard object-oriented hierarchy of a data model.</p>
-<p>Models are authored in YAML;  using linkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.</p>
+<p>LinkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling 
+language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in 
+addition to the standard object-oriented hierarchy of a data model.</p>
+<p>Models are authored in YAML and using linkML, JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and 
+Markdown docs are also generated.</p>
 <p>The modeling language provides the following idioms,
 - <strong>Class definition</strong> : Used to define classes
 - <strong>Slot definition</strong> : Used to define class properties
