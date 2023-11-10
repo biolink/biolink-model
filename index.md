@@ -13,7 +13,7 @@ A high level datamodel of biological entities ([genes](docs/Gene), [diseases](do
 Biolink Model is designed as a way of standardizing types and relational structures in knowledge graphs (KGs), 
 where the KG may be either a property graph or RDF triple store.
 
-The schema is expressed as a [YAML](https://github.com/biolink/biolink-model/blob/master/biolink-model.yaml), which is translated to:
+The schema is expressed as a [YAML](https://github.com/biolink/biolink-model/blob/master/biolink-model.yaml) file, which is translated to:
 
  * Individual pages for each class in the model, e.g [https://w3id.org/biolink/vocab/Gene](https://w3id.org/biolink/vocab/Gene)
  * An [OWL ontology](biolink-model.owl.ttl), also available on [BioPortal](https://bioportal.bioontology.org/ontologies/BIOLINK)
@@ -27,7 +27,7 @@ The schema is expressed as a [YAML](https://github.com/biolink/biolink-model/blo
 
 ## Datamodel
 
-The schema assumes a property graph, where nodes represent individual entities, and edges represent relationship 
+The schema assumes a property graph, where nodes represent individual entities, and edges represent relationships 
 between entities. Biolink Model provides a schema for representing both nodes and edges.
 
 
