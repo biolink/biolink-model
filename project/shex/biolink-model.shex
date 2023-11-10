@@ -1217,10 +1217,18 @@ linkml:Sparqlpath xsd:string
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
           <category> @<CategoryType> * ;
+<<<<<<< HEAD:project/shex/biolink-model.shex
           rdf:type @linkml:String * ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
           <has_attribute> @<Attribute> *
+=======
+          <type> @linkml:String * ;
+          <name> @<LabelType> ? ;
+          <description> @<NarrativeText> ? ;
+          <has_attribute> @<Attribute> * ;
+          <deprecated> @linkml:Boolean ?
+>>>>>>> master:biolink-modeln.shex
        ) ;
        rdf:type [ <Entity> ]
     )

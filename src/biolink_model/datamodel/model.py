@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-11-09T08:54:26
+# Generation date: 2023-11-10T12:02:55
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1664,6 +1664,7 @@ class Entity(YAMLRoot):
     name: Optional[Union[str, LabelType]] = None
     description: Optional[Union[str, NarrativeText]] = None
     has_attribute: Optional[Union[Union[str, AttributeId], List[Union[str, AttributeId]]]] = empty_list()
+    deprecated: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1691,6 +1692,9 @@ class Entity(YAMLRoot):
         if not isinstance(self.has_attribute, list):
             self.has_attribute = [self.has_attribute] if self.has_attribute is not None else []
         self.has_attribute = [v if isinstance(v, AttributeId) else AttributeId(v) for v in self.has_attribute]
+
+        if self.deprecated is not None and not isinstance(self.deprecated, Bool):
+            self.deprecated = Bool(self.deprecated)
 
         super().__post_init__(**kwargs)
 
@@ -11953,6 +11957,9 @@ slots.narrow_synonym = Slot(uri=BIOLINK.narrow_synonym, name="narrow synonym", c
 
 slots.related_synonym = Slot(uri=BIOLINK.related_synonym, name="related synonym", curie=BIOLINK.curie('related_synonym'),
                    model_uri=BIOLINK.related_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+
+slots.deprecated = Slot(uri=BIOLINK.deprecated, name="deprecated", curie=BIOLINK.curie('deprecated'),
+                   model_uri=BIOLINK.deprecated, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.curie('has_topic'),
                    model_uri=BIOLINK.has_topic, domain=NamedThing, range=Optional[Union[str, OntologyClassId]])

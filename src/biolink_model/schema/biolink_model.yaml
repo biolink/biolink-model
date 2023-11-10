@@ -634,6 +634,13 @@ slots:
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
 
+  deprecated:
+    range: boolean
+    exact_mappings:
+      - oboInOwl:ObsoleteClass
+    description: >-
+      A boolean flag indicating that an entity is no longer considered current or valid.
+
   has topic:
     aliases: ['topic', 'descriptors']
     is_a: node property
@@ -6187,6 +6194,7 @@ classes:
       - name
       - description
       - has attribute
+      - deprecated
        # evidence code(s)?
 
   named thing:
