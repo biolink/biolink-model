@@ -1,0 +1,27 @@
+digraph {
+	graph [bb="0,0,569.58,123"];
+	node [label="\N"];
+	"macromolecular complex mixin"	[height=0.5,
+		label="macromolecular complex mixin",
+		pos="260.99,105",
+		width=4.3149];
+	"macromolecular machine mixin"	[height=0.5,
+		pos="155.99,18",
+		width=4.3329];
+	"macromolecular complex mixin" -> "macromolecular machine mixin"	[label=is_a,
+		lp="228.99,61.5",
+		pos="e,176.95,35.967 239.99,87.003 224.25,74.263 202.52,56.671 185.1,42.572"];
+	name	[height=0.5,
+		pos="365.99,18",
+		width=1.011];
+	"macromolecular complex mixin" -> name	[color=blue,
+		label=name,
+		lp="338.99,61.5",
+		pos="e,347.83,33.699 281.98,87.003 298.69,73.475 322.16,54.476 340.05,39.997",
+		style=solid];
+	"macromolecular machine mixin_name"	[color=blue,
+		height=0.5,
+		label="symbol type",
+		pos="501.99,105",
+		width=1.8776];
+}

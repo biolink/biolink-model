@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,270.39,123"];
+	node [label="\N"];
+	"genomic entity"	[height=0.5,
+		label="genomic entity",
+		pos="101.39,105",
+		width=2.2206];
+	"has biological sequence"	[color=blue,
+		height=0.5,
+		label="biological sequence",
+		pos="101.39,18",
+		width=2.8164];
+	"genomic entity" -> "has biological sequence"	[color=blue,
+		label="has biological sequence",
+		lp="185.89,61.5",
+		pos="e,101.39,36.175 101.39,86.799 101.39,75.163 101.39,59.548 101.39,46.237",
+		style=solid];
+}

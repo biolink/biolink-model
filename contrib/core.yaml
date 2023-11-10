@@ -1,0 +1,43 @@
+id: "https://w3id.org/biolink/contrib/core.json"
+name: core extensions
+description: core
+
+slots:
+
+  title:
+    domain: information content entity
+    range: label type
+    description: >-
+      Narrative text describing the entity
+    mappings:
+      - "dc:title"
+
+
+  has evidence object:
+    is_a: association slot
+    range: named thing
+    description: >-
+      connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction).
+      Same as WITH/FROM column in GO/GAFs
+
+  has evidence type:
+    is_a: association slot
+    range: evidence type
+    path: evidence/type
+    description: >-
+      connects an association to the class of evidence used
+
+  has evidence graph:
+    is_a: association slot
+    range: evidence graph
+    path: evidence/type
+    description: >-
+      connects an association to a graph object including a path from subject to object
+      
+classes:
+
+  named graph:
+    is_a: information content entity
+    slot_usage:
+      title:
+        description: descriptive textual title
