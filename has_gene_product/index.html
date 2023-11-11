@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,8 +525,15 @@
 
 
 <h1 id="slot-has_gene_product">Slot: has_gene_product</h1>
-<p>holds between a gene and a transcribed and/or translated product generated from it</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/has_gene_product">biolink:has_gene_product</a></p>
+<div class="highlight-box"> <strong>Description:</strong> holds between a gene and a transcribed and/or translated product generated from it <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../Gene/">Gene</a> <br> 
+   <strong>Range:</strong> <a href="../GeneProductMixin/">GeneProductMixin</a> <br> 
+   <strong>Inverse:</strong> <a href="../gene_product_of/">gene_product_of</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -557,20 +544,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../GeneProductMixin/">GeneProductMixin</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -584,24 +558,12 @@
 <td>self</td>
 <td>biolink:has_gene_product</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:has_gene_product</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>RO:0002205, WIKIDATA_PROPERTY:P688, NCIT:gene_encodes_gene_product</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>NCIT:R178</td>
-</tr>
-<tr>
-<td>close</td>
-<td>PR:has_gene_template</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:has_gene_product |</p>
+<p>| exact | RO:0002205, WIKIDATA_PROPERTY:P688, NCIT:gene_encodes_gene_product |</p>
+<p>| narrow | NCIT:R178 |</p>
+<p>| close | PR:has_gene_template |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

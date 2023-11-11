@@ -493,29 +493,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -552,8 +532,14 @@
 
 
 <h1 id="slot-category">Slot: category</h1>
-<p>Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>,  <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/category">biolink:category</a></p>
+<div class="highlight-box"> <strong>Description:</strong> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values `biolink:Protein`,  `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../Entity/">Entity</a> <br> 
+   <strong>Range:</strong> <a href="../CategoryType/">CategoryType</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../type/">type</a><ul>
@@ -578,20 +564,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../CategoryType/">CategoryType</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -605,12 +578,9 @@
 <td>self</td>
 <td>biolink:category</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:category</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:category |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

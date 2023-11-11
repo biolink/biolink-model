@@ -237,15 +237,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -274,9 +265,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-organismalentity">Class: OrganismalEntity</h1>
-<p><span style="color: purple;"><strong> ABSTRACT </strong>:</span></p>
-<p>A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/OrganismalEntity">biolink:OrganismalEntity</a></p>
+<p><span style="color: purple;"><strong> (Abstract Class) </strong>:</span></p>
+<div class="highlight-box"> <strong>Description:</strong> A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/OrganismalEntity">biolink:OrganismalEntity</a></p>
 <div class="mermaid"> classDiagram
     class OrganismalEntity
       SubjectOfInvestigation &lt;|-- OrganismalEntity
@@ -363,7 +355,7 @@
 <tbody>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
-<td>0..* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>0..* <br> <a href="../OrganismTaxon/">OrganismTaxon</a></br></td>
 <td>connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'</td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
 </tr>
@@ -467,10 +459,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -484,20 +472,11 @@
 <td>self</td>
 <td>biolink:OrganismalEntity</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:OrganismalEntity</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>WIKIDATA:Q7239, UMLSSG:LIVB, CARO:0001010</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>STY:T008</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:OrganismalEntity |</p>
+<p>| exact | WIKIDATA:Q7239, UMLSSG:LIVB, CARO:0001010 |</p>
+<p>| narrow | STY:T008 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

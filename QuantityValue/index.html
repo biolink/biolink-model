@@ -237,15 +237,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -274,8 +265,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-quantityvalue">Class: QuantityValue</h1>
-<p>A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/QuantityValue">biolink:QuantityValue</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/QuantityValue">biolink:QuantityValue</a></p>
 <div class="mermaid"> classDiagram
     class QuantityValue
       Annotation &lt;|-- QuantityValue
@@ -306,7 +298,7 @@
 <tbody>
 <tr>
 <td><a href="../has_unit/">has_unit</a></td>
-<td>0..1 <br/> <a href="../Unit/">Unit</a></td>
+<td>0..1 <br> <a href="../Unit/">Unit</a></br></td>
 <td>connects a quantity value to a unit</td>
 <td>direct</td>
 </tr>
@@ -512,10 +504,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -529,12 +517,9 @@
 <td>self</td>
 <td>biolink:QuantityValue</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:QuantityValue</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:QuantityValue |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

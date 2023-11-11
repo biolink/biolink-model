@@ -242,15 +242,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -279,9 +270,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-exposureevent">Class: ExposureEvent</h1>
-<p>aliases: exposure, experimental condition </p>
-<p>A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/ExposureEvent">biolink:ExposureEvent</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes <br/>
+<strong>Aliases:</strong> exposure, experimental condition <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/ExposureEvent">biolink:ExposureEvent</a></p>
 <div class="mermaid"> classDiagram
     class ExposureEvent
       OntologyClass &lt;|-- ExposureEvent
@@ -327,13 +319,13 @@
 <tbody>
 <tr>
 <td><a href="../timepoint/">timepoint</a></td>
-<td>0..1 <br/> <a href="../TimeType/">TimeType</a></td>
+<td>0..1 <br> <a href="../TimeType/">TimeType</a></br></td>
 <td>a point in time</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br> <a href="../String/">String</a></br></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
 <td><a href="../OntologyClass/">OntologyClass</a></td>
 </tr>
@@ -424,10 +416,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -441,16 +429,10 @@
 <td>self</td>
 <td>biolink:ExposureEvent</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:ExposureEvent</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>XCO:0000000</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:ExposureEvent |</p>
+<p>| exact | XCO:0000000 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

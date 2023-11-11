@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,8 +260,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-exposureeventtooutcomeassociation">Class: ExposureEventToOutcomeAssociation</h1>
-<p>An association between an exposure event and an outcome.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation">biolink:ExposureEventToOutcomeAssociation</a></p>
+<div class="highlight-box"> <strong>Description:</strong> An association between an exposure event and an outcome. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation">biolink:ExposureEventToOutcomeAssociation</a></p>
 <div class="mermaid"> classDiagram
     class ExposureEventToOutcomeAssociation
       EntityToOutcomeAssociationMixin &lt;|-- ExposureEventToOutcomeAssociation
@@ -395,7 +387,7 @@
 <tbody>
 <tr>
 <td><a href="../population_context_qualifier/">population_context_qualifier</a></td>
-<td>0..1 <br/> <a href="../PopulationOfIndividualOrganisms/">PopulationOfIndividualOrganisms</a></td>
+<td>0..1 <br> <a href="../PopulationOfIndividualOrganisms/">PopulationOfIndividualOrganisms</a></br></td>
 <td>a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.</td>
 <td>direct</td>
 </tr>
@@ -606,10 +598,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -623,12 +611,9 @@
 <td>self</td>
 <td>biolink:ExposureEventToOutcomeAssociation</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:ExposureEventToOutcomeAssociation</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:ExposureEventToOutcomeAssociation |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

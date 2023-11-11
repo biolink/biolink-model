@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,8 +525,15 @@
 
 
 <h1 id="slot-is_excipient_of">Slot: is_excipient_of</h1>
-<p>holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/is_excipient_of">biolink:is_excipient_of</a></p>
+<div class="highlight-box"> <strong>Description:</strong> holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../MolecularEntity/">MolecularEntity</a> <br> 
+   <strong>Range:</strong> <a href="../Drug/">Drug</a> <br> 
+   <strong>Inverse:</strong> <a href="../has_excipient/">has_excipient</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -563,20 +550,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../Drug/">Drug</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -590,16 +564,10 @@
 <td>self</td>
 <td>biolink:is_excipient_of</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:is_excipient_of</td>
-</tr>
-<tr>
-<td>undefined</td>
-<td>WIKIDATA:Q902638</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:is_excipient_of |</p>
+<p>| undefined | WIKIDATA:Q902638 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

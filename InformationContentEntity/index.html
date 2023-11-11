@@ -244,11 +244,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -279,10 +274,11 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-informationcontententity">Class: InformationContentEntity</h1>
-<p><span style="color: purple;"><strong> ABSTRACT </strong>:</span></p>
-<p>aliases: information, information artefact, information entity </p>
-<p>a piece of information that typically describes some topic of discourse or is used as support.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/InformationContentEntity">biolink:InformationContentEntity</a></p>
+<p><span style="color: purple;"><strong> (Abstract Class) </strong>:</span></p>
+<div class="highlight-box"> <strong>Description:</strong> a piece of information that typically describes some topic of discourse or is used as support. <br/>
+<strong>Aliases:</strong> information, information artefact, information entity <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/InformationContentEntity">biolink:InformationContentEntity</a></p>
 <div class="mermaid"> classDiagram
     class InformationContentEntity
       NamedThing &lt;|-- InformationContentEntity
@@ -373,13 +369,13 @@
 <tbody>
 <tr>
 <td><a href="../license/">license</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
 <td>None</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../rights/">rights</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
 <td>None</td>
 <td>direct</td>
 </tr>
@@ -991,11 +987,7 @@
 </tr>
 </tbody>
 </table>
-<p>| doi | ['information content entity', 'publication', 'journal article'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| doi | ['information content entity', 'publication', 'journal article'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -1009,20 +1001,11 @@
 <td>self</td>
 <td>biolink:InformationContentEntity</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:InformationContentEntity</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>IAO:0000030</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>UMLSSG:CONC, STY:T077, STY:T078, STY:T079, STY:T080, STY:T081, STY:T082, STY:T089, STY:T102, STY:T169, STY:T171, STY:T185</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:InformationContentEntity |</p>
+<p>| exact | IAO:0000030 |</p>
+<p>| narrow | UMLSSG:CONC, STY:T077, STY:T078, STY:T079, STY:T080, STY:T081, STY:T082, STY:T089, STY:T102, STY:T169, STY:T171, STY:T185 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

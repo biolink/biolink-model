@@ -493,20 +493,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -517,13 +503,6 @@
           <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
   </a>
   
 </li>
@@ -566,8 +545,14 @@
 
 
 <h1 id="slot-object_category_closure">Slot: object_category_closure</h1>
-<p>Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/object_category_closure">biolink:object_category_closure</a></p>
+<div class="highlight-box"> <strong>Description:</strong> Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
+   <strong>Range:</strong> <a href="../OntologyClass/">OntologyClass</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -592,28 +577,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../OntologyClass/">OntologyClass</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
-<h2 id="examples">Examples</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>['biolink:Disease", "biolink:NamedThing']</td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
 <table>
@@ -630,10 +593,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -647,12 +606,9 @@
 <td>self</td>
 <td>biolink:object_category_closure</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:object_category_closure</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:object_category_closure |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

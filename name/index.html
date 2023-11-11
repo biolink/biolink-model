@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,9 +525,14 @@
 
 
 <h1 id="slot-name">Slot: name</h1>
-<p>aliases: label, display name, title </p>
-<p>A human-readable name for an attribute or entity.</p>
-<p>URI: <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A human-readable name for an attribute or entity. <br>
+
+   <strong>Aliases:</strong> label, display name, title <br>
+
+  </div>
+
+<p><strong>Domain:</strong> <a href="../Entity/">Entity</a> <br> 
+   <strong>Range:</strong> <a href="../LabelType/">LabelType</a> <br> </p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -577,15 +562,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../LabelType/">LabelType</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -599,20 +576,11 @@
 <td>self</td>
 <td>rdfs:label</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:name</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>gff3:Name, gpi:DB_Object_Name</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>dct:title, WIKIDATA_PROPERTY:P1476</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:name |</p>
+<p>| exact | gff3:Name, gpi:DB_Object_Name |</p>
+<p>| narrow | dct:title, WIKIDATA_PROPERTY:P1476 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

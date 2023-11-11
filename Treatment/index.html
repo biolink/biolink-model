@@ -237,15 +237,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -274,9 +265,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-treatment">Class: Treatment</h1>
-<p>aliases: medical action, medical intervention </p>
-<p>A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Treatment">biolink:Treatment</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures <br/>
+<strong>Aliases:</strong> medical action, medical intervention <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Treatment">biolink:Treatment</a></p>
 <div class="mermaid"> classDiagram
     class Treatment
       ExposureEvent &lt;|-- Treatment
@@ -348,13 +340,13 @@
 <tbody>
 <tr>
 <td><a href="../has_drug/">has_drug</a></td>
-<td>0..* <br/> <a href="../Drug/">Drug</a></td>
+<td>0..* <br> <a href="../Drug/">Drug</a></br></td>
 <td>connects an entity to one or more drugs</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../has_device/">has_device</a></td>
-<td>0..* <br/> <a href="../Device/">Device</a></td>
+<td>0..* <br> <a href="../Device/">Device</a></br></td>
 <td>connects an entity to one or more (medical) devices</td>
 <td>direct</td>
 </tr>
@@ -398,7 +390,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../iri/">iri</a></td>
@@ -464,10 +456,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -481,20 +469,11 @@
 <td>self</td>
 <td>biolink:Treatment</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Treatment</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>OGMS:0000090, SIO:001398</td>
-</tr>
-<tr>
-<td>broad</td>
-<td>MAXO:0000058</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Treatment |</p>
+<p>| exact | OGMS:0000090, SIO:001398 |</p>
+<p>| broad | MAXO:0000058 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

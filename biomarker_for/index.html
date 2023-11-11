@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -503,13 +496,6 @@
           <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
   </a>
   
 </li>
@@ -552,8 +538,14 @@
 
 
 <h1 id="slot-biomarker_for">Slot: biomarker_for</h1>
-<p>holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/biomarker_for">biolink:biomarker_for</a></p>
+<div class="highlight-box"> <strong>Description:</strong> holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature. <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br> 
+   <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -568,15 +560,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
 </li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -595,10 +578,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -612,24 +591,12 @@
 <td>self</td>
 <td>biolink:biomarker_for</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:biomarker_for</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>NCIT:R39</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>NCIT:R47, NCIT:genetic_biomarker_related_to, NCIT:is_molecular_abnormality_of_disease, orphanet:465410</td>
-</tr>
-<tr>
-<td>broad</td>
-<td>RO:0002607</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:biomarker_for |</p>
+<p>| exact | NCIT:R39 |</p>
+<p>| narrow | NCIT:R47, NCIT:genetic_biomarker_related_to, NCIT:is_molecular_abnormality_of_disease, orphanet:465410 |</p>
+<p>| broad | RO:0002607 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

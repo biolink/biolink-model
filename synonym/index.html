@@ -493,29 +493,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -552,9 +532,15 @@
 
 
 <h1 id="slot-synonym">Slot: synonym</h1>
-<p>aliases: alias </p>
-<p>Alternate human-readable names for a thing</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/synonym">biolink:synonym</a></p>
+<div class="highlight-box"> <strong>Description:</strong> Alternate human-readable names for a thing <br>
+
+   <strong>Aliases:</strong> alias <br>
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a> <br> 
+   <strong>Range:</strong> <a href="../LabelType/">LabelType</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../node_property/">node_property</a><ul>
@@ -590,20 +576,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../LabelType/">LabelType</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -617,16 +590,10 @@
 <td>self</td>
 <td>biolink:synonym</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:synonym</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>skos:altLabel, gff3:Alias, AGRKB:synonyms, gpi:DB_Object_Synonyms, HANCESTRO:0330, IAO:0000136, RXNORM:has_tradename</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:synonym |</p>
+<p>| narrow | skos:altLabel, gff3:Alias, AGRKB:synonyms, gpi:DB_Object_Synonyms, HANCESTRO:0330, IAO:0000136, RXNORM:has_tradename |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

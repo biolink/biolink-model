@@ -249,11 +249,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -284,8 +279,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-geneproductmixin">Class: GeneProductMixin</h1>
-<p>The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/GeneProductMixin">biolink:GeneProductMixin</a></p>
+<div class="highlight-box"> <strong>Description:</strong> The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/GeneProductMixin">biolink:GeneProductMixin</a></p>
 <div class="mermaid"> classDiagram
     class GeneProductMixin
       GeneOrGeneProduct &lt;|-- GeneProductMixin
@@ -330,7 +326,7 @@
 <tbody>
 <tr>
 <td><a href="../synonym/">synonym</a></td>
-<td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
+<td>0..* <br> <a href="../LabelType/">LabelType</a></br></td>
 <td>Alternate human-readable names for a thing</td>
 <td>direct</td>
 </tr>
@@ -403,13 +399,9 @@
 </tr>
 </tbody>
 </table>
-<p>| UniProtKB | ['gene product mixin', 'polypeptide', 'protein', 'protein isoform'] |</p>
-<p>| gtpo | ['gene product mixin'] |</p>
-<p>| PR | ['gene product mixin', 'macromolecular complex', 'polypeptide', 'protein', 'protein isoform'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| UniProtKB | ['gene product mixin', 'polypeptide', 'protein', 'protein isoform'] | 
+| gtpo | ['gene product mixin'] | 
+| PR | ['gene product mixin', 'macromolecular complex', 'polypeptide', 'protein', 'protein isoform'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -423,16 +415,10 @@
 <td>self</td>
 <td>biolink:GeneProductMixin</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:GeneProductMixin</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>WIKIDATA:Q424689, GENO:0000907, NCIT:C26548</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:GeneProductMixin |</p>
+<p>| exact | WIKIDATA:Q424689, GENO:0000907, NCIT:C26548 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

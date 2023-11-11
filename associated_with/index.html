@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -503,13 +496,6 @@
           <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
   </a>
   
 </li>
@@ -552,8 +538,14 @@
 
 
 <h1 id="slot-associated_with">Slot: associated_with</h1>
-<p>Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/associated_with">biolink:associated_with</a></p>
+<div class="highlight-box"> <strong>Description:</strong> Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes). <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a> <br> 
+   <strong>Range:</strong> <a href="../NamedThing/">NamedThing</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -575,15 +567,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../NamedThing/">NamedThing</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
 <table>
@@ -600,10 +583,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -617,16 +596,10 @@
 <td>self</td>
 <td>biolink:associated_with</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:associated_with</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>RO:0004029, SNOMEDCT:47429007</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:associated_with |</p>
+<p>| narrow | RO:0004029, SNOMEDCT:47429007 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

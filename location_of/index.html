@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,9 +525,16 @@
 
 
 <h1 id="slot-location_of">Slot: location_of</h1>
-<p>aliases: site of </p>
-<p>holds between material entity or site and a material entity that is located within it (but not considered a part of it)</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/location_of">biolink:location_of</a></p>
+<div class="highlight-box"> <strong>Description:</strong> holds between material entity or site and a material entity that is located within it (but not considered a part of it) <br>
+
+   <strong>Aliases:</strong> site of <br>
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a> <br> 
+   <strong>Range:</strong> <a href="../NamedThing/">NamedThing</a> <br> 
+   <strong>Inverse:</strong> <a href="../located_in/">located_in</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -561,20 +548,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../NamedThing/">NamedThing</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -588,20 +562,11 @@
 <td>self</td>
 <td>biolink:location_of</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:location_of</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>RO:0001015, SEMMEDDB:LOCATION_OF, WIKIDATA_PROPERTY:P276, FMA:location_of</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>SNOMED:inherent_location_of, NCIT:Anatomic_Structure_Has_Location_Role</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:location_of |</p>
+<p>| exact | RO:0001015, SEMMEDDB:LOCATION_OF, WIKIDATA_PROPERTY:P276, FMA:location_of |</p>
+<p>| narrow | SNOMED:inherent_location_of, NCIT:Anatomic_Structure_Has_Location_Role |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

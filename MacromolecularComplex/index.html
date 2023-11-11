@@ -239,11 +239,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -274,8 +269,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-macromolecularcomplex">Class: MacromolecularComplex</h1>
-<p>A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/MacromolecularComplex">biolink:MacromolecularComplex</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/MacromolecularComplex">biolink:MacromolecularComplex</a></p>
 <div class="mermaid"> classDiagram
     class MacromolecularComplex
       MacromolecularMachineMixin &lt;|-- MacromolecularComplex
@@ -341,7 +337,7 @@
 <tbody>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
+<td>0..1 <br> <a href="../SymbolType/">SymbolType</a></br></td>
 <td>genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name</td>
 <td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 </tr>
@@ -442,15 +438,11 @@
 </tr>
 </tbody>
 </table>
-<p>| INTACT | ['macromolecular complex'] |</p>
-<p>| GO | ['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'anatomical entity', 'cellular component', 'macromolecular complex'] |</p>
-<p>| PR | ['gene product mixin', 'macromolecular complex', 'polypeptide', 'protein', 'protein isoform'] |</p>
-<p>| REACT | ['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'macromolecular complex'] |</p>
-<p>| ComplexPortal | ['macromolecular complex'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| INTACT | ['macromolecular complex'] | 
+| GO | ['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'anatomical entity', 'cellular component', 'macromolecular complex'] | 
+| PR | ['gene product mixin', 'macromolecular complex', 'polypeptide', 'protein', 'protein isoform'] | 
+| REACT | ['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'macromolecular complex'] | 
+| ComplexPortal | ['macromolecular complex'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -464,16 +456,10 @@
 <td>self</td>
 <td>biolink:MacromolecularComplex</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:MacromolecularComplex</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>GO:0032991, WIKIDATA:Q22325163</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:MacromolecularComplex |</p>
+<p>| exact | GO:0032991, WIKIDATA:Q22325163 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

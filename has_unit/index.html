@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,8 +525,13 @@
 
 
 <h1 id="slot-has_unit">Slot: has_unit</h1>
-<p>connects a quantity value to a unit</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/has_unit">biolink:has_unit</a></p>
+<div class="highlight-box"> <strong>Description:</strong> connects a quantity value to a unit <br>
+
+
+  </div>
+
+<p><strong>Domain:</strong> <a href="../QuantityValue/">QuantityValue</a> <br> 
+   <strong>Range:</strong> <a href="../Unit/">Unit</a> <br> </p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -566,15 +551,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../Unit/">Unit</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -588,24 +565,12 @@
 <td>self</td>
 <td>biolink:has_unit</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:has_unit</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>qud:unit, IAO:0000039</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>SNOMED:has_concentration_strength_denominator_unit, SNOMED:has_concentration_strength_numerator_unit, SNOMED:has_presentation_strength_denominator_unit, SNOMED:has_presentation_strength_numerator_unit, SNOMED:has_unit_of_presentation</td>
-</tr>
-<tr>
-<td>close</td>
-<td>EFO:0001697, UO-PROPERTY:is_unit_of</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:has_unit |</p>
+<p>| exact | qud:unit, IAO:0000039 |</p>
+<p>| narrow | SNOMED:has_concentration_strength_denominator_unit, SNOMED:has_concentration_strength_numerator_unit, SNOMED:has_presentation_strength_denominator_unit, SNOMED:has_presentation_strength_numerator_unit, SNOMED:has_unit_of_presentation |</p>
+<p>| close | EFO:0001697, UO-PROPERTY:is_unit_of |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

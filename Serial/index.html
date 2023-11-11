@@ -239,11 +239,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -274,9 +269,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-serial">Class: Serial</h1>
-<p>aliases: journal </p>
-<p>This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Serial">biolink:Serial</a></p>
+<div class="highlight-box"> <strong>Description:</strong> This class may rarely be instantiated except if use cases of a given knowledge graph support its utility. <br/>
+<strong>Aliases:</strong> journal <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Serial">biolink:Serial</a></p>
 <div class="mermaid"> classDiagram
     class Serial
       Publication &lt;|-- Serial
@@ -364,13 +360,13 @@
 <tbody>
 <tr>
 <td><a href="../iso_abbreviation/">iso_abbreviation</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
 <td>Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../volume/">volume</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
 <td>volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication</td>
 <td>direct</td>
 </tr>
@@ -414,7 +410,7 @@
 <td><a href="../xref/">xref</a></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
-<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a></td>
@@ -525,12 +521,8 @@
 </tr>
 </tbody>
 </table>
-<p>| issn | ['serial'] |</p>
-<p>| NLMID | ['publication', 'book', 'serial'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| issn | ['serial'] | 
+| NLMID | ['publication', 'book', 'serial'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -544,12 +536,9 @@
 <td>self</td>
 <td>biolink:Serial</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Serial</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Serial |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

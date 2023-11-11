@@ -239,11 +239,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -274,8 +269,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-journalarticle">Class: JournalArticle</h1>
-<p>an article, typically presenting results of research, that is published  in an issue of a scientific journal.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/JournalArticle">biolink:JournalArticle</a></p>
+<div class="highlight-box"> <strong>Description:</strong> an article, typically presenting results of research, that is published  in an issue of a scientific journal. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/JournalArticle">biolink:JournalArticle</a></p>
 <div class="mermaid"> classDiagram
     class JournalArticle
       Article &lt;|-- JournalArticle
@@ -368,7 +364,7 @@
 <tbody>
 <tr>
 <td><a href="../published_in/">published_in</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1..1 <br> <a href="../Uriorcurie/">Uriorcurie</a></br></td>
 <td>The enclosing parent serial containing the article should have industry-standard identifier from ISSN.</td>
 <td><a href="../Article/">Article</a></td>
 </tr>
@@ -424,7 +420,7 @@
 <td><a href="../xref/">xref</a></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
-<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a></td>
@@ -535,13 +531,9 @@
 </tr>
 </tbody>
 </table>
-<p>| PMID | ['publication', 'article', 'journal article'] |</p>
-<p>| PMCID | ['journal article'] |</p>
-<p>| doi | ['information content entity', 'publication', 'journal article'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| PMID | ['publication', 'article', 'journal article'] | 
+| PMCID | ['journal article'] | 
+| doi | ['information content entity', 'publication', 'journal article'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -555,16 +547,10 @@
 <td>self</td>
 <td>biolink:JournalArticle</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:JournalArticle</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>IAO:0000013, fabio:JournalArticle</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:JournalArticle |</p>
+<p>| exact | IAO:0000013, fabio:JournalArticle |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

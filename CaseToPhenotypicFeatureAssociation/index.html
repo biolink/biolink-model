@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,8 +260,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-casetophenotypicfeatureassociation">Class: CaseToPhenotypicFeatureAssociation</h1>
-<p>An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation">biolink:CaseToPhenotypicFeatureAssociation</a></p>
+<div class="highlight-box"> <strong>Description:</strong> An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation">biolink:CaseToPhenotypicFeatureAssociation</a></p>
 <div class="mermaid"> classDiagram
     class CaseToPhenotypicFeatureAssociation
       EntityToPhenotypicFeatureAssociationMixin &lt;|-- CaseToPhenotypicFeatureAssociation
@@ -412,7 +404,7 @@
 <tbody>
 <tr>
 <td><a href="../sex_qualifier/">sex_qualifier</a></td>
-<td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
+<td>0..1 <br> <a href="../BiologicalSex/">BiologicalSex</a></br></td>
 <td>a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.</td>
 <td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
 </tr>
@@ -659,10 +651,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -676,12 +664,9 @@
 <td>self</td>
 <td>biolink:CaseToPhenotypicFeatureAssociation</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:CaseToPhenotypicFeatureAssociation</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:CaseToPhenotypicFeatureAssociation |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,9 +260,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-snv">Class: Snv</h1>
-<p>aliases: single nucleotide variant, single nucleotide polymorphism, snp </p>
-<p>SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Snv">biolink:Snv</a></p>
+<div class="highlight-box"> <strong>Description:</strong> SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist <br/>
+<strong>Aliases:</strong> single nucleotide variant, single nucleotide polymorphism, snp <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Snv">biolink:Snv</a></p>
 <div class="mermaid"> classDiagram
     class Snv
       SequenceVariant &lt;|-- Snv
@@ -345,13 +337,13 @@
 <tbody>
 <tr>
 <td><a href="../has_gene/">has_gene</a></td>
-<td>0..* <br/> <a href="../Gene/">Gene</a></td>
+<td>0..* <br> <a href="../Gene/">Gene</a></br></td>
 <td>Each allele can be associated with any number of genes</td>
 <td><a href="../SequenceVariant/">SequenceVariant</a></td>
 </tr>
 <tr>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
-<td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
+<td>0..1 <br> <a href="../BiologicalSequence/">BiologicalSequence</a></br></td>
 <td>The state of the sequence w.r.t a reference sequence</td>
 <td><a href="../GenomicEntity/">GenomicEntity</a></td>
 </tr>
@@ -359,7 +351,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
@@ -442,10 +434,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -459,16 +447,10 @@
 <td>self</td>
 <td>biolink:Snv</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Snv</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>SO:0001483</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Snv |</p>
+<p>| exact | SO:0001483 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

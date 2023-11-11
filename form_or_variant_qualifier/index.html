@@ -486,36 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -552,9 +525,14 @@
 
 
 <h1 id="slot-form_or_variant_qualifier">Slot: form_or_variant_qualifier</h1>
-<p><span style="color: purple;"><strong> ABSTRACT </strong>:</span></p>
-<p>A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/form_or_variant_qualifier">biolink:form_or_variant_qualifier</a></p>
+<p><span style="color: purple;"><strong> (Abstract Slot) </strong>:</span> </p>
+<div class="highlight-box"> <strong>Description:</strong> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’. <br>
+
+
+  </div>
+
+<p><strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
+   <strong>Range:</strong> <a href="../String/">String</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -569,40 +547,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-<h2 id="examples">Examples</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mutation</td>
-</tr>
-<tr>
-<td>late stage</td>
-</tr>
-<tr>
-<td>severe</td>
-</tr>
-<tr>
-<td>transplant</td>
-</tr>
-<tr>
-<td>chemical analog</td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -616,12 +561,9 @@
 <td>self</td>
 <td>biolink:form_or_variant_qualifier</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:form_or_variant_qualifier</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:form_or_variant_qualifier |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

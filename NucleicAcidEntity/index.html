@@ -244,11 +244,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -279,9 +274,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-nucleicacidentity">Class: NucleicAcidEntity</h1>
-<p>aliases: sequence feature, genomic entity </p>
-<p>A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/NucleicAcidEntity">biolink:NucleicAcidEntity</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included. <br/>
+<strong>Aliases:</strong> sequence feature, genomic entity <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/NucleicAcidEntity">biolink:NucleicAcidEntity</a></p>
 <div class="mermaid"> classDiagram
     class NucleicAcidEntity
       GenomicEntity &lt;|-- NucleicAcidEntity
@@ -384,13 +380,13 @@
 <tbody>
 <tr>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
-<td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
+<td>0..1 <br> <a href="../BiologicalSequence/">BiologicalSequence</a></br></td>
 <td>connects a genomic feature to its sequence</td>
 <td><a href="../GenomicEntity/">GenomicEntity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
-<td>0..* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>0..* <br> <a href="../OrganismTaxon/">OrganismTaxon</a></br></td>
 <td>connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'</td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
 </tr>
@@ -404,7 +400,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../is_metabolite/">is_metabolite</a></td>
@@ -570,26 +566,22 @@
 </tr>
 </tbody>
 </table>
-<p>| PUBCHEM.COMPOUND | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| CHEMBL.COMPOUND | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| UNII | ['molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| CHEBI | ['chemical role', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'has chemical role'] |</p>
-<p>| MESH | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'protein'] |</p>
-<p>| CAS | ['molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| GTOPDB | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| HMDB | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| KEGG | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'molecular activity', 'biological process', 'pathway'] |</p>
-<p>| KEGG.COMPOUND | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| ChemBank | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| PUBCHEM.SUBSTANCE | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| INCHI | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| INCHIKEY | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| KEGG.GLYCAN | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<p>| KEGG.ENVIRON | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| PUBCHEM.COMPOUND | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| CHEMBL.COMPOUND | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| UNII | ['molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| CHEBI | ['chemical role', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'has chemical role'] | 
+| MESH | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'protein'] | 
+| CAS | ['molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| GTOPDB | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| HMDB | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| KEGG | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'molecular activity', 'biological process', 'pathway'] | 
+| KEGG.COMPOUND | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| ChemBank | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| PUBCHEM.SUBSTANCE | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| INCHI | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| INCHIKEY | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| KEGG.GLYCAN | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | 
+| KEGG.ENVIRON | ['molecular entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -603,20 +595,11 @@
 <td>self</td>
 <td>biolink:NucleicAcidEntity</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:NucleicAcidEntity</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>SO:0000110</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>STY:T086, STY:T114</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:NucleicAcidEntity |</p>
+<p>| exact | SO:0000110 |</p>
+<p>| narrow | STY:T086, STY:T114 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

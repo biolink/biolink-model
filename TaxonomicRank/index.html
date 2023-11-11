@@ -239,11 +239,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -274,8 +269,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-taxonomicrank">Class: TaxonomicRank</h1>
-<p>A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/TaxonomicRank">biolink:TaxonomicRank</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom) <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/TaxonomicRank">biolink:TaxonomicRank</a></p>
 <div class="mermaid"> classDiagram
     class TaxonomicRank
       OntologyClass &lt;|-- TaxonomicRank
@@ -304,7 +300,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br> <a href="../String/">String</a></br></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
 <td><a href="../OntologyClass/">OntologyClass</a></td>
 </tr>
@@ -327,11 +323,7 @@
 </tr>
 </tbody>
 </table>
-<p>| TAXRANK | ['taxonomic rank'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| TAXRANK | ['taxonomic rank'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -345,16 +337,10 @@
 <td>self</td>
 <td>biolink:TaxonomicRank</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:TaxonomicRank</td>
-</tr>
-<tr>
-<td>undefined</td>
-<td>WIKIDATA:Q427626</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:TaxonomicRank |</p>
+<p>| undefined | WIKIDATA:Q427626 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

@@ -244,11 +244,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -279,8 +274,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-lifestage">Class: LifeStage</h1>
-<p>A stage of development or growth of an organism, including post-natal adult stages</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/LifeStage">biolink:LifeStage</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A stage of development or growth of an organism, including post-natal adult stages <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/LifeStage">biolink:LifeStage</a></p>
 <div class="mermaid"> classDiagram
     class LifeStage
       OrganismalEntity &lt;|-- LifeStage
@@ -348,7 +344,7 @@
 <tbody>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
-<td>0..* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>0..* <br> <a href="../OrganismTaxon/">OrganismTaxon</a></br></td>
 <td>connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'</td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
 </tr>
@@ -486,16 +482,12 @@
 </tr>
 </tbody>
 </table>
-<p>| HsapDv | ['life stage'] |</p>
-<p>| MmusDv | ['life stage'] |</p>
-<p>| ZFS | ['life stage'] |</p>
-<p>| FBdv | ['life stage'] |</p>
-<p>| WBls | ['life stage'] |</p>
-<p>| UBERON | ['life stage', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| HsapDv | ['life stage'] | 
+| MmusDv | ['life stage'] | 
+| ZFS | ['life stage'] | 
+| FBdv | ['life stage'] | 
+| WBls | ['life stage'] | 
+| UBERON | ['life stage', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -509,20 +501,11 @@
 <td>self</td>
 <td>biolink:LifeStage</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:LifeStage</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>UBERON:0000105</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>HsapDv:0000000</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:LifeStage |</p>
+<p>| exact | UBERON:0000105 |</p>
+<p>| narrow | HsapDv:0000000 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

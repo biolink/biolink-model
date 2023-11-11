@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,8 +260,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-vertebrate">Class: Vertebrate</h1>
-<p>A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Vertebrate">biolink:Vertebrate</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Vertebrate">biolink:Vertebrate</a></p>
 <div class="mermaid"> classDiagram
     class Vertebrate
       CellularOrganism &lt;|-- Vertebrate
@@ -341,7 +333,7 @@
 <tbody>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
-<td>0..* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>0..* <br> <a href="../OrganismTaxon/">OrganismTaxon</a></br></td>
 <td>connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'</td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
 </tr>
@@ -426,10 +418,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -443,20 +431,11 @@
 <td>self</td>
 <td>biolink:Vertebrate</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Vertebrate</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>STY:T010, NCBITaxon:7742, OMIT:0015545</td>
-</tr>
-<tr>
-<td>related</td>
-<td>NCBITaxon:2662825</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Vertebrate |</p>
+<p>| exact | STY:T010, NCBITaxon:7742, OMIT:0015545 |</p>
+<p>| related | NCBITaxon:2662825 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

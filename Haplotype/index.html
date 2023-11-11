@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,8 +260,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-haplotype">Class: Haplotype</h1>
-<p>A set of zero or more Alleles on a single instance of a Sequence[VMC]</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Haplotype">biolink:Haplotype</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A set of zero or more Alleles on a single instance of a Sequence[VMC] <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Haplotype">biolink:Haplotype</a></p>
 <div class="mermaid"> classDiagram
     class Haplotype
       GenomicEntity &lt;|-- Haplotype
@@ -340,7 +332,7 @@
 <tbody>
 <tr>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
-<td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
+<td>0..1 <br> <a href="../BiologicalSequence/">BiologicalSequence</a></br></td>
 <td>connects a genomic feature to its sequence</td>
 <td><a href="../GenomicEntity/">GenomicEntity</a></td>
 </tr>
@@ -348,7 +340,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
@@ -431,10 +423,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -448,16 +436,10 @@
 <td>self</td>
 <td>biolink:Haplotype</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Haplotype</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>GENO:0000871, SO:0001024, VMC:Haplotype</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Haplotype |</p>
+<p>| exact | GENO:0000871, SO:0001024, VMC:Haplotype |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -503,13 +496,6 @@
           <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
   </a>
   
 </li>
@@ -552,8 +538,14 @@
 
 
 <h1 id="slot-has_sequence_location">Slot: has_sequence_location</h1>
-<p>holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/has_sequence_location">biolink:has_sequence_location</a></p>
+<div class="highlight-box"> <strong>Description:</strong> holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig. <br>
+
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../NucleicAcidEntity/">NucleicAcidEntity</a> <br> 
+   <strong>Range:</strong> <a href="../NucleicAcidEntity/">NucleicAcidEntity</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -562,15 +554,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../NucleicAcidEntity/">NucleicAcidEntity</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
 </li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -589,10 +572,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -606,16 +585,10 @@
 <td>self</td>
 <td>biolink:has_sequence_location</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:has_sequence_location</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>faldo:location</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:has_sequence_location |</p>
+<p>| exact | faldo:location |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

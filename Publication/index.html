@@ -244,11 +244,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -279,8 +274,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-publication">Class: Publication</h1>
-<p>Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). </p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Publication">biolink:Publication</a></p>
+<div class="highlight-box"> <strong>Description:</strong> Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP).  <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Publication">biolink:Publication</a></p>
 <div class="mermaid"> classDiagram
     class Publication
       InformationContentEntity &lt;|-- Publication
@@ -380,7 +376,7 @@
 <tbody>
 <tr>
 <td><a href="../authors/">authors</a></td>
-<td>0..* <br/> <a href="../Agent/">Agent</a></td>
+<td>0..* <br> <a href="../Agent/">Agent</a></br></td>
 <td>connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.</td>
 <td>direct</td>
 </tr>
@@ -1436,14 +1432,10 @@
 </tr>
 </tbody>
 </table>
-<p>| PMID | ['publication', 'article', 'journal article'] |</p>
-<p>| PMC | ['publication'] |</p>
-<p>| doi | ['information content entity', 'publication', 'journal article'] |</p>
-<p>| NLMID | ['publication', 'book', 'serial'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| PMID | ['publication', 'article', 'journal article'] | 
+| PMC | ['publication'] | 
+| doi | ['information content entity', 'publication', 'journal article'] | 
+| NLMID | ['publication', 'book', 'serial'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -1457,20 +1449,11 @@
 <td>self</td>
 <td>biolink:Publication</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Publication</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>IAO:0000311</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>IAO:0000013, STY:T170</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Publication |</p>
+<p>| exact | IAO:0000311 |</p>
+<p>| narrow | IAO:0000013, STY:T170 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

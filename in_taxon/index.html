@@ -493,13 +493,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -510,13 +503,6 @@
           <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
   </a>
   
 </li>
@@ -559,9 +545,15 @@
 
 
 <h1 id="slot-in_taxon">Slot: in_taxon</h1>
-<p>aliases: instance of, is organism source of gene product, organism has gene, gene found in organism, gene product has organism source </p>
-<p>connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/in_taxon">biolink:in_taxon</a></p>
+<div class="highlight-box"> <strong>Description:</strong> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' <br>
+
+   <strong>Aliases:</strong> instance of, is organism source of gene product, organism has gene, gene found in organism, gene product has organism source <br>
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../ThingWithTaxon/">ThingWithTaxon</a> <br> 
+   <strong>Range:</strong> <a href="../OrganismTaxon/">OrganismTaxon</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -589,15 +581,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../OrganismTaxon/">OrganismTaxon</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
 <table>
@@ -614,10 +597,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -631,20 +610,11 @@
 <td>self</td>
 <td>biolink:in_taxon</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:in_taxon</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>RO:0002162, WIKIDATA_PROPERTY:P703</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>RO:0002160</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:in_taxon |</p>
+<p>| exact | RO:0002162, WIKIDATA_PROPERTY:P703 |</p>
+<p>| narrow | RO:0002160 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

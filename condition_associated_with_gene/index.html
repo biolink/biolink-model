@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,9 +525,16 @@
 
 
 <h1 id="slot-condition_associated_with_gene">Slot: condition_associated_with_gene</h1>
-<p>aliases: disease associated with gene </p>
-<p>holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/condition_associated_with_gene">biolink:condition_associated_with_gene</a></p>
+<div class="highlight-box"> <strong>Description:</strong> holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products <br>
+
+   <strong>Aliases:</strong> disease associated with gene <br>
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> 
+   <strong>Range:</strong> <a href="../Gene/">Gene</a> <br> 
+   <strong>Inverse:</strong> <a href="../gene_associated_with_condition/">gene_associated_with_condition</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -564,20 +551,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../Gene/">Gene</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -591,16 +565,10 @@
 <td>self</td>
 <td>biolink:condition_associated_with_gene</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:condition_associated_with_gene</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>NCIT:R176</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:condition_associated_with_gene |</p>
+<p>| narrow | NCIT:R176 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

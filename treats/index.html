@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -503,13 +496,6 @@
           <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
   </a>
   
 </li>
@@ -552,9 +538,14 @@
 
 
 <h1 id="slot-treats">Slot: treats</h1>
-<p>aliases: is substance that treats, indicated for, ameliorates or prevents condition </p>
-<p>Holds between a substance, procedure, or activity and a medical condition disease or phenotypic feature,  and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition  or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted  knoweldge_level assertion only in cases where there is strong supporting  evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is a well-established  treatment in the medical community. In the absence of such evidence, weaker predicates should be used in  asserted edges, e.g. ‘in clinical trials for’ or ‘beneficial in models of’. ‘Treats’ edges based on weaker  or indirect forms of evidence can however be created as predictions, knowledge_level: prediction, and should  point to the more foundational asserted edges that support them.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/treats">biolink:treats</a></p>
+<div class="highlight-box"> <strong>Description:</strong> Holds between a substance, procedure, or activity and a medical condition disease or phenotypic feature,  and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition  or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted  knoweldge_level assertion only in cases where there is strong supporting  evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is a well-established  treatment in the medical community. In the absence of such evidence, weaker predicates should be used in  asserted edges, e.g. ‘in clinical trials for’ or ‘beneficial in models of’. ‘Treats’ edges based on weaker  or indirect forms of evidence can however be created as predictions, knowledge_level: prediction, and should  point to the more foundational asserted edges that support them. <br>
+
+   <strong>Aliases:</strong> is substance that treats, indicated for, ameliorates or prevents condition <br>
+
+  </div>
+
+<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
+   <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="mixin-usage">Mixin Usage</h2>
@@ -582,15 +573,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></p>
-</li>
-<li>
-<p>Mixin: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
 <table>
@@ -607,10 +589,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -624,28 +602,13 @@
 <td>self</td>
 <td>biolink:treats</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:treats</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>DRUGBANK:treats, SEMMEDDB:TREATS, WIKIDATA_PROPERTY:P2175</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>RO:0002606, NCIT:regimen_has_accepted_use_for_disease, REPODB:clinically_tested_approved_unknown_phase, REPODB:clinically_tested_suspended_phase_0, REPODB:clinically_tested_suspended_phase_1, REPODB:clinically_tested_suspended_phase_1_or_phase_2, REPODB:clinically_tested_suspended_phase_2, REPODB:clinically_tested_suspended_phase_2_or_phase_3, REPODB:clinically_tested_suspended_phase_3, REPODB:clinically_tested_terminated_phase_0, REPODB:clinically_tested_terminated_phase_1, REPODB:clinically_tested_terminated_phase_1_or_phase_2, REPODB:clinically_tested_terminated_phase_2, REPODB:clinically_tested_terminated_phase_2_or_phase_3, REPODB:clinically_tested_terminated_phase_3, REPODB:clinically_tested_withdrawn_phase_0, REPODB:clinically_tested_withdrawn_phase_1, REPODB:clinically_tested_withdrawn_phase_1_or_phase_2, REPODB:clinically_tested_withdrawn_phase_2, REPODB:clinically_tested_withdrawn_phase_2_or_phase_3, REPODB:clinically_tested_withdrawn_phase_3, SNOMED:plays_role</td>
-</tr>
-<tr>
-<td>broad</td>
-<td>DRUGBANK:treats, SEMMEDDB:TREATS, WIKIDATA_PROPERTY:P2175, MONDO:disease_responds_to</td>
-</tr>
-<tr>
-<td>related</td>
-<td>MONDO:disease_responds_to</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:treats |</p>
+<p>| exact | DRUGBANK:treats, SEMMEDDB:TREATS, WIKIDATA_PROPERTY:P2175 |</p>
+<p>| narrow | RO:0002606, NCIT:regimen_has_accepted_use_for_disease, REPODB:clinically_tested_approved_unknown_phase, REPODB:clinically_tested_suspended_phase_0, REPODB:clinically_tested_suspended_phase_1, REPODB:clinically_tested_suspended_phase_1_or_phase_2, REPODB:clinically_tested_suspended_phase_2, REPODB:clinically_tested_suspended_phase_2_or_phase_3, REPODB:clinically_tested_suspended_phase_3, REPODB:clinically_tested_terminated_phase_0, REPODB:clinically_tested_terminated_phase_1, REPODB:clinically_tested_terminated_phase_1_or_phase_2, REPODB:clinically_tested_terminated_phase_2, REPODB:clinically_tested_terminated_phase_2_or_phase_3, REPODB:clinically_tested_terminated_phase_3, REPODB:clinically_tested_withdrawn_phase_0, REPODB:clinically_tested_withdrawn_phase_1, REPODB:clinically_tested_withdrawn_phase_1_or_phase_2, REPODB:clinically_tested_withdrawn_phase_2, REPODB:clinically_tested_withdrawn_phase_2_or_phase_3, REPODB:clinically_tested_withdrawn_phase_3, SNOMED:plays_role |</p>
+<p>| broad | DRUGBANK:treats, SEMMEDDB:TREATS, WIKIDATA_PROPERTY:P2175, MONDO:disease_responds_to |</p>
+<p>| related | MONDO:disease_responds_to |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

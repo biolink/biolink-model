@@ -234,11 +234,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -247,11 +242,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#valid-id-prefixes">
     Valid ID Prefixes
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
   </a>
 </li>
 </ul>
@@ -284,9 +274,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-sequencevariant">Class: SequenceVariant</h1>
-<p>aliases: allele </p>
-<p>A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/SequenceVariant">biolink:SequenceVariant</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration. <br/>
+<strong>Aliases:</strong> allele <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/SequenceVariant">biolink:SequenceVariant</a></p>
 <div class="mermaid"> classDiagram
     class SequenceVariant
       GenomicEntity &lt;|-- SequenceVariant
@@ -367,13 +358,13 @@
 <tbody>
 <tr>
 <td><a href="../has_gene/">has_gene</a></td>
-<td>0..* <br/> <a href="../Gene/">Gene</a></td>
+<td>0..* <br> <a href="../Gene/">Gene</a></br></td>
 <td>Each allele can be associated with any number of genes</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
-<td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
+<td>0..1 <br> <a href="../BiologicalSequence/">BiologicalSequence</a></br></td>
 <td>The state of the sequence w.r.t a reference sequence</td>
 <td><a href="../GenomicEntity/">GenomicEntity</a></td>
 </tr>
@@ -381,7 +372,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
@@ -524,10 +515,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="valid-id-prefixes">Valid ID Prefixes</h3>
 <p>Instances of this class <em>should</em> have identifiers with one of the following prefixes, ordered with the most preferred first:</p>
@@ -545,23 +532,19 @@
 </tr>
 </tbody>
 </table>
-<p>| CAID | ['sequence variant'] |</p>
-<p>| CLINVAR | ['sequence variant'] |</p>
-<p>| WIKIDATA | ['sequence variant'] |</p>
-<p>| DBSNP | ['sequence variant'] |</p>
-<p>| MGI | ['gene', 'sequence variant'] |</p>
-<p>| ZFIN | ['gene', 'genotype', 'sequence variant'] |</p>
-<p>| FB | ['pathway', 'gene', 'transcript', 'polypeptide', 'protein', 'gene family', 'genotype', 'sequence variant'] |</p>
-<p>| RGD | ['gene', 'sequence variant'] |</p>
-<p>| AGRKB | ['sequence variant'] |</p>
-<p>| SPDI | ['sequence variant'] |</p>
-<p>| WB | ['gene', 'sequence variant'] |</p>
-<p>| WormBase | ['gene', 'microRNA', 'siRNA', 'sequence variant'] |</p>
-<p>| PHARMGKB.VARIANT | ['sequence variant'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| CAID | ['sequence variant'] | 
+| CLINVAR | ['sequence variant'] | 
+| WIKIDATA | ['sequence variant'] | 
+| DBSNP | ['sequence variant'] | 
+| MGI | ['gene', 'sequence variant'] | 
+| ZFIN | ['gene', 'genotype', 'sequence variant'] | 
+| FB | ['pathway', 'gene', 'transcript', 'polypeptide', 'protein', 'gene family', 'genotype', 'sequence variant'] | 
+| RGD | ['gene', 'sequence variant'] | 
+| AGRKB | ['sequence variant'] | 
+| SPDI | ['sequence variant'] | 
+| WB | ['gene', 'sequence variant'] | 
+| WormBase | ['gene', 'microRNA', 'siRNA', 'sequence variant'] | 
+| PHARMGKB.VARIANT | ['sequence variant'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -575,20 +558,11 @@
 <td>self</td>
 <td>biolink:SequenceVariant</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:SequenceVariant</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>WIKIDATA:Q15304597</td>
-</tr>
-<tr>
-<td>close</td>
-<td>dcid:Allele, SO:0001060, VMC:Allele, GENO:0000002, SIO:010277, SO:0001060</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:SequenceVariant |</p>
+<p>| exact | WIKIDATA:Q15304597 |</p>
+<p>| close | dcid:Allele, SO:0001060, VMC:Allele, GENO:0000002, SIO:010277, SO:0001060 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

@@ -493,36 +493,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
-    Comments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -559,9 +532,15 @@
 
 
 <h1 id="slot-publications">Slot: publications</h1>
-<p>aliases: supporting publications, supporting documents </p>
-<p>One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/publications">biolink:publications</a></p>
+<div class="highlight-box"> <strong>Description:</strong> One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement. <br>
+
+   <strong>Aliases:</strong> supporting publications, supporting documents <br>
+
+  </div>
+
+<p><strong>Multivalued:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
+   <strong>Range:</strong> <a href="../Publication/">Publication</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -586,24 +565,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../Publication/">Publication</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-</ul>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>The notion of a ‘Publication’ is considered broadly to include any  document made available for public consumption. It covers journal issues,  individual articles, and books - and also things like article pre-prints,  white papers, patents, drug labels, web pages, protocol documents, etc. </li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -617,12 +579,9 @@
 <td>self</td>
 <td>biolink:publications</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:publications</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:publications |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

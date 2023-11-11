@@ -244,11 +244,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -279,8 +274,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-gene">Class: Gene</h1>
-<p>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/Gene">biolink:Gene</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Gene">biolink:Gene</a></p>
 <div class="mermaid"> classDiagram
     class Gene
       GeneOrGeneProduct &lt;|-- Gene
@@ -354,7 +350,7 @@
 <tbody>
 <tr>
 <td><a href="../symbol/">symbol</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
 <td>Symbol for a particular thing</td>
 <td>direct</td>
 </tr>
@@ -374,7 +370,7 @@
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
@@ -428,7 +424,7 @@
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
 <td>genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name</td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
@@ -570,28 +566,24 @@
 </tr>
 </tbody>
 </table>
-<p>| NCBIGene | ['gene', 'noncoding RNA product'] |</p>
-<p>| ENSEMBL | ['gene', 'transcript', 'polypeptide', 'protein', 'protein isoform', 'noncoding RNA product'] |</p>
-<p>| HGNC | ['gene', 'microRNA', 'siRNA'] |</p>
-<p>| MGI | ['gene', 'sequence variant'] |</p>
-<p>| ZFIN | ['gene', 'genotype', 'sequence variant'] |</p>
-<p>| dictyBase | ['gene'] |</p>
-<p>| WB | ['gene', 'sequence variant'] |</p>
-<p>| WormBase | ['gene', 'microRNA', 'siRNA', 'sequence variant'] |</p>
-<p>| FB | ['pathway', 'gene', 'transcript', 'polypeptide', 'protein', 'gene family', 'genotype', 'sequence variant'] |</p>
-<p>| RGD | ['gene', 'sequence variant'] |</p>
-<p>| SGD | ['gene'] |</p>
-<p>| PomBase | ['gene'] |</p>
-<p>| OMIM | ['disease', 'gene'] |</p>
-<p>| KEGG.GENES | ['gene'] |</p>
-<p>| UMLS | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'molecular mixture', 'complex molecular mixture', 'molecular activity', 'processed material', 'drug', 'food', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'gene', 'polypeptide', 'protein'] |</p>
-<p>| Xenbase | ['gene'] |</p>
-<p>| AspGD | ['gene'] |</p>
-<p>| PHARMGKB.GENE | ['gene'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| NCBIGene | ['gene', 'noncoding RNA product'] | 
+| ENSEMBL | ['gene', 'transcript', 'polypeptide', 'protein', 'protein isoform', 'noncoding RNA product'] | 
+| HGNC | ['gene', 'microRNA', 'siRNA'] | 
+| MGI | ['gene', 'sequence variant'] | 
+| ZFIN | ['gene', 'genotype', 'sequence variant'] | 
+| dictyBase | ['gene'] | 
+| WB | ['gene', 'sequence variant'] | 
+| WormBase | ['gene', 'microRNA', 'siRNA', 'sequence variant'] | 
+| FB | ['pathway', 'gene', 'transcript', 'polypeptide', 'protein', 'gene family', 'genotype', 'sequence variant'] | 
+| RGD | ['gene', 'sequence variant'] | 
+| SGD | ['gene'] | 
+| PomBase | ['gene'] | 
+| OMIM | ['disease', 'gene'] | 
+| KEGG.GENES | ['gene'] | 
+| UMLS | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'molecular mixture', 'complex molecular mixture', 'molecular activity', 'processed material', 'drug', 'food', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'gene', 'polypeptide', 'protein'] | 
+| Xenbase | ['gene'] | 
+| AspGD | ['gene'] | 
+| PHARMGKB.GENE | ['gene'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -605,24 +597,12 @@
 <td>self</td>
 <td>biolink:Gene</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:Gene</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>SO:0000704, SIO:010035, WIKIDATA:Q7187, dcid:Gene</td>
-</tr>
-<tr>
-<td>narrow</td>
-<td>bioschemas:gene</td>
-</tr>
-<tr>
-<td>broad</td>
-<td>NCIT:C45822</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:Gene |</p>
+<p>| exact | SO:0000704, SIO:010035, WIKIDATA:Q7187, dcid:Gene |</p>
+<p>| narrow | bioschemas:gene |</p>
+<p>| broad | NCIT:C45822 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

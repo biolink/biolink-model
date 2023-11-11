@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,8 +260,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-chemicaltochemicalderivationassociation">Class: ChemicalToChemicalDerivationAssociation</h1>
-<p>A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation">biolink:ChemicalToChemicalDerivationAssociation</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation">biolink:ChemicalToChemicalDerivationAssociation</a></p>
 <div class="mermaid"> classDiagram
     class ChemicalToChemicalDerivationAssociation
       ChemicalToChemicalAssociation &lt;|-- ChemicalToChemicalDerivationAssociation
@@ -395,7 +387,7 @@
 <tbody>
 <tr>
 <td><a href="../catalyst_qualifier/">catalyst_qualifier</a></td>
-<td>0..* <br/> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
+<td>0..* <br> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></br></td>
 <td>this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.</td>
 <td>direct</td>
 </tr>
@@ -600,10 +592,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -617,12 +605,9 @@
 <td>self</td>
 <td>biolink:ChemicalToChemicalDerivationAssociation</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:ChemicalToChemicalDerivationAssociation</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:ChemicalToChemicalDerivationAssociation |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

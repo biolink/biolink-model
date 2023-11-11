@@ -486,29 +486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,9 +525,14 @@
 
 
 <h1 id="slot-start_coordinate">Slot: start_coordinate</h1>
-<p>aliases: start </p>
-<p>The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/start_coordinate">biolink:start_coordinate</a></p>
+<div class="highlight-box"> <strong>Description:</strong> The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1). <br>
+
+   <strong>Aliases:</strong> start <br>
+
+  </div>
+
+<p><strong>Domain:</strong> <a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a> <br> 
+   <strong>Range:</strong> <a href="../Integer/">Integer</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -561,15 +546,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../Integer/">Integer</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -583,20 +560,11 @@
 <td>self</td>
 <td>biolink:start_coordinate</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:start_coordinate</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>gff3:start</td>
-</tr>
-<tr>
-<td>close</td>
-<td>faldo:begin</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:start_coordinate |</p>
+<p>| exact | gff3:start |</p>
+<p>| close | faldo:begin |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

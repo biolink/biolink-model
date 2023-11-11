@@ -232,15 +232,6 @@
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -269,8 +260,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-proteindomain">Class: ProteinDomain</h1>
-<p>A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/ProteinDomain">biolink:ProteinDomain</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/ProteinDomain">biolink:ProteinDomain</a></p>
 <div class="mermaid"> classDiagram
     class ProteinDomain
       GeneGroupingMixin &lt;|-- ProteinDomain
@@ -341,7 +333,7 @@
 <tbody>
 <tr>
 <td><a href="../has_gene_or_gene_product/">has_gene_or_gene_product</a></td>
-<td>0..* <br/> <a href="../Gene/">Gene</a></td>
+<td>0..* <br> <a href="../Gene/">Gene</a></br></td>
 <td>connects an entity with one or more gene or gene products</td>
 <td><a href="../GeneGroupingMixin/">GeneGroupingMixin</a></td>
 </tr>
@@ -432,10 +424,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -449,16 +437,10 @@
 <td>self</td>
 <td>biolink:ProteinDomain</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:ProteinDomain</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>NCIT:C13379, SIO:001379, UMLS:C1514562</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:ProteinDomain |</p>
+<p>| exact | NCIT:C13379, SIO:001379, UMLS:C1514562 |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

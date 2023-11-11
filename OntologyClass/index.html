@@ -239,21 +239,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#examples">
-    Examples
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#see-also">
-    See Also
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -262,11 +247,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#valid-id-prefixes">
     Valid ID Prefixes
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
   </a>
 </li>
 </ul>
@@ -299,8 +279,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-ontologyclass">Class: OntologyClass</h1>
-<p>a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/OntologyClass">biolink:OntologyClass</a></p>
+<div class="highlight-box"> <strong>Description:</strong> a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/OntologyClass">biolink:OntologyClass</a></p>
 <div class="mermaid"> classDiagram
     class OntologyClass
       OntologyClass &lt;|-- Attribute
@@ -352,7 +333,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br> <a href="../String/">String</a></br></td>
 <td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
 <td>direct</td>
 </tr>
@@ -3248,28 +3229,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="examples">Examples</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UBERON:0000955</td>
-</tr>
-</tbody>
-</table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc</li>
-<li>Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges. For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity</li>
-</ul>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><a href="https://github.com/biolink/biolink-model/issues/486">https://github.com/biolink/biolink-model/issues/486</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="valid-id-prefixes">Valid ID Prefixes</h3>
 <p>Instances of this class <em>should</em> have identifiers with one of the following prefixes, ordered with the most preferred first:</p>
@@ -3287,13 +3246,9 @@
 </tr>
 </tbody>
 </table>
-<p>| MESH | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'protein'] |</p>
-<p>| UMLS | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'molecular mixture', 'complex molecular mixture', 'molecular activity', 'processed material', 'drug', 'food', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'gene', 'polypeptide', 'protein'] |</p>
-<p>| KEGG.BRITE | ['ontology class'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| MESH | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'nucleic acid entity', 'molecular mixture', 'complex molecular mixture', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'protein'] | 
+| UMLS | ['ontology class', 'organism taxon', 'molecular entity', 'chemical entity', 'small molecule', 'chemical mixture', 'molecular mixture', 'complex molecular mixture', 'molecular activity', 'processed material', 'drug', 'food', 'disease', 'phenotypic feature', 'anatomical entity', 'cellular component', 'cell', 'gross anatomical structure', 'gene', 'polypeptide', 'protein'] | 
+| KEGG.BRITE | ['ontology class'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -3307,16 +3262,10 @@
 <td>self</td>
 <td>biolink:OntologyClass</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:OntologyClass</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>owl:Class, schema:Class</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:OntologyClass |</p>
+<p>| exact | owl:Class, schema:Class |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

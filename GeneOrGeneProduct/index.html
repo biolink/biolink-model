@@ -249,11 +249,6 @@
     Valid ID Prefixes
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -284,8 +279,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-geneorgeneproduct">Class: GeneOrGeneProduct</h1>
-<p>A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another</p>
-<p>URI: <a href="https://w3id.org/biolink/vocab/GeneOrGeneProduct">biolink:GeneOrGeneProduct</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/GeneOrGeneProduct">biolink:GeneOrGeneProduct</a></p>
 <div class="mermaid"> classDiagram
     class GeneOrGeneProduct
       MacromolecularMachineMixin &lt;|-- GeneOrGeneProduct
@@ -322,7 +318,7 @@
 <tbody>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
+<td>0..1 <br> <a href="../SymbolType/">SymbolType</a></br></td>
 <td>genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name</td>
 <td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 </tr>
@@ -517,12 +513,8 @@
 </tr>
 </tbody>
 </table>
-<p>| CHEMBL.TARGET | ['gene or gene product'] |</p>
-<p>| IUPHAR.FAMILY | ['gene or gene product'] |</p>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
+<p>| CHEMBL.TARGET | ['gene or gene product'] | 
+| IUPHAR.FAMILY | ['gene or gene product'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -536,12 +528,9 @@
 <td>self</td>
 <td>biolink:GeneOrGeneProduct</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:GeneOrGeneProduct</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:GeneOrGeneProduct |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

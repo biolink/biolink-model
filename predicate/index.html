@@ -493,29 +493,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -552,8 +532,14 @@
 
 
 <h1 id="slot-predicate">Slot: predicate</h1>
-<p>A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.</p>
-<p>URI: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">rdf:predicate</a></p>
+<div class="highlight-box"> <strong>Description:</strong> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. <br>
+
+
+  </div>
+
+<p><strong>Required:</strong> True <br> </p>
+<p><strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
+   <strong>Range:</strong> <a href="../PredicateType/">PredicateType</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -583,20 +569,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../PredicateType/">PredicateType</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/biolink/biolink-model</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -610,16 +583,10 @@
 <td>self</td>
 <td>rdf:predicate</td>
 </tr>
-<tr>
-<td>native</td>
-<td>biolink:predicate</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>owl:annotatedProperty, OBAN:association_has_predicate</td>
-</tr>
 </tbody>
 </table>
+<p>| native | biolink:predicate |</p>
+<p>| exact | owl:annotatedProperty, OBAN:association_has_predicate |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
