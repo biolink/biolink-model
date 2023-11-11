@@ -1,37 +1,3 @@
-{% if element.examples %}
-## Examples
-
-| Value |
-| --- |
-{% for x in element.examples -%}
-| {{ x.value }} |
-{% endfor %}
-{% endif -%}
-
-{% if element.comments -%}
-## Comments
-
-{% for x in element.comments -%}
-* {{x}}
-{% endfor %}
-{% endif -%}
-
-{% if element.todos -%}
-## TODOs
-
-{% for x in element.todos -%}
-* {{x}}
-{% endfor %}
-{% endif -%}
-
-{% if element.see_also -%}
-## See Also
-
-{% for x in element.see_also -%}
-* {{ gen.uri_link(x) }}
-{% endfor %}
-{% endif -%}
-
 ## Identifier and Mapping Information
 
 {% if element.id_prefixes %}
