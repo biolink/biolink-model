@@ -1,13 +1,14 @@
-# Slot: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>
-{% endif %} {% if element.abstract %}<span style="color: purple;"><strong> (Abstract Slot) </strong>:</span>{% endif %}
+# Slot: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}
+{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Slot) </strong>:</span> {% endif %}
   {% if element.description %}
   <div class="highlight-box"> <strong>Description:</strong> {{ element.description }} <br>
-    {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }} <br> {% endif %}
-  </div>
   {% endif %}
+  {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }} <br>
+  {% endif %}
+  </div>
 
   {% if element.multivalued %} <strong>Multivalued:</strong> {{ element.multivalued }} <br> {% endif %}
-  {% if element.required %} <strong>Required:</strong> {{ element.required }} {<br> % endif %}
+  {% if element.required %} <strong>Required:</strong> {{ element.required }} <br> {% endif %}
   {% if element.identifier %} <strong>URI:</strong> {{ gen.uri_link(element) }} <br> {% endif %}
   {% if element.domain %} <strong>Domain:</strong> {{ gen.link(element.domain) }} <br> {% endif %}
   {% if element.range %} <strong>Range:</strong> {{ gen.link(element.range) }} <br> {% endif %}
