@@ -1,21 +1,15 @@
-# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong>:</span> {% endif %}
-{% if element.abstract %}
-<span style="color: purple;"><strong> ABSTRACT </strong>:</span>
-{% endif %}
-{% if element.aliases %} aliases: {{ element.aliases | join(', ') }} {% endif %}
+# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %} {% if element.abstract %}<span style="color: purple;"><strong> (Abstract Class) </strong>:</span>{% endif %}
 
-{%- if header -%}
-{{header}}
-{%- endif -%}
+  {% if element.description %}
+  <div class="highlight-box">
+    <strong>Description:</strong> {{ element.description }} <br>
+    {% if element.aliases %}
+    <strong>Aliases:</strong> {{ element.aliases | join(', ') }} <br>
+    {% endif %}
+  </div>
+  {% endif %}
 
-{% if element.description %}
-{% set element_description_lines = element.description.split('\n') %}
-{% for element_description_line in element_description_lines %}
-{{ element_description_line }}
-{% endfor %}
-{% endif %}
-
-URI: {{ gen.uri_link(element) }}
+  <strong>URI:</strong> {{ gen.uri_link(element) }}
 
 
 {% if diagram_type == "er_diagram" %}
