@@ -18,20 +18,20 @@ Instances of this class *should* have identifiers with one of the following pref
 | property | value |
 | --- | --- |
 {% for a in element.annotations -%}
-{%- if a|string|first != '_' -%}
+{% if a|string|first != '_' %}
 | {{ a }} | {{ element.annotations[a].value }} |
-{%- endif -%}
+{% endif %}
 {% endfor %}
 {% endif %}
 
 
-{% if schemaview.get_mappings(element.name).items() -%}
+{% if schemaview.get_mappings(element.name).items() %}
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-{% for m, mt in schemaview.get_mappings(element.name).items() -%}
-{% if mt|length > 0 -%}
+{% for m, mt in schemaview.get_mappings(element.name).items() %}
+{% if mt|length > 0 %}
 | {{ m }} | {{ mt|join(', ') }} |
 {% endif %}
 {% endfor %}
