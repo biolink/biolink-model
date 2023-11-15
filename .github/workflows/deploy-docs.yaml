@@ -1,8 +1,8 @@
 ---
 name: Auto-deployment of biolink_model Documentation
 on:
-  push:
-    branches: [ master ]
+  release:
+    types: [created]
 
 jobs:
   build-docs:
