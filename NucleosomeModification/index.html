@@ -334,7 +334,7 @@
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>0..1 <br> <a href="../BiologicalSequence/">BiologicalSequence</a></br></td>
 <td>connects a genomic feature to its sequence</td>
-<td><a href="../GenomicEntity/">GenomicEntity</a>, <a href="../EpigenomicEntity/">EpigenomicEntity</a></td>
+<td><a href="../EpigenomicEntity/">EpigenomicEntity</a>, <a href="../GenomicEntity/">GenomicEntity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
@@ -358,7 +358,7 @@
 <td><a href="../xref/">xref</a></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
-<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
 </tr>
 <tr>
 <td><a href="../full_name/">full_name</a></td>
@@ -370,7 +370,7 @@
 <td><a href="../synonym/">synonym</a></td>
 <td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
 <td>Alternate human-readable names for a thing</td>
-<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -436,9 +436,12 @@
 <td>self</td>
 <td>biolink:NucleosomeModification</td>
 </tr>
+<tr>
+<td>native</td>
+<td>biolink:NucleosomeModification</td>
+</tr>
 </tbody>
 </table>
-<p>| native | biolink:NucleosomeModification |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
