@@ -21,7 +21,7 @@ Instances of this class *should* have identifiers with one of the following pref
 {% for m, mt in schemaview.get_mappings(element.name).items() -%}
 {% if mt -%}
 | {{ m }} | {{ mt|join(', ') }} |
-{% endif %}
+{% endif -%}
 {% endfor %}
 {% endif %}
 
