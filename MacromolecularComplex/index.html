@@ -339,7 +339,7 @@
 <td><a href="../name/">name</a></td>
 <td>0..1 <br> <a href="../SymbolType/">SymbolType</a></br></td>
 <td>genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name</td>
-<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
+<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a></td>
@@ -433,16 +433,27 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>INTACT</td>
+<td>['macromolecular complex']</td>
+</tr>
+<tr>
+<td>GO</td>
+<td>['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'anatomical entity', 'cellular component', 'macromolecular complex']</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>['gene product mixin', 'macromolecular complex', 'polypeptide', 'protein', 'protein isoform']</td>
+</tr>
+<tr>
+<td>REACT</td>
+<td>['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'macromolecular complex']</td>
+</tr>
+<tr>
+<td>ComplexPortal</td>
+<td>['macromolecular complex']</td>
 </tr>
 </tbody>
 </table>
-<p>| INTACT | ['macromolecular complex'] | 
-| GO | ['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'anatomical entity', 'cellular component', 'macromolecular complex'] | 
-| PR | ['gene product mixin', 'macromolecular complex', 'polypeptide', 'protein', 'protein isoform'] | 
-| REACT | ['biological process or activity', 'molecular activity', 'biological process', 'pathway', 'physiological process', 'macromolecular complex'] | 
-| ComplexPortal | ['macromolecular complex'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -453,12 +464,11 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>self</td>
+<td>biolink:MacromolecularComplex</td>
 </tr>
 </tbody>
 </table>
-<p>| self | biolink:MacromolecularComplex |</p>
 <p>| native | biolink:MacromolecularComplex |</p>
 <p>| exact | GO:0032991, WIKIDATA:Q22325163 |</p>
 <h2 id="linkml-source">LinkML Source</h2>

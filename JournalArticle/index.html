@@ -420,7 +420,7 @@
 <td><a href="../xref/">xref</a></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
-<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a></td>
@@ -526,14 +526,19 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>PMID</td>
+<td>['publication', 'article', 'journal article']</td>
+</tr>
+<tr>
+<td>PMCID</td>
+<td>['journal article']</td>
+</tr>
+<tr>
+<td>doi</td>
+<td>['information content entity', 'publication', 'journal article']</td>
 </tr>
 </tbody>
 </table>
-<p>| PMID | ['publication', 'article', 'journal article'] | 
-| PMCID | ['journal article'] | 
-| doi | ['information content entity', 'publication', 'journal article'] | </p>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -544,12 +549,11 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>self</td>
+<td>biolink:JournalArticle</td>
 </tr>
 </tbody>
 </table>
-<p>| self | biolink:JournalArticle |</p>
 <p>| native | biolink:JournalArticle |</p>
 <p>| exact | IAO:0000013, fabio:JournalArticle |</p>
 <h2 id="linkml-source">LinkML Source</h2>
