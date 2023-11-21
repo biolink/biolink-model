@@ -62,3 +62,16 @@ button a {
     border-radius: 5px; /* Rounded corners for the border */
     margin: 10px 0; /* Adds some space above and below the box */
 }
+
+
+.md-link {
+  fill: blue;  /* Sets the text color to blue */
+}
+
+.md-link:visited {
+  fill: purple;  /* Changes the color to purple once visited */
+}
+
+.md-link:hover {
+  fill: darkblue;  /* Changes the color on hover for visual feedback */
+}

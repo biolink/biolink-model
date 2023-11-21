@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 <h2>Visualizations of the Biolink Model</h2>
@@ -36,7 +37,7 @@
             }
 
             // ************** Generate the tree diagram	 *****************
-            var margin = {top: 10, right: 0, bottom: 10, left: 80},
+            var margin = {top: 10, right: 0, bottom: 10, left: 100},
                 width = 1460 - margin.right - margin.left,
                 rawHeight = getHeight()
             height = rawHeight - margin.top - margin.bottom;
@@ -109,8 +110,17 @@
                     .text(function (d) {
                         return d.name;
                     })
-                    .style("fill-opacity", 1e-6);
+                    .each(function (d) {
+                        var nodeText = d3.select(this);
+                        nodeText.text(d.name);
 
+                        // Append an anchor tag to nodeText
+                        nodeText.append("a")
+                            .attr("class", "md-link")  // Class for styling
+                            .attr("xlink:href", d.name)  // Set the hyperlink reference
+                            .text("(doc)");
+                    })
+                    .style("fill-opacity", 1e-6);
                 // Transition nodes to their new position.
                 var nodeUpdate = node.transition()
                     .duration(duration)
@@ -136,10 +146,12 @@
                     .remove();
 
                 nodeExit.select("circle")
-                    .attr("r", 1e-6);
+                    .attr("r", 1e-6)
+                    .remove();
 
                 nodeExit.select("text")
-                    .style("fill-opacity", 1e-6);
+                    .style("fill-opacity", 1e-6)
+                    .remove();
 
                 // Update the links…
                 var link = svg.selectAll("path.link")
