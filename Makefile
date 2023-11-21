@@ -200,6 +200,7 @@ gendoc: $(DOCDIR)
 	# the .json cp here is the data required for the d3 visualizations
 	cp $(SRC)/docs/*.json $(DOCDIR) ; \
 	cp $(SRC)/docs/*.html $(DOCDIR) ; \
+	cp $(SRC)/docs/*.js $(DOCDIR) ; \
 	# this supports the display of our d3 visualizations
 	cp $(SRC)/docs/*.css $(DOCDIR) ; \
 	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH)
