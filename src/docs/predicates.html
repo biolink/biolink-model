@@ -37,7 +37,7 @@
             }
 
             // ************** Generate the tree diagram	 *****************
-            var margin = {top: 10, right: 0, bottom: 10, left: 80},
+            var margin = {top: 10, right: 0, bottom: 10, left: 100},
                 width = 1460 - margin.right - margin.left,
                 rawHeight = getHeight()
             height = rawHeight - margin.top - margin.bottom;
@@ -97,7 +97,7 @@
                     .attr("r", 1e-6)
                     .style("fill", function (d) {
                         return d._children ? "#9a9a9a" : "#555";
-                    }).remove();
+                    });
 
                 nodeEnter.append("text")
                     .attr("x", function (d) {
@@ -118,7 +118,6 @@
                         nodeText.append("a")
                             .attr("class", "md-link")  // Class for styling
                             .attr("xlink:href", d.name)  // Set the hyperlink reference
-                            .attr("target", "_blank") // Open in a new tab
                             .text("(doc)");
                     })
                     .style("fill-opacity", 1e-6);

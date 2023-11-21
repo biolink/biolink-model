@@ -3,6 +3,8 @@ name: Auto-deployment of biolink_model Documentation
 on:
   release:
     types: [created]
+  push:
+    branches: [doc-refactor]
 
 jobs:
   build-docs:
