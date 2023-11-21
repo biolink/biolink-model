@@ -9,7 +9,6 @@
 
 {% if element.multivalued %} <strong>Multivalued:</strong> {{ element.multivalued }} <br> {% endif %}
 {% if element.required %} <strong>Required:</strong> {{ element.required }} <br> {% endif %}
-{% if element.identifier %} <strong>URI:</strong> {{ gen.uri_link(element) }} <br> {% endif %}
 {% if element.domain %} <strong>Domain:</strong> {{ gen.link(element.domain) }} <br> {% endif %}
 {% if element.range %} <strong>Range:</strong> {{ gen.link(element.range) }} <br> {% endif %}
 {% if element.inverse %} <strong>Inverse:</strong> {{ gen.link(element.inverse) }} <br> {% endif %}
