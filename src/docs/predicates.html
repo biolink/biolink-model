@@ -97,13 +97,13 @@
                     .attr("r", 1e-6)
                     .style("fill", function (d) {
                         return d._children ? "#9a9a9a" : "#555";
-                    });
+                    }).remove();
 
                 nodeEnter.append("text")
                     .attr("x", function (d) {
                         return d.children || d._children ? -6 : 6;
                     })
-                    .attr("dy", ".50em")
+                    .attr("dy", ".35em")
                     .attr("text-anchor", function (d) {
                         return d.children || d._children ? "end" : "start";
                     })
@@ -121,6 +121,7 @@
                             .attr("target", "_blank") // Open in a new tab
                             .text("(doc)");
                     })
+                    .style("fill-opacity", 1e-6);
                 // Transition nodes to their new position.
                 var nodeUpdate = node.transition()
                     .duration(duration)
@@ -146,10 +147,12 @@
                     .remove();
 
                 nodeExit.select("circle")
-                    .attr("r", 1e-6);
+                    .attr("r", 1e-6)
+                    .remove();
 
                 nodeExit.select("text")
-                    .style("fill-opacity", 1e-6);
+                    .style("fill-opacity", 1e-6)
+                    .remove();
 
                 // Update the links…
                 var link = svg.selectAll("path.link")
