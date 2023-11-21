@@ -96,7 +96,7 @@ function generateD3Tree(jsonFile, marginSettings, camelcase) {
                     // Append an anchor tag to nodeText
                     nodeText.append("a")
                         .attr("class", "md-link")  // Class for styling
-                        .attr("xlink:href", d.name)  // Set the hyperlink reference
+                        .attr("xlink:href", toCamelCase(d.name))  // Set the hyperlink reference
                         .text("(doc)");
                 })
                 .style("fill-opacity", 1e-6);
