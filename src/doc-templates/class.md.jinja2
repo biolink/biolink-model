@@ -1,5 +1,4 @@
-# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>{% endif %}
-{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Class) </strong>:</span>{% endif %}
+# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>{% endif %}{% if element.abstract %}<span style="color: purple;"> (Abstract Class) </span>{% endif %}
   {% if element.description %}
   <div class="highlight-box"> <strong>Description:</strong> {{ element.description }} <br>
     {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }} <br> {% endif %}
