@@ -38,6 +38,13 @@ function generateD3Tree(jsonFile, marginSettings, camelcase) {
 
         d3.select(self.frameElement).style("height", "500px");
 
+        function toCamelCase(str) {
+            return str.replace(/([-_][a-z])/g, (group) => group.toUpperCase()
+                .replace('-', '')
+                .replace('_', ''))
+                .replace(/^[a-z]/, (group) => group.toUpperCase());
+        }
+
         function update(source) {
 
             // Compute the new tree layout.
