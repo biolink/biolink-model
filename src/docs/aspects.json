@@ -6,260 +6,210 @@
             {
                 "name": "activity_or_abundance",
                 "parent": "[root]",
-                "mdFile": "activity_or_abundance.md",
                 "children": [
                     {
                         "name": "abundance",
                         "parent": "activity_or_abundance",
-                        "mdFile": "abundance.md",
                         "children": [
                             {
                                 "name": "expression",
-                                "parent": "abundance",
-                                "mdFile": "expression.md"
+                                "parent": "abundance"
                             },
                             {
                                 "name": "synthesis",
-                                "parent": "abundance",
-                                "mdFile": "synthesis.md"
+                                "parent": "abundance"
                             }
                         ]
                     },
                     {
                         "name": "activity",
-                        "parent": "activity_or_abundance",
-                        "mdFile": "activity.md"
+                        "parent": "activity_or_abundance"
                     }
                 ]
             },
             {
                 "name": "degradation",
                 "parent": "[root]",
-                "mdFile": "degradation.md",
                 "children": [
                     {
                         "name": "cleavage",
-                        "parent": "degradation",
-                        "mdFile": "cleavage.md"
+                        "parent": "degradation"
                     },
                     {
                         "name": "hydrolysis",
-                        "parent": "degradation",
-                        "mdFile": "hydrolysis.md"
+                        "parent": "degradation"
                     }
                 ]
             },
             {
                 "name": "folding",
-                "parent": "[root]",
-                "mdFile": "folding.md"
+                "parent": "[root]"
             },
             {
                 "name": "localization",
-                "parent": "[root]",
-                "mdFile": "localization.md"
+                "parent": "[root]"
             },
             {
                 "name": "metabolic_processing",
-                "parent": "[root]",
-                "mdFile": "metabolic_processing.md"
+                "parent": "[root]"
             },
             {
                 "name": "molecular_interaction",
-                "parent": "[root]",
-                "mdFile": "molecular_interaction.md"
+                "parent": "[root]"
             },
             {
                 "name": "molecular_modification",
                 "parent": "[root]",
-                "mdFile": "molecular_modification.md",
                 "children": [
                     {
                         "name": "ADP-ribosylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "ADP-ribosylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "acetylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "acetylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "acylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "acylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "alkylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "alkylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "amination",
-                        "parent": "molecular_modification",
-                        "mdFile": "amination.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "carbamoylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "carbamoylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "carboxylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "carboxylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "ethylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "ethylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "farnesylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "farnesylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "geranoylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "geranoylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "glucuronidation",
-                        "parent": "molecular_modification",
-                        "mdFile": "glucuronidation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "glutathionylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "glutathionylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "glycation",
-                        "parent": "molecular_modification",
-                        "mdFile": "glycation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "glycosylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "glycosylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "hydroxylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "hydroxylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "lipidation",
-                        "parent": "molecular_modification",
-                        "mdFile": "lipidation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "methylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "methylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "myristoylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "myristoylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "n_linked_glycosylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "n_linked_glycosylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "nitrosation",
-                        "parent": "molecular_modification",
-                        "mdFile": "nitrosation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "nucleotidylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "nucleotidylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "o_linked_glycosylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "o_linked_glycosylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "oxidation",
-                        "parent": "molecular_modification",
-                        "mdFile": "oxidation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "palmitoylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "palmitoylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "phosphorylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "phosphorylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "prenylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "prenylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "reduction",
-                        "parent": "molecular_modification",
-                        "mdFile": "reduction.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "ribosylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "ribosylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "sulfation",
-                        "parent": "molecular_modification",
-                        "mdFile": "sulfation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "sumoylation",
-                        "parent": "molecular_modification",
-                        "mdFile": "sumoylation.md"
+                        "parent": "molecular_modification"
                     },
                     {
                         "name": "ubiquitination",
-                        "parent": "molecular_modification",
-                        "mdFile": "ubiquitination.md"
+                        "parent": "molecular_modification"
                     }
                 ]
             },
             {
                 "name": "mutation_rate",
-                "parent": "[root]",
-                "mdFile": "mutation_rate.md"
+                "parent": "[root]"
             },
             {
                 "name": "splicing",
-                "parent": "[root]",
-                "mdFile": "splicing.md"
+                "parent": "[root]"
             },
             {
                 "name": "stability",
-                "parent": "[root]",
-                "mdFile": "stability.md"
+                "parent": "[root]"
             },
             {
                 "name": "transport",
                 "parent": "[root]",
-                "mdFile": "transport.md",
                 "children": [
                     {
                         "name": "secretion",
-                        "parent": "transport",
-                        "mdFile": "secretion.md"
+                        "parent": "transport"
                     },
                     {
                         "name": "uptake",
-                        "parent": "transport",
-                        "mdFile": "uptake.md"
+                        "parent": "transport"
                     }
                 ]
             }

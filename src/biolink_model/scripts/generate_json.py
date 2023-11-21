@@ -2,7 +2,6 @@ from collections import defaultdict
 import json
 from typing import Any, List, Union
 from linkml_runtime.utils.schemaview import SchemaView
-import stringcase
 
 file_path = 'src/biolink_model/schema/biolink_model.yaml'
 
@@ -85,7 +84,6 @@ def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
         if cls.deprecated:
             continue
         class_name = convert_predicate_to_trapi_format(class_name)
-        class_name = stringcase.camelcase(class_name)
         if cls.is_a:
             parent_name_english = cls.is_a
             if parent_name_english:
@@ -142,7 +140,7 @@ def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
     if children_names:
         children = []
         for child_name in children_names:
-            child_node = {"name": child_name, "parent": root_name, "mdFile": f"{child_name}.md"}
+            child_node = {"name": child_name, "parent": root_name}
             child_node = get_tree_slot_recursive(child_node, parent_to_child_map)
             children.append(child_node)
         root_node["children"] = sorted(children, key=lambda x: x["name"])

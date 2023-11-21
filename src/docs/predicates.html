@@ -103,7 +103,7 @@
                     .attr("x", function (d) {
                         return d.children || d._children ? -6 : 6;
                     })
-                    .attr("dy", ".35em")
+                    .attr("dy", ".50em")
                     .attr("text-anchor", function (d) {
                         return d.children || d._children ? "end" : "start";
                     })
@@ -115,17 +115,12 @@
                         nodeText.text(d.name);
 
                         // Append an anchor tag to nodeText
-                        var link = nodeText.append("a")
+                        nodeText.append("a")
                             .attr("class", "md-link")  // Class for styling
                             .attr("xlink:href", d.name)  // Set the hyperlink reference
-                            .attr("target", "_blank");   // Open in a new tab
-
-                        // Append a FontAwesome icon to the link
-                        link.append("text")
-                            .attr('font-family', 'FontAwesome')
-                            .text('\uf35d');  // Unicode for 'external-link-alt' icon
+                            .attr("target", "_blank") // Open in a new tab
+                            .text("(doc)");
                     })
-                    .style("fill-opacity", 1e-6);
                 // Transition nodes to their new position.
                 var nodeUpdate = node.transition()
                     .duration(duration)
