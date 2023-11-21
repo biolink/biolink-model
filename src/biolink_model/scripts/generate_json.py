@@ -2,7 +2,7 @@ from collections import defaultdict
 import json
 from typing import Any, List, Union
 from linkml_runtime.utils.schemaview import SchemaView
-
+import stringcase
 
 file_path = 'src/biolink_model/schema/biolink_model.yaml'
 
@@ -14,7 +14,7 @@ with open(file_path, 'r') as file:
 sv = SchemaView(file_content_str)
 
 
-def get_tree_node_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
+def get_tree_class_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
     """
     Recursively get the tree node.
 
@@ -32,9 +32,11 @@ def get_tree_node_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
         children = []
         for child_name in children_names:
             child_node = {"name": child_name, "parent": root_name}
-            child_node = get_tree_node_recursive(child_node, parent_to_child_map)
+            child_node = get_tree_class_recursive(child_node, parent_to_child_map)
             children.append(child_node)
         root_node["children"] = sorted(children, key=lambda x: x["name"])
+        # test
+
     return root_node
 
 
@@ -56,14 +58,14 @@ def load_predicate_tree_data(return_parent_to_child_dict: bool = False) -> Union
             parent_name = convert_predicate_to_trapi_format(parent_name_english)
             parent_to_child_dict[parent_name].add(slot_name)
             root_node = {"name": "related_to"}
-            predicate_tree = get_tree_node_recursive(root_node, parent_to_child_dict)
+            predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
         if slot.mixins:
             for mixin in slot.mixins:
                 parent_name_english = mixin
                 parent_name = convert_predicate_to_trapi_format(parent_name_english)
                 parent_to_child_dict[parent_name].add(slot_name)
                 root_node = {"name": "related_to_at_instance_level"}
-                predicate_tree = get_tree_node_recursive(root_node, parent_to_child_dict)
+                predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
     return ([predicate_tree], parent_to_child_dict) if return_parent_to_child_dict else ([predicate_tree])
 
 
@@ -83,13 +85,14 @@ def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
         if cls.deprecated:
             continue
         class_name = convert_predicate_to_trapi_format(class_name)
+        class_name = stringcase.camelcase(class_name)
         if cls.is_a:
             parent_name_english = cls.is_a
             if parent_name_english:
                 parent_name = convert_predicate_to_trapi_format(parent_name_english)
                 parent_to_child_dict[parent_name].add(class_name)
                 root_node = {"name": "NamedThing", "parent": None}
-                category_tree = get_tree_node_recursive(root_node, parent_to_child_dict)
+                category_tree = get_tree_class_recursive(root_node, parent_to_child_dict)
                 parent_name = convert_category_to_trapi_format(parent_name_english)
                 parent_to_child_dict[parent_name].add(class_name)
 
@@ -107,45 +110,9 @@ def load_aspect_tree_data() -> List[dict]:
         direct_parent = parent[0] if parent else root_name
         parent_to_child_dict[direct_parent].add(aspect_name)
     root_node = {"name": root_name, "parent": None}
-    aspect_tree = get_tree_node_recursive(root_node, parent_to_child_dict)
+    aspect_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
 
     return [aspect_tree]
-
-
-def load_category_er_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
-    """
-    Load the category tree data from the model.
-
-    :param linkml_version: The version of the linkml model.
-    :type linkml_version: str
-    :param return_parent_to_child_dict: Whether to return the parent to child dictionary.
-    :type return_parent_to_child_dict: bool
-    :return: The category tree data.
-    :rtype: tuple
-
-    """
-
-    # First build the standard category tree
-    category_tree, parent_to_child_map = load_category_tree_data(return_parent_to_child_dict=True)
-    child_to_parent_map = {child_name: parent_name for parent_name, children_names in parent_to_child_map.items()
-                          for child_name in children_names}
-
-    # Then move gene/protein-related subbranches under one new sub-branch within BiologicalEntity
-    biological_entity_sub_branches = parent_to_child_map["BiologicalEntity"]
-    sub_branches_to_keep = {"BiologicalProcessOrActivity", "DiseaseOrPhenotypicFeature", "OrganismalEntity"}
-    sub_branches_to_move = biological_entity_sub_branches.difference(sub_branches_to_keep)
-    new_sub_branch = "GeneticOrMolecularBiologicalEntity"
-    for sub_branch_to_move in sub_branches_to_move:
-        child_to_parent_map[sub_branch_to_move] = new_sub_branch
-    parent_to_child_map_revised = defaultdict(set)
-    for child, parent in child_to_parent_map.items():
-        parent_to_child_map_revised[parent].add(child)
-    parent_to_child_map_revised["BiologicalEntity"].add(new_sub_branch)
-
-    root_node = {"name": "NamedThing", "parent": None}
-    category_tree_for_er = get_tree_node_recursive(root_node, parent_to_child_map_revised)
-
-    return ([category_tree_for_er], parent_to_child_map_revised) if return_parent_to_child_dict else ([category_tree_for_er])
 
 
 def convert_predicate_to_trapi_format(english_predicate: str) -> str:
@@ -156,6 +123,32 @@ def convert_predicate_to_trapi_format(english_predicate: str) -> str:
 def convert_category_to_trapi_format(english_category: str) -> str:
     # Converts a string like "named thing" to "NamedThing"
     return "".join([f"{word[0].upper()}{word[1:]}" for word in english_category.split(" ")])
+
+
+def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
+    """
+    Recursively get the tree node.
+
+    :param root_node: The root node of the tree.
+    :type root_node: dict
+    :param parent_to_child_map: A dictionary mapping parent nodes to child nodes.
+    :type parent_to_child_map: dict
+    :return: The tree node.
+    :rtype: dict
+
+    """
+    root_name = root_node["name"]
+    children_names = parent_to_child_map.get(root_name, [])
+    if children_names:
+        children = []
+        for child_name in children_names:
+            child_node = {"name": child_name, "parent": root_name, "mdFile": f"{child_name}.md"}
+            child_node = get_tree_slot_recursive(child_node, parent_to_child_map)
+            children.append(child_node)
+        root_node["children"] = sorted(children, key=lambda x: x["name"])
+        # test
+
+    return root_node
 
 
 def generate_viz_json():

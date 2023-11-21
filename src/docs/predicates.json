@@ -4,39 +4,48 @@
         "children": [
             {
                 "name": "composed_primarily_of",
-                "parent": "related_to"
+                "parent": "related_to",
+                "mdFile": "composed_primarily_of.md"
             },
             {
                 "name": "disease_has_location",
-                "parent": "related_to"
+                "parent": "related_to",
+                "mdFile": "disease_has_location.md"
             },
             {
                 "name": "location_of_disease",
-                "parent": "related_to"
+                "parent": "related_to",
+                "mdFile": "location_of_disease.md"
             },
             {
                 "name": "primarily_composed_of",
-                "parent": "related_to"
+                "parent": "related_to",
+                "mdFile": "primarily_composed_of.md"
             },
             {
                 "name": "related_to_at_concept_level",
                 "parent": "related_to",
+                "mdFile": "related_to_at_concept_level.md",
                 "children": [
                     {
                         "name": "broad_match",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "broad_match.md"
                     },
                     {
                         "name": "close_match",
                         "parent": "related_to_at_concept_level",
+                        "mdFile": "close_match.md",
                         "children": [
                             {
                                 "name": "exact_match",
                                 "parent": "close_match",
+                                "mdFile": "exact_match.md",
                                 "children": [
                                     {
                                         "name": "same_as",
-                                        "parent": "exact_match"
+                                        "parent": "exact_match",
+                                        "mdFile": "same_as.md"
                                     }
                                 ]
                             }
@@ -44,573 +53,703 @@
                     },
                     {
                         "name": "has_chemical_role",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "has_chemical_role.md"
                     },
                     {
                         "name": "has_member",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "has_member.md"
                     },
                     {
                         "name": "member_of",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "member_of.md"
                     },
                     {
                         "name": "narrow_match",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "narrow_match.md"
                     },
                     {
                         "name": "subclass_of",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "subclass_of.md"
                     },
                     {
                         "name": "superclass_of",
-                        "parent": "related_to_at_concept_level"
+                        "parent": "related_to_at_concept_level",
+                        "mdFile": "superclass_of.md"
                     }
                 ]
             },
             {
                 "name": "related_to_at_instance_level",
                 "parent": "related_to",
+                "mdFile": "related_to_at_instance_level.md",
                 "children": [
                     {
                         "name": "active_in",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "active_in.md"
                     },
                     {
                         "name": "acts_upstream_of",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "acts_upstream_of.md",
                         "children": [
                             {
                                 "name": "acts_upstream_of_negative_effect",
-                                "parent": "acts_upstream_of"
+                                "parent": "acts_upstream_of",
+                                "mdFile": "acts_upstream_of_negative_effect.md"
                             },
                             {
                                 "name": "acts_upstream_of_or_within",
                                 "parent": "acts_upstream_of",
+                                "mdFile": "acts_upstream_of_or_within.md",
                                 "children": [
                                     {
                                         "name": "acts_upstream_of_or_within_negative_effect",
-                                        "parent": "acts_upstream_of_or_within"
+                                        "parent": "acts_upstream_of_or_within",
+                                        "mdFile": "acts_upstream_of_or_within_negative_effect.md"
                                     },
                                     {
                                         "name": "acts_upstream_of_or_within_positive_effect",
-                                        "parent": "acts_upstream_of_or_within"
+                                        "parent": "acts_upstream_of_or_within",
+                                        "mdFile": "acts_upstream_of_or_within_positive_effect.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "acts_upstream_of_positive_effect",
-                                "parent": "acts_upstream_of"
+                                "parent": "acts_upstream_of",
+                                "mdFile": "acts_upstream_of_positive_effect.md"
                             }
                         ]
                     },
                     {
                         "name": "affected_by",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "affected_by.md",
                         "children": [
                             {
                                 "name": "adverse_event_of",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "adverse_event_of.md"
                             },
                             {
                                 "name": "condition_ameliorated_by",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "condition_ameliorated_by.md"
                             },
                             {
                                 "name": "condition_exacerbated_by",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "condition_exacerbated_by.md"
                             },
                             {
                                 "name": "condition_prevented_by",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "condition_prevented_by.md"
                             },
                             {
                                 "name": "disrupted_by",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "disrupted_by.md"
                             },
                             {
                                 "name": "is_side_effect_of",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "is_side_effect_of.md"
                             },
                             {
                                 "name": "regulated_by",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "regulated_by.md"
                             },
                             {
                                 "name": "response_affected_by",
                                 "parent": "affected_by",
+                                "mdFile": "response_affected_by.md",
                                 "children": [
                                     {
                                         "name": "response_decreased_by",
-                                        "parent": "response_affected_by"
+                                        "parent": "response_affected_by",
+                                        "mdFile": "response_decreased_by.md"
                                     },
                                     {
                                         "name": "response_increased_by",
-                                        "parent": "response_affected_by"
+                                        "parent": "response_affected_by",
+                                        "mdFile": "response_increased_by.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "studied_for_treatment_with",
-                                "parent": "affected_by"
+                                "parent": "affected_by",
+                                "mdFile": "studied_for_treatment_with.md"
                             }
                         ]
                     },
                     {
                         "name": "affects",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "affects.md",
                         "children": [
                             {
                                 "name": "affects_response_to",
                                 "parent": "affects",
+                                "mdFile": "affects_response_to.md",
                                 "children": [
                                     {
                                         "name": "decreases_response_to",
-                                        "parent": "affects_response_to"
+                                        "parent": "affects_response_to",
+                                        "mdFile": "decreases_response_to.md"
                                     },
                                     {
                                         "name": "increases_response_to",
-                                        "parent": "affects_response_to"
+                                        "parent": "affects_response_to",
+                                        "mdFile": "increases_response_to.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "ameliorates_condition",
-                                "parent": "affects"
+                                "parent": "affects",
+                                "mdFile": "ameliorates_condition.md"
                             },
                             {
                                 "name": "disrupts",
-                                "parent": "affects"
+                                "parent": "affects",
+                                "mdFile": "disrupts.md"
                             },
                             {
                                 "name": "exacerbates_condition",
-                                "parent": "affects"
+                                "parent": "affects",
+                                "mdFile": "exacerbates_condition.md"
                             },
                             {
                                 "name": "has_adverse_event",
-                                "parent": "affects"
+                                "parent": "affects",
+                                "mdFile": "has_adverse_event.md"
                             },
                             {
                                 "name": "has_side_effect",
-                                "parent": "affects"
+                                "parent": "affects",
+                                "mdFile": "has_side_effect.md"
                             },
                             {
                                 "name": "regulates",
-                                "parent": "affects"
+                                "parent": "affects",
+                                "mdFile": "regulates.md"
                             }
                         ]
                     },
                     {
                         "name": "affects_likelihood_of",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "affects_likelihood_of.md",
                         "children": [
                             {
                                 "name": "predisposes_to_condition",
-                                "parent": "affects_likelihood_of"
+                                "parent": "affects_likelihood_of",
+                                "mdFile": "predisposes_to_condition.md"
                             },
                             {
                                 "name": "preventative_for_condition",
-                                "parent": "affects_likelihood_of"
+                                "parent": "affects_likelihood_of",
+                                "mdFile": "preventative_for_condition.md"
                             }
                         ]
                     },
                     {
                         "name": "assesses",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "assesses.md"
                     },
                     {
                         "name": "associated_with",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "associated_with.md",
                         "children": [
                             {
                                 "name": "associated_with_likelihood_of",
                                 "parent": "associated_with",
+                                "mdFile": "associated_with_likelihood_of.md",
                                 "children": [
                                     {
                                         "name": "associated_with_decreased_likelihood_of",
-                                        "parent": "associated_with_likelihood_of"
+                                        "parent": "associated_with_likelihood_of",
+                                        "mdFile": "associated_with_decreased_likelihood_of.md"
                                     },
                                     {
                                         "name": "associated_with_increased_likelihood_of",
-                                        "parent": "associated_with_likelihood_of"
+                                        "parent": "associated_with_likelihood_of",
+                                        "mdFile": "associated_with_increased_likelihood_of.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "associated_with_resistance_to",
-                                "parent": "associated_with"
+                                "parent": "associated_with",
+                                "mdFile": "associated_with_resistance_to.md"
                             },
                             {
                                 "name": "associated_with_sensitivity_to",
-                                "parent": "associated_with"
+                                "parent": "associated_with",
+                                "mdFile": "associated_with_sensitivity_to.md"
                             },
                             {
                                 "name": "correlated_with",
                                 "parent": "associated_with",
+                                "mdFile": "correlated_with.md",
                                 "children": [
                                     {
                                         "name": "biomarker_for",
-                                        "parent": "correlated_with"
+                                        "parent": "correlated_with",
+                                        "mdFile": "biomarker_for.md"
                                     },
                                     {
                                         "name": "coexpressed_with",
-                                        "parent": "correlated_with"
+                                        "parent": "correlated_with",
+                                        "mdFile": "coexpressed_with.md"
                                     },
                                     {
                                         "name": "has_biomarker",
-                                        "parent": "correlated_with"
+                                        "parent": "correlated_with",
+                                        "mdFile": "has_biomarker.md"
                                     },
                                     {
                                         "name": "negatively_correlated_with",
-                                        "parent": "correlated_with"
+                                        "parent": "correlated_with",
+                                        "mdFile": "negatively_correlated_with.md"
                                     },
                                     {
                                         "name": "occurs_together_in_literature_with",
-                                        "parent": "correlated_with"
+                                        "parent": "correlated_with",
+                                        "mdFile": "occurs_together_in_literature_with.md"
                                     },
                                     {
                                         "name": "positively_correlated_with",
-                                        "parent": "correlated_with"
+                                        "parent": "correlated_with",
+                                        "mdFile": "positively_correlated_with.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "genetically_associated_with",
                                 "parent": "associated_with",
+                                "mdFile": "genetically_associated_with.md",
                                 "children": [
                                     {
                                         "name": "condition_associated_with_gene",
-                                        "parent": "genetically_associated_with"
+                                        "parent": "genetically_associated_with",
+                                        "mdFile": "condition_associated_with_gene.md"
                                     },
                                     {
                                         "name": "gene_associated_with_condition",
-                                        "parent": "genetically_associated_with"
+                                        "parent": "genetically_associated_with",
+                                        "mdFile": "gene_associated_with_condition.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "likelihood_associated_with",
                                 "parent": "associated_with",
+                                "mdFile": "likelihood_associated_with.md",
                                 "children": [
                                     {
                                         "name": "decreased_likelihood_associated_with",
-                                        "parent": "likelihood_associated_with"
+                                        "parent": "likelihood_associated_with",
+                                        "mdFile": "decreased_likelihood_associated_with.md"
                                     },
                                     {
                                         "name": "increased_likelihood_associated_with",
-                                        "parent": "likelihood_associated_with"
+                                        "parent": "likelihood_associated_with",
+                                        "mdFile": "increased_likelihood_associated_with.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "resistance_associated_with",
-                                "parent": "associated_with"
+                                "parent": "associated_with",
+                                "mdFile": "resistance_associated_with.md"
                             },
                             {
                                 "name": "sensitivity_associated_with",
-                                "parent": "associated_with"
+                                "parent": "associated_with",
+                                "mdFile": "sensitivity_associated_with.md"
                             }
                         ]
                     },
                     {
                         "name": "coexists_with",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "coexists_with.md",
                         "children": [
                             {
                                 "name": "colocalizes_with",
-                                "parent": "coexists_with"
+                                "parent": "coexists_with",
+                                "mdFile": "colocalizes_with.md"
                             },
                             {
                                 "name": "in_cell_population_with",
-                                "parent": "coexists_with"
+                                "parent": "coexists_with",
+                                "mdFile": "in_cell_population_with.md"
                             },
                             {
                                 "name": "in_complex_with",
-                                "parent": "coexists_with"
+                                "parent": "coexists_with",
+                                "mdFile": "in_complex_with.md"
                             },
                             {
                                 "name": "in_pathway_with",
-                                "parent": "coexists_with"
+                                "parent": "coexists_with",
+                                "mdFile": "in_pathway_with.md"
                             }
                         ]
                     },
                     {
                         "name": "completed_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "completed_by.md"
                     },
                     {
                         "name": "condition_predisposed_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "condition_predisposed_by.md"
                     },
                     {
                         "name": "contains_process",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "contains_process.md"
                     },
                     {
                         "name": "contraindicated_in",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "contraindicated_in.md"
                     },
                     {
                         "name": "contributes_to",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "contributes_to.md",
                         "children": [
                             {
                                 "name": "causes",
-                                "parent": "contributes_to"
+                                "parent": "contributes_to",
+                                "mdFile": "causes.md"
                             }
                         ]
                     },
                     {
                         "name": "contribution_from",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "contribution_from.md",
                         "children": [
                             {
                                 "name": "caused_by",
-                                "parent": "contribution_from"
+                                "parent": "contribution_from",
+                                "mdFile": "caused_by.md"
                             }
                         ]
                     },
                     {
                         "name": "contributor",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "contributor.md",
                         "children": [
                             {
                                 "name": "author",
-                                "parent": "contributor"
+                                "parent": "contributor",
+                                "mdFile": "author.md"
                             },
                             {
                                 "name": "editor",
-                                "parent": "contributor"
+                                "parent": "contributor",
+                                "mdFile": "editor.md"
                             },
                             {
                                 "name": "provider",
-                                "parent": "contributor"
+                                "parent": "contributor",
+                                "mdFile": "provider.md"
                             },
                             {
                                 "name": "publisher",
-                                "parent": "contributor"
+                                "parent": "contributor",
+                                "mdFile": "publisher.md"
                             }
                         ]
                     },
                     {
                         "name": "decreased_amount_in",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "decreased_amount_in.md"
                     },
                     {
                         "name": "derives_from",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "derives_from.md",
                         "children": [
                             {
                                 "name": "is_metabolite_of",
-                                "parent": "derives_from"
+                                "parent": "derives_from",
+                                "mdFile": "is_metabolite_of.md"
                             }
                         ]
                     },
                     {
                         "name": "derives_into",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "derives_into.md",
                         "children": [
                             {
                                 "name": "has_metabolite",
-                                "parent": "derives_into"
+                                "parent": "derives_into",
+                                "mdFile": "has_metabolite.md"
                             }
                         ]
                     },
                     {
                         "name": "develops_from",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "develops_from.md"
                     },
                     {
                         "name": "develops_into",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "develops_into.md"
                     },
                     {
                         "name": "diagnoses",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "diagnoses.md"
                     },
                     {
                         "name": "disease_has_basis_in",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "disease_has_basis_in.md"
                     },
                     {
                         "name": "gene_product_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "gene_product_of.md"
                     },
                     {
                         "name": "has_active_component",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_active_component.md"
                     },
                     {
                         "name": "has_completed",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_completed.md"
                     },
                     {
                         "name": "has_contraindication",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_contraindication.md"
                     },
                     {
                         "name": "has_contributor",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "has_contributor.md",
                         "children": [
                             {
                                 "name": "has_author",
-                                "parent": "has_contributor"
+                                "parent": "has_contributor",
+                                "mdFile": "has_author.md"
                             },
                             {
                                 "name": "has_editor",
-                                "parent": "has_contributor"
+                                "parent": "has_contributor",
+                                "mdFile": "has_editor.md"
                             },
                             {
                                 "name": "has_provider",
-                                "parent": "has_contributor"
+                                "parent": "has_contributor",
+                                "mdFile": "has_provider.md"
                             },
                             {
                                 "name": "has_publisher",
-                                "parent": "has_contributor"
+                                "parent": "has_contributor",
+                                "mdFile": "has_publisher.md"
                             }
                         ]
                     },
                     {
                         "name": "has_decreased_amount",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_decreased_amount.md"
                     },
                     {
                         "name": "has_gene_product",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_gene_product.md"
                     },
                     {
                         "name": "has_increased_amount",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_increased_amount.md"
                     },
                     {
                         "name": "has_manifestation",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "has_manifestation.md",
                         "children": [
                             {
                                 "name": "has_mode_of_inheritance",
-                                "parent": "has_manifestation"
+                                "parent": "has_manifestation",
+                                "mdFile": "has_mode_of_inheritance.md"
                             }
                         ]
                     },
                     {
                         "name": "has_molecular_consequence",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_molecular_consequence.md"
                     },
                     {
                         "name": "has_not_completed",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_not_completed.md"
                     },
                     {
                         "name": "has_participant",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "has_participant.md",
                         "children": [
                             {
                                 "name": "actively_involves",
                                 "parent": "has_participant",
+                                "mdFile": "actively_involves.md",
                                 "children": [
                                     {
                                         "name": "can_be_carried_out_by",
-                                        "parent": "actively_involves"
+                                        "parent": "actively_involves",
+                                        "mdFile": "can_be_carried_out_by.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "enabled_by",
-                                "parent": "has_participant"
+                                "parent": "has_participant",
+                                "mdFile": "enabled_by.md"
                             },
                             {
                                 "name": "has_catalyst",
-                                "parent": "has_participant"
+                                "parent": "has_participant",
+                                "mdFile": "has_catalyst.md"
                             },
                             {
                                 "name": "has_input",
                                 "parent": "has_participant",
+                                "mdFile": "has_input.md",
                                 "children": [
                                     {
                                         "name": "consumes",
-                                        "parent": "has_input"
+                                        "parent": "has_input",
+                                        "mdFile": "consumes.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "has_output",
-                                "parent": "has_participant"
+                                "parent": "has_participant",
+                                "mdFile": "has_output.md"
                             },
                             {
                                 "name": "has_substrate",
-                                "parent": "has_participant"
+                                "parent": "has_participant",
+                                "mdFile": "has_substrate.md"
                             }
                         ]
                     },
                     {
                         "name": "has_phenotype",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_phenotype.md"
                     },
                     {
                         "name": "has_sequence_location",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_sequence_location.md"
                     },
                     {
                         "name": "has_sequence_variant",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "has_sequence_variant.md",
                         "children": [
                             {
                                 "name": "has_frameshift_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_frameshift_variant.md"
                             },
                             {
                                 "name": "has_missense_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_missense_variant.md"
                             },
                             {
                                 "name": "has_nearby_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_nearby_variant.md"
                             },
                             {
                                 "name": "has_non_coding_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_non_coding_variant.md"
                             },
                             {
                                 "name": "has_nonsense_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_nonsense_variant.md"
                             },
                             {
                                 "name": "has_splice_site_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_splice_site_variant.md"
                             },
                             {
                                 "name": "has_synonymous_variant",
-                                "parent": "has_sequence_variant"
+                                "parent": "has_sequence_variant",
+                                "mdFile": "has_synonymous_variant.md"
                             }
                         ]
                     },
                     {
                         "name": "has_target",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "has_target.md"
                     },
                     {
                         "name": "has_upstream_actor",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "has_upstream_actor.md",
                         "children": [
                             {
                                 "name": "has_negative_upstream_actor",
-                                "parent": "has_upstream_actor"
+                                "parent": "has_upstream_actor",
+                                "mdFile": "has_negative_upstream_actor.md"
                             },
                             {
                                 "name": "has_positive_upstream_actor",
-                                "parent": "has_upstream_actor"
+                                "parent": "has_upstream_actor",
+                                "mdFile": "has_positive_upstream_actor.md"
                             },
                             {
                                 "name": "has_upstream_or_within_actor",
                                 "parent": "has_upstream_actor",
+                                "mdFile": "has_upstream_or_within_actor.md",
                                 "children": [
                                     {
                                         "name": "has_negative_upstream_or_within_actor",
-                                        "parent": "has_upstream_or_within_actor"
+                                        "parent": "has_upstream_or_within_actor",
+                                        "mdFile": "has_negative_upstream_or_within_actor.md"
                                     },
                                     {
                                         "name": "has_positive_upstream_or_within_actor",
-                                        "parent": "has_upstream_or_within_actor"
+                                        "parent": "has_upstream_or_within_actor",
+                                        "mdFile": "has_positive_upstream_or_within_actor.md"
                                     }
                                 ]
                             }
@@ -618,239 +757,293 @@
                     },
                     {
                         "name": "in_linkage_disequilibrium_with",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "in_linkage_disequilibrium_with.md"
                     },
                     {
                         "name": "in_taxon",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "in_taxon.md"
                     },
                     {
                         "name": "increased_amount_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "increased_amount_of.md"
                     },
                     {
                         "name": "interacts_with",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "interacts_with.md",
                         "children": [
                             {
                                 "name": "genetically_interacts_with",
                                 "parent": "interacts_with",
+                                "mdFile": "genetically_interacts_with.md",
                                 "children": [
                                     {
                                         "name": "gene_fusion_with",
-                                        "parent": "genetically_interacts_with"
+                                        "parent": "genetically_interacts_with",
+                                        "mdFile": "gene_fusion_with.md"
                                     },
                                     {
                                         "name": "genetic_neighborhood_of",
-                                        "parent": "genetically_interacts_with"
+                                        "parent": "genetically_interacts_with",
+                                        "mdFile": "genetic_neighborhood_of.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "physically_interacts_with",
                                 "parent": "interacts_with",
+                                "mdFile": "physically_interacts_with.md",
                                 "children": [
                                     {
                                         "name": "directly_physically_interacts_with",
-                                        "parent": "physically_interacts_with"
+                                        "parent": "physically_interacts_with",
+                                        "mdFile": "directly_physically_interacts_with.md"
                                     },
                                     {
                                         "name": "indirectly_physically_interacts_with",
-                                        "parent": "physically_interacts_with"
+                                        "parent": "physically_interacts_with",
+                                        "mdFile": "indirectly_physically_interacts_with.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "regulates",
-                                "parent": "interacts_with"
+                                "parent": "interacts_with",
+                                "mdFile": "regulates.md"
                             }
                         ]
                     },
                     {
                         "name": "is_assessed_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "is_assessed_by.md"
                     },
                     {
                         "name": "is_diagnosed_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "is_diagnosed_by.md"
                     },
                     {
                         "name": "is_molecular_consequence_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "is_molecular_consequence_of.md"
                     },
                     {
                         "name": "is_sequence_variant_of",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "is_sequence_variant_of.md",
                         "children": [
                             {
                                 "name": "is_frameshift_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_frameshift_variant_of.md"
                             },
                             {
                                 "name": "is_missense_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_missense_variant_of.md"
                             },
                             {
                                 "name": "is_nearby_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_nearby_variant_of.md"
                             },
                             {
                                 "name": "is_non_coding_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_non_coding_variant_of.md"
                             },
                             {
                                 "name": "is_nonsense_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_nonsense_variant_of.md"
                             },
                             {
                                 "name": "is_splice_site_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_splice_site_variant_of.md"
                             },
                             {
                                 "name": "is_synonymous_variant_of",
-                                "parent": "is_sequence_variant_of"
+                                "parent": "is_sequence_variant_of",
+                                "mdFile": "is_synonymous_variant_of.md"
                             }
                         ]
                     },
                     {
                         "name": "lacks_part",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "lacks_part.md"
                     },
                     {
                         "name": "likelihood_affected_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "likelihood_affected_by.md"
                     },
                     {
                         "name": "located_in",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "located_in.md",
                         "children": [
                             {
                                 "name": "expressed_in",
-                                "parent": "located_in"
+                                "parent": "located_in",
+                                "mdFile": "expressed_in.md"
                             }
                         ]
                     },
                     {
                         "name": "location_of",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "location_of.md",
                         "children": [
                             {
                                 "name": "expresses",
-                                "parent": "location_of"
+                                "parent": "location_of",
+                                "mdFile": "expresses.md"
                             }
                         ]
                     },
                     {
                         "name": "manifestation_of",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "manifestation_of.md",
                         "children": [
                             {
                                 "name": "mode_of_inheritance_of",
-                                "parent": "manifestation_of"
+                                "parent": "manifestation_of",
+                                "mdFile": "mode_of_inheritance_of.md"
                             }
                         ]
                     },
                     {
                         "name": "mentioned_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "mentioned_by.md"
                     },
                     {
                         "name": "mentions",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "mentions.md"
                     },
                     {
                         "name": "missing_from",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "missing_from.md"
                     },
                     {
                         "name": "model_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "model_of.md"
                     },
                     {
                         "name": "models",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "models.md"
                     },
                     {
                         "name": "not_completed_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "not_completed_by.md"
                     },
                     {
                         "name": "occurs_in",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "occurs_in.md"
                     },
                     {
                         "name": "occurs_in_disease",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "occurs_in_disease.md"
                     },
                     {
                         "name": "opposite_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "opposite_of.md"
                     },
                     {
                         "name": "overlaps",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "overlaps.md",
                         "children": [
                             {
                                 "name": "has_part",
                                 "parent": "overlaps",
+                                "mdFile": "has_part.md",
                                 "children": [
                                     {
                                         "name": "has_active_ingredient",
-                                        "parent": "has_part"
+                                        "parent": "has_part",
+                                        "mdFile": "has_active_ingredient.md"
                                     },
                                     {
                                         "name": "has_excipient",
-                                        "parent": "has_part"
+                                        "parent": "has_part",
+                                        "mdFile": "has_excipient.md"
                                     },
                                     {
                                         "name": "has_food_component",
                                         "parent": "has_part",
+                                        "mdFile": "has_food_component.md",
                                         "children": [
                                             {
                                                 "name": "has_nutrient",
-                                                "parent": "has_food_component"
+                                                "parent": "has_food_component",
+                                                "mdFile": "has_nutrient.md"
                                             }
                                         ]
                                     },
                                     {
                                         "name": "has_plasma_membrane_part",
-                                        "parent": "has_part"
+                                        "parent": "has_part",
+                                        "mdFile": "has_plasma_membrane_part.md"
                                     },
                                     {
                                         "name": "has_variant_part",
-                                        "parent": "has_part"
+                                        "parent": "has_part",
+                                        "mdFile": "has_variant_part.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "part_of",
                                 "parent": "overlaps",
+                                "mdFile": "part_of.md",
                                 "children": [
                                     {
                                         "name": "food_component_of",
                                         "parent": "part_of",
+                                        "mdFile": "food_component_of.md",
                                         "children": [
                                             {
                                                 "name": "nutrient_of",
-                                                "parent": "food_component_of"
+                                                "parent": "food_component_of",
+                                                "mdFile": "nutrient_of.md"
                                             }
                                         ]
                                     },
                                     {
                                         "name": "is_active_ingredient_of",
-                                        "parent": "part_of"
+                                        "parent": "part_of",
+                                        "mdFile": "is_active_ingredient_of.md"
                                     },
                                     {
                                         "name": "is_excipient_of",
-                                        "parent": "part_of"
+                                        "parent": "part_of",
+                                        "mdFile": "is_excipient_of.md"
                                     },
                                     {
                                         "name": "plasma_membrane_part_of",
-                                        "parent": "part_of"
+                                        "parent": "part_of",
+                                        "mdFile": "plasma_membrane_part_of.md"
                                     },
                                     {
                                         "name": "variant_part_of",
-                                        "parent": "part_of"
+                                        "parent": "part_of",
+                                        "mdFile": "variant_part_of.md"
                                     }
                                 ]
                             }
@@ -859,102 +1052,125 @@
                     {
                         "name": "participates_in",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "participates_in.md",
                         "children": [
                             {
                                 "name": "actively_involved_in",
                                 "parent": "participates_in",
+                                "mdFile": "actively_involved_in.md",
                                 "children": [
                                     {
                                         "name": "capable_of",
-                                        "parent": "actively_involved_in"
+                                        "parent": "actively_involved_in",
+                                        "mdFile": "capable_of.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "catalyzes",
-                                "parent": "participates_in"
+                                "parent": "participates_in",
+                                "mdFile": "catalyzes.md"
                             },
                             {
                                 "name": "enables",
-                                "parent": "participates_in"
+                                "parent": "participates_in",
+                                "mdFile": "enables.md"
                             },
                             {
                                 "name": "is_input_of",
                                 "parent": "participates_in",
+                                "mdFile": "is_input_of.md",
                                 "children": [
                                     {
                                         "name": "consumed_by",
-                                        "parent": "is_input_of"
+                                        "parent": "is_input_of",
+                                        "mdFile": "consumed_by.md"
                                     }
                                 ]
                             },
                             {
                                 "name": "is_output_of",
-                                "parent": "participates_in"
+                                "parent": "participates_in",
+                                "mdFile": "is_output_of.md"
                             },
                             {
                                 "name": "is_substrate_of",
-                                "parent": "participates_in"
+                                "parent": "participates_in",
+                                "mdFile": "is_substrate_of.md"
                             }
                         ]
                     },
                     {
                         "name": "phenotype_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "phenotype_of.md"
                     },
                     {
                         "name": "produced_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "produced_by.md"
                     },
                     {
                         "name": "produces",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "produces.md"
                     },
                     {
                         "name": "promotes_condition",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "promotes_condition.md",
                         "children": [
                             {
                                 "name": "exacerbates_condition",
-                                "parent": "promotes_condition"
+                                "parent": "promotes_condition",
+                                "mdFile": "exacerbates_condition.md"
                             },
                             {
                                 "name": "predisposes_to_condition",
-                                "parent": "promotes_condition"
+                                "parent": "promotes_condition",
+                                "mdFile": "predisposes_to_condition.md"
                             }
                         ]
                     },
                     {
                         "name": "related_condition",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "related_condition.md"
                     },
                     {
                         "name": "sequence_location_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "sequence_location_of.md"
                     },
                     {
                         "name": "similar_to",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "similar_to.md",
                         "children": [
                             {
                                 "name": "chemically_similar_to",
-                                "parent": "similar_to"
+                                "parent": "similar_to",
+                                "mdFile": "chemically_similar_to.md"
                             },
                             {
                                 "name": "homologous_to",
                                 "parent": "similar_to",
+                                "mdFile": "homologous_to.md",
                                 "children": [
                                     {
                                         "name": "orthologous_to",
-                                        "parent": "homologous_to"
+                                        "parent": "homologous_to",
+                                        "mdFile": "orthologous_to.md"
                                     },
                                     {
                                         "name": "paralogous_to",
-                                        "parent": "homologous_to"
+                                        "parent": "homologous_to",
+                                        "mdFile": "paralogous_to.md"
                                     },
                                     {
                                         "name": "xenologous_to",
-                                        "parent": "homologous_to"
+                                        "parent": "homologous_to",
+                                        "mdFile": "xenologous_to.md"
                                     }
                                 ]
                             }
@@ -963,18 +1179,22 @@
                     {
                         "name": "studied_to_treat",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "studied_to_treat.md",
                         "children": [
                             {
                                 "name": "in_clinical_trials_for",
-                                "parent": "studied_to_treat"
+                                "parent": "studied_to_treat",
+                                "mdFile": "in_clinical_trials_for.md"
                             },
                             {
                                 "name": "in_preclinical_trials_for",
                                 "parent": "studied_to_treat",
+                                "mdFile": "in_preclinical_trials_for.md",
                                 "children": [
                                     {
                                         "name": "beneficial_in_models_for",
-                                        "parent": "in_preclinical_trials_for"
+                                        "parent": "in_preclinical_trials_for",
+                                        "mdFile": "beneficial_in_models_for.md"
                                     }
                                 ]
                             }
@@ -982,45 +1202,55 @@
                     },
                     {
                         "name": "target_for",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "target_for.md"
                     },
                     {
                         "name": "taxon_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "taxon_of.md"
                     },
                     {
                         "name": "temporally_related_to",
                         "parent": "related_to_at_instance_level",
+                        "mdFile": "temporally_related_to.md",
                         "children": [
                             {
                                 "name": "preceded_by",
-                                "parent": "temporally_related_to"
+                                "parent": "temporally_related_to",
+                                "mdFile": "preceded_by.md"
                             },
                             {
                                 "name": "precedes",
-                                "parent": "temporally_related_to"
+                                "parent": "temporally_related_to",
+                                "mdFile": "precedes.md"
                             }
                         ]
                     },
                     {
                         "name": "transcribed_from",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "transcribed_from.md"
                     },
                     {
                         "name": "transcribed_to",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "transcribed_to.md"
                     },
                     {
                         "name": "translates_to",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "translates_to.md"
                     },
                     {
                         "name": "translation_of",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "translation_of.md"
                     },
                     {
                         "name": "was_applied_to_treat",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "mdFile": "was_applied_to_treat.md"
                     }
                 ]
             }

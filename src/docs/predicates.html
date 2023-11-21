@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 <h2>Visualizations of the Biolink Model</h2>
@@ -109,8 +110,22 @@
                     .text(function (d) {
                         return d.name;
                     })
-                    .style("fill-opacity", 1e-6);
+                    .each(function (d) {
+                        var nodeText = d3.select(this);
+                        nodeText.text(d.name);
 
+                        // Append an anchor tag to nodeText
+                        var link = nodeText.append("a")
+                            .attr("class", "md-link")  // Class for styling
+                            .attr("xlink:href", d.name)  // Set the hyperlink reference
+                            .attr("target", "_blank");   // Open in a new tab
+
+                        // Append a FontAwesome icon to the link
+                        link.append("text")
+                            .attr('font-family', 'FontAwesome')
+                            .text('\uf35d');  // Unicode for 'external-link-alt' icon
+                    })
+                    .style("fill-opacity", 1e-6);
                 // Transition nodes to their new position.
                 var nodeUpdate = node.transition()
                     .duration(duration)

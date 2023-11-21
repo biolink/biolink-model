@@ -20,19 +20,19 @@ Graphs are organized into collections of Named Graphs. Each triple can be concei
 
 Each node in a graph corresponds to an RDF resource.
 
-Biolink Model defines a typology of nodes, all of which inherit from [biolink:NamedThing](../docs/NamedThing).
+Biolink Model defines a typology of nodes, all of which inherit from [biolink:NamedThing](NamedThing).
 
 Core properties for a node:
- - [biolink:id](../docs/id)
- - [biolink:iri](../docs/iri)
- - [biolink:name](../docs/name)
- - [biolink:category](../docs/category)
+ - [biolink:id](id)
+ - [biolink:iri](iri)
+ - [biolink:name](name)
+ - [biolink:category](category)
 
-The [biolink:id](../docs/id) MUST be provided and MUST be a CURIE, which maps to the resource IRI/URI 
+The [biolink:id](id) MUST be provided and MUST be a CURIE, which maps to the resource IRI/URI 
 using a standard prefix expansion. The RDF graph MAY include the CURIE short-form represented 
 with the predicate `dcterms:identifier` where the CURIE itself is a literal.
 
-The [biolink:name](../docs/name) field SHOULD correspond to a concise label for the entity, and maps 
+The [biolink:name](name) field SHOULD correspond to a concise label for the entity, and maps 
 to `rdfs:label`.
 
 For example, the biolink node with ID `MONDO:0001083` and name
@@ -55,7 +55,7 @@ When the CURIEs are expanded this will be rendered as:
 ### Types and Categories
 
 To define the type of a node, you can use the `rdf:type` to link to a specific node type. You MAY use
-the predicate [biolink:category](../docs/category) to represent additional categories for that node. 
+the predicate [biolink:category](category) to represent additional categories for that node. 
 
 The rdf:type triples MAY be partitioned into separate named
 graphs. For example, it can be convenient to put the direct rdf:type
@@ -104,7 +104,7 @@ RDF Reification example below:
 
 (For example, GraphDB's RDF* does not assert automatically.)
 
-See [biolink:Association](../docs/Association) for a taxonomy of associations defined by the model, and 
+See [biolink:Association](Association) for a taxonomy of associations defined by the model, and 
 to see a list of generic properties that are associated with an edge.
 
 
