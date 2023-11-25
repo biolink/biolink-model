@@ -1,0 +1,45 @@
+id: "http://bioentity.io/json-schema/biolink/contrib/class_extensions.json"
+name: class extensions
+imports:
+  - "biolink-model"
+description: Monarch/GO class extensions
+
+slots:
+
+  ## Extensions slot
+  
+  extensions context slot:
+    is_a: association slot
+    abstract: true
+    range: property value pair
+    multivalued: true
+    description: >-
+      A parent slot for subject and object extension. Extensions are a way to provide additional context
+      or subtyping (aka post-composition or post-coordination) on a class.
+      
+  subject extensions:
+    is_a: extensions context slot
+    description: >-
+      Additional relationships that are true of the subject in the context of the association.
+      For example, if the subject is a gene product in a functional association,
+      the subject extensions may represent  an isoform or a specific post-translational state
+      
+  object extensions:
+    is_a: extensions context slot
+    range: property value pair
+    description: >-
+      Additional relationships that are true of the object in the context of the association.
+      For example, if the object is an anatomical term in an expression association,
+      the object extensions may include part-of links
+
+classes:      
+
+  ## ------
+  ## GENERIC
+  ## ------
+
+  property value pair:
+    slots:
+      - relation
+      - filler
+      

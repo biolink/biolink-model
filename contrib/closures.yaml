@@ -1,0 +1,100 @@
+id: "http://bioentity.io/json-schema/biolink/contrib/closures.json"
+name: relationship edge closures
+description: closures
+
+slots:
+  
+  ## ------
+  ## CLOSURES
+  ## ------
+    
+  closure concept slot:
+    abstract: true
+    multivalued: true
+    description: >-
+      parent field for fields used for storing inferred relationships to a class or relation
+    range: ontology class
+    
+  closure label slot:
+    abstract: true
+    multivalued: true
+    description: >-
+      parent field for fields used for storing the label of the closure concept.
+      See also: closure concept field
+    range: label type
+    
+  taxon closure slot:
+    is_a: closure concept slot
+    description: >-
+      a closure slot that includes a taxon and all ancestral taxa
+    range: organism taxon
+    
+  taxon closure label slot:
+    is_a: closure label slot
+    description: >-
+      label for taxon closure slot
+    range: label type
+    
+  subject taxon closure:
+    is_a: taxon closure slot
+    description: >-
+      The taxon class or ancestor class for the subject
+    range: ontology class
+    path: subject/in_taxon*
+    
+  subject taxon closure label:
+    is_a: taxon closure label slot
+    description: >-
+      The label for the taxon class or ancestor class for the subject
+    multivalued: true
+    path: subject/in_taxon*/label
+    
+  object taxon closure:
+    is_a: taxon closure slot
+    description: >-
+      The taxon class or ancestor class for the object
+    range: ontology class
+    path: object/in_taxon*
+    
+  object taxon closure label:
+    is_a: taxon closure label slot
+    description: >-
+      The label for the taxon class or ancestor class for the object
+    path: object/in_taxon*/label
+    
+  isa partof closure:
+    is_a: closure concept slot
+    range: ontology class
+    description: >-
+      Ancestors (reflexive) of the object field following is_a (subClassOf) and part-of links.
+      This is typically used as a query constraint and for faceting.
+      The combination of is_a and part of is a common pattern, and can be used in gene expression
+      queries (finding genes that are expressed in a structure, a subtype, or a part of that structure)
+      or in GO queries (in any of the three branches of GO)
+    path: "object/{rdfs:subClassOf|BFO:0000050}*"
+    
+  isa partof closure label:
+    is_a: closure label slot
+    path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
+
+  regulates closure:
+    is_a: closure concept slot
+    range: relationship type
+    description: >-
+      Ancestors (reflexive) of the object field following is_a (subClassOf), part-of and
+      regulates (including positive and negative) relationships.
+      This is typically used as a query constraint and for faceting where the range is
+      a biological process
+    path: "object/{rdfs:subClassOf|BFO:0000050}*"
+
+  regulates closure label:
+    is_a: closure label slot
+    path: "object/{rdfs:subClassOf|BFO:0000050|RO:0002211}*/label"
+    
+    
+  evidence object closure:
+    is_a: closure concept slot
+    range: evidence type
+    description: >-
+      ancestor of type of evidence object
+    path: "evidence object/rdfs:subClassOf*"

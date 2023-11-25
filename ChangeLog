@@ -1,0 +1,872 @@
+CHANGES
+=======
+3.5.4
+-----
+Summary: infores catalog URL replacements with TranslatorWiki pages, and a few new infores entries.
+
+* adding infores for MolePro new data source. by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1377
+* many URL updates to the infores catalog to conform with Translator Wiki requirements.
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.5.3...v3.5.4
+
+3.5.3
+-----
+* fix: chemical-affects-gene-association aspect qualifier range by @colleenXu in https://github.com/biolink/biolink-model/pull/1362
+* add association slot annotation to support graphs slot, add 'semmed agreement count' as an association slot by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1364
+* Adds synonym to named thing, removes it from gene by @kevinschaper in https://github.com/biolink/biolink-model/pull/1369
+* Update domain and range of gene condition association by @nicholsn in https://github.com/biolink/biolink-model/pull/1367
+* Bump certifi from 2023.5.7 to 2023.7.22 by @dependabot in https://github.com/biolink/biolink-model/pull/1365
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.5.2...v3.5.3
+
+3.5.1
+----
+Summary:  added more xrefs for infores catalog and added a semmeddb exclude list
+
+* a few new entries for the infores catalog by @EvanDietzMorris in https://github.com/biolink/biolink-model/pull/1350
+* fix duplicated 'deprecated' syntax by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1349
+* Semmed exclusion yaml by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1356
+* Information resource updates - per TAQA curation by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1357
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.5.0...v3.5.1
+
+3.5.0
+----
+Summary: introduced many changes to infores_catalog.yaml to capture more information about each resource.
+
+From GitHub automated Changelog:
+* Adding xref for Text Mining KP by @edgargaticaCU in https://github.com/biolink/biolink-model/pull/1332
+* Update MolePro xref in infores catalog by @vdancik in https://github.com/biolink/biolink-model/pull/1334
+* Fix broken link in guidelines/README.md  by @Daniel-Mietchen in https://github.com/biolink/biolink-model/pull/1336
+* update BTE link in infores catalog by @andrewsu in https://github.com/biolink/biolink-model/pull/1337
+* Add "full name" slot to the "named thing" slot list by @kevinschaper in https://github.com/biolink/biolink-model/pull/1335
+* log odds ratio 95 ci by @CaseyTa in https://github.com/biolink/biolink-model/pull/1340
+* Update dataset iri mappings by @nicholsn in https://github.com/biolink/biolink-model/pull/1338
+* Stop gap changes to infores_catalog.yaml including knowledge_level and agent_type fields by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1331
+* Update BTE link to point to Translator wiki page by @andrewsu in https://github.com/biolink/biolink-model/pull/1342
+* add simple script to extract infores resources without URLs or with g… by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1343
+* Updated infores catalog according to spreadsheet curation by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1345
+* fix : in url by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1346
+
+## New Contributors
+* @Daniel-Mietchen made their first contribution in https://github.com/biolink/biolink-model/pull/1336
+* @nicholsn made their first contribution in https://github.com/biolink/biolink-model/pull/1338
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.4.3...v3.5.0
+
+3.4.3
+----
+in_taxon_label addition
+
+3.4.2
+----
+move GeneToPhenotypeAssociation to GeneToPhenotypicFeatureAssociation
+
+3.4.1
+-----
+recreate wheel with pydantic included
+
+3.4.0
+-----
+remove support for dynamic enumerations in anatomical context qualifier
+reinstate gene to disease and gene to phenotype associations as subclasses of
+gene to disease or phenotypic feature association.
+more infores URL updates
+
+3.3.4
+-----
+infores updates and format change
+infores TSV IS NOW DEPRECATED in favor of the infores-catalog.yaml file.  please make changes here going forward.
+bug fixes for documentation.
+
+3.3.3
+-----
+Infores formatting fixes and validation script updates.
+
+3.3.2
+-----
+added mappings identified from semmeddb domain/range analysis
+
+3.3.1
+----
+changes to support fixing documentation links and accessing biolink-model.yaml for use as an import.
+
+3.3.0
+-----
+* codespell: configuration, github action + typos fixed by @yarikoptic in https://github.com/biolink/biolink-model/pull/1285
+* Update codespell to ignore regenerated files by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1286
+* Poetry for artifacts by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1287
+* Add infores by @gloriachin in https://github.com/biolink/biolink-model/pull/1288
+* Improved CAM-KP infores entries by @gaurav in https://github.com/biolink/biolink-model/pull/1293
+* Update COHD URLs to Translator Wiki landing pages in Infores Catalog by @CaseyTa in https://github.com/biolink/biolink-model/pull/1290
+* fix prefix for biolink by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1297
+* Semmeddb mappings per analysis in #1292, fixes #1295 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1294
+* fixes #1279 fixes #1216 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1296
+
+## New Contributors
+* @yarikoptic made their first contribution in https://github.com/biolink/biolink-model/pull/1285
+* @gloriachin made their first contribution in https://github.com/biolink/biolink-model/pull/1288
+* @gaurav made their first contribution in https://github.com/biolink/biolink-model/pull/1293
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.2.8...v3.3.0
+
+
+3.2.8
+-----
+infores catalog URL updates
+some changes to mappings for deprecated predicates
+update xref definition to be more explicit
+
+3.2.7
+-----
+minor fixes to infores URL properties
+remove singular_name from attributes
+
+3.2.6
+-----
+some minor fixes to infores URL properties
+add denormalized edge properties to association class to support KGX SQLlite sink
+
+3.2.5
+-----
+add supporting_graphs property
+
+3.2.4
+-----
+add slot usage required instead of broad slot required by @sierra-moxon in #1252
+
+3.2.3
+-----
+deprecate a few infores entries for automat KGs no longer in use.
+
+3.2.2
+----
+several new infores parameters added
+repalced smart-api URLs in the infores registry with github projects where possible
+added support for reasoner-validator to validate retrieval source object
+
+3.2.1
+----
+add domain to biolink:type to help KGX recognize it as a node property. by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1221
+
+3.2.0
+-----
+add entity as a domain of name by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1208
+fix the regex pattern used to check for the biolink:category CURIE by @vemonet in https://github.com/biolink/biolink-model/pull/1213
+add SHACL gen to the `Makefile` by @vemonet in https://github.com/biolink/biolink-model/pull/1214
+update doc to use curie form of predicates by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1209
+make type slot multivalued by @vincentvialard in https://github.com/biolink/biolink-model/pull/1212
+remove cycle in permissible values, fixes #1215, remove degradation from abundance hierarchy in permissible values, fixes #1206 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1217
+create `publication type` slot to fix SHACL validation and avoid confusion by @vemonet in https://github.com/biolink/biolink-model/pull/1218
+add grouping class for qualifiers, add subset translator, fix range o… by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1219
+
+3.1.2
+-----
+documentation consistency updates and minor bug fixes
+update dependencies
+
+3.1.1
+-----
+adding more predicate mappings, refactored location and naming conventions here to remove "deprecated"
+some opposite/inverse refactoring
+loosened the domain of ameliorates predicate to include ClinicalEntities
+added several slots to a variety of association classes
+refactored build so that pydantic classes are generated and pypi release is automatic
+
+3.1.0
+-----
+remove deprecated classes, slots
+add deprecated predicate mappings to predicate_mappings.yaml
+refine documentation with regard to associations, add several chemical->gene examples
+general cleanup and maintenance
+
+3.0.3
+-----
+add missing inverses or missing symmetric properties
+add explicit mappings for phenotype and anatomical ontologies
+add UMLS as an id prefix for requested class
+
+3.0.2
+-----
+add side effect predicate
+add 'abundance or activity' enum value
+deprecate 'original knowledge source', add documentation to the description and examples
+
+3.0.1
+-----
+minor syntax changes/typo fixes
+adding requested attributes for COHD supporting data properties
+
+3.0.0
+-----
+deprecated/refactored predicate hierarchy to move semantics from predicates into qualifiers (edge properties)
+added several enumerations for qualifiers, depending on their usage in associations
+added gene->chemical associations with restrictions on subject/predicate/object values (as defined in enumerations)
+restructured annotations syntax to comply with LinkML including a change to canonical predicate and opposite syntax
+
+2.4.7
+-----
+* add pydantic class to the wheel
+* update LinkML dependency
+
+2.4.5
+-----
+* add BioPlanet and Inxight prefixes
+* rename pydantic class to model.py
+
+2.4.4
+-----
+* updated documentation to reference the Biolink Model publication
+* added molecular activity to pathway association
+* added gene to pathway association
+
+2.4.3
+-----
+* DRY refactoring of the biolink:ThingWithTaxon mixin by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1033
+* Adding a biolink:GeneToPathwayAssociation  by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1031
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v2.4.2...v2.4.3
+
+2.4.2
+-----
+* fix exposure classes
+* more documentation
+
+
+2.4.1
+-----
+* bug fixes
+
+2.4.0
+-----
+* make attribute a child of named thing
+* add id to ontology class
+
+2.3.1
+-----
+* reinstantiate food class with correct prefixes
+* add pydantic gen to artifacts
+
+
+2.3.0
+----
+* Define subject and/or object on several associations by @kevinschaper in https://github.com/biolink/biolink-model/pull/997
+* Replace recursive category range on NamedThing with regex by @kevinschaper in https://github.com/biolink/biolink-model/pull/998
+* fixes #1002 - remove underscores from some model components by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1004
+* fixes #937 - deprecate approved_to_treat in favor of worldwide FDA status slot. by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1005
+* add xref to named thing, fixes #934 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1006
+* move around SEMMED mappings according to 936, fixes #936 fixes #935 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1007
+* remove relation from association fixes #922 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1009
+* add remaining inverses fixes #831 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1010
+* Fix prefix mismatches by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1011
+
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v2.2.16...v2.3.0
+
+2.2.16
+------
+small maintenance fixes, new prefixes, roles for chemical entities
+
+2.2.15
+------
+update doc regeneration to use DocGenerator as a first pass.
+fix annotations syntax.
+
+
+2.2.14
+------
+small maintenance fixes, pin LinkML for testing purposes.
+
+2.2.13
+------
+small refactors to better use description field consistently.
+
+2.2.12
+------
+fix dependebot security announcement
+remove subclass of from slot_usage
+add canonical inverse for increased/decreased activity of pairs
+and mondo disease susceptibility term to narrow mappings of disease
+update license to apache 2.0
+
+2.2.11
+------
+Update actions to use github user
+
+2.2.10
+------
+mapping fixes - remove obsolete mappings, swap text based mappings with ids where applicable
+add associated with predicate along with associated with sensitivity to predicates. 
+
+2.2.9
+-----
+many fixes to mappings
+
+2.2.8
+-----
+add a prefix mapping file artifact generated with LinkML upgrade.
+
+2.2.7
+-----
+get pypi releases working via github actions
+
+2.2.6
+-----
+small new additions: several new prefixes, UMLS for chemical entity hierarchy, reactions and pathway additions.
+remove drugbank, drugcentral from some members of the chemical hierarchy
+added drug regulatory status world wide
+added two new predicates under related to, related to at concept level, related to at instance level to
+add ways of excluding concept level triples from instance level ones.
+fixed chemical entity domain/range constraints after second round of chemical hierarchy refactor
+added two new associations that help relate wellness gut/blood microbiome sampling to blood analytes
+added literature co-occurence
+added has_evidence to association object
+fix KGX warnings
+fix doc links
+added pypi github action
+
+
+2.2.5
+-----
+bug fixes: add FYPO prefix, add toxicant, add canonical tag to genetically_interacts_with
+setup.py to include name variable in order to enable dependents graph
+add README info including link to presention on biolink.
+
+
+2.2.4
+-----
+bug fixes: various ID expansion cleanups, remove redundancy in ID prefixes (ie: DBSNP)
+upgrade to linkml-1.0.5 to address some issues with the context.jsonld file
+
+
+2.2.3
+-----
+bug fixes: inverse predicate is_a hierarchy for 'affects' vs. 'affected by'
+
+
+2.2.2
+-----
+UMLS->STY prefix management
+adding back in missing mixins for increases/decreases amount activity of.
+
+
+2.2.1
+-----
+bug fixes: handling one-off prefix requests
+added epistemic qualifier enumeration
+
+
+2.2.0
+-----
+add original_subject and original_object edge properties
+refactor id prefixes in chemical hierarchy
+remove spurious mapping
+
+
+2.1.0
+-----
+remove gene and polypeptide (and children) from chemical entity is_a hierarchy
+add chemical entity and gene or gene product mixin
+add chemical entity and polypeptide and protein mixin
+add fda approval status enumeration and definitions
+remove is_a parents from exposure classes
+add prefixes back to protein
+
+2.0.2
+-----
+
+First pass at property chain specification
+2.0.0 bug fixes and documentation updates
+Upgrade to linkml-1.0.0
+
+2.0.1
+-----
+
+Add NCBIGene prefix (with correct capitalization) to accommodate jsonld context requirements
+
+2.0.0
+-----
+
+Refactor of the 'Molecular Entity' and 'Chemical Substance' classes and hierarchy
+New 'Information Resource' class and EPC slots
+New 'reactions' associations and slots
+Added inverses for the majority of biolink predicates
+
+
+1.8.2
+-----
+
+Added documentation and examples for mixins
+Added id_prefixes to gene, protein
+Added id_prefixes to gross anatomical structure
+
+
+1.8.1
+-----
+Fixed typo in 'treatement' -> 'treatment'
+Removed UniProtKB from Gene class ID prefix list
+Changed contact email from Deepak->Sierra
+
+1.8.0
+-----
+
+BiolinkML->LinkML name change support
+
+
+1.7.0
+-----
+
+Updated identifiers to canonical forms
+Added predicates for increase/decrease expression predicates, opposite of predicate, generalized
+domain for treats and transcription/translation predicates
+Domain/range changes for 'interacts with' predicate
+Add owlstart enumerations for logical interpretations
+Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context 
+as another doc fix
+Bump urllib to 1.26.3
+Added last broad mappings from wikidata to the model
+
+
+1.6.1
+-----
+
+Corrected NCBIGene prefix (from NCBIGENE)
+Reverted ontology taxon parent to named thing
+
+
+1.6.0
+-----
+
+Corrected the exact mappings for CTD positive and negative correlation predicates
+Refined the modeling of ontology class as a mixin
+Removed slot_uri for 'subclass of' predicate
+Moved CTD:therapeutic from 'exacerbates' to 'ameliorates'
+Fixed range for category slot in the 'association' class
+Cleaned up prefixes for INO and HANCESTRO
+Removed commas in class and predicate names
+
+
+1.5.0
+-----
+
+Fixed mapping for CTD
+Added catalyst qualifier slot
+Updated guidelines with examples
+Extended the model to represent spatiotemporal exposures, outcomes, and cohorts
+Added 'pathological process' class
+Predicates that are symmetric are defined explicitly
+Added a new 'activity' class
+Fixed mixin hierarchy of transcript and RNA products
+Extended the model to represent entities from MODs
+Reorganized the chemical substance hierarchy
+Added a class to represent siRNA
+Improved the organization of 'pathological process'
+Added more prefixes for various classes
+Changed category slot required for 'named thing' and optional for 'association'
+
+
+1.4.0
+-----
+
+Added an enhanced Publication model
+Replaced biolink-model.owl with biolink-model.owl.ttl
+Differentiated mappings for classes into related, broad, narrow, close, and exact mappings
+Differentiated mappings for slots into related, broad, narrow, close, and exact mappings
+Fixed typos in class and slot definitions
+Fixed inconsistent domain and range constraints
+Added classes to represent food
+Fixed parent for relation enables
+Deprecate edge_label in favor of predicate
+Added missing prefixes
+Added guidelines to the documentation
+Tidied the representation and use of mixins
+Differentiated the mixin hierarchy from the class hierarchy
+Rearranged properties like id, name, type, description to a generic grouping entity class
+
+
+1.3.9
+-----
+
+Added genomic entities and common properties for these entities
+Added mappings to GPI 2.0 specification
+Fixed prefixes for mappings in the model
+Fixed definition of interacts_with relation to be symmetric
+Added missing predicates referenced in associations
+Added entities and properties for representing sequence locations
+Added mappings from Monarch Initiative
+Added an inverse property of subclass_of
+Fixed description for edge_label and relation slots
+Added more mappings for different entities and relations
+Added chi_squared_statistic and p_value association slots
+Expanded the scope of correlated_with relation
+Added clarification to RDF mappings
+Fixed provided_by property to be multivalued
+Added enables relation
+
+
+1.3.0
+-----
+
+* association_id property should be an association property
+* Added or updated id_prefixes for many types
+* add caused by property as inverse of causes
+* Chemical structure --> chemical substance
+* adding has-output
+* OBAN to all upper case.  Fix Issue #271
+* Adding RHEA to prefixes that can be used for reactions, #269
+* First pass at chem2chem associations and hyperedges to catalysts,
+* fixes #269
+* adding node properties for exposure events
+* added new associations for exposures
+* identifier type changed to anyURI and linked to metamodel ElementIdentifier
+* iri type changed to support both URI or Curie
+* changed subclass of to reference an iri instead of a defined ontology class, and made it multivalued
+* association_id now defaults to bnode so it doesn't have to be supplied
+* range of association slot is named thing (meaning that it has to be typed in the model)
+* systematic synonym changed to multivalued
+* changed subject and object of association to named thing instead of just a iri
+* changed relation type to uriorcurie vs. straight uri
+* moved association_id in the association class so the creation order is subject, relation, object instead of association_id, subject, relation, object
+
+
+1.2.5
+-----
+
+* fixed ID type
+* adding support for samples and generic attributes
+* tiny typo
+* Change type off association\_id from identifier type (URI or CURIE) to nodeidentifier (URI, CURIE or BNODE)
+* Newest biolinkml output + changes from dataset push
+* TBD: tag looks like an JSON object tag - quote it!
+* first passing test
+* Make run against new model
+* Adjustments to type system and association
+* Fix merge issue on contextn
+* Add native URIs and shexJ format
+* Add context that uses metamodel uris instead of slot\_uri and class\_uri
+* Add context that uses metamodel uris instead of slot\_uri and class\_uri
+* Fix JSON object/array parsing conflict
+* SIO:010004 duplication resolved
+* Needed double quotes around string..
+
+1.2.1
+-----
+
+* Bump version to 1.2.1
+* Fix typo
+* Add ChangeLog
+* Switched to png for UML images
+
+1.2.0
+-----
+
+* Update .gitignore
+* Update setup.cfg
+* Revert "Update setup.py"
+* Use the official uniprot PURLs for uniprot entries
+* Update setup.py
+* Update remaining artifacts
+* Update Makefile and tests
+* Rename biolinkmodel folder to biolink
+* Switch to newer biolinkml
+* Fix issue #227
+* Point travis at tests (vs. test)
+* Fix issue #225
+* Backing up to Travis 3.6
+* updating index docs
+* Update UML diagrams
+* Change travis build to 3.7
+* Build from new makefile
+* Update biolink-model.yaml
+* Update biolink-model.yaml
+* Fixes #212
+* Undoing committed change, intended to open pull request
+* Fixes #212
+* Update tests for Semantic Net updates
+* Commit cosmetic changes so we can merge the latest Semantic Net elements
+* Added UMLS Semantic Types and Codes to the Biolink YAML model (#209)
+* Update all content for model changes
+* Update documentation (#194)
+* remove useless evidence instance and use evidence type for has evidence to fix https://github.com/biolink/biolink-model/issues/153 (#195)
+* Add description for population (#196)
+* Update biolink-model.yaml (#203)
+* Add Gitter badge
+* Fixed null pointer exception
+* Regen tests (#192)
+* model refactoring (#187)
+* Add Python 3.7 badge to README
+* Fix issue #188.  Use non-aliased slot names in RDF (#190)
+* Update tests, requirements and version
+* chembl id prefixes (#180)
+* Adding PMID as id prefix for publications (#181)
+* Resolve merge conflicts
+* Detect ALL unused prefixes (#183)
+* Partial fix for issue #175 - missing prefix fix
+* Partial fix for issue #175 - missing prefix fix
+* Changed ANCESTRO to HANCESTRO
+* Update tests to reflect changes
+* Fixing type in RO mapping of the 'prevents' slot
+* Changed graphviz output to .gv and .svg.  Fixes issue #176 (#177)
+* extend mappings with new slots (#173)
+* Change base URI to  http://w3id.org/biolink/vocab
+* Detect ALL unused prefixes
+* merge
+* Update secondary files Also removed a few more false change positives
+* Test and build of patch change
+* Remove GMODChado mapping
+* Make category an IRI type
+* Fix issue #163.   Also added pipenv files and fixed make file bug
+* Checkpoint
+* Added comparefiles tool and added to makefile
+* Sort markdown index files
+* Sort markdown output
+* Sample test code for RDF files
+* Update tests to reflect ancestors fix
+* Fixed scope error
+* Correct error in shex compact grammar generation
+* Update to fix a bug in the shexc generator
+* Updates ShEx testing and generation
+* Fixed issue in ShEx generation
+* Fix for issue #138.  Also updated version number
+* Remove a debug statement
+* Make test file case sensitive
+* Fix issue #131 by changing the name of the test script and adding a pattern to the Makefile
+* Add COLUMNS to travis build
+* Fixes issue #133 and does complete build
+* Updated tests to reflect issue 120 fix
+* Fix for issue #119.  Also includes a complete make
+* Fix for issue #119.  Also includes a complete make
+* Fixed issue #120
+* Updated version for ShExJSG
+* Update requirements to match setup
+* Update biolink-model.yaml
+* Update images
+* Build fix
+* Resync build
+* adding 48 new predicates to support CTD data
+* Start of documentation for using the schema loader
+* fixed erroneous BFO:0000066  mappings
+* Fix for issue #106 - regenerate all documents
+* Completely merge biolink-model.yaml
+* Set the test refresh\_files variable to false
+* Completed the biolink-model.yaml merge and regenerated the ouutput
+* Conflict resolution
+* Order related differences?
+* Integrated last change to biolink-model.yaml on biolink repository
+* Remove contrib PNG's and use direct reference
+* docs
+* Everything is more or less solid
+* Everything is more or less solid
+* Get the right context for the metamodel
+* Added a RDF directory to the make file
+* Checkpoint. Metamodel seems completely sound in JSON/RDF and the like
+* RDF generating from JSON-LD
+* Updated the python to type the slots
+* First cut at ShEx generator
+* Theoretically complete except for ShEx
+* Undoing earlier name fix -- need another approach
+* Fix for issue #14
+* Undo fix for issue #12
+* Fix for issue #12
+* Fix for issue #12
+* Fix for issue #11
+* Fix for issue #10
+* Update test and make output to reflect changes in json schema generator
+* Fixed a typo in Generator.visit\_all\_\_class slots
+* Fixes issue #9
+* Test files updated to reflect biolink-model.yaml refactoring for issue #8
+* Misc test files that were missed in previous submissions
+* Temporary fix for issue #8 -- added expected failure decorators
+* Fix for issue #7
+* Fixes for issue #5
+* Fixes for issue #4
+* Additional changes for yuml determinacy problem
+* Fixed non-determinacy issue in emission order
+* Cleaned up contextgen comments and clicktestcase editing of it
+* Fix issue #6
+* Part of issue 2 fix
+* Removed Generator.root\_closure, as it was only called from here
+* Fix Issue #3 - extra asterisk
+* Fix Issue #5
+* Fix Issue #2
+* Added link to the metamodel markdown documentation
+* Approaching beta version of markdown and yuml diagrams
+* Switch to inline UML
+* Update to YUML and markdown generators
+* OWl Generation is close to working
+* Set theme jekyll-theme-dinky
+* Updated the docs
+* Passes 3.6 and 3.7 tox tests
+* Removed bin directory and added scripts to setup.py
+* Checkpoint -- all generators running
+* Checkpoint -- YUML generator approaching complete
+* Checkpoint -- Generating everything through markdown
+* Checkpoint -- generating complete python for metamodel and biolink
+* Checkpoint -- metamodel is (almost) self generating
+* Proposed dataclasses representation of metamodel
+* test for shex etc
+
+1.1.1
+-----
+
+* added generated docs for new elements
+* Additional association paths
+* Added zenodo badge, see #87
+* added predisposes and has input slots
+* added missing generated docs
+* evidence
+* Additional mappings
+* semweb prefixes
+* Ensure all prefixes added
+* regen
+* add 'in taxon' slot to translator\_minimal subset
+* imports
+* trim leading 'is' from several predicate names
+* changing in\_subset values to lists
+* regen
+* Fixes #77
+* Added example property for chemical entity, fixes #64
+* pop2pop
+* Update biolink-model.yaml
+* regen docs
+* fix syntax errs
+* stub code for generating nested objects in contextld
+* Fixed invalid YAML file
+* update treats condition->treats
+* fix typos, minor updates to deescriptions
+* Added in\_subset and  inverse annotations to TKG min predicates, and WD and SemMedDB mappings
+* added in\_subset and inverse slot definitions
+* renamed 4 predicates, deprecated two predicates, added numerous new predicates
+* re-prioritized
+* re-prioritized
+* Added chembl, fixes #65
+* added links to context file, see #65
+* missing docs
+* Using reactome for now, but see https://github.com/monarch-initiative/dipper/issues/582
+* include all prefixes
+* JSON-LD context generation
+* link to kgx
+
+1.1.0
+-----
+
+* docs
+* regen
+* fix typo
+* updated docs
+* Added grouping for BP+MF, fixes #59
+* Update biolink-model.yaml
+* add SEMMEDDB:PRECEDES mapping
+* neo4j-names
+* proposed for #49
+* tr
+* Added UMLS Semantic Group LIVB as a mapping
+* category
+* expanding UML
+* new classes
+* restored
+* regen
+* variant to pop frequencies
+* add missing
+* Use correct UPHENO Phenotype IRI
+* upgraded marshmallow
+* fixed typo
+* Added metabolite, fixes #35
+* Fix upheno mapping, fixes #41
+* Update biolink-model.yaml
+* Update biolink-model.yaml
+* Update biolink-model.yaml
+* nu
+* yUML
+* variants
+* protobuf
+* regen
+* regen
+* regen
+* regulates
+* local-names
+* Adding predicates
+* NT: haplotype
+* sequence variant changes, from #21
+* Update biolink-model.yaml
+* Issue #26
+* regenerated
+* regenerated
+* regen
+* ontol
+* regen
+* ontology iri
+* license
+* license
+* license
+* adding license
+
+1.0.0
+-----
+
+* regenerated derived artefacts
+* fixing typo
+* removing occupation, was added for #7
+* First pass at modeling isoforms in schema, see also discussion at https://github.com/The-Sequence-Ontology/MSO/issues/1
+* improved metamodel def
+* reorganized README
+* regen
+* Fix list typo
+* add\_wikidata\_class\_mappings
+* sio mappings
+* Added mappings from @micheldumontier in https://github.com/NCATS-Tangerine/translator-knowledge-beacon/pull/45
+* pheno qualifiers
+* Added mappings to the small number of Wikidata concept types
+* Gitignore local Eclipse IDE configuration
+* first pass at ShEx, #12
+* csvs
+* moved docs from top level
+* csv export
+* regen
+* regen
+* docs
+* moved
+* moved
+* remove stale
+* split some out into contrib
+* additional mappings
+* doc
+* regen
+* Added md doc generator, md docs and regenerated all
+* test-docs
+* test-docs
+* Set theme jekyll-theme-dinky
+* Set theme jekyll-theme-dinky
+* Exemplar SIO mapping see #1
+* Adding some mappings for bio2rdf association types, see #1
+* regen
+* fix typo
+* adding space and time
+* add attributes
+* Update biolink-model.yaml
+* Add microRNA type
+* regen
+* Adding new types Annotating types with identifiers #2
+* regen
+* mixins
+* regen
+* regen
+* graphql
+* sample
+* fixed link
+* regen with color coding
+* regen-gv
+* regen
+* regen
+* schemagen
+* using manager methods
+* regen
+* regen
+* travis-badge
+* travis
+* generation of owl, new classes, travis
+* docs
+* regen
+* adding expression example
+* adding expression example
+* initial commit
