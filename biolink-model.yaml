@@ -1496,13 +1496,6 @@ slots:
       sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not 
       what we mean to say here: it causes increased expression of Gene Y)
 
-  qualifier:
-    is_a: association slot
-    description: >- 
-      grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
-    in_subset:
-      - translator_minimal
-
   statement qualifier:
     is_a: qualifier
     description: >-
@@ -4986,6 +4979,13 @@ slots:
     aliases: ['edge property', 'statement property', 'node qualifier', 'edge qualifier', 'statement qualifier']
     description: >-
       any slot that relates an association to another entity
+
+  qualifier:
+    is_a: association slot
+    description: >- 
+      grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+    in_subset:
+      - translator_minimal
 
   original subject:
     is_a: association slot
