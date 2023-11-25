@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-11-10T19:24:29
+# Generation date: 2023-11-25T17:57:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -12279,9 +12279,6 @@ slots.object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, 
 slots.qualified_predicate = Slot(uri=BIOLINK.qualified_predicate, name="qualified predicate", curie=BIOLINK.curie('qualified_predicate'),
                    model_uri=BIOLINK.qualified_predicate, domain=Association, range=Optional[str])
 
-slots.qualifier = Slot(uri=BIOLINK.qualifier, name="qualifier", curie=BIOLINK.curie('qualifier'),
-                   model_uri=BIOLINK.qualifier, domain=Association, range=Optional[str])
-
 slots.statement_qualifier = Slot(uri=BIOLINK.statement_qualifier, name="statement qualifier", curie=BIOLINK.curie('statement_qualifier'),
                    model_uri=BIOLINK.statement_qualifier, domain=Association, range=Optional[str])
 
@@ -13019,6 +13016,9 @@ slots.is_molecular_consequence_of = Slot(uri=BIOLINK.is_molecular_consequence_of
 
 slots.association_slot = Slot(uri=BIOLINK.association_slot, name="association slot", curie=BIOLINK.curie('association_slot'),
                    model_uri=BIOLINK.association_slot, domain=Association, range=Optional[str])
+
+slots.qualifier = Slot(uri=BIOLINK.qualifier, name="qualifier", curie=BIOLINK.curie('qualifier'),
+                   model_uri=BIOLINK.qualifier, domain=Association, range=Optional[str])
 
 slots.original_subject = Slot(uri=BIOLINK.original_subject, name="original subject", curie=BIOLINK.curie('original_subject'),
                    model_uri=BIOLINK.original_subject, domain=Association, range=Optional[str])
