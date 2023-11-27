@@ -1,21 +1,28 @@
-# Slot: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}
-{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Slot) </strong>:</span> {% endif %}
-  {% if element.description %}
-  <div class="highlight-box"> <strong>Description:</strong> {{ element.description }} <br>
-  {% endif %}
-  {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }} <br>
-  {% endif %}
-  </div>
-
-{% if element.multivalued %} <strong>Multivalued:</strong> {{ element.multivalued }} <br> {% endif %}
-{% if element.required %} <strong>Required:</strong> {{ element.required }} <br> {% endif %}
-{% if element.domain %} <strong>Domain:</strong> {{ gen.link(element.domain) }} <br> {% endif %}
-{% if element.range %} <strong>Range:</strong> {{ gen.link(element.range) }} <br> {% endif %}
-{% if element.inverse %} <strong>Inverse:</strong> {{ gen.link(element.inverse) }} <br> {% endif %}
+# <strong> Property: {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Slot) </strong></span> {% endif %}
+{% if element.description or element.aliases or element.multivalued or element.required or element.domain or element.range or element.inverse %}
+<div class="highlight-box"> <strong>Description:</strong> {{ element.description }}<br>
+  {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
+  {% if element.domain %}<strong>Domain:</strong> {{ element.domain }}<br>{% endif %}
+  {% if element.range %}<strong>Range:</strong> {{ element.range }}<br>{% endif %}
+  {% if element.multivalued %} <strong>Multivalued:</strong> {{ element.multivalued }}<br>{% endif -%}
+  {% if element.required %} <strong>Required:</strong> {{ element.required }}<br>{% endif %}
+  {% if element.inverse %}<strong>Inverse:</strong> <a href="{{ element.inverse }}.md">{{ element.inverse }}</a></small><br>{% endif %}
+  {% if element.notes %}<strong> Notes:</strong> {{ element.notes }} {% endif %}
+</div>
+{% endif %}
 
 {% if schemaview.slot_parents(element.name) or schemaview.slot_children(element.name, mixins=False) %}
 
-## Inheritance
+{% if gen.example_object_blobs(element.name) -%}
+## Examples:
+{% for name, blob in gen.example_object_blobs(element.name) -%}
+## Example: {{name}}
+```yaml
+{{ blob }}
+```
+{% endfor %}
+{% endif %}
+## Inheritance:
 
 {{ gen.inheritance_tree(element, mixins=True) }}
 {% else %}
@@ -24,7 +31,7 @@
 
 {% if schemaview.get_classes_by_slot(element, include_induced=False) %}
 
-## Applicable Classes
+## Applicable Classes:
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
@@ -36,7 +43,7 @@
 
 
 {% if schemaview.is_mixin(element.name) %}
-## Mixin Usage
+## Mixin Usage:
 
 | mixed into | description | range | domain |
 | --- | --- | --- | --- |
@@ -47,7 +54,7 @@
 
 
 {% if schemaview.usage_index().get(element.name) %}
-## Usages
+## Usages:
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -58,7 +65,7 @@
 
 {% include "common_metadata.md.jinja2" %}
 
-## LinkML Source
+## LinkML Source:
 
 <details>
 ```yaml

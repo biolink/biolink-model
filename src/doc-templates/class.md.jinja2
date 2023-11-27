@@ -1,12 +1,11 @@
-# Class: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>{% endif %}{% if element.abstract %}<span style="color: purple;"> (Abstract Class) </span>{% endif %}
-  {% if element.description %}
-  <div class="highlight-box"> <strong>Description:</strong> {{ element.description }} <br>
-    {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }} <br> {% endif %}
-  </div>
-  {% endif %}
-
-  <strong>URI:</strong> {{ gen.uri_link(element) }}
-
+# <strong>  Class: {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>{% endif %}{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Class) </strong>:</span> {% endif %}
+{% if element.description or element.aliases or element.multivalued or element.required or element.domain or element.range or element.inverse %}
+<div class="highlight-box"> <strong>Description:</strong> {{ element.description }}<br>
+  {% if element.aliases %}<strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
+  {% if element.multivalued %}<strong>Multivalued:</strong> {{ element.multivalued }}<br>{% endif -%}
+  {% if element.required %}<strong>Required:</strong> {{ element.required }}<br>{% endif %}
+</div>
+{% endif %}
 
 {% if diagram_type == "er_diagram" %}
 ```{{ gen.mermaid_directive() }}
@@ -18,29 +17,30 @@
 
 {% if schemaview.class_parents(element.name) or schemaview.class_children(element.name, mixins=False) %}
 
-## Inheritance
+
+## Inheritance:
 {{ gen.inheritance_tree(element, mixins=True) }}
 {% else %}
 <!-- no inheritance hierarchy -->
 {% endif %}
 
-## Slots
+## Slots:
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
+| Name | Cardinality and Range | Inheritance |
+| ---  | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
 {%- for slot in gen.get_direct_slots(element) -%}
-| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description }} | direct |
+| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | direct |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
 {%- for slot in gen.get_indirect_slots(element) -%}
-| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
+| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
 {% endfor -%}
 {% endif %}
 
 {% if schemaview.is_mixin(element.name) %}
-## Mixin Usage
+## Mixin Usage:
 
 | mixed into | description |
 | --- | --- |
@@ -50,7 +50,7 @@
 {% endif %}
 
 {% if schemaview.usage_index().get(element.name) %}
-## Usages
+## Usages:
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -65,7 +65,7 @@
 
 
 {% if gen.example_object_blobs(element.name) -%}
-## Examples
+## Examples:
 {% for name, blob in gen.example_object_blobs(element.name) -%}
 ### Example: {{name}}
 
@@ -76,11 +76,7 @@
 {% endif %}
 
 
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
+## LinkML Source:
 
 <details>
 ```yaml

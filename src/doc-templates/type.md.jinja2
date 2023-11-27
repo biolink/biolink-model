@@ -1,4 +1,4 @@
-# Type: {{ gen.name(element) }}
+# <strong> Type: </strong> {{ gen.name(element) }}
 
 {% if element.description %}
 {% set element_description_lines = element.description.split('\n') %}
@@ -6,8 +6,6 @@
 _{{ element_description_line }}_
 {% endfor %}
 {% endif %}
-
-URI: {{ gen.uri_link(element) }}
 
 {{ gen.bullet(element, "base") }}
 {{ gen.bullet(element, "uri") }}

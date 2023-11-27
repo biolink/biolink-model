@@ -1,7 +1,5 @@
-## Identifier and Mapping Information
-
 {% if element.id_prefixes %}
-### Valid ID Prefixes
+## Valid ID Prefixes:
 
 Instances of this class *should* have identifiers with one of the following prefixes, ordered with the most preferred first:
 
@@ -14,25 +12,27 @@ Instances of this class *should* have identifiers with one of the following pref
 
 
 {% if schemaview.get_mappings(element.name).items() %}
-## Mappings
+## Mappings:
 
 | Mapping Type | Mapped Value |
 | --- | --- |
 {% for m, mt in schemaview.get_mappings(element.name).items() -%}
-{% if mt -%}
-| {{ m }} | {{ mt|join(', ') }} |
+{% if mt and m != "self" and m != "native" -%}
+| {{ m }} | {% for item in mt %}{{ item }}<br>{% endfor %} |
 {% endif -%}
 {% endfor %}
 {% endif %}
 
 
 {% if element.annotations %}
-### Annotations
+## Annotations:
 
 | property | value |
 | --- | --- |
 {% for a in element.annotations -%}
-| {{ a }} | {{ element.annotations[a].value }} |
+    {%- if not a.startswith('_') %}
+    | {{ a }} | {{ element.annotations[a].value }} |
+    {%- endif %}
 {% endfor %}
 {% endif %}
 

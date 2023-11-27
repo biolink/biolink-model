@@ -1374,8 +1374,10 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
     notes: >-
-      the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the composed concept ‘increased expression of Gene X’   
-      the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
+      the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the 
+      composed concept ‘increased expression of Gene X’   
+      the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to 
+      express the composed concept ‘decreased abundance of Protein X’
     in_subset:
       - translator_minimal
 
@@ -1441,6 +1443,8 @@ slots:
       - translator_minimal
 
   subject direction qualifier:
+    description: >-
+      A qualifier that composes with a core subject concept to describe a change in its direction or degree.
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
@@ -1472,6 +1476,8 @@ slots:
       - translator_minimal
 
   object direction qualifier:
+    description: >-
+      A qualifier that composes with a core object concept to describe a change in its direction or degree.
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:

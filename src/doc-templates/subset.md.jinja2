@@ -11,8 +11,6 @@ _{{ element_description_line }}_
 {% endfor %}
 {% endif %}
 
-URI: {{ gen.uri_link(element) }}
-
 {% include "common_metadata.md.jinja2" %}
 
 {% set classes_in_subset = [] %}
@@ -39,7 +37,7 @@ URI: {{ gen.uri_link(element) }}
 {% endfor %}
 
 {% if classes_in_subset %}
-## Classes in subset
+# Classes in subset:
 
 | Class | Description |
 | --- | --- |
@@ -79,7 +77,7 @@ URI: {{ gen.uri_link(element) }}
 
 
 {% if slots_in_subset %}
-## Slots in subset
+# Slots in subset:
 
 | Slot | Description |
 | --- | --- |
@@ -93,7 +91,7 @@ URI: {{ gen.uri_link(element) }}
 
 
 {% if enums_in_subset %}
-## Enumerations in subset
+# Enumerations in subset:
 
 | Enumeration | Description |
 | --- | --- |
