@@ -1,0 +1,893 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/working-with-the-model/">
+      
+      
+        <link rel="prev" href="../maintaining-the-model/">
+      
+      
+        <link rel="next" href="../information-resource-registry/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Working with the Biolink Model - Biolink Model Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J23SCD6JB8"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J23SCD6JB8",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J23SCD6JB8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="black" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#working-with-biolink-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Biolink Model Documentation" class="md-header__button md-logo" aria-label="Biolink Model Documentation" data-md-component="logo">
+      
+  <img src="../images/biolink-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Biolink Model Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Working with the Biolink Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/biolink/biolink-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Biolink Model Documentation" class="md-nav__button md-logo" aria-label="Biolink Model Documentation" data-md-component="logo">
+      
+  <img src="../images/biolink-logo.png" alt="logo">
+
+    </a>
+    Biolink Model Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/biolink/biolink-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-the-modeling-language/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the LinkML Modeling Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../association-examples-with-qualifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations with Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-a-qualifier-based-statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreting a Fully Qualified Edge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curating-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curating Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining-the-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintaining Biolink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Working with Biolink
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Working with Biolink
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-nodes" class="md-nav__link">
+    Annotating nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotating nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-semantics" class="md-nav__link">
+    Node semantics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-edges" class="md-nav__link">
+    Annotating edges
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotating edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-semantics" class="md-nav__link">
+    Edge semantics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biolink-model-representation-in-neo4j" class="md-nav__link">
+    Biolink Model representation in Neo4j
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biolink-model-representation-in-rdf" class="md-nav__link">
+    Biolink Model representation in RDF
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../information-resource-registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infores Identifier Registry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../categories.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../predicates.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Predicates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualize Aspects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-nodes" class="md-nav__link">
+    Annotating nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotating nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-semantics" class="md-nav__link">
+    Node semantics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-edges" class="md-nav__link">
+    Annotating edges
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotating edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-semantics" class="md-nav__link">
+    Edge semantics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biolink-model-representation-in-neo4j" class="md-nav__link">
+    Biolink Model representation in Neo4j
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biolink-model-representation-in-rdf" class="md-nav__link">
+    Biolink Model representation in RDF
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="working-with-biolink-model">Working with Biolink Model</h1>
+<p>The <a href="../understanding-the-model/">model</a> and how to <a href="../curating-the-model/">curate the model</a> has been addressed in other sections. But how to make use of the Biolink Model in practical terms?
+How to use the classes and slots defined in the model for representing nodes and edges in a graph?</p>
+<p>We can consider a small example and see how it can be represented using the Biolink Model.</p>
+<p>Example:</p>
+<pre><code>protein1 protein2
+9606.ENSP00000000233 9606.ENSP00000272298
+9606.ENSP00000000233 9606.ENSP00000253401
+9606.ENSP00000000233 9606.ENSP00000401445
+</code></pre>
+<p>The above lines are from <a href="https://string-db.org/">STRING DB</a>.</p>
+<p>The information can be represented using Biolink Model as follows:
+- use Biolink entity class <code>protein</code> for protein entities
+- use Biolink entity class <code>gene</code> for gene entities
+- use Biolink predicate slot <code>interacts with</code> as the relationship or predicate for representing an edge between interacting partners
+- use Biolink association class <code>gene to gene association</code> to type the edge</p>
+<p>One modeling consideration we are going to make here is that we will be projecting the interaction between proteins to interaction between genes.</p>
+<h2 id="annotating-nodes">Annotating nodes</h2>
+<p>Each individual protein and gene can be treated as nodes in a graph.</p>
+<p>Each protein node has <code>protein</code> as its category.</p>
+<p>Each gene node has <code>gene</code> as its category.</p>
+<p>As per the model, protein nodes should have identifiers from <code>UniProtKB</code> and gene nodes should have identifiers <code>NCBIGene</code>. </p>
+<p>One can further type the protein and gene entities using the Biolink slot <code>type</code> (which corresponds to <code>rdf:type</code>).</p>
+<p>In <a href="https://github.com/biolink/kgx/blob/master/data-preparation.md">KGX serialization format</a> the nodes can be represented as follows:</p>
+<pre><code class="language-tsv">id  name    category    provided_by xref    type    in_taxon
+UniProtKB:P84085    ARF5    biolink:Protein STRING  ENSEMBL:ENSP00000000233     NCBITaxon:9606
+UniProtKB:P0DP24    CALM2   biolink:Protein STRING  ENSEMBL:ENSP00000272298     NCBITaxon:9606
+UniProtKB:O43307    ARHGEF9 biolink:Protein STRING  ENSEMBL:ENSP00000253401     NCBITaxon:9606
+UniProtKB:O75460    ERN1    biolink:Protein STRING  ENSEMBL:ENSP00000401445     NCBITaxon:9606
+NCBIGene:381    ARF5    biolink:Gene    STRING  ENSEMBL:ENSG00000004059 SO:0001217  NCBITaxon:9606
+NCBIGene:805    CALM2   biolink:Gene    STRING  ENSEMBL:ENSG00000143933 SO:0001217  NCBITaxon:9606
+NCBIGene:23229  ARHGEF9 biolink:Gene    STRING  ENSEMBL:ENSG00000131089 SO:0001217  NCBITaxon:9606
+NCBIGene:2081   ERN1    biolink:Gene    STRING  ENSEMBL:ENSG00000178607 SO:0001217  NCBITaxon:9606
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> While the entity classes are defined as <code>gene</code> and <code>protein</code> in the model, when using them the reference to the class should always be in their CURIE form which includes the <code>biolink</code> prefix.</p>
+</blockquote>
+<h3 id="node-semantics">Node semantics</h3>
+<p>There are three ways of attaching semantics to a node:
+- using Biolink slot <code>category</code>
+  - the value of the <code>category</code> must be from the <a href="https://biolink.github.io/biolink-model/docs/NamedThing"><code>named thing</code> hierarchy</a>
+- using Biolink slot <code>type</code>
+  - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
+- using Biolink predicate slot <code>subclass_of</code> (or <code>rdfs:subClassOf</code>)
+  - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy</p>
+<h2 id="annotating-edges">Annotating edges</h2>
+<p>Each individual interaction between genes can be treated as an edge with,
+- <code>interacts with</code> as its <code>predicate</code>
+- <code>gene to gene association</code> as its <code>category</code></p>
+<p>And we have additional edges that go from gene to protein to signify that a gene encodes for a protein via the Biolink 
+predicate slot <code>has gene product</code>.</p>
+<p>In <a href="https://github.com/biolink/kgx/blob/master/data-preparation.md">KGX serialization format</a> the edges can be represented as follows:</p>
+<pre><code class="language-tsv">id  subject predicate   object    provided_by category
+985eb9e6-e0bf-4cef-be0a-3d8ea12d228b    NCBIGene:381    biolink:interacts_with  NCBIGene:805    STRING  biolink:GeneToGeneAssociation
+5550b653-69ff-48cc-a1ef-638ecdc50ea3    NCBIGene:381    biolink:interacts_with  NCBIGene:23229  STRING  biolink:GeneToGeneAssociation
+8bff8da0-6da2-4154-b507-a8e9f75c55f8    NCBIGene:381    biolink:interacts_with  NCBIGene:2081   STRING  biolink:GeneToGeneAssociation
+36e2edf0-d490-4417-9407-7070f4320083    NCBIGene:381    biolink:has_gene_product    UniProtKB:P84085    STRING  
+0dd21d53-4985-467c-8e6d-0a79c0410016    NCBIGene:805    biolink:has_gene_product    UniProtKB:P0DP24    STRING  
+fe5f9383-c5f6-4eba-9dc4-185e6d331459    NCBIGene:23229  biolink:has_gene_product    UniProtKB:O43307    STRING  
+8c60c2b2-ff6c-45d5-a18f-e927ab1dec35    NCBIGene:2081   biolink:has_gene_product    UniProtKB:O75460    STRING  
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> While association class is defined as <code>gene to gene association</code> and predicate slots are defined 
+as <code>interacts with</code> and <code>has gene product</code> in the model, when using them the reference to the class should always 
+be in their CURIE form which includes the <code>biolink</code> prefix.</p>
+</blockquote>
+<h3 id="edge-semantics">Edge semantics</h3>
+<p>There are 3 ways of attaching the semantics to an edge:
+- using the Biolink association slot <code>predicate</code>
+  - must have a value from the <a href="https://biolink.github.io/biolink-model/docs/related_to"><code>related to</code> hierarchy</a>
+- using the Biolink slot <code>category</code>
+  - must have a value from the <a href="https://biolink.github.io/biolink-model/docs/Association"><code>association</code> hierarchy</a>
+- using Biolink slot <code>type</code>
+  - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy</p>
+<h2 id="biolink-model-representation-in-neo4j">Biolink Model representation in Neo4j</h2>
+<p>The model itself is very close to labelled property graphs.</p>
+<p>The previous example can be easily converted to a Neo4j compatible TSV using <a href="https://github.com/biolink/kgx">KGX</a>.</p>
+<p><code>nodes.tsv</code>:</p>
+<pre><code class="language-tsv">id:ID   name    category:LABEL  xref    provided_by:string[]    in_taxon    type
+UniProtKB:P84085    ARF5    biolink:Protein ENSEMBL:ENSP00000000233 STRING  NCBITaxon:9606  
+UniProtKB:P0DP24    CALM2   biolink:Protein ENSEMBL:ENSP00000272298 STRING  NCBITaxon:9606  
+UniProtKB:O43307    ARHGEF9 biolink:Protein ENSEMBL:ENSP00000253401 STRING  NCBITaxon:9606  
+UniProtKB:O75460    ERN1    biolink:Protein ENSEMBL:ENSP00000401445 STRING  NCBITaxon:9606  
+NCBIGene:381    ARF5    biolink:Gene    ENSEMBL:ENSG00000004059 STRING  NCBITaxon:9606  SO:0001217
+NCBIGene:805    CALM2   biolink:Gene    ENSEMBL:ENSG00000143933 STRING  NCBITaxon:9606  SO:0001217
+NCBIGene:23229  ARHGEF9 biolink:Gene    ENSEMBL:ENSG00000131089 STRING  NCBITaxon:9606  SO:0001217
+NCBIGene:2081   ERN1    biolink:Gene    ENSEMBL:ENSG00000178607 STRING  NCBITaxon:9606  SO:0001217
+</code></pre>
+<p><code>edges.tsv</code>:</p>
+<pre><code class="language-tsv">id  subject:START_ID    predicate:TYPE  object:END_ID   provided_by:string[]    category:string[]
+985eb9e6-e0bf-4cef-be0a-3d8ea12d228b    NCBIGene:381    biolink:interacts_with  NCBIGene:805    STRING  biolink:GeneToGeneAssociation
+5550b653-69ff-48cc-a1ef-638ecdc50ea3    NCBIGene:381    biolink:interacts_with  NCBIGene:23229  STRING  biolink:GeneToGeneAssociation
+8bff8da0-6da2-4154-b507-a8e9f75c55f8    NCBIGene:381    biolink:interacts_with  NCBIGene:2081   STRING  biolink:GeneToGeneAssociation
+36e2edf0-d490-4417-9407-7070f4320083    NCBIGene:381    biolink:has_gene_product    UniProtKB:P84085    STRING  
+0dd21d53-4985-467c-8e6d-0a79c0410016    NCBIGene:805    biolink:has_gene_product    UniProtKB:P0DP24    STRING  
+fe5f9383-c5f6-4eba-9dc4-185e6d331459    NCBIGene:23229  biolink:has_gene_product    UniProtKB:O43307    STRING  
+8c60c2b2-ff6c-45d5-a18f-e927ab1dec35    NCBIGene:2081   biolink:has_gene_product    UniProtKB:O75460    STRING  
+</code></pre>
+<h2 id="biolink-model-representation-in-rdf">Biolink Model representation in RDF</h2>
+<p>Since RDF graphs do not allow for properties on edges, the most practical alternative is to use reification where an 
+edge is transformed into a node of type <code>biolink:Association</code> (or its descendants) and any edge properties then becomes
+properties of this reified node.</p>
+<p>Using reification, the previous example can be easily converted to RDF using <a href="https://github.com/biolink/kgx">KGX</a>,</p>
+<pre><code class="language-turtle">@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix biolink: &lt;https://w3id.org/biolink/vocab/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
+&lt;http://identifiers.org/uniprot/P84085&gt;
+  rdfs:label &quot;ARF5&quot;^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSP00000000233&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; .
+
+&lt;http://identifiers.org/uniprot/P0DP24&gt;
+  rdfs:label &quot;CALM2&quot;^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSP00000272298&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; .
+
+&lt;http://identifiers.org/uniprot/O43307&gt;
+  rdfs:label &quot;ARHGEF9&quot;^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSP00000253401&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; .
+
+&lt;http://identifiers.org/uniprot/O75460&gt;
+  rdfs:label &quot;ERN1&quot;^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSP00000401445&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; .
+
+&lt;http://www.ncbi.nlm.nih.gov/gene/381&gt;
+  rdfs:label &quot;ARF5&quot;^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSG00000004059&gt; ;
+  a &lt;http://purl.obolibrary.org/obo/SO_0001217&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; ;
+  biolink:has_gene_product &lt;http://identifiers.org/uniprot/P84085&gt; .
+
+&lt;http://www.ncbi.nlm.nih.gov/gene/805&gt;
+  rdfs:label &quot;CALM2&quot;^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSG00000143933&gt; ;
+  a &lt;http://purl.obolibrary.org/obo/SO_0001217&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; ;
+  biolink:has_gene_product &lt;http://identifiers.org/uniprot/P0DP24&gt; .
+
+&lt;http://www.ncbi.nlm.nih.gov/gene/23229&gt;
+  rdfs:label &quot;ARHGEF9&quot;^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSG00000131089&gt; ;
+  a &lt;http://purl.obolibrary.org/obo/SO_0001217&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; ;
+  biolink:has_gene_product &lt;http://identifiers.org/uniprot/O43307&gt; .
+
+&lt;http://www.ncbi.nlm.nih.gov/gene/2081&gt;
+  rdfs:label &quot;ERN1&quot;^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:xref &lt;http://identifiers.org/ensembl/ENSG00000178607&gt; ;
+  a &lt;http://purl.obolibrary.org/obo/SO_0001217&gt; ;
+  biolink:in_taxon &lt;http://purl.obolibrary.org/obo/NCBITaxon_9606&gt; ;
+  biolink:has_gene_product &lt;http://identifiers.org/uniprot/O75460&gt; .
+
+&lt;https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b&gt;
+  rdf:subject &lt;http://www.ncbi.nlm.nih.gov/gene/381&gt; ;
+  rdf:predicate biolink:interacts_with ;
+  rdf:object &lt;http://www.ncbi.nlm.nih.gov/gene/805&gt; ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:category biolink:GeneToGeneAssociation .
+
+&lt;https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3&gt;
+  rdf:subject &lt;http://www.ncbi.nlm.nih.gov/gene/381&gt; ;
+  rdf:predicate biolink:interacts_with ;
+  rdf:object &lt;http://www.ncbi.nlm.nih.gov/gene/23229&gt; ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:category biolink:GeneToGeneAssociation .
+
+&lt;https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8&gt;
+  rdf:subject &lt;http://www.ncbi.nlm.nih.gov/gene/381&gt; ;
+  rdf:predicate biolink:interacts_with ;
+  rdf:object &lt;http://www.ncbi.nlm.nih.gov/gene/2081&gt; ;
+  biolink:provided_by &quot;STRING&quot; ;
+  biolink:category biolink:GeneToGeneAssociation .
+</code></pre>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+    
+  </body>
+</html>

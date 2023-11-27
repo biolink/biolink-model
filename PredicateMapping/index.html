@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://biolink.github.io/biolink-model/PredicateMapping/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
+<title>Class: PredicateMapping - Biolink Model Documentation</title>
+<link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../style.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J23SCD6JB8"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J23SCD6JB8",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J23SCD6JB8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="black" data-md-color-scheme="black" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-predicatemapping">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Biolink Model Documentation" class="md-header__button md-logo" data-md-component="logo" href=".." title="Biolink Model Documentation">
+<img alt="logo" src="../images/biolink-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Biolink Model Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: PredicateMapping
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/biolink/biolink-model" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Biolink Model Documentation" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Biolink Model Documentation">
+<img alt="logo" src="../images/biolink-logo.png"/>
+</a>
+    Biolink Model Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/biolink/biolink-model" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-modeling-language/">
+<span class="md-ellipsis">
+    Using the LinkML Modeling Language
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../association-examples-with-qualifiers/">
+<span class="md-ellipsis">
+    Associations with Qualifiers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reading-a-qualifier-based-statement/">
+<span class="md-ellipsis">
+    Interpreting a Fully Qualified Edge
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../curating-the-model/">
+<span class="md-ellipsis">
+    Curating Biolink
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maintaining-the-model/">
+<span class="md-ellipsis">
+    Maintaining Biolink
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../working-with-the-model/">
+<span class="md-ellipsis">
+    Working with Biolink
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../information-resource-registry/">
+<span class="md-ellipsis">
+    Infores Identifier Registry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../categories.html">
+<span class="md-ellipsis">
+    Visualize Categories
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../predicates.html">
+<span class="md-ellipsis">
+    Visualize Predicates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aspects.html">
+<span class="md-ellipsis">
+    Visualize Aspects
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faq/">
+<span class="md-ellipsis">
+    FAQ
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+    Usages
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-predicatemapping">Class: PredicateMapping</h1>
+<div class="highlight-box"> <strong>Description:</strong> A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place. <br/>
+</div>
+<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/PredicateMapping">biolink:PredicateMapping</a></p>
+<div class="mermaid"> classDiagram
+    class PredicateMapping
+      PredicateMapping : anatomical_context_qualifier
+
+      PredicateMapping : broad_match
+
+          PredicateMapping --|&gt; NamedThing : broad_match
+
+      PredicateMapping : causal_mechanism_qualifier
+
+          PredicateMapping --|&gt; CausalMechanismQualifierEnum : causal_mechanism_qualifier
+
+      PredicateMapping : exact_match
+
+          PredicateMapping --|&gt; NamedThing : exact_match
+
+      PredicateMapping : mapped_predicate
+
+      PredicateMapping : narrow_match
+
+          PredicateMapping --|&gt; NamedThing : narrow_match
+
+      PredicateMapping : object_aspect_qualifier
+
+      PredicateMapping : object_context_qualifier
+
+      PredicateMapping : object_derivative_qualifier
+
+      PredicateMapping : object_direction_qualifier
+
+          PredicateMapping --|&gt; DirectionQualifierEnum : object_direction_qualifier
+
+      PredicateMapping : object_form_or_variant_qualifier
+
+      PredicateMapping : object_part_qualifier
+
+      PredicateMapping : predicate
+
+      PredicateMapping : qualified_predicate
+
+      PredicateMapping : species_context_qualifier
+
+          PredicateMapping --|&gt; OrganismTaxon : species_context_qualifier
+
+      PredicateMapping : subject_aspect_qualifier
+
+      PredicateMapping : subject_context_qualifier
+
+      PredicateMapping : subject_derivative_qualifier
+
+      PredicateMapping : subject_direction_qualifier
+
+          PredicateMapping --|&gt; DirectionQualifierEnum : subject_direction_qualifier
+
+      PredicateMapping : subject_form_or_variant_qualifier
+
+      PredicateMapping : subject_part_qualifier
+
+
+</div>
+<!-- no inheritance hierarchy -->
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../mapped_predicate/">mapped_predicate</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
+<td>The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject_part_qualifier/">subject_part_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject_derivative_qualifier/">subject_derivative_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../subject_context_qualifier/">subject_context_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../predicate/">predicate</a></td>
+<td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
+<td>A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../object_form_or_variant_qualifier/">object_form_or_variant_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../object_part_qualifier/">object_part_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../object_derivative_qualifier/">object_derivative_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../object_context_qualifier/">object_context_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>None</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a></td>
+<td>0..1 <br/> <a href="../CausalMechanismQualifierEnum/">CausalMechanismQualifierEnum</a></td>
+<td>A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../exact_match/">exact_match</a></td>
+<td>0..* <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>holds between two entities that have strictly equivalent meanings, with a high degree of confidence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../narrow_match/">narrow_match</a></td>
+<td>0..* <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../broad_match/">broad_match</a></td>
+<td>0..* <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../MappingCollection/">MappingCollection</a></td>
+<td><a href="../predicate_mappings/">predicate_mappings</a></td>
+<td>range</td>
+<td><a href="./">PredicateMapping</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>biolink:PredicateMapping</td>
+</tr>
+<tr>
+<td>native</td>
+<td>biolink:PredicateMapping</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: predicate mapping
+description: A deprecated predicate mapping object contains the deprecated predicate
+  and an example of the rewiring that should be done to use a qualified statement
+  in its place.
+from_schema: https://w3id.org/biolink/biolink-model
+slots:
+- mapped predicate
+- subject aspect qualifier
+- subject direction qualifier
+- subject form or variant qualifier
+- subject part qualifier
+- subject derivative qualifier
+- subject context qualifier
+- predicate
+- qualified predicate
+- object aspect qualifier
+- object direction qualifier
+- object form or variant qualifier
+- object part qualifier
+- object derivative qualifier
+- object context qualifier
+- causal mechanism qualifier
+- anatomical context qualifier
+- species context qualifier
+- exact match
+- narrow match
+- broad match
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

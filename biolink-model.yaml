@@ -60,8 +60,8 @@ prefixes:
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
-  foodb.compound: 'http://foodb.ca/compounds/'
-  foodb.food: 'http://foodb.ca/foods/'
+  foodb.food: 'http://foodb.ca/compounds/'
+  foodb.compound: 'http://foodb.ca/foods/'
   FYECO: 'https://www.pombase.org/term/'
   FYPO: 'http://purl.obolibrary.org/obo/FYPO_'   # Fission Yeast Phenotype Ontology
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
@@ -494,6 +494,7 @@ slots:
     slot_uri: rdf:type
     domain: entity
     exact_mappings:
+      - AGRKB:soTermId
       - gff3:type
       - gpi:DB_Object_Type
     multivalued: true
@@ -505,15 +506,12 @@ slots:
     designates_type: true
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the
-      biolink entity type class.
-       * In a neo4j database this MAY correspond to the neo4j label tag.
-       * In an RDF database it should be a biolink model class URI.
-      This field is multi-valued. It should include values for ancestors of the biolink class; for example,
-      a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-
-      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink
-      class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f`
-      may have a rdf:type assertion to a SO class such as TF_binding_site,
+      biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database 
+      it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the 
+      biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, 
+      `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type 
+      triples. This can be to the most specific biolink class, or potentially to a class more specific than something 
+      in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
       which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity,
       biolink:MolecularEntity, biolink:NamedThing}
     is_class_field: true
@@ -534,7 +532,7 @@ slots:
       equivalent publication type ontology. When a given publication type ontology term
       is used within a given knowledge graph, then the CURIE identified term must be
       documented in the graph as a concept node of biolink:category biolink:OntologyClass.
-    values_from:  # Not sure which takes precedence, if any...
+    values_from:
       - dctypes
       - fabio
       - MESH_PUB
@@ -1241,7 +1239,7 @@ slots:
     description: >-
       Should be the highest level of FDA approval this chemical entity or device has, regardless of which
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
-      approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
+      approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
 
   drug regulatory status world wide:
     aliases: ['max phase']
@@ -1496,6 +1494,13 @@ slots:
       sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not 
       what we mean to say here: it causes increased expression of Gene Y)
 
+  qualifier:
+    is_a: association slot
+    description: >- 
+      grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+    in_subset:
+      - translator_minimal
+
   statement qualifier:
     is_a: qualifier
     description: >-
@@ -1564,6 +1569,7 @@ slots:
       - translator_minimal
 
   severity qualifier:
+    deprecated: true
     description: >-
       a qualifier used in a phenotypic association to state
       how severe the phenotype is in the subject
@@ -1582,6 +1588,7 @@ slots:
       - translator_minimal
 
   onset qualifier:
+    deprecated: true
     description: >-
       a qualifier used in a phenotypic association to state
       when the phenotype appears is in the subject
@@ -2006,6 +2013,24 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
+  affects likelihood of:
+    is_a: related to at instance level
+    description: >-
+      Holds between two entities where the presence or application of one alters the chance that the other will come
+      to be.
+    notes: >-
+      This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the 
+      actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used 
+      for a statistical associations that describe correlations between two feature variables (use predicates 
+      in the 'associated with likelihood of' hierarchy here.)
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  likelihood affected by:
+    is_a: related to at instance level
+    inverse: affects likelihood of
 
   associated with likelihood of:
     is_a: associated with
@@ -2425,11 +2450,11 @@ slots:
   affects:
     is_a: related to at instance level
     description: >-
-      describes an entity that has a direct affect on the state or quality
-      of another existing entity. Use of the 'affects' predicate implies that
-      the affected entity already exists, unlike predicates such as
-      'affects risk for' and 'prevents, where the outcome is something
-      that may or may not come to be.
+      Describes an entity that has an effect on the state or quality of another existing entity.
+    notes: >-
+      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 
+      'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or 
+      may not come into existence.
     in_subset:
       - translator_minimal
     annotations:
@@ -3159,36 +3184,6 @@ slots:
        # narrower since just diseases, not phenotypic features as well
       - NCIT:R176
 
-  affects risk for:
-    is_a: related to at instance level
-    description: >-
-      holds between two entities where exposure to one entity alters the chance of developing the other
-    annotations:
-      canonical_predicate: true
-    in_subset:
-      - translator_minimal
-
-  risk affected by:
-    is_a: related to at instance level
-    inverse: affects risk for
-
-  predisposes:
-    is_a: affects risk for
-    description: >-
-      holds between two entities where exposure to one entity increases the chance of developing the other
-    in_subset:
-      - translator_minimal
-    annotations:
-      canonical_predicate: true
-      opposite_of: prevents
-    exact_mappings:
-      - SEMMEDDB:PREDISPOSES
-
-  has predisposing factor:
-    is_a: risk affected by
-    inverse: predisposes
-    in_subset:
-      - translator_minimal
 
   contributes to:
     is_a: related to at instance level
@@ -3286,65 +3281,135 @@ slots:
       - RO:0009501
 
    # TODO: ameliorates and exacerbates inverses.
-  ameliorates:
+  ameliorates condition:
+    aliases: ['ameliorates', 'beneficial for condition', 'therapeutic for condition']
     is_a: affects
     description: >-
-      A relationship between an entity (e.g. a genotype,
-      genetic variation, chemical, or environmental exposure, clinical intervention)
-      and a condition (a phenotype or disease), where the
-      presence of the entity reduces or eliminates some or
-      all aspects of the condition.
-     # 'biological entity' currently includes 'exposure event' which covers a lot of related ground
-    domain: named thing
+      Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is 
+      able to ameliorate symptoms, stabilize progression, or cure the condition.
+    notes: >-
+      This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing 
+      disease, and excludes interventions that prevent/reduce risk of developing a condition in the future.
+    mixins:
+      - treats
+      - treats or taken or studied to treat
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: exacerbates
+      opposite_of: exacerbates condition
     exact_mappings:
       - RO:0003307
 
-  is ameliorated by:
-    inverse: ameliorates
+  condition ameliorated by:
+    inverse: ameliorates condition
     is_a: affected by
     domain: disease or phenotypic feature
-    range: named thing
+    range: chemical or drug or treatment
 
-  exacerbates:
-    is_a: affects
+  preventative for condition:
+    aliases: ['prophylactic for', 'prevents']
+    is_a: affects likelihood of
+    mixins:
+      - treats
+      - treats or taken or studied to treat
     description: >-
-      A relationship between an entity (e.g. a chemical,
-      environmental exposure, or some form of genetic variation)
-      and a condition (a phenotype or disease), where the presence
-      of the entity worsens some or all aspects of the condition.
-     # 'biological entity' currently includes 'exposure event' which covers a lot of related ground
-    domain: biological entity
+      Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
+      opposite_of: promotes condition
+    in_subset:
+      - translator_minimal
+
+  condition prevented by:
+    inverse: preventative for condition
+    is_a: affected by
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
+  promotes condition:
+    mixin: true
+    is_a: related to at instance level
+    description: >-
+      Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+      opposite_of: preventative for condition
+    in_subset:
+      - translator_minimal
+
+  predisposes to condition:
+    aliases: ['risk factor for']
+    is_a: affects likelihood of
+    mixins:
+      - promotes condition
+    description: >-
+      Holds between two entities where the presence or application of one increases the chance that the
+      other will come to be.
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  condition predisposed by:
+    inverse: predisposes to condition
+    is_a: related to at instance level
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    in_subset:
+      - translator_minimal
+
+  exacerbates condition:
+    aliases: ['exacerbates', 'detrimental for condition']
+    is_a: affects
+    description: >-
+      Holds between a substance, procedure, or activity and an existing medical condition, a disease or phenotypic 
+      feature, where the substance, procedure, or activity worsens some or all aspects of the condition.
+    mixins:
+      - promotes condition
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+      opposite_of: ameliorates condition
     exact_mappings:
       - RO:0003309
     broad_mappings:
       - SEMMEDDB:COMPLICATES
 
-  is exacerbated by:
-    inverse: exacerbates
+  condition exacerbated by:
+    inverse: exacerbates condition
     is_a: affected by
     domain: disease or phenotypic feature
-    range: biological entity
+    range: chemical or drug or treatment
     in_subset:
       - translator_minimal
 
   treats:
-    aliases: ['is substance that treats', 'indicated for']
-    is_a: ameliorates
+    mixin: true
+    aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
-      holds between a therapeutic procedure or chemical entity
-      and a disease or phenotypic feature that it is used to treat
+      Holds between a substance, procedure, or activity and a medical condition disease or phenotypic feature, 
+      and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition 
+      or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted 
+      knoweldge_level assertion only in cases where there is strong supporting 
+      evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is a well-established 
+      treatment in the medical community. In the absence of such evidence, weaker predicates should be used in 
+      asserted edges, e.g. ‘in clinical trials for’ or ‘beneficial in models of’. ‘Treats’ edges based on weaker 
+      or indirect forms of evidence can however be created as predictions, knowledge_level: prediction, and should 
+      point to the more foundational asserted edges that support them.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: contraindicated for
     in_subset:
       - translator_minimal
     related_mappings:
@@ -3379,53 +3444,167 @@ slots:
       - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
       - REPODB:clinically_tested_withdrawn_phase_3
       - SNOMED:plays_role
+    broad_mappings:
+      - DRUGBANK:treats
+      - SEMMEDDB:TREATS
+      - WIKIDATA_PROPERTY:P2175
+      - MONDO:disease_responds_to
 
   treated by:
-    is_a: is ameliorated by
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic
-      process or chemical entity that is used to treat the condition
+    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-     # range: chemical or drug or treatment
+    # range: chemical or drug or treatment
     in_subset:
       - translator_minimal
     inverse: treats
     exact_mappings:
       - WIKIDATA_PROPERTY:P2176
-       # RTX contributed term tagged as inverse of 'biolink:treats'
+      # RTX contributed term tagged as inverse of 'biolink:treats'
       - MONDO:disease_responds_to
     narrow_mappings:
-       # "is treated by substance" constrains statements to
-       # subset of the universe of all possible treatments
+      # "is treated by substance" constrains statements to
+      # subset of the universe of all possible treatments
       - RO:0002302
 
-  prevents:
-    is_a: affects risk for
+  studied to treat:
+    is_a: related to at instance level
     description: >-
-      holds between an entity whose application or use reduces
-      the likelihood of a potential outcome. Typically used to associate
-      a chemical entity, exposure, activity, or medical intervention
-      that can prevent the onset a disease or phenotypic feature.
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more 
+      scientific study has been performed to specifically test the potential of the  substance, procedure, or 
+      activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, 
+      prevent, or reduce the risk of it manifesting in the first place).
+    notes: >-
+      Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is 
+      not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion 
+      edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 
+      'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it 
+      is merely reporting that a study was observed to have been performed).
+    mixins:
+      - treats or taken or studied to treat
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: predisposes
+
+  studied for treatment with:
+    is_a: affected by
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    # range: chemical or drug or treatment
+    inverse: studied to treat
+
+  in clinical trials for:
+    is_a: studied to treat
+    description: >-
+      Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been 
+      performed in human patients to test the potential of the intervention to treat the medical condition  
+      (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it 
+      manifesting in the first place).
+    notes: >-
+      This predicate should be used when a source reports a clinical trial where the intervention is being or was 
+      interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
+      can be capture using other modeling elements. 
+      A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a 
+      study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4 
+      trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge 
+      SHOULD also be created (with knowledge_level = Assertion).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    mixins:
+      - treats or taken or studied to treat
+    annotations:
+      canonical_predicate: true
     in_subset:
       - translator_minimal
-    exact_mappings:
-      - SEMMEDDB:PREVENTS
-    narrow_mappings:
-       # more restricted case of a material entity mitigating a pathological process
-      - RO:0002599
+  # TODO: add inverse
 
-  prevented by:
-    is_a: risk affected by
+  in preclinical trials for:
+    is_a: studied to treat
     description: >-
-      holds between a potential outcome of which the likelihood
-      was reduced by the application or use of an entity.
-    inverse: prevents
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical 
+      study has been performed specifically to test the potential of the  substance, procedure, or activity to treat 
+      the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce 
+      the risk of it manifesting in the first place).
+    notes: >-
+      A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study 
+      was observed to have been performed).
+    mixins:
+      - treats or taken or studied to treat
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
     annotations:
-      opposite_of: enabled by
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    # TODO: inverse of in_preclincal_trials_for needed
+
+  beneficial in models for:
+    is_a: in preclinical trials for
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
+      procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ 
+      phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
+    notes: >-
+      This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention 
+      alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.  
+      (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation 
+      phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
+      A knowledge level of Assertion should be used with this predicate, because it requires interpretation of 
+      results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the 
+      occurrence of a study).
+    mixins:
+      - treats or taken or studied to treat
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    # TODO: need inverse of beneficial_in_models_for
+
+  was applied to treat:
+    aliases: ['administered to treat', 'used to treat', 'given to treat']
+    is_a: related to at instance level
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
+      procedure, or activity was actually taken by one or more patients with the intent of treating the condition.
+    notes: >-
+      This predicate is used simply to report observations of use in the real world, and is agnostic to whether the 
+      treatment is approved for or might be effective in treating the condition. The treatment could be taken by a 
+      patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In 
+      practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
+      where patients directly report the condition for which they took a drug, or statements from a database cataloging 
+      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level 
+      of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
+      prescribed for use at some point in time).
+    mixins:
+      - treats or taken or studied to treat
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+   # TODO: need an inverse for taken to treat
+
+  treats or taken or studied to treat:
+    mixin: true
+    description: >-
+      Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the substance, procedure, or activity is able to treat the condition, has been observed to be 
+      taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific 
+      study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).
+    notes: >-
+      This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a 
+      condition, and as a catch-all for representing sources that are not clear about the sense of treats that is 
+      being reported. For example, text-mined statements concerning treatments for disease are based on sentences 
+      that can report treatment in any of these different senses and thus require a broader predicate such as 
+      this to safely report statement semantics.
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
 
   correlated with:
     is_a: associated with
@@ -3511,7 +3690,6 @@ slots:
       holds between a disease or phenotypic feature and a measurable
       chemical entity that is used as an indicator of the presence
       or state of the disease or feature.
-       # metabolite
     domain: disease or phenotypic feature
     range: chemical entity or gene or gene product
     in_subset:
@@ -4793,11 +4971,20 @@ slots:
     range: chemical or drug or treatment
     inverse: has side effect
 
-  contraindicated for:
+  contraindicated in:
     is_a: related to at instance level
-    description: Holds between a drug and a disease or phenotype, such that a person
-      with that disease should not be treated with the drug.
-    domain: drug
+    description: >-
+      Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority 
+      has established that the substance, procedure, or activity should not be applied as an intervention in patients 
+      with the condition or circumstance because it can result in detrimental outcomes.
+    notes: >-
+      This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that 
+      puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the 
+      drug would be used to treat (e.g.  pseudoephedrine is contraindicated in people with high-blood pressure as 
+      a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who 
+      are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated 
+      in people taking warfarrin as a preventative treatment for stroke).
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -4805,11 +4992,16 @@ slots:
     exact_mappings:
       - NCIT:C37933
 
+  chemical entity or drug or treatment:
+    description: >-
+      A union of chemical entities and children, and drug or treatment.
+    mixin: true
+
   has contraindication:
     is_a: related to at instance level
     domain: disease or phenotypic feature
     range: drug
-    inverse: contraindicated for
+    inverse: contraindicated in
 
    # The remaining new slots are here because we ran across them somewhere and
    # they didn't seem to map well to anything else.
@@ -4979,13 +5171,6 @@ slots:
     aliases: ['edge property', 'statement property', 'node qualifier', 'edge qualifier', 'statement qualifier']
     description: >-
       any slot that relates an association to another entity
-
-  qualifier:
-    is_a: association slot
-    description: >- 
-      grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
-    in_subset:
-      - translator_minimal
 
   original subject:
     is_a: association slot
@@ -5643,7 +5828,6 @@ slots:
       An attribute that can be applied to an association where the association holds between two entities
       located or occurring in a particular environment. For example, two microbial taxa may interact in the context of
       a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
-       # TODO: add examples of values for this property.
 
   sequence localization attribute:
     is_a: association slot
@@ -5734,10 +5918,14 @@ slots:
     exact_mappings:
       - gff3:phase
 
-  FDA approval status:
+  clinical approval status:
     is_a: association slot
     description: >-
-    range: FDAApprovalStatusEnum
+    range: ClinicalApprovalStatusEnum
+
+  max research phase:
+    is_a: association slot
+    range: MaxResearchPhaseEnum
 
   supporting study metadata:
     is_a: association slot
@@ -5955,6 +6143,7 @@ classes:
       - PATO:0020000
 
   severity value:
+    deprecated: true
     is_a: attribute
     description: >-
       describes the severity of a phenotypic feature or disease
@@ -6876,8 +7065,6 @@ classes:
       - SIO:010004  # Chemical entity
       - WIKIDATA:Q79529  # Chemical substance
       - STY:T103  # Chemical
-    broad_mappings:
-      - STY:T167  # Substance, children include food, body substance, chemical.
     narrow_mappings:
       - WIKIDATA:Q43460564
     in_subset:
@@ -6890,23 +7077,6 @@ classes:
       - UMLS
       - ncats.drug
       - PHARMGKB.CHEMICAL
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.DRUG     # D number
-      - KEGG.ENVIRON  # E number
-      - KEGG
 
   small molecule:
     is_a: molecular entity
@@ -6952,13 +7122,13 @@ classes:
       - INCHIKEY
        # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
        # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   ## G number
+      - KEGG.DRUG     ## D number
+      - KEGG.ENVIRON  ## E number
+      - KEGG
       - BIGG.METABOLITE
       - UMLS
       - foodb.compound
-      - KEGG.GLYCAN   # G number
-      - KEGG.DRUG     # D number
-      - KEGG.ENVIRON  # E number
-      - UMLS
     slot_usage:
       id:
         examples:
@@ -7051,11 +7221,6 @@ classes:
        # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN   # G number
       - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
-      - BIGG.METABOLITE
-      - foodb.compound
-      - UMLS
 
   regulatory region:
     aliases: ['regulatory element']
@@ -7320,30 +7485,6 @@ classes:
       - OBI:0000047
     id_prefixes:
       - UMLS
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - MESH
-      - CAS
-      - GTOPDB
-      - HMDB
-      - KEGG
-      - KEGG.COMPOUND
-      - ChemBank
-      - PUBCHEM.SUBSTANCE
-      - INCHI
-      - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
-      - BIGG.METABOLITE
-      - foodb.compound
-      - UMLS
-      - foodb.food
 
   drug:
     is_a: molecular mixture
@@ -7373,28 +7514,6 @@ classes:
       - RXCUI
       - NDC
       - UMLS
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - MESH
-      - CAS
-      - GTOPDB
-      - HMDB
-      - KEGG
-      - KEGG.COMPOUND
-      - ChemBank
-      - PUBCHEM.SUBSTANCE
-      - INCHI
-      - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
-      - BIGG.METABOLITE
-      - foodb.compound
 
    ## Food
 
@@ -7403,66 +7522,12 @@ classes:
     related_mappings:
        # substance role
       - CHEBI:78299
-    id_prefixes:
-      - ncats.drug
-      - RXCUI
-      - NDC
-      - UMLS
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - MESH
-      - CAS
-      - GTOPDB
-      - HMDB
-      - KEGG
-      - KEGG.COMPOUND
-      - ChemBank
-      - PUBCHEM.SUBSTANCE
-      - INCHI
-      - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
-      - BIGG.METABOLITE
-      - foodb.compound
 
   food additive:
     is_a: chemical entity
     related_mappings:
        # substance role
       - CHEBI:64047
-    id_prefixes:
-      - ncats.drug
-      - RXCUI
-      - NDC
-      - UMLS
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - MESH
-      - CAS
-      - GTOPDB
-      - HMDB
-      - KEGG
-      - KEGG.COMPOUND
-      - ChemBank
-      - PUBCHEM.SUBSTANCE
-      - INCHI
-      - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
-      - BIGG.METABOLITE
-      - foodb.compound
 
   food:
     is_a: chemical mixture
@@ -7470,31 +7535,9 @@ classes:
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
       - foodb.food
-      - foodb.compound
       - FOODON
       - UMLS
       - NCIT
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - MESH
-      - CAS
-      - GTOPDB
-      - HMDB
-      - KEGG
-      - KEGG.COMPOUND
-      - ChemBank
-      - PUBCHEM.SUBSTANCE
-      - INCHI
-      - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
-      - BIGG.METABOLITE
     exact_mappings:
        # Food
       - STY:T168
@@ -7754,13 +7797,26 @@ classes:
       - NCIT:C2991
       - WIKIDATA:Q12136
       - SIO:010299
+       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
+       # Disease or Syndrome
       - STY:T047
       - dcid:Disease
     narrow_mappings:
+       # Congenital Abnormality
       - STY:T019
        # Acquired Abnormality
       - STY:T020
+       # Mental or Behavioral Dysfunction
+      - STY:T048
+       # Cell or Molecular Dysfunction
+      - STY:T049
+       # Anatomical Abnormality
+      - STY:T190
+       # Neoplastic Process
+      - STY:T191
+       # disease susceptibility
+      - MONDO:0042489
     id_prefixes:
       - MONDO
       - DOID
@@ -8131,7 +8187,7 @@ classes:
       - model_organism_database
 
   exon:
-    is_a: biological entity
+    is_a: nucleic acid entity
     description: >-
       A region of the transcript sequence within a gene which is not
       removed from the primary RNA transcript by RNA splicing.
@@ -8141,7 +8197,7 @@ classes:
       - WIKIDATA:Q373027
 
   transcript:
-    is_a: biological entity
+    is_a: nucleic acid entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     exact_mappings:
@@ -8156,9 +8212,7 @@ classes:
       - model_organism_database
 
   coding sequence:
-    is_a: biological entity
-    mixins:
-      - genomic entity
+    is_a: nucleic acid entity
     exact_mappings:
       - SO:0000316
       - SIO:001390
@@ -8573,6 +8627,7 @@ classes:
       - HP:0031797
 
   onset:
+    deprecated: true
     is_a: clinical course
     description: >-
       The age group in which (disease) symptom manifestations appear
@@ -8952,8 +9007,7 @@ classes:
       - predicate
       - object
       - negated
-      - qualifier
-      - qualifiers # deprecated
+      - qualifiers
       - publications
       - has evidence
       - knowledge source
@@ -9345,14 +9399,9 @@ classes:
     description: >-
       A causal relationship between two chemical entities, where the subject
       represents the upstream entity and the object represents the downstream.
-      For any such association there is an implicit reaction:
-        IF
-        R has-input C1 AND
-        R has-output C2 AND
-        R enabled-by P AND
-        R type Reaction
-        THEN
-        C1 derives-into C2 <<catalyst qualifier P>>
+      For any such association there is an implicit reaction,
+      IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN
+      C1 derives-into C2 catalyst qualifier P
     is_a: chemical to chemical association
     defining_slots:
       - subject
@@ -9605,12 +9654,11 @@ classes:
   gene affects chemical association:
     description: >-
       Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact
-      of on its abundance, activity, localization, processing, transport, etc.)
+      of on its abundance, activity,localization, processing, expression, etc.)
     examples:
       value:
         subject: TRPC4
         predicate: affects
-        qualified_predicte: causes
         object: Barium
         object_aspect_qualifier: transport
         object_direction_qualifier: increased
@@ -10679,7 +10727,8 @@ classes:
     is_a: association
     exact_mappings:
     slots:
-      - FDA approval status
+      - clinical approval status
+      - max research phase
     defining_slots:
       - subject
       - object
@@ -10688,7 +10737,8 @@ classes:
     is_a: association
     exact_mappings:
     slots:
-      - FDA approval status
+      - clinical approval status
+      - max research phase
     defining_slots:
       - subject
       - object
@@ -10957,6 +11007,64 @@ classes:
 
 enums:
 
+  ClinicalApprovalStatusEnum:
+    description:
+    permissible_values:
+      approved_for_condition:
+      fda_approved_for_condition:
+        is_a: approved_for_condition
+      not_approved_for_condition:
+      post_approval_withdrawal:
+        is_a: not_approved_for_condition
+      not_provided:
+
+  MaxResearchPhaseEnum:
+    permissible_values:
+      preclinical_research_phase:
+        description: >- 
+          Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and 
+          `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication 
+          through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of 
+          new technology that allows novel ways of targeting medical products to sites in the body. Drug development 
+          occurs after researchers identify potential compounds for experiments Preclinical Research Phase.  
+          Once researchers have examined the possibilities a new drug may contain, they must do preliminary research 
+          to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of 
+          two types: in vitro or in vivo.
+        notes: >-
+          DrugBank calls this 'experimental'.
+      clinical_trial_phase:
+        description: >-
+          Clinical research involves trials of the drug on people,
+          and it is one of the most involved stages in the drug development and approval process.
+          Clinical trials must answer specific questions and follow a protocol determined by
+          the drug researcher or manufacturer.
+      clinical_trial_phase_1:
+        is_a: clinical_trial_phase
+        description: >-
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and
+          lasts several months. This phase is used to determine the safety and dosage of the drug,
+          and about 70% of these drugs move on to the next clinical research phase.
+      clinical_trial_phase_2:
+        is_a: clinical_trial_phase
+        description: >-
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people,
+          who must have the disease or condition the drug supposes to treat. This phase can last
+          from a few months to two years, and its purpose is to monitor the efficacy of the drug,
+          as well as note side effects that may occur.
+      clinical_trial_phase_3:
+        is_a: clinical_trial_phase
+        description: >-
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers
+          and can last up to four years. It is used to continue monitoring the efficacy of
+          the drug, as well as exploring any longer-term adverse reactions.
+      clinical_trial_phase_4:
+        is_a: clinical_trial_phase
+        description: >-
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of
+          volunteers who have the disease or condition and continues to monitor safety and efficacy.
+          If a drug passes this phase, it goes on to FDA review.
+      not_provided:
+
   DirectionQualifierEnum:
     permissible_values:
       increased:
@@ -10976,9 +11084,9 @@ enums:
         exact_mappings:
           - RO:0004035
           - RO:0002212
-        close_mappings:
+        close_mappings:  # This RTX contributed term is tagged as an inverse of this Biolink predicate
           - RO:0002335
-        broad_mappings:
+        broad_mappings:  # This term is slightly broader in that it includes that A acts within B as well
           - RO:0004033
 
   ChemicalEntityDerivativeEnum:
@@ -11345,96 +11453,6 @@ enums:
     in_subset:
       - translator_minimal
 
-  FDAApprovalStatusEnum:
-    description: >-
-    permissible_values:
-      "discovery_and_development_phase":
-        description: >-
-          Discovery & Development Phase. Discovery involves researchers finding new possibilities
-          for medication through testing molecular compounds, noting unexpected effects from existing treatments,
-          or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
-          Drug development occurs after researchers identify potential compounds for experiments.
-      "preclinical_research_phase":
-        description: >-
-          Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
-          they must do preliminary research to determine its potential for harm (toxicity).
-          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "fda_clinical_research_phase":
-        description: >-
-          Clinical Research Phase. Clinical research involves trials of the drug on people,
-          and it is one of the most involved stages in the drug development and approval process.
-          Clinical trials must answer specific questions and follow a protocol determined by
-          the drug researcher or manufacturer.
-      "fda_review_phase_4":
-        description: >-
-          FDA Review
-      "fda_post_market_safety_review":
-        description: >-
-          FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
-          while the drug is on the marketplace. If a developer wants to change anything about the
-          drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
-          frequently reviews the drug’s advertising and its manufacturing facility to make sure
-          everything involved in its creation and marketing is in compliance with regulations.
-      "fda_clinical_research_phase_1":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
-          lasts several months. This phase is used to determine the safety and dosage of the drug,
-          and about 70% of these drugs move on to the next clinical research phase.
-      "fda_clinical_research_phase_2":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
-          who must have the disease or condition the drug supposes to treat. This phase can last
-          from a few months to two years, and its purpose is to monitor the efficacy of the drug,
-          as well as note side effects that may occur.
-      "fda_clinical_research_phase_3":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
-          and can last up to four years. It is used to continue monitoring the efficacy of
-          the drug, as well as exploring any longer-term adverse reactions.
-      "fda_clinical_research_phase_4":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
-          volunteers who have the disease or condition and continues to monitor safety and efficacy.
-          If a drug passes this phase, it goes on to FDA review.
-      "fda_fast_track":
-        description: >-
-          Fast track is a process designed to facilitate the development, and expedite the
-          review of drugs to treat serious conditions and fill an unmet medical need.
-          The purpose is to get important new drugs to the patient earlier. Fast Track
-          addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-      "fda_breakthrough_therapy":
-        description: >-
-          Breakthrough Therapy designation is a process designed to expedite the
-          development and review of drugs that are intended to treat a serious
-          condition and preliminary clinical evidence indicates that the drug may
-          demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-      "fda_accelerated_approval":
-        description: >-
-          When studying a new drug, it can sometimes take many years to learn whether a drug actually
-          provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
-          effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”.
-          Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical
-          benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs
-          for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
-          Using a surrogate endpoint enabled the FDA to approve these drugs faster.
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-      "fda_priority_review":
-        description: >-
-          Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
-          In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
-          the drug review time and created a two-tiered system of review times – Standard Review and Priority
-          Review. A Priority Review designation means FDA’s goal is to take action on an application
-          within 6 months (compared to 10 months under standard review).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "regular_fda_approval":
-        description: >-
-          Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace.
-          If a developer wants to change anything about the drug formulation or approve it for a new use,
-          they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its
-          manufacturing facility to make sure everything involved in its creation and marketing is in compliance
-          with regulations.
-      "post_approval_withdrawal":
 
   FDAIDAAdverseEventEnum:
     description: >-
