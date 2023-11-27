@@ -11,7 +11,7 @@ else:
 
 
 metamodel_version = "None"
-version = "3.5.4"
+version = "4.0.0"
 
 class ConfiguredBaseModel(BaseModel):
     model_config = ConfigDict(
