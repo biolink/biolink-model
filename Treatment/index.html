@@ -249,7 +249,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-treatment"><strong>  Class: Treatment </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> <i>A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures</i><br/><br/>
+<div class="highlight-box"> <strong>Description:</strong> <i>A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures</i>
 <strong>Aliases:</strong> medical action, medical intervention<br/>
 </div>
 <div class="mermaid"> classDiagram
@@ -322,11 +322,11 @@
 <tbody>
 <tr>
 <td><a href="../has_drug/">has_drug</a>: <br> <i> connects an entity to one or more drugs </i></br></td>
-<td>0..* <br> <a href="../Drug/">Drug</a></br></td>
+<td>0..* <br/> <a href="../Drug/">Drug</a></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../has_device/">has_device</a>: <br> <i> connects an entity to one or more (medical) devices </i></br></td>
+<td><a href="../has_device/">has_device</a>: <br/> <i> connects an entity to one or more (medical) devices </i></td>
 <td>0..* <br/> <a href="../Device/">Device</a></td>
 <td>direct</td>
 </tr>
@@ -363,7 +363,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 </tr>
 <tr>
 <td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>

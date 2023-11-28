@@ -254,7 +254,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-sequencevariant"><strong>  Class: SequenceVariant </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> <i>A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.</i><br/><br/>
+<div class="highlight-box"> <strong>Description:</strong> <i>A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.</i>
 <strong>Aliases:</strong> allele<br/>
 </div>
 <div class="mermaid"> classDiagram
@@ -336,18 +336,18 @@
 <tbody>
 <tr>
 <td><a href="../has_gene/">has_gene</a>: <br> <i> Each allele can be associated with any number of genes </i></br></td>
-<td>0..* <br> <a href="../Gene/">Gene</a></br></td>
+<td>0..* <br/> <a href="../Gene/">Gene</a></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br> <i> The state of the sequence w.r.t a reference sequence </i></br></td>
+<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br/> <i> The state of the sequence w.r.t a reference sequence </i></td>
 <td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
 <td><a href="../GenomicEntity/">GenomicEntity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a>: <br/> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></td>
