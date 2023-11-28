@@ -6,7 +6,7 @@ Instances of this class *should* have identifiers with one of the following pref
 | ID Prefix | Usage |
 | --- | --- |
 {% for p in element.id_prefixes -%}
-| {{ p }} | {% for item in schemaview.get_elements_applicable_by_prefix(p) %}{{ item }}<br>{% endfor %} |
+| {{ p }} | {% for item in schemaview.get_elements_applicable_by_prefix(p) %}{{ gen.link(schemaview.get_element(item)) }}<br>{% endfor %} |
 {% endfor %}
 {% endif %}
 
