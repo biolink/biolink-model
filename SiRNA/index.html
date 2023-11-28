@@ -376,7 +376,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../is_metabolite/">is_metabolite</a>: <br/> <i> indicates whether a molecular entity is a metabolite </i></td>
@@ -436,7 +436,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
@@ -467,15 +467,15 @@
 <tbody>
 <tr>
 <td>MIR</td>
-<td>microRNA<br/>siRNA<br/></td>
+<td><a href="../MicroRNA/">MicroRNA</a><br/><a href="./">SiRNA</a><br/></td>
 </tr>
 <tr>
 <td>HGNC</td>
-<td>gene<br/>microRNA<br/>siRNA<br/></td>
+<td><a href="../Gene/">Gene</a><br/><a href="../MicroRNA/">MicroRNA</a><br/><a href="./">SiRNA</a><br/></td>
 </tr>
 <tr>
 <td>WormBase</td>
-<td>gene<br/>microRNA<br/>siRNA<br/>sequence variant<br/></td>
+<td><a href="../Gene/">Gene</a><br/><a href="../MicroRNA/">MicroRNA</a><br/><a href="./">SiRNA</a><br/><a href="../SequenceVariant/">SequenceVariant</a><br/></td>
 </tr>
 </tbody>
 </table>
