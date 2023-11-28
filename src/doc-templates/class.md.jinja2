@@ -4,6 +4,7 @@
   {% if element.aliases %}<strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
   {% if element.multivalued %}<strong>Multivalued:</strong> {{ element.multivalued }}<br>{% endif -%}
   {% if element.required %}<strong>Required:</strong> {{ element.required }}<br>{% endif %}
+  {% if element.notes %}<strong> Notes:</strong> {{ element.notes|join(' ') }} {% endif %}
 </div>
 {% endif %}
 

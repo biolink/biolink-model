@@ -10,6 +10,17 @@ Instances of this class *should* have identifiers with one of the following pref
 {% endfor %}
 {% endif %}
 
+{% if element.annotations %}
+## Annotations
+
+| property | value |
+| --- | --- |
+{% for a in element.annotations -%}
+    {%- if not a.startswith('_') -%}
+| {{ a }} | {{ element.annotations[a].value }} |
+    {%- endif -%}
+{% endfor %}
+{% endif %}
 
 {% if schemaview.get_mappings(element.name).items() %}
 ## Mappings
@@ -23,16 +34,4 @@ Instances of this class *should* have identifiers with one of the following pref
 {% endfor %}
 {% endif %}
 
-
-{% if element.annotations %}
-## Annotations
-
-| property | value |
-| --- | --- |
-{% for a in element.annotations -%}
-    {%- if not a.startswith('_') -%}
-| {{ a }} | {{ element.annotations[a].value }} |
-    {%- endif -%}
-{% endfor %}
-{% endif %}
 

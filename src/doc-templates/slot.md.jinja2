@@ -6,7 +6,7 @@
   {% if element.range %}<strong>Range:</strong> {{ element.range }}<br>{% endif %}
   {% if element.required %} <strong>Required:</strong> {{ element.required }}<br>{% endif %}
   {% if element.inverse %}<strong>Inverse:</strong> {{ element.inverse }}</a></small><br>{% endif %}
-  {% if element.notes %}<strong> Notes:</strong> {{ element.notes }} {% endif %}
+ {% if element.notes %}<strong> Notes:</strong> {{ element.notes|join(' ') }} {% endif %}
 </div>
 {% endif %}
 
