@@ -244,7 +244,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-preprintpublication"><strong>  Class: PreprintPublication </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> <i>a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.</i>
+<div class="highlight-box"><strong>Description:</strong><i> a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class PreprintPublication
@@ -325,7 +325,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../authors/">authors</a>: <br/> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></td>
+<td><a href="../authors/">authors</a>: <br> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></br></td>
 <td>0..* <br/> <a href="../Agent/">Agent</a></td>
 <td><a href="../Publication/">Publication</a></td>
 </tr>
@@ -352,7 +352,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a>: <br/> <i> None </i></td>

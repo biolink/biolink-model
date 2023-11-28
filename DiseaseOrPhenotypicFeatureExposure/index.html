@@ -244,7 +244,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-diseaseorphenotypicfeatureexposure"><strong>  Class: DiseaseOrPhenotypicFeatureExposure </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> <i>A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.</i>
+<div class="highlight-box"><strong>Description:</strong><i> A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class DiseaseOrPhenotypicFeatureExposure
@@ -318,14 +318,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../timepoint/">timepoint</a>: <br/> <i> a point in time </i></td>
+<td><a href="../timepoint/">timepoint</a>: <br> <i> a point in time </i></br></td>
 <td>0..1 <br/> <a href="../TimeType/">TimeType</a></td>
 <td><a href="../ExposureEvent/">ExposureEvent</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term. </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
+<td><a href="../Attribute/">Attribute</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../has_attribute_type/">has_attribute_type</a>: <br/> <i> connects an attribute to a class that describes it </i></td>
@@ -345,12 +345,12 @@
 <tr>
 <td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
+<td><a href="../Attribute/">Attribute</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
