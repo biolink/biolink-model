@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: ameliorates_condition - Biolink Model Documentation</title>
+        <title>Property: ameliorates_condition (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-ameliorates_condition" class="md-skip">
+        <a href="#property-ameliorates_condition-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: ameliorates_condition
+              <strong> Property: ameliorates_condition </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,16 +524,15 @@
   
 
 
-<h1 id="slot-ameliorates_condition">Slot: ameliorates_condition</h1>
-<div class="highlight-box"> <strong>Description:</strong> Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition. <br>
+<h1 id="property-ameliorates_condition-multivalued"><strong> Property: ameliorates_condition </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.<br>
+   <strong>Aliases:</strong> ameliorates, beneficial for condition, therapeutic for condition<br><strong>Domain:</strong> chemical or drug or treatment<br>
+  <strong>Range:</strong> disease or phenotypic feature<br>
 
-   <strong>Aliases:</strong> ameliorates, beneficial for condition, therapeutic for condition <br>
 
-  </div>
+  <strong> Notes:</strong> ["This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing  disease, and excludes interventions that prevent/reduce risk of developing a condition in the future."] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
- <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -560,7 +546,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -571,20 +556,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:ameliorates_condition</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:ameliorates_condition</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>RO:0003307</td>
+<td>RO:0003307<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -594,16 +571,8 @@
 </thead>
 <tbody>
 <tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
-<tr>
 <td>canonical_predicate</td>
 <td>True</td>
-</tr>
-<tr>
-<td>opposite_of</td>
-<td>exacerbates condition</td>
 </tr>
 </tbody>
 </table>

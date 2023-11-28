@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: FrequencyQuantifier
-            
-          </span>
+<strong>  Class: FrequencyQuantifier </strong>
+</span>
 </div>
 </div>
 </div>
@@ -234,11 +232,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
     Mappings
   </a>
@@ -247,15 +240,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -264,8 +248,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-frequencyquantifier">Class: FrequencyQuantifier</h1>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/FrequencyQuantifier">biolink:FrequencyQuantifier</a></p>
+<h1 id="class-frequencyquantifier"><strong>  Class: FrequencyQuantifier </strong></h1>
 <div class="mermaid"> classDiagram
     class FrequencyQuantifier
       RelationshipQuantifier &lt;|-- FrequencyQuantifier
@@ -298,33 +281,28 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../has_count/">has_count</a></td>
+<td><a href="../has_count/">has_count</a>: <br/> <i> number of things with a particular property </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>number of things with a particular property</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../has_total/">has_total</a></td>
+<td><a href="../has_total/">has_total</a>: <br/> <i> total number of things in a particular reference set </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>total number of things in a particular reference set</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../has_quotient/">has_quotient</a></td>
+<td><a href="../has_quotient/">has_quotient</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>None</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../has_percentage/">has_percentage</a></td>
+<td><a href="../has_percentage/">has_percentage</a>: <br/> <i> equivalent to has quotient multiplied by 100 </i></td>
 <td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>equivalent to has quotient multiplied by 100</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -348,7 +326,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -359,18 +336,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:FrequencyQuantifier</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:FrequencyQuantifier</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: frequency quantifier
 from_schema: https://w3id.org/biolink/biolink-model

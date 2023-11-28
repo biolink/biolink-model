@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: contraindicated_in - Biolink Model Documentation</title>
+        <title>Property: contraindicated_in (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-contraindicated_in" class="md-skip">
+        <a href="#property-contraindicated_in-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: contraindicated_in
+              <strong> Property: contraindicated_in </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,15 +524,15 @@
   
 
 
-<h1 id="slot-contraindicated_in">Slot: contraindicated_in</h1>
-<div class="highlight-box"> <strong>Description:</strong> Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes. <br>
+<h1 id="property-contraindicated_in-multivalued"><strong> Property: contraindicated_in </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.<br>
+  <strong>Domain:</strong> chemical or drug or treatment<br>
+  <strong>Range:</strong> disease or phenotypic feature<br>
 
 
-  </div>
+  <strong> Notes:</strong> ['This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that  puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the  drug would be used to treat (e.g.  pseudoephedrine is contraindicated in people with high-blood pressure as  a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who  are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated  in people taking warfarrin as a preventative treatment for stroke).'] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
- <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -556,7 +543,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -567,20 +553,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:contraindicated_in</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:contraindicated_in</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>NCIT:C37933</td>
+<td>NCIT:C37933<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -590,16 +568,8 @@
 </thead>
 <tbody>
 <tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
-<tr>
 <td>canonical_predicate</td>
 <td>True</td>
-</tr>
-<tr>
-<td>opposite_of</td>
-<td>treats</td>
 </tr>
 </tbody>
 </table>

@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: subject - Biolink Model Documentation</title>
+        <title>Property: subject - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-subject" class="md-skip">
+        <a href="#property-subject" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: subject
+              <strong> Property: subject </strong>
             
           </span>
         </div>
@@ -493,13 +493,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
     Mappings
   </a>
@@ -531,15 +524,15 @@
   
 
 
-<h1 id="slot-subject">Slot: subject</h1>
-<div class="highlight-box"> <strong>Description:</strong> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. <br>
+<h1 id="property-subject"><strong> Property: subject </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.<br>
+  <strong>Domain:</strong> association<br>
+  <strong>Range:</strong> named thing<br>
+   <strong>Required:</strong> True<br>
 
 
-  </div>
+</div>
 
-<p><strong>Required:</strong> True <br> 
- <strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
- <strong>Range:</strong> <a href="../NamedThing/">NamedThing</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -564,7 +557,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -575,16 +567,8 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>rdf:subject</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:subject</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>owl:annotatedSource, OBAN:association_has_subject</td>
+<td>owl:annotatedSource<br>OBAN:association_has_subject<br></td>
 </tr>
 </tbody>
 </table>

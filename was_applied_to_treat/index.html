@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: was_applied_to_treat - Biolink Model Documentation</title>
+        <title>Property: was_applied_to_treat (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-was_applied_to_treat" class="md-skip">
+        <a href="#property-was_applied_to_treat-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: was_applied_to_treat
+              <strong> Property: was_applied_to_treat </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,16 +524,15 @@
   
 
 
-<h1 id="slot-was_applied_to_treat">Slot: was_applied_to_treat</h1>
-<div class="highlight-box"> <strong>Description:</strong> Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition. <br>
+<h1 id="property-was_applied_to_treat-multivalued"><strong> Property: was_applied_to_treat </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.<br>
+   <strong>Aliases:</strong> administered to treat, used to treat, given to treat<br><strong>Domain:</strong> chemical or drug or treatment<br>
+  <strong>Range:</strong> disease or phenotypic feature<br>
 
-   <strong>Aliases:</strong> administered to treat, used to treat, given to treat <br>
 
-  </div>
+  <strong> Notes:</strong> ['This predicate is used simply to report observations of use in the real world, and is agnostic to whether the  treatment is approved for or might be effective in treating the condition. The treatment could be taken by a  patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In  practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging  instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level  of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /  prescribed for use at some point in time).'] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
- <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -557,7 +543,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -568,16 +553,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:was_applied_to_treat</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:was_applied_to_treat</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -586,10 +567,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: EntityToPhenotypicFeatureAssociationMixin
-            
-          </span>
+<strong>  Class: EntityToPhenotypicFeatureAssociationMixin </strong>
+</span>
 </div>
 </div>
 </div>
@@ -234,11 +232,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
     Mappings
   </a>
@@ -247,15 +240,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -264,8 +248,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-entitytophenotypicfeatureassociationmixin">Class: EntityToPhenotypicFeatureAssociationMixin</h1>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin">biolink:EntityToPhenotypicFeatureAssociationMixin</a></p>
+<h1 id="class-entitytophenotypicfeatureassociationmixin"><strong>  Class: EntityToPhenotypicFeatureAssociationMixin </strong></h1>
 <div class="mermaid"> classDiagram
     class EntityToPhenotypicFeatureAssociationMixin
       FrequencyQuantifier &lt;|-- EntityToPhenotypicFeatureAssociationMixin
@@ -322,57 +305,48 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../sex_qualifier/">sex_qualifier</a></td>
+<td><a href="../sex_qualifier/">sex_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state whether the association is specific to a particular sex. </i></td>
 <td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
-<td>a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../has_count/">has_count</a></td>
+<td><a href="../has_count/">has_count</a>: <br/> <i> number of things with a particular property </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>number of things with a particular property</td>
 <td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
 </tr>
 <tr>
-<td><a href="../has_total/">has_total</a></td>
+<td><a href="../has_total/">has_total</a>: <br/> <i> total number of things in a particular reference set </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>total number of things in a particular reference set</td>
 <td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
 </tr>
 <tr>
-<td><a href="../has_quotient/">has_quotient</a></td>
+<td><a href="../has_quotient/">has_quotient</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>None</td>
 <td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
 </tr>
 <tr>
-<td><a href="../has_percentage/">has_percentage</a></td>
+<td><a href="../has_percentage/">has_percentage</a>: <br/> <i> equivalent to has quotient multiplied by 100 </i></td>
 <td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>equivalent to has quotient multiplied by 100</td>
 <td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
 </tr>
 <tr>
-<td><a href="../severity_qualifier/">severity_qualifier</a></td>
+<td><a href="../severity_qualifier/">severity_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how severe the phenotype is in the subject </i></td>
 <td>0..1 <br/> <a href="../SeverityValue/">SeverityValue</a></td>
-<td>a qualifier used in a phenotypic association to state how severe the phenotype is in the subject</td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 </tr>
 <tr>
-<td><a href="../onset_qualifier/">onset_qualifier</a></td>
+<td><a href="../onset_qualifier/">onset_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state when the phenotype appears is in the subject </i></td>
 <td>0..1 <br/> <a href="../Onset/">Onset</a></td>
-<td>a qualifier used in a phenotypic association to state when the phenotype appears is in the subject</td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 </tr>
 <tr>
-<td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
+<td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>
 <td>0..1 <br/> <a href="../FrequencyValue/">FrequencyValue</a></td>
-<td>a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject</td>
 <td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 </tr>
 </tbody>
@@ -420,7 +394,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -431,18 +404,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:EntityToPhenotypicFeatureAssociationMixin</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:EntityToPhenotypicFeatureAssociationMixin</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: entity to phenotypic feature association mixin
 from_schema: https://w3id.org/biolink/biolink-model

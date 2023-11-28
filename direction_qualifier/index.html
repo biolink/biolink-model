@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: direction_qualifier - Biolink Model Documentation</title>
+        <title>Property: direction_qualifier (Abstract Slot) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-direction_qualifier" class="md-skip">
+        <a href="#property-direction_qualifier-abstract-slot" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: direction_qualifier
+              <strong> Property: direction_qualifier </strong> <span style="color: purple;"><strong> (Abstract Slot) </strong></span>
             
           </span>
         </div>
@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
     Mappings
   </a>
@@ -524,15 +517,15 @@
   
 
 
-<h1 id="slot-direction_qualifier">Slot: direction_qualifier</h1>
-<p><span style="color: purple;"><strong> (Abstract Slot) </strong>:</span> </p>
-<div class="highlight-box"> <strong>Description:</strong> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. <br>
+<h1 id="property-direction_qualifier-abstract-slot"><strong> Property: direction_qualifier </strong> <span style="color: purple;"><strong> (Abstract Slot) </strong></span></h1>
+<div class="highlight-box"> <strong>Description:</strong> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.<br>
+  <strong>Domain:</strong> association<br>
+  <strong>Range:</strong> string<br>
 
 
-  </div>
+  <strong> Notes:</strong> ['the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the  composed concept ‘increased expression of Gene X’    the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to  express the composed concept ‘decreased abundance of Protein X’'] 
+</div>
 
-<p><strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
- <strong>Range:</strong> <a href="../String/">String</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -547,7 +540,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -558,12 +550,8 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:direction_qualifier</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:direction_qualifier</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -575,9 +563,10 @@ description: Composes with the core concept (+ aspect if provided) to describe a
   in its direction or degree.
 notes:
 - the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect
-  of ‘expression’ to express the composed concept ‘increased expression of Gene X’    the
+  of ‘expression’ to express the  composed concept ‘increased expression of Gene X’    the
   qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect
-  of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
+  of ‘abundance’ to  express the composed concept ‘decreased abundance of Protein
+  X’
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model

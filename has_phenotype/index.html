@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: has_phenotype - Biolink Model Documentation</title>
+        <title>Property: has_phenotype (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-has_phenotype" class="md-skip">
+        <a href="#property-has_phenotype-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: has_phenotype
+              <strong> Property: has_phenotype </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,16 +524,15 @@
   
 
 
-<h1 id="slot-has_phenotype">Slot: has_phenotype</h1>
-<div class="highlight-box"> <strong>Description:</strong> holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate. <br>
+<h1 id="property-has_phenotype-multivalued"><strong> Property: has_phenotype </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.<br>
+   <strong>Aliases:</strong> disease presents symptom<br><strong>Domain:</strong> biological entity<br>
+  <strong>Range:</strong> phenotypic feature<br>
 
-   <strong>Aliases:</strong> disease presents symptom <br>
 
-  </div>
+  <strong> Notes:</strong> ['check the range'] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../BiologicalEntity/">BiologicalEntity</a> <br> 
- <strong>Range:</strong> <a href="../PhenotypicFeature/">PhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -557,7 +543,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -568,28 +553,20 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:has_phenotype</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:has_phenotype</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>RO:0002200</td>
+<td>RO:0002200<br></td>
 </tr>
 <tr>
 <td>narrow</td>
-<td>NCIT:R89, DOID-PROPERTY:has_symptom, RO:0004022</td>
+<td>NCIT:R89<br>DOID-PROPERTY:has_symptom<br>RO:0004022<br></td>
 </tr>
 <tr>
 <td>broad</td>
-<td>NCIT:R115, NCIT:R108</td>
+<td>NCIT:R115<br>NCIT:R108<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -598,10 +575,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

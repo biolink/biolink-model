@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: has_active_ingredient - Biolink Model Documentation</title>
+        <title>Property: has_active_ingredient (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-has_active_ingredient" class="md-skip">
+        <a href="#property-has_active_ingredient-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: has_active_ingredient
+              <strong> Property: has_active_ingredient </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,16 +524,15 @@
   
 
 
-<h1 id="slot-has_active_ingredient">Slot: has_active_ingredient</h1>
-<div class="highlight-box"> <strong>Description:</strong> holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component <br>
+<h1 id="property-has_active_ingredient-multivalued"><strong> Property: has_active_ingredient </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component<br>
+  <strong>Domain:</strong> drug<br>
+  <strong>Range:</strong> molecular entity<br>
 
+  <strong>Inverse:</strong> <a href="is active ingredient of.md">is active ingredient of</a></small><br>
 
-  </div>
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../Drug/">Drug</a> <br> 
- <strong>Range:</strong> <a href="../MolecularEntity/">MolecularEntity</a> <br> 
- <strong>Inverse:</strong> <a href="../is_active_ingredient_of/">is_active_ingredient_of</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -563,7 +549,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -574,20 +559,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:has_active_ingredient</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:has_active_ingredient</td>
-</tr>
-<tr>
 <td>undefined</td>
-<td>RO:0002248</td>
+<td>RO:0002248<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -597,16 +574,8 @@
 </thead>
 <tbody>
 <tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
-<tr>
 <td>canonical_predicate</td>
 <td>True</td>
-</tr>
-<tr>
-<td>opposite_of</td>
-<td>is excipient of</td>
 </tr>
 </tbody>
 </table>

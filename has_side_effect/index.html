@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: has_side_effect - Biolink Model Documentation</title>
+        <title>Property: has_side_effect (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-has_side_effect" class="md-skip">
+        <a href="#property-has_side_effect-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: has_side_effect
+              <strong> Property: has_side_effect </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,16 +524,15 @@
   
 
 
-<h1 id="slot-has_side_effect">Slot: has_side_effect</h1>
-<div class="highlight-box"> <strong>Description:</strong> An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication. <br>
+<h1 id="property-has_side_effect-multivalued"><strong> Property: has_side_effect </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.<br>
+   <strong>Aliases:</strong> adverse drug reaction<br><strong>Domain:</strong> chemical or drug or treatment<br>
+  <strong>Range:</strong> disease or phenotypic feature<br>
 
-   <strong>Aliases:</strong> adverse drug reaction <br>
 
-  </div>
+  <strong> Notes:</strong> ['Side effects are listed on drug labels. There can be positive side effects, while adverse events are always negative. Aeolus, Sider are both resources that provide side effects.'] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
- <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -560,7 +546,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -571,20 +556,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:has_side_effect</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:has_side_effect</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>NCIT:C2861</td>
+<td>NCIT:C2861<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -593,10 +570,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

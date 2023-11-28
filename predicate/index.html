@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: predicate - Biolink Model Documentation</title>
+        <title>Property: predicate - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-predicate" class="md-skip">
+        <a href="#property-predicate" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: predicate
+              <strong> Property: predicate </strong>
             
           </span>
         </div>
@@ -493,13 +493,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
     Mappings
   </a>
@@ -531,15 +524,15 @@
   
 
 
-<h1 id="slot-predicate">Slot: predicate</h1>
-<div class="highlight-box"> <strong>Description:</strong> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. <br>
+<h1 id="property-predicate"><strong> Property: predicate </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.<br>
+  <strong>Domain:</strong> association<br>
+  <strong>Range:</strong> predicate type<br>
+   <strong>Required:</strong> True<br>
 
+  <strong> Notes:</strong> ['Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats'] 
+</div>
 
-  </div>
-
-<p><strong>Required:</strong> True <br> 
- <strong>Domain:</strong> <a href="../Association/">Association</a> <br> 
- <strong>Range:</strong> <a href="../PredicateType/">PredicateType</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -569,7 +562,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -580,16 +572,8 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>rdf:predicate</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:predicate</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>owl:annotatedProperty, OBAN:association_has_predicate</td>
+<td>owl:annotatedProperty<br>OBAN:association_has_predicate<br></td>
 </tr>
 </tbody>
 </table>

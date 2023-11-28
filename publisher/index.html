@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: publisher - Biolink Model Documentation</title>
+        <title>Property: publisher (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-publisher" class="md-skip">
+        <a href="#property-publisher-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: publisher
+              <strong> Property: publisher </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
     Mappings
   </a>
@@ -524,15 +517,15 @@
   
 
 
-<h1 id="slot-publisher">Slot: publisher</h1>
-<div class="highlight-box"> <strong>Description:</strong> organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node). <br>
+<h1 id="property-publisher-multivalued"><strong> Property: publisher </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).<br>
+  <strong>Domain:</strong> agent<br>
+  <strong>Range:</strong> publication<br>
 
 
-  </div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../Agent/">Agent</a> <br> 
- <strong>Range:</strong> <a href="../Publication/">Publication</a> <br> </p>
+</div>
+
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -546,7 +539,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -557,16 +549,8 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:publisher</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:publisher</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>dct:publisher, WIKIDATA_PROPERTY:P123</td>
+<td>dct:publisher<br>WIKIDATA_PROPERTY:P123<br></td>
 </tr>
 </tbody>
 </table>

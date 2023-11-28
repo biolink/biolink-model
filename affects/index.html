@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: affects - Biolink Model Documentation</title>
+        <title>Property: affects (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-affects" class="md-skip">
+        <a href="#property-affects-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: affects
+              <strong> Property: affects </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,15 +524,15 @@
   
 
 
-<h1 id="slot-affects">Slot: affects</h1>
-<div class="highlight-box"> <strong>Description:</strong> Describes an entity that has an effect on the state or quality of another existing entity. <br>
+<h1 id="property-affects-multivalued"><strong> Property: affects </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> Describes an entity that has an effect on the state or quality of another existing entity.<br>
+  <strong>Domain:</strong> named thing<br>
+  <strong>Range:</strong> named thing<br>
 
 
-  </div>
+  <strong> Notes:</strong> ["Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as  'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or  may not come into existence."] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a> <br> 
- <strong>Range:</strong> <a href="../NamedThing/">NamedThing</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -565,7 +552,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -576,28 +562,20 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:affects</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:affects</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>SEMMEDDB:AFFECTS, DGIdb:affects</td>
+<td>SEMMEDDB:AFFECTS<br>DGIdb:affects<br></td>
 </tr>
 <tr>
 <td>narrow</td>
-<td>CTD:prediction_hypothesis, GOREL:0001006, CTD:inferred, UPHENO:0000001, RO:0002263, RO:0002264, NCIT:R158, NCIT:R160, NCIT:R30, NCIT:R150, NCIT:R72, NCIT:R146, NCIT:R124, NCIT:R173, NCIT:R100, NCIT:R102, NCIT:R101, NCIT:R113, NCIT:R23, NCIT:R25, NCIT:gene_mapped_to_disease, NCIT:R133, RO:0002343, RO:0002355, RO:0002591, RO:0002592, RO:0012003, SNOMED:has_pathological_process, UBERGRAPH:is_increase_of, UBERGRAPH:is_decrease_of</td>
+<td>CTD:prediction_hypothesis<br>GOREL:0001006<br>CTD:inferred<br>UPHENO:0000001<br>RO:0002263<br>RO:0002264<br>NCIT:R158<br>NCIT:R160<br>NCIT:R30<br>NCIT:R150<br>NCIT:R72<br>NCIT:R146<br>NCIT:R124<br>NCIT:R173<br>NCIT:R100<br>NCIT:R102<br>NCIT:R101<br>NCIT:R113<br>NCIT:R23<br>NCIT:R25<br>NCIT:gene_mapped_to_disease<br>NCIT:R133<br>RO:0002343<br>RO:0002355<br>RO:0002591<br>RO:0002592<br>RO:0012003<br>SNOMED:has_pathological_process<br>UBERGRAPH:is_increase_of<br>UBERGRAPH:is_decrease_of<br></td>
 </tr>
 <tr>
 <td>related</td>
-<td>DRUGBANK:pathway</td>
+<td>DRUGBANK:pathway<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -606,10 +584,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

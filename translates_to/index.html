@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: translates_to - Biolink Model Documentation</title>
+        <title>Property: translates_to (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-translates_to" class="md-skip">
+        <a href="#property-translates_to-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: translates_to
+              <strong> Property: translates_to </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,16 +524,15 @@
   
 
 
-<h1 id="slot-translates_to">Slot: translates_to</h1>
-<div class="highlight-box"> <strong>Description:</strong> x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide) <br>
+<h1 id="property-translates_to-multivalued"><strong> Property: translates_to </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)<br>
+  <strong>Domain:</strong> transcript<br>
+  <strong>Range:</strong> protein<br>
 
+  <strong>Inverse:</strong> <a href="translation of.md">translation of</a></small><br>
 
-  </div>
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../Transcript/">Transcript</a> <br> 
- <strong>Range:</strong> <a href="../Protein/">Protein</a> <br> 
- <strong>Inverse:</strong> <a href="../translation_of/">translation_of</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -557,7 +543,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -568,20 +553,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:translates_to</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:translates_to</td>
-</tr>
-<tr>
 <td>close</td>
-<td>RO:0002513, SIO:010082</td>
+<td>RO:0002513<br>SIO:010082<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -590,10 +567,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

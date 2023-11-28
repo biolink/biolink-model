@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: GeneProductIsoformMixin
-            
-          </span>
+<strong>  Class: GeneProductIsoformMixin </strong>
+</span>
 </div>
 </div>
 </div>
@@ -234,11 +232,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
     Mappings
   </a>
@@ -247,15 +240,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -264,10 +248,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-geneproductisoformmixin">Class: GeneProductIsoformMixin</h1>
-<div class="highlight-box"> <strong>Description:</strong> This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms. <br/>
+<h1 id="class-geneproductisoformmixin"><strong>  Class: GeneProductIsoformMixin </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.<br/>
 </div>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/GeneProductIsoformMixin">biolink:GeneProductIsoformMixin</a></p>
 <div class="mermaid"> classDiagram
     class GeneProductIsoformMixin
       GeneProductMixin &lt;|-- GeneProductIsoformMixin
@@ -306,27 +289,23 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../synonym/">synonym</a></td>
-<td>0..* <br> <a href="../LabelType/">LabelType</a></br></td>
-<td>Alternate human-readable names for a thing</td>
+<td><a href="../synonym/">synonym</a>: <br> <i> Alternate human-readable names for a thing </i></br></td>
+<td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../GeneProductMixin/">GeneProductMixin</a></td>
 </tr>
 <tr>
-<td><a href="../xref/">xref</a></td>
+<td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
 <td><a href="../GeneProductMixin/">GeneProductMixin</a></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td>genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name</td>
 <td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 </tr>
 </tbody>
@@ -358,7 +337,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -369,18 +347,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:GeneProductIsoformMixin</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:GeneProductIsoformMixin</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: gene product isoform mixin
 description: This is an abstract class that can be mixed in with different kinds of

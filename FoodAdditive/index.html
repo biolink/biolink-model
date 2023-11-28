@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: FoodAdditive
-            
-          </span>
+<strong>  Class: FoodAdditive </strong>
+</span>
 </div>
 </div>
 </div>
@@ -229,11 +227,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
     Mappings
   </a>
@@ -242,15 +235,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -259,8 +243,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-foodadditive">Class: FoodAdditive</h1>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/FoodAdditive">biolink:FoodAdditive</a></p>
+<h1 id="class-foodadditive"><strong>  Class: FoodAdditive </strong></h1>
 <div class="mermaid"> classDiagram
     class FoodAdditive
       ChemicalEntity &lt;|-- FoodAdditive
@@ -328,116 +311,97 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../trade_name/">trade_name</a></td>
+<td><a href="../trade_name/">trade_name</a>: <br/> <i> </i></td>
 <td>0..1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td></td>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 </tr>
 <tr>
-<td><a href="../available_from/">available_from</a></td>
+<td><a href="../available_from/">available_from</a>: <br/> <i> </i></td>
 <td>0..* <br/> <a href="../DrugAvailabilityEnum/">DrugAvailabilityEnum</a></td>
-<td></td>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 </tr>
 <tr>
-<td><a href="../max_tolerated_dose/">max_tolerated_dose</a></td>
+<td><a href="../max_tolerated_dose/">max_tolerated_dose</a>: <br/> <i> The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.</td>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 </tr>
 <tr>
-<td><a href="../is_toxic/">is_toxic</a></td>
+<td><a href="../is_toxic/">is_toxic</a>: <br/> <i> </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td></td>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 </tr>
 <tr>
-<td><a href="../has_chemical_role/">has_chemical_role</a></td>
+<td><a href="../has_chemical_role/">has_chemical_role</a>: <br/> <i> A role is particular behaviour which a chemical entity may exhibit. </i></td>
 <td>0..* <br/> <a href="../ChemicalRole/">ChemicalRole</a></td>
-<td>A role is particular behaviour which a chemical entity may exhibit.</td>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 </tr>
 <tr>
-<td><a href="../provided_by/">provided_by</a></td>
+<td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../xref/">xref</a></td>
+<td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../full_name/">full_name</a></td>
+<td><a href="../full_name/">full_name</a>: <br/> <i> a long-form human readable name for a thing </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td>a long-form human readable name for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../synonym/">synonym</a></td>
+<td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
-<td>Alternate human-readable names for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
+<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../iri/">iri</a></td>
+<td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
-<td>An IRI for an entity. This is determined by the id using expansion rules.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../category/">category</a></td>
+<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>,  <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
 <td>1..* <br/> <a href="../CategoryType/">CategoryType</a></td>
-<td>Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>,  <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a></td>
+<td><a href="../type/">type</a>: <br/> <i> None </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>None</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td>A human-readable name for an attribute or entity.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../description/">description</a></td>
+<td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
 <td>0..1 <br/> <a href="../NarrativeText/">NarrativeText</a></td>
-<td>a human-readable description of an entity</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../has_attribute/">has_attribute</a></td>
+<td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
 <td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
-<td>connects any entity to an attribute</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../deprecated/">deprecated</a></td>
+<td><a href="../deprecated/">deprecated</a>: <br/> <i> A boolean flag indicating that an entity is no longer considered current or valid. </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>A boolean flag indicating that an entity is no longer considered current or valid.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -448,22 +412,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:FoodAdditive</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:FoodAdditive</td>
-</tr>
-<tr>
 <td>related</td>
-<td>CHEBI:64047</td>
+<td>CHEBI:64047<br/></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: food additive
 from_schema: https://w3id.org/biolink/biolink-model

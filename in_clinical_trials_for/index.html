@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: in_clinical_trials_for - Biolink Model Documentation</title>
+        <title>Property: in_clinical_trials_for (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-in_clinical_trials_for" class="md-skip">
+        <a href="#property-in_clinical_trials_for-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: in_clinical_trials_for
+              <strong> Property: in_clinical_trials_for </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,15 +524,15 @@
   
 
 
-<h1 id="slot-in_clinical_trials_for">Slot: in_clinical_trials_for</h1>
-<div class="highlight-box"> <strong>Description:</strong> Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place). <br>
+<h1 id="property-in_clinical_trials_for-multivalued"><strong> Property: in_clinical_trials_for </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place).<br>
+  <strong>Domain:</strong> chemical or drug or treatment<br>
+  <strong>Range:</strong> disease or phenotypic feature<br>
 
 
-  </div>
+  <strong> Notes:</strong> ['This predicate should be used when a source reports a clinical trial where the intervention is being or was  interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements.  A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a  study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4  trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate \'treats\' edge  SHOULD also be created (with knowledge_level = Assertion).'] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
- <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -559,7 +546,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -570,16 +556,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:in_clinical_trials_for</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:in_clinical_trials_for</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -588,10 +570,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

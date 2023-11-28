@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: Publication
-            
-          </span>
+<strong>  Class: Publication </strong>
+</span>
 </div>
 </div>
 </div>
@@ -234,18 +232,9 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#valid-id-prefixes">
     Valid ID Prefixes
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -256,15 +245,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -273,10 +253,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-publication">Class: Publication</h1>
-<div class="highlight-box"> <strong>Description:</strong> Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP).  <br/>
+<h1 id="class-publication"><strong>  Class: Publication </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). <br/>
 </div>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/Publication">biolink:Publication</a></p>
 <div class="mermaid"> classDiagram
     class Publication
       InformationContentEntity &lt;|-- Publication
@@ -369,135 +348,113 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../authors/">authors</a></td>
-<td>0..* <br> <a href="../Agent/">Agent</a></br></td>
-<td>connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.</td>
+<td><a href="../authors/">authors</a>: <br> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></br></td>
+<td>0..* <br/> <a href="../Agent/">Agent</a></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../pages/">pages</a></td>
+<td><a href="../pages/">pages</a>: <br/> <i> When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../summary/">summary</a></td>
+<td><a href="../summary/">summary</a>: <br/> <i> executive  summary of a publication </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>executive  summary of a publication</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../keywords/">keywords</a></td>
+<td><a href="../keywords/">keywords</a>: <br/> <i> keywords tagging a publication </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>keywords tagging a publication</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../mesh_terms/">mesh_terms</a></td>
+<td><a href="../mesh_terms/">mesh_terms</a>: <br/> <i> mesh terms tagging a publication </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>mesh terms tagging a publication</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../xref/">xref</a></td>
+<td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../license/">license</a></td>
+<td><a href="../license/">license</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>None</td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 </tr>
 <tr>
-<td><a href="../rights/">rights</a></td>
+<td><a href="../rights/">rights</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>None</td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 </tr>
 <tr>
-<td><a href="../format/">format</a></td>
+<td><a href="../format/">format</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>None</td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 </tr>
 <tr>
-<td><a href="../creation_date/">creation_date</a></td>
+<td><a href="../creation_date/">creation_date</a>: <br/> <i> date on which an entity was created. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
-<td>date on which an entity was created. This can be applied to nodes or edges</td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 </tr>
 <tr>
-<td><a href="../provided_by/">provided_by</a></td>
+<td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../full_name/">full_name</a></td>
+<td><a href="../full_name/">full_name</a>: <br/> <i> a long-form human readable name for a thing </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td>a long-form human readable name for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../synonym/">synonym</a></td>
+<td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
-<td>Alternate human-readable names for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
+<td><a href="../id/">id</a>: <br/> <i> Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN. </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td>Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../iri/">iri</a></td>
+<td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
-<td>An IRI for an entity. This is determined by the id using expansion rules.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../category/">category</a></td>
+<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>,  <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
 <td>1..* <br/> <a href="../CategoryType/">CategoryType</a></td>
-<td>Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>,  <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a></td>
+<td><a href="../type/">type</a>: <br/> <i> None </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
-<td>None</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../name/">name</a>: <br/> <i> the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case). </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td>the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../description/">description</a></td>
+<td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
 <td>0..1 <br/> <a href="../NarrativeText/">NarrativeText</a></td>
-<td>a human-readable description of an entity</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../has_attribute/">has_attribute</a></td>
+<td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
 <td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
-<td>connects any entity to an attribute</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../deprecated/">deprecated</a></td>
+<td><a href="../deprecated/">deprecated</a>: <br/> <i> A boolean flag indicating that an entity is no longer considered current or valid. </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>A boolean flag indicating that an entity is no longer considered current or valid.</td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 </tbody>
@@ -1415,8 +1372,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="valid-id-prefixes">Valid ID Prefixes</h3>
+<h2 id="valid-id-prefixes">Valid ID Prefixes</h2>
 <p>Instances of this class <em>should</em> have identifiers with one of the following prefixes, ordered with the most preferred first:</p>
 <table>
 <thead>
@@ -1454,26 +1410,16 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:Publication</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:Publication</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>IAO:0000311</td>
+<td>IAO:0000311<br/></td>
 </tr>
 <tr>
 <td>narrow</td>
-<td>IAO:0000013, STY:T170</td>
+<td>IAO:0000013<br/>STY:T170<br/></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: publication
 id_prefixes:

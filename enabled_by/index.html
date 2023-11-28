@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: enabled_by - Biolink Model Documentation</title>
+        <title>Property: enabled_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-enabled_by" class="md-skip">
+        <a href="#property-enabled_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: enabled_by
+              <strong> Property: enabled_by </strong>  (multivalued)
             
           </span>
         </div>
@@ -493,29 +493,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -544,16 +531,15 @@
   
 
 
-<h1 id="slot-enabled_by">Slot: enabled_by</h1>
-<div class="highlight-box"> <strong>Description:</strong> holds between a process and a physical entity, where the physical entity executes the process <br>
+<h1 id="property-enabled_by-multivalued"><strong> Property: enabled_by </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> holds between a process and a physical entity, where the physical entity executes the process<br>
+  <strong>Domain:</strong> biological process or activity<br>
+  <strong>Range:</strong> physical entity<br>
 
+  <strong>Inverse:</strong> <a href="enables.md">enables</a></small><br>
 
-  </div>
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a> <br> 
- <strong>Range:</strong> <a href="../PhysicalEntity/">PhysicalEntity</a> <br> 
- <strong>Inverse:</strong> <a href="../enables/">enables</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -584,7 +570,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -595,20 +580,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:enabled_by</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:enabled_by</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>RO:0002333</td>
+<td>RO:0002333<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -617,10 +594,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>opposite_of</td>
 <td>prevented by</td>

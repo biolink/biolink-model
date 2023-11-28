@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: OntologyClass
-            
-          </span>
+<strong>  Class: OntologyClass </strong>
+</span>
 </div>
 </div>
 </div>
@@ -239,18 +237,9 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#valid-id-prefixes">
     Valid ID Prefixes
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
@@ -261,15 +250,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -278,10 +258,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-ontologyclass">Class: OntologyClass</h1>
-<div class="highlight-box"> <strong>Description:</strong> a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type. <br/>
+<h1 id="class-ontologyclass"><strong>  Class: OntologyClass </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.<br/>
 </div>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/OntologyClass">biolink:OntologyClass</a></p>
 <div class="mermaid"> classDiagram
     class OntologyClass
       OntologyClass &lt;|-- Attribute
@@ -326,15 +305,13 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br> <a href="../String/">String</a></br></td>
-<td>A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI</td>
+<td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -3229,8 +3206,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="valid-id-prefixes">Valid ID Prefixes</h3>
+<h2 id="valid-id-prefixes">Valid ID Prefixes</h2>
 <p>Instances of this class <em>should</em> have identifiers with one of the following prefixes, ordered with the most preferred first:</p>
 <table>
 <thead>
@@ -3264,22 +3240,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:OntologyClass</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:OntologyClass</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>owl:Class, schema:Class</td>
+<td>owl:Class<br/>schema:Class<br/></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: ontology class
 id_prefixes:

@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: correlated_with - Biolink Model Documentation</title>
+        <title>Property: correlated_with (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-correlated_with" class="md-skip">
+        <a href="#property-correlated_with-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: correlated_with
+              <strong> Property: correlated_with </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,15 +524,15 @@
   
 
 
-<h1 id="slot-correlated_with">Slot: correlated_with</h1>
-<div class="highlight-box"> <strong>Description:</strong> A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method. <br>
+<h1 id="property-correlated_with-multivalued"><strong> Property: correlated_with </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.<br>
+  <strong>Domain:</strong> named thing<br>
+  <strong>Range:</strong> named thing<br>
 
 
-  </div>
+  <strong> Notes:</strong> ['These concepts may map exactly to the statistical variables, or represent related entities for which the  variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).'] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a> <br> 
- <strong>Range:</strong> <a href="../NamedThing/">NamedThing</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -567,7 +554,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -578,20 +564,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:correlated_with</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:correlated_with</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>RO:0002610, PATO:correlates_with</td>
+<td>RO:0002610<br>PATO:correlates_with<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -600,10 +578,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

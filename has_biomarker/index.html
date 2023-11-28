@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: has_biomarker - Biolink Model Documentation</title>
+        <title>Property: has_biomarker (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-has_biomarker" class="md-skip">
+        <a href="#property-has_biomarker-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: has_biomarker
+              <strong> Property: has_biomarker </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
     Mappings
   </a>
@@ -524,16 +517,15 @@
   
 
 
-<h1 id="slot-has_biomarker">Slot: has_biomarker</h1>
-<div class="highlight-box"> <strong>Description:</strong> holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. <br>
+<h1 id="property-has_biomarker-multivalued"><strong> Property: has_biomarker </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.<br>
+  <strong>Domain:</strong> disease or phenotypic feature<br>
+  <strong>Range:</strong> chemical entity or gene or gene product<br>
 
+  <strong>Inverse:</strong> <a href="biomarker for.md">biomarker for</a></small><br>
 
-  </div>
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> 
- <strong>Range:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br> 
- <strong>Inverse:</strong> <a href="../biomarker_for/">biomarker_for</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -550,7 +542,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -561,16 +552,8 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:has_biomarker</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:has_biomarker</td>
-</tr>
-<tr>
 <td>narrow</td>
-<td>NCIT:disease_has_molecular_abnormality, NCIT:disease_is_marked_by_gene</td>
+<td>NCIT:disease_has_molecular_abnormality<br>NCIT:disease_is_marked_by_gene<br></td>
 </tr>
 </tbody>
 </table>

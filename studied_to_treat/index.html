@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: studied_to_treat - Biolink Model Documentation</title>
+        <title>Property: studied_to_treat (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-studied_to_treat" class="md-skip">
+        <a href="#property-studied_to_treat-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: studied_to_treat
+              <strong> Property: studied_to_treat </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,15 +524,15 @@
   
 
 
-<h1 id="slot-studied_to_treat">Slot: studied_to_treat</h1>
-<div class="highlight-box"> <strong>Description:</strong> Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place). <br>
+<h1 id="property-studied_to_treat-multivalued"><strong> Property: studied_to_treat </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place).<br>
+  <strong>Domain:</strong> chemical or drug or treatment<br>
+  <strong>Range:</strong> disease or phenotypic feature<br>
 
 
-  </div>
+  <strong> Notes:</strong> ["Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is  not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion  edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate  'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it  is merely reporting that a study was observed to have been performed)."] 
+</div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br> 
- <strong>Range:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br> </p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -560,7 +547,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -571,16 +557,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:studied_to_treat</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:studied_to_treat</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -589,10 +571,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

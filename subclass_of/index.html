@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: subclass_of - Biolink Model Documentation</title>
+        <title>Property: subclass_of (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-subclass_of" class="md-skip">
+        <a href="#property-subclass_of-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: subclass_of
+              <strong> Property: subclass_of </strong>  (multivalued)
             
           </span>
         </div>
@@ -486,29 +486,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-    <nav class="md-nav" aria-label="Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     Annotations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -537,15 +524,15 @@
   
 
 
-<h1 id="slot-subclass_of">Slot: subclass_of</h1>
-<div class="highlight-box"> <strong>Description:</strong> holds between two classes where the domain class is a specialization of the range class <br>
+<h1 id="property-subclass_of-multivalued"><strong> Property: subclass_of </strong>  (multivalued)</h1>
+<div class="highlight-box"> <strong>Description:</strong> holds between two classes where the domain class is a specialization of the range class<br>
+  <strong>Domain:</strong> ontology class<br>
+  <strong>Range:</strong> ontology class<br>
 
 
-  </div>
 
-<p><strong>Multivalued:</strong> True <br> </p>
-<p><strong>Domain:</strong> <a href="../OntologyClass/">OntologyClass</a> <br> 
- <strong>Range:</strong> <a href="../OntologyClass/">OntologyClass</a> <br> </p>
+</div>
+
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -556,7 +543,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -567,28 +553,20 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:subclass_of</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:subclass_of</td>
-</tr>
-<tr>
 <td>exact</td>
-<td>rdfs:subClassOf, SEMMEDDB:ISA, WIKIDATA_PROPERTY:P279, CHEMBL.MECHANISM:subset_of, GO:isa, MESH:isa, RXNORM:isa, VANDF:isa</td>
+<td>rdfs:subClassOf<br>SEMMEDDB:ISA<br>WIKIDATA_PROPERTY:P279<br>CHEMBL.MECHANISM:subset_of<br>GO:isa<br>MESH:isa<br>RXNORM:isa<br>VANDF:isa<br></td>
 </tr>
 <tr>
 <td>narrow</td>
-<td>CHEBI:has_parent_hydride, LOINC:has_archetype, LOINC:has_parent_group, LOINC:is_presence_guidance_for, NCIT:gene_product_has_chemical_classification, NCIT:R36, NCIT:R42, NCIT:A16, NCIT:A11, NCIT:A14, NCIT:A3, NDDF:has_dose_form, RXNORM:has_dose_form, RXNORM:has_doseformgroup, SNOMED:entire_anatomy_structure_of, SNOMED:has_dose_form, rdfs:subPropertyOf</td>
+<td>CHEBI:has_parent_hydride<br>LOINC:has_archetype<br>LOINC:has_parent_group<br>LOINC:is_presence_guidance_for<br>NCIT:gene_product_has_chemical_classification<br>NCIT:R36<br>NCIT:R42<br>NCIT:A16<br>NCIT:A11<br>NCIT:A14<br>NCIT:A3<br>NDDF:has_dose_form<br>RXNORM:has_dose_form<br>RXNORM:has_doseformgroup<br>SNOMED:entire_anatomy_structure_of<br>SNOMED:has_dose_form<br>rdfs:subPropertyOf<br></td>
 </tr>
 <tr>
 <td>close</td>
-<td>LOINC:class_of, LOINC:has_class</td>
+<td>LOINC:class_of<br>LOINC:has_class<br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
+<h2 id="annotations">Annotations</h2>
 <table>
 <thead>
 <tr>
@@ -597,10 +575,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>_if_missing</td>
-<td></td>
-</tr>
 <tr>
 <td>canonical_predicate</td>
 <td>True</td>

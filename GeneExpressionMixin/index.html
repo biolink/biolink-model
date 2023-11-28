@@ -47,10 +47,8 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Class: GeneExpressionMixin
-            
-          </span>
+<strong>  Class: GeneExpressionMixin </strong>
+</span>
 </div>
 </div>
 </div>
@@ -229,11 +227,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
     Mappings
   </a>
@@ -242,15 +235,6 @@
 <a class="md-nav__link" href="#linkml-source">
     LinkML Source
   </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -259,10 +243,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-geneexpressionmixin">Class: GeneExpressionMixin</h1>
-<div class="highlight-box"> <strong>Description:</strong> Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs. <br/>
+<h1 id="class-geneexpressionmixin"><strong>  Class: GeneExpressionMixin </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.<br/>
 </div>
-<p><strong>URI:</strong> <a href="https://w3id.org/biolink/vocab/GeneExpressionMixin">biolink:GeneExpressionMixin</a></p>
 <div class="mermaid"> classDiagram
     class GeneExpressionMixin
       GeneExpressionMixin &lt;|-- GeneToGeneCoexpressionAssociation
@@ -293,33 +276,28 @@
 <tr>
 <th>Name</th>
 <th>Cardinality and Range</th>
-<th>Description</th>
 <th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../quantifier_qualifier/">quantifier_qualifier</a></td>
-<td>0..1 <br> <a href="../OntologyClass/">OntologyClass</a></br></td>
-<td>Optional quantitative value indicating degree of expression.</td>
+<td><a href="../quantifier_qualifier/">quantifier_qualifier</a>: <br> <i> Optional quantitative value indicating degree of expression. </i></br></td>
+<td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression_site/">expression_site</a></td>
+<td><a href="../expression_site/">expression_site</a>: <br/> <i> location in which gene or protein expression takes place. May be cell, tissue, or organ. </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
-<td>location in which gene or protein expression takes place. May be cell, tissue, or organ.</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../stage_qualifier/">stage_qualifier</a></td>
+<td><a href="../stage_qualifier/">stage_qualifier</a>: <br/> <i> stage during which gene or protein expression of takes place. </i></td>
 <td>0..1 <br/> <a href="../LifeStage/">LifeStage</a></td>
-<td>stage during which gene or protein expression of takes place.</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../phenotypic_state/">phenotypic_state</a></td>
+<td><a href="../phenotypic_state/">phenotypic_state</a>: <br/> <i> in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX. </i></td>
 <td>0..1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td>in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -343,7 +321,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -354,18 +331,12 @@
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>biolink:GeneExpressionMixin</td>
-</tr>
-<tr>
-<td>native</td>
-<td>biolink:GeneExpressionMixin</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: gene expression mixin
 description: Observed gene expression intensity, context (site, stage) and associated
