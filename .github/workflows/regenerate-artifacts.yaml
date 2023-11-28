@@ -36,6 +36,7 @@ jobs:
 
       - name: Generate Biolink Model artifacts
         run: |
+          poetry install
           make gen-project
           if [ $? -eq 0 ]; then
             git config --local user.email "action@github.com"
