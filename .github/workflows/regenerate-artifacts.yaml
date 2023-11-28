@@ -5,7 +5,7 @@ name: Regenerate Biolink Model Artifacts
 on:
   push:
     branches:
-      - master
+      - doc-refactor
   repository_dispatch:
     types: trigger-build-artifacts
 
@@ -32,21 +32,19 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential git wget curl
-          sudo apt-get install -y openjdk-8-jre
-          wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
-          tar -xvzf jsonschema2pojo-1.0.2.tar.gz
           pip install poetry
 
       - name: Generate Biolink Model artifacts
         run: |
-          export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
           make gen-project
           if [ $? -eq 0 ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            git add project/*
-            git commit -m "Regenerate artifacts from biolink-model.yaml"
-            git push
+            # git add project/*
+            # git add src/*
+            # git add 
+            # git commit -m "Regenerate artifacts from biolink-model.yaml"
+            # git push
           else
             echo "'make' gen-project failed to finish successfully"
           fi
