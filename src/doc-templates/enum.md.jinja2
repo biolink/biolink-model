@@ -8,7 +8,7 @@ _{{ element_description_line }}_
 {% endif %}
 
 {% if element.permissible_values -%}
-# Permissible Values:
+## Permissible Values
 
 | Value | Meaning | Description |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ _This is a dynamic enum_
 
 {% set slots_for_enum = schemaview.get_slots_by_enum(element.name) %}
 {% if slots_for_enum is defined and slots_for_enum|length > 0 -%}
-# Slots:
+## Slots
 
 | Name | Description |
 | ---  | --- |
@@ -32,7 +32,7 @@ _This is a dynamic enum_
 
 {% include "common_metadata.md.jinja2" %}
 
-# LinkML Source:
+## LinkML Source
 
 <details>
 ```yaml

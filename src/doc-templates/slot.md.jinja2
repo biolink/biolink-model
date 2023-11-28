@@ -21,7 +21,7 @@
 ```
 {% endfor %}
 {% endif %}
-## Inheritance:
+## Inheritance
 
 {{ gen.inheritance_tree(element, mixins=True) }}
 {% else %}
@@ -30,7 +30,7 @@
 
 {% if schemaview.get_classes_by_slot(element, include_induced=False) %}
 
-## Applicable Classes:
+## Applicable Classes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
@@ -42,7 +42,7 @@
 
 
 {% if schemaview.is_mixin(element.name) %}
-## Mixin Usage:
+## Mixin Usage
 
 | mixed into | description | range | domain |
 | --- | --- | --- | --- |
@@ -53,7 +53,7 @@
 
 
 {% if schemaview.usage_index().get(element.name) %}
-## Usages:
+## Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -64,7 +64,7 @@
 
 {% include "common_metadata.md.jinja2" %}
 
-## LinkML Source:
+## LinkML Source
 
 <details>
 ```yaml
