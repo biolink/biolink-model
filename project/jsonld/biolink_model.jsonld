@@ -3808,7 +3808,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.",
       "notes": [
-        "the qualifier \u2018increased\u2019 combines with a core concept of \u2018Gene X\u2019 and an aspect of \u2018expression\u2019 to express the composed concept \u2018increased expression of Gene X\u2019    the qualifier \u2018decreased\u2019 combines with a core concept of \u2018Protein X\u2019 and an aspect of \u2018abundance\u2019 to express the composed concept \u2018decreased abundance of Protein X\u2019"
+        "the qualifier \u2018increased\u2019 combines with a core concept of \u2018Gene X\u2019 and an aspect of \u2018expression\u2019 to express the  composed concept \u2018increased expression of Gene X\u2019    the qualifier \u2018decreased\u2019 combines with a core concept of \u2018Protein X\u2019 and an aspect of \u2018abundance\u2019 to  express the composed concept \u2018decreased abundance of Protein X\u2019"
       ],
       "in_subset": [
         "translator_minimal"
@@ -3985,6 +3985,7 @@
     {
       "name": "subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4100,6 +4101,7 @@
     {
       "name": "object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4133,21 +4135,6 @@
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation"
       ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "qualifier",
-      "definition_uri": "https://w3id.org/biolink/vocab/qualifier",
-      "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "association_slot",
-      "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/qualifier",
-      "owner": "qualifier",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -10897,6 +10884,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/qualifier",
+      "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/qualifier",
+      "owner": "qualifier",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "original_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/original_subject",
       "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -16111,6 +16113,7 @@
     {
       "name": "chemical_affects_gene_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16310,6 +16313,7 @@
     {
       "name": "chemical_affects_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16536,6 +16540,7 @@
     {
       "name": "gene_affects_chemical_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16754,6 +16759,7 @@
     {
       "name": "gene_affects_chemical_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -18084,6 +18090,7 @@
     {
       "name": "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -21007,6 +21014,7 @@
     {
       "name": "chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -33383,9 +33391,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-11-27T13:10:21",
-  "source_file_size": 366864,
-  "generation_date": "2023-11-27T13:10:30",
+  "source_file_date": "2023-11-27T16:02:11",
+  "source_file_size": 367135,
+  "generation_date": "2023-11-27T16:02:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

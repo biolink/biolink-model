@@ -6,7 +6,7 @@ Instances of this class *should* have identifiers with one of the following pref
 | ID Prefix | Usage |
 | --- | --- |
 {% for p in element.id_prefixes -%}
-| {{ p }} | {{ schemaview.get_elements_applicable_by_prefix(p) }} |
+| {{ p }} | {% for item in schemaview.get_elements_applicable_by_prefix(p) %}{{ item }}<br>{% endfor %} |
 {% endfor %}
 {% endif %}
 
@@ -18,7 +18,7 @@ Instances of this class *should* have identifiers with one of the following pref
 | --- | --- |
 {% for m, mt in schemaview.get_mappings(element.name).items() -%}
 {% if mt and m != "self" and m != "native" -%}
-| {{ m }} | {% for item in mt %}{{ item }}<br>{% endfor %} |
+| {{ m }} | {% for item in mt %}{{ schemaview.get_element(item) }}<br>{% endfor %} |
 {% endif -%}
 {% endfor %}
 {% endif %}

@@ -1,11 +1,11 @@
-# <strong> Property: {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Slot) </strong></span> {% endif %}{% if element.multivalued %} (multivalued){% endif -%}
+# <strong> {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}{% if element.abstract %}<span style="color: purple;"><strong> (Abstract Slot) </strong></span> {% endif %}{% if element.multivalued %} (multivalued){% endif -%}
 {% if element.description or element.aliases or element.multivalued or element.required or element.domain or element.range or element.inverse %}
 <div class="highlight-box"> <strong>Description:</strong> {{ element.description }}<br>
   {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
-  {% if element.domain %}<strong>Domain:</strong> {{ element.domain }}<br>{% endif %}
-  {% if element.range %}<strong>Range:</strong> {{ element.range }}<br>{% endif %}
+  {% if element.domain %}<strong>Domain:</strong> {{ gen.name(schemaview.get_element(element.domain)) }}<br>{% endif %}
+  {% if element.range %}<strong>Range:</strong> {{ gen.link(schemaview.get_element(element.range)) }}<br>{% endif %}
   {% if element.required %} <strong>Required:</strong> {{ element.required }}<br>{% endif %}
-  {% if element.inverse %}<strong>Inverse:</strong> <a href="{{ element.inverse }}.md">{{ element.inverse }}</a></small><br>{% endif %}
+  {% if element.inverse %}<strong>Inverse:</strong> {{ gen.link(gen.name(schemaview.get_element(element.inverse))) }}</a></small><br>{% endif %}
   {% if element.notes %}<strong> Notes:</strong> {{ element.notes }} {% endif %}
 </div>
 {% endif %}

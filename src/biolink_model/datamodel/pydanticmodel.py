@@ -412,7 +412,7 @@ class PredicateMapping(ConfiguredBaseModel):
     """
     mapped_predicate: Optional[str] = Field(None, description="""The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.""")
     subject_aspect_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core subject concept to describe a change in its direction or degree.""")
     subject_form_or_variant_qualifier: Optional[str] = Field(None)
     subject_part_qualifier: Optional[str] = Field(None)
     subject_derivative_qualifier: Optional[str] = Field(None)
@@ -420,7 +420,7 @@ class PredicateMapping(ConfiguredBaseModel):
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.""")
     object_aspect_qualifier: Optional[str] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     object_form_or_variant_qualifier: Optional[str] = Field(None)
     object_part_qualifier: Optional[str] = Field(None)
     object_derivative_qualifier: Optional[str] = Field(None)
@@ -4876,7 +4876,7 @@ class ChemicalAffectsGeneAssociation(Association):
     subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
     subject_context_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core subject concept to describe a change in its direction or degree.""")
     object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
@@ -4928,7 +4928,7 @@ class GeneAffectsChemicalAssociation(Association):
     subject_derivative_qualifier: Optional[str] = Field(None)
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
     subject_context_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core subject concept to describe a change in its direction or degree.""")
     object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
@@ -5808,7 +5808,7 @@ class VariantToEntityAssociationMixin(ConfiguredBaseModel):
 class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is correlated with the phenotypic feature""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -5856,7 +5856,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     subject: str = Field(..., description="""gene in which variation is correlated with the phenotypic feature""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -5902,7 +5902,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -5949,7 +5949,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, Gene
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is shown to cause the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -5996,7 +5996,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssoc
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is shown to correlate with the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -6043,7 +6043,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityA
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -6387,7 +6387,7 @@ class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
 class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
@@ -6669,7 +6669,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     
     subject_form_or_variant_qualifier: Optional[str] = Field(None)
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -7392,7 +7392,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
     A regulatory relationship between two genes
     """
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""A qualifier that composes with a core object concept to describe a change in its direction or degree.""")
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""the direction is always from regulator to regulated""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")

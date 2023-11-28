@@ -2919,7 +2919,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -4025,7 +4026,8 @@
                     "$ref": "#/$defs/ChemicalEntityDerivativeEnum"
                 },
                 "subject_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree."
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
@@ -4459,7 +4461,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8144,7 +8147,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -10722,7 +10726,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13360,7 +13365,8 @@
                     "type": "string"
                 },
                 "subject_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree."
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
@@ -13506,7 +13512,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13834,7 +13841,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14137,7 +14145,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14366,7 +14375,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -15963,7 +15973,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -25854,7 +25865,8 @@
                     "type": "string"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree."
                 },
                 "object_form_or_variant_qualifier": {
                     "type": "string"
@@ -25884,7 +25896,8 @@
                     "type": "string"
                 },
                 "subject_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree."
                 },
                 "subject_form_or_variant_qualifier": {
                     "type": "string"
