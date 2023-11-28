@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/Publication/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
-<title>Publication - Biolink Model Documentation</title>
+<title>Class: Publication - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#publication">
+<a class="md-skip" href="#class-publication">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  Publication </strong>
+<strong>  Class: Publication </strong>
 </span>
 </div>
 </div>
@@ -253,8 +253,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="publication"><strong>  Publication </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). <br/>
+<h1 id="class-publication"><strong>  Class: Publication </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> <i>Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). </i><br/><br/>
 </div>
 <div class="mermaid"> classDiagram
     class Publication
@@ -354,7 +354,7 @@
 <tbody>
 <tr>
 <td><a href="../authors/">authors</a>: <br> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></br></td>
-<td>0..* <br/> <a href="../Agent/">Agent</a></td>
+<td>0..* <br> <a href="../Agent/">Agent</a></br></td>
 <td>direct</td>
 </tr>
 <tr>

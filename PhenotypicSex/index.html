@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/PhenotypicSex/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
-<title>PhenotypicSex - Biolink Model Documentation</title>
+<title>Class: PhenotypicSex - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#phenotypicsex">
+<a class="md-skip" href="#class-phenotypicsex">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  PhenotypicSex </strong>
+<strong>  Class: PhenotypicSex </strong>
 </span>
 </div>
 </div>
@@ -243,8 +243,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="phenotypicsex"><strong>  PhenotypicSex </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.<br/>
+<h1 id="class-phenotypicsex"><strong>  Class: PhenotypicSex </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> <i>An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.</i><br/><br/>
 </div>
 <div class="mermaid"> classDiagram
     class PhenotypicSex
@@ -318,8 +318,8 @@
 <tbody>
 <tr>
 <td><a href="../name/">name</a>: <br> <i> The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term. </i></br></td>
-<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../Attribute/">Attribute</a>, <a href="../Entity/">Entity</a></td>
+<td>0..1 <br> <a href="../LabelType/">LabelType</a></br></td>
+<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
 </tr>
 <tr>
 <td><a href="../has_attribute_type/">has_attribute_type</a>: <br/> <i> connects an attribute to a class that describes it </i></td>
@@ -339,12 +339,12 @@
 <tr>
 <td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
-<td><a href="../Attribute/">Attribute</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>

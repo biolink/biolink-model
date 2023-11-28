@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/Patent/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
-<title>Patent - Biolink Model Documentation</title>
+<title>Class: Patent - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#patent">
+<a class="md-skip" href="#class-patent">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  Patent </strong>
+<strong>  Class: Patent </strong>
 </span>
 </div>
 </div>
@@ -243,8 +243,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="patent"><strong>  Patent </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. <br/>
+<h1 id="class-patent"><strong>  Class: Patent </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> <i>a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. </i><br/><br/>
 </div>
 <div class="mermaid"> classDiagram
     class Patent
@@ -326,7 +326,7 @@
 <tbody>
 <tr>
 <td><a href="../authors/">authors</a>: <br> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></br></td>
-<td>0..* <br/> <a href="../Agent/">Agent</a></td>
+<td>0..* <br> <a href="../Agent/">Agent</a></br></td>
 <td><a href="../Publication/">Publication</a></td>
 </tr>
 <tr>
@@ -352,7 +352,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
+<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a>: <br/> <i> None </i></td>

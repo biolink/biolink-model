@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/JournalArticle/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
-<title>JournalArticle - Biolink Model Documentation</title>
+<title>Class: JournalArticle - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#journalarticle">
+<a class="md-skip" href="#class-journalarticle">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  JournalArticle </strong>
+<strong>  Class: JournalArticle </strong>
 </span>
 </div>
 </div>
@@ -248,8 +248,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="journalarticle"><strong>  JournalArticle </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> an article, typically presenting results of research, that is published  in an issue of a scientific journal.<br/>
+<h1 id="class-journalarticle"><strong>  Class: JournalArticle </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> <i>an article, typically presenting results of research, that is published  in an issue of a scientific journal.</i><br/><br/>
 </div>
 <div class="mermaid"> classDiagram
     class JournalArticle
@@ -342,7 +342,7 @@
 <tbody>
 <tr>
 <td><a href="../published_in/">published_in</a>: <br> <i> The enclosing parent serial containing the article should have industry-standard identifier from ISSN. </i></br></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1..1 <br> <a href="../Uriorcurie/">Uriorcurie</a></br></td>
 <td><a href="../Article/">Article</a></td>
 </tr>
 <tr>
@@ -388,7 +388,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
+<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a>: <br/> <i> None </i></td>

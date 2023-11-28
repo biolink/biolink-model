@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/Gene/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
-<title>Gene - Biolink Model Documentation</title>
+<title>Class: Gene - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#gene">
+<a class="md-skip" href="#class-gene">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  Gene </strong>
+<strong>  Class: Gene </strong>
 </span>
 </div>
 </div>
@@ -253,8 +253,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="gene"><strong>  Gene </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.<br/>
+<h1 id="class-gene"><strong>  Class: Gene </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> <i>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.</i><br/><br/>
 </div>
 <div class="mermaid"> classDiagram
     class Gene
@@ -328,7 +328,7 @@
 <tbody>
 <tr>
 <td><a href="../symbol/">symbol</a>: <br> <i> Symbol for a particular thing </i></br></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br> <a href="../String/">String</a></br></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -344,7 +344,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a>: <br/> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></td>
@@ -389,7 +389,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>

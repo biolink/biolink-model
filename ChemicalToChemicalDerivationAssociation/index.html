@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/ChemicalToChemicalDerivationAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
-<title>ChemicalToChemicalDerivationAssociation - Biolink Model Documentation</title>
+<title>Class: ChemicalToChemicalDerivationAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#chemicaltochemicalderivationassociation">
+<a class="md-skip" href="#class-chemicaltochemicalderivationassociation">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  ChemicalToChemicalDerivationAssociation </strong>
+<strong>  Class: ChemicalToChemicalDerivationAssociation </strong>
 </span>
 </div>
 </div>
@@ -243,8 +243,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="chemicaltochemicalderivationassociation"><strong>  ChemicalToChemicalDerivationAssociation </strong></h1>
-<div class="highlight-box"> <strong>Description:</strong> A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P<br/>
+<h1 id="class-chemicaltochemicalderivationassociation"><strong>  Class: ChemicalToChemicalDerivationAssociation </strong></h1>
+<div class="highlight-box"> <strong>Description:</strong> <i>A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P</i><br/><br/>
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalToChemicalDerivationAssociation
@@ -369,7 +369,7 @@
 <tbody>
 <tr>
 <td><a href="../catalyst_qualifier/">catalyst_qualifier</a>: <br> <i> this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical. </i></br></td>
-<td>0..* <br/> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
+<td>0..* <br> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></br></td>
 <td>direct</td>
 </tr>
 <tr>
