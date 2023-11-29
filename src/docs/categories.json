@@ -75,7 +75,13 @@
                         "children": [
                             {
                                 "name": "clinical_course",
-                                "parent": "clinical_attribute"
+                                "parent": "clinical_attribute",
+                                "children": [
+                                    {
+                                        "name": "onset",
+                                        "parent": "clinical_course"
+                                    }
+                                ]
                             },
                             {
                                 "name": "clinical_measurement",
@@ -125,6 +131,10 @@
                     },
                     {
                         "name": "pathological_process_exposure",
+                        "parent": "attribute"
+                    },
+                    {
+                        "name": "severity_value",
                         "parent": "attribute"
                     },
                     {
@@ -178,6 +188,10 @@
                         ]
                     },
                     {
+                        "name": "coding_sequence",
+                        "parent": "biological_entity"
+                    },
+                    {
                         "name": "disease_or_phenotypic_feature",
                         "parent": "biological_entity",
                         "children": [
@@ -200,6 +214,10 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "name": "exon",
+                        "parent": "biological_entity"
                     },
                     {
                         "name": "gene",
@@ -394,6 +412,36 @@
                                 "parent": "sequence_variant"
                             }
                         ]
+                    },
+                    {
+                        "name": "transcript",
+                        "parent": "biological_entity",
+                        "children": [
+                            {
+                                "name": "RNA_product",
+                                "parent": "transcript",
+                                "children": [
+                                    {
+                                        "name": "RNA_product_isoform",
+                                        "parent": "RNA_product"
+                                    },
+                                    {
+                                        "name": "noncoding_RNA_product",
+                                        "parent": "RNA_product",
+                                        "children": [
+                                            {
+                                                "name": "microRNA",
+                                                "parent": "noncoding_RNA_product"
+                                            },
+                                            {
+                                                "name": "siRNA",
+                                                "parent": "noncoding_RNA_product"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
@@ -443,47 +491,7 @@
                         "children": [
                             {
                                 "name": "nucleic_acid_entity",
-                                "parent": "molecular_entity",
-                                "children": [
-                                    {
-                                        "name": "coding_sequence",
-                                        "parent": "nucleic_acid_entity"
-                                    },
-                                    {
-                                        "name": "exon",
-                                        "parent": "nucleic_acid_entity"
-                                    },
-                                    {
-                                        "name": "transcript",
-                                        "parent": "nucleic_acid_entity",
-                                        "children": [
-                                            {
-                                                "name": "RNA_product",
-                                                "parent": "transcript",
-                                                "children": [
-                                                    {
-                                                        "name": "RNA_product_isoform",
-                                                        "parent": "RNA_product"
-                                                    },
-                                                    {
-                                                        "name": "noncoding_RNA_product",
-                                                        "parent": "RNA_product",
-                                                        "children": [
-                                                            {
-                                                                "name": "microRNA",
-                                                                "parent": "noncoding_RNA_product"
-                                                            },
-                                                            {
-                                                                "name": "siRNA",
-                                                                "parent": "noncoding_RNA_product"
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "parent": "molecular_entity"
                             },
                             {
                                 "name": "small_molecule",
