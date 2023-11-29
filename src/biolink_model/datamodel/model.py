@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-11-27T16:03:00
+# Generation date: 2023-11-29T11:33:08
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -262,8 +262,8 @@ DOI = CurieNamespace('doi', 'https://doi.org/')
 FABIO = CurieNamespace('fabio', 'http://purl.org/spar/fabio/')
 FALDO = CurieNamespace('faldo', 'http://biohackathon.org/resource/faldo#')
 FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
-FOODB_COMPOUND = CurieNamespace('foodb_compound', 'http://foodb.ca/foods/')
-FOODB_FOOD = CurieNamespace('foodb_food', 'http://foodb.ca/compounds/')
+FOODB_COMPOUND = CurieNamespace('foodb_compound', 'http://foodb.ca/compounds/')
+FOODB_FOOD = CurieNamespace('foodb_food', 'http://foodb.ca/foods/')
 GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#')
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
@@ -297,7 +297,7 @@ DEFAULT_ = BIOLINK
 # Types
 class ChemicalFormulaValue(str):
     """ A chemical formula """
-    type_class_uri = XSD.string
+    type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "chemical formula value"
     type_model_uri = BIOLINK.ChemicalFormulaValue
@@ -305,7 +305,7 @@ class ChemicalFormulaValue(str):
 
 class CategoryType(Uriorcurie):
     """ A primitive type in which the value denotes a class within the biolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation, the value should be a URI such as https://w3id.org/biolink/vocab/Gene """
-    type_class_uri = XSD.anyURI
+    type_class_uri = XSD["anyURI"]
     type_class_curie = "xsd:anyURI"
     type_name = "category type"
     type_model_uri = BIOLINK.CategoryType
@@ -313,7 +313,7 @@ class CategoryType(Uriorcurie):
 
 class IriType(Uriorcurie):
     """ An IRI """
-    type_class_uri = XSD.anyURI
+    type_class_uri = XSD["anyURI"]
     type_class_curie = "xsd:anyURI"
     type_name = "iri type"
     type_model_uri = BIOLINK.IriType
@@ -321,7 +321,7 @@ class IriType(Uriorcurie):
 
 class LabelType(String):
     """ A string that provides a human-readable name for an entity """
-    type_class_uri = XSD.string
+    type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "label type"
     type_model_uri = BIOLINK.LabelType
@@ -329,7 +329,7 @@ class LabelType(String):
 
 class PredicateType(Uriorcurie):
     """ A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats. """
-    type_class_uri = XSD.anyURI
+    type_class_uri = XSD["anyURI"]
     type_class_curie = "xsd:anyURI"
     type_name = "predicate type"
     type_model_uri = BIOLINK.PredicateType
@@ -337,14 +337,14 @@ class PredicateType(Uriorcurie):
 
 class NarrativeText(String):
     """ A string that provides a human-readable description of something """
-    type_class_uri = XSD.string
+    type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "narrative text"
     type_model_uri = BIOLINK.NarrativeText
 
 
 class SymbolType(String):
-    type_class_uri = XSD.string
+    type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "symbol type"
     type_model_uri = BIOLINK.SymbolType
@@ -379,14 +379,14 @@ class Unit(String):
 
 
 class TimeType(Time):
-    type_class_uri = XSD.time
+    type_class_uri = XSD["time"]
     type_class_curie = "xsd:time"
     type_name = "time type"
     type_model_uri = BIOLINK.TimeType
 
 
 class BiologicalSequence(String):
-    type_class_uri = XSD.string
+    type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "biological sequence"
     type_model_uri = BIOLINK.BiologicalSequence
@@ -821,15 +821,15 @@ class GenomeId(BiologicalEntityId):
     pass
 
 
-class ExonId(NucleicAcidEntityId):
+class ExonId(BiologicalEntityId):
     pass
 
 
-class TranscriptId(NucleicAcidEntityId):
+class TranscriptId(BiologicalEntityId):
     pass
 
 
-class CodingSequenceId(NucleicAcidEntityId):
+class CodingSequenceId(BiologicalEntityId):
     pass
 
 
@@ -1380,7 +1380,7 @@ class MappingCollection(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MappingCollection
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MappingCollection"]
     class_class_curie: ClassVar[str] = "biolink:MappingCollection"
     class_name: ClassVar[str] = "mapping collection"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MappingCollection
@@ -1403,7 +1403,7 @@ class PredicateMapping(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = ["exact_match", "narrow_match", "broad_match"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PredicateMapping
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PredicateMapping"]
     class_class_curie: ClassVar[str] = "biolink:PredicateMapping"
     class_name: ClassVar[str] = "predicate mapping"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PredicateMapping
@@ -1512,7 +1512,7 @@ class OntologyClass(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OntologyClass"]
     class_class_curie: ClassVar[str] = "biolink:OntologyClass"
     class_name: ClassVar[str] = "ontology class"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
@@ -1534,7 +1534,7 @@ class Annotation(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Annotation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Annotation"]
     class_class_curie: ClassVar[str] = "biolink:Annotation"
     class_name: ClassVar[str] = "annotation"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Annotation
@@ -1548,7 +1548,7 @@ class QuantityValue(Annotation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.QuantityValue
+    class_class_uri: ClassVar[URIRef] = BIOLINK["QuantityValue"]
     class_class_curie: ClassVar[str] = "biolink:QuantityValue"
     class_name: ClassVar[str] = "quantity value"
     class_model_uri: ClassVar[URIRef] = BIOLINK.QuantityValue
@@ -1569,7 +1569,7 @@ class QuantityValue(Annotation):
 class RelationshipQuantifier(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RelationshipQuantifier
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RelationshipQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:RelationshipQuantifier"
     class_name: ClassVar[str] = "relationship quantifier"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RelationshipQuantifier
@@ -1578,7 +1578,7 @@ class RelationshipQuantifier(YAMLRoot):
 class SensitivityQuantifier(RelationshipQuantifier):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SensitivityQuantifier
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SensitivityQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:SensitivityQuantifier"
     class_name: ClassVar[str] = "sensitivity quantifier"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SensitivityQuantifier
@@ -1587,7 +1587,7 @@ class SensitivityQuantifier(RelationshipQuantifier):
 class SpecificityQuantifier(RelationshipQuantifier):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SpecificityQuantifier
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SpecificityQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:SpecificityQuantifier"
     class_name: ClassVar[str] = "specificity quantifier"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SpecificityQuantifier
@@ -1600,7 +1600,7 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathognomonicityQuantifier
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathognomonicityQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:PathognomonicityQuantifier"
     class_name: ClassVar[str] = "pathognomonicity quantifier"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathognomonicityQuantifier
@@ -1610,7 +1610,7 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
 class FrequencyQuantifier(RelationshipQuantifier):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.FrequencyQuantifier
+    class_class_uri: ClassVar[URIRef] = BIOLINK["FrequencyQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:FrequencyQuantifier"
     class_name: ClassVar[str] = "frequency quantifier"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FrequencyQuantifier
@@ -1639,7 +1639,7 @@ class FrequencyQuantifier(RelationshipQuantifier):
 class ChemicalOrDrugOrTreatment(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatment"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatment"
     class_name: ClassVar[str] = "chemical or drug or treatment"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
@@ -1652,7 +1652,7 @@ class Entity(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Entity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Entity"]
     class_class_curie: ClassVar[str] = "biolink:Entity"
     class_name: ClassVar[str] = "entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Entity
@@ -1731,7 +1731,7 @@ class NamedThing(Entity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NamedThing
+    class_class_uri: ClassVar[URIRef] = BIOLINK["NamedThing"]
     class_class_curie: ClassVar[str] = "biolink:NamedThing"
     class_name: ClassVar[str] = "named thing"
     class_model_uri: ClassVar[URIRef] = BIOLINK.NamedThing
@@ -1811,7 +1811,7 @@ class Attribute(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Attribute
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Attribute"]
     class_class_curie: ClassVar[str] = "biolink:Attribute"
     class_name: ClassVar[str] = "attribute"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Attribute
@@ -1863,7 +1863,7 @@ class ChemicalRole(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalRole"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalRole"
     class_name: ClassVar[str] = "chemical role"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
@@ -1890,7 +1890,7 @@ class ChemicalRole(Attribute):
 class BiologicalSex(Attribute):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalSex"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalSex"
     class_name: ClassVar[str] = "biological sex"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
@@ -1920,7 +1920,7 @@ class PhenotypicSex(BiologicalSex):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicSex"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicSex"
     class_name: ClassVar[str] = "phenotypic sex"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
@@ -1951,7 +1951,7 @@ class GenotypicSex(BiologicalSex):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypicSex"]
     class_class_curie: ClassVar[str] = "biolink:GenotypicSex"
     class_name: ClassVar[str] = "genotypic sex"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
@@ -1981,7 +1981,7 @@ class SeverityValue(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SeverityValue"]
     class_class_curie: ClassVar[str] = "biolink:SeverityValue"
     class_name: ClassVar[str] = "severity value"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
@@ -2011,7 +2011,7 @@ class RelationshipType(OntologyClass):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RelationshipType"]
     class_class_curie: ClassVar[str] = "biolink:RelationshipType"
     class_name: ClassVar[str] = "relationship type"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
@@ -2034,7 +2034,7 @@ class TaxonomicRank(OntologyClass):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.TaxonomicRank
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TaxonomicRank"]
     class_class_curie: ClassVar[str] = "biolink:TaxonomicRank"
     class_name: ClassVar[str] = "taxonomic rank"
     class_model_uri: ClassVar[URIRef] = BIOLINK.TaxonomicRank
@@ -2058,7 +2058,7 @@ class OrganismTaxon(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxon"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
     class_name: ClassVar[str] = "organism taxon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
@@ -2091,7 +2091,7 @@ class Event(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Event
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Event"]
     class_class_curie: ClassVar[str] = "biolink:Event"
     class_name: ClassVar[str] = "event"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Event
@@ -2117,7 +2117,7 @@ class Event(NamedThing):
 class AdministrativeEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AdministrativeEntity"]
     class_class_curie: ClassVar[str] = "biolink:AdministrativeEntity"
     class_name: ClassVar[str] = "administrative entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
@@ -2142,7 +2142,7 @@ class Agent(AdministrativeEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Agent
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Agent"]
     class_class_curie: ClassVar[str] = "biolink:Agent"
     class_name: ClassVar[str] = "agent"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Agent
@@ -2184,7 +2184,7 @@ class InformationContentEntity(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["InformationContentEntity"]
     class_class_curie: ClassVar[str] = "biolink:InformationContentEntity"
     class_name: ClassVar[str] = "information content entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntity
@@ -2226,7 +2226,7 @@ class StudyResult(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.StudyResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["StudyResult"]
     class_class_curie: ClassVar[str] = "biolink:StudyResult"
     class_name: ClassVar[str] = "study result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.StudyResult
@@ -2251,7 +2251,7 @@ class StudyVariable(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
+    class_class_uri: ClassVar[URIRef] = BIOLINK["StudyVariable"]
     class_class_curie: ClassVar[str] = "biolink:StudyVariable"
     class_name: ClassVar[str] = "study variable"
     class_model_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
@@ -2282,7 +2282,7 @@ class CommonDataElement(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CommonDataElement"]
     class_class_curie: ClassVar[str] = "biolink:CommonDataElement"
     class_name: ClassVar[str] = "common data element"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
@@ -2311,7 +2311,7 @@ class ConceptCountAnalysisResult(StudyResult):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ConceptCountAnalysisResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ConceptCountAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:ConceptCountAnalysisResult"
     class_name: ClassVar[str] = "concept count analysis result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ConceptCountAnalysisResult
@@ -2340,7 +2340,7 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ObservedExpectedFrequencyAnalysisResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ObservedExpectedFrequencyAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:ObservedExpectedFrequencyAnalysisResult"
     class_name: ClassVar[str] = "observed expected frequency analysis result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ObservedExpectedFrequencyAnalysisResult
@@ -2369,7 +2369,7 @@ class RelativeFrequencyAnalysisResult(StudyResult):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RelativeFrequencyAnalysisResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RelativeFrequencyAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:RelativeFrequencyAnalysisResult"
     class_name: ClassVar[str] = "relative frequency analysis result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RelativeFrequencyAnalysisResult
@@ -2398,7 +2398,7 @@ class TextMiningResult(StudyResult):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningResult"]
     class_class_curie: ClassVar[str] = "biolink:TextMiningResult"
     class_name: ClassVar[str] = "text mining result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
@@ -2427,7 +2427,7 @@ class ChiSquaredAnalysisResult(StudyResult):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChiSquaredAnalysisResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChiSquaredAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:ChiSquaredAnalysisResult"
     class_name: ClassVar[str] = "chi squared analysis result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChiSquaredAnalysisResult
@@ -2456,7 +2456,7 @@ class LogOddsAnalysisResult(StudyResult):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.LogOddsAnalysisResult
+    class_class_uri: ClassVar[URIRef] = BIOLINK["LogOddsAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:LogOddsAnalysisResult"
     class_name: ClassVar[str] = "log odds analysis result"
     class_model_uri: ClassVar[URIRef] = BIOLINK.LogOddsAnalysisResult
@@ -2485,7 +2485,7 @@ class Dataset(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Dataset
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Dataset"]
     class_class_curie: ClassVar[str] = "biolink:Dataset"
     class_name: ClassVar[str] = "dataset"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Dataset
@@ -2514,7 +2514,7 @@ class DatasetDistribution(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DatasetDistribution
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DatasetDistribution"]
     class_class_curie: ClassVar[str] = "biolink:DatasetDistribution"
     class_name: ClassVar[str] = "dataset distribution"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DatasetDistribution
@@ -2547,7 +2547,7 @@ class DatasetVersion(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DatasetVersion
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DatasetVersion"]
     class_class_curie: ClassVar[str] = "biolink:DatasetVersion"
     class_name: ClassVar[str] = "dataset version"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DatasetVersion
@@ -2588,7 +2588,7 @@ class DatasetSummary(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DatasetSummary
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DatasetSummary"]
     class_class_curie: ClassVar[str] = "biolink:DatasetSummary"
     class_name: ClassVar[str] = "dataset summary"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DatasetSummary
@@ -2625,7 +2625,7 @@ class ConfidenceLevel(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ConfidenceLevel"]
     class_class_curie: ClassVar[str] = "biolink:ConfidenceLevel"
     class_name: ClassVar[str] = "confidence level"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
@@ -2654,7 +2654,7 @@ class EvidenceType(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EvidenceType"]
     class_class_curie: ClassVar[str] = "biolink:EvidenceType"
     class_name: ClassVar[str] = "evidence type"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
@@ -2687,7 +2687,7 @@ class Publication(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Publication
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Publication"]
     class_class_curie: ClassVar[str] = "biolink:Publication"
     class_name: ClassVar[str] = "publication"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Publication
@@ -2756,7 +2756,7 @@ class Book(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Book
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Book"]
     class_class_curie: ClassVar[str] = "biolink:Book"
     class_name: ClassVar[str] = "book"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Book
@@ -2788,7 +2788,7 @@ class Book(Publication):
 class BookChapter(Publication):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BookChapter
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BookChapter"]
     class_class_curie: ClassVar[str] = "biolink:BookChapter"
     class_name: ClassVar[str] = "book chapter"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BookChapter
@@ -2832,7 +2832,7 @@ class Serial(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Serial
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Serial"]
     class_class_curie: ClassVar[str] = "biolink:Serial"
     class_name: ClassVar[str] = "serial"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Serial
@@ -2879,7 +2879,7 @@ class Article(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Article
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Article"]
     class_class_curie: ClassVar[str] = "biolink:Article"
     class_name: ClassVar[str] = "article"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Article
@@ -2927,7 +2927,7 @@ class JournalArticle(Article):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
+    class_class_uri: ClassVar[URIRef] = BIOLINK["JournalArticle"]
     class_class_curie: ClassVar[str] = "biolink:JournalArticle"
     class_name: ClassVar[str] = "journal article"
     class_model_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
@@ -2959,7 +2959,7 @@ class Patent(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Patent
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Patent"]
     class_class_curie: ClassVar[str] = "biolink:Patent"
     class_name: ClassVar[str] = "patent"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Patent
@@ -2990,7 +2990,7 @@ class WebPage(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.WebPage
+    class_class_uri: ClassVar[URIRef] = BIOLINK["WebPage"]
     class_class_curie: ClassVar[str] = "biolink:WebPage"
     class_name: ClassVar[str] = "web page"
     class_model_uri: ClassVar[URIRef] = BIOLINK.WebPage
@@ -3021,7 +3021,7 @@ class PreprintPublication(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PreprintPublication"]
     class_class_curie: ClassVar[str] = "biolink:PreprintPublication"
     class_name: ClassVar[str] = "preprint publication"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
@@ -3053,7 +3053,7 @@ class DrugLabel(Publication):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DrugLabel"]
     class_class_curie: ClassVar[str] = "biolink:DrugLabel"
     class_name: ClassVar[str] = "drug label"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
@@ -3084,7 +3084,7 @@ class RetrievalSource(InformationContentEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RetrievalSource
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RetrievalSource"]
     class_class_curie: ClassVar[str] = "biolink:RetrievalSource"
     class_name: ClassVar[str] = "retrieval source"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RetrievalSource
@@ -3133,7 +3133,7 @@ class PhysicalEssenceOrOccurrent(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssenceOrOccurrent
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhysicalEssenceOrOccurrent"]
     class_class_curie: ClassVar[str] = "biolink:PhysicalEssenceOrOccurrent"
     class_name: ClassVar[str] = "physical essence or occurrent"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssenceOrOccurrent
@@ -3145,7 +3145,7 @@ class PhysicalEssence(PhysicalEssenceOrOccurrent):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssence
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhysicalEssence"]
     class_class_curie: ClassVar[str] = "biolink:PhysicalEssence"
     class_name: ClassVar[str] = "physical essence"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssence
@@ -3158,7 +3158,7 @@ class PhysicalEntity(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhysicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:PhysicalEntity"
     class_name: ClassVar[str] = "physical entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
@@ -3186,7 +3186,7 @@ class Occurrent(PhysicalEssenceOrOccurrent):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Occurrent
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Occurrent"]
     class_class_curie: ClassVar[str] = "biolink:Occurrent"
     class_name: ClassVar[str] = "occurrent"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Occurrent
@@ -3198,7 +3198,7 @@ class ActivityAndBehavior(Occurrent):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ActivityAndBehavior
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ActivityAndBehavior"]
     class_class_curie: ClassVar[str] = "biolink:ActivityAndBehavior"
     class_name: ClassVar[str] = "activity and behavior"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ActivityAndBehavior
@@ -3212,7 +3212,7 @@ class Activity(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Activity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Activity"]
     class_class_curie: ClassVar[str] = "biolink:Activity"
     class_name: ClassVar[str] = "activity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Activity
@@ -3241,7 +3241,7 @@ class Study(Activity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Study
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Study"]
     class_class_curie: ClassVar[str] = "biolink:Study"
     class_name: ClassVar[str] = "study"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Study
@@ -3270,7 +3270,7 @@ class Procedure(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Procedure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Procedure"]
     class_class_curie: ClassVar[str] = "biolink:Procedure"
     class_name: ClassVar[str] = "procedure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Procedure
@@ -3299,7 +3299,7 @@ class Phenomenon(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Phenomenon"]
     class_class_curie: ClassVar[str] = "biolink:Phenomenon"
     class_name: ClassVar[str] = "phenomenon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
@@ -3328,7 +3328,7 @@ class Device(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Device
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Device"]
     class_class_curie: ClassVar[str] = "biolink:Device"
     class_name: ClassVar[str] = "device"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Device
@@ -3357,7 +3357,7 @@ class DiagnosticAid(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiagnosticAid
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiagnosticAid"]
     class_class_curie: ClassVar[str] = "biolink:DiagnosticAid"
     class_name: ClassVar[str] = "diagnostic aid"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiagnosticAid
@@ -3385,7 +3385,7 @@ class SubjectOfInvestigation(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SubjectOfInvestigation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SubjectOfInvestigation"]
     class_class_curie: ClassVar[str] = "biolink:SubjectOfInvestigation"
     class_name: ClassVar[str] = "subject of investigation"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SubjectOfInvestigation
@@ -3400,7 +3400,7 @@ class MaterialSample(PhysicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSample"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSample"
     class_name: ClassVar[str] = "material sample"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
@@ -3429,7 +3429,7 @@ class PlanetaryEntity(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PlanetaryEntity"]
     class_class_curie: ClassVar[str] = "biolink:PlanetaryEntity"
     class_name: ClassVar[str] = "planetary entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
@@ -3455,7 +3455,7 @@ class PlanetaryEntity(NamedThing):
 class EnvironmentalProcess(PlanetaryEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalProcess"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalProcess"
     class_name: ClassVar[str] = "environmental process"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
@@ -3481,7 +3481,7 @@ class EnvironmentalProcess(PlanetaryEntity):
 class EnvironmentalFeature(PlanetaryEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalFeature"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalFeature"
     class_name: ClassVar[str] = "environmental feature"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
@@ -3510,7 +3510,7 @@ class GeographicLocation(PlanetaryEntity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeographicLocation"]
     class_class_curie: ClassVar[str] = "biolink:GeographicLocation"
     class_name: ClassVar[str] = "geographic location"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
@@ -3547,7 +3547,7 @@ class GeographicLocationAtTime(GeographicLocation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeographicLocationAtTime"]
     class_class_curie: ClassVar[str] = "biolink:GeographicLocationAtTime"
     class_name: ClassVar[str] = "geographic location at time"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
@@ -3581,7 +3581,7 @@ class ThingWithTaxon(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ThingWithTaxon
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ThingWithTaxon"]
     class_class_curie: ClassVar[str] = "biolink:ThingWithTaxon"
     class_name: ClassVar[str] = "thing with taxon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ThingWithTaxon
@@ -3604,7 +3604,7 @@ class ThingWithTaxon(YAMLRoot):
 class BiologicalEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalEntity"
     class_name: ClassVar[str] = "biological entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
@@ -3634,7 +3634,7 @@ class BiologicalEntity(NamedThing):
 class GenomicEntity(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenomicEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicEntity"]
     class_class_curie: ClassVar[str] = "biolink:GenomicEntity"
     class_name: ClassVar[str] = "genomic entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicEntity
@@ -3652,7 +3652,7 @@ class GenomicEntity(YAMLRoot):
 class EpigenomicEntity(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EpigenomicEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EpigenomicEntity"]
     class_class_curie: ClassVar[str] = "biolink:EpigenomicEntity"
     class_name: ClassVar[str] = "epigenomic entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EpigenomicEntity
@@ -3673,7 +3673,7 @@ class ChemicalEntity(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntity"
     class_name: ClassVar[str] = "chemical entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntity
@@ -3724,7 +3724,7 @@ class MolecularEntity(ChemicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularEntity"]
     class_class_curie: ClassVar[str] = "biolink:MolecularEntity"
     class_name: ClassVar[str] = "molecular entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularEntity
@@ -3760,7 +3760,7 @@ class SmallMolecule(MolecularEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SmallMolecule
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SmallMolecule"]
     class_class_curie: ClassVar[str] = "biolink:SmallMolecule"
     class_name: ClassVar[str] = "small molecule"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SmallMolecule
@@ -3789,7 +3789,7 @@ class ChemicalMixture(ChemicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalMixture
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalMixture"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalMixture"
     class_name: ClassVar[str] = "chemical mixture"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalMixture
@@ -3837,7 +3837,7 @@ class NucleicAcidEntity(MolecularEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["NucleicAcidEntity"]
     class_class_curie: ClassVar[str] = "biolink:NucleicAcidEntity"
     class_name: ClassVar[str] = "nucleic acid entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidEntity
@@ -3880,7 +3880,7 @@ class RegulatoryRegion(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RegulatoryRegion
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RegulatoryRegion"]
     class_class_curie: ClassVar[str] = "biolink:RegulatoryRegion"
     class_name: ClassVar[str] = "regulatory region"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RegulatoryRegion
@@ -3914,7 +3914,7 @@ class AccessibleDnaRegion(RegulatoryRegion):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AccessibleDnaRegion
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AccessibleDnaRegion"]
     class_class_curie: ClassVar[str] = "biolink:AccessibleDnaRegion"
     class_name: ClassVar[str] = "accessible dna region"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AccessibleDnaRegion
@@ -3948,7 +3948,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.TranscriptionFactorBindingSite
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TranscriptionFactorBindingSite"]
     class_class_curie: ClassVar[str] = "biolink:TranscriptionFactorBindingSite"
     class_name: ClassVar[str] = "transcription factor binding site"
     class_model_uri: ClassVar[URIRef] = BIOLINK.TranscriptionFactorBindingSite
@@ -3982,7 +3982,7 @@ class MolecularMixture(ChemicalMixture):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularMixture
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularMixture"]
     class_class_curie: ClassVar[str] = "biolink:MolecularMixture"
     class_name: ClassVar[str] = "molecular mixture"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularMixture
@@ -4012,7 +4012,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ComplexMolecularMixture
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ComplexMolecularMixture"]
     class_class_curie: ClassVar[str] = "biolink:ComplexMolecularMixture"
     class_name: ClassVar[str] = "complex molecular mixture"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ComplexMolecularMixture
@@ -4042,7 +4042,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalProcessOrActivity"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalProcessOrActivity"
     class_name: ClassVar[str] = "biological process or activity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
@@ -4086,7 +4086,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivity"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivity"
     class_name: ClassVar[str] = "molecular activity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
@@ -4130,7 +4130,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalProcess"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalProcess"
     class_name: ClassVar[str] = "biological process"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
@@ -4156,7 +4156,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 class Pathway(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Pathway
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Pathway"]
     class_class_curie: ClassVar[str] = "biolink:Pathway"
     class_name: ClassVar[str] = "pathway"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Pathway
@@ -4182,7 +4182,7 @@ class Pathway(BiologicalProcess):
 class PhysiologicalProcess(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhysiologicalProcess"]
     class_class_curie: ClassVar[str] = "biolink:PhysiologicalProcess"
     class_name: ClassVar[str] = "physiological process"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
@@ -4208,7 +4208,7 @@ class PhysiologicalProcess(BiologicalProcess):
 class Behavior(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Behavior
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Behavior"]
     class_class_curie: ClassVar[str] = "biolink:Behavior"
     class_name: ClassVar[str] = "behavior"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Behavior
@@ -4238,7 +4238,7 @@ class ProcessedMaterial(ChemicalMixture):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ProcessedMaterial
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ProcessedMaterial"]
     class_class_curie: ClassVar[str] = "biolink:ProcessedMaterial"
     class_name: ClassVar[str] = "processed material"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProcessedMaterial
@@ -4267,7 +4267,7 @@ class Drug(MolecularMixture):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Drug
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Drug"]
     class_class_curie: ClassVar[str] = "biolink:Drug"
     class_name: ClassVar[str] = "drug"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Drug
@@ -4293,7 +4293,7 @@ class Drug(MolecularMixture):
 class EnvironmentalFoodContaminant(ChemicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFoodContaminant
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalFoodContaminant"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalFoodContaminant"
     class_name: ClassVar[str] = "environmental food contaminant"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFoodContaminant
@@ -4319,7 +4319,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
 class FoodAdditive(ChemicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.FoodAdditive
+    class_class_uri: ClassVar[URIRef] = BIOLINK["FoodAdditive"]
     class_class_curie: ClassVar[str] = "biolink:FoodAdditive"
     class_name: ClassVar[str] = "food additive"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FoodAdditive
@@ -4348,7 +4348,7 @@ class Food(ChemicalMixture):
     """
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Food
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Food"]
     class_class_curie: ClassVar[str] = "biolink:Food"
     class_name: ClassVar[str] = "food"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Food
@@ -4377,7 +4377,7 @@ class OrganismAttribute(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismAttribute"]
     class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
     class_name: ClassVar[str] = "organism attribute"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
@@ -4407,7 +4407,7 @@ class PhenotypicQuality(OrganismAttribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicQuality
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicQuality"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicQuality"
     class_name: ClassVar[str] = "phenotypic quality"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicQuality
@@ -4438,7 +4438,7 @@ class GeneticInheritance(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneticInheritance
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneticInheritance"]
     class_class_curie: ClassVar[str] = "biolink:GeneticInheritance"
     class_name: ClassVar[str] = "genetic inheritance"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneticInheritance
@@ -4468,7 +4468,7 @@ class OrganismalEntity(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismalEntity"]
     class_class_curie: ClassVar[str] = "biolink:OrganismalEntity"
     class_name: ClassVar[str] = "organismal entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
@@ -4498,7 +4498,7 @@ class Bacterium(OrganismalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Bacterium"]
     class_class_curie: ClassVar[str] = "biolink:Bacterium"
     class_name: ClassVar[str] = "bacterium"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Bacterium
@@ -4527,7 +4527,7 @@ class Virus(OrganismalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Virus
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Virus"]
     class_class_curie: ClassVar[str] = "biolink:Virus"
     class_name: ClassVar[str] = "virus"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Virus
@@ -4553,7 +4553,7 @@ class Virus(OrganismalEntity):
 class CellularOrganism(OrganismalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellularOrganism
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CellularOrganism"]
     class_class_curie: ClassVar[str] = "biolink:CellularOrganism"
     class_name: ClassVar[str] = "cellular organism"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellularOrganism
@@ -4583,7 +4583,7 @@ class Mammal(CellularOrganism):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Mammal
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Mammal"]
     class_class_curie: ClassVar[str] = "biolink:Mammal"
     class_name: ClassVar[str] = "mammal"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Mammal
@@ -4612,7 +4612,7 @@ class Human(Mammal):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Human
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Human"]
     class_class_curie: ClassVar[str] = "biolink:Human"
     class_name: ClassVar[str] = "human"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Human
@@ -4638,7 +4638,7 @@ class Human(Mammal):
 class Plant(CellularOrganism):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Plant
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Plant"]
     class_class_curie: ClassVar[str] = "biolink:Plant"
     class_name: ClassVar[str] = "plant"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Plant
@@ -4667,7 +4667,7 @@ class Invertebrate(CellularOrganism):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Invertebrate"]
     class_class_curie: ClassVar[str] = "biolink:Invertebrate"
     class_name: ClassVar[str] = "invertebrate"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
@@ -4696,7 +4696,7 @@ class Vertebrate(CellularOrganism):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Vertebrate"]
     class_class_curie: ClassVar[str] = "biolink:Vertebrate"
     class_name: ClassVar[str] = "vertebrate"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
@@ -4727,7 +4727,7 @@ class Fungus(CellularOrganism):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Fungus
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Fungus"]
     class_class_curie: ClassVar[str] = "biolink:Fungus"
     class_name: ClassVar[str] = "fungus"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Fungus
@@ -4756,7 +4756,7 @@ class LifeStage(OrganismalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.LifeStage
+    class_class_uri: ClassVar[URIRef] = BIOLINK["LifeStage"]
     class_class_curie: ClassVar[str] = "biolink:LifeStage"
     class_name: ClassVar[str] = "life stage"
     class_model_uri: ClassVar[URIRef] = BIOLINK.LifeStage
@@ -4786,7 +4786,7 @@ class IndividualOrganism(OrganismalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
+    class_class_uri: ClassVar[URIRef] = BIOLINK["IndividualOrganism"]
     class_class_curie: ClassVar[str] = "biolink:IndividualOrganism"
     class_name: ClassVar[str] = "individual organism"
     class_model_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
@@ -4816,7 +4816,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PopulationOfIndividualOrganisms"]
     class_class_curie: ClassVar[str] = "biolink:PopulationOfIndividualOrganisms"
     class_name: ClassVar[str] = "population of individual organisms"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
@@ -4845,7 +4845,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.StudyPopulation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["StudyPopulation"]
     class_class_curie: ClassVar[str] = "biolink:StudyPopulation"
     class_name: ClassVar[str] = "study population"
     class_model_uri: ClassVar[URIRef] = BIOLINK.StudyPopulation
@@ -4877,7 +4877,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeature"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeature"
     class_name: ClassVar[str] = "disease or phenotypic feature"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
@@ -4908,7 +4908,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Disease
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Disease"]
     class_class_curie: ClassVar[str] = "biolink:Disease"
     class_name: ClassVar[str] = "disease"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Disease
@@ -4938,7 +4938,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeature"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicFeature"
     class_name: ClassVar[str] = "phenotypic feature"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
@@ -4967,7 +4967,7 @@ class BehavioralFeature(PhenotypicFeature):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BehavioralFeature
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BehavioralFeature"]
     class_class_curie: ClassVar[str] = "biolink:BehavioralFeature"
     class_name: ClassVar[str] = "behavioral feature"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralFeature
@@ -4996,7 +4996,7 @@ class AnatomicalEntity(OrganismalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntity"
     class_name: ClassVar[str] = "anatomical entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
@@ -5025,7 +5025,7 @@ class CellularComponent(AnatomicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CellularComponent"]
     class_class_curie: ClassVar[str] = "biolink:CellularComponent"
     class_name: ClassVar[str] = "cellular component"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
@@ -5051,7 +5051,7 @@ class CellularComponent(AnatomicalEntity):
 class Cell(AnatomicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Cell
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Cell"]
     class_class_curie: ClassVar[str] = "biolink:Cell"
     class_name: ClassVar[str] = "cell"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Cell
@@ -5077,7 +5077,7 @@ class Cell(AnatomicalEntity):
 class CellLine(OrganismalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellLine
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CellLine"]
     class_class_curie: ClassVar[str] = "biolink:CellLine"
     class_name: ClassVar[str] = "cell line"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLine
@@ -5103,7 +5103,7 @@ class CellLine(OrganismalEntity):
 class GrossAnatomicalStructure(AnatomicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GrossAnatomicalStructure"]
     class_class_curie: ClassVar[str] = "biolink:GrossAnatomicalStructure"
     class_name: ClassVar[str] = "gross anatomical structure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
@@ -5132,7 +5132,7 @@ class ChemicalEntityOrGeneOrGeneProduct(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProduct
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrGeneOrGeneProduct"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrGeneOrGeneProduct"
     class_name: ClassVar[str] = "chemical entity or gene or gene product"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProduct
@@ -5145,7 +5145,7 @@ class ChemicalEntityOrProteinOrPolypeptide(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrProteinOrPolypeptide
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrProteinOrPolypeptide"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrProteinOrPolypeptide"
     class_name: ClassVar[str] = "chemical entity or protein or polypeptide"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrProteinOrPolypeptide
@@ -5159,7 +5159,7 @@ class MacromolecularMachineMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineMixin"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineMixin"
     class_name: ClassVar[str] = "macromolecular machine mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineMixin
@@ -5179,7 +5179,7 @@ class GeneOrGeneProduct(MacromolecularMachineMixin):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneOrGeneProduct
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneOrGeneProduct"]
     class_class_curie: ClassVar[str] = "biolink:GeneOrGeneProduct"
     class_name: ClassVar[str] = "gene or gene product"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOrGeneProduct
@@ -5193,7 +5193,7 @@ class Gene(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Gene
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Gene"]
     class_class_curie: ClassVar[str] = "biolink:Gene"
     class_name: ClassVar[str] = "gene"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Gene
@@ -5236,7 +5236,7 @@ class GeneProductMixin(GeneOrGeneProduct):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneProductMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneProductMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneProductMixin"
     class_name: ClassVar[str] = "gene product mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneProductMixin
@@ -5264,7 +5264,7 @@ class GeneProductIsoformMixin(GeneProductMixin):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneProductIsoformMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneProductIsoformMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneProductIsoformMixin"
     class_name: ClassVar[str] = "gene product isoform mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneProductIsoformMixin
@@ -5278,7 +5278,7 @@ class MacromolecularComplex(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplex
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularComplex"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularComplex"
     class_name: ClassVar[str] = "macromolecular complex"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplex
@@ -5312,7 +5312,7 @@ class NucleosomeModification(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NucleosomeModification
+    class_class_uri: ClassVar[URIRef] = BIOLINK["NucleosomeModification"]
     class_class_curie: ClassVar[str] = "biolink:NucleosomeModification"
     class_name: ClassVar[str] = "nucleosome modification"
     class_model_uri: ClassVar[URIRef] = BIOLINK.NucleosomeModification
@@ -5345,7 +5345,7 @@ class Genome(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Genome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Genome"]
     class_class_curie: ClassVar[str] = "biolink:Genome"
     class_name: ClassVar[str] = "genome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Genome
@@ -5372,14 +5372,14 @@ class Genome(BiologicalEntity):
 
 
 @dataclass
-class Exon(NucleicAcidEntity):
+class Exon(BiologicalEntity):
     """
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA
     splicing.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Exon
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Exon"]
     class_class_curie: ClassVar[str] = "biolink:Exon"
     class_name: ClassVar[str] = "exon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Exon
@@ -5402,13 +5402,13 @@ class Exon(NucleicAcidEntity):
 
 
 @dataclass
-class Transcript(NucleicAcidEntity):
+class Transcript(BiologicalEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Transcript
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Transcript"]
     class_class_curie: ClassVar[str] = "biolink:Transcript"
     class_name: ClassVar[str] = "transcript"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Transcript
@@ -5431,22 +5431,26 @@ class Transcript(NucleicAcidEntity):
 
 
 @dataclass
-class CodingSequence(NucleicAcidEntity):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+class CodingSequence(BiologicalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CodingSequence
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CodingSequence"]
     class_class_curie: ClassVar[str] = "biolink:CodingSequence"
     class_name: ClassVar[str] = "coding sequence"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CodingSequence
 
     id: Union[str, CodingSequenceId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CodingSequenceId):
             self.id = CodingSequenceId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -5465,7 +5469,7 @@ class Polypeptide(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Polypeptide
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Polypeptide"]
     class_class_curie: ClassVar[str] = "biolink:Polypeptide"
     class_name: ClassVar[str] = "polypeptide"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Polypeptide
@@ -5495,7 +5499,7 @@ class Protein(Polypeptide):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Protein
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Protein"]
     class_class_curie: ClassVar[str] = "biolink:Protein"
     class_name: ClassVar[str] = "protein"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Protein
@@ -5535,7 +5539,7 @@ class ProteinIsoform(Protein):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinIsoform
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinIsoform"]
     class_class_curie: ClassVar[str] = "biolink:ProteinIsoform"
     class_name: ClassVar[str] = "protein isoform"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinIsoform
@@ -5566,7 +5570,7 @@ class ProteinDomain(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinDomain
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinDomain"]
     class_class_curie: ClassVar[str] = "biolink:ProteinDomain"
     class_name: ClassVar[str] = "protein domain"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinDomain
@@ -5601,7 +5605,7 @@ class PosttranslationalModification(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PosttranslationalModification
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PosttranslationalModification"]
     class_class_curie: ClassVar[str] = "biolink:PosttranslationalModification"
     class_name: ClassVar[str] = "posttranslational modification"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PosttranslationalModification
@@ -5627,7 +5631,7 @@ class PosttranslationalModification(BiologicalEntity):
 class ProteinFamily(BiologicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinFamily
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinFamily"]
     class_class_curie: ClassVar[str] = "biolink:ProteinFamily"
     class_name: ClassVar[str] = "protein family"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinFamily
@@ -5662,7 +5666,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidSequenceMotif
+    class_class_uri: ClassVar[URIRef] = BIOLINK["NucleicAcidSequenceMotif"]
     class_class_curie: ClassVar[str] = "biolink:NucleicAcidSequenceMotif"
     class_name: ClassVar[str] = "nucleic acid sequence motif"
     class_model_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidSequenceMotif
@@ -5686,9 +5690,9 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
 
 @dataclass
 class RNAProduct(Transcript):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RNAProduct
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RNAProduct"]
     class_class_curie: ClassVar[str] = "biolink:RNAProduct"
     class_name: ClassVar[str] = "RNA product"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RNAProduct
@@ -5725,9 +5729,9 @@ class RNAProductIsoform(RNAProduct):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RNAProductIsoform
+    class_class_uri: ClassVar[URIRef] = BIOLINK["RNAProductIsoform"]
     class_class_curie: ClassVar[str] = "biolink:RNAProductIsoform"
     class_name: ClassVar[str] = "RNA product isoform"
     class_model_uri: ClassVar[URIRef] = BIOLINK.RNAProductIsoform
@@ -5751,9 +5755,9 @@ class RNAProductIsoform(RNAProduct):
 
 @dataclass
 class NoncodingRNAProduct(RNAProduct):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NoncodingRNAProduct
+    class_class_uri: ClassVar[URIRef] = BIOLINK["NoncodingRNAProduct"]
     class_class_curie: ClassVar[str] = "biolink:NoncodingRNAProduct"
     class_name: ClassVar[str] = "noncoding RNA product"
     class_model_uri: ClassVar[URIRef] = BIOLINK.NoncodingRNAProduct
@@ -5777,9 +5781,9 @@ class NoncodingRNAProduct(RNAProduct):
 
 @dataclass
 class MicroRNA(NoncodingRNAProduct):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MicroRNA
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MicroRNA"]
     class_class_curie: ClassVar[str] = "biolink:MicroRNA"
     class_name: ClassVar[str] = "microRNA"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MicroRNA
@@ -5808,9 +5812,9 @@ class SiRNA(NoncodingRNAProduct):
     duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both
     strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SiRNA
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SiRNA"]
     class_class_curie: ClassVar[str] = "biolink:SiRNA"
     class_name: ClassVar[str] = "siRNA"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SiRNA
@@ -5839,7 +5843,7 @@ class GeneGroupingMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneGroupingMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneGroupingMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneGroupingMixin"
     class_name: ClassVar[str] = "gene grouping mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneGroupingMixin
@@ -5861,7 +5865,7 @@ class GeneFamily(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneFamily
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneFamily"]
     class_class_curie: ClassVar[str] = "biolink:GeneFamily"
     class_name: ClassVar[str] = "gene family"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneFamily
@@ -5892,7 +5896,7 @@ class GeneFamily(BiologicalEntity):
 class Zygosity(Attribute):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Zygosity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Zygosity"]
     class_class_curie: ClassVar[str] = "biolink:Zygosity"
     class_name: ClassVar[str] = "zygosity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Zygosity
@@ -5923,7 +5927,7 @@ class Genotype(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Genotype
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Genotype"]
     class_class_curie: ClassVar[str] = "biolink:Genotype"
     class_name: ClassVar[str] = "genotype"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Genotype
@@ -5960,7 +5964,7 @@ class Haplotype(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Haplotype
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Haplotype"]
     class_class_curie: ClassVar[str] = "biolink:Haplotype"
     class_name: ClassVar[str] = "haplotype"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Haplotype
@@ -5993,7 +5997,7 @@ class SequenceVariant(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SequenceVariant
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceVariant"]
     class_class_curie: ClassVar[str] = "biolink:SequenceVariant"
     class_name: ClassVar[str] = "sequence variant"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceVariant
@@ -6031,7 +6035,7 @@ class Snv(SequenceVariant):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Snv
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Snv"]
     class_class_curie: ClassVar[str] = "biolink:Snv"
     class_name: ClassVar[str] = "snv"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Snv
@@ -6061,7 +6065,7 @@ class ReagentTargetedGene(BiologicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ReagentTargetedGene
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ReagentTargetedGene"]
     class_class_curie: ClassVar[str] = "biolink:ReagentTargetedGene"
     class_name: ClassVar[str] = "reagent targeted gene"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ReagentTargetedGene
@@ -6094,7 +6098,7 @@ class ClinicalAttribute(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalAttribute"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
     class_name: ClassVar[str] = "clinical attribute"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
@@ -6125,7 +6129,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalMeasurement
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalMeasurement"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalMeasurement"
     class_name: ClassVar[str] = "clinical measurement"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalMeasurement
@@ -6161,7 +6165,7 @@ class ClinicalModifier(ClinicalAttribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalModifier"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
     class_name: ClassVar[str] = "clinical modifier"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
@@ -6192,7 +6196,7 @@ class ClinicalCourse(ClinicalAttribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalCourse"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalCourse"
     class_name: ClassVar[str] = "clinical course"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
@@ -6222,7 +6226,7 @@ class Onset(ClinicalCourse):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Onset
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Onset"]
     class_class_curie: ClassVar[str] = "biolink:Onset"
     class_name: ClassVar[str] = "onset"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
@@ -6253,7 +6257,7 @@ class ClinicalEntity(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalEntity"
     class_name: ClassVar[str] = "clinical entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
@@ -6279,7 +6283,7 @@ class ClinicalEntity(NamedThing):
 class ClinicalTrial(ClinicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalTrial"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalTrial"
     class_name: ClassVar[str] = "clinical trial"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
@@ -6305,7 +6309,7 @@ class ClinicalTrial(ClinicalEntity):
 class ClinicalIntervention(ClinicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalIntervention"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalIntervention"
     class_name: ClassVar[str] = "clinical intervention"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
@@ -6335,7 +6339,7 @@ class ClinicalFinding(PhenotypicFeature):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalFinding
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalFinding"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalFinding"
     class_name: ClassVar[str] = "clinical finding"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalFinding
@@ -6366,7 +6370,7 @@ class ClinicalFinding(PhenotypicFeature):
 class Hospitalization(ClinicalIntervention):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Hospitalization
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Hospitalization"]
     class_class_curie: ClassVar[str] = "biolink:Hospitalization"
     class_name: ClassVar[str] = "hospitalization"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Hospitalization
@@ -6395,7 +6399,7 @@ class SocioeconomicAttribute(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicAttribute
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SocioeconomicAttribute"]
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicAttribute"
     class_name: ClassVar[str] = "socioeconomic attribute"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicAttribute
@@ -6425,7 +6429,7 @@ class Case(IndividualOrganism):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Case
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Case"]
     class_class_curie: ClassVar[str] = "biolink:Case"
     class_name: ClassVar[str] = "case"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Case
@@ -6455,7 +6459,7 @@ class Cohort(StudyPopulation):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Cohort
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Cohort"]
     class_class_curie: ClassVar[str] = "biolink:Cohort"
     class_name: ClassVar[str] = "cohort"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Cohort
@@ -6485,7 +6489,7 @@ class ExposureEvent(OntologyClass):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ExposureEvent"]
     class_class_curie: ClassVar[str] = "biolink:ExposureEvent"
     class_name: ClassVar[str] = "exposure event"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
@@ -6509,7 +6513,7 @@ class GenomicBackgroundExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenomicBackgroundExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicBackgroundExposure"]
     class_class_curie: ClassVar[str] = "biolink:GenomicBackgroundExposure"
     class_name: ClassVar[str] = "genomic background exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicBackgroundExposure
@@ -6560,7 +6564,7 @@ class PathologicalEntityMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalEntityMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalEntityMixin"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalEntityMixin"
     class_name: ClassVar[str] = "pathological entity mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalEntityMixin
@@ -6574,7 +6578,7 @@ class PathologicalProcess(BiologicalProcess):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalProcess"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcess"
     class_name: ClassVar[str] = "pathological process"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
@@ -6604,7 +6608,7 @@ class PathologicalProcessExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalProcessExposure"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcessExposure"
     class_name: ClassVar[str] = "pathological process exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessExposure
@@ -6639,7 +6643,7 @@ class PathologicalAnatomicalStructure(AnatomicalEntity):
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalStructure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalAnatomicalStructure"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalStructure"
     class_name: ClassVar[str] = "pathological anatomical structure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalStructure
@@ -6669,7 +6673,7 @@ class PathologicalAnatomicalExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalAnatomicalExposure"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalExposure"
     class_name: ClassVar[str] = "pathological anatomical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalExposure
@@ -6705,7 +6709,7 @@ class DiseaseOrPhenotypicFeatureExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureExposure"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureExposure"
     class_name: ClassVar[str] = "disease or phenotypic feature exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureExposure
@@ -6739,7 +6743,7 @@ class ChemicalExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalExposure"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalExposure"
     class_name: ClassVar[str] = "chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
@@ -6778,7 +6782,7 @@ class ComplexChemicalExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ComplexChemicalExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ComplexChemicalExposure"]
     class_class_curie: ClassVar[str] = "biolink:ComplexChemicalExposure"
     class_name: ClassVar[str] = "complex chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ComplexChemicalExposure
@@ -6808,7 +6812,7 @@ class DrugExposure(ChemicalExposure):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DrugExposure"]
     class_class_curie: ClassVar[str] = "biolink:DrugExposure"
     class_name: ClassVar[str] = "drug exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugExposure
@@ -6843,7 +6847,7 @@ class DrugToGeneInteractionExposure(DrugExposure):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneInteractionExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DrugToGeneInteractionExposure"]
     class_class_curie: ClassVar[str] = "biolink:DrugToGeneInteractionExposure"
     class_name: ClassVar[str] = "drug to gene interaction exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneInteractionExposure
@@ -6879,7 +6883,7 @@ class Treatment(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Treatment
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Treatment"]
     class_class_curie: ClassVar[str] = "biolink:Treatment"
     class_name: ClassVar[str] = "treatment"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Treatment
@@ -6927,7 +6931,7 @@ class BioticExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BioticExposure"]
     class_class_curie: ClassVar[str] = "biolink:BioticExposure"
     class_name: ClassVar[str] = "biotic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
@@ -6962,7 +6966,7 @@ class EnvironmentalExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalExposure"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalExposure"
     class_name: ClassVar[str] = "environmental exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalExposure
@@ -6996,7 +7000,7 @@ class GeographicExposure(EnvironmentalExposure):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeographicExposure"]
     class_class_curie: ClassVar[str] = "biolink:GeographicExposure"
     class_name: ClassVar[str] = "geographic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
@@ -7030,7 +7034,7 @@ class BehavioralExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BehavioralExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BehavioralExposure"]
     class_class_curie: ClassVar[str] = "biolink:BehavioralExposure"
     class_name: ClassVar[str] = "behavioral exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralExposure
@@ -7065,7 +7069,7 @@ class SocioeconomicExposure(Attribute):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicExposure
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SocioeconomicExposure"]
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicExposure"
     class_name: ClassVar[str] = "socioeconomic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicExposure
@@ -7106,7 +7110,7 @@ class Outcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Outcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Outcome"]
     class_class_curie: ClassVar[str] = "biolink:Outcome"
     class_name: ClassVar[str] = "outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Outcome
@@ -7118,7 +7122,7 @@ class PathologicalProcessOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalProcessOutcome"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcessOutcome"
     class_name: ClassVar[str] = "pathological process outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessOutcome
@@ -7130,7 +7134,7 @@ class PathologicalAnatomicalOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalAnatomicalOutcome"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalOutcome"
     class_name: ClassVar[str] = "pathological anatomical outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalOutcome
@@ -7143,7 +7147,7 @@ class DiseaseOrPhenotypicFeatureOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureOutcome"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureOutcome"
     class_name: ClassVar[str] = "disease or phenotypic feature outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureOutcome
@@ -7155,7 +7159,7 @@ class BehavioralOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BehavioralOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BehavioralOutcome"]
     class_class_curie: ClassVar[str] = "biolink:BehavioralOutcome"
     class_name: ClassVar[str] = "behavioral outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralOutcome
@@ -7168,7 +7172,7 @@ class HospitalizationOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.HospitalizationOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["HospitalizationOutcome"]
     class_class_curie: ClassVar[str] = "biolink:HospitalizationOutcome"
     class_name: ClassVar[str] = "hospitalization outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.HospitalizationOutcome
@@ -7180,7 +7184,7 @@ class MortalityOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MortalityOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MortalityOutcome"]
     class_class_curie: ClassVar[str] = "biolink:MortalityOutcome"
     class_name: ClassVar[str] = "mortality outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MortalityOutcome
@@ -7192,7 +7196,7 @@ class EpidemiologicalOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EpidemiologicalOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EpidemiologicalOutcome"]
     class_class_curie: ClassVar[str] = "biolink:EpidemiologicalOutcome"
     class_name: ClassVar[str] = "epidemiological outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EpidemiologicalOutcome
@@ -7205,7 +7209,7 @@ class SocioeconomicOutcome(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicOutcome
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SocioeconomicOutcome"]
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicOutcome"
     class_name: ClassVar[str] = "socioeconomic outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicOutcome
@@ -7218,7 +7222,7 @@ class Association(Entity):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Association
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Association"]
     class_class_curie: ClassVar[str] = "biolink:Association"
     class_name: ClassVar[str] = "association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Association
@@ -7228,6 +7232,7 @@ class Association(Entity):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     negated: Optional[Union[bool, Bool]] = None
+    qualifier: Optional[str] = None
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     has_evidence: Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]] = empty_list()
@@ -7275,6 +7280,9 @@ class Association(Entity):
 
         if self.negated is not None and not isinstance(self.negated, Bool):
             self.negated = Bool(self.negated)
+
+        if self.qualifier is not None and not isinstance(self.qualifier, str):
+            self.qualifier = str(self.qualifier)
 
         if not isinstance(self.qualifiers, list):
             self.qualifiers = [self.qualifiers] if self.qualifiers is not None else []
@@ -7393,7 +7401,7 @@ class Association(Entity):
 class ChemicalEntityAssessesNamedThingAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityAssessesNamedThingAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityAssessesNamedThingAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityAssessesNamedThingAssociation"
     class_name: ClassVar[str] = "chemical entity assesses named thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityAssessesNamedThingAssociation
@@ -7437,7 +7445,7 @@ class ContributorAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ContributorAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ContributorAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ContributorAssociation"
     class_name: ClassVar[str] = "contributor association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ContributorAssociation
@@ -7486,7 +7494,7 @@ class GenotypeToGenotypePartAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGenotypePartAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToGenotypePartAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToGenotypePartAssociation"
     class_name: ClassVar[str] = "genotype to genotype part association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGenotypePartAssociation
@@ -7531,7 +7539,7 @@ class GenotypeToGeneAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToGeneAssociation"
     class_name: ClassVar[str] = "genotype to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGeneAssociation
@@ -7575,7 +7583,7 @@ class GenotypeToVariantAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeToVariantAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToVariantAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToVariantAssociation"
     class_name: ClassVar[str] = "genotype to variant association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToVariantAssociation
@@ -7620,7 +7628,7 @@ class GeneToGeneAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneAssociation"
     class_name: ClassVar[str] = "gene to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneAssociation
@@ -7655,7 +7663,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneHomologyAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneHomologyAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneHomologyAssociation"
     class_name: ClassVar[str] = "gene to gene homology association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneHomologyAssociation
@@ -7701,7 +7709,7 @@ class GeneToGeneFamilyAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneFamilyAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneFamilyAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneFamilyAssociation"
     class_name: ClassVar[str] = "gene to gene family association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneFamilyAssociation
@@ -7746,7 +7754,7 @@ class GeneExpressionMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneExpressionMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneExpressionMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneExpressionMixin"
     class_name: ClassVar[str] = "gene expression mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneExpressionMixin
@@ -7779,7 +7787,7 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneCoexpressionAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneCoexpressionAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneCoexpressionAssociation"
     class_name: ClassVar[str] = "gene to gene coexpression association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneCoexpressionAssociation
@@ -7830,7 +7838,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PairwiseGeneToGeneInteraction
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PairwiseGeneToGeneInteraction"]
     class_class_curie: ClassVar[str] = "biolink:PairwiseGeneToGeneInteraction"
     class_name: ClassVar[str] = "pairwise gene to gene interaction"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseGeneToGeneInteraction
@@ -7864,7 +7872,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PairwiseMolecularInteraction
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PairwiseMolecularInteraction"]
     class_class_curie: ClassVar[str] = "biolink:PairwiseMolecularInteraction"
     class_name: ClassVar[str] = "pairwise molecular interaction"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseMolecularInteraction
@@ -7912,7 +7920,7 @@ class CellLineToEntityAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellLineToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:CellLineToEntityAssociationMixin"
     class_name: ClassVar[str] = "cell line to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineToEntityAssociationMixin
@@ -7936,7 +7944,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellLineToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "cell line to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -7970,7 +7978,7 @@ class ChemicalEntityToEntityAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToEntityAssociationMixin"
     class_name: ClassVar[str] = "chemical entity to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToEntityAssociationMixin
@@ -7993,7 +8001,7 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DrugToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:DrugToEntityAssociationMixin"
     class_name: ClassVar[str] = "drug to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugToEntityAssociationMixin
@@ -8016,7 +8024,7 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToEntityAssociationMixin"
     class_name: ClassVar[str] = "chemical to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToEntityAssociationMixin
@@ -8039,7 +8047,7 @@ class CaseToEntityAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CaseToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CaseToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:CaseToEntityAssociationMixin"
     class_name: ClassVar[str] = "case to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CaseToEntityAssociationMixin
@@ -8063,7 +8071,7 @@ class ChemicalToChemicalAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToChemicalAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToChemicalAssociation"
     class_name: ClassVar[str] = "chemical to chemical association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalAssociation
@@ -8094,7 +8102,7 @@ class ChemicalToChemicalAssociation(Association):
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ReactionToParticipantAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToParticipantAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ReactionToParticipantAssociation"
     class_name: ClassVar[str] = "reaction to participant association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ReactionToParticipantAssociation
@@ -8137,7 +8145,7 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ReactionToCatalystAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToCatalystAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ReactionToCatalystAssociation"
     class_name: ClassVar[str] = "reaction to catalyst association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ReactionToCatalystAssociation
@@ -8168,12 +8176,12 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
-    object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R
+    object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R
     has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalDerivationAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToChemicalDerivationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToChemicalDerivationAssociation"
     class_name: ClassVar[str] = "chemical to chemical derivation association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalDerivationAssociation
@@ -8223,7 +8231,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "chemical to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToDiseaseOrPhenotypicFeatureAssociation
@@ -8258,7 +8266,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "chemical or drug or treatment to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
@@ -8297,7 +8305,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "chemical or drug or treatment side effect disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
@@ -8331,7 +8339,7 @@ class GeneToPathwayAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToPathwayAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPathwayAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToPathwayAssociation"
     class_name: ClassVar[str] = "gene to pathway association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPathwayAssociation
@@ -8370,7 +8378,7 @@ class MolecularActivityToPathwayAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToPathwayAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivityToPathwayAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivityToPathwayAssociation"
     class_name: ClassVar[str] = "molecular activity to pathway association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToPathwayAssociation
@@ -8414,7 +8422,7 @@ class ChemicalToPathwayAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalToPathwayAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToPathwayAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToPathwayAssociation"
     class_name: ClassVar[str] = "chemical to pathway association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToPathwayAssociation
@@ -8450,7 +8458,7 @@ class ChemicalToPathwayAssociation(Association):
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"]
     class_class_curie: ClassVar[str] = "biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
     class_name: ClassVar[str] = "named thing associated with likelihood of named thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
@@ -8502,7 +8510,7 @@ class ChemicalGeneInteractionAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalGeneInteractionAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalGeneInteractionAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalGeneInteractionAssociation"
     class_name: ClassVar[str] = "chemical gene interaction association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalGeneInteractionAssociation
@@ -8579,7 +8587,7 @@ class ChemicalAffectsGeneAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalAffectsGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalAffectsGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalAffectsGeneAssociation"
     class_name: ClassVar[str] = "chemical affects gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalAffectsGeneAssociation
@@ -8680,11 +8688,11 @@ class ChemicalAffectsGeneAssociation(Association):
 class GeneAffectsChemicalAssociation(Association):
     """
     Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance,
-    activity,localization, processing, expression, etc.)
+    activity, localization, processing, transport, etc.)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneAffectsChemicalAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneAffectsChemicalAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneAffectsChemicalAssociation"
     class_name: ClassVar[str] = "gene affects chemical association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneAffectsChemicalAssociation
@@ -8792,7 +8800,7 @@ class DrugToGeneAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DrugToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DrugToGeneAssociation"
     class_name: ClassVar[str] = "drug to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneAssociation
@@ -8826,7 +8834,7 @@ class MaterialSampleToEntityAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSampleToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSampleToEntityAssociationMixin"
     class_name: ClassVar[str] = "material sample to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToEntityAssociationMixin
@@ -8849,7 +8857,7 @@ class MaterialSampleDerivationAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleDerivationAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSampleDerivationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSampleDerivationAssociation"
     class_name: ClassVar[str] = "material sample derivation association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleDerivationAssociation
@@ -8893,7 +8901,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "material sample to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
@@ -8919,7 +8927,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 class DiseaseToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseToEntityAssociationMixin"
     class_name: ClassVar[str] = "disease to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToEntityAssociationMixin
@@ -8942,7 +8950,7 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToExposureEventAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToExposureEventAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToExposureEventAssociationMixin"
     class_name: ClassVar[str] = "entity to exposure event association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToExposureEventAssociationMixin
@@ -8965,7 +8973,7 @@ class DiseaseToExposureEventAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseToExposureEventAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToExposureEventAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseToExposureEventAssociation"
     class_name: ClassVar[str] = "disease to exposure event association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToExposureEventAssociation
@@ -8994,7 +9002,7 @@ class EntityToOutcomeAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToOutcomeAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToOutcomeAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToOutcomeAssociationMixin"
     class_name: ClassVar[str] = "entity to outcome association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToOutcomeAssociationMixin
@@ -9017,7 +9025,7 @@ class ExposureEventToOutcomeAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToOutcomeAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ExposureEventToOutcomeAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ExposureEventToOutcomeAssociation"
     class_name: ClassVar[str] = "exposure event to outcome association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToOutcomeAssociation
@@ -9054,7 +9062,7 @@ class FrequencyQualifierMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.FrequencyQualifierMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["FrequencyQualifierMixin"]
     class_class_curie: ClassVar[str] = "biolink:FrequencyQualifierMixin"
     class_name: ClassVar[str] = "frequency qualifier mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FrequencyQualifierMixin
@@ -9075,7 +9083,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrDiseaseQualifiersMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToFeatureOrDiseaseQualifiersMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToFeatureOrDiseaseQualifiersMixin"
     class_name: ClassVar[str] = "entity to feature or disease qualifiers mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrDiseaseQualifiersMixin
@@ -9097,7 +9105,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToPhenotypicFeatureAssociationMixin"
     class_name: ClassVar[str] = "entity to phenotypic feature association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociationMixin
@@ -9145,7 +9153,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntityToNamedThingAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["InformationContentEntityToNamedThingAssociation"]
     class_class_curie: ClassVar[str] = "biolink:InformationContentEntityToNamedThingAssociation"
     class_name: ClassVar[str] = "information content entity to named thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntityToNamedThingAssociation
@@ -9189,7 +9197,7 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociationMixin"
     class_name: ClassVar[str] = "entity to disease association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociationMixin
@@ -9209,7 +9217,7 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
 class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
     class_name: ClassVar[str] = "disease or phenotypic feature to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToEntityAssociationMixin
@@ -9233,7 +9241,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToLocationAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToLocationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToLocationAssociation"
     class_name: ClassVar[str] = "disease or phenotypic feature to location association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToLocationAssociation
@@ -9267,7 +9275,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
     class_name: ClassVar[str] = "disease or phenotypic feature to genetic inheritance association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
@@ -9303,7 +9311,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseOrPhenotypicFeatureAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
     class_name: ClassVar[str] = "entity to disease or phenotypic feature association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseOrPhenotypicFeatureAssociationMixin
@@ -9323,7 +9331,7 @@ class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
 class GenotypeToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToEntityAssociationMixin"
     class_name: ClassVar[str] = "genotype to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToEntityAssociationMixin
@@ -9347,7 +9355,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "genotype to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToPhenotypicFeatureAssociation
@@ -9391,7 +9399,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ExposureEventToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ExposureEventToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "exposure event to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToPhenotypicFeatureAssociation
@@ -9430,7 +9438,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "disease to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToPhenotypicFeatureAssociation
@@ -9474,7 +9482,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CaseToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CaseToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CaseToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "case to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CaseToPhenotypicFeatureAssociation
@@ -9508,7 +9516,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BehaviorToBehavioralFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BehaviorToBehavioralFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:BehaviorToBehavioralFeatureAssociation"
     class_name: ClassVar[str] = "behavior to behavioral feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehaviorToBehavioralFeatureAssociation
@@ -9548,7 +9556,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
 class GeneToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneToEntityAssociationMixin"
     class_name: ClassVar[str] = "gene to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToEntityAssociationMixin
@@ -9568,7 +9576,7 @@ class GeneToEntityAssociationMixin(YAMLRoot):
 class VariantToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:VariantToEntityAssociationMixin"
     class_name: ClassVar[str] = "variant to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToEntityAssociationMixin
@@ -9588,7 +9596,7 @@ class VariantToEntityAssociationMixin(YAMLRoot):
 class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseOrPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "gene to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseOrPhenotypicFeatureAssociation
@@ -9641,7 +9649,7 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
 class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "gene to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
@@ -9681,7 +9689,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseAssociation"
     class_name: ClassVar[str] = "gene to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
@@ -9717,7 +9725,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CausalGeneToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CausalGeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CausalGeneToDiseaseAssociation"
     class_name: ClassVar[str] = "causal gene to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CausalGeneToDiseaseAssociation
@@ -9753,7 +9761,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CorrelatedGeneToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CorrelatedGeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CorrelatedGeneToDiseaseAssociation"
     class_name: ClassVar[str] = "correlated gene to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CorrelatedGeneToDiseaseAssociation
@@ -9789,7 +9797,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DruggableGeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DruggableGeneToDiseaseAssociation"
     class_name: ClassVar[str] = "druggable gene to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
@@ -9834,7 +9842,7 @@ class VariantToGeneAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToGeneAssociation"
     class_name: ClassVar[str] = "variant to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneAssociation
@@ -9873,7 +9881,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneExpressionAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToGeneExpressionAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToGeneExpressionAssociation"
     class_name: ClassVar[str] = "variant to gene expression association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneExpressionAssociation
@@ -9923,7 +9931,7 @@ class VariantToPopulationAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToPopulationAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToPopulationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToPopulationAssociation"
     class_name: ClassVar[str] = "variant to population association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToPopulationAssociation
@@ -9982,7 +9990,7 @@ class PopulationToPopulationAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PopulationToPopulationAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PopulationToPopulationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:PopulationToPopulationAssociation"
     class_name: ClassVar[str] = "population to population association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationToPopulationAssociation
@@ -10023,7 +10031,7 @@ class PopulationToPopulationAssociation(Association):
 class VariantToPhenotypicFeatureAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "variant to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToPhenotypicFeatureAssociation
@@ -10058,7 +10066,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
 class VariantToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToDiseaseAssociation"
     class_name: ClassVar[str] = "variant to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToDiseaseAssociation
@@ -10099,7 +10107,7 @@ class VariantToDiseaseAssociation(Association):
 class GenotypeToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToDiseaseAssociation"
     class_name: ClassVar[str] = "genotype to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToDiseaseAssociation
@@ -10145,7 +10153,7 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ModelToDiseaseAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ModelToDiseaseAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:ModelToDiseaseAssociationMixin"
     class_name: ClassVar[str] = "model to disease association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ModelToDiseaseAssociationMixin
@@ -10171,7 +10179,7 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneAsAModelOfDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneAsAModelOfDiseaseAssociation"
     class_name: ClassVar[str] = "gene as a model of disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneAsAModelOfDiseaseAssociation
@@ -10202,7 +10210,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
 class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantAsAModelOfDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantAsAModelOfDiseaseAssociation"
     class_name: ClassVar[str] = "variant as a model of disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantAsAModelOfDiseaseAssociation
@@ -10233,7 +10241,7 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
 class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypeAsAModelOfDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeAsAModelOfDiseaseAssociation"
     class_name: ClassVar[str] = "genotype as a model of disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeAsAModelOfDiseaseAssociation
@@ -10264,7 +10272,7 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
 class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellLineAsAModelOfDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CellLineAsAModelOfDiseaseAssociation"
     class_name: ClassVar[str] = "cell line as a model of disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineAsAModelOfDiseaseAssociation
@@ -10295,7 +10303,7 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
 class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntityAsAModelOfDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismalEntityAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismalEntityAsAModelOfDiseaseAssociation"
     class_name: ClassVar[str] = "organismal entity as a model of disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntityAsAModelOfDiseaseAssociation
@@ -10326,7 +10334,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
 class OrganismToOrganismAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismToOrganismAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismToOrganismAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismToOrganismAssociation"
     class_name: ClassVar[str] = "organism to organism association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismToOrganismAssociation
@@ -10362,7 +10370,7 @@ class OrganismToOrganismAssociation(Association):
 class TaxonToTaxonAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.TaxonToTaxonAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TaxonToTaxonAssociation"]
     class_class_curie: ClassVar[str] = "biolink:TaxonToTaxonAssociation"
     class_name: ClassVar[str] = "taxon to taxon association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.TaxonToTaxonAssociation
@@ -10398,7 +10406,7 @@ class TaxonToTaxonAssociation(Association):
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneHasVariantThatContributesToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneHasVariantThatContributesToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneHasVariantThatContributesToDiseaseAssociation"
     class_name: ClassVar[str] = "gene has variant that contributes to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneHasVariantThatContributesToDiseaseAssociation
@@ -10446,7 +10454,7 @@ class GeneToExpressionSiteAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToExpressionSiteAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToExpressionSiteAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToExpressionSiteAssociation"
     class_name: ClassVar[str] = "gene to expression site association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToExpressionSiteAssociation
@@ -10499,7 +10507,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SequenceVariantModulatesTreatmentAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceVariantModulatesTreatmentAssociation"]
     class_class_curie: ClassVar[str] = "biolink:SequenceVariantModulatesTreatmentAssociation"
     class_name: ClassVar[str] = "sequence variant modulates treatment association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceVariantModulatesTreatmentAssociation
@@ -10534,7 +10542,7 @@ class FunctionalAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.FunctionalAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["FunctionalAssociation"]
     class_class_curie: ClassVar[str] = "biolink:FunctionalAssociation"
     class_name: ClassVar[str] = "functional association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FunctionalAssociation
@@ -10573,7 +10581,7 @@ class MacromolecularMachineToEntityAssociationMixin(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToEntityAssociationMixin"
     class_name: ClassVar[str] = "macromolecular machine to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToEntityAssociationMixin
@@ -10598,7 +10606,7 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToMolecularActivityAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToMolecularActivityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToMolecularActivityAssociation"
     class_name: ClassVar[str] = "macromolecular machine to molecular activity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToMolecularActivityAssociation
@@ -10634,7 +10642,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToBiologicalProcessAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToBiologicalProcessAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToBiologicalProcessAssociation"
     class_name: ClassVar[str] = "macromolecular machine to biological process association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToBiologicalProcessAssociation
@@ -10670,7 +10678,7 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToCellularComponentAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToCellularComponentAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToCellularComponentAssociation"
     class_name: ClassVar[str] = "macromolecular machine to cellular component association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToCellularComponentAssociation
@@ -10705,7 +10713,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToChemicalEntityAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivityToChemicalEntityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivityToChemicalEntityAssociation"
     class_name: ClassVar[str] = "molecular activity to chemical entity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToChemicalEntityAssociation
@@ -10745,7 +10753,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToMolecularActivityAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivityToMolecularActivityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivityToMolecularActivityAssociation"
     class_name: ClassVar[str] = "molecular activity to molecular activity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToMolecularActivityAssociation
@@ -10781,7 +10789,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
 class GeneToGoTermAssociation(FunctionalAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGoTermAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGoTermAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGoTermAssociation"
     class_name: ClassVar[str] = "gene to go term association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGoTermAssociation
@@ -10817,7 +10825,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 class EntityToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociation"
     class_name: ClassVar[str] = "entity to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociation
@@ -10826,8 +10834,7 @@ class EntityToDiseaseAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
-    max_research_phase: Optional[Union[str, "MaxResearchPhaseEnum"]] = None
+    FDA_approval_status: Optional[Union[str, "FDAApprovalStatusEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10835,11 +10842,8 @@ class EntityToDiseaseAssociation(Association):
         if not isinstance(self.id, EntityToDiseaseAssociationId):
             self.id = EntityToDiseaseAssociationId(self.id)
 
-        if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
-            self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
-
-        if self.max_research_phase is not None and not isinstance(self.max_research_phase, MaxResearchPhaseEnum):
-            self.max_research_phase = MaxResearchPhaseEnum(self.max_research_phase)
+        if self.FDA_approval_status is not None and not isinstance(self.FDA_approval_status, FDAApprovalStatusEnum):
+            self.FDA_approval_status = FDAApprovalStatusEnum(self.FDA_approval_status)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10851,7 +10855,7 @@ class EntityToDiseaseAssociation(Association):
 class EntityToPhenotypicFeatureAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:EntityToPhenotypicFeatureAssociation"
     class_name: ClassVar[str] = "entity to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
@@ -10860,8 +10864,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
-    max_research_phase: Optional[Union[str, "MaxResearchPhaseEnum"]] = None
+    FDA_approval_status: Optional[Union[str, "FDAApprovalStatusEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10869,11 +10872,8 @@ class EntityToPhenotypicFeatureAssociation(Association):
         if not isinstance(self.id, EntityToPhenotypicFeatureAssociationId):
             self.id = EntityToPhenotypicFeatureAssociationId(self.id)
 
-        if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
-            self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
-
-        if self.max_research_phase is not None and not isinstance(self.max_research_phase, MaxResearchPhaseEnum):
-            self.max_research_phase = MaxResearchPhaseEnum(self.max_research_phase)
+        if self.FDA_approval_status is not None and not isinstance(self.FDA_approval_status, FDAApprovalStatusEnum):
+            self.FDA_approval_status = FDAApprovalStatusEnum(self.FDA_approval_status)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10888,7 +10888,7 @@ class SequenceAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SequenceAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceAssociation"]
     class_class_curie: ClassVar[str] = "biolink:SequenceAssociation"
     class_name: ClassVar[str] = "sequence association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceAssociation
@@ -10918,7 +10918,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenomicSequenceLocalization
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicSequenceLocalization"]
     class_class_curie: ClassVar[str] = "biolink:GenomicSequenceLocalization"
     class_name: ClassVar[str] = "genomic sequence localization"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicSequenceLocalization
@@ -10982,7 +10982,7 @@ class SequenceFeatureRelationship(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SequenceFeatureRelationship
+    class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceFeatureRelationship"]
     class_class_curie: ClassVar[str] = "biolink:SequenceFeatureRelationship"
     class_name: ClassVar[str] = "sequence feature relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceFeatureRelationship
@@ -11021,7 +11021,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.TranscriptToGeneRelationship
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TranscriptToGeneRelationship"]
     class_class_curie: ClassVar[str] = "biolink:TranscriptToGeneRelationship"
     class_name: ClassVar[str] = "transcript to gene relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.TranscriptToGeneRelationship
@@ -11060,7 +11060,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneProductRelationship
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneProductRelationship"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneProductRelationship"
     class_name: ClassVar[str] = "gene to gene product relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneProductRelationship
@@ -11104,7 +11104,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ExonToTranscriptRelationship
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ExonToTranscriptRelationship"]
     class_class_curie: ClassVar[str] = "biolink:ExonToTranscriptRelationship"
     class_name: ClassVar[str] = "exon to transcript relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExonToTranscriptRelationship
@@ -11143,7 +11143,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
     class_name: ClassVar[str] = "chemical entity or gene or gene product regulates gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
@@ -11188,7 +11188,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityAssociation"
     class_name: ClassVar[str] = "anatomical entity to anatomical entity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityAssociation
@@ -11224,7 +11224,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityPartOfAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityPartOfAssociation"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation"
     class_name: ClassVar[str] = "anatomical entity to anatomical entity part of association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityPartOfAssociation
@@ -11270,7 +11270,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityOntogenicAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityOntogenicAssociation"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation"
     class_name: ClassVar[str] = "anatomical entity to anatomical entity ontogenic association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityOntogenicAssociation
@@ -11314,7 +11314,7 @@ class OrganismTaxonToEntityAssociation(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEntityAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToEntityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToEntityAssociation"
     class_name: ClassVar[str] = "organism taxon to entity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEntityAssociation
@@ -11337,7 +11337,7 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToOrganismTaxonAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToOrganismTaxonAssociation"
     class_name: ClassVar[str] = "organism taxon to organism taxon association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonAssociation
@@ -11371,7 +11371,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonSpecialization
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToOrganismTaxonSpecialization"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToOrganismTaxonSpecialization"
     class_name: ClassVar[str] = "organism taxon to organism taxon specialization"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonSpecialization
@@ -11417,7 +11417,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonInteraction
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToOrganismTaxonInteraction"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToOrganismTaxonInteraction"
     class_name: ClassVar[str] = "organism taxon to organism taxon interaction"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonInteraction
@@ -11462,7 +11462,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 class OrganismTaxonToEnvironmentAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEnvironmentAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToEnvironmentAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToEnvironmentAssociation"
     class_name: ClassVar[str] = "organism taxon to environment association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEnvironmentAssociation
@@ -11495,44 +11495,6 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
-class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
-
-    approved_for_condition = PermissibleValue(text="approved_for_condition")
-    fda_approved_for_condition = PermissibleValue(text="fda_approved_for_condition")
-    not_approved_for_condition = PermissibleValue(text="not_approved_for_condition")
-    post_approval_withdrawal = PermissibleValue(text="post_approval_withdrawal")
-    not_provided = PermissibleValue(text="not_provided")
-
-    _defn = EnumDefinition(
-        name="ClinicalApprovalStatusEnum",
-    )
-
-class MaxResearchPhaseEnum(EnumDefinitionImpl):
-
-    preclinical_research_phase = PermissibleValue(
-        text="preclinical_research_phase",
-        description="""Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.""")
-    clinical_trial_phase = PermissibleValue(
-        text="clinical_trial_phase",
-        description="""Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.""")
-    clinical_trial_phase_1 = PermissibleValue(
-        text="clinical_trial_phase_1",
-        description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.""")
-    clinical_trial_phase_2 = PermissibleValue(
-        text="clinical_trial_phase_2",
-        description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.""")
-    clinical_trial_phase_3 = PermissibleValue(
-        text="clinical_trial_phase_3",
-        description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.""")
-    clinical_trial_phase_4 = PermissibleValue(
-        text="clinical_trial_phase_4",
-        description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.""")
-    not_provided = PermissibleValue(text="not_provided")
-
-    _defn = EnumDefinition(
-        name="MaxResearchPhaseEnum",
-    )
-
 class DirectionQualifierEnum(EnumDefinitionImpl):
 
     increased = PermissibleValue(text="increased")
@@ -11708,11 +11670,11 @@ class LogicalInterpretationEnum(EnumDefinitionImpl):
     some_some = PermissibleValue(
         text="some_some",
         description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
-        meaning=OS.SomeSomeInterpretation)
+        meaning=OS["SomeSomeInterpretation"])
     all_some = PermissibleValue(
         text="all_some",
         description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
-        meaning=OS.AllSomeInterpretation)
+        meaning=OS["AllSomeInterpretation"])
     inverse_all_some = PermissibleValue(text="inverse_all_some")
 
     _defn = EnumDefinition(
@@ -11857,6 +11819,56 @@ class ResourceRoleEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="ResourceRoleEnum",
         description="""The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.""",
+    )
+
+class FDAApprovalStatusEnum(EnumDefinitionImpl):
+
+    discovery_and_development_phase = PermissibleValue(
+        text="discovery_and_development_phase",
+        description="""Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.""")
+    preclinical_research_phase = PermissibleValue(
+        text="preclinical_research_phase",
+        description="""Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.""")
+    fda_clinical_research_phase = PermissibleValue(
+        text="fda_clinical_research_phase",
+        description="""Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.""")
+    fda_review_phase_4 = PermissibleValue(
+        text="fda_review_phase_4",
+        description="FDA Review")
+    fda_post_market_safety_review = PermissibleValue(
+        text="fda_post_market_safety_review",
+        description="""FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.""")
+    fda_clinical_research_phase_1 = PermissibleValue(
+        text="fda_clinical_research_phase_1",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.""")
+    fda_clinical_research_phase_2 = PermissibleValue(
+        text="fda_clinical_research_phase_2",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.""")
+    fda_clinical_research_phase_3 = PermissibleValue(
+        text="fda_clinical_research_phase_3",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.""")
+    fda_clinical_research_phase_4 = PermissibleValue(
+        text="fda_clinical_research_phase_4",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.""")
+    fda_fast_track = PermissibleValue(
+        text="fda_fast_track",
+        description="""Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track""")
+    fda_breakthrough_therapy = PermissibleValue(
+        text="fda_breakthrough_therapy",
+        description="""Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy""")
+    fda_accelerated_approval = PermissibleValue(
+        text="fda_accelerated_approval",
+        description="""When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval""")
+    fda_priority_review = PermissibleValue(
+        text="fda_priority_review",
+        description="""Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review""")
+    regular_fda_approval = PermissibleValue(
+        text="regular_fda_approval",
+        description="""Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.""")
+    post_approval_withdrawal = PermissibleValue(text="post_approval_withdrawal")
+
+    _defn = EnumDefinition(
+        name="FDAApprovalStatusEnum",
     )
 
 class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
@@ -12031,7 +12043,7 @@ slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", c
                    model_uri=BIOLINK.has_percentage, domain=NamedThing, range=Optional[float])
 
 slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
-                   model_uri=BIOLINK.has_taxonomic_rank, domain=NamedThing, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
+                   model_uri=BIOLINK.has_taxonomic_rank, domain=NamedThing, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA["P105"]])
 
 slots.has_dataset = Slot(uri=BIOLINK.has_dataset, name="has dataset", curie=BIOLINK.curie('has_dataset'),
                    model_uri=BIOLINK.has_dataset, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
@@ -12345,12 +12357,6 @@ slots.has_member = Slot(uri=BIOLINK.has_member, name="has member", curie=BIOLINK
 slots.opposite_of = Slot(uri=BIOLINK.opposite_of, name="opposite of", curie=BIOLINK.curie('opposite_of'),
                    model_uri=BIOLINK.opposite_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.affects_likelihood_of = Slot(uri=BIOLINK.affects_likelihood_of, name="affects likelihood of", curie=BIOLINK.curie('affects_likelihood_of'),
-                   model_uri=BIOLINK.affects_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.likelihood_affected_by = Slot(uri=BIOLINK.likelihood_affected_by, name="likelihood affected by", curie=BIOLINK.curie('likelihood_affected_by'),
-                   model_uri=BIOLINK.likelihood_affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
 slots.associated_with_likelihood_of = Slot(uri=BIOLINK.associated_with_likelihood_of, name="associated with likelihood of", curie=BIOLINK.curie('associated_with_likelihood_of'),
                    model_uri=BIOLINK.associated_with_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -12612,6 +12618,18 @@ slots.gene_associated_with_condition = Slot(uri=BIOLINK.gene_associated_with_con
 slots.condition_associated_with_gene = Slot(uri=BIOLINK.condition_associated_with_gene, name="condition associated with gene", curie=BIOLINK.curie('condition_associated_with_gene'),
                    model_uri=BIOLINK.condition_associated_with_gene, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
 
+slots.affects_risk_for = Slot(uri=BIOLINK.affects_risk_for, name="affects risk for", curie=BIOLINK.curie('affects_risk_for'),
+                   model_uri=BIOLINK.affects_risk_for, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.risk_affected_by = Slot(uri=BIOLINK.risk_affected_by, name="risk affected by", curie=BIOLINK.curie('risk_affected_by'),
+                   model_uri=BIOLINK.risk_affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.predisposes = Slot(uri=BIOLINK.predisposes, name="predisposes", curie=BIOLINK.curie('predisposes'),
+                   model_uri=BIOLINK.predisposes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.has_predisposing_factor = Slot(uri=BIOLINK.has_predisposing_factor, name="has predisposing factor", curie=BIOLINK.curie('has_predisposing_factor'),
+                   model_uri=BIOLINK.has_predisposing_factor, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.contributes_to = Slot(uri=BIOLINK.contributes_to, name="contributes to", curie=BIOLINK.curie('contributes_to'),
                    model_uri=BIOLINK.contributes_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -12624,59 +12642,29 @@ slots.causes = Slot(uri=BIOLINK.causes, name="causes", curie=BIOLINK.curie('caus
 slots.caused_by = Slot(uri=BIOLINK.caused_by, name="caused by", curie=BIOLINK.curie('caused_by'),
                    model_uri=BIOLINK.caused_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.ameliorates_condition = Slot(uri=BIOLINK.ameliorates_condition, name="ameliorates condition", curie=BIOLINK.curie('ameliorates_condition'),
-                   model_uri=BIOLINK.ameliorates_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+slots.ameliorates = Slot(uri=BIOLINK.ameliorates, name="ameliorates", curie=BIOLINK.curie('ameliorates'),
+                   model_uri=BIOLINK.ameliorates, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.condition_ameliorated_by = Slot(uri=BIOLINK.condition_ameliorated_by, name="condition ameliorated by", curie=BIOLINK.curie('condition_ameliorated_by'),
-                   model_uri=BIOLINK.condition_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+slots.is_ameliorated_by = Slot(uri=BIOLINK.is_ameliorated_by, name="is ameliorated by", curie=BIOLINK.curie('is_ameliorated_by'),
+                   model_uri=BIOLINK.is_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.preventative_for_condition = Slot(uri=BIOLINK.preventative_for_condition, name="preventative for condition", curie=BIOLINK.curie('preventative_for_condition'),
-                   model_uri=BIOLINK.preventative_for_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+slots.exacerbates = Slot(uri=BIOLINK.exacerbates, name="exacerbates", curie=BIOLINK.curie('exacerbates'),
+                   model_uri=BIOLINK.exacerbates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.condition_prevented_by = Slot(uri=BIOLINK.condition_prevented_by, name="condition prevented by", curie=BIOLINK.curie('condition_prevented_by'),
-                   model_uri=BIOLINK.condition_prevented_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
-
-slots.promotes_condition = Slot(uri=BIOLINK.promotes_condition, name="promotes condition", curie=BIOLINK.curie('promotes_condition'),
-                   model_uri=BIOLINK.promotes_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.predisposes_to_condition = Slot(uri=BIOLINK.predisposes_to_condition, name="predisposes to condition", curie=BIOLINK.curie('predisposes_to_condition'),
-                   model_uri=BIOLINK.predisposes_to_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.condition_predisposed_by = Slot(uri=BIOLINK.condition_predisposed_by, name="condition predisposed by", curie=BIOLINK.curie('condition_predisposed_by'),
-                   model_uri=BIOLINK.condition_predisposed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
-
-slots.exacerbates_condition = Slot(uri=BIOLINK.exacerbates_condition, name="exacerbates condition", curie=BIOLINK.curie('exacerbates_condition'),
-                   model_uri=BIOLINK.exacerbates_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.condition_exacerbated_by = Slot(uri=BIOLINK.condition_exacerbated_by, name="condition exacerbated by", curie=BIOLINK.curie('condition_exacerbated_by'),
-                   model_uri=BIOLINK.condition_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+slots.is_exacerbated_by = Slot(uri=BIOLINK.is_exacerbated_by, name="is exacerbated by", curie=BIOLINK.curie('is_exacerbated_by'),
+                   model_uri=BIOLINK.is_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
-                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
+                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
-                   model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[dict, ChemicalOrDrugOrTreatment]])
+                   model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
-slots.studied_to_treat = Slot(uri=BIOLINK.studied_to_treat, name="studied to treat", curie=BIOLINK.curie('studied_to_treat'),
-                   model_uri=BIOLINK.studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+slots.prevents = Slot(uri=BIOLINK.prevents, name="prevents", curie=BIOLINK.curie('prevents'),
+                   model_uri=BIOLINK.prevents, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.studied_for_treatment_with = Slot(uri=BIOLINK.studied_for_treatment_with, name="studied for treatment with", curie=BIOLINK.curie('studied_for_treatment_with'),
-                   model_uri=BIOLINK.studied_for_treatment_with, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
-
-slots.in_clinical_trials_for = Slot(uri=BIOLINK.in_clinical_trials_for, name="in clinical trials for", curie=BIOLINK.curie('in_clinical_trials_for'),
-                   model_uri=BIOLINK.in_clinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.in_preclinical_trials_for = Slot(uri=BIOLINK.in_preclinical_trials_for, name="in preclinical trials for", curie=BIOLINK.curie('in_preclinical_trials_for'),
-                   model_uri=BIOLINK.in_preclinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.beneficial_in_models_for = Slot(uri=BIOLINK.beneficial_in_models_for, name="beneficial in models for", curie=BIOLINK.curie('beneficial_in_models_for'),
-                   model_uri=BIOLINK.beneficial_in_models_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.was_applied_to_treat = Slot(uri=BIOLINK.was_applied_to_treat, name="was applied to treat", curie=BIOLINK.curie('was_applied_to_treat'),
-                   model_uri=BIOLINK.was_applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.treats_or_taken_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_taken_or_studied_to_treat, name="treats or taken or studied to treat", curie=BIOLINK.curie('treats_or_taken_or_studied_to_treat'),
-                   model_uri=BIOLINK.treats_or_taken_or_studied_to_treat, domain=None, range=Optional[str])
+slots.prevented_by = Slot(uri=BIOLINK.prevented_by, name="prevented by", curie=BIOLINK.curie('prevented_by'),
+                   model_uri=BIOLINK.prevented_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -12847,10 +12835,10 @@ slots.has_active_ingredient = Slot(uri=BIOLINK.has_active_ingredient, name="has 
                    model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [RO["0002248"]])
 
 slots.is_excipient_of = Slot(uri=BIOLINK.is_excipient_of, name="is excipient of", curie=BIOLINK.curie('is_excipient_of'),
-                   model_uri=BIOLINK.is_excipient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [WIKIDATA.Q902638])
+                   model_uri=BIOLINK.is_excipient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [WIKIDATA["Q902638"]])
 
 slots.has_excipient = Slot(uri=BIOLINK.has_excipient, name="has excipient", curie=BIOLINK.curie('has_excipient'),
-                   model_uri=BIOLINK.has_excipient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [WIKIDATA.Q902638])
+                   model_uri=BIOLINK.has_excipient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [WIKIDATA["Q902638"]])
 
 slots.manifestation_of = Slot(uri=BIOLINK.manifestation_of, name="manifestation of", curie=BIOLINK.curie('manifestation_of'),
                    model_uri=BIOLINK.manifestation_of, domain=NamedThing, range=Optional[Union[Union[str, DiseaseId], List[Union[str, DiseaseId]]]])
@@ -12960,11 +12948,8 @@ slots.has_side_effect = Slot(uri=BIOLINK.has_side_effect, name="has side effect"
 slots.is_side_effect_of = Slot(uri=BIOLINK.is_side_effect_of, name="is side effect of", curie=BIOLINK.curie('is_side_effect_of'),
                    model_uri=BIOLINK.is_side_effect_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
-slots.contraindicated_in = Slot(uri=BIOLINK.contraindicated_in, name="contraindicated in", curie=BIOLINK.curie('contraindicated_in'),
-                   model_uri=BIOLINK.contraindicated_in, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.chemical_entity_or_drug_or_treatment = Slot(uri=BIOLINK.chemical_entity_or_drug_or_treatment, name="chemical entity or drug or treatment", curie=BIOLINK.curie('chemical_entity_or_drug_or_treatment'),
-                   model_uri=BIOLINK.chemical_entity_or_drug_or_treatment, domain=None, range=Optional[str])
+slots.contraindicated_for = Slot(uri=BIOLINK.contraindicated_for, name="contraindicated for", curie=BIOLINK.curie('contraindicated_for'),
+                   model_uri=BIOLINK.contraindicated_for, domain=Drug, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.has_contraindication = Slot(uri=BIOLINK.has_contraindication, name="has contraindication", curie=BIOLINK.curie('has_contraindication'),
                    model_uri=BIOLINK.has_contraindication, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]])
@@ -13239,11 +13224,8 @@ slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('stra
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
                    model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[Union[str, "PhaseEnum"]])
 
-slots.clinical_approval_status = Slot(uri=BIOLINK.clinical_approval_status, name="clinical approval status", curie=BIOLINK.curie('clinical_approval_status'),
-                   model_uri=BIOLINK.clinical_approval_status, domain=Association, range=Optional[Union[str, "ClinicalApprovalStatusEnum"]])
-
-slots.max_research_phase = Slot(uri=BIOLINK.max_research_phase, name="max research phase", curie=BIOLINK.curie('max_research_phase'),
-                   model_uri=BIOLINK.max_research_phase, domain=Association, range=Optional[Union[str, "MaxResearchPhaseEnum"]])
+slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
+                   model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
 
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
@@ -13274,7 +13256,7 @@ slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_catego
                    pattern=re.compile(r'^biolink:[A-Z][A-Za-z]+$'))
 
 slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
-                   model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
+                   model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA["P105"]])
 
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])

@@ -153,11 +153,11 @@
       "prefix_reference": "http://xmlns.com/foaf/0.1/"
     },
     {
-      "prefix_prefix": "foodb.food",
+      "prefix_prefix": "foodb.compound",
       "prefix_reference": "http://foodb.ca/compounds/"
     },
     {
-      "prefix_prefix": "foodb.compound",
+      "prefix_prefix": "foodb.food",
       "prefix_reference": "http://foodb.ca/foods/"
     },
     {
@@ -1022,71 +1022,6 @@
   ],
   "enums": [
     {
-      "name": "ClinicalApprovalStatusEnum",
-      "definition_uri": "https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "permissible_values": [
-        {
-          "text": "approved_for_condition"
-        },
-        {
-          "text": "fda_approved_for_condition",
-          "is_a": "approved_for_condition"
-        },
-        {
-          "text": "not_approved_for_condition"
-        },
-        {
-          "text": "post_approval_withdrawal",
-          "is_a": "not_approved_for_condition"
-        },
-        {
-          "text": "not_provided"
-        }
-      ]
-    },
-    {
-      "name": "MaxResearchPhaseEnum",
-      "definition_uri": "https://w3id.org/biolink/vocab/MaxResearchPhaseEnum",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "permissible_values": [
-        {
-          "text": "preclinical_research_phase",
-          "description": "Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.",
-          "notes": [
-            "DrugBank calls this 'experimental'."
-          ]
-        },
-        {
-          "text": "clinical_trial_phase",
-          "description": "Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer."
-        },
-        {
-          "text": "clinical_trial_phase_1",
-          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 \u2013 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.",
-          "is_a": "clinical_trial_phase"
-        },
-        {
-          "text": "clinical_trial_phase_2",
-          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.",
-          "is_a": "clinical_trial_phase"
-        },
-        {
-          "text": "clinical_trial_phase_3",
-          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 \u2013 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.",
-          "is_a": "clinical_trial_phase"
-        },
-        {
-          "text": "clinical_trial_phase_4",
-          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.",
-          "is_a": "clinical_trial_phase"
-        },
-        {
-          "text": "not_provided"
-        }
-      ]
-    },
-    {
       "name": "DirectionQualifierEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
       "from_schema": "https://w3id.org/biolink/biolink-model",
@@ -1747,6 +1682,73 @@
       ]
     },
     {
+      "name": "FDAApprovalStatusEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/FDAApprovalStatusEnum",
+      "description": "",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "discovery_and_development_phase",
+          "description": "Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments."
+        },
+        {
+          "text": "preclinical_research_phase",
+          "description": "Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo."
+        },
+        {
+          "text": "fda_clinical_research_phase",
+          "description": "Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer."
+        },
+        {
+          "text": "fda_review_phase_4",
+          "description": "FDA Review"
+        },
+        {
+          "text": "fda_post_market_safety_review",
+          "description": "FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug\u2019s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations."
+        },
+        {
+          "text": "fda_clinical_research_phase_1",
+          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 \u2013 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase."
+        },
+        {
+          "text": "fda_clinical_research_phase_2",
+          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur."
+        },
+        {
+          "text": "fda_clinical_research_phase_3",
+          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 \u2013 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions."
+        },
+        {
+          "text": "fda_clinical_research_phase_4",
+          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review."
+        },
+        {
+          "text": "fda_fast_track",
+          "description": "Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track"
+        },
+        {
+          "text": "fda_breakthrough_therapy",
+          "description": "Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy"
+        },
+        {
+          "text": "fda_accelerated_approval",
+          "description": "When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as \u201cclinical benefit\u201d. Mindful of the fact that it may take an extended period of time to measure a drug\u2019s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval"
+        },
+        {
+          "text": "fda_priority_review",
+          "description": "Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times \u2013 Standard Review and Priority Review. A Priority Review designation means FDA\u2019s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review"
+        },
+        {
+          "text": "regular_fda_approval",
+          "description": "Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug\u2019s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations."
+        },
+        {
+          "text": "post_approval_withdrawal"
+        }
+      ]
+    },
+    {
       "name": "FDAIDAAdverseEventEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum",
       "description": "please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
@@ -2072,7 +2074,6 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "exact_mappings": [
-        "https://www.alliancegenome.org/soTermId",
         "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#type",
         "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#DB_Object_Type"
       ],
@@ -2089,7 +2090,7 @@
     {
       "name": "category",
       "definition_uri": "https://w3id.org/biolink/vocab/category",
-      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values `biolink:Protein`,  `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
       "in_subset": [
         "translator_minimal"
       ],
@@ -3585,7 +3586,7 @@
     {
       "name": "highest_FDA_approval_status",
       "definition_uri": "https://w3id.org/biolink/vocab/highest_FDA_approval_status",
-      "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
+      "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/highest_FDA_approval_status",
       "owner": "ChemicalMixture",
@@ -3808,7 +3809,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.",
       "notes": [
-        "the qualifier \u2018increased\u2019 combines with a core concept of \u2018Gene X\u2019 and an aspect of \u2018expression\u2019 to express the  composed concept \u2018increased expression of Gene X\u2019    the qualifier \u2018decreased\u2019 combines with a core concept of \u2018Protein X\u2019 and an aspect of \u2018abundance\u2019 to  express the composed concept \u2018decreased abundance of Protein X\u2019"
+        "the qualifier \u2018increased\u2019 combines with a core concept of \u2018Gene X\u2019 and an aspect of \u2018expression\u2019 to express the composed concept \u2018increased expression of Gene X\u2019    the qualifier \u2018decreased\u2019 combines with a core concept of \u2018Protein X\u2019 and an aspect of \u2018abundance\u2019 to express the composed concept \u2018decreased abundance of Protein X\u2019"
       ],
       "in_subset": [
         "translator_minimal"
@@ -3985,7 +3986,6 @@
     {
       "name": "subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
-      "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4101,7 +4101,6 @@
     {
       "name": "object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4284,7 +4283,6 @@
       "name": "severity_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/severity_qualifier",
       "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-      "deprecated": "True",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4321,7 +4319,6 @@
       "name": "onset_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/onset_qualifier",
       "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-      "deprecated": "True",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4972,48 +4969,6 @@
       "inherited": true,
       "owner": "opposite_of",
       "symmetric": true,
-      "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "affects_likelihood_of",
-      "definition_uri": "https://w3id.org/biolink/vocab/affects_likelihood_of",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between two entities where the presence or application of one alters the chance that the other will come to be.",
-      "notes": [
-        "This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the  actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used  for a statistical associations that describe correlations between two feature variables (use predicates  in the 'associated with likelihood of' hierarchy here.)"
-      ],
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/affects_likelihood_of",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "affects_likelihood_of",
-      "inverse": "likelihood_affected_by",
-      "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "likelihood_affected_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/likelihood_affected_by",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/likelihood_affected_by",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "likelihood_affected_by",
-      "inverse": "affects_likelihood_of",
       "range": "NamedThing",
       "@type": "SlotDefinition"
     },
@@ -5915,10 +5870,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Describes an entity that has an effect on the state or quality of another existing entity.",
-      "notes": [
-        "Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as  'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or  may not come into existence."
-      ],
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7153,6 +7105,95 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "affects_risk_for",
+      "definition_uri": "https://w3id.org/biolink/vocab/affects_risk_for",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "holds between two entities where exposure to one entity alters the chance of developing the other",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/affects_risk_for",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "affects_risk_for",
+      "inverse": "risk_affected_by",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "risk_affected_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/risk_affected_by",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/risk_affected_by",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "risk_affected_by",
+      "inverse": "affects_risk_for",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "predisposes",
+      "definition_uri": "https://w3id.org/biolink/vocab/predisposes",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        },
+        {
+          "tag": "opposite_of",
+          "value": "prevents",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "holds between two entities where exposure to one entity increases the chance of developing the other",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "exact_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBPREDISPOSES"
+      ],
+      "is_a": "affects_risk_for",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/predisposes",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "predisposes",
+      "inverse": "has_predisposing_factor",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_predisposing_factor",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_predisposing_factor",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "risk_affected_by",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_predisposing_factor",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "has_predisposing_factor",
+      "inverse": "predisposes",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "contributes_to",
       "definition_uri": "https://w3id.org/biolink/vocab/contributes_to",
       "annotations": [
@@ -7309,8 +7350,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ameliorates_condition",
-      "definition_uri": "https://w3id.org/biolink/vocab/ameliorates_condition",
+      "name": "ameliorates",
+      "definition_uri": "https://w3id.org/biolink/vocab/ameliorates",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7319,138 +7360,42 @@
         },
         {
           "tag": "opposite_of",
-          "value": "exacerbates condition",
+          "value": "exacerbates",
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.",
-      "notes": [
-        "This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing  disease, and excludes interventions that prevent/reduce risk of developing a condition in the future."
-      ],
+      "description": "A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure, clinical intervention) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "aliases": [
-        "ameliorates",
-        "beneficial for condition",
-        "therapeutic for condition"
-      ],
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0003307"
       ],
       "is_a": "affects",
-      "mixins": [
-        "treats",
-        "treats_or_taken_or_studied_to_treat"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/ameliorates_condition",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/ameliorates",
       "multivalued": true,
       "inherited": true,
-      "owner": "ameliorates_condition",
-      "inverse": "condition_ameliorated_by",
+      "owner": "ameliorates",
+      "inverse": "is_ameliorated_by",
       "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
     {
-      "name": "condition_ameliorated_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/condition_ameliorated_by",
+      "name": "is_ameliorated_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/is_ameliorated_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/condition_ameliorated_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/is_ameliorated_by",
       "multivalued": true,
       "inherited": true,
-      "owner": "condition_ameliorated_by",
-      "inverse": "ameliorates_condition",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
+      "owner": "is_ameliorated_by",
+      "inverse": "ameliorates",
+      "range": "NamedThing",
       "@type": "SlotDefinition"
     },
     {
-      "name": "preventative_for_condition",
-      "definition_uri": "https://w3id.org/biolink/vocab/preventative_for_condition",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "promotes condition",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "aliases": [
-        "prophylactic for",
-        "prevents"
-      ],
-      "is_a": "affects_likelihood_of",
-      "mixins": [
-        "treats",
-        "treats_or_taken_or_studied_to_treat"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/preventative_for_condition",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "preventative_for_condition",
-      "inverse": "condition_prevented_by",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "condition_prevented_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/condition_prevented_by",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "affected_by",
-      "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/condition_prevented_by",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "condition_prevented_by",
-      "inverse": "preventative_for_condition",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "promotes_condition",
-      "definition_uri": "https://w3id.org/biolink/vocab/promotes_condition",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "preventative for condition",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "mixin": true,
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/promotes_condition",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "promotes_condition",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "predisposes_to_condition",
-      "definition_uri": "https://w3id.org/biolink/vocab/predisposes_to_condition",
+      "name": "exacerbates",
+      "definition_uri": "https://w3id.org/biolink/vocab/exacerbates",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7458,66 +7403,8 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between two entities where the presence or application of one increases the chance that the other will come to be.",
-      "in_subset": [
-        "translator_minimal"
-      ],
+      "description": "A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "aliases": [
-        "risk factor for"
-      ],
-      "is_a": "affects_likelihood_of",
-      "mixins": [
-        "promotes_condition"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/predisposes_to_condition",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "predisposes_to_condition",
-      "inverse": "condition_predisposed_by",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "condition_predisposed_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "condition_predisposed_by",
-      "inverse": "predisposes_to_condition",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "exacerbates_condition",
-      "definition_uri": "https://w3id.org/biolink/vocab/exacerbates_condition",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "ameliorates condition",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between a substance, procedure, or activity and an existing medical condition, a disease or phenotypic  feature, where the substance, procedure, or activity worsens some or all aspects of the condition.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "aliases": [
-        "exacerbates",
-        "detrimental for condition"
-      ],
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0003309"
       ],
@@ -7525,34 +7412,30 @@
         "https://skr3.nlm.nih.gov/SemMedDBCOMPLICATES"
       ],
       "is_a": "affects",
-      "mixins": [
-        "promotes_condition"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/exacerbates_condition",
+      "domain": "BiologicalEntity",
+      "slot_uri": "https://w3id.org/biolink/vocab/exacerbates",
       "multivalued": true,
       "inherited": true,
-      "owner": "exacerbates_condition",
-      "inverse": "condition_exacerbated_by",
+      "owner": "exacerbates",
+      "inverse": "is_exacerbated_by",
       "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
     {
-      "name": "condition_exacerbated_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/condition_exacerbated_by",
+      "name": "is_exacerbated_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/is_exacerbated_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/condition_exacerbated_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/is_exacerbated_by",
       "multivalued": true,
       "inherited": true,
-      "owner": "condition_exacerbated_by",
-      "inverse": "exacerbates_condition",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
+      "owner": "is_exacerbated_by",
+      "inverse": "exacerbates",
+      "range": "BiologicalEntity",
       "@type": "SlotDefinition"
     },
     {
@@ -7563,17 +7446,21 @@
           "tag": "canonical_predicate",
           "value": true,
           "@type": "Annotation"
+        },
+        {
+          "tag": "opposite_of",
+          "value": "contraindicated for",
+          "@type": "Annotation"
         }
       ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition disease or phenotypic feature,  and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition  or delay, prevent, or reduce the risk of it manifesting in the first place. \u2018Treats\u2019 edges should be asserted  knoweldge_level assertion only in cases where there is strong supporting  evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is a well-established  treatment in the medical community. In the absence of such evidence, weaker predicates should be used in  asserted edges, e.g. \u2018in clinical trials for\u2019 or \u2018beneficial in models of\u2019. \u2018Treats\u2019 edges based on weaker  or indirect forms of evidence can however be created as predictions, knowledge_level: prediction, and should  point to the more foundational asserted edges that support them.",
+      "description": "holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "is substance that treats",
-        "indicated for",
-        "ameliorates or prevents condition"
+        "indicated for"
       ],
       "exact_mappings": [
         "http://identifiers.org/drugbank/treats",
@@ -7607,15 +7494,11 @@
         "http://apps.chiragjpgroup.org/repoDB/clinically_tested_withdrawn_phase_3",
         "http://purl.obolibrary.org/obo/SNOMED_plays_role"
       ],
-      "broad_mappings": [
-        "http://identifiers.org/drugbank/treats",
-        "https://skr3.nlm.nih.gov/SemMedDBTREATS",
-        "https://www.wikidata.org/prop/P2175",
-        "http://purl.obolibrary.org/obo/MONDO_disease_responds_to"
-      ],
-      "mixin": true,
+      "is_a": "ameliorates",
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats",
+      "multivalued": true,
+      "inherited": true,
       "owner": "treats",
       "inverse": "treated_by",
       "range": "DiseaseOrPhenotypicFeature",
@@ -7624,6 +7507,7 @@
     {
       "name": "treated_by",
       "definition_uri": "https://w3id.org/biolink/vocab/treated_by",
+      "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7635,9 +7519,11 @@
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002302"
       ],
-      "mixin": true,
+      "is_a": "is_ameliorated_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_by",
+      "multivalued": true,
+      "inherited": true,
       "owner": "treated_by",
       "inverse": "treats",
       "range": "ChemicalOrDrugOrTreatment",
@@ -7645,194 +7531,61 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "studied_to_treat",
-      "definition_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
+      "name": "prevents",
+      "definition_uri": "https://w3id.org/biolink/vocab/prevents",
       "annotations": [
         {
           "tag": "canonical_predicate",
           "value": true,
           "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place).",
-      "notes": [
-        "Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is  not sufficient evidence or demonstrated efficacy against the condition to warrant creating a \u2018treats\u2019 assertion  edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate  'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it  is merely reporting that a study was observed to have been performed)."
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "mixins": [
-        "treats_or_taken_or_studied_to_treat"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "studied_to_treat",
-      "inverse": "studied_for_treatment_with",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "studied_for_treatment_with",
-      "definition_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "affected_by",
-      "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "studied_for_treatment_with",
-      "inverse": "studied_to_treat",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "in_clinical_trials_for",
-      "definition_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
-      "annotations": [
+        },
         {
-          "tag": "canonical_predicate",
-          "value": true,
+          "tag": "opposite_of",
+          "value": "predisposes",
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place).",
-      "notes": [
-        "This predicate should be used when a source reports a clinical trial where the intervention is being or was  interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements.  A knowledge level of \"\"Observation\"\" MUST be used with this predicate (because it is merely reporting that a  study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4  trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge  SHOULD also be created (with knowledge_level = Assertion)."
-      ],
+      "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "studied_to_treat",
-      "mixins": [
-        "treats_or_taken_or_studied_to_treat"
+      "exact_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBPREVENTS"
       ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
+      "narrow_mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002599"
+      ],
+      "is_a": "affects_risk_for",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/prevents",
       "multivalued": true,
       "inherited": true,
-      "owner": "in_clinical_trials_for",
-      "range": "DiseaseOrPhenotypicFeature",
+      "owner": "prevents",
+      "inverse": "prevented_by",
+      "range": "NamedThing",
       "@type": "SlotDefinition"
     },
     {
-      "name": "in_preclinical_trials_for",
-      "definition_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
+      "name": "prevented_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/prevented_by",
       "annotations": [
         {
-          "tag": "canonical_predicate",
-          "value": true,
+          "tag": "opposite_of",
+          "value": "enabled by",
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical  study has been performed specifically to test the potential of the  substance, procedure, or activity to treat  the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce  the risk of it manifesting in the first place).",
-      "notes": [
-        "A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study  was observed to have been performed)."
-      ],
-      "in_subset": [
-        "translator_minimal"
-      ],
+      "description": "holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "studied_to_treat",
-      "mixins": [
-        "treats_or_taken_or_studied_to_treat"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
+      "is_a": "risk_affected_by",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/prevented_by",
       "multivalued": true,
       "inherited": true,
-      "owner": "in_preclinical_trials_for",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "beneficial_in_models_for",
-      "definition_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/  phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
-      "notes": [
-        "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention  alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.   (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation  phenotype of zebrafish used to model the human disease Kabuki Syndrome) . A knowledge level of Assertion should be used with this predicate, because it requires interpretation of  results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the  occurrence of a study)."
-      ],
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "in_preclinical_trials_for",
-      "mixins": [
-        "treats_or_taken_or_studied_to_treat"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "beneficial_in_models_for",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "was_applied_to_treat",
-      "definition_uri": "https://w3id.org/biolink/vocab/was_applied_to_treat",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.",
-      "notes": [
-        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the  treatment is approved for or might be effective in treating the condition. The treatment could be taken by a  patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In  practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging  instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level  of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /  prescribed for use at some point in time)."
-      ],
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "aliases": [
-        "administered to treat",
-        "used to treat",
-        "given to treat"
-      ],
-      "is_a": "related_to_at_instance_level",
-      "mixins": [
-        "treats_or_taken_or_studied_to_treat"
-      ],
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/was_applied_to_treat",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "was_applied_to_treat",
-      "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "treats_or_taken_or_studied_to_treat",
-      "definition_uri": "https://w3id.org/biolink/vocab/treats_or_taken_or_studied_to_treat",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
-      "description": "Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the substance, procedure, or activity is able to treat the condition, has been observed to be  taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific  study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).",
-      "notes": [
-        "This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a  condition, and as a catch-all for representing sources that are not clear about the sense of treats that is  being reported. For example, text-mined statements concerning treatments for disease are based on sentences  that can report treatment in any of these different senses and thus require a broader predicate such as  this to safely report statement semantics."
-      ],
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "mixin": true,
-      "slot_uri": "https://w3id.org/biolink/vocab/treats_or_taken_or_studied_to_treat",
-      "range": "string",
+      "owner": "prevented_by",
+      "inverse": "prevents",
+      "range": "NamedThing",
       "@type": "SlotDefinition"
     },
     {
@@ -7984,7 +7737,7 @@
     {
       "name": "has_biomarker",
       "definition_uri": "https://w3id.org/biolink/vocab/has_biomarker",
-      "description": "holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.",
+      "description": "holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.\n # metabolite",
       "in_subset": [
         "translator_minimal"
       ],
@@ -10382,8 +10135,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "contraindicated_in",
-      "definition_uri": "https://w3id.org/biolink/vocab/contraindicated_in",
+      "name": "contraindicated_for",
+      "definition_uri": "https://w3id.org/biolink/vocab/contraindicated_for",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -10396,32 +10149,19 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.",
-      "notes": [
-        "This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that  puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the  drug would be used to treat (e.g.  pseudoephedrine is contraindicated in people with high-blood pressure as  a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who  are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated  in people taking warfarrin as a preventative treatment for stroke)."
-      ],
+      "description": "Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/NCIT_C37933"
       ],
       "is_a": "related_to_at_instance_level",
-      "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/contraindicated_in",
+      "domain": "Drug",
+      "slot_uri": "https://w3id.org/biolink/vocab/contraindicated_for",
       "multivalued": true,
       "inherited": true,
-      "owner": "contraindicated_in",
+      "owner": "contraindicated_for",
       "inverse": "has_contraindication",
       "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "chemical_entity_or_drug_or_treatment",
-      "definition_uri": "https://w3id.org/biolink/vocab/chemical_entity_or_drug_or_treatment",
-      "description": "A union of chemical entities and children, and drug or treatment.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "mixin": true,
-      "slot_uri": "https://w3id.org/biolink/vocab/chemical_entity_or_drug_or_treatment",
-      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -10434,7 +10174,7 @@
       "multivalued": true,
       "inherited": true,
       "owner": "has_contraindication",
-      "inverse": "contraindicated_in",
+      "inverse": "contraindicated_for",
       "range": "Drug",
       "@type": "SlotDefinition"
     },
@@ -10894,7 +10634,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/qualifier",
-      "owner": "qualifier",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -12074,7 +11817,7 @@
     {
       "name": "associated_environmental_context",
       "definition_uri": "https://w3id.org/biolink/vocab/associated_environmental_context",
-      "description": "An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.",
+      "description": "An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.\n # TODO: add examples of values for this property.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
@@ -12262,34 +12005,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "clinical_approval_status",
-      "definition_uri": "https://w3id.org/biolink/vocab/clinical_approval_status",
+      "name": "FDA_approval_status",
+      "definition_uri": "https://w3id.org/biolink/vocab/FDA_approval_status",
       "description": "",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/clinical_approval_status",
+      "slot_uri": "https://w3id.org/biolink/vocab/FDA_approval_status",
       "owner": "EntityToPhenotypicFeatureAssociation",
       "domain_of": [
         "EntityToDiseaseAssociation",
         "EntityToPhenotypicFeatureAssociation"
       ],
-      "range": "ClinicalApprovalStatusEnum",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "max_research_phase",
-      "definition_uri": "https://w3id.org/biolink/vocab/max_research_phase",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "association_slot",
-      "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/max_research_phase",
-      "owner": "EntityToPhenotypicFeatureAssociation",
-      "domain_of": [
-        "EntityToDiseaseAssociation",
-        "EntityToPhenotypicFeatureAssociation"
-      ],
-      "range": "MaxResearchPhaseEnum",
+      "range": "FDAApprovalStatusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12418,7 +12146,7 @@
     {
       "name": "named_thing_category",
       "definition_uri": "https://w3id.org/biolink/vocab/category",
-      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values `biolink:Protein`,  `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
       "in_subset": [
         "translator_minimal"
       ],
@@ -12690,7 +12418,6 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "exact_mappings": [
-        "https://www.alliancegenome.org/soTermId",
         "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#type",
         "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#DB_Object_Type"
       ],
@@ -12772,7 +12499,6 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "exact_mappings": [
-        "https://www.alliancegenome.org/soTermId",
         "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#type",
         "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#DB_Object_Type"
       ],
@@ -13544,7 +13270,6 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "exact_mappings": [
-        "https://www.alliancegenome.org/soTermId",
         "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#type",
         "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#DB_Object_Type"
       ],
@@ -13565,7 +13290,7 @@
     {
       "name": "association_category",
       "definition_uri": "https://w3id.org/biolink/vocab/category",
-      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values `biolink:Protein`,  `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16113,7 +15838,6 @@
     {
       "name": "chemical_affects_gene_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
-      "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16313,7 +16037,6 @@
     {
       "name": "chemical_affects_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16540,7 +16263,6 @@
     {
       "name": "gene_affects_chemical_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
-      "description": "A qualifier that composes with a core subject concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16759,7 +16481,6 @@
     {
       "name": "gene_affects_chemical_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -18090,7 +17811,6 @@
     {
       "name": "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -21014,7 +20734,6 @@
     {
       "name": "chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "description": "A qualifier that composes with a core object concept to describe a change in its direction or degree.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -22077,7 +21796,6 @@
       "name": "SeverityValue",
       "definition_uri": "https://w3id.org/biolink/vocab/SeverityValue",
       "description": "describes the severity of a phenotypic feature or disease",
-      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Attribute",
       "slots": [
@@ -24045,7 +23763,22 @@
         "CAS",
         "UMLS",
         "ncats.drug",
-        "PHARMGKB.CHEMICAL"
+        "PHARMGKB.CHEMICAL",
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "DrugCentral",
+        "GTOPDB",
+        "HMDB",
+        "KEGG.COMPOUND",
+        "ChemBank",
+        "PUBCHEM.SUBSTANCE",
+        "SIDER.DRUG",
+        "INCHI",
+        "INCHIKEY",
+        "KEGG.GLYCAN",
+        "KEGG.DRUG",
+        "KEGG.ENVIRON",
+        "KEGG"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntity",
       "description": "A chemical entity is a physical entity that pertains to chemistry or biochemistry.",
@@ -24061,6 +23794,9 @@
       ],
       "narrow_mappings": [
         "WIKIDATA:Q43460564"
+      ],
+      "broad_mappings": [
+        "STY:T167"
       ],
       "is_a": "NamedThing",
       "mixins": [
@@ -24111,13 +23847,13 @@
         "SIDER.DRUG",
         "INCHI",
         "INCHIKEY",
+        "BIGG.METABOLITE",
+        "UMLS",
+        "foodb.compound",
         "KEGG.GLYCAN",
         "KEGG.DRUG",
         "KEGG.ENVIRON",
-        "KEGG",
-        "BIGG.METABOLITE",
-        "UMLS",
-        "foodb.compound"
+        "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/SmallMolecule",
       "description": "A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).",
@@ -24255,7 +23991,12 @@
         "INCHI",
         "INCHIKEY",
         "KEGG.GLYCAN",
-        "KEGG.ENVIRON"
+        "KEGG.ENVIRON",
+        "ChemBank",
+        "SIDER.DRUG",
+        "BIGG.METABOLITE",
+        "foodb.compound",
+        "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/NucleicAcidEntity",
       "description": "A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.",
@@ -24838,7 +24579,29 @@
     {
       "name": "ProcessedMaterial",
       "id_prefixes": [
-        "UMLS"
+        "UMLS",
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "UNII",
+        "CHEBI",
+        "MESH",
+        "CAS",
+        "GTOPDB",
+        "HMDB",
+        "KEGG",
+        "KEGG.COMPOUND",
+        "ChemBank",
+        "PUBCHEM.SUBSTANCE",
+        "INCHI",
+        "INCHIKEY",
+        "KEGG.GLYCAN",
+        "KEGG.ENVIRON",
+        "ChemBank",
+        "SIDER.DRUG",
+        "BIGG.METABOLITE",
+        "foodb.compound",
+        "UMLS",
+        "foodb.food"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ProcessedMaterial",
       "description": "A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.",
@@ -24880,7 +24643,27 @@
         "ncats.drug",
         "RXCUI",
         "NDC",
-        "UMLS"
+        "UMLS",
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "UNII",
+        "CHEBI",
+        "MESH",
+        "CAS",
+        "GTOPDB",
+        "HMDB",
+        "KEGG",
+        "KEGG.COMPOUND",
+        "ChemBank",
+        "PUBCHEM.SUBSTANCE",
+        "INCHI",
+        "INCHIKEY",
+        "KEGG.GLYCAN",
+        "KEGG.ENVIRON",
+        "ChemBank",
+        "SIDER.DRUG",
+        "BIGG.METABOLITE",
+        "foodb.compound"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Drug",
       "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
@@ -24934,6 +24717,32 @@
     },
     {
       "name": "EnvironmentalFoodContaminant",
+      "id_prefixes": [
+        "ncats.drug",
+        "RXCUI",
+        "NDC",
+        "UMLS",
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "UNII",
+        "CHEBI",
+        "MESH",
+        "CAS",
+        "GTOPDB",
+        "HMDB",
+        "KEGG",
+        "KEGG.COMPOUND",
+        "ChemBank",
+        "PUBCHEM.SUBSTANCE",
+        "INCHI",
+        "INCHIKEY",
+        "KEGG.GLYCAN",
+        "KEGG.ENVIRON",
+        "ChemBank",
+        "SIDER.DRUG",
+        "BIGG.METABOLITE",
+        "foodb.compound"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "related_mappings": [
@@ -24965,6 +24774,32 @@
     },
     {
       "name": "FoodAdditive",
+      "id_prefixes": [
+        "ncats.drug",
+        "RXCUI",
+        "NDC",
+        "UMLS",
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "UNII",
+        "CHEBI",
+        "MESH",
+        "CAS",
+        "GTOPDB",
+        "HMDB",
+        "KEGG",
+        "KEGG.COMPOUND",
+        "ChemBank",
+        "PUBCHEM.SUBSTANCE",
+        "INCHI",
+        "INCHIKEY",
+        "KEGG.GLYCAN",
+        "KEGG.ENVIRON",
+        "ChemBank",
+        "SIDER.DRUG",
+        "BIGG.METABOLITE",
+        "foodb.compound"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/FoodAdditive",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "related_mappings": [
@@ -24998,9 +24833,29 @@
       "name": "Food",
       "id_prefixes": [
         "foodb.food",
+        "foodb.compound",
         "FOODON",
         "UMLS",
-        "NCIT"
+        "NCIT",
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "UNII",
+        "CHEBI",
+        "MESH",
+        "CAS",
+        "GTOPDB",
+        "HMDB",
+        "KEGG",
+        "KEGG.COMPOUND",
+        "ChemBank",
+        "PUBCHEM.SUBSTANCE",
+        "INCHI",
+        "INCHIKEY",
+        "KEGG.GLYCAN",
+        "KEGG.ENVIRON",
+        "ChemBank",
+        "SIDER.DRUG",
+        "BIGG.METABOLITE"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Food",
       "description": "A substance consumed by a living organism as a source of nutrition",
@@ -25702,12 +25557,7 @@
       ],
       "narrow_mappings": [
         "STY:T019",
-        "STY:T020",
-        "STY:T048",
-        "STY:T049",
-        "STY:T190",
-        "STY:T191",
-        "MONDO:0042489"
+        "STY:T020"
       ],
       "is_a": "DiseaseOrPhenotypicFeature",
       "slots": [
@@ -26379,7 +26229,7 @@
         "SIO:010445",
         "WIKIDATA:Q373027"
       ],
-      "is_a": "NucleicAcidEntity",
+      "is_a": "BiologicalEntity",
       "slots": [
         "id",
         "iri",
@@ -26393,13 +26243,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -26425,7 +26268,7 @@
         "WIKIDATA:Q7243183",
         "dcid:RNATranscript"
       ],
-      "is_a": "NucleicAcidEntity",
+      "is_a": "BiologicalEntity",
       "slots": [
         "id",
         "iri",
@@ -26439,13 +26282,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -26461,7 +26297,10 @@
         "SO:0000316",
         "SIO:001390"
       ],
-      "is_a": "NucleicAcidEntity",
+      "is_a": "BiologicalEntity",
+      "mixins": [
+        "GenomicEntity"
+      ],
       "slots": [
         "id",
         "iri",
@@ -26475,15 +26314,9 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
-        "in_taxon_label"
+        "in_taxon_label",
+        "has_biological_sequence"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CodingSequence",
@@ -26786,13 +26619,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -26825,13 +26651,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -26866,13 +26685,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -26911,13 +26723,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -26960,13 +26765,6 @@
         "full_name",
         "synonym",
         "named_thing_category",
-        "trade_name",
-        "available_from",
-        "max_tolerated_dose",
-        "is_toxic",
-        "has_chemical_role",
-        "is_metabolite",
-        "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
       ],
@@ -27454,7 +27252,6 @@
       "name": "Onset",
       "definition_uri": "https://w3id.org/biolink/vocab/Onset",
       "description": "The age group in which (disease) symptom manifestations appear",
-      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "HP:0003674"
@@ -28448,6 +28245,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28489,6 +28287,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28534,6 +28333,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "publications",
         "has_evidence",
         "knowledge_source",
@@ -28584,6 +28384,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28633,6 +28434,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28682,6 +28484,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28736,6 +28539,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28784,6 +28588,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28834,6 +28639,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28903,6 +28709,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -28960,6 +28767,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29009,6 +28817,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29083,6 +28892,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29197,6 +29007,7 @@
         "subject",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29244,6 +29055,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29296,6 +29108,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29332,7 +29145,7 @@
     {
       "name": "ChemicalToChemicalDerivationAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation",
-      "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction, IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P",
+      "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "ChemicalToChemicalAssociation",
       "slots": [
@@ -29343,6 +29156,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29403,6 +29217,7 @@
         "subject",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29456,6 +29271,7 @@
         "subject",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29511,6 +29327,7 @@
         "subject",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29564,6 +29381,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29612,6 +29430,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29664,6 +29483,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29714,6 +29534,7 @@
         "subject",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29777,6 +29598,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29830,6 +29652,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29879,10 +29702,10 @@
     {
       "name": "GeneAffectsChemicalAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneAffectsChemicalAssociation",
-      "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)",
       "examples": [
         {
-          "value": "JsonObj(subject='TRPC4', predicate='affects', object='Barium', object_aspect_qualifier='transport', object_direction_qualifier='increased')",
+          "value": "JsonObj(subject='TRPC4', predicate='affects', qualified_predicte='causes', object='Barium', object_aspect_qualifier='transport', object_direction_qualifier='increased')",
           "@type": "Example"
         }
       ],
@@ -29896,6 +29719,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -29965,6 +29789,7 @@
         "subject",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30028,6 +29853,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30084,6 +29910,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30168,6 +29995,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30236,6 +30064,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30343,6 +30172,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30432,6 +30262,7 @@
         "subject",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30479,6 +30310,7 @@
         "deprecated",
         "subject",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30558,6 +30390,7 @@
         "deprecated",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30619,6 +30452,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30682,6 +30516,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30745,6 +30580,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30803,6 +30639,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30909,6 +30746,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -30970,6 +30808,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31041,6 +30880,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31103,6 +30943,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31165,6 +31006,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31227,6 +31069,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "knowledge_source",
@@ -31291,6 +31134,7 @@
         "deprecated",
         "subject",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31344,6 +31188,7 @@
         "deprecated",
         "subject",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31403,6 +31248,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31456,6 +31302,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31510,6 +31357,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31571,6 +31419,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31629,6 +31478,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31698,6 +31548,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31761,6 +31612,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31817,6 +31669,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31875,6 +31728,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31931,6 +31785,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -31982,6 +31837,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32031,6 +31887,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32079,6 +31936,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32146,6 +32004,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32203,6 +32062,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32252,6 +32112,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32313,6 +32174,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32361,6 +32223,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32409,6 +32272,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32454,6 +32318,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32499,6 +32364,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32549,6 +32415,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32599,6 +32466,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32622,8 +32490,7 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
-        "clinical_approval_status",
-        "max_research_phase"
+        "FDA_approval_status"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
@@ -32649,6 +32516,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32672,8 +32540,7 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
-        "clinical_approval_status",
-        "max_research_phase"
+        "FDA_approval_status"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation",
@@ -32700,6 +32567,7 @@
         "predicate",
         "object",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32748,6 +32616,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32802,6 +32671,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32851,6 +32721,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32899,6 +32770,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32949,6 +32821,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -32997,6 +32870,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33044,6 +32918,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33092,6 +32967,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33140,6 +33016,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33209,6 +33086,7 @@
         "deprecated",
         "predicate",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33257,6 +33135,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33305,6 +33184,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33357,6 +33237,7 @@
         "has_attribute",
         "deprecated",
         "negated",
+        "qualifier",
         "qualifiers",
         "publications",
         "has_evidence",
@@ -33391,9 +33272,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-11-27T16:02:11",
-  "source_file_size": 367135,
-  "generation_date": "2023-11-27T16:02:21",
+  "source_file_date": "2023-11-29T11:32:09",
+  "source_file_size": 362250,
+  "generation_date": "2023-11-29T11:32:23",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

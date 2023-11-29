@@ -38,6 +38,7 @@ jobs:
         run: |
           poetry install
           make gen-project
+          make id-prefixes
           if [ $? -eq 0 ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"

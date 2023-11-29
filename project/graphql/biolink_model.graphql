@@ -99,6 +99,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -135,6 +136,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -172,6 +174,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -246,6 +249,7 @@ type Association
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -339,6 +343,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -605,6 +610,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -647,6 +653,7 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -732,6 +739,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -772,6 +780,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -848,6 +857,7 @@ type ChemicalAffectsGeneAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -921,6 +931,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -962,6 +973,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1029,6 +1041,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1105,6 +1118,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1143,6 +1157,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1200,6 +1215,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1235,6 +1251,7 @@ type ChemicalToChemicalDerivationAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1275,6 +1292,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1316,6 +1334,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1505,7 +1524,7 @@ type ClinicalTrial
     category: [CategoryType]!
   }
 
-type CodingSequence
+type CodingSequence implements GenomicEntity
   {
     id: String!
     iri: IriType
@@ -1519,15 +1538,9 @@ type CodingSequence
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasBiologicalSequence: BiologicalSequence
   }
 
 type Cohort implements SubjectOfInvestigation
@@ -1661,6 +1674,7 @@ type ContributorAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
@@ -1698,6 +1712,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1929,6 +1944,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     deprecated: Boolean
     subject: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1967,6 +1983,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2010,6 +2027,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2045,6 +2063,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2167,6 +2186,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2223,6 +2243,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     knowledgeSource: String
@@ -2285,6 +2306,7 @@ type EntityToDiseaseAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2308,8 +2330,7 @@ type EntityToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    clinicalApprovalStatus: ClinicalApprovalStatusEnum
-    maxResearchPhase: MaxResearchPhaseEnum
+    fDAApprovalStatus: FDAApprovalStatusEnum
   }
 
 interface EntityToDiseaseAssociationMixin
@@ -2354,6 +2375,7 @@ type EntityToPhenotypicFeatureAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2377,8 +2399,7 @@ type EntityToPhenotypicFeatureAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    clinicalApprovalStatus: ClinicalApprovalStatusEnum
-    maxResearchPhase: MaxResearchPhaseEnum
+    fDAApprovalStatus: FDAApprovalStatusEnum
   }
 
 type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
@@ -2526,13 +2547,6 @@ type Exon
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -2547,6 +2561,7 @@ type ExonToTranscriptRelationship
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2592,6 +2607,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2630,6 +2646,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2733,6 +2750,7 @@ type FunctionalAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2807,6 +2825,7 @@ type GeneAffectsChemicalAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2860,6 +2879,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2939,6 +2959,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3006,6 +3027,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3053,6 +3075,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3105,6 +3128,7 @@ type GeneToExpressionSiteAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3145,6 +3169,7 @@ interface GeneToGeneAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3181,6 +3206,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3222,6 +3248,7 @@ type GeneToGeneFamilyAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3259,6 +3286,7 @@ type GeneToGeneHomologyAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3296,6 +3324,7 @@ type GeneToGeneProductRelationship
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3334,6 +3363,7 @@ type GeneToGoTermAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3371,6 +3401,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3407,6 +3438,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3520,6 +3552,7 @@ type GenomicSequenceLocalization
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3582,6 +3615,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3622,6 +3656,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3667,6 +3702,7 @@ type GenotypeToGeneAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3704,6 +3740,7 @@ type GenotypeToGenotypePartAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3742,6 +3779,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     deprecated: Boolean
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3786,6 +3824,7 @@ type GenotypeToVariantAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4012,6 +4051,7 @@ type InformationContentEntityToNamedThingAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4159,6 +4199,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4196,6 +4237,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4238,6 +4280,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4313,6 +4356,7 @@ type MaterialSampleDerivationAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4353,6 +4397,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4397,13 +4442,6 @@ type MicroRNA
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -4445,6 +4483,7 @@ type MolecularActivityToChemicalEntityAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4482,6 +4521,7 @@ type MolecularActivityToMolecularActivityAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4518,6 +4558,7 @@ type MolecularActivityToPathwayAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4624,6 +4665,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4668,13 +4710,6 @@ type NoncodingRNAProduct
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -4839,6 +4874,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4877,6 +4913,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4913,6 +4950,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4951,6 +4989,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4989,6 +5028,7 @@ type OrganismToOrganismAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5045,6 +5085,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5087,6 +5128,7 @@ type PairwiseGeneToGeneInteraction
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5123,6 +5165,7 @@ type PairwiseMolecularInteraction
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5491,6 +5534,7 @@ type PopulationToPopulationAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5745,6 +5789,7 @@ type ReactionToCatalystAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5785,6 +5830,7 @@ type ReactionToParticipantAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5919,13 +5965,6 @@ type RNAProduct implements GeneProductMixin
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -5944,13 +5983,6 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -5971,6 +6003,7 @@ type SequenceAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6006,6 +6039,7 @@ type SequenceFeatureRelationship
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6063,6 +6097,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6152,13 +6187,6 @@ type SiRNA
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -6340,6 +6368,7 @@ type TaxonToTaxonAssociation
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6412,13 +6441,6 @@ type Transcript
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -6433,6 +6455,7 @@ type TranscriptToGeneRelationship
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6508,6 +6531,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6548,6 +6572,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     hasAttribute: [Attribute]
     deprecated: Boolean
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6594,6 +6619,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     deprecated: Boolean
     subject: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6631,6 +6657,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     deprecated: Boolean
     subject: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6673,6 +6700,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6717,6 +6745,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     deprecated: Boolean
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]

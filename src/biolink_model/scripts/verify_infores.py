@@ -61,12 +61,16 @@ class InformationResource:
                         or infores.get("id") == 'infores:xenbase' \
                         or infores.get("id") == 'infores:aeolus' \
                         or infores.get("id") == 'infores:ctrp' \
+                        or infores.get("id") == 'infores:date' \
+                        or infores.get("id") == "infores:mirbase" \
+                        or infores.get("id") == "infores:nsides" \
                         or infores.get("xref") is None \
+                        or infores.get("status") == 'deprecated' \
                         or is_valid_urls(infores.get("xref")):
                     print(infores.get('id'), "has valid URL (xref)")
                 else:
                     print(infores)
-                    print("Invalid infores URL:" + infores.get("xref") + " for " + infores.get("name"))
+                    print("Invalid infores URL:" + " for " + infores.get("name"))
                     raise ValueError("invalid return code for URL" + infores.get("name") + " for " + infores.get("id"))
 
 

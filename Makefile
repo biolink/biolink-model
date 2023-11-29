@@ -85,8 +85,8 @@ update-template:
 update-linkml:
 	poetry add -D linkml@latest
 
-all: site gen-viz-data
-site: gen-project gendoc
+all: site
+site: gen-project gendoc infores id-prefixes
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
 
@@ -98,7 +98,7 @@ infores:
 	poetry run gen-python information-resource.yaml > information_resource.py
 
 id-prefixes:
-	poetry run gen-python class_prefixes.yaml > src/scripts/biolink_model/classprefixes.py
+	poetry run gen-python class_prefixes.yaml > src/biolink_model/scripts/classprefixes.py
 	cd scripts && poetry run python id_prefixes.py
 
 spell:
@@ -127,6 +127,7 @@ gen-project: $(PYMODEL)
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink-model-prefix-map.json
 	mv $(PYMODEL)/biolink*.py $(PYMODEL)/model.py
+	mv $(DEST)/graphql/biolink_model.yaml $(DEST)/graphql/biolink-model.graphql
 	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel.py
 	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
