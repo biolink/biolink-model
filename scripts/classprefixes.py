@@ -1,5 +1,5 @@
-# Auto generated from class_prefixes.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-30T13:25:48
+# Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
+# Generation date: 2023-11-29T10:58:39
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -7,7 +7,6 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
-import sys
 import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any

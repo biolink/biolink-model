@@ -1,9 +1,11 @@
 name: Deploy Documentation
 
 # Controls when the action will run. Triggers the workflow on push
+# in 3.6.0 stop this from running so that we don't overwrite new doc
 on:
-  release:
-    types: [ created ]
+  push:
+    branches:
+      - main
   repository_dispatch:
     types: trigger-build-documentation
 
