@@ -190,9 +190,19 @@ $(DOCDIR):
 
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
-	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
-	# added copying of images and renaming of TEMP.md
-	$(RUN) generate_viz_json \
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml ; \
+	# this generates the data structure requied for the d3 visualizations
+	$(RUN) generate_viz_json ; \
+	# DO NOT REMOVE: these cp statements are crucial to maintain the w3 ids for the model artifacts
+	cp $(DEST)/owl/biolink_model.owl.ttl $(DOCDIR)/biolink-model.owl.ttl ; \
+	cp $(DEST)/jsonld/biolink_model.context.jsonld $(DOCDIR)/biolink-model.context.jsonld ; \
+	cp $(DEST)/jsonld/biolink_model.context.jsonld $(DOCDIR)/context.jsonld ; \
+	cp $(DEST)/jsonld/biolink_model.jsonld $(DOCDIR)/biolink-model.jsonld ; \
+	cp $(DEST)/jsonschema/biolink_model.schema.json $(DOCDIR)/biolink-model.json ; \
+	cp $(DEST)/graphql/biolink_model.graphql $(DOCDIR)/biolink-model.graphql ; \
+	cp $(DEST)/shex/biolink-model.shex $(DOCDIR)/biolink-modeln.shex ; \
+	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
+	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
 	cp infores_catolog.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
 	cp biolink-model.yaml $(DOCDIR) ; \
