@@ -191,7 +191,7 @@ $(DOCDIR):
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml ; \
-	# this generates the data structure requied for the d3 visualizations
+	# this generates the data structure required for the d3 visualizations
 	$(RUN) generate_viz_json ; \
 	# DO NOT REMOVE: these cp statements are crucial to maintain the w3 ids for the model artifacts
 	cp $(DEST)/owl/biolink_model.owl.ttl $(DOCDIR)/biolink-model.owl.ttl ; \

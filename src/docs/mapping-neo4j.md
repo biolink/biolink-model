@@ -106,7 +106,7 @@ Every association must have:
  - [predicate](predicate.md)*
  - [object](object.md)*
 
-Many associations also have qualifying properties that apply to the subject, opject, or entirety of the statement
+Many associations also have qualifying properties that apply to the subject, object, or entirety of the statement
 expressed in the association.  
 
 For many examples of associations and how they constrain properties on an edge, please see: 
