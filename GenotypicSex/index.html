@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://biolink.github.io/biolink-model/GenotypicSex/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-9.4.8" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.4.14" name="generator"/>
 <title>Class: GenotypicSex - Biolink Model Documentation</title>
-<link href="../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.fad675c6.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -218,23 +218,31 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
+<span class="md-ellipsis">
+      Inheritance
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
-    Slots
-  </a>
+<span class="md-ellipsis">
+      Slots
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mappings">
-    Mappings
-  </a>
+<span class="md-ellipsis">
+      Mappings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
-    LinkML Source
-  </a>
+<span class="md-ellipsis">
+      LinkML Source
+    </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -367,7 +375,27 @@
 <td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag.  In an RDF database  it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the  biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>,  <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type  triples. This can be to the most specific biolink class, or potentially to a class more specific than something  in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
+<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.</i></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* In a neo4j database this MAY correspond to the neo4j label tag.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* In an RDF database it should be a biolink model class URI.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>, ...</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </td>
 <td>1..* <br/> <a href="../CategoryType/">CategoryType</a></td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
@@ -444,7 +472,7 @@ is_a: biological sex
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+<script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
 mermaid.initialize({});</script></body>
 </html>

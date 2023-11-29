@@ -14,15 +14,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
-        <title>Slot: treated_by - Biolink Model Documentation</title>
+        <title>Slot: treated_by (multivalued) - Biolink Model Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treated_by" class="md-skip">
+        <a href="#slot-treated_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treated_by </strong>
+              <strong> Slot: treated_by </strong>  (multivalued)
             
           </span>
         </div>
@@ -229,6 +229,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
@@ -245,6 +246,7 @@
     
       
       
+  
   
   
   
@@ -267,6 +269,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../association-examples-with-qualifiers/" class="md-nav__link">
         
@@ -283,6 +286,7 @@
     
       
       
+  
   
   
   
@@ -305,6 +309,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../curating-the-model/" class="md-nav__link">
         
@@ -321,6 +326,7 @@
     
       
       
+  
   
   
   
@@ -343,6 +349,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../working-with-the-model/" class="md-nav__link">
         
@@ -359,6 +366,7 @@
     
       
       
+  
   
   
   
@@ -381,6 +389,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
@@ -397,6 +406,7 @@
     
       
       
+  
   
   
   
@@ -419,6 +429,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../aspects.html" class="md-nav__link">
         
@@ -435,6 +446,7 @@
     
       
       
+  
   
   
   
@@ -479,22 +491,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mixin-usage" class="md-nav__link">
-    Mixin Usage
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inheritance
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
-    Mappings
+    <span class="md-ellipsis">
+      Mappings
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
-    LinkML Source
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
   </a>
   
 </li>
@@ -517,8 +535,8 @@
   
 
 
-<h1 id="slot-treated_by"><strong> Slot: treated_by </strong></h1>
-<div class="highlight-box">
+<h1 id="slot-treated_by-multivalued"><strong> Slot: treated_by </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition</i><br>
   <strong>Domain:</strong> disease or phenotypic feature<br>
   <strong>Range:</strong> chemical or drug or treatment<br>
 
@@ -526,27 +544,22 @@
 
 </div>
 
-<!-- no inheritance hierarchy -->
-
-<h2 id="mixin-usage">Mixin Usage</h2>
-<table>
-<thead>
-<tr>
-<th>mixed into</th>
-<th>description</th>
-<th>range</th>
-<th>domain</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
+<li><a href="../affected_by/">affected_by</a><ul>
+<li><a href="../is_ameliorated_by/">is_ameliorated_by</a><ul>
+<li><strong>treated_by</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -570,6 +583,8 @@
 <details>
 
 <pre><code class="language-yaml">name: treated by
+description: holds between a disease or phenotypic feature and a therapeutic process
+  or chemical entity that is used to treat the condition
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
@@ -578,8 +593,10 @@ exact_mappings:
 - MONDO:disease_responds_to
 narrow_mappings:
 - RO:0002302
-mixin: true
+is_a: is ameliorated by
 domain: disease or phenotypic feature
+multivalued: true
+inherited: true
 alias: treated_by
 inverse: treats
 range: chemical or drug or treatment
@@ -632,7 +649,7 @@ range: chemical or drug or treatment
     <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
     
   </body>

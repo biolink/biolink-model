@@ -14,15 +14,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
-        <title>Slot: treats - Biolink Model Documentation</title>
+        <title>Slot: treats (multivalued) - Biolink Model Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treats" class="md-skip">
+        <a href="#slot-treats-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treats </strong>
+              <strong> Slot: treats </strong>  (multivalued)
             
           </span>
         </div>
@@ -229,6 +229,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
@@ -245,6 +246,7 @@
     
       
       
+  
   
   
   
@@ -267,6 +269,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../association-examples-with-qualifiers/" class="md-nav__link">
         
@@ -283,6 +286,7 @@
     
       
       
+  
   
   
   
@@ -305,6 +309,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../curating-the-model/" class="md-nav__link">
         
@@ -321,6 +326,7 @@
     
       
       
+  
   
   
   
@@ -343,6 +349,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../working-with-the-model/" class="md-nav__link">
         
@@ -359,6 +366,7 @@
     
       
       
+  
   
   
   
@@ -381,6 +389,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
@@ -397,6 +406,7 @@
     
       
       
+  
   
   
   
@@ -419,6 +429,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../aspects.html" class="md-nav__link">
         
@@ -435,6 +446,7 @@
     
       
       
+  
   
   
   
@@ -479,29 +491,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mixin-usage" class="md-nav__link">
-    Mixin Usage
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inheritance
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
-    Annotations
+    <span class="md-ellipsis">
+      Annotations
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
-    Mappings
+    <span class="md-ellipsis">
+      Mappings
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
-    LinkML Source
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
   </a>
   
 </li>
@@ -524,42 +544,31 @@
   
 
 
-<h1 id="slot-treats"><strong> Slot: treats </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> Holds between a substance, procedure, or activity and a medical condition disease or phenotypic feature,  and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition  or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted  knoweldge_level assertion only in cases where there is strong supporting  evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is a well-established  treatment in the medical community. In the absence of such evidence, weaker predicates should be used in  asserted edges, e.g. ‘in clinical trials for’ or ‘beneficial in models of’. ‘Treats’ edges based on weaker  or indirect forms of evidence can however be created as predictions, knowledge_level: prediction, and should  point to the more foundational asserted edges that support them.</i><br>
-   <strong>Aliases:</strong> is substance that treats, indicated for, ameliorates or prevents condition<br><strong>Domain:</strong> chemical or drug or treatment<br>
+<h1 id="slot-treats-multivalued"><strong> Slot: treats </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat</i><br>
+   <strong>Aliases:</strong> is substance that treats, indicated for<br><strong>Domain:</strong> chemical or drug or treatment<br>
   <strong>Range:</strong> disease or phenotypic feature<br>
 
 
 
 </div>
 
-<!-- no inheritance hierarchy -->
-
-<h2 id="mixin-usage">Mixin Usage</h2>
-<table>
-<thead>
-<tr>
-<th>mixed into</th>
-<th>description</th>
-<th>range</th>
-<th>domain</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../ameliorates_condition/">ameliorates_condition</a></td>
-<td>Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.</td>
-<td>disease or phenotypic feature</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../preventative_for_condition/">preventative_for_condition</a></td>
-<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.</td>
-<td>disease or phenotypic feature</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
+<li><a href="../affects/">affects</a><ul>
+<li><a href="../ameliorates/">ameliorates</a><ul>
+<li><strong>treats</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="annotations">Annotations</h2>
 <table>
 <thead>
@@ -593,10 +602,6 @@
 <td>RO:0002606<br>NCIT:regimen_has_accepted_use_for_disease<br>REPODB:clinically_tested_approved_unknown_phase<br>REPODB:clinically_tested_suspended_phase_0<br>REPODB:clinically_tested_suspended_phase_1<br>REPODB:clinically_tested_suspended_phase_1_or_phase_2<br>REPODB:clinically_tested_suspended_phase_2<br>REPODB:clinically_tested_suspended_phase_2_or_phase_3<br>REPODB:clinically_tested_suspended_phase_3<br>REPODB:clinically_tested_terminated_phase_0<br>REPODB:clinically_tested_terminated_phase_1<br>REPODB:clinically_tested_terminated_phase_1_or_phase_2<br>REPODB:clinically_tested_terminated_phase_2<br>REPODB:clinically_tested_terminated_phase_2_or_phase_3<br>REPODB:clinically_tested_terminated_phase_3<br>REPODB:clinically_tested_withdrawn_phase_0<br>REPODB:clinically_tested_withdrawn_phase_1<br>REPODB:clinically_tested_withdrawn_phase_1_or_phase_2<br>REPODB:clinically_tested_withdrawn_phase_2<br>REPODB:clinically_tested_withdrawn_phase_2_or_phase_3<br>REPODB:clinically_tested_withdrawn_phase_3<br>SNOMED:plays_role<br></td>
 </tr>
 <tr>
-<td>broad</td>
-<td>DRUGBANK:treats<br>SEMMEDDB:TREATS<br>WIKIDATA_PROPERTY:P2175<br>MONDO:disease_responds_to<br></td>
-</tr>
-<tr>
 <td>related</td>
 <td>MONDO:disease_responds_to<br></td>
 </tr>
@@ -610,24 +615,17 @@ annotations:
   canonical_predicate:
     tag: canonical_predicate
     value: true
-description: 'Holds between a substance, procedure, or activity and a medical condition
-  disease or phenotypic feature,  and states that the substance, procedure, or activity
-  is able to ameliorate, stabilize, or cure the condition  or delay, prevent, or reduce
-  the risk of it manifesting in the first place. ‘Treats’ edges should be asserted  knoweldge_level
-  assertion only in cases where there is strong supporting  evidence - i.e. the intervention
-  is approved or in phase 4 trials for the condition, or is a well-established  treatment
-  in the medical community. In the absence of such evidence, weaker predicates should
-  be used in  asserted edges, e.g. ‘in clinical trials for’ or ‘beneficial in models
-  of’. ‘Treats’ edges based on weaker  or indirect forms of evidence can however be
-  created as predictions, knowledge_level: prediction, and should  point to the more
-  foundational asserted edges that support them.'
+  opposite_of:
+    tag: opposite_of
+    value: contraindicated for
+description: holds between a therapeutic procedure or chemical entity and a disease
+  or phenotypic feature that it is used to treat
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
 aliases:
 - is substance that treats
 - indicated for
-- ameliorates or prevents condition
 exact_mappings:
 - DRUGBANK:treats
 - SEMMEDDB:TREATS
@@ -657,13 +655,10 @@ narrow_mappings:
 - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
 - REPODB:clinically_tested_withdrawn_phase_3
 - SNOMED:plays_role
-broad_mappings:
-- DRUGBANK:treats
-- SEMMEDDB:TREATS
-- WIKIDATA_PROPERTY:P2175
-- MONDO:disease_responds_to
-mixin: true
+is_a: ameliorates
 domain: chemical or drug or treatment
+multivalued: true
+inherited: true
 alias: treats
 range: disease or phenotypic feature
 
@@ -715,7 +710,7 @@ range: disease or phenotypic feature
     <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
     
   </body>
