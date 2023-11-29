@@ -114,9 +114,24 @@
       "class_name": "biolink:Publication",
       "prefix_map": [
         {
+          "prefix": "PMID",
+          "base_uri": "http://www.ncbi.nlm.nih.gov/pubmed/",
+          "order": 1
+        },
+        {
+          "prefix": "PMC",
+          "base_uri": "http://europepmc.org/articles/PMC",
+          "order": 2
+        },
+        {
+          "prefix": "doi",
+          "base_uri": "https://doi.org/",
+          "order": 3
+        },
+        {
           "prefix": "NLMID",
           "base_uri": "https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=",
-          "order": 1
+          "order": 4
         }
       ]
     },
@@ -157,6 +172,26 @@
           "prefix": "PMID",
           "base_uri": "http://www.ncbi.nlm.nih.gov/pubmed/",
           "order": 1
+        }
+      ]
+    },
+    {
+      "class_name": "biolink:JournalArticle",
+      "prefix_map": [
+        {
+          "prefix": "PMID",
+          "base_uri": "http://www.ncbi.nlm.nih.gov/pubmed/",
+          "order": 1
+        },
+        {
+          "prefix": "PMCID",
+          "base_uri": "http://www.ncbi.nlm.nih.gov/pmc/",
+          "order": 2
+        },
+        {
+          "prefix": "doi",
+          "base_uri": "https://doi.org/",
+          "order": 3
         }
       ]
     },
@@ -279,13 +314,13 @@
           "order": 18
         },
         {
-          "prefix": "KEGG.DGROUP",
-          "base_uri": "http://www.kegg.jp/entry/",
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
           "order": 19
         },
         {
-          "prefix": "KEGG.ENVIRON",
-          "base_uri": "http://identifiers.org/kegg.environ/",
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
           "order": 20
         },
         {
@@ -332,6 +367,81 @@
           "prefix": "PHARMGKB.CHEMICAL",
           "base_uri": "https://www.pharmgkb.org/chemical/",
           "order": 7
+        },
+        {
+          "prefix": "PUBCHEM.COMPOUND",
+          "base_uri": "http://identifiers.org/pubchem.compound/",
+          "order": 8
+        },
+        {
+          "prefix": "CHEMBL.COMPOUND",
+          "base_uri": "http://identifiers.org/chembl.compound/",
+          "order": 9
+        },
+        {
+          "prefix": "DrugCentral",
+          "base_uri": "http://drugcentral.org/drugcard/",
+          "order": 10
+        },
+        {
+          "prefix": "GTOPDB",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=",
+          "order": 11
+        },
+        {
+          "prefix": "HMDB",
+          "base_uri": "http://identifiers.org/hmdb/",
+          "order": 12
+        },
+        {
+          "prefix": "KEGG.COMPOUND",
+          "base_uri": "http://identifiers.org/kegg.compound/",
+          "order": 13
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 14
+        },
+        {
+          "prefix": "PUBCHEM.SUBSTANCE",
+          "base_uri": "http://identifiers.org/pubchem.substance/",
+          "order": 15
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 16
+        },
+        {
+          "prefix": "INCHI",
+          "base_uri": "http://identifiers.org/inchi/",
+          "order": 17
+        },
+        {
+          "prefix": "INCHIKEY",
+          "base_uri": "http://identifiers.org/inchikey/",
+          "order": 18
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 19
+        },
+        {
+          "prefix": "KEGG.DRUG",
+          "base_uri": "http://identifiers.org/kegg.drug/",
+          "order": 20
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 21
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 22
         }
       ]
     },
@@ -339,23 +449,23 @@
       "class_name": "biolink:SmallMolecule",
       "prefix_map": [
         {
+          "prefix": "CHEBI",
+          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
+          "order": 1
+        },
+        {
           "prefix": "PUBCHEM.COMPOUND",
           "base_uri": "http://identifiers.org/pubchem.compound/",
-          "order": 1
+          "order": 2
         },
         {
           "prefix": "CHEMBL.COMPOUND",
           "base_uri": "http://identifiers.org/chembl.compound/",
-          "order": 2
+          "order": 3
         },
         {
           "prefix": "UNII",
           "base_uri": "http://identifiers.org/unii/",
-          "order": 3
-        },
-        {
-          "prefix": "CHEBI",
-          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
           "order": 4
         },
         {
@@ -419,38 +529,38 @@
           "order": 16
         },
         {
-          "prefix": "KEGG.GLYCAN",
-          "base_uri": "http://identifiers.org/kegg.glycan/",
-          "order": 17
-        },
-        {
-          "prefix": "KEGG.DRUG",
-          "base_uri": "http://identifiers.org/kegg.drug/",
-          "order": 18
-        },
-        {
-          "prefix": "KEGG.DGROUP",
-          "base_uri": "http://www.kegg.jp/entry/",
-          "order": 19
-        },
-        {
-          "prefix": "KEGG.ENVIRON",
-          "base_uri": "http://identifiers.org/kegg.environ/",
-          "order": 20
-        },
-        {
           "prefix": "BIGG.METABOLITE",
           "base_uri": "http://identifiers.org/bigg.metabolite/",
-          "order": 21
+          "order": 17
         },
         {
           "prefix": "UMLS",
           "base_uri": "http://identifiers.org/umls/",
-          "order": 22
+          "order": 18
         },
         {
           "prefix": "foodb.compound",
-          "base_uri": "http://foodb.ca/foods/",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 19
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 20
+        },
+        {
+          "prefix": "KEGG.DRUG",
+          "base_uri": "http://identifiers.org/kegg.drug/",
+          "order": 21
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 22
+        },
+        {
+          "prefix": "UMLS",
+          "base_uri": "http://identifiers.org/umls/",
           "order": 23
         }
       ]
@@ -549,7 +659,7 @@
           "order": 18
         },
         {
-          "prefix": "KEGG.DGROUP",
+          "prefix": "KEGG",
           "base_uri": "http://www.kegg.jp/entry/",
           "order": 19
         },
@@ -609,39 +719,69 @@
           "order": 8
         },
         {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 9
+        },
+        {
           "prefix": "KEGG.COMPOUND",
           "base_uri": "http://identifiers.org/kegg.compound/",
-          "order": 9
+          "order": 10
         },
         {
           "prefix": "ChemBank",
           "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
-          "order": 10
+          "order": 11
         },
         {
           "prefix": "PUBCHEM.SUBSTANCE",
           "base_uri": "http://identifiers.org/pubchem.substance/",
-          "order": 11
+          "order": 12
         },
         {
           "prefix": "INCHI",
           "base_uri": "http://identifiers.org/inchi/",
-          "order": 12
+          "order": 13
         },
         {
           "prefix": "INCHIKEY",
           "base_uri": "http://identifiers.org/inchikey/",
-          "order": 13
+          "order": 14
         },
         {
           "prefix": "KEGG.GLYCAN",
           "base_uri": "http://identifiers.org/kegg.glycan/",
-          "order": 14
+          "order": 15
         },
         {
           "prefix": "KEGG.ENVIRON",
           "base_uri": "http://identifiers.org/kegg.environ/",
-          "order": 15
+          "order": 16
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 17
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 18
+        },
+        {
+          "prefix": "BIGG.METABOLITE",
+          "base_uri": "http://identifiers.org/bigg.metabolite/",
+          "order": 19
+        },
+        {
+          "prefix": "foodb.compound",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 20
+        },
+        {
+          "prefix": "UMLS",
+          "base_uri": "http://identifiers.org/umls/",
+          "order": 21
         }
       ]
     },
@@ -739,7 +879,7 @@
           "order": 18
         },
         {
-          "prefix": "KEGG.DGROUP",
+          "prefix": "KEGG",
           "base_uri": "http://www.kegg.jp/entry/",
           "order": 19
         },
@@ -854,7 +994,7 @@
           "order": 18
         },
         {
-          "prefix": "KEGG.DGROUP",
+          "prefix": "KEGG",
           "base_uri": "http://www.kegg.jp/entry/",
           "order": 19
         },
@@ -924,39 +1064,34 @@
           "order": 7
         },
         {
-          "prefix": "KEGG.RCLASS",
+          "prefix": "KEGG",
           "base_uri": "http://www.kegg.jp/entry/",
           "order": 8
         },
         {
-          "prefix": "KEGG.ENZYME",
-          "base_uri": "http://www.kegg.jp/entry/",
-          "order": 9
-        },
-        {
           "prefix": "KEGG.ORTHOLOGY",
           "base_uri": "http://identifiers.org/kegg.orthology/",
-          "order": 10
+          "order": 9
         },
         {
           "prefix": "UMLS",
           "base_uri": "http://identifiers.org/umls/",
-          "order": 11
+          "order": 10
         },
         {
           "prefix": "BIGG.REACTION",
           "base_uri": "http://identifiers.org/bigg.reaction/",
-          "order": 12
+          "order": 11
         },
         {
           "prefix": "SEED.REACTION",
           "base_uri": "https://modelseed.org/biochem/reactions/",
-          "order": 13
+          "order": 12
         },
         {
           "prefix": "METANETX.REACTION",
           "base_uri": "https://www.metanetx.org/equa_info/",
-          "order": 14
+          "order": 13
         }
       ]
     },
@@ -982,6 +1117,11 @@
           "prefix": "KEGG.MODULE",
           "base_uri": "http://identifiers.org/kegg.module/",
           "order": 4
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 5
         }
       ]
     },
@@ -1000,7 +1140,7 @@
         },
         {
           "prefix": "KEGG",
-          "base_uri": "http://identifiers.org/kegg/",
+          "base_uri": "http://www.kegg.jp/entry/",
           "order": 3
         },
         {
@@ -1035,7 +1175,7 @@
         },
         {
           "prefix": "KEGG.PATHWAY",
-          "base_uri": "https://www.kegg.jp/entry/",
+          "base_uri": "https://bioregistry.io/kegg.pathway:",
           "order": 10
         },
         {
@@ -1067,6 +1207,116 @@
           "prefix": "UMLS",
           "base_uri": "http://identifiers.org/umls/",
           "order": 1
+        },
+        {
+          "prefix": "PUBCHEM.COMPOUND",
+          "base_uri": "http://identifiers.org/pubchem.compound/",
+          "order": 2
+        },
+        {
+          "prefix": "CHEMBL.COMPOUND",
+          "base_uri": "http://identifiers.org/chembl.compound/",
+          "order": 3
+        },
+        {
+          "prefix": "UNII",
+          "base_uri": "http://identifiers.org/unii/",
+          "order": 4
+        },
+        {
+          "prefix": "CHEBI",
+          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
+          "order": 5
+        },
+        {
+          "prefix": "MESH",
+          "base_uri": "http://id.nlm.nih.gov/mesh/",
+          "order": 6
+        },
+        {
+          "prefix": "CAS",
+          "base_uri": "http://identifiers.org/cas/",
+          "order": 7
+        },
+        {
+          "prefix": "GTOPDB",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=",
+          "order": 8
+        },
+        {
+          "prefix": "HMDB",
+          "base_uri": "http://identifiers.org/hmdb/",
+          "order": 9
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 10
+        },
+        {
+          "prefix": "KEGG.COMPOUND",
+          "base_uri": "http://identifiers.org/kegg.compound/",
+          "order": 11
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 12
+        },
+        {
+          "prefix": "PUBCHEM.SUBSTANCE",
+          "base_uri": "http://identifiers.org/pubchem.substance/",
+          "order": 13
+        },
+        {
+          "prefix": "INCHI",
+          "base_uri": "http://identifiers.org/inchi/",
+          "order": 14
+        },
+        {
+          "prefix": "INCHIKEY",
+          "base_uri": "http://identifiers.org/inchikey/",
+          "order": 15
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 16
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 17
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 18
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 19
+        },
+        {
+          "prefix": "BIGG.METABOLITE",
+          "base_uri": "http://identifiers.org/bigg.metabolite/",
+          "order": 20
+        },
+        {
+          "prefix": "foodb.compound",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 21
+        },
+        {
+          "prefix": "UMLS",
+          "base_uri": "http://identifiers.org/umls/",
+          "order": 22
+        },
+        {
+          "prefix": "foodb.food",
+          "base_uri": "http://foodb.ca/foods/",
+          "order": 23
         }
       ]
     },
@@ -1092,6 +1342,356 @@
           "prefix": "UMLS",
           "base_uri": "http://identifiers.org/umls/",
           "order": 4
+        },
+        {
+          "prefix": "PUBCHEM.COMPOUND",
+          "base_uri": "http://identifiers.org/pubchem.compound/",
+          "order": 5
+        },
+        {
+          "prefix": "CHEMBL.COMPOUND",
+          "base_uri": "http://identifiers.org/chembl.compound/",
+          "order": 6
+        },
+        {
+          "prefix": "UNII",
+          "base_uri": "http://identifiers.org/unii/",
+          "order": 7
+        },
+        {
+          "prefix": "CHEBI",
+          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
+          "order": 8
+        },
+        {
+          "prefix": "MESH",
+          "base_uri": "http://id.nlm.nih.gov/mesh/",
+          "order": 9
+        },
+        {
+          "prefix": "CAS",
+          "base_uri": "http://identifiers.org/cas/",
+          "order": 10
+        },
+        {
+          "prefix": "GTOPDB",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=",
+          "order": 11
+        },
+        {
+          "prefix": "HMDB",
+          "base_uri": "http://identifiers.org/hmdb/",
+          "order": 12
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 13
+        },
+        {
+          "prefix": "KEGG.COMPOUND",
+          "base_uri": "http://identifiers.org/kegg.compound/",
+          "order": 14
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 15
+        },
+        {
+          "prefix": "PUBCHEM.SUBSTANCE",
+          "base_uri": "http://identifiers.org/pubchem.substance/",
+          "order": 16
+        },
+        {
+          "prefix": "INCHI",
+          "base_uri": "http://identifiers.org/inchi/",
+          "order": 17
+        },
+        {
+          "prefix": "INCHIKEY",
+          "base_uri": "http://identifiers.org/inchikey/",
+          "order": 18
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 19
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 20
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 21
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 22
+        },
+        {
+          "prefix": "BIGG.METABOLITE",
+          "base_uri": "http://identifiers.org/bigg.metabolite/",
+          "order": 23
+        },
+        {
+          "prefix": "foodb.compound",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "class_name": "biolink:EnvironmentalFoodContaminant",
+      "prefix_map": [
+        {
+          "prefix": "ncats.drug",
+          "base_uri": "https://drugs.ncats.io/drug/",
+          "order": 1
+        },
+        {
+          "prefix": "RXCUI",
+          "base_uri": "https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=",
+          "order": 2
+        },
+        {
+          "prefix": "NDC",
+          "base_uri": "http://identifiers.org/ndc/",
+          "order": 3
+        },
+        {
+          "prefix": "UMLS",
+          "base_uri": "http://identifiers.org/umls/",
+          "order": 4
+        },
+        {
+          "prefix": "PUBCHEM.COMPOUND",
+          "base_uri": "http://identifiers.org/pubchem.compound/",
+          "order": 5
+        },
+        {
+          "prefix": "CHEMBL.COMPOUND",
+          "base_uri": "http://identifiers.org/chembl.compound/",
+          "order": 6
+        },
+        {
+          "prefix": "UNII",
+          "base_uri": "http://identifiers.org/unii/",
+          "order": 7
+        },
+        {
+          "prefix": "CHEBI",
+          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
+          "order": 8
+        },
+        {
+          "prefix": "MESH",
+          "base_uri": "http://id.nlm.nih.gov/mesh/",
+          "order": 9
+        },
+        {
+          "prefix": "CAS",
+          "base_uri": "http://identifiers.org/cas/",
+          "order": 10
+        },
+        {
+          "prefix": "GTOPDB",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=",
+          "order": 11
+        },
+        {
+          "prefix": "HMDB",
+          "base_uri": "http://identifiers.org/hmdb/",
+          "order": 12
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 13
+        },
+        {
+          "prefix": "KEGG.COMPOUND",
+          "base_uri": "http://identifiers.org/kegg.compound/",
+          "order": 14
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 15
+        },
+        {
+          "prefix": "PUBCHEM.SUBSTANCE",
+          "base_uri": "http://identifiers.org/pubchem.substance/",
+          "order": 16
+        },
+        {
+          "prefix": "INCHI",
+          "base_uri": "http://identifiers.org/inchi/",
+          "order": 17
+        },
+        {
+          "prefix": "INCHIKEY",
+          "base_uri": "http://identifiers.org/inchikey/",
+          "order": 18
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 19
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 20
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 21
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 22
+        },
+        {
+          "prefix": "BIGG.METABOLITE",
+          "base_uri": "http://identifiers.org/bigg.metabolite/",
+          "order": 23
+        },
+        {
+          "prefix": "foodb.compound",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "class_name": "biolink:FoodAdditive",
+      "prefix_map": [
+        {
+          "prefix": "ncats.drug",
+          "base_uri": "https://drugs.ncats.io/drug/",
+          "order": 1
+        },
+        {
+          "prefix": "RXCUI",
+          "base_uri": "https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=",
+          "order": 2
+        },
+        {
+          "prefix": "NDC",
+          "base_uri": "http://identifiers.org/ndc/",
+          "order": 3
+        },
+        {
+          "prefix": "UMLS",
+          "base_uri": "http://identifiers.org/umls/",
+          "order": 4
+        },
+        {
+          "prefix": "PUBCHEM.COMPOUND",
+          "base_uri": "http://identifiers.org/pubchem.compound/",
+          "order": 5
+        },
+        {
+          "prefix": "CHEMBL.COMPOUND",
+          "base_uri": "http://identifiers.org/chembl.compound/",
+          "order": 6
+        },
+        {
+          "prefix": "UNII",
+          "base_uri": "http://identifiers.org/unii/",
+          "order": 7
+        },
+        {
+          "prefix": "CHEBI",
+          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
+          "order": 8
+        },
+        {
+          "prefix": "MESH",
+          "base_uri": "http://id.nlm.nih.gov/mesh/",
+          "order": 9
+        },
+        {
+          "prefix": "CAS",
+          "base_uri": "http://identifiers.org/cas/",
+          "order": 10
+        },
+        {
+          "prefix": "GTOPDB",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=",
+          "order": 11
+        },
+        {
+          "prefix": "HMDB",
+          "base_uri": "http://identifiers.org/hmdb/",
+          "order": 12
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 13
+        },
+        {
+          "prefix": "KEGG.COMPOUND",
+          "base_uri": "http://identifiers.org/kegg.compound/",
+          "order": 14
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 15
+        },
+        {
+          "prefix": "PUBCHEM.SUBSTANCE",
+          "base_uri": "http://identifiers.org/pubchem.substance/",
+          "order": 16
+        },
+        {
+          "prefix": "INCHI",
+          "base_uri": "http://identifiers.org/inchi/",
+          "order": 17
+        },
+        {
+          "prefix": "INCHIKEY",
+          "base_uri": "http://identifiers.org/inchikey/",
+          "order": 18
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 19
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 20
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 21
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 22
+        },
+        {
+          "prefix": "BIGG.METABOLITE",
+          "base_uri": "http://identifiers.org/bigg.metabolite/",
+          "order": 23
+        },
+        {
+          "prefix": "foodb.compound",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 24
         }
       ]
     },
@@ -1100,23 +1700,123 @@
       "prefix_map": [
         {
           "prefix": "foodb.food",
-          "base_uri": "http://foodb.ca/compounds/",
+          "base_uri": "http://foodb.ca/foods/",
           "order": 1
+        },
+        {
+          "prefix": "foodb.compound",
+          "base_uri": "http://foodb.ca/compounds/",
+          "order": 2
         },
         {
           "prefix": "FOODON",
           "base_uri": "http://purl.obolibrary.org/obo/FOODON_",
-          "order": 2
+          "order": 3
         },
         {
           "prefix": "UMLS",
           "base_uri": "http://identifiers.org/umls/",
-          "order": 3
+          "order": 4
         },
         {
           "prefix": "NCIT",
           "base_uri": "http://purl.obolibrary.org/obo/NCIT_",
-          "order": 4
+          "order": 5
+        },
+        {
+          "prefix": "PUBCHEM.COMPOUND",
+          "base_uri": "http://identifiers.org/pubchem.compound/",
+          "order": 6
+        },
+        {
+          "prefix": "CHEMBL.COMPOUND",
+          "base_uri": "http://identifiers.org/chembl.compound/",
+          "order": 7
+        },
+        {
+          "prefix": "UNII",
+          "base_uri": "http://identifiers.org/unii/",
+          "order": 8
+        },
+        {
+          "prefix": "CHEBI",
+          "base_uri": "http://purl.obolibrary.org/obo/CHEBI_",
+          "order": 9
+        },
+        {
+          "prefix": "MESH",
+          "base_uri": "http://id.nlm.nih.gov/mesh/",
+          "order": 10
+        },
+        {
+          "prefix": "CAS",
+          "base_uri": "http://identifiers.org/cas/",
+          "order": 11
+        },
+        {
+          "prefix": "GTOPDB",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=",
+          "order": 12
+        },
+        {
+          "prefix": "HMDB",
+          "base_uri": "http://identifiers.org/hmdb/",
+          "order": 13
+        },
+        {
+          "prefix": "KEGG",
+          "base_uri": "http://www.kegg.jp/entry/",
+          "order": 14
+        },
+        {
+          "prefix": "KEGG.COMPOUND",
+          "base_uri": "http://identifiers.org/kegg.compound/",
+          "order": 15
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 16
+        },
+        {
+          "prefix": "PUBCHEM.SUBSTANCE",
+          "base_uri": "http://identifiers.org/pubchem.substance/",
+          "order": 17
+        },
+        {
+          "prefix": "INCHI",
+          "base_uri": "http://identifiers.org/inchi/",
+          "order": 18
+        },
+        {
+          "prefix": "INCHIKEY",
+          "base_uri": "http://identifiers.org/inchikey/",
+          "order": 19
+        },
+        {
+          "prefix": "KEGG.GLYCAN",
+          "base_uri": "http://identifiers.org/kegg.glycan/",
+          "order": 20
+        },
+        {
+          "prefix": "KEGG.ENVIRON",
+          "base_uri": "http://identifiers.org/kegg.environ/",
+          "order": 21
+        },
+        {
+          "prefix": "ChemBank",
+          "base_uri": "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=",
+          "order": 22
+        },
+        {
+          "prefix": "SIDER.DRUG",
+          "base_uri": "http://identifiers.org/sider.drug/",
+          "order": 23
+        },
+        {
+          "prefix": "BIGG.METABOLITE",
+          "base_uri": "http://identifiers.org/bigg.metabolite/",
+          "order": 24
         }
       ]
     },
@@ -1165,7 +1865,7 @@
         },
         {
           "prefix": "WBls",
-          "base_uri": "http://purl.obolibrary.org/obo/WBBL_",
+          "base_uri": "http://purl.obolibrary.org/obo/WBls_",
           "order": 5
         },
         {
@@ -1425,7 +2125,7 @@
         },
         {
           "prefix": "WBbt",
-          "base_uri": "http://purl.obolibrary.org/obo/WBBT_",
+          "base_uri": "http://purl.obolibrary.org/obo/WBbt_",
           "order": 10
         }
       ]
@@ -1629,8 +2329,8 @@
           "order": 13
         },
         {
-          "prefix": "KEGG.GENE",
-          "base_uri": "http://www.kegg.jp/entry/",
+          "prefix": "KEGG.GENES",
+          "base_uri": "https://bioregistry.io/kegg.genes:bsu:",
           "order": 14
         },
         {
@@ -2010,7 +2710,7 @@
         },
         {
           "prefix": "WIKIDATA",
-          "base_uri": "https://www.wikidata.org/wiki/",
+          "base_uri": "https://www.wikidata.org/entity/",
           "order": 3
         },
         {
