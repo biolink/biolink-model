@@ -22,16 +22,22 @@ Instances of this class *should* have identifiers with one of the following pref
 {% endfor %}
 {% endif %}
 
-{% if schemaview.get_mappings(element.name).items() %}
+{% set mapping_items = schemaview.get_mappings(element.name).items() %}
+{% set valid_mappings = [] %}
+
+{% for m, mt in mapping_items %}
+    {% if mt and m != "self" and m != "native" %}
+        {% set valid_mappings = valid_mappings + [(m, mt)] %}
+    {% endif %}
+{% endfor %}
+
+{% if valid_mappings %}
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | --- | --- |
-{% for m, mt in schemaview.get_mappings(element.name).items() -%}
-{% if mt and m != "self" and m != "native" -%}
-| {{ m }} | {% for item in mt %}{{ item }}<br>{% endfor %} |
-{% endif -%}
+{% for m, mt in valid_mappings %}
+| {{ m }} | {{ mt|join(', ') }} |
 {% endfor %}
 {% endif %}
-
 
