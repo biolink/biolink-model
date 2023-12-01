@@ -2,13 +2,14 @@
 {% if element.description or element.aliases or element.multivalued or element.required or element.domain or element.range or element.inverse %}
 <div class="highlight-box">{% if element.description %}<strong>Description:</strong><i> {{ element.description }}</i><br>{% endif %}
   {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
-  {% if element.domain %}<strong>Domain:</strong> {{ element.domain }}<br>{% endif %}
-  {% if element.range %}<strong>Range:</strong> {{ element.range }}<br>{% endif %}
   {% if element.required %} <strong>Required:</strong> {{ element.required }}<br>{% endif %}
   {% if element.inverse %}<strong>Inverse:</strong> {{ element.inverse }}</a></small><br>{% endif %}
  {% if element.notes %}<strong> Notes:</strong> {{ element.notes|join(' ') }} {% endif %}
 </div>
 {% endif %}
+
+{% if element.domain %}<strong>Domain:</strong> {{ gen.link(schemaview.get_element(element.domain)) }}<br>{% endif %}
+{% if element.range %}<strong>Range:</strong>   {{ gen.link(schemaview.get_element(element.range)) }} <br>{% endif %}
 
 {% if schemaview.slot_parents(element.name) or schemaview.slot_children(element.name, mixins=False) %}
 
@@ -66,7 +67,7 @@
 
 ## LinkML Source
 
-<details>
+<details open>
 ```yaml
 {{ gen.yaml(element) }}
 ```

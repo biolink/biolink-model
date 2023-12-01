@@ -1,12 +1,14 @@
 # <strong>  Class: {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>{% endif %}{% if element.abstract %}<span style="color: purple;"><strong><small> (Abstract) </small> </strong></span> {% endif %}
-{% if element.description or element.aliases or element.multivalued or element.required or element.domain or element.range or element.inverse %}
-<div class="highlight-box">{% if element.description %}<strong>Description:</strong><i> {{ element.description }}</i><br>{% endif %}
-  {% if element.aliases %}<strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
-  {% if element.multivalued %}<strong>Multivalued:</strong> {{ element.multivalued }}<br>{% endif -%}
-  {% if element.required %}<strong>Required:</strong> {{ element.required }}<br>{% endif %}
-  {% if element.notes %}<strong> Notes:</strong> {{ element.notes|join(' ') }} {% endif %}
+{% if element.description or element.notes %}
+<div class="highlight-box">
+    {% if element.description %}
+      <strong>Description:</strong><i> {{ element.description }}</i><br>
+    {% endif %}
 </div>
 {% endif %}
+
+{% if element.aliases %} Aliases: {{ element.aliases | join(', ') }}  {% endif %}
+{% if element.notes %} Notes: {{ element.notes|join(' ') }}   {% endif %}
 
 {% if diagram_type == "er_diagram" %}
 ```{{ gen.mermaid_directive() }}
@@ -76,7 +78,7 @@
 
 ## LinkML Source
 
-<details>
+<details open>
 ```yaml
 {{gen.yaml(element)}}
 ```
