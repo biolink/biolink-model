@@ -537,13 +537,13 @@
 
 <h1 id="slot-anatomical_context_qualifier"><strong> Slot: anatomical_context_qualifier </strong></h1>
 <div class="highlight-box"><strong>Description:</strong><i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).</i><br>
-  <strong>Domain:</strong> association<br>
-  <strong>Range:</strong> string<br>
 
 
  <strong> Notes:</strong> Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’  combines with a core concept of ‘neuron’  to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies  taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values  here, the examples below are intended to help clarify the content of the CURIEs. 
 </div>
 
+<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
+<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -590,7 +590,7 @@
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<details>
+<details open>
 
 <pre><code class="language-yaml">name: anatomical context qualifier
 description: A statement qualifier representing an anatomical location where an relationship

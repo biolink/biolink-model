@@ -537,13 +537,13 @@
 
 <h1 id="slot-qualified_predicate"><strong> Slot: qualified_predicate </strong></h1>
 <div class="highlight-box"><strong>Description:</strong><i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.</i><br>
-  <strong>Domain:</strong> association<br>
-  <strong>Range:</strong> string<br>
 
 
  <strong> Notes:</strong> to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but does not make  sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y) 
 </div>
 
+<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
+<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -582,7 +582,7 @@
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<details>
+<details open>
 
 <pre><code class="language-yaml">name: qualified predicate
 description: Predicate to be used in an association when subject and object qualifiers

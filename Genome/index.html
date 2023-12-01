@@ -245,7 +245,8 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-genome"><strong>  Class: Genome </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> A genome is the sum of genetic material within a cell or virion.</i><br/>
+<div class="highlight-box">
+<strong>Description:</strong><i> A genome is the sum of genetic material within a cell or virion.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class Genome
@@ -321,7 +322,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a>: <br/> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></td>
@@ -359,27 +360,7 @@
 <td><a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
-<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.</i></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>* In a neo4j database this MAY correspond to the neo4j label tag.</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>* In an RDF database it should be a biolink model class URI.</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>, ...</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </td>
+<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
 <td>1..* <br/> <a href="../CategoryType/">CategoryType</a></td>
 <td><a href="../Entity/">Entity</a></td>
 </tr>
@@ -411,7 +392,7 @@
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<details>
+<details open="">
 <pre><code class="language-yaml">name: genome
 description: A genome is the sum of genetic material within a cell or virion.
 in_subset:

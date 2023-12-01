@@ -537,13 +537,13 @@
 
 <h1 id="slot-has_phenotype-multivalued"><strong> Slot: has_phenotype </strong>  (multivalued)</h1>
 <div class="highlight-box"><strong>Description:</strong><i> holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.</i><br>
-   <strong>Aliases:</strong> disease presents symptom<br><strong>Domain:</strong> biological entity<br>
-  <strong>Range:</strong> phenotypic feature<br>
-
+   <strong>Aliases:</strong> disease presents symptom<br>
 
  <strong> Notes:</strong> check the range 
 </div>
 
+<p><strong>Domain:</strong> <a href="../BiologicalEntity/">BiologicalEntity</a><br>
+<strong>Range:</strong>   <a href="../PhenotypicFeature/">PhenotypicFeature</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -570,7 +570,7 @@
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
-<details>
+<details open>
 
 <pre><code class="language-yaml">name: has phenotype
 annotations:
