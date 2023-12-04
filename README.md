@@ -3,9 +3,10 @@
 [![Python 3.10.1](https://upload.wikimedia.org/wikipedia/commons/f/fc/Blue_Python_3.7_Shield_Badge.svg)](https://www.python.org/downloads/release/python-370/)
 [![DOI](https://zenodo.org/badge/112995625.svg)](https://zenodo.org/badge/latestdoi/112995625)
 
+
 <img src="images/biolink-logo.png" width="20%">
 
-# Biolink Model
+# Biolink Model: https://w3id.org/biolink/biolink-model.yaml
 
 Quickstart docs:
 
