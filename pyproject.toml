@@ -1,35 +1,47 @@
 [tool.poetry]
 name = "biolink-model"
-version = "3.3.3.post25.dev0+93c02412c"
-description = "Entity and association taxonomy and datamodel for life-sciences data"
-authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
-license = "https://creativecommons.org/publicdomain/zero/1.0/"
+version = "0.0.0"
+description = "The Biolink Model is a high-level data model designed to standardize types and relationships in biological knowledgebases."
+authors = ["Chris Mungall <cjm@berkeleybop.org>", "Deepak Unni <deepak.unni3@gmail.com>","Sierra Moxon <smoxon@lbl.gov>", "Richard Bruskiewich <richard@starinformatics.com>"]
+license = "MIT"
 readme = "README.md"
+include = ["README.md", "src/biolink_model/schema", "project", "src/biolink_model/datamodel", "src/biolink_model/scripts"]
 
-packages = [{include = "biolink"}]
+[tool.poetry.scripts]
+generate_viz_json = "src.biolink_model.scripts.generate_json:generate_viz_json"
 
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml = ">=1.6.3"
 curies = "^0.7.4"
 prefixmaps = "^0.2.0"
+rdflib = "6.0.0"
+pyyaml = "^6.0.1"
+importlib-metadata = "^6.8.0"
+stringcase = "^1.2.0"
 pytest = "^7.3.1"
 bs4 = "^0.0.1"
 
 [tool.poetry-dynamic-versioning]
-enable = false
+enable = true
 vcs = "git"
 style = "pep440"
 
 [tool.poetry.dev-dependencies]
-codespell = "^2.2.5"
-yamllint = "^1.30.0"
+linkml = ">=1.6.3"
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.4.8"
+mkdocs-mermaid2-plugin = "^1.1.1"
+schemasheets = "^0.1.14"
+codespell = "^2.2.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
 
+[tool.poetry.extras]
+docs = ["mkdocs-material"]
+
 [tool.codespell]
-skip = 'SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*,'
+skip = 'project,SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,json-schema,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*,'
 ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
