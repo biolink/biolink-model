@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - master
-  repository_dispatch:
+  workflow_dispatch:
     types: trigger-build-artifacts
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

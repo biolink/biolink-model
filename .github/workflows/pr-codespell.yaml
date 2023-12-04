@@ -4,6 +4,8 @@ name: Codespell
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    types: trigger-codespell
 
 jobs:
   codespell:

@@ -3,6 +3,8 @@ name: Validate-Biolink-YAML
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    types: trigger-validate-biolink-yaml
 
 jobs:
   validate-yaml:

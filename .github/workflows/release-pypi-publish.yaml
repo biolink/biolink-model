@@ -4,6 +4,8 @@ name: Publish Python Package
 on:
   release:
     types: [created]
+  workflow_dispatch:
+    types: trigger-pypi-publish
 
 jobs:
   build-n-publish:

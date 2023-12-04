@@ -6,6 +6,8 @@ name: Run tests
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    types: trigger-verify-pull-request
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
