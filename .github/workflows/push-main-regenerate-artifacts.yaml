@@ -1,0 +1,52 @@
+name: Regenerate Biolink Model Artifacts
+
+# Controls when the action will run. Triggers the workflow on push
+# event but only for the master branch, and specifically on the biolink-model.yaml
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    types: trigger-build-artifacts
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v2
+        with:
+          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+          python-version: 3.9
+
+      - name: Setup build environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential git wget curl
+          pip install poetry
+
+      - name: Generate Biolink Model artifacts
+        run: |
+          poetry install
+          make gen-project
+          make id-prefixes
+          make test
+          if [ $? -eq 0 ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add project/*
+            git add src/*
+            git commit -m "Regenerate artifacts from biolink-model.yaml"
+            git push
+          else
+            echo "'make' gen-project failed to finish successfully"
+          fi

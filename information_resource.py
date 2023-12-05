@@ -1,5 +1,5 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-11-29T10:56:43
+# Generation date: 2023-11-30T15:26:10
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -24,7 +24,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import String
 
 metamodel_version = "1.7.0"
-version = "3.6.0"
+version = "4.0.0"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -65,7 +65,7 @@ class InformationResourceContainer(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationResourceContainer
+    class_class_uri: ClassVar[URIRef] = BIOLINK["InformationResourceContainer"]
     class_class_curie: ClassVar[str] = "biolink:InformationResourceContainer"
     class_name: ClassVar[str] = "InformationResourceContainer"
     class_model_uri: ClassVar[URIRef] = INFORES.InformationResourceContainer
@@ -89,7 +89,7 @@ class InformationResource(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationResource
+    class_class_uri: ClassVar[URIRef] = BIOLINK["InformationResource"]
     class_class_curie: ClassVar[str] = "biolink:InformationResource"
     class_name: ClassVar[str] = "InformationResource"
     class_model_uri: ClassVar[URIRef] = INFORES.InformationResource
