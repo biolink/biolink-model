@@ -1247,11 +1247,16 @@ information_resources:
     agent type: not_provided
   - id: infores:diseases
     status: released
-    name: Disease-gene associations mined from literature
+    name: DISEASES
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Diseases
     knowledge level: curated
     agent type: not_provided
+    description: >-
+      DISEASES is a weekly updated web resource that integrates evidence on disease-gene associations 
+      from automatic text mining, manually curated literature, cancer mutation data, and 
+      genome-wide association studies. We further unify the evidence by assigning confidence 
+      scores that facilitate comparison of the different types and sources of evidence.
   - id: infores:disgenet
     status: released
     name: DisGeNET
@@ -3622,3 +3627,26 @@ information_resources:
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [FooDB](https://foodb.ca/) data. 
+  - id: infores:tissues
+    status: released
+    name: TISSUES
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/TISSUES
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      TISSUES is a weekly updated web resource that integrates evidence on tissue expression 
+      from manually curated literature, proteomics and transcriptomics screens, and automatic 
+      text mining. We map all evidence to common protein identifiers and Brenda Tissue Ontology 
+      terms, and further unify it by assigning confidence scores that facilitate comparison of 
+      the different types and sources of evidence. We finally visualize these scores on a 
+      schematic human body to provide a convenient overview.
+  - id: infores:biothings-tissues
+    status: released
+    name: BioThings TISSUES API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-TISSUES-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [TISSUES](https://tissues.jensenlab.org/About) data. 
