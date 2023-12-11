@@ -283,6 +283,16 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: A graph based on the [Kyoto Encyclopedia of Genes and Genomes (https://www.genome.jp/kegg/)](https://www.genome.jp/kegg/).
+  - id: infores:automat-monarchinitiative
+    status: released
+    name: Automat Monarch Initiative
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Automat
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      The Monarch Knowledge Graph is a reference implementation of the Biolink model specification. 
+      It contains data from the Monarch Initiative aggregated database as well as several OBO ontologies.
   - id: infores:automat-mychem-info
     status: deprecated
     name: Automat MyChem (trapi v-1.1.0)
@@ -342,7 +352,7 @@ information_resources:
       laboratory experiments, conserved co-expression, automated text mining, and aggregated
       knowledge from primary data sources.
   - id: infores:automat-sri-reference-kg
-    status: released
+    status: deprecated
     name: Automat SRI Reference Knowledge Graph
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Reference-Knowledge-Graph
@@ -363,7 +373,7 @@ information_resources:
       A graph representation of Ubergraph, an integration of ontologies
       including GO, CHEBI, Uberon, and HPO.
   - id: infores:automat-ubergraph-nonredundant
-    status: deprecated
+    status: released
     name: Automat Ubergraph Nonredundant
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Automat
@@ -2933,7 +2943,7 @@ information_resources:
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Ontology-Service
   - id: infores:sri-reference-kg
-    status: released
+    status: deprecated
     name: SRI Reference Knowledge Graph API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Reference-Knowledge-Graph
@@ -3090,6 +3100,14 @@ information_resources:
       TTD is a database providing information about the known and explored therapeutic protein 
       and nucleic acid targets, the targeted disease, pathway information and the corresponding drugs 
       directed at each of these targets.
+  - id: infores:ubergraph
+    status: released
+    name: Ubergraph
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Ubergraph
+    knowledge level: curated
+    agent type: not_provided
+    description: A graph representation of Ubergraph, an integration of ontologies including GO, CHEBI, Uberon, and HPO.
   - id: infores:uberon
     status: released
     name: Uber Anatomy Ontology
