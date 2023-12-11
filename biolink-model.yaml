@@ -11155,13 +11155,15 @@ enums:
       not_approved_for_condition:
       post_approval_withdrawal:
         is_a: not_approved_for_condition
+      off_label_use:
+        is_a: not_approved_for_condition
       not_provided:
 
   MaxResearchPhaseEnum:
     permissible_values:
-      preclinical_research_phase:
+      pre_clinical_research_phase:
         description: >- 
-          Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and 
+          Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and 
           `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication 
           through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of 
           new technology that allows novel ways of targeting medical products to sites in the body. Drug development 
