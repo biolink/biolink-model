@@ -4988,7 +4988,7 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
                     "type": "string"
                 },
                 "id": {
@@ -6458,6 +6458,18 @@
             "title": "ChiSquaredAnalysisResult",
             "type": "object"
         },
+        "ClinicalApprovalStatusEnum": {
+            "description": "",
+            "enum": [
+                "approved_for_condition",
+                "fda_approved_for_condition",
+                "not_approved_for_condition",
+                "post_approval_withdrawal",
+                "not_provided"
+            ],
+            "title": "ClinicalApprovalStatusEnum",
+            "type": "string"
+        },
         "ClinicalAttribute": {
             "additionalProperties": false,
             "description": "Attributes relating to a clinical manifestation",
@@ -7614,7 +7626,7 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
                     "type": "string"
                 },
                 "id": {
@@ -10037,7 +10049,7 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
                     "type": "string"
                 },
                 "id": {
@@ -10912,10 +10924,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "FDA_approval_status": {
-                    "$ref": "#/$defs/FDAApprovalStatusEnum",
-                    "description": ""
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -10932,6 +10940,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "clinical_approval_status": {
+                    "$ref": "#/$defs/ClinicalApprovalStatusEnum",
+                    "description": ""
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -10966,6 +10978,9 @@
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
+                },
+                "max_research_phase": {
+                    "$ref": "#/$defs/MaxResearchPhaseEnum"
                 },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
@@ -11112,10 +11127,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "FDA_approval_status": {
-                    "$ref": "#/$defs/FDAApprovalStatusEnum",
-                    "description": ""
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -11132,6 +11143,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "clinical_approval_status": {
+                    "$ref": "#/$defs/ClinicalApprovalStatusEnum",
+                    "description": ""
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -11166,6 +11181,9 @@
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
+                },
+                "max_research_phase": {
+                    "$ref": "#/$defs/MaxResearchPhaseEnum"
                 },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
@@ -12581,28 +12599,6 @@
             "title": "ExposureEventToPhenotypicFeatureAssociation",
             "type": "object"
         },
-        "FDAApprovalStatusEnum": {
-            "description": "",
-            "enum": [
-                "discovery_and_development_phase",
-                "preclinical_research_phase",
-                "fda_clinical_research_phase",
-                "fda_review_phase_4",
-                "fda_post_market_safety_review",
-                "fda_clinical_research_phase_1",
-                "fda_clinical_research_phase_2",
-                "fda_clinical_research_phase_3",
-                "fda_clinical_research_phase_4",
-                "fda_fast_track",
-                "fda_breakthrough_therapy",
-                "fda_accelerated_approval",
-                "fda_priority_review",
-                "regular_fda_approval",
-                "post_approval_withdrawal"
-            ],
-            "title": "FDAApprovalStatusEnum",
-            "type": "string"
-        },
         "FDAIDAAdverseEventEnum": {
             "description": "please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
             "enum": [
@@ -12667,7 +12663,7 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
                     "type": "string"
                 },
                 "id": {
@@ -20780,6 +20776,20 @@
             "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
             "type": "object"
         },
+        "MaxResearchPhaseEnum": {
+            "description": "",
+            "enum": [
+                "preclinical_research_phase",
+                "clinical_trial_phase",
+                "clinical_trial_phase_1",
+                "clinical_trial_phase_2",
+                "clinical_trial_phase_3",
+                "clinical_trial_phase_4",
+                "not_provided"
+            ],
+            "title": "MaxResearchPhaseEnum",
+            "type": "string"
+        },
         "MicroRNA": {
             "additionalProperties": false,
             "description": "",
@@ -21737,7 +21747,7 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
                     "type": "string"
                 },
                 "id": {
@@ -26294,7 +26304,7 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
                     "type": "string"
                 },
                 "id": {

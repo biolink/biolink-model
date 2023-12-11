@@ -1234,7 +1234,8 @@ linkml:Sparqlpath xsd:string
 <EntityToDiseaseAssociation> CLOSED {
     (  $<EntityToDiseaseAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          <FDA_approval_status> @<FDAApprovalStatusEnum> ?
+          <clinical_approval_status> @<ClinicalApprovalStatusEnum> ? ;
+          <max_research_phase> @<MaxResearchPhaseEnum> ?
        ) ;
        rdf:type [ <EntityToDiseaseAssociation> ]
     )
@@ -1284,7 +1285,8 @@ linkml:Sparqlpath xsd:string
 <EntityToPhenotypicFeatureAssociation> CLOSED {
     (  $<EntityToPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          <FDA_approval_status> @<FDAApprovalStatusEnum> ?
+          <clinical_approval_status> @<ClinicalApprovalStatusEnum> ? ;
+          <max_research_phase> @<MaxResearchPhaseEnum> ?
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociation> ]
     )
