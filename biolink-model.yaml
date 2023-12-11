@@ -3284,7 +3284,6 @@ slots:
       disease, and excludes interventions that prevent/reduce risk of developing a condition in the future.
     mixins:
       - treats
-      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3304,7 +3303,6 @@ slots:
     is_a: affects likelihood of
     mixins:
       - treats
-      - treats or taken or studied to treat
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
       and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.
@@ -3386,6 +3384,7 @@ slots:
       - translator_minimal
 
   treats:
+    is_a: treats or taken to treat or studied to treat
     mixin: true
     aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
@@ -3475,15 +3474,14 @@ slots:
       edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 
       'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it 
       is merely reporting that a study was observed to have been performed).
-    mixins:
-      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
+    mixins:
+      - treats or taken to treat or studied to treat
     annotations:
-      canonical_predicate: true
+        canonical_predicate: true
 
   studied for treatment with:
-    is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
     # range: chemical or drug or treatment
@@ -3507,7 +3505,7 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
-      - treats or taken or studied to treat
+      - treats or taken to treat or studied to treat
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3525,7 +3523,7 @@ slots:
       A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study 
       was observed to have been performed).
     mixins:
-      - treats or taken or studied to treat
+      - treats or taken to treat or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3549,7 +3547,7 @@ slots:
       results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the 
       occurrence of a study).
     mixins:
-      - treats or taken or studied to treat
+      - treats or taken to treat or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3574,7 +3572,7 @@ slots:
       of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
       prescribed for use at some point in time).
     mixins:
-      - treats or taken or studied to treat
+      - treats or taken to treat or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3583,7 +3581,7 @@ slots:
       - translator_minimal
    # TODO: need an inverse for taken to treat
 
-  treats or taken or studied to treat:
+  treats or taken to treat or studied to treat:
     mixin: true
     description: >-
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), 

@@ -3386,6 +3386,7 @@ slots:
       - translator_minimal
 
   treats:
+    is_a: treats or taken or studied to treat
     mixin: true
     aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
@@ -3463,7 +3464,7 @@ slots:
       - RO:0002302
 
   studied to treat:
-    is_a: related to at instance level
+    is_a: treats or taken or studied to treat
     description: >-
       Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more 
       scientific study has been performed to specifically test the potential of the  substance, procedure, or 
@@ -3475,8 +3476,6 @@ slots:
       edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 
       'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it 
       is merely reporting that a study was observed to have been performed).
-    mixins:
-      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3584,6 +3583,7 @@ slots:
    # TODO: need an inverse for taken to treat
 
   treats or taken or studied to treat:
+    is_a: related to at instance level
     mixin: true
     description: >-
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
