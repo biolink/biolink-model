@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-11T09:21:08
+# Generation date: 2023-12-11T09:24:19
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
