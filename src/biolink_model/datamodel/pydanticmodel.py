@@ -37,14 +37,16 @@ class ClinicalApprovalStatusEnum(str, Enum):
     
     post_approval_withdrawal = "post_approval_withdrawal"
     
+    off_label_use = "off_label_use"
+    
     not_provided = "not_provided"
     
     
 
 class MaxResearchPhaseEnum(str, Enum):
     
-    # Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.
-    preclinical_research_phase = "preclinical_research_phase"
+    # Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.
+    pre_clinical_research_phase = "pre_clinical_research_phase"
     # Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
     clinical_trial_phase = "clinical_trial_phase"
     # In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.

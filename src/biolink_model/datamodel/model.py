@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-11T14:17:50
+# Generation date: 2023-12-11T15:45:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -11509,6 +11509,7 @@ class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
     fda_approved_for_condition = PermissibleValue(text="fda_approved_for_condition")
     not_approved_for_condition = PermissibleValue(text="not_approved_for_condition")
     post_approval_withdrawal = PermissibleValue(text="post_approval_withdrawal")
+    off_label_use = PermissibleValue(text="off_label_use")
     not_provided = PermissibleValue(text="not_provided")
 
     _defn = EnumDefinition(
@@ -11517,9 +11518,9 @@ class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
 
 class MaxResearchPhaseEnum(EnumDefinitionImpl):
 
-    preclinical_research_phase = PermissibleValue(
-        text="preclinical_research_phase",
-        description="""Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.""")
+    pre_clinical_research_phase = PermissibleValue(
+        text="pre_clinical_research_phase",
+        description="""Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.""")
     clinical_trial_phase = PermissibleValue(
         text="clinical_trial_phase",
         description="""Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.""")
@@ -12660,7 +12661,7 @@ slots.condition_exacerbated_by = Slot(uri=BIOLINK.condition_exacerbated_by, name
                    model_uri=BIOLINK.condition_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
-                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
 
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
                    model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[dict, ChemicalOrDrugOrTreatment]])
@@ -12669,7 +12670,7 @@ slots.studied_to_treat = Slot(uri=BIOLINK.studied_to_treat, name="studied to tre
                    model_uri=BIOLINK.studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.studied_for_treatment_with = Slot(uri=BIOLINK.studied_for_treatment_with, name="studied for treatment with", curie=BIOLINK.curie('studied_for_treatment_with'),
-                   model_uri=BIOLINK.studied_for_treatment_with, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.studied_for_treatment_with, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[dict, ChemicalOrDrugOrTreatment]])
 
 slots.in_clinical_trials_for = Slot(uri=BIOLINK.in_clinical_trials_for, name="in clinical trials for", curie=BIOLINK.curie('in_clinical_trials_for'),
                    model_uri=BIOLINK.in_clinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
@@ -12683,8 +12684,8 @@ slots.beneficial_in_models_for = Slot(uri=BIOLINK.beneficial_in_models_for, name
 slots.was_applied_to_treat = Slot(uri=BIOLINK.was_applied_to_treat, name="was applied to treat", curie=BIOLINK.curie('was_applied_to_treat'),
                    model_uri=BIOLINK.was_applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.treats_or_taken_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_taken_or_studied_to_treat, name="treats or taken or studied to treat", curie=BIOLINK.curie('treats_or_taken_or_studied_to_treat'),
-                   model_uri=BIOLINK.treats_or_taken_or_studied_to_treat, domain=None, range=Optional[str])
+slots.treats_or_taken_to_treat_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_taken_to_treat_or_studied_to_treat, name="treats or taken to treat or studied to treat", curie=BIOLINK.curie('treats_or_taken_to_treat_or_studied_to_treat'),
+                   model_uri=BIOLINK.treats_or_taken_to_treat_or_studied_to_treat, domain=None, range=Optional[str])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

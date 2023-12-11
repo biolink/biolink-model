@@ -6465,6 +6465,7 @@
                 "fda_approved_for_condition",
                 "not_approved_for_condition",
                 "post_approval_withdrawal",
+                "off_label_use",
                 "not_provided"
             ],
             "title": "ClinicalApprovalStatusEnum",
@@ -20779,7 +20780,7 @@
         "MaxResearchPhaseEnum": {
             "description": "",
             "enum": [
-                "preclinical_research_phase",
+                "pre_clinical_research_phase",
                 "clinical_trial_phase",
                 "clinical_trial_phase_1",
                 "clinical_trial_phase_2",

@@ -1041,6 +1041,10 @@
           "is_a": "not_approved_for_condition"
         },
         {
+          "text": "off_label_use",
+          "is_a": "not_approved_for_condition"
+        },
+        {
           "text": "not_provided"
         }
       ]
@@ -1051,8 +1055,8 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "permissible_values": [
         {
-          "text": "preclinical_research_phase",
-          "description": "Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.",
+          "text": "pre_clinical_research_phase",
+          "description": "Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.",
           "notes": [
             "DrugBank calls this 'experimental'."
           ]
@@ -7335,8 +7339,7 @@
       ],
       "is_a": "affects",
       "mixins": [
-        "treats",
-        "treats_or_taken_or_studied_to_treat"
+        "treats"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/ameliorates_condition",
@@ -7388,8 +7391,7 @@
       ],
       "is_a": "affects_likelihood_of",
       "mixins": [
-        "treats",
-        "treats_or_taken_or_studied_to_treat"
+        "treats"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/preventative_for_condition",
@@ -7610,12 +7612,10 @@
         "https://www.wikidata.org/prop/P2175",
         "http://purl.obolibrary.org/obo/MONDO_disease_responds_to"
       ],
-      "is_a": "related_to_at_instance_level",
+      "is_a": "treats_or_taken_to_treat_or_studied_to_treat",
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats",
-      "multivalued": true,
-      "inherited": true,
       "owner": "treats",
       "inverse": "treated_by",
       "range": "DiseaseOrPhenotypicFeature",
@@ -7661,7 +7661,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
       "mixins": [
-        "treats_or_taken_or_studied_to_treat"
+        "treats_or_taken_to_treat_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
@@ -7676,11 +7676,8 @@
       "name": "studied_for_treatment_with",
       "definition_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
-      "multivalued": true,
-      "inherited": true,
       "owner": "studied_for_treatment_with",
       "inverse": "studied_to_treat",
       "range": "ChemicalOrDrugOrTreatment",
@@ -7707,7 +7704,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "studied_to_treat",
       "mixins": [
-        "treats_or_taken_or_studied_to_treat"
+        "treats_or_taken_to_treat_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
@@ -7737,7 +7734,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "studied_to_treat",
       "mixins": [
-        "treats_or_taken_or_studied_to_treat"
+        "treats_or_taken_to_treat_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
@@ -7767,7 +7764,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "in_preclinical_trials_for",
       "mixins": [
-        "treats_or_taken_or_studied_to_treat"
+        "treats_or_taken_to_treat_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
@@ -7802,7 +7799,7 @@
       ],
       "is_a": "related_to_at_instance_level",
       "mixins": [
-        "treats_or_taken_or_studied_to_treat"
+        "treats_or_taken_to_treat_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/was_applied_to_treat",
@@ -7813,8 +7810,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "treats_or_taken_or_studied_to_treat",
-      "definition_uri": "https://w3id.org/biolink/vocab/treats_or_taken_or_studied_to_treat",
+      "name": "treats_or_taken_to_treat_or_studied_to_treat",
+      "definition_uri": "https://w3id.org/biolink/vocab/treats_or_taken_to_treat_or_studied_to_treat",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7831,7 +7828,7 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
-      "slot_uri": "https://w3id.org/biolink/vocab/treats_or_taken_or_studied_to_treat",
+      "slot_uri": "https://w3id.org/biolink/vocab/treats_or_taken_to_treat_or_studied_to_treat",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -33551,9 +33548,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-11T14:17:04",
-  "source_file_size": 370437,
-  "generation_date": "2023-12-11T14:17:13",
+  "source_file_date": "2023-12-11T15:45:11",
+  "source_file_size": 370463,
+  "generation_date": "2023-12-11T15:45:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
