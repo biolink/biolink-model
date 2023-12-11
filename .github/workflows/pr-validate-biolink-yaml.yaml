@@ -1,0 +1,15 @@
+name: Validate-Biolink-YAML
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    types: trigger-validate-biolink-yaml
+
+jobs:
+  validate-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate YAML file
+        run: yamllint -c .yamllint-config biolink-model.yaml

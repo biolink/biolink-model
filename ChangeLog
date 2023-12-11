@@ -1,5 +1,49 @@
 CHANGES
 =======
+4.0.0
+-----
+Summary: 4.0.0 is a major release that includes many changes to the documentation for Biolink Model as well
+as the reorganization of the repository to support the new documentation structure and comply with LinkML best
+practices.  The model itself has not changed significantly, but the documentation has been updated to reflect
+the current state of the model, and includes new visualizations of the model, additional text-based documentation,
+and a new gh-pages documentation layout.
+
+3.6.0
+-----
+## What's Changed
+* Removed auto deployment of documentation and artifacts in prep for doc refactor release
+* adding aspect qualifier enums by @EvanDietzMorris in https://github.com/biolink/biolink-model/pull/1380
+* update name for gtrx infores source to match BTE's name. by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1384
+* reorder id_prefixes for small molecule, fixes #1375 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1376
+* Update infores_catalog.yaml by @beasleyjonm in https://github.com/biolink/biolink-model/pull/1389
+* PFCOR->PFOCR by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1385
+* Bump certifi from 2023.5.7 to 2023.7.22 by @dependabot in https://github.com/biolink/biolink-model/pull/1382
+* Created new class GeneAffectsChemicalAssociation with qualifiers by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1388
+* Cx infores edits by @colleenXu in https://github.com/biolink/biolink-model/pull/1391
+* Update understanding-the-model.md by @pabloDumas in https://github.com/biolink/biolink-model/pull/1394
+* Fix answer appraiser infores by @maximusunc in https://github.com/biolink/biolink-model/pull/1396
+* Chemical prefixes - propagate id_prefixes down the chemical entity hierarchy by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1398
+* Bump urllib3 from 2.0.2 to 2.0.6 by @dependabot in https://github.com/biolink/biolink-model/pull/1397
+* Fix foodb prefixes by @cbizon in https://github.com/biolink/biolink-model/pull/1399
+* Update xref URL for infores:arax in infores_catalog.yaml by @saramsey in https://github.com/biolink/biolink-model/pull/1403
+* add pydantic-v2 model by @glass-ships in https://github.com/biolink/biolink-model/pull/1404
+* Bump urllib3 from 2.0.2 to 2.0.7 by @dependabot in https://github.com/biolink/biolink-model/pull/1400
+* add semantic map to STY:T167, fixes #1370 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1406
+* Add qualifier to Association by @kevinschaper in https://github.com/biolink/biolink-model/pull/1407
+* Bump urllib3 from 2.0.2 to 2.0.7 by @dependabot in https://github.com/biolink/biolink-model/pull/1409
+* Adds `deprecated` as a node property slot added to `biolink:Entity` by @kevinschaper in https://github.com/biolink/biolink-model/pull/1421
+* Update infores_catalog.yaml by @karafecho in https://github.com/biolink/biolink-model/pull/1422
+* Update infores_catalog.yaml by @karafecho in https://github.com/biolink/biolink-model/pull/1423
+
+## New Contributors
+* @pabloDumas made their first contribution in https://github.com/biolink/biolink-model/pull/1394
+* @maximusunc made their first contribution in https://github.com/biolink/biolink-model/pull/1396
+* @saramsey made their first contribution in https://github.com/biolink/biolink-model/pull/1403
+* @glass-ships made their first contribution in https://github.com/biolink/biolink-model/pull/1404
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.5.4...v3.6.0
+>>>>>>> master
+
 3.5.4
 -----
 Summary: infores catalog URL replacements with TranslatorWiki pages, and a few new infores entries.
