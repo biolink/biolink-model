@@ -3479,7 +3479,7 @@ slots:
     mixins:
       - treats or taken to treat or studied to treat
     annotations:
-        canonical_predicate: true
+      canonical_predicate: true
 
   studied for treatment with:
     domain: disease or phenotypic feature
@@ -4974,10 +4974,10 @@ slots:
     notes: >-
       This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that 
       puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the 
-      drug would be used to treat (e.g.  pseudoephedrine is contraindicated in people with high-blood pressure as 
+      drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as 
       a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who 
       are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated 
-      in people taking warfarrin as a preventative treatment for stroke).
+      in people taking warfarin as a preventative treatment for stroke).
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
