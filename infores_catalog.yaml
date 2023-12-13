@@ -465,6 +465,8 @@ information_resources:
   - id: infores:biocatalogue
     status: deprecated
     name: BioCatalogue
+    knowledge level: other
+    agent type: not_provided
   - id: infores:biogrid
     status: released
     name: 'The Biological General Repository for Interaction Datasets '
@@ -478,7 +480,7 @@ information_resources:
     status: released
     name: BioLink API
     xref:
-      - https://api.monarchinitiative.org/api/
+      - http://api-v3.monarchinitiative.org/
     knowledge level: curated
     agent type: not_provided
     description: API integration layer for linked biological objects.
@@ -1090,7 +1092,7 @@ information_resources:
     name: Connections Hypothesis Provider API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Connections-Hypothesis-Provider
-    knowledge level: prediction
+    knowledge level: predicted
     agent type: not_provided
     description: A Translator Reasoner API for the Connections Hypothesis Provider
   - id: infores:cord19
@@ -1224,14 +1226,14 @@ information_resources:
   - id: infores:dili-network-study-data
     status: released
     name: Drug-Induced Liver Injury Network (DILIN) Participant Data
-    knowledge level: correlated
+    knowledge level: correlation
     agent type: not_provided
   - id: infores:faers
     status: released
     name: FDA Adverse Event Reporting System
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/FAERS
-    knowledge level: observation
+    knowledge level: observed
     agent type: not_provided
     description: >-
       The FDA Adverse Event Reporting System (FAERS) is a database that contains information 
@@ -1337,7 +1339,7 @@ information_resources:
     synonym:
       - drugmechdb
     knowledge level: curated
-    agent type: not provided
+    agent type: not_provided
     description: >-
       A database of paths that represent the mechanism of action from a drug to a disease in an indication.
   - id: infores:ebi
@@ -1633,6 +1635,8 @@ information_resources:
     name: Human Gene Ontology Annotations
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Human-GOA
+    knowledge level: curated
+    agent type: not_provided
   - id: infores:goa
     status: released
     name: Gene Ontology Annotations
@@ -1943,8 +1947,8 @@ information_resources:
     name: KINOMEscan
     xref:
       - https://lincs.hms.harvard.edu/kinomescan/
-    knowledge level: raw_data
-    agent type: experimental
+    knowledge level: other
+    agent type: not_provided
   - id: infores:knowledge-collaboratory
     status: released
     name: Translator Knowledge Collaboratory API
@@ -2155,7 +2159,7 @@ information_resources:
     name: SciGraph-Monarch-Ontology
     xref:
       - scigraph-ontology.monarchinitiative.org/scigraph/docs/
-    knowledge level: not_provided
+    knowledge level: other
     agent type: not_provided
   - id: infores:monarchinitiative
     status: released
@@ -2580,7 +2584,7 @@ information_resources:
     name: Psychoactive Drug Screening Program
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/PDSP
-    knowledge level: not_provided
+    knowledge level: other
     agent type: not_provided
     description: >-
       This service provides screening of novel psychoactive compounds for pharmacological and 
@@ -2886,7 +2890,7 @@ information_resources:
     name: SnpEff
     xref:
       - https://pcingola.github.io/SnpEff/
-    knowledge level: prediction
+    knowledge level: predicted
     agent type: computational_model
     description: >-
       Genetic variant annotation and functional effect prediction toolbox. 
@@ -3433,6 +3437,7 @@ information_resources:
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Answer-Appraiser
     knowledge level: curated
+    agent type: not_provided
   - id: infores:sri-clinical-evidence-score
     status: released
     name: SRI Clinical Evidence Score
