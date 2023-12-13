@@ -1,5 +1,5 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-12T15:54:13
+# Generation date: 2023-12-13T09:15:24
 # Schema: Biolink-Model-Information-Resource
 #
 # id: https://w3id.org/biolink/biolink-model/infores
@@ -180,6 +180,9 @@ class AgentTypeEnum(EnumDefinitionImpl):
     not_provided = PermissibleValue(
         text="not_provided",
         description="agent type is not provided or known")
+    computational_model = PermissibleValue(
+        text="computational_model",
+        description="a computational model, such as a machine learning model")
 
     _defn = EnumDefinition(
         name="AgentTypeEnum",
