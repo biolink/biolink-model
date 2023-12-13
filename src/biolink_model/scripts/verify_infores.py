@@ -52,6 +52,23 @@ class InformationResource:
             for infores in data.get('information_resources'):
                 # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
                 # user to accept a popup before resolving):
+                if infores.get("knowledge level") not in ["curated",
+                                                          "predicted",
+                                                          "text_mined",
+                                                          "correlation",
+                                                          "observed",
+                                                          "other",
+                                                          "mixed"]:
+                    print(infores)
+                    print("Invalid infores knowledge level:" + infores.get("knowledge level")
+                          + " for " + infores.get("name"))
+                    raise ValueError("invalid return code for " + infores.get("name") + " for " + infores.get("id"))
+
+                if infores.get("agent type") not in ["not_provided"]:
+                    print(infores)
+                    print("Invalid infores agent type:" + infores.get("agent type") + " for " + infores.get("name"))
+                    raise ValueError("invalid return code for " + infores.get("name") + " for " + infores.get("id"))
+
                 if infores.get("id") == 'infores:athena' \
                         or infores.get("id") == 'infores:isb-wellness' \
                         or infores.get("id") == 'infores:isb-incov' \

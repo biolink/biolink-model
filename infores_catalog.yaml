@@ -465,6 +465,8 @@ information_resources:
   - id: infores:biocatalogue
     status: deprecated
     name: BioCatalogue
+    knowledge level: other
+    agent type: not_provided
   - id: infores:biogrid
     status: released
     name: 'The Biological General Repository for Interaction Datasets '
@@ -1090,7 +1092,7 @@ information_resources:
     name: Connections Hypothesis Provider API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Connections-Hypothesis-Provider
-    knowledge level: prediction
+    knowledge level: predicted
     agent type: not_provided
     description: A Translator Reasoner API for the Connections Hypothesis Provider
   - id: infores:cord19
@@ -1224,7 +1226,7 @@ information_resources:
   - id: infores:dili-network-study-data
     status: released
     name: Drug-Induced Liver Injury Network (DILIN) Participant Data
-    knowledge level: correlated
+    knowledge level: correlation
     agent type: not_provided
   - id: infores:faers
     status: released
@@ -2886,7 +2888,7 @@ information_resources:
     name: SnpEff
     xref:
       - https://pcingola.github.io/SnpEff/
-    knowledge level: prediction
+    knowledge level: predicted
     agent type: computational_model
     description: >-
       Genetic variant annotation and functional effect prediction toolbox. 

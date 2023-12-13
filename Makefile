@@ -95,11 +95,14 @@ gen-examples:
 	cp src/data/examples/* $(EXAMPLEDIR)
 
 infores:
-	poetry run gen-python information-resource.yaml > information_resource.py
+	$(RUN) gen-python information-resource.yaml > information_resource.py
+
+validate_infores:
+	$(RUN) python src/biolink_model/scripts/verify_infores.py
 
 id-prefixes:
-	poetry run gen-python class_prefixes.yaml > src/biolink_model/scripts/classprefixes.py
-	cd src/biolink_model/scripts/ && poetry run python id_prefixes.py
+	$(RUN) gen-python class_prefixes.yaml > src/biolink_model/scripts/classprefixes.py
+	cd src/biolink_model/scripts/ && $(RUN) python id_prefixes.py
 
 spell:
 	poetry run codespell

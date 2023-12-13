@@ -1,9 +1,9 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-11-30T15:26:10
-# Schema: Biolink-Model
+# Generation date: 2023-12-12T15:54:13
+# Schema: Biolink-Model-Information-Resource
 #
-# id: https://w3id.org/biolink/biolink-model
-# description: Entity and association taxonomy and datamodel for life-sciences data
+# id: https://w3id.org/biolink/biolink-model/infores
+# description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
@@ -100,8 +100,8 @@ class InformationResource(YAMLRoot):
     xref: Optional[Union[str, List[str]]] = empty_list()
     synonym: Optional[Union[str, List[str]]] = empty_list()
     description: Optional[str] = None
-    knowledge_level: Optional[str] = None
-    agent_type: Optional[str] = None
+    knowledge_level: Optional[Union[str, "KnowledgeLevelEnum"]] = None
+    agent_type: Optional[Union[str, "AgentTypeEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -126,11 +126,11 @@ class InformationResource(YAMLRoot):
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
 
-        if self.knowledge_level is not None and not isinstance(self.knowledge_level, str):
-            self.knowledge_level = str(self.knowledge_level)
+        if self.knowledge_level is not None and not isinstance(self.knowledge_level, KnowledgeLevelEnum):
+            self.knowledge_level = KnowledgeLevelEnum(self.knowledge_level)
 
-        if self.agent_type is not None and not isinstance(self.agent_type, str):
-            self.agent_type = str(self.agent_type)
+        if self.agent_type is not None and not isinstance(self.agent_type, AgentTypeEnum):
+            self.agent_type = AgentTypeEnum(self.agent_type)
 
         super().__post_init__(**kwargs)
 
@@ -145,6 +145,44 @@ class InformationResourceStatusEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="InformationResourceStatusEnum",
+    )
+
+class KnowledgeLevelEnum(EnumDefinitionImpl):
+
+    curated = PermissibleValue(
+        text="curated",
+        description="""knowledge generated through manual curation  or interpretation of data or published study results""")
+    predicted = PermissibleValue(
+        text="predicted",
+        description="""predictions generated computationally through inference over less direct forms of evidence (without human  intervention or review)""")
+    text_mined = PermissibleValue(
+        text="text_mined",
+        description="knowledge extracted from published text by NLP agents (without human intervention or review)")
+    correlation = PermissibleValue(
+        text="correlation",
+        description="""statistical correlations calculated between variables in a clinical or omics dataset, by an automated  analysis pipeline""")
+    observed = PermissibleValue(
+        text="observed",
+        description="""edge reports a phenomenon that was reported/observed to have occurred (and possibly some quantification,  e.g. how many times, at what frequency)""")
+    other = PermissibleValue(
+        text="other",
+        description="knowledge level may not fit into the categories above, or is not provided/known")
+    mixed = PermissibleValue(
+        text="mixed",
+        description="""used for sources that might provide edges with different knowledge levels, e.g.correlations in addition to  curated Edges - set tag to Curated, unless predicate rules override""")
+
+    _defn = EnumDefinition(
+        name="KnowledgeLevelEnum",
+    )
+
+class AgentTypeEnum(EnumDefinitionImpl):
+
+    not_provided = PermissibleValue(
+        text="not_provided",
+        description="agent type is not provided or known")
+
+    _defn = EnumDefinition(
+        name="AgentTypeEnum",
     )
 
 # Slots
@@ -173,7 +211,7 @@ slots.description = Slot(uri=INFORES.description, name="description", curie=INFO
                    model_uri=INFORES.description, domain=None, range=Optional[str])
 
 slots.knowledge_level = Slot(uri=INFORES.knowledge_level, name="knowledge level", curie=INFORES.curie('knowledge_level'),
-                   model_uri=INFORES.knowledge_level, domain=None, range=Optional[str])
+                   model_uri=INFORES.knowledge_level, domain=None, range=Optional[Union[str, "KnowledgeLevelEnum"]])
 
 slots.agent_type = Slot(uri=INFORES.agent_type, name="agent type", curie=INFORES.curie('agent_type'),
-                   model_uri=INFORES.agent_type, domain=None, range=Optional[str])
+                   model_uri=INFORES.agent_type, domain=None, range=Optional[Union[str, "AgentTypeEnum"]])

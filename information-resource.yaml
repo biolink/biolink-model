@@ -1,7 +1,6 @@
 ---
-id: https://w3id.org/biolink/biolink-model
-name: Biolink-Model
-description: Entity and association taxonomy and datamodel for life-sciences data
+id: https://w3id.org/biolink/biolink-model/infores
+name: Biolink-Model-Information-Resource
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
@@ -139,7 +138,27 @@ slots:
 
   description:
   knowledge level:
+    range: KnowledgeLevelEnum
+    description: >-
+        The level of knowledge that supports an edge or node.  This is a general
+        categorization of the type of evidence that supports a statement, and is
+        not intended to be a comprehensive description of the evidence.  For
+        example, a statement may be supported by a single publication, but that
+        publication may contain multiple types of evidence, such as a
+        computational prediction and a manual curation.  In this case, the
+        knowledge level would be "curated", and the evidence would be described
+        in more detail in the evidence graph.
   agent type:
+    range: AgentTypeEnum
+    description: >-
+        The type of agent that supports an edge or node.  This is a general
+        categorization of the type of agent that supports a statement, and is
+        not intended to be a comprehensive description of the agent.  For
+        example, a statement may be supported by a single publication, but that
+        publication may contain multiple types of evidence, such as a
+        computational prediction and a manual curation.  In this case, the
+        agent type would be "publication", and the evidence would be described
+        in more detail in the evidence graph.
 
 enums:
   InformationResourceStatusEnum:
@@ -148,3 +167,37 @@ enums:
       deprecated:
       draft:
       modified:
+
+  KnowledgeLevelEnum:
+    permissible_values:
+      curated:
+        description: >-
+          knowledge generated through manual curation  or interpretation of data or published study results
+      predicted:
+        description: >-
+          predictions generated computationally through inference over less direct forms of evidence (without human 
+          intervention or review)
+      text_mined:
+        description: >-
+          knowledge extracted from published text by NLP agents (without human intervention or review)
+      correlation:
+        description: >-
+          statistical correlations calculated between variables in a clinical or omics dataset, by an automated 
+          analysis pipeline
+      observed:
+        description: >-
+          edge reports a phenomenon that was reported/observed to have occurred (and possibly some quantification, 
+          e.g. how many times, at what frequency)
+      other:
+        description: >-
+          knowledge level may not fit into the categories above, or is not provided/known
+      mixed:
+        description: >-
+          used for sources that might provide edges with different knowledge levels, e.g.correlations in addition to 
+          curated Edges - set tag to Curated, unless predicate rules override
+
+  AgentTypeEnum:
+    permissible_values:
+      not_provided:
+        description: >-
+          agent type is not provided or known
