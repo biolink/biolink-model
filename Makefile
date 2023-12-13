@@ -130,8 +130,8 @@ gen-project: $(PYMODEL)
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink_model_prefix_map.json
 	mv $(PYMODEL)/biolink*.py $(PYMODEL)/model.py
-	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel.py
-	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	$(RUN) gen-pydantic --pydantic-version 1 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel.py
+	$(RUN) gen-pydantic --pydantic-version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(MAKE) id-prefixes infores
 
