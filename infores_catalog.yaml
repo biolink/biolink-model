@@ -480,7 +480,7 @@ information_resources:
     status: released
     name: BioLink API
     xref:
-      - https://api.monarchinitiative.org/api/
+      - http://api-v3.monarchinitiative.org/
     knowledge level: curated
     agent type: not_provided
     description: API integration layer for linked biological objects.
@@ -1635,6 +1635,8 @@ information_resources:
     name: Human Gene Ontology Annotations
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Human-GOA
+    knowledge level: curated
+    agent type: not_provided
   - id: infores:goa
     status: released
     name: Gene Ontology Annotations
@@ -1945,8 +1947,8 @@ information_resources:
     name: KINOMEscan
     xref:
       - https://lincs.hms.harvard.edu/kinomescan/
-    knowledge level: raw_data
-    agent type: experimental
+    knowledge level: other
+    agent type: not_provided
   - id: infores:knowledge-collaboratory
     status: released
     name: Translator Knowledge Collaboratory API
