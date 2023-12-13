@@ -1812,6 +1812,8 @@ slots:
     domain: ontology class
     range: ontology class
     multivalued: true
+    annotations:
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:

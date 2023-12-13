@@ -4637,6 +4637,13 @@
     {
       "name": "superclass_of",
       "definition_uri": "https://w3id.org/biolink/vocab/superclass_of",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
       "description": "holds between two classes where the domain class is a super class of the range class",
       "in_subset": [
         "translator_minimal"
@@ -10395,7 +10402,7 @@
       ],
       "description": "Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.",
       "notes": [
-        "This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that  puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the  drug would be used to treat (e.g.  pseudoephedrine is contraindicated in people with high-blood pressure as  a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who  are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated  in people taking warfarrin as a preventative treatment for stroke)."
+        "This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that  puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the  drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as  a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who  are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated  in people taking warfarin as a preventative treatment for stroke)."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
@@ -33548,9 +33555,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-11T15:49:45",
-  "source_file_size": 370463,
-  "generation_date": "2023-12-11T15:49:53",
+  "source_file_date": "2023-12-12T17:22:18",
+  "source_file_size": 370508,
+  "generation_date": "2023-12-12T17:22:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
