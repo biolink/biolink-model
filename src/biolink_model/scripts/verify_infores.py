@@ -52,6 +52,8 @@ class InformationResource:
             for infores in data.get('information_resources'):
                 # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
                 # user to accept a popup before resolving):
+                if infores.get("deprecated") is True:
+                    continue
                 if infores.get("knowledge level") not in ["curated",
                                                           "predicted",
                                                           "text_mined",
