@@ -4633,6 +4633,13 @@
     {
       "name": "superclass_of",
       "definition_uri": "https://w3id.org/biolink/vocab/superclass_of",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
       "description": "holds between two classes where the domain class is a super class of the range class",
       "in_subset": [
         "translator_minimal"
@@ -33272,9 +33279,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-13T01:17:26",
-  "source_file_size": 362227,
-  "generation_date": "2023-12-13T01:17:33",
+  "source_file_date": "2023-12-13T01:25:14",
+  "source_file_size": 362276,
+  "generation_date": "2023-12-13T01:25:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
