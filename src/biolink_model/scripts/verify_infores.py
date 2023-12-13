@@ -66,7 +66,7 @@ class InformationResource:
                           + " for " + infores.get("name"))
                     raise ValueError("invalid return code for " + infores.get("name") + " for " + infores.get("id"))
 
-                if infores.get("agent type") not in ["not_provided"]:
+                if infores.get("agent type") not in ["not_provided", "computational_model"]:
                     print(infores)
                     print("Invalid infores agent type:" + infores.get("agent type") + " for " + infores.get("name"))
                     raise ValueError("invalid return code for " + infores.get("name") + " for " + infores.get("id"))
