@@ -168,7 +168,7 @@ information_resources:
     status: released
     name: Automat CAM-KP
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Automat
     knowledge level: curated
     agent type: not_provided
     description: TRAPI interface to database of Causal Activity Models
@@ -830,10 +830,10 @@ information_resources:
     agent type: not_provided
     description: A structured controlled vocabulary of Caenorhabditis elegans phenotypes
   - id: infores:cam-kp
-    status: deprecated
+    status: released
     name: CAM-KP API
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
+      - https://github.com/NCATSTranslator/Translator-All/wiki/CAM-Provider-KG
     synonym:
       - Causal Activity Model KP
     knowledge level: curated
@@ -1748,7 +1748,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:hopkins-synthetic-patient-data
-    status: released
+    status: deprecated
     name: Hopkins Synthetic Patient Data
     xref:
       - https://ictr.johnshopkins.edu/about
@@ -1823,7 +1823,7 @@ information_resources:
     status: released
     name: ICEES (Integrated Clinical and Environmental Exposures Service)
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ICEES
     synonym:
       - KP
     knowledge level: correlation
@@ -2319,7 +2319,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:nces-schools-exposure-data
-    status: released
+    status: deprecated
     name: NCES public school exposures data
     xref:
       - https://nces.ed.gov/
@@ -2763,7 +2763,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:robokop
-    status: released
+    status: deprecated
     name: ROBOKOP
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/ARAGORN#ROBOKOP
@@ -2779,7 +2779,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:robokop-kp
-    status: released
+    status: deprecated
     name: ROBOKOP (Reasoning Over Biomedical Objects linked in Knowledge-Oriented Pathway)
     xref:
       - http://robokop.renci.org
@@ -2859,7 +2859,7 @@ information_resources:
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Smart-API-Registry
   - id: infores:smartapi
-    status: released
+    status: deprecated
     name: SmartAPI API
     xref:
       - https://smart-api.info
@@ -2939,7 +2939,7 @@ information_resources:
       Node normalization takes a CURIE, and returns resolved alias and
       the canonical identifier of a node.
   - id: infores:sri-ontology
-    status: released
+    status: deprecated
     name: Ontology-KP API
     knowledge level: curated
     agent type: not_provided
@@ -3138,7 +3138,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:unc-cdwh-ehr-data
-    status: released
+    status: deprecated
     name: UNC Carolina Data Warehouse for Health Patient EHR Data
     xref:
       - https://tracs.unc.edu/index.php/services/informatics-and-data-science/cdw-h
@@ -3180,21 +3180,21 @@ information_resources:
     agent type: not_provided
     description: OpenAPI for NCATS Biomedical Translator Reasoners
   - id: infores:us-census-acs-data
-    status: released
+    status: deprecated
     name: United States Census Bureau American Community Survey Data
     xref:
       - https://www.census.gov/programs-surveys/acs/data.html
     knowledge level: curated
     agent type: not_provided
   - id: infores:us-census-tiger-roadway-exposures-data
-    status: released
+    status: deprecated
     name: United States Census Bureau TIGER/line Roadway Data
     xref:
       - http://www.census.gov/geo/maps-data/data/tiger-line.html
     knowledge level: curated
     agent type: not_provided
   - id: infores:us-dot-roadway-exposures-data
-    status: released
+    status: deprecated
     name: United States Department of Transportation Roadway Exposures Data
     xref:
       - https://highways.dot.gov/
@@ -3363,7 +3363,7 @@ information_resources:
     description: An effector index to predict target genes at GWAS loci
   - id: infores:huri
     status: released
-    name: The Human Reference Protein Ineractome
+    name: The Human Reference Protein Interactome Mapping Project
     xref:
       - http://www.interactome-atlas.org/download
     synonym:
@@ -3438,34 +3438,34 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Answer-Appraiser
     knowledge level: curated
     agent type: not_provided
-  - id: infores:sri-clinical-evidence-score
+  - id: infores:translator-clinical-evidence-score
     status: released
     name: SRI Clinical Evidence Score
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Clinical-Evidence-Score
     knowledge level: curated
     agent type: not_provided
-  - id: infores:sri-confidence-score
+  - id: infores:translator-confidence-score
     status: released
-    name: SRI Confidence Score
+    name: Translator Confidence Score
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Confidence-Score
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-Confidence-Score
     knowledge level: curated
     agent type: not_provided
-  - id: infores:sri-novelty-score
+  - id: infores:translator-novelty-score
     status: released
-    name: SRI Novelty Score
+    name: Translator Novelty Score
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Novelty-Score
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-Novelty-Score
     knowledge level: curated
     agent type: not_provided
-  - id: infores:translator-f-score
+  - id: infores:translator-ordering-score
     status: released
-    name: SRI Novelty Score
+    name: Translator Ordering Score
     knowledge level: curated
     agent type: not_provided
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-f()%E2%80%90score
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-Ordering-Score
   - id: infores:biothings-suppkg
     status: released
     name: BioThings SuppKG API
