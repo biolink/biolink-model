@@ -52,6 +52,30 @@ class InformationResource:
             for infores in data.get('information_resources'):
                 # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
                 # user to accept a popup before resolving):
+                if infores.get("status") == "deprecated":
+                    continue
+                if infores.get("status") not in ["released", "deprecated", "draft", "modified"]:
+                    print(infores)
+                    print("Invalid infores status:" + infores.get("status")
+                          + " for " + infores.get("name"))
+                    raise ValueError("invalid status for " + infores.get("name") + " for " + infores.get("id"))
+                if infores.get("knowledge level") not in ["curated",
+                                                          "predicted",
+                                                          "text_mined",
+                                                          "correlation",
+                                                          "observed",
+                                                          "other",
+                                                          "mixed"]:
+                    print(infores)
+                    print("Invalid infores knowledge level:" + infores.get("knowledge level")
+                          + " for " + infores.get("name"))
+                    raise ValueError("invalid knowledge level for " + infores.get("name") + " for " + infores.get("id"))
+
+                if infores.get("agent type") not in ["not_provided", "computational_model"]:
+                    print(infores)
+                    print("Invalid infores agent type:" + infores.get("agent type") + " for " + infores.get("name"))
+                    raise ValueError("invalid agent type for " + infores.get("name") + " for " + infores.get("id"))
+
                 if infores.get("id") == 'infores:athena' \
                         or infores.get("id") == 'infores:isb-wellness' \
                         or infores.get("id") == 'infores:isb-incov' \
@@ -71,7 +95,7 @@ class InformationResource:
                 else:
                     print(infores)
                     print("Invalid infores URL:" + " for " + infores.get("name"))
-                    raise ValueError("invalid return code for URL" + infores.get("name") + " for " + infores.get("id"))
+                    raise ValueError("invalid URL" + infores.get("name") + " for " + infores.get("id"))
 
 
 if __name__ == "__main__":

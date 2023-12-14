@@ -95,11 +95,14 @@ gen-examples:
 	cp src/data/examples/* $(EXAMPLEDIR)
 
 infores:
-	poetry run gen-python information-resource.yaml > information_resource.py
+	$(RUN) gen-python information-resource.yaml > information_resource.py
+
+validate_infores:
+	$(RUN) python src/biolink_model/scripts/verify_infores.py
 
 id-prefixes:
-	poetry run gen-python class_prefixes.yaml > src/biolink_model/scripts/classprefixes.py
-	cd src/biolink_model/scripts/ && poetry run python id_prefixes.py
+	$(RUN) gen-python class_prefixes.yaml > src/biolink_model/scripts/classprefixes.py
+	cd src/biolink_model/scripts/ && $(RUN) python id_prefixes.py
 
 spell:
 	poetry run codespell
@@ -121,14 +124,15 @@ gen-project: $(PYMODEL)
 		--exclude sqlddl \
 		--include jsonldcontext \
 		--include jsonschema \
-		--include owl \
+		--exclude owl \
 		--include python \
 		--include rdf \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink_model_prefix_map.json
 	mv $(PYMODEL)/biolink*.py $(PYMODEL)/model.py
-	$(RUN) gen-pydantic --pydantic_version 1 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel.py
-	$(RUN) gen-pydantic --pydantic_version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	$(RUN) gen-pydantic --pydantic-version 1 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel.py
+	$(RUN) gen-pydantic --pydantic-version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions src/biolink_model/schema/biolink_model.yaml > $(DEST)/owl/biolink_model.owl.ttl
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(MAKE) id-prefixes infores
 

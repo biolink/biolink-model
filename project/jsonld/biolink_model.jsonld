@@ -4660,6 +4660,7 @@
       "multivalued": true,
       "inherited": true,
       "owner": "superclass_of",
+      "inverse": "subclass_of",
       "range": "OntologyClass",
       "@type": "SlotDefinition"
     },
@@ -4717,6 +4718,7 @@
       "multivalued": true,
       "inherited": true,
       "owner": "subclass_of",
+      "inverse": "superclass_of",
       "range": "OntologyClass",
       "@type": "SlotDefinition"
     },
@@ -33272,9 +33274,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-04T22:05:21",
-  "source_file_size": 362227,
-  "generation_date": "2023-12-04T22:05:28",
+  "source_file_date": "2023-12-13T20:05:25",
+  "source_file_size": 362001,
+  "generation_date": "2023-12-13T20:05:32",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

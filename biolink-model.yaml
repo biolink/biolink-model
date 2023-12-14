@@ -1805,6 +1805,7 @@ slots:
 
   superclass of:
     is_a: related to at concept level
+    inverse: subclass of
     description: >-
       holds between two classes where the domain class is a super class of the range class
     domain: ontology class
@@ -4237,10 +4238,6 @@ slots:
     in_subset:
       - translator_minimal
     inverse: derives from
-     # TODO: fix this according to WG notes. Example of both opposite and inverse
-     # Commenting as it feels very wrong. A good example with both opposite and inverse is `has active ingredient`
-     # annotations:
-     #   opposite_of: subclass of
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
