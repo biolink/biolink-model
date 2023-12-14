@@ -5,11 +5,11 @@ layout: default
 nav_order: 3
 ---
 
-# Using the Modeling Language
+# Using the LinkML Modeling Language
 
-The linkML provides a variety of slots to define the semantics of your Biolink Model class and slots.
+Biolink Model is built with the [Linked data Modeling Language (LinkML)](https://linkml.github.io/).
 
-This document tries to address on how to use most of these slots in Biolink Model.
+LinkML provides a variety of slots to define the semantics of your Biolink Model class and slots. This document covers how to use most of these slots in Biolink Model.
 
 Please refer to [linkML documentation](https://linkml.github.io/linkml-model/docs/) for an exhaustive list of slots provided by the modeling language.
 
@@ -25,11 +25,12 @@ gene:
   is_a: gene or gene product
 ```
 
-Here we define that the entity class `gene` is a sub-class of `gene or gene product`. Note that `is_a` has the characteristics of homeomorphicity: `is_a` **SHOULD** only connect either (1) two mixins (2) two classes (3) two slots.
+Here, we define the entity class `gene` as a sub-class of `gene or gene product`. Note that `is_a` has the characteristics of homeomorphicity: `is_a` **SHOULD** only connect either (1) two mixins (2) two classes (3) two slots.
 
 ### abstract
 
-A model class (or slot) may be tagged with its `abstract` slot set to the boolean value `true`, to define whether it is abstract. This has comparable meaning to that in the computing science Object Oriented Paradigm: another class (or slot) can use the abstract class (or slot) as part of its inheritance hierarchy, but the abstract class itself _cannot_ be directly instantiated.
+A model class (or slot) may be tagged with its `abstract` slot set to the boolean value `true`, to define whether it is abstract. This has comparable meaning to the object-oriented paradigm in software engineering: 
+another class (or slot) can use the abstract class (or slot) as part of its inheritance hierarchy, but the abstract class itself _cannot_ be directly instantiated.
 
 
 ```yaml
@@ -50,16 +51,16 @@ Here we define that the association class `cell line to thing association` is an
 
 ### mixin
 
-The `mixin:true` demarkation is used to extend the properties (or slots) of a class, without changing its
+The `mixin:true` setting is used to extend the properties (or slots) of a class, without changing its
 position in the class hierarchy.  Mixins can be extremely helpful in a number of ways: 1) to generalize a set
 of attributes that can apply to classes in different parts of the class hierarchy, 2) reduce duplication of
-shared attributes between classes that do not inherit from one another and 3) to prevent the sometimes confusing nature
+shared attributes between classes that do not inherit from one another, and 3) prevent the sometimes confusing nature
 of multiple inheritance noted in the '[diamond problem]'(https://tinyurl.com/4zdw9tsb).
 
 In general, while mixin slots and classes should not be directly instantiated, or used directly as a slot in a class,
 KGs can use them as a substitute for multiple inheritance. For example, a KG might wish to determine what are the parents
 of a certain class.  In this case, the KG should navigate a mixin used in a domain or range of a class or slot, as it 
-would the "is_a" demarkation.  
+would for "is_a".  
 
 
 ```yaml
@@ -85,7 +86,7 @@ Here we define the class `thing with taxon` as a mixin class with a slot `in tax
 In the class `molecular entity`, we use the `thing with taxon` mixin in order to add the 'in taxon' attribute (slot)
 to the molecular entity class.  The other way to do this would be to duplicate the 'in taxon' attribute in every class
 manually (duplicative), or have hierarchy/parent that had the `in taxon` slot (but this parent would be a sister-class to 
-'named thing' as not all named-things are taxon based).  Mixins simplify modeling and should be used when necessary.
+'named thing' as not all named-things are taxon based).  Mixins simplify modeling and should be used where appropriate.
 
 
 ```yaml
@@ -114,7 +115,7 @@ The slot, `frequency qualifier` is then inherited by every class in the subseque
 `entity to feature or disease qualifiers mixin.`  The `frequency quantifier` mixin was created with similar 
 intentions (favoring consistency in modeling similar domains), though its reuse is not as evident in the model yet. 
 
-Mixins provide the means of reusing semantics, generally by the inclusion of specific property slots or 
+Mixins enable the reuse of semantics, generally by the inclusion of specific property slots or 
 other semantic constraint, in different classes or slots, without the need to tie slots to the 
 hierarchy of the class itself.
 
@@ -138,8 +139,8 @@ positively regulates:
       - RO:0002629
       - SEMMEDDB:augments
 ```
-`positively regulates` is another example of a mixin.  In this case, a mixin is used to store meta data about a 
-predicate or relationship between two entities at a general level.  Its subsequent children, inherit these definitions
+`positively regulates` is another example of a mixin.  In this case, a mixin is used to store metadata about a 
+predicate or relationship between two entities at a general level.  Its subsequent children inherit these definitions
 and attributes, whether or not the parent mixin class has any slots.
 
 
@@ -194,7 +195,7 @@ The `description` slot can be used to provide a human-readable description of a 
     range: gene
 ```
 
-Here we define a human readable description that describes the predicate slot `genetically interacts with` and its purpose.
+Here we define a human-readable description that describes the predicate slot `genetically interacts with` and its purpose.
 
 
 ### slot_uri
