@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-13T16:29:30
+# Generation date: 2023-12-14T13:52:45
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -13272,7 +13272,7 @@ slots.chemical_entity_or_drug_or_treatment = Slot(uri=BIOLINK.chemical_entity_or
                    model_uri=BIOLINK.chemical_entity_or_drug_or_treatment, domain=None, range=Optional[str])
 
 slots.has_contraindication = Slot(uri=BIOLINK.has_contraindication, name="has contraindication", curie=BIOLINK.curie('has_contraindication'),
-                   model_uri=BIOLINK.has_contraindication, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]])
+                   model_uri=BIOLINK.has_contraindication, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.has_not_completed = Slot(uri=BIOLINK.has_not_completed, name="has not completed", curie=BIOLINK.curie('has_not_completed'),
                    model_uri=BIOLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

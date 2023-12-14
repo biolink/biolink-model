@@ -10434,7 +10434,8 @@
       "inherited": true,
       "owner": "has_contraindication",
       "inverse": "contraindicated_in",
-      "range": "Drug",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -33550,9 +33551,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-13T16:28:54",
-  "source_file_size": 370233,
-  "generation_date": "2023-12-13T16:29:04",
+  "source_file_date": "2023-12-14T13:52:09",
+  "source_file_size": 370258,
+  "generation_date": "2023-12-14T13:52:18",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -4991,7 +4991,7 @@ slots:
   has contraindication:
     is_a: related to at instance level
     domain: disease or phenotypic feature
-    range: drug
+    range: chemical or drug or treatment
     inverse: contraindicated in
 
    # The remaining new slots are here because we ran across them somewhere and
