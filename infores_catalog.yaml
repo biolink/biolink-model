@@ -519,7 +519,7 @@ information_resources:
     name: BioThings DGIdb API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DGIdb-API
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: Documentation of the BioThings DGIdb query web services.
   - id: infores:biothings-diseases
@@ -527,7 +527,7 @@ information_resources:
     name: BioThings DISEASES API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DISEASES-API
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: Documentation of the DISEASES query web services.
   - id: infores:biothings-ebi-gene2phenotype
@@ -535,7 +535,7 @@ information_resources:
     name: BioThings EBIgene2phenotype API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-EBI-Gene2Phenotype
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the EBIgene2phenotype query web services.
   - id: infores:biothings-explorer
@@ -561,7 +561,7 @@ information_resources:
     name: BioThings Gene Ontology Biological Process API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GO-BP
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the Gene Ontology Biological Process query web services.
   - id: infores:biothings-go-cc
@@ -569,7 +569,7 @@ information_resources:
     name: BioThings Gene Ontology Cellular Component API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GO-CC
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the Gene Ontology Cellular Component query web services.
   - id: infores:biothings-go-mf
@@ -577,7 +577,7 @@ information_resources:
     name: BioThings Gene Ontology Molecular Activity API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GO-MF
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the Gene Ontology Molecular Activity query web services.
   - id: infores:biothings-hpo
@@ -585,7 +585,7 @@ information_resources:
     name: BioThings Human Phenotype Ontology API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-HPO
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the HPO query web services.
   - id: infores:biothings-idisk
@@ -593,14 +593,14 @@ information_resources:
     name: BioThings iDISK API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-IDISK
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
   - id: infores:biothings-mgi-g2p
     status: released
     name: BioThings MGIgene2phenotype API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-MGI-G2P
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the MGIgene2phenotype query web services.
   - id: infores:biothings-multiomics-biggim-drugresponse
@@ -654,7 +654,7 @@ information_resources:
     name: BioThings PFOCR API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-PFOCR
-    knowledge level: other
+    knowledge level: predicted
     agent type: not_provided
     description: Documentation of the pfocr query web services.
   - id: infores:pfocr
@@ -669,7 +669,7 @@ information_resources:
     name: BioThings SEMMEDDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: Documentation of the BioThings SEMMEDDB query web services.
   - id: infores:biothings-semmeddb-anatomy
@@ -677,7 +677,7 @@ information_resources:
     name: SEMMED Anatomy API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Anatomy
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: >-
       Documentation of the SEMMED disease query web services.  Learn more
@@ -687,7 +687,7 @@ information_resources:
     name: SEMMED Biological Process API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Biological-Process
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: >-
       Documentation of the SEMMED disease query web services.  Learn more
@@ -697,7 +697,7 @@ information_resources:
     name: SEMMED Chemical API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Chemical
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: >-
       Documentation of the SEMMED disease query web services.  Learn more
@@ -707,7 +707,7 @@ information_resources:
     name: SEMMED Disease API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Disease
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: >-
       Documentation of the SEMMED disease query web services.  Learn more
@@ -717,7 +717,7 @@ information_resources:
     name: SEMMED Gene API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Gene
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: Documentation of the SEMMED disease query web services.  Learn more
       about [mydisease.info](http://pending.biothings.io/semmed)
@@ -726,7 +726,7 @@ information_resources:
     name: SEMMED Phenotype API
     xref:
       - https://github.com/biothings
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: Documentation of the SEMMED disease query web services.  Learn more
       about [mydisease.info](http://pending.biothings.io/semmed)
@@ -743,7 +743,7 @@ information_resources:
     name: BioThings UBERON Ontology API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-UBERON-Ontology
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the UBERON query web services.
   - id: infores:biothings-rhea
@@ -751,7 +751,7 @@ information_resources:
     name: BioThings Rhea API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-RHEA-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the BioThings Rhea query web services.
   - id: infores:rhea
@@ -767,7 +767,7 @@ information_resources:
     name: BioThings BioPlanet Pathway-Disease API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-bioplanet-pathway-disease
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
@@ -777,7 +777,7 @@ information_resources:
     name: BioThings BioPlanet Pathway-Gene API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-bioplanet-pathway-gene
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
@@ -795,7 +795,7 @@ information_resources:
     name: BioThings BindingDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-Binding-DB
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the BioThings [BindingDB](https://www.bindingdb.org/rwd/bind/index.jsp)
@@ -1368,7 +1368,7 @@ information_resources:
     name: EBI Proteins API
     xref:
       - https://www.ebi.ac.uk/proteins/api/doc/
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       The Proteins REST API provides access to key biological data from
@@ -1386,7 +1386,7 @@ information_resources:
       - https://www.ebi.ac.uk/QuickGO/api/index.html
     synonym:
       - QuickGO
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       The QuickGO REST API provides access to key biological data from
@@ -2225,7 +2225,7 @@ information_resources:
       - http://mychem.info
     synonym:
       - mychem
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyChem.info chem query web services.  Learn more
@@ -2237,7 +2237,7 @@ information_resources:
       - http://mydisease.info/
     synonym:
       - mydisease
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyDisease.info disease query web services.  Learn
@@ -2249,7 +2249,7 @@ information_resources:
       - https://mygene.info/
     synonym:
       - mygene
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyGene.info Gene Query web services. Learn more
@@ -2261,7 +2261,7 @@ information_resources:
       - http://myvariant.info/
     synonym:
       - myvariant
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyVariant.info Variant Query web services. Learn
@@ -2412,7 +2412,7 @@ information_resources:
       - https://www.ebi.ac.uk/ols4/help
     synonym:
       - OLS
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       The OLS REST API provides access to key biological data from OLS.
@@ -3440,7 +3440,7 @@ information_resources:
     name: BioThings RARe-SOURCE API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-RARe-SOURCE-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the BioThings API for [NCATS RARe-SOURCE](https://raresource.nih.gov/) data.
   - id: infores:rare-source
@@ -3463,7 +3463,7 @@ information_resources:
     name: BioThings SuppKG API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SuppKG-API
-    knowledge level: other
+    knowledge level: text_mined
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for
@@ -3485,7 +3485,7 @@ information_resources:
     name: BioThings DDInter API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DDInter-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: Documentation of the BioThings API for [DDInter](http://ddinter.scbdd.com/) data.
   - id: infores:biothings-gtrx
@@ -3493,7 +3493,7 @@ information_resources:
     name: BioThings GTRx API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GTRx-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [Genome-to-Treatment (GTRx™)](https://gtrx.rbsapp.net/about.html). 
@@ -3506,7 +3506,7 @@ information_resources:
     name: Biothings Therapeutic Target Database API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-TTD-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [TherapeuticTargetDatabase](https://db.idrblab.net/ttd/).
@@ -3529,7 +3529,7 @@ information_resources:
     name: BioThings AGR API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-AGR-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for
@@ -3551,7 +3551,7 @@ information_resources:
     name: BioThings InnateDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-InnateDB-API
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [InnateDB](https://www.innatedb.com/) data. 
@@ -3594,7 +3594,7 @@ information_resources:
     name: BioThings repoDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-repoDB-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [repoDB](https://unmtid-shinyapps.net/shiny/repodb/) data. 
@@ -3604,7 +3604,7 @@ information_resources:
     name: BioThings HMDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-HMDB-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [HMDB](https://hmdb.ca/) data. 
@@ -3623,7 +3623,7 @@ information_resources:
     name: BioThings FoodData Central API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-FoodData-Central-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for 
@@ -3633,7 +3633,7 @@ information_resources:
     name: BioThings FooDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-FooDB-API
-    knowledge level: other
+    knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [FooDB](https://foodb.ca/) data. 
@@ -3656,7 +3656,7 @@ information_resources:
     name: BioThings TISSUES API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-TISSUES-API
-    knowledge level: other
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for [TISSUES](https://tissues.jensenlab.org/About) data. 
