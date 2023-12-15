@@ -113,21 +113,19 @@
                                 "parent": "affected_by"
                             },
                             {
-                                "name": "disrupted_by",
+                                "name": "condition_ameliorated_by",
                                 "parent": "affected_by"
                             },
                             {
-                                "name": "is_ameliorated_by",
-                                "parent": "affected_by",
-                                "children": [
-                                    {
-                                        "name": "treated_by",
-                                        "parent": "is_ameliorated_by"
-                                    }
-                                ]
+                                "name": "condition_exacerbated_by",
+                                "parent": "affected_by"
                             },
                             {
-                                "name": "is_exacerbated_by",
+                                "name": "condition_prevented_by",
+                                "parent": "affected_by"
+                            },
+                            {
+                                "name": "disrupted_by",
                                 "parent": "affected_by"
                             },
                             {
@@ -173,21 +171,15 @@
                                 ]
                             },
                             {
-                                "name": "ameliorates",
-                                "parent": "affects",
-                                "children": [
-                                    {
-                                        "name": "treats",
-                                        "parent": "ameliorates"
-                                    }
-                                ]
+                                "name": "ameliorates_condition",
+                                "parent": "affects"
                             },
                             {
                                 "name": "disrupts",
                                 "parent": "affects"
                             },
                             {
-                                "name": "exacerbates",
+                                "name": "exacerbates_condition",
                                 "parent": "affects"
                             },
                             {
@@ -205,18 +197,22 @@
                         ]
                     },
                     {
-                        "name": "affects_risk_for",
+                        "name": "affects_likelihood_of",
                         "parent": "related_to_at_instance_level",
                         "children": [
                             {
-                                "name": "predisposes",
-                                "parent": "affects_risk_for"
+                                "name": "predisposes_to_condition",
+                                "parent": "affects_likelihood_of"
                             },
                             {
-                                "name": "prevents",
-                                "parent": "affects_risk_for"
+                                "name": "preventative_for_condition",
+                                "parent": "affects_likelihood_of"
                             }
                         ]
+                    },
+                    {
+                        "name": "applied_to_treat",
+                        "parent": "related_to_at_instance_level"
                     },
                     {
                         "name": "assesses",
@@ -343,11 +339,15 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
+                        "name": "condition_predisposed_by",
+                        "parent": "related_to_at_instance_level"
+                    },
+                    {
                         "name": "contains_process",
                         "parent": "related_to_at_instance_level"
                     },
                     {
-                        "name": "contraindicated_for",
+                        "name": "contraindicated_in",
                         "parent": "related_to_at_instance_level"
                     },
                     {
@@ -717,6 +717,10 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
+                        "name": "likelihood_affected_by",
+                        "parent": "related_to_at_instance_level"
+                    },
+                    {
                         "name": "located_in",
                         "parent": "related_to_at_instance_level",
                         "children": [
@@ -907,22 +911,22 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
-                        "name": "related_condition",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
-                        "name": "risk_affected_by",
+                        "name": "promotes_condition",
                         "parent": "related_to_at_instance_level",
                         "children": [
                             {
-                                "name": "has_predisposing_factor",
-                                "parent": "risk_affected_by"
+                                "name": "exacerbates_condition",
+                                "parent": "promotes_condition"
                             },
                             {
-                                "name": "prevented_by",
-                                "parent": "risk_affected_by"
+                                "name": "predisposes_to_condition",
+                                "parent": "promotes_condition"
                             }
                         ]
+                    },
+                    {
+                        "name": "related_condition",
+                        "parent": "related_to_at_instance_level"
                     },
                     {
                         "name": "sequence_location_of",
@@ -951,6 +955,26 @@
                                     {
                                         "name": "xenologous_to",
                                         "parent": "homologous_to"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "studied_to_treat",
+                        "parent": "related_to_at_instance_level",
+                        "children": [
+                            {
+                                "name": "in_clinical_trials_for",
+                                "parent": "studied_to_treat"
+                            },
+                            {
+                                "name": "in_preclinical_trials_for",
+                                "parent": "studied_to_treat",
+                                "children": [
+                                    {
+                                        "name": "beneficial_in_models_for",
+                                        "parent": "in_preclinical_trials_for"
                                     }
                                 ]
                             }

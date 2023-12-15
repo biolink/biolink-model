@@ -1022,6 +1022,75 @@
   ],
   "enums": [
     {
+      "name": "ClinicalApprovalStatusEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "approved_for_condition"
+        },
+        {
+          "text": "fda_approved_for_condition",
+          "is_a": "approved_for_condition"
+        },
+        {
+          "text": "not_approved_for_condition"
+        },
+        {
+          "text": "post_approval_withdrawal",
+          "is_a": "not_approved_for_condition"
+        },
+        {
+          "text": "off_label_use",
+          "is_a": "not_approved_for_condition"
+        },
+        {
+          "text": "not_provided"
+        }
+      ]
+    },
+    {
+      "name": "MaxResearchPhaseEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/MaxResearchPhaseEnum",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "pre_clinical_research_phase",
+          "description": "Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.",
+          "notes": [
+            "DrugBank calls this 'experimental'."
+          ]
+        },
+        {
+          "text": "clinical_trial_phase",
+          "description": "Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer."
+        },
+        {
+          "text": "clinical_trial_phase_1",
+          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 \u2013 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.",
+          "is_a": "clinical_trial_phase"
+        },
+        {
+          "text": "clinical_trial_phase_2",
+          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.",
+          "is_a": "clinical_trial_phase"
+        },
+        {
+          "text": "clinical_trial_phase_3",
+          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 \u2013 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.",
+          "is_a": "clinical_trial_phase"
+        },
+        {
+          "text": "clinical_trial_phase_4",
+          "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.",
+          "is_a": "clinical_trial_phase"
+        },
+        {
+          "text": "not_provided"
+        }
+      ]
+    },
+    {
       "name": "DirectionQualifierEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
       "from_schema": "https://w3id.org/biolink/biolink-model",
@@ -1678,73 +1747,6 @@
         },
         {
           "text": "supporting_data_source"
-        }
-      ]
-    },
-    {
-      "name": "FDAApprovalStatusEnum",
-      "definition_uri": "https://w3id.org/biolink/vocab/FDAApprovalStatusEnum",
-      "description": "",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "permissible_values": [
-        {
-          "text": "discovery_and_development_phase",
-          "description": "Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments."
-        },
-        {
-          "text": "preclinical_research_phase",
-          "description": "Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo."
-        },
-        {
-          "text": "fda_clinical_research_phase",
-          "description": "Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer."
-        },
-        {
-          "text": "fda_review_phase_4",
-          "description": "FDA Review"
-        },
-        {
-          "text": "fda_post_market_safety_review",
-          "description": "FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug\u2019s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations."
-        },
-        {
-          "text": "fda_clinical_research_phase_1",
-          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 \u2013 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase."
-        },
-        {
-          "text": "fda_clinical_research_phase_2",
-          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur."
-        },
-        {
-          "text": "fda_clinical_research_phase_3",
-          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 \u2013 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions."
-        },
-        {
-          "text": "fda_clinical_research_phase_4",
-          "description": "In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review."
-        },
-        {
-          "text": "fda_fast_track",
-          "description": "Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track"
-        },
-        {
-          "text": "fda_breakthrough_therapy",
-          "description": "Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy"
-        },
-        {
-          "text": "fda_accelerated_approval",
-          "description": "When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as \u201cclinical benefit\u201d. Mindful of the fact that it may take an extended period of time to measure a drug\u2019s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval"
-        },
-        {
-          "text": "fda_priority_review",
-          "description": "Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times \u2013 Standard Review and Priority Review. A Priority Review designation means FDA\u2019s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review"
-        },
-        {
-          "text": "regular_fda_approval",
-          "description": "Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug\u2019s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations."
-        },
-        {
-          "text": "post_approval_withdrawal"
         }
       ]
     },
@@ -3586,7 +3588,7 @@
     {
       "name": "highest_FDA_approval_status",
       "definition_uri": "https://w3id.org/biolink/vocab/highest_FDA_approval_status",
-      "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+      "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/highest_FDA_approval_status",
       "owner": "ChemicalMixture",
@@ -4283,6 +4285,7 @@
       "name": "severity_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/severity_qualifier",
       "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+      "deprecated": "True",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4319,6 +4322,7 @@
       "name": "onset_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/onset_qualifier",
       "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+      "deprecated": "True",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4971,6 +4975,48 @@
       "inherited": true,
       "owner": "opposite_of",
       "symmetric": true,
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "affects_likelihood_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/affects_likelihood_of",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between two entities where the presence or application of one alters the chance that the other will come to be.",
+      "notes": [
+        "This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the  actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used  for a statistical associations that describe correlations between two feature variables (use predicates  in the 'associated with likelihood of' hierarchy here.)"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/affects_likelihood_of",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "affects_likelihood_of",
+      "inverse": "likelihood_affected_by",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "likelihood_affected_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/likelihood_affected_by",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/likelihood_affected_by",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "likelihood_affected_by",
+      "inverse": "affects_likelihood_of",
       "range": "NamedThing",
       "@type": "SlotDefinition"
     },
@@ -5872,7 +5918,10 @@
           "@type": "Annotation"
         }
       ],
-      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "description": "Describes an entity that has an effect on the state or quality of another existing entity.",
+      "notes": [
+        "Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as  'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or  may not come into existence."
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -7107,95 +7156,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "affects_risk_for",
-      "definition_uri": "https://w3id.org/biolink/vocab/affects_risk_for",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
-      "description": "holds between two entities where exposure to one entity alters the chance of developing the other",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/affects_risk_for",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "affects_risk_for",
-      "inverse": "risk_affected_by",
-      "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "risk_affected_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/risk_affected_by",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/risk_affected_by",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "risk_affected_by",
-      "inverse": "affects_risk_for",
-      "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "predisposes",
-      "definition_uri": "https://w3id.org/biolink/vocab/predisposes",
-      "annotations": [
-        {
-          "tag": "canonical_predicate",
-          "value": true,
-          "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "prevents",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "holds between two entities where exposure to one entity increases the chance of developing the other",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "exact_mappings": [
-        "https://skr3.nlm.nih.gov/SemMedDBPREDISPOSES"
-      ],
-      "is_a": "affects_risk_for",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/predisposes",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "predisposes",
-      "inverse": "has_predisposing_factor",
-      "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "has_predisposing_factor",
-      "definition_uri": "https://w3id.org/biolink/vocab/has_predisposing_factor",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "risk_affected_by",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/has_predisposing_factor",
-      "multivalued": true,
-      "inherited": true,
-      "owner": "has_predisposing_factor",
-      "inverse": "predisposes",
-      "range": "NamedThing",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "contributes_to",
       "definition_uri": "https://w3id.org/biolink/vocab/contributes_to",
       "annotations": [
@@ -7352,8 +7312,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ameliorates",
-      "definition_uri": "https://w3id.org/biolink/vocab/ameliorates",
+      "name": "ameliorates_condition",
+      "definition_uri": "https://w3id.org/biolink/vocab/ameliorates_condition",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7362,42 +7322,136 @@
         },
         {
           "tag": "opposite_of",
-          "value": "exacerbates",
+          "value": "exacerbates condition",
           "@type": "Annotation"
         }
       ],
-      "description": "A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure, clinical intervention) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.",
+      "description": "Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.",
+      "notes": [
+        "This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing  disease, and excludes interventions that prevent/reduce risk of developing a condition in the future."
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "ameliorates",
+        "beneficial for condition",
+        "therapeutic for condition"
+      ],
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0003307"
       ],
       "is_a": "affects",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/ameliorates",
+      "mixins": [
+        "treats"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/ameliorates_condition",
       "multivalued": true,
       "inherited": true,
-      "owner": "ameliorates",
-      "inverse": "is_ameliorated_by",
+      "owner": "ameliorates_condition",
+      "inverse": "condition_ameliorated_by",
       "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
     {
-      "name": "is_ameliorated_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/is_ameliorated_by",
+      "name": "condition_ameliorated_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/condition_ameliorated_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/is_ameliorated_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/condition_ameliorated_by",
       "multivalued": true,
       "inherited": true,
-      "owner": "is_ameliorated_by",
-      "inverse": "ameliorates",
-      "range": "NamedThing",
+      "owner": "condition_ameliorated_by",
+      "inverse": "ameliorates_condition",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "exacerbates",
-      "definition_uri": "https://w3id.org/biolink/vocab/exacerbates",
+      "name": "preventative_for_condition",
+      "definition_uri": "https://w3id.org/biolink/vocab/preventative_for_condition",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        },
+        {
+          "tag": "opposite_of",
+          "value": "promotes condition",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "prophylactic for",
+        "prevents"
+      ],
+      "is_a": "affects_likelihood_of",
+      "mixins": [
+        "treats"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/preventative_for_condition",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "preventative_for_condition",
+      "inverse": "condition_prevented_by",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "condition_prevented_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/condition_prevented_by",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "affected_by",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/condition_prevented_by",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "condition_prevented_by",
+      "inverse": "preventative_for_condition",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "promotes_condition",
+      "definition_uri": "https://w3id.org/biolink/vocab/promotes_condition",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        },
+        {
+          "tag": "opposite_of",
+          "value": "preventative for condition",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "mixin": true,
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/promotes_condition",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "promotes_condition",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "predisposes_to_condition",
+      "definition_uri": "https://w3id.org/biolink/vocab/predisposes_to_condition",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7405,8 +7459,66 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.",
+      "description": "Holds between two entities where the presence or application of one increases the chance that the other will come to be.",
+      "in_subset": [
+        "translator_minimal"
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "risk factor for"
+      ],
+      "is_a": "affects_likelihood_of",
+      "mixins": [
+        "promotes_condition"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/predisposes_to_condition",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "predisposes_to_condition",
+      "inverse": "condition_predisposed_by",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "condition_predisposed_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "condition_predisposed_by",
+      "inverse": "predisposes_to_condition",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exacerbates_condition",
+      "definition_uri": "https://w3id.org/biolink/vocab/exacerbates_condition",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        },
+        {
+          "tag": "opposite_of",
+          "value": "ameliorates condition",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic \n feature) where the substance, procedure, or activity worsens some or all aspects of the condition.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "exacerbates",
+        "detrimental for condition"
+      ],
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0003309"
       ],
@@ -7414,30 +7526,34 @@
         "https://skr3.nlm.nih.gov/SemMedDBCOMPLICATES"
       ],
       "is_a": "affects",
-      "domain": "BiologicalEntity",
-      "slot_uri": "https://w3id.org/biolink/vocab/exacerbates",
+      "mixins": [
+        "promotes_condition"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/exacerbates_condition",
       "multivalued": true,
       "inherited": true,
-      "owner": "exacerbates",
-      "inverse": "is_exacerbated_by",
+      "owner": "exacerbates_condition",
+      "inverse": "condition_exacerbated_by",
       "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
     {
-      "name": "is_exacerbated_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/is_exacerbated_by",
+      "name": "condition_exacerbated_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/condition_exacerbated_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/is_exacerbated_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/condition_exacerbated_by",
       "multivalued": true,
       "inherited": true,
-      "owner": "is_exacerbated_by",
-      "inverse": "exacerbates",
-      "range": "BiologicalEntity",
+      "owner": "condition_exacerbated_by",
+      "inverse": "exacerbates_condition",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7448,21 +7564,17 @@
           "tag": "canonical_predicate",
           "value": true,
           "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "contraindicated for",
-          "@type": "Annotation"
         }
       ],
-      "description": "holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat",
+      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting  in the first place.  \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there  is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for  the condition, or is an otherwise established treatment in the medical community (e.g. a  widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. \u2018in clinical trials for\u2019 or  \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence  can however be created as predictions (knowledge_level: prediction) and should point to  the more foundational asserted edges that support them.",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "is substance that treats",
-        "indicated for"
+        "indicated for",
+        "ameliorates or prevents condition"
       ],
       "exact_mappings": [
         "http://identifiers.org/drugbank/treats",
@@ -7496,11 +7608,16 @@
         "http://apps.chiragjpgroup.org/repoDB/clinically_tested_withdrawn_phase_3",
         "http://purl.obolibrary.org/obo/SNOMED_plays_role"
       ],
-      "is_a": "ameliorates",
+      "broad_mappings": [
+        "http://identifiers.org/drugbank/treats",
+        "https://skr3.nlm.nih.gov/SemMedDBTREATS",
+        "https://www.wikidata.org/prop/P2175",
+        "http://purl.obolibrary.org/obo/MONDO_disease_responds_to"
+      ],
+      "is_a": "treats_or_applied_or_studied_to_treat",
+      "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats",
-      "multivalued": true,
-      "inherited": true,
       "owner": "treats",
       "inverse": "treated_by",
       "range": "DiseaseOrPhenotypicFeature",
@@ -7509,7 +7626,6 @@
     {
       "name": "treated_by",
       "definition_uri": "https://w3id.org/biolink/vocab/treated_by",
-      "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7521,11 +7637,9 @@
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002302"
       ],
-      "is_a": "is_ameliorated_by",
+      "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_by",
-      "multivalued": true,
-      "inherited": true,
       "owner": "treated_by",
       "inverse": "treats",
       "range": "ChemicalOrDrugOrTreatment",
@@ -7533,61 +7647,191 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "prevents",
-      "definition_uri": "https://w3id.org/biolink/vocab/prevents",
+      "name": "studied_to_treat",
+      "definition_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
       "annotations": [
         {
           "tag": "canonical_predicate",
           "value": true,
           "@type": "Annotation"
-        },
+        }
+      ],
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place).",
+      "notes": [
+        "Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is  not sufficient evidence or demonstrated efficacy against the condition to warrant creating a \u2018treats\u2019 assertion  edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate  'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it  is merely reporting that a study was observed to have been performed)."
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "mixins": [
+        "treats_or_applied_or_studied_to_treat"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "studied_to_treat",
+      "inverse": "studied_for_treatment_with",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "studied_for_treatment_with",
+      "definition_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
+      "owner": "studied_for_treatment_with",
+      "inverse": "studied_to_treat",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "in_clinical_trials_for",
+      "definition_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
+      "annotations": [
         {
-          "tag": "opposite_of",
-          "value": "predisposes",
+          "tag": "canonical_predicate",
+          "value": true,
           "@type": "Annotation"
         }
       ],
-      "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
+      "description": "Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place).",
+      "notes": [
+        "This predicate should be used when a source reports a clinical trial where the intervention is being or was  interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements.  A knowledge level of \"\"Observation\"\" MUST be used with this predicate (because it is merely reporting that a  study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4  trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge  SHOULD also be created (with knowledge_level = Assertion)."
+      ],
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "exact_mappings": [
-        "https://skr3.nlm.nih.gov/SemMedDBPREVENTS"
+      "is_a": "studied_to_treat",
+      "mixins": [
+        "treats_or_applied_or_studied_to_treat"
       ],
-      "narrow_mappings": [
-        "http://purl.obolibrary.org/obo/RO_0002599"
-      ],
-      "is_a": "affects_risk_for",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/prevents",
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
       "multivalued": true,
       "inherited": true,
-      "owner": "prevents",
-      "inverse": "prevented_by",
-      "range": "NamedThing",
+      "owner": "in_clinical_trials_for",
+      "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
     {
-      "name": "prevented_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/prevented_by",
+      "name": "in_preclinical_trials_for",
+      "definition_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
       "annotations": [
         {
-          "tag": "opposite_of",
-          "value": "enabled by",
+          "tag": "canonical_predicate",
+          "value": true,
           "@type": "Annotation"
         }
       ],
-      "description": "holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical  study has been performed specifically to test the potential of the  substance, procedure, or activity to treat  the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce  the risk of it manifesting in the first place).",
+      "notes": [
+        "A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study  was observed to have been performed)."
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "risk_affected_by",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/prevented_by",
+      "is_a": "studied_to_treat",
+      "mixins": [
+        "treats_or_applied_or_studied_to_treat"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
       "multivalued": true,
       "inherited": true,
-      "owner": "prevented_by",
-      "inverse": "prevents",
-      "range": "NamedThing",
+      "owner": "in_preclinical_trials_for",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "beneficial_in_models_for",
+      "definition_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/  phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
+      "notes": [
+        "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention  alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.   (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation  phenotype of zebrafish used to model the human disease Kabuki Syndrome) . A knowledge level of Assertion should be used with this predicate, because it requires interpretation of  results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the  occurrence of a study)."
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "in_preclinical_trials_for",
+      "mixins": [
+        "treats_or_applied_or_studied_to_treat"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "beneficial_in_models_for",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "applied_to_treat",
+      "definition_uri": "https://w3id.org/biolink/vocab/applied_to_treat",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.",
+      "notes": [
+        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the  treatment is approved for or might be effective in treating the condition. The treatment could be taken by a  patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In  practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging  instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level  of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /  prescribed for use at some point in time)."
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "administered to treat",
+        "used to treat",
+        "given to treat"
+      ],
+      "is_a": "related_to_at_instance_level",
+      "mixins": [
+        "treats_or_applied_or_studied_to_treat"
+      ],
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/applied_to_treat",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "applied_to_treat",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "treats_or_applied_or_studied_to_treat",
+      "definition_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the substance, procedure, or activity is able to treat the condition, has been observed to be  taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific  study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).",
+      "notes": [
+        "This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a  condition, and as a catch-all for representing sources that are not clear about the sense of treats that is  being reported. For example, text-mined statements concerning treatments for disease are based on sentences  that can report treatment in any of these different senses and thus require a broader predicate such as  this to safely report statement semantics."
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mixin": true,
+      "slot_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -10137,8 +10381,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "contraindicated_for",
-      "definition_uri": "https://w3id.org/biolink/vocab/contraindicated_for",
+      "name": "contraindicated_in",
+      "definition_uri": "https://w3id.org/biolink/vocab/contraindicated_in",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -10151,19 +10395,32 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.",
+      "description": "Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.",
+      "notes": [
+        "This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that  puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the  drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as  a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who  are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated  in people taking warfarin as a preventative treatment for stroke)."
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/NCIT_C37933"
       ],
       "is_a": "related_to_at_instance_level",
-      "domain": "Drug",
-      "slot_uri": "https://w3id.org/biolink/vocab/contraindicated_for",
+      "domain": "ChemicalOrDrugOrTreatment",
+      "slot_uri": "https://w3id.org/biolink/vocab/contraindicated_in",
       "multivalued": true,
       "inherited": true,
-      "owner": "contraindicated_for",
+      "owner": "contraindicated_in",
       "inverse": "has_contraindication",
       "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_or_drug_or_treatment",
+      "definition_uri": "https://w3id.org/biolink/vocab/chemical_entity_or_drug_or_treatment",
+      "description": "A union of chemical entities and children, and drug or treatment.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mixin": true,
+      "slot_uri": "https://w3id.org/biolink/vocab/chemical_entity_or_drug_or_treatment",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -10176,8 +10433,9 @@
       "multivalued": true,
       "inherited": true,
       "owner": "has_contraindication",
-      "inverse": "contraindicated_for",
-      "range": "Drug",
+      "inverse": "contraindicated_in",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12007,19 +12265,34 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "FDA_approval_status",
-      "definition_uri": "https://w3id.org/biolink/vocab/FDA_approval_status",
+      "name": "clinical_approval_status",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_approval_status",
       "description": "",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/FDA_approval_status",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_approval_status",
       "owner": "EntityToPhenotypicFeatureAssociation",
       "domain_of": [
         "EntityToDiseaseAssociation",
         "EntityToPhenotypicFeatureAssociation"
       ],
-      "range": "FDAApprovalStatusEnum",
+      "range": "ClinicalApprovalStatusEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "max_research_phase",
+      "definition_uri": "https://w3id.org/biolink/vocab/max_research_phase",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/max_research_phase",
+      "owner": "EntityToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "EntityToDiseaseAssociation",
+        "EntityToPhenotypicFeatureAssociation"
+      ],
+      "range": "MaxResearchPhaseEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21798,6 +22071,7 @@
       "name": "SeverityValue",
       "definition_uri": "https://w3id.org/biolink/vocab/SeverityValue",
       "description": "describes the severity of a phenotypic feature or disease",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Attribute",
       "slots": [
@@ -27254,6 +27528,7 @@
       "name": "Onset",
       "definition_uri": "https://w3id.org/biolink/vocab/Onset",
       "description": "The age group in which (disease) symptom manifestations appear",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "HP:0003674"
@@ -32492,7 +32767,8 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
-        "FDA_approval_status"
+        "clinical_approval_status",
+        "max_research_phase"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
@@ -32542,7 +32818,8 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
-        "FDA_approval_status"
+        "clinical_approval_status",
+        "max_research_phase"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation",
@@ -33274,9 +33551,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-14T21:35:29",
-  "source_file_size": 362001,
-  "generation_date": "2023-12-14T21:35:36",
+  "source_file_date": "2023-12-15T10:26:30",
+  "source_file_size": 370205,
+  "generation_date": "2023-12-15T10:26:39",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

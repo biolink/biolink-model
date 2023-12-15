@@ -12,7 +12,6 @@ with open(file_path, 'r') as file:
 # Parse the YAML content
 sv = SchemaView(file_content_str)
 
-
 def get_tree_class_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
     """
     Recursively get the tree node.
@@ -66,7 +65,6 @@ def load_predicate_tree_data(return_parent_to_child_dict: bool = False) -> Union
                 root_node = {"name": "related_to_at_instance_level"}
                 predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
     return ([predicate_tree], parent_to_child_dict) if return_parent_to_child_dict else ([predicate_tree])
-
 
 def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
     """
@@ -149,7 +147,114 @@ def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
     return root_node
 
 
+"""
+            elements: {
+                nodes: [
+                    {data: {id: 'a', label: 'treats', mdFile: "treats", mixin: "true"}},
+                    {data: {id: 'b', label: 'contraindicated in', mdFile: "contraindicated in", mixin: "false"}},
+                    {data: {id: 'c', label: 'studied_to_treat', mdFile: "studied to treat", mixin: "false"}},
+                    {data: {id: 'd', label: 'taken_or_studied_or_treats', mdFile: "studied to treat", mixin: "false"}}
+
+                ],
+                edges: [
+                    {data: {id: 'ab', source: 'a', target: 'b'}},
+                    {data: {id: 'bc', source: 'a', target: 'c'}},
+                    {data: {id: 'ca', source: 'd', target: 'a'}},
+                    {data: {id: 'ca', source: 'b', target: 'a'}}
+                ]
+            },
+"""
+
+# def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
+#     """
+#     Recursively get the tree node.
+#
+#     :param root_node: The root node of the tree.
+#     :type root_node: dict
+#     :param parent_to_child_map: A dictionary mapping parent nodes to child nodes.
+#     :type parent_to_child_map: dict
+#     :return: The tree node.
+#     :rtype: dict
+#
+#     """
+#     root_name = root_node["name"]
+#     children_names = parent_to_child_map.get(root_name, [])
+#     if children_names:
+#         children = []
+#         for child_name in children_names:
+#             child_node = {"name": child_name, "parent": root_name}
+#             child_node = get_tree_slot_recursive(child_node, parent_to_child_map)
+#             children.append(child_node)
+#         root_node["children"] = sorted(children, key=lambda x: x["name"])
+#         # test
+#
+#     return root_node
+
+
+def get_predicate_dager(nodes: list, edges: list):
+    for slot_name in sv.all_slots(imports=True):
+        slot = sv.get_slot(slot_name)
+        if slot.deprecated:
+            print("deprecated ", slot.name)
+            continue
+        if ("treat" in slot.name
+            or "related to" in slot.name
+            or "condition" in slot.name
+            or "associated with" in slot.name
+            or "indicated" in slot.name
+            or "models" in slot.name
+                     or "contributes to" in slot.name
+            or slot.name == "affects"
+        or slot.name == "causes"
+            or "trials" in slot.name
+            or "likelihood" in slot.name) and not slot.deprecated and "canonical_predicate" in slot.annotations:
+        #if ("related to" in sv.slot_ancestors(slot.name) or (slot.mixin and "canonical_predicate" in slot.annotations)) and not slot.deprecated:
+            print("adding ", slot.name)
+            nodes.append(
+                {
+                    "data": {
+                        "id": slot.name,
+                        "label": slot.name,
+                        "mdFile": convert_predicate_to_trapi_format(slot.name),
+                        "mixin": "true" if slot.mixin else "false"
+                    }
+                }
+            )
+            for parent in sv.slot_parents(slot.name, mixins=True):
+                if slot.deprecated:
+                    continue
+                if (("treat" in slot.name
+                     or "condition" in slot.name
+                     or "associated with" in slot.name
+                     or "indicated" in slot.name
+                     or "contributes to" in slot.name
+                     or slot.name == "affects"
+                     or slot.name == "causes"
+                     or "related to" in slot.name
+                     or "models" in slot.name
+                     or "trials" in slot.name
+                     or "likelihood" in slot.name)
+                    and not sv.get_element(parent).deprecated) and "canonical_predicate" in slot.annotations:
+                    edges.append(
+                        {
+                            "data": {
+                                "id": f"{parent}-{slot.name}",
+                                "source": parent,
+                                "target": slot.name
+                            }
+                        }
+                    )
+
+    return nodes, edges
+
+
 def generate_viz_json():
+
+    nodes, edges = get_predicate_dager([], [])
+    elements = {"nodes": nodes, "edges": edges}
+    with open('src/docs/treats_dagre.json', 'w') as json_file:
+        json.dump(elements, json_file, indent=4)
+
     pred_data = load_predicate_tree_data()
 
     with open('src/docs/predicates.json', 'w') as json_file:

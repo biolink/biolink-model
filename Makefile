@@ -192,6 +192,9 @@ $(PYMODEL):
 $(DOCDIR):
 	mkdir -p $@
 
+gen-viz:
+	$(RUN) generate_viz_json
+
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml ; \

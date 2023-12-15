@@ -75,13 +75,7 @@
                         "children": [
                             {
                                 "name": "clinical_course",
-                                "parent": "clinical_attribute",
-                                "children": [
-                                    {
-                                        "name": "onset",
-                                        "parent": "clinical_course"
-                                    }
-                                ]
+                                "parent": "clinical_attribute"
                             },
                             {
                                 "name": "clinical_measurement",
@@ -131,10 +125,6 @@
                     },
                     {
                         "name": "pathological_process_exposure",
-                        "parent": "attribute"
-                    },
-                    {
-                        "name": "severity_value",
                         "parent": "attribute"
                     },
                     {
