@@ -253,13 +253,13 @@
 
       EntityToDiseaseAssociation : category
 
+      EntityToDiseaseAssociation : clinical_approval_status
+
+          EntityToDiseaseAssociation --|&gt; ClinicalApprovalStatusEnum : clinical_approval_status
+
       EntityToDiseaseAssociation : deprecated
 
       EntityToDiseaseAssociation : description
-
-      EntityToDiseaseAssociation : FDA_approval_status
-
-          EntityToDiseaseAssociation --|&gt; FDAApprovalStatusEnum : FDA_approval_status
 
       EntityToDiseaseAssociation : has_attribute
 
@@ -274,6 +274,10 @@
       EntityToDiseaseAssociation : iri
 
       EntityToDiseaseAssociation : knowledge_source
+
+      EntityToDiseaseAssociation : max_research_phase
+
+          EntityToDiseaseAssociation --|&gt; MaxResearchPhaseEnum : max_research_phase
 
       EntityToDiseaseAssociation : name
 
@@ -366,8 +370,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../FDA_approval_status/">FDA_approval_status</a>: <br/> <i> </i></td>
-<td>0..1 <br/> <a href="../FDAApprovalStatusEnum/">FDAApprovalStatusEnum</a></td>
+<td><a href="../clinical_approval_status/">clinical_approval_status</a>: <br/> <i> </i></td>
+<td>0..1 <br/> <a href="../ClinicalApprovalStatusEnum/">ClinicalApprovalStatusEnum</a></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../max_research_phase/">max_research_phase</a>: <br/> <i> None </i></td>
+<td>0..1 <br/> <a href="../MaxResearchPhaseEnum/">MaxResearchPhaseEnum</a></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -548,7 +557,8 @@
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: association
 slots:
-- FDA approval status
+- clinical approval status
+- max research phase
 defining_slots:
 - subject
 - object

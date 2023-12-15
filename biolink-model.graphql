@@ -2330,7 +2330,8 @@ type EntityToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    fDAApprovalStatus: FDAApprovalStatusEnum
+    clinicalApprovalStatus: ClinicalApprovalStatusEnum
+    maxResearchPhase: MaxResearchPhaseEnum
   }
 
 interface EntityToDiseaseAssociationMixin
@@ -2399,7 +2400,8 @@ type EntityToPhenotypicFeatureAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    fDAApprovalStatus: FDAApprovalStatusEnum
+    clinicalApprovalStatus: ClinicalApprovalStatusEnum
+    maxResearchPhase: MaxResearchPhaseEnum
   }
 
 type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier

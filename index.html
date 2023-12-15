@@ -1752,19 +1752,19 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="affects/">affects</a></td>
-<td>describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.</td>
+<td>Describes an entity that has an effect on the state or quality of another existing entity.</td>
+</tr>
+<tr>
+<td><a href="affects_likelihood_of/">affects_likelihood_of</a></td>
+<td>Holds between two entities where the presence or application of one alters the chance that the other will come to be.</td>
 </tr>
 <tr>
 <td><a href="affects_response_to/">affects_response_to</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td><a href="affects_risk_for/">affects_risk_for</a></td>
-<td>holds between two entities where exposure to one entity alters the chance of developing the other</td>
-</tr>
-<tr>
-<td><a href="ameliorates/">ameliorates</a></td>
-<td>A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure, clinical intervention) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.</td>
+<td><a href="ameliorates_condition/">ameliorates_condition</a></td>
+<td>Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.</td>
 </tr>
 <tr>
 <td><a href="amount_or_activity_decreased_by/">amount_or_activity_decreased_by</a></td>
@@ -1805,6 +1805,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="author/">author</a></td>
 <td>an instance of one (co-)creator primarily responsible for a written work</td>
+</tr>
+<tr>
+<td><a href="beneficial_in_models_for/">beneficial_in_models_for</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/  phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).</td>
 </tr>
 <tr>
 <td><a href="binds/">binds</a></td>
@@ -1867,8 +1871,24 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.</td>
 </tr>
 <tr>
+<td><a href="condition_ameliorated_by/">condition_ameliorated_by</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="condition_associated_with_gene/">condition_associated_with_gene</a></td>
 <td>holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products</td>
+</tr>
+<tr>
+<td><a href="condition_exacerbated_by/">condition_exacerbated_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="condition_predisposed_by/">condition_predisposed_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="condition_prevented_by/">condition_prevented_by</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td><a href="consumed_by/">consumed_by</a></td>
@@ -1883,8 +1903,8 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="contraindicated_for/">contraindicated_for</a></td>
-<td>Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.</td>
+<td><a href="contraindicated_in/">contraindicated_in</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.</td>
 </tr>
 <tr>
 <td><a href="contributes_to/">contributes_to</a></td>
@@ -1971,8 +1991,12 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>holds between a physical entity and a process, where the physical entity executes the process</td>
 </tr>
 <tr>
-<td><a href="exacerbates/">exacerbates</a></td>
-<td>A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.</td>
+<td><a href="exacerbates_condition/">exacerbates_condition</a></td>
+<td>Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic</td>
+</tr>
+<tr>
+<td>feature) where the substance, procedure, or activity worsens some or all aspects of the condition.</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="exact_match/">exact_match</a></td>
@@ -2175,10 +2199,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="has_predisposing_factor/">has_predisposing_factor</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td><a href="has_provider/">has_provider</a></td>
 <td>None</td>
 </tr>
@@ -2235,6 +2255,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>holds between two genes or gene products that are expressed in the same cell type or population</td>
 </tr>
 <tr>
+<td><a href="in_clinical_trials_for/">in_clinical_trials_for</a></td>
+<td>Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place).</td>
+</tr>
+<tr>
 <td><a href="in_complex_with/">in_complex_with</a></td>
 <td>holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex</td>
 </tr>
@@ -2245,6 +2269,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="in_pathway_with/">in_pathway_with</a></td>
 <td>holds between two genes or gene products that are part of in the same biological pathway</td>
+</tr>
+<tr>
+<td><a href="in_preclinical_trials_for/">in_preclinical_trials_for</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical  study has been performed specifically to test the potential of the  substance, procedure, or activity to treat  the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce  the risk of it manifesting in the first place).</td>
 </tr>
 <tr>
 <td><a href="in_taxon/">in_taxon</a></td>
@@ -2279,19 +2307,11 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component</td>
 </tr>
 <tr>
-<td><a href="is_ameliorated_by/">is_ameliorated_by</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td><a href="is_assessed_by/">is_assessed_by</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td><a href="is_diagnosed_by/">is_diagnosed_by</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="is_exacerbated_by/">is_exacerbated_by</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -2356,6 +2376,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="lacks_part/">lacks_part</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="likelihood_affected_by/">likelihood_affected_by</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -2483,16 +2507,12 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>holds between two processes, where one completes before the other begins</td>
 </tr>
 <tr>
-<td><a href="predisposes/">predisposes</a></td>
-<td>holds between two entities where exposure to one entity increases the chance of developing the other</td>
+<td><a href="predisposes_to_condition/">predisposes_to_condition</a></td>
+<td>Holds between two entities where the presence or application of one increases the chance that the other will come to be.</td>
 </tr>
 <tr>
-<td><a href="prevented_by/">prevented_by</a></td>
-<td>holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.</td>
-</tr>
-<tr>
-<td><a href="prevents/">prevents</a></td>
-<td>holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.</td>
+<td><a href="preventative_for_condition/">preventative_for_condition</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.</td>
 </tr>
 <tr>
 <td><a href="primarily_composed_of/">primarily_composed_of</a></td>
@@ -2505,6 +2525,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="produces/">produces</a></td>
 <td>holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity</td>
+</tr>
+<tr>
+<td><a href="promotes_condition/">promotes_condition</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.</td>
 </tr>
 <tr>
 <td><a href="provider/">provider</a></td>
@@ -2555,10 +2579,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="risk_affected_by/">risk_affected_by</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td><a href="same_as/">same_as</a></td>
 <td>holds between two entities that are considered equivalent to each other</td>
 </tr>
@@ -2573,6 +2593,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="similar_to/">similar_to</a></td>
 <td>holds between an entity and some other entity with similar features.</td>
+</tr>
+<tr>
+<td><a href="studied_to_treat/">studied_to_treat</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place).</td>
 </tr>
 <tr>
 <td><a href="subclass_of/">subclass_of</a></td>
@@ -2611,16 +2635,12 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>inverse of translates to</td>
 </tr>
 <tr>
-<td><a href="treated_by/">treated_by</a></td>
-<td>holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition</td>
-</tr>
-<tr>
-<td><a href="treats/">treats</a></td>
-<td>holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat</td>
-</tr>
-<tr>
 <td><a href="variant_part_of/">variant_part_of</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="was_applied_to_treat/">was_applied_to_treat</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</td>
 </tr>
 <tr>
 <td><a href="xenologous_to/">xenologous_to</a></td>
@@ -3041,6 +3061,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>represents the chi-squared statistic computed from observations</td>
 </tr>
 <tr>
+<td><a href="clinical_approval_status/">clinical_approval_status</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="clinical_modifier_qualifier/">clinical_modifier_qualifier</a></td>
 <td>the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.</td>
 </tr>
@@ -3101,10 +3125,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td></td>
 </tr>
 <tr>
-<td><a href="FDA_approval_status/">FDA_approval_status</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="form_or_variant_qualifier/">form_or_variant_qualifier</a></td>
 <td>A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.</td>
 </tr>
@@ -3158,6 +3178,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="logical_interpretation/">logical_interpretation</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="max_research_phase/">max_research_phase</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -3508,6 +3532,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
+<td><a href="ClinicalApprovalStatusEnum/">ClinicalApprovalStatusEnum</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>None</td>
 </tr>
@@ -3524,10 +3552,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="FDAApprovalStatusEnum/">FDAApprovalStatusEnum</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="FDAIDAAdverseEventEnum/">FDAIDAAdverseEventEnum</a></td>
 <td>please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32</td>
 </tr>
@@ -3541,6 +3565,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="LogicalInterpretationEnum/">LogicalInterpretationEnum</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="MaxResearchPhaseEnum/">MaxResearchPhaseEnum</a></td>
 <td>None</td>
 </tr>
 <tr>

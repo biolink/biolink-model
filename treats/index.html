@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: treats (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: treats - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treats-multivalued" class="md-skip">
+        <a href="#slot-treats" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treats </strong>  (multivalued)
+              <strong> Slot: treats </strong>
             
           </span>
         </div>
@@ -500,6 +500,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mixin-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixin Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#annotations" class="md-nav__link">
     <span class="md-ellipsis">
       Annotations
@@ -535,9 +544,9 @@
   
 
 
-<h1 id="slot-treats-multivalued"><strong> Slot: treats </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat</i><br>
-   <strong>Aliases:</strong> is substance that treats, indicated for<br>
+<h1 id="slot-treats"><strong> Slot: treats </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting  in the first place.  ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there  is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for  the condition, or is an otherwise established treatment in the medical community (e.g. a  widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or  ‘beneficial in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence  can however be created as predictions (knowledge_level: prediction) and should point to  the more foundational asserted edges that support them.</i><br>
+   <strong>Aliases:</strong> is substance that treats, indicated for, ameliorates or prevents condition<br>
 
 
 </div>
@@ -546,20 +555,36 @@
 <strong>Range:</strong>   <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../related_to/">related_to</a><ul>
-<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affects/">affects</a><ul>
-<li><a href="../ameliorates/">ameliorates</a><ul>
+<li><a href="../treats_or_taken_to_treat_or_studied_to_treat/">treats_or_taken_to_treat_or_studied_to_treat</a><ul>
 <li><strong>treats</strong></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<h2 id="mixin-usage">Mixin Usage</h2>
+<table>
+<thead>
+<tr>
+<th>mixed into</th>
+<th>description</th>
+<th>range</th>
+<th>domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../ameliorates_condition/">ameliorates_condition</a></td>
+<td>Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.</td>
+<td>disease or phenotypic feature</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../preventative_for_condition/">preventative_for_condition</a></td>
+<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.</td>
+<td>disease or phenotypic feature</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="annotations">Annotations</h2>
 <table>
 <thead>
@@ -583,17 +608,25 @@ annotations:
   canonical_predicate:
     tag: canonical_predicate
     value: true
-  opposite_of:
-    tag: opposite_of
-    value: contraindicated for
-description: holds between a therapeutic procedure or chemical entity and a disease
-  or phenotypic feature that it is used to treat
+description: 'Holds between an intervention (substance, procedure, or activity) and
+  a medical condition (disease or phenotypic feature), and states that the intervention
+  is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce
+  the risk of it manifesting  in the first place.  ‘Treats’ edges should be asserted
+  (knowledge_level: assertion) only in cases where there  is strong supporting evidence
+  - i.e. the intervention is approved or in phase 4 trials for  the condition, or
+  is an otherwise established treatment in the medical community (e.g. a  widely-accepted
+  or formally recommended off-label use). In the absence of such evidence, weaker
+  predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or  ‘beneficial
+  in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence  can
+  however be created as predictions (knowledge_level: prediction) and should point
+  to  the more foundational asserted edges that support them.'
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
 aliases:
 - is substance that treats
 - indicated for
+- ameliorates or prevents condition
 exact_mappings:
 - DRUGBANK:treats
 - SEMMEDDB:TREATS
@@ -623,10 +656,14 @@ narrow_mappings:
 - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
 - REPODB:clinically_tested_withdrawn_phase_3
 - SNOMED:plays_role
-is_a: ameliorates
+broad_mappings:
+- DRUGBANK:treats
+- SEMMEDDB:TREATS
+- WIKIDATA_PROPERTY:P2175
+- MONDO:disease_responds_to
+is_a: treats or taken to treat or studied to treat
+mixin: true
 domain: chemical or drug or treatment
-multivalued: true
-inherited: true
 alias: treats
 range: disease or phenotypic feature
 

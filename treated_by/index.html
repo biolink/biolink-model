@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: treated_by (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: treated_by - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treated_by-multivalued" class="md-skip">
+        <a href="#slot-treated_by" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treated_by </strong>  (multivalued)
+              <strong> Slot: treated_by </strong>
             
           </span>
         </div>
@@ -491,9 +491,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inheritance" class="md-nav__link">
+  <a href="#mixin-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Inheritance
+      Mixin Usage
     </span>
   </a>
   
@@ -526,8 +526,8 @@
   
 
 
-<h1 id="slot-treated_by-multivalued"><strong> Slot: treated_by </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition</i><br>
+<h1 id="slot-treated_by"><strong> Slot: treated_by </strong></h1>
+<div class="highlight-box">
 
   <strong>Inverse:</strong> treats</a></small><br>
 
@@ -535,28 +535,31 @@
 
 <p><strong>Domain:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a><br>
 <strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../related_to/">related_to</a><ul>
-<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affected_by/">affected_by</a><ul>
-<li><a href="../is_ameliorated_by/">is_ameliorated_by</a><ul>
-<li><strong>treated_by</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<!-- no inheritance hierarchy -->
+
+<h2 id="mixin-usage">Mixin Usage</h2>
+<table>
+<thead>
+<tr>
+<th>mixed into</th>
+<th>description</th>
+<th>range</th>
+<th>domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: treated by
-description: holds between a disease or phenotypic feature and a therapeutic process
-  or chemical entity that is used to treat the condition
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
@@ -565,10 +568,8 @@ exact_mappings:
 - MONDO:disease_responds_to
 narrow_mappings:
 - RO:0002302
-is_a: is ameliorated by
+mixin: true
 domain: disease or phenotypic feature
-multivalued: true
-inherited: true
 alias: treated_by
 inverse: treats
 range: chemical or drug or treatment

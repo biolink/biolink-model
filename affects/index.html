@@ -536,10 +536,10 @@
 
 
 <h1 id="slot-affects-multivalued"><strong> Slot: affects </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> Describes an entity that has an effect on the state or quality of another existing entity.</i><br>
 
 
-
+ <strong> Notes:</strong> Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as  'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or  may not come into existence. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
@@ -552,8 +552,8 @@
 <li><a href="../affects_response_to/">affects_response_to</a></li>
 <li><a href="../regulates/">regulates</a> [ <a href="../interacts_with/">interacts_with</a>]</li>
 <li><a href="../disrupts/">disrupts</a></li>
-<li><a href="../ameliorates/">ameliorates</a></li>
-<li><a href="../exacerbates/">exacerbates</a></li>
+<li><a href="../ameliorates_condition/">ameliorates_condition</a> [ <a href="../treats/">treats</a>]</li>
+<li><a href="../exacerbates_condition/">exacerbates_condition</a> [ <a href="../promotes_condition/">promotes_condition</a>]</li>
 <li><a href="../has_adverse_event/">has_adverse_event</a></li>
 <li><a href="../has_side_effect/">has_side_effect</a></li>
 </ul>
@@ -586,10 +586,12 @@ annotations:
   canonical_predicate:
     tag: canonical_predicate
     value: true
-description: describes an entity that has a direct affect on the state or quality
-  of another existing entity. Use of the 'affects' predicate implies that the affected
-  entity already exists, unlike predicates such as 'affects risk for' and 'prevents,
-  where the outcome is something that may or may not come to be.
+description: Describes an entity that has an effect on the state or quality of another
+  existing entity.
+notes:
+- Use of the 'affects' predicate implies that the affected entity already exists,
+  unlike predicates such as  'affects likelihood of' and 'prevents' where the effect
+  concerns whether or when something may or  may not come into existence.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
