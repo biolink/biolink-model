@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-15T10:18:00
+# Generation date: 2023-12-15T10:27:07
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -12977,8 +12977,8 @@ slots.in_preclinical_trials_for = Slot(uri=BIOLINK.in_preclinical_trials_for, na
 slots.beneficial_in_models_for = Slot(uri=BIOLINK.beneficial_in_models_for, name="beneficial in models for", curie=BIOLINK.curie('beneficial_in_models_for'),
                    model_uri=BIOLINK.beneficial_in_models_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.was_applied_to_treat = Slot(uri=BIOLINK.was_applied_to_treat, name="was applied to treat", curie=BIOLINK.curie('was_applied_to_treat'),
-                   model_uri=BIOLINK.was_applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+slots.applied_to_treat = Slot(uri=BIOLINK.applied_to_treat, name="applied to treat", curie=BIOLINK.curie('applied_to_treat'),
+                   model_uri=BIOLINK.applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treats_or_applied_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_applied_or_studied_to_treat, name="treats or applied or studied to treat", curie=BIOLINK.curie('treats_or_applied_or_studied_to_treat'),
                    model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=None, range=Optional[str])

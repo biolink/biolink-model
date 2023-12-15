@@ -7777,8 +7777,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "was_applied_to_treat",
-      "definition_uri": "https://w3id.org/biolink/vocab/was_applied_to_treat",
+      "name": "applied_to_treat",
+      "definition_uri": "https://w3id.org/biolink/vocab/applied_to_treat",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7804,10 +7804,10 @@
         "treats_or_applied_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
-      "slot_uri": "https://w3id.org/biolink/vocab/was_applied_to_treat",
+      "slot_uri": "https://w3id.org/biolink/vocab/applied_to_treat",
       "multivalued": true,
       "inherited": true,
-      "owner": "was_applied_to_treat",
+      "owner": "applied_to_treat",
       "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
@@ -33551,9 +33551,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-15T10:17:23",
-  "source_file_size": 370209,
-  "generation_date": "2023-12-15T10:17:32",
+  "source_file_date": "2023-12-15T10:26:30",
+  "source_file_size": 370205,
+  "generation_date": "2023-12-15T10:26:39",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
