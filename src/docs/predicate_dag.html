@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Include Cytoscape.js -->
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+    <!-- Include Graphlib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/graphlib/2.1.8/graphlib.min.js"></script>
+
+    <!-- Include Dagre -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+
+    <!-- Include Cytoscape Dagre Extension -->
+    <script src="https://unpkg.com/cytoscape-dagre/cytoscape-dagre.js"></script>
+</head>
+<body>
+<h2>Treats Hierarchy</h2>
+
+<div>
+    <button class="active"><a href="predicate_dag.html">Treats Predicates (with mixins)</a></button>
+</div>
+<div id="cy" ></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('predicate_dagre.json')
+            .then(response => response.json())
+            .then(elements => {
+                var cy = cytoscape({
+                    container: document.getElementById('cy'),
+                    elements: elements,
+                    layout: {
+                        name: 'dagre',
+                        nodeSep: 50,
+                        edgeSep: 10,
+                        rankSep: 300,
+                        rankDir: 'TB',
+                    },
+                    style: [
+                        {
+                            selector: 'node',
+                            style: {
+                                'label': 'data(label)',
+                                'text-valign': 'center',
+                                'text-halign': 'center',
+                                'color': '#fff',
+                                'background-color': '#666',
+                                'text-wrap': 'wrap', // Ensures text wrapping
+                                'text-max-width': 80, // Adjust as needed
+                                'font-size': 4, // Adjust font size as needed
+                                'width': '100px',  // Fixed width
+                                'height': '100px', // Fixed height
+                            }
+                        },
+                        {
+                            selector: 'node[mixin="true"]',
+                            style: {
+                                'background-color': 'purple'
+                            }
+                        },
+                        {
+                            selector: 'edge',
+                            style: {
+                                'width': 3,
+                                'line-color': '#ccc',
+                                'target-arrow-color': '#ccc',
+                                'target-arrow-shape': 'triangle',
+                                'curve-style': 'bezier'
+                            }
+                        }
+                    ]
+                });
+                cy.on('tap', 'node', function (event) {
+                    var nodeData = event.target.data();
+                    if (nodeData.mdFile) {
+                        window.location.href = nodeData.mdFile;
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading the elements:', error));
+    });
+</script>
+
+</body>
+</html>
