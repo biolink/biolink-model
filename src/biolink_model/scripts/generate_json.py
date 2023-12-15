@@ -244,20 +244,6 @@ def get_predicate_dager(nodes: list, edges: list):
                             }
                         }
                     )
-            # for child in sv.slot_descendants(slot.name, mixins=True, reflexive=False):
-            #     if slot.deprecated:
-            #         continue
-            #     if not sv.get_element(child).deprecated:
-            #         edges.append(
-            #             {
-            #                 "data": {
-            #                     "id": f"{slot.name}-{child}",
-            #                     "source": slot.name,
-            #                     "target": child
-            #                 }
-            #             }
-            #         )
-
 
     return nodes, edges
 
@@ -266,7 +252,7 @@ def generate_viz_json():
 
     nodes, edges = get_predicate_dager([], [])
     elements = {"nodes": nodes, "edges": edges}
-    with open('src/docs/predicate_dagre.json', 'w') as json_file:
+    with open('src/docs/treats_dagre.json', 'w') as json_file:
         json.dump(elements, json_file, indent=4)
 
     pred_data = load_predicate_tree_data()

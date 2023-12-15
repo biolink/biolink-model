@@ -17,13 +17,13 @@
     <script src="https://unpkg.com/cytoscape-dagre/cytoscape-dagre.js"></script>
 </head>
 <body>
-<h2>Treats Predicates (with mixins) </h2>
+<h2>Treats Predicates (with <span style="color: purple;">mixins</span>)</h2>
 
-<div id="cy" style="width: 1200px; height: 1000px;"></div>
+<div id="cy" style="width: 20000px; height: 1800px;"></div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        fetch('predicate_dagre.json')
+        fetch('treats_dagre.json')
             .then(response => response.json())
             .then(elements => {
                 var cy = cytoscape({
@@ -47,9 +47,9 @@
                                 'background-color': '#666',
                                 'text-wrap': 'wrap', // Ensures text wrapping
                                 'text-max-width': 80, // Adjust as needed
-                                'font-size': 100, // Adjust font size as needed,
-                                'width': 400,
-                                'height': 400
+                                'font-size': 110, // Adjust font size as needed,
+                                'width': 2000,
+                                'height': 2000
                             }
                         },
                         {
@@ -61,7 +61,7 @@
                         {
                             selector: 'edge',
                             style: {
-                                'width': 1,
+                                'width': 3,
                                 'line-color': '#ccc',
                                 'target-arrow-color': '#ccc',
                                 'target-arrow-shape': 'triangle',
