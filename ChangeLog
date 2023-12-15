@@ -1,5 +1,24 @@
 CHANGES
 =======
+4.1.0
+-----
+Summary: 4.1.0 implements the "treats" refactoring work, making "treats" a mixin. To view the new predicate
+hierarchy around this "treats" refactoring, please see https://biolink.github.io/biolink-model/treats_dag.html.
+This release also includes a number of bug fixes and documentation updates.
+
+## What's Changed
+* ubergraph and sri-reference-kg/monarchinitiative infores updates by @EvanDietzMorris in https://github.com/biolink/biolink-model/pull/1428
+* Add infores validation checks to PRs and makefile target  by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1434
+* add canonical flag to superclass of by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1433
+* make subclass of an inverse of superclass of by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1435
+* make changes according to https://docs.google.com/spreadsheets/d/12SP… by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1436
+* Adds infores:aop-cam (Adverse Outcome Pathways Casual Activity Models) by @gaurav in https://github.com/biolink/biolink-model/pull/1437
+* Treats visualization graph including mixins by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1439
+* "max predicate approach" for refactoring "treats" by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1328
+* Dec 2023 infores updates for Service Provider/BTE by @colleenXu in https://github.com/biolink/biolink-model/pull/1429
+* add context at beginning, fix some awkward wording of "using the modeling language documentation" by @nlharris in https://github.com/biolink/biolink-model/pull/1438
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.0.0...v4.1.0
+
 4.0.0
 -----
 Summary: 4.0.0 is a major release that includes many changes to the documentation for Biolink Model as well
