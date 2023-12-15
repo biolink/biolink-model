@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/was_applied_to_treat/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/applied_to_treat/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: was_applied_to_treat (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: applied_to_treat (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-was_applied_to_treat-multivalued" class="md-skip">
+        <a href="#slot-applied_to_treat-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: was_applied_to_treat </strong>  (multivalued)
+              <strong> Slot: applied_to_treat </strong>  (multivalued)
             
           </span>
         </div>
@@ -535,7 +535,7 @@
   
 
 
-<h1 id="slot-was_applied_to_treat-multivalued"><strong> Slot: was_applied_to_treat </strong>  (multivalued)</h1>
+<h1 id="slot-applied_to_treat-multivalued"><strong> Slot: applied_to_treat </strong>  (multivalued)</h1>
 <div class="highlight-box"><strong>Description:</strong><i> Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</i><br>
    <strong>Aliases:</strong> administered to treat, used to treat, given to treat<br>
 
@@ -548,7 +548,7 @@
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><strong>was_applied_to_treat</strong> [ <a href="../treats_or_taken_to_treat_or_studied_to_treat/">treats_or_taken_to_treat_or_studied_to_treat</a>]</li>
+<li><strong>applied_to_treat</strong> [ <a href="../treats_or_applied_or_studied_to_treat/">treats_or_applied_or_studied_to_treat</a>]</li>
 </ul>
 </li>
 </ul>
@@ -572,7 +572,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: was applied to treat
+<pre><code class="language-yaml">name: applied to treat
 annotations:
   canonical_predicate:
     tag: canonical_predicate
@@ -600,11 +600,11 @@ aliases:
 - given to treat
 is_a: related to at instance level
 mixins:
-- treats or taken to treat or studied to treat
+- treats or applied or studied to treat
 domain: chemical or drug or treatment
 multivalued: true
 inherited: true
-alias: was_applied_to_treat
+alias: applied_to_treat
 range: disease or phenotypic feature
 
 </code></pre>

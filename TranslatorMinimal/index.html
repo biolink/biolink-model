@@ -613,6 +613,10 @@
 <td>A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).</td>
 </tr>
 <tr>
+<td><a href="../applied_to_treat/">applied_to_treat</a></td>
+<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</td>
+</tr>
+<tr>
 <td><a href="../aspect_qualifier/">aspect_qualifier</a></td>
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.</td>
 </tr>
@@ -1149,12 +1153,8 @@
 <td>Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting  in the first place.  ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there  is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for  the condition, or is an otherwise established treatment in the medical community (e.g. a  widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or  ‘beneficial in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence  can however be created as predictions (knowledge_level: prediction) and should point to  the more foundational asserted edges that support them.</td>
 </tr>
 <tr>
-<td><a href="../treats_or_taken_to_treat_or_studied_to_treat/">treats_or_taken_to_treat_or_studied_to_treat</a></td>
+<td><a href="../treats_or_applied_or_studied_to_treat/">treats_or_applied_or_studied_to_treat</a></td>
 <td>Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the substance, procedure, or activity is able to treat the condition, has been observed to be  taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific  study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).</td>
-</tr>
-<tr>
-<td><a href="../was_applied_to_treat/">was_applied_to_treat</a></td>
-<td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</td>
 </tr>
 <tr>
 <td><a href="../xenologous_to/">xenologous_to</a></td>

@@ -211,6 +211,10 @@
                         ]
                     },
                     {
+                        "name": "applied_to_treat",
+                        "parent": "related_to_at_instance_level"
+                    },
+                    {
                         "name": "assesses",
                         "parent": "related_to_at_instance_level"
                     },
@@ -1012,10 +1016,6 @@
                     },
                     {
                         "name": "translation_of",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
-                        "name": "was_applied_to_treat",
                         "parent": "related_to_at_instance_level"
                     }
                 ]

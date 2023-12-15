@@ -19,7 +19,7 @@
 <body>
 <h2>Treats Predicates (with <span style="color: purple;">mixins</span>)</h2>
 
-<div id="cy" style="width: 2000px; height: 1800px;"></div>
+<div id="cy" style="width: 1000px; height: 600px;"></div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -61,7 +61,7 @@
                         {
                             selector: 'edge',
                             style: {
-                                'width': 3,
+                                'width': 100,
                                 'line-color': '#ccc',
                                 'target-arrow-color': '#ccc',
                                 'target-arrow-shape': 'triangle',
@@ -70,7 +70,6 @@
                         }
                     ]
                 });
-
                 cy.on('tap', 'node', function (event) {
                     var nodeData = event.target.data();
                     if (nodeData.mdFile) {
