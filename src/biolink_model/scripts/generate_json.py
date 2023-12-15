@@ -197,15 +197,17 @@ def get_predicate_dager(nodes: list, edges: list):
         if slot.deprecated:
             print("deprecated ", slot.name)
             continue
-        if ("treats" in slot.name
+        if ("treat" in slot.name
             or "related to" in slot.name
-            or "related to at instance level" in slot.name
             or "condition" in slot.name
             or "associated with" in slot.name
             or "indicated" in slot.name
             or "models" in slot.name
+                     or "contributes to" in slot.name
+            or slot.name == "affects"
+        or slot.name == "causes"
             or "trials" in slot.name
-            or "likelihood" in slot.name) and not slot.deprecated:
+            or "likelihood" in slot.name) and not slot.deprecated and "canonical_predicate" in slot.annotations:
         #if ("related to" in sv.slot_ancestors(slot.name) or (slot.mixin and "canonical_predicate" in slot.annotations)) and not slot.deprecated:
             print("adding ", slot.name)
             nodes.append(
@@ -221,16 +223,18 @@ def get_predicate_dager(nodes: list, edges: list):
             for parent in sv.slot_parents(slot.name, mixins=True):
                 if slot.deprecated:
                     continue
-                if (("treats" in slot.name
+                if (("treat" in slot.name
                      or "condition" in slot.name
                      or "associated with" in slot.name
                      or "indicated" in slot.name
+                     or "contributes to" in slot.name
+                     or slot.name == "affects"
+                     or slot.name == "causes"
                      or "related to" in slot.name
-                     or "related to at instance level" in slot.name
                      or "models" in slot.name
                      or "trials" in slot.name
                      or "likelihood" in slot.name)
-                    and not sv.get_element(parent).deprecated):
+                    and not sv.get_element(parent).deprecated) and "canonical_predicate" in slot.annotations:
                     edges.append(
                         {
                             "data": {

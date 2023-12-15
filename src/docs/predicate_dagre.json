@@ -42,25 +42,9 @@
         },
         {
             "data": {
-                "id": "likelihood affected by",
-                "label": "likelihood affected by",
-                "mdFile": "likelihood_affected_by",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
                 "id": "associated with likelihood of",
                 "label": "associated with likelihood of",
                 "mdFile": "associated_with_likelihood_of",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
-                "id": "likelihood associated with",
-                "label": "likelihood associated with",
-                "mdFile": "likelihood_associated_with",
                 "mixin": "false"
             }
         },
@@ -74,14 +58,6 @@
         },
         {
             "data": {
-                "id": "increased likelihood associated with",
-                "label": "increased likelihood associated with",
-                "mdFile": "increased_likelihood_associated_with",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
                 "id": "associated with decreased likelihood of",
                 "label": "associated with decreased likelihood of",
                 "mdFile": "associated_with_decreased_likelihood_of",
@@ -90,9 +66,9 @@
         },
         {
             "data": {
-                "id": "decreased likelihood associated with",
-                "label": "decreased likelihood associated with",
-                "mdFile": "decreased_likelihood_associated_with",
+                "id": "affects",
+                "label": "affects",
+                "mdFile": "affects",
                 "mixin": "false"
             }
         },
@@ -106,25 +82,9 @@
         },
         {
             "data": {
-                "id": "sensitivity associated with",
-                "label": "sensitivity associated with",
-                "mdFile": "sensitivity_associated_with",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
                 "id": "associated with resistance to",
                 "label": "associated with resistance to",
                 "mdFile": "associated_with_resistance_to",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
-                "id": "resistance associated with",
-                "label": "resistance associated with",
-                "mdFile": "resistance_associated_with",
                 "mixin": "false"
             }
         },
@@ -146,9 +106,17 @@
         },
         {
             "data": {
-                "id": "condition associated with gene",
-                "label": "condition associated with gene",
-                "mdFile": "condition_associated_with_gene",
+                "id": "contributes to",
+                "label": "contributes to",
+                "mdFile": "contributes_to",
+                "mixin": "false"
+            }
+        },
+        {
+            "data": {
+                "id": "causes",
+                "label": "causes",
+                "mdFile": "causes",
                 "mixin": "false"
             }
         },
@@ -162,25 +130,9 @@
         },
         {
             "data": {
-                "id": "condition ameliorated by",
-                "label": "condition ameliorated by",
-                "mdFile": "condition_ameliorated_by",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
                 "id": "preventative for condition",
                 "label": "preventative for condition",
                 "mdFile": "preventative_for_condition",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
-                "id": "condition prevented by",
-                "label": "condition prevented by",
-                "mdFile": "condition_prevented_by",
                 "mixin": "false"
             }
         },
@@ -202,25 +154,9 @@
         },
         {
             "data": {
-                "id": "condition predisposed by",
-                "label": "condition predisposed by",
-                "mdFile": "condition_predisposed_by",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
                 "id": "exacerbates condition",
                 "label": "exacerbates condition",
                 "mdFile": "exacerbates_condition",
-                "mixin": "false"
-            }
-        },
-        {
-            "data": {
-                "id": "condition exacerbated by",
-                "label": "condition exacerbated by",
-                "mdFile": "condition_exacerbated_by",
                 "mixin": "false"
             }
         },
@@ -230,6 +166,14 @@
                 "label": "treats",
                 "mdFile": "treats",
                 "mixin": "true"
+            }
+        },
+        {
+            "data": {
+                "id": "studied to treat",
+                "label": "studied to treat",
+                "mdFile": "studied_to_treat",
+                "mixin": "false"
             }
         },
         {
@@ -258,18 +202,18 @@
         },
         {
             "data": {
-                "id": "treats or taken to treat or studied to treat",
-                "label": "treats or taken to treat or studied to treat",
-                "mdFile": "treats_or_taken_to_treat_or_studied_to_treat",
-                "mixin": "true"
+                "id": "was applied to treat",
+                "label": "was applied to treat",
+                "mdFile": "was_applied_to_treat",
+                "mixin": "false"
             }
         },
         {
             "data": {
-                "id": "models",
-                "label": "models",
-                "mdFile": "models",
-                "mixin": "false"
+                "id": "treats or taken to treat or studied to treat",
+                "label": "treats or taken to treat or studied to treat",
+                "mdFile": "treats_or_taken_to_treat_or_studied_to_treat",
+                "mixin": "true"
             }
         },
         {
@@ -328,23 +272,9 @@
         },
         {
             "data": {
-                "id": "related to at instance level-likelihood affected by",
-                "source": "related to at instance level",
-                "target": "likelihood affected by"
-            }
-        },
-        {
-            "data": {
                 "id": "associated with-associated with likelihood of",
                 "source": "associated with",
                 "target": "associated with likelihood of"
-            }
-        },
-        {
-            "data": {
-                "id": "associated with-likelihood associated with",
-                "source": "associated with",
-                "target": "likelihood associated with"
             }
         },
         {
@@ -356,13 +286,6 @@
         },
         {
             "data": {
-                "id": "likelihood associated with-increased likelihood associated with",
-                "source": "likelihood associated with",
-                "target": "increased likelihood associated with"
-            }
-        },
-        {
-            "data": {
                 "id": "associated with likelihood of-associated with decreased likelihood of",
                 "source": "associated with likelihood of",
                 "target": "associated with decreased likelihood of"
@@ -370,9 +293,9 @@
         },
         {
             "data": {
-                "id": "likelihood associated with-decreased likelihood associated with",
-                "source": "likelihood associated with",
-                "target": "decreased likelihood associated with"
+                "id": "related to at instance level-affects",
+                "source": "related to at instance level",
+                "target": "affects"
             }
         },
         {
@@ -384,23 +307,9 @@
         },
         {
             "data": {
-                "id": "associated with-sensitivity associated with",
-                "source": "associated with",
-                "target": "sensitivity associated with"
-            }
-        },
-        {
-            "data": {
                 "id": "associated with-associated with resistance to",
                 "source": "associated with",
                 "target": "associated with resistance to"
-            }
-        },
-        {
-            "data": {
-                "id": "associated with-resistance associated with",
-                "source": "associated with",
-                "target": "resistance associated with"
             }
         },
         {
@@ -419,9 +328,16 @@
         },
         {
             "data": {
-                "id": "genetically associated with-condition associated with gene",
-                "source": "genetically associated with",
-                "target": "condition associated with gene"
+                "id": "related to at instance level-contributes to",
+                "source": "related to at instance level",
+                "target": "contributes to"
+            }
+        },
+        {
+            "data": {
+                "id": "contributes to-causes",
+                "source": "contributes to",
+                "target": "causes"
             }
         },
         {
@@ -440,13 +356,6 @@
         },
         {
             "data": {
-                "id": "affected by-condition ameliorated by",
-                "source": "affected by",
-                "target": "condition ameliorated by"
-            }
-        },
-        {
-            "data": {
                 "id": "treats-preventative for condition",
                 "source": "treats",
                 "target": "preventative for condition"
@@ -457,13 +366,6 @@
                 "id": "affects likelihood of-preventative for condition",
                 "source": "affects likelihood of",
                 "target": "preventative for condition"
-            }
-        },
-        {
-            "data": {
-                "id": "affected by-condition prevented by",
-                "source": "affected by",
-                "target": "condition prevented by"
             }
         },
         {
@@ -489,13 +391,6 @@
         },
         {
             "data": {
-                "id": "related to at instance level-condition predisposed by",
-                "source": "related to at instance level",
-                "target": "condition predisposed by"
-            }
-        },
-        {
-            "data": {
                 "id": "promotes condition-exacerbates condition",
                 "source": "promotes condition",
                 "target": "exacerbates condition"
@@ -510,16 +405,23 @@
         },
         {
             "data": {
-                "id": "affected by-condition exacerbated by",
-                "source": "affected by",
-                "target": "condition exacerbated by"
+                "id": "treats or taken to treat or studied to treat-treats",
+                "source": "treats or taken to treat or studied to treat",
+                "target": "treats"
             }
         },
         {
             "data": {
-                "id": "treats or taken to treat or studied to treat-treats",
+                "id": "treats or taken to treat or studied to treat-studied to treat",
                 "source": "treats or taken to treat or studied to treat",
-                "target": "treats"
+                "target": "studied to treat"
+            }
+        },
+        {
+            "data": {
+                "id": "related to at instance level-studied to treat",
+                "source": "related to at instance level",
+                "target": "studied to treat"
             }
         },
         {
@@ -566,9 +468,16 @@
         },
         {
             "data": {
-                "id": "related to at instance level-models",
+                "id": "treats or taken to treat or studied to treat-was applied to treat",
+                "source": "treats or taken to treat or studied to treat",
+                "target": "was applied to treat"
+            }
+        },
+        {
+            "data": {
+                "id": "related to at instance level-was applied to treat",
                 "source": "related to at instance level",
-                "target": "models"
+                "target": "was applied to treat"
             }
         },
         {

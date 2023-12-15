@@ -17,12 +17,9 @@
     <script src="https://unpkg.com/cytoscape-dagre/cytoscape-dagre.js"></script>
 </head>
 <body>
-<h2>Treats Hierarchy</h2>
+<h2>Treats Predicates (with mixins) </h2>
 
-<div>
-    <button class="active"><a href="predicate_dag.html">Treats Predicates (with mixins)</a></button>
-</div>
-<div id="cy" ></div>
+<div id="cy" style="width: 1200px; height: 1000px;"></div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -36,7 +33,7 @@
                         name: 'dagre',
                         nodeSep: 50,
                         edgeSep: 10,
-                        rankSep: 300,
+                        rankSep: 1000,
                         rankDir: 'TB',
                     },
                     style: [
@@ -50,9 +47,9 @@
                                 'background-color': '#666',
                                 'text-wrap': 'wrap', // Ensures text wrapping
                                 'text-max-width': 80, // Adjust as needed
-                                'font-size': 4, // Adjust font size as needed
-                                'width': '100px',  // Fixed width
-                                'height': '100px', // Fixed height
+                                'font-size': 100, // Adjust font size as needed,
+                                'width': 400,
+                                'height': 400
                             }
                         },
                         {
@@ -64,7 +61,7 @@
                         {
                             selector: 'edge',
                             style: {
-                                'width': 3,
+                                'width': 1,
                                 'line-color': '#ccc',
                                 'target-arrow-color': '#ccc',
                                 'target-arrow-shape': 'triangle',
@@ -73,6 +70,7 @@
                         }
                     ]
                 });
+
                 cy.on('tap', 'node', function (event) {
                     var nodeData = event.target.data();
                     if (nodeData.mdFile) {
