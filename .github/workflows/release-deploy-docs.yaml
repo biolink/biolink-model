@@ -4,9 +4,6 @@ name: Auto-deployment of biolink_model Documentation
 on:
   release:
     types: [created]
-  push:
-    branches:
-      - treats_viz
   workflow_dispatch:
     types: trigger-deploy-docs
 
