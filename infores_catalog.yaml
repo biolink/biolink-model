@@ -447,7 +447,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/bindingdb
     synonym:
       - The Binding Database
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       BindingDB is a public, web-accessible database of measured binding
@@ -519,7 +519,7 @@ information_resources:
     name: BioThings DGIdb API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DGIdb-API
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: Documentation of the BioThings DGIdb query web services.
   - id: infores:biothings-diseases
@@ -527,7 +527,7 @@ information_resources:
     name: BioThings DISEASES API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DISEASES-API
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: Documentation of the DISEASES query web services.
   - id: infores:biothings-ebi-gene2phenotype
@@ -545,7 +545,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-Explorer-(BTE)
     synonym:
       - BTE
-    knowledge level: curated
+    knowledge level: other
     agent type: not_provided
   - id: infores:service-provider-trapi
     status: released
@@ -554,7 +554,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Service-Provider-TRAPI
     synonym:
       - service provider
-    knowledge level: curated
+    knowledge level: other
     agent type: not_provided
   - id: infores:biothings-go-bp
     status: released
@@ -593,7 +593,7 @@ information_resources:
     name: BioThings iDISK API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-IDISK
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
   - id: infores:biothings-mgi-g2p
     status: released
@@ -795,7 +795,7 @@ information_resources:
     name: BioThings BindingDB API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-Binding-DB
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the BioThings [BindingDB](https://www.bindingdb.org/rwd/bind/index.jsp)
@@ -1132,7 +1132,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/cpdb
     synonym:
       - CPDB
-    knowledge level: curated
+    knowledge level: other
     agent type: not_provided
   - id: infores:cpt-codes-umls
     status: deprecated
@@ -1217,7 +1217,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/dgidb
     synonym:
       - DGIdb
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       information on drug-gene interactions and druggable genes from publications,
@@ -1259,17 +1259,22 @@ information_resources:
     agent type: not_provided
   - id: infores:diseases
     status: released
-    name: Disease-gene associations mined from literature
+    name: DISEASES
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Diseases
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
+    description: >-
+      DISEASES is a weekly updated web resource that integrates evidence on disease-gene associations 
+      from automatic text mining, manually curated literature, cancer mutation data, and 
+      genome-wide association studies. We further unify the evidence by assigning confidence 
+      scores that facilitate comparison of the different types and sources of evidence.
   - id: infores:disgenet
     status: released
     name: DisGeNET
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/DisGeNET
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
   - id: infores:distild
     status: deprecated
@@ -1845,7 +1850,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/iDISK
     synonym:
       - iDISK
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7075538/
   - id: infores:improving-agent
@@ -2220,7 +2225,7 @@ information_resources:
       - http://mychem.info
     synonym:
       - mychem
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyChem.info chem query web services.  Learn more
@@ -2232,7 +2237,7 @@ information_resources:
       - http://mydisease.info/
     synonym:
       - mydisease
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyDisease.info disease query web services.  Learn
@@ -2244,7 +2249,7 @@ information_resources:
       - https://mygene.info/
     synonym:
       - mygene
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyGene.info Gene Query web services. Learn more
@@ -2256,7 +2261,7 @@ information_resources:
       - http://myvariant.info/
     synonym:
       - myvariant
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       Documentation of the MyVariant.info Variant Query web services. Learn
@@ -2525,7 +2530,7 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/PANTHER
     synonym:
       - Panther
-    knowledge level: curated
+    knowledge level: other
     agent type: not_provided
   - id: infores:path-pheno-db
     status: released
@@ -3254,9 +3259,12 @@ information_resources:
     status: released
     name: WikiPathways
     xref:
-      - https://www.wikipathways.org
+      - https://github.com/NCATSTranslator/Translator-All/wiki/WikiPathways
     knowledge level: curated
     agent type: not_provided
+    description: >-
+      WikiPathways is an open science platform for biological pathways contributed, updated, 
+      and used by the research community.
   - id: infores:xpo
     status: released
     name: Xenopus Phenotype Ontology
@@ -3455,7 +3463,7 @@ information_resources:
     name: BioThings SuppKG API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SuppKG-API
-    knowledge level: curated
+    knowledge level: text_mined
     agent type: not_provided
     description: >-
       Documentation of the BioThings API for
@@ -3508,7 +3516,7 @@ information_resources:
     name: RaMPDB
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/RaMPDB
-    knowledge level: curated
+    knowledge level: mixed
     agent type: not_provided
     description: >-
       RaMP-DB (Relational database of Metabolomic Pathways) is a multi-sourced integrated database 
@@ -3516,3 +3524,149 @@ information_resources:
       annotations for genes, proteins, and metabolites. RaMP-DB also provides a framework for single 
       and batch queries of those annotations, and for performing chemical and biological pathway 
       enrichment analyses on input multi-omic datasets.
+  - id: infores:biothings-agr
+    status: released
+    name: BioThings AGR API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-AGR-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for
+      [AGR](https://www.alliancegenome.org/downloads) disease associations data.
+  - id: infores:innatedb
+    status: released
+    name: InnateDB
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/InnateDB
+    knowledge level: mixed
+    agent type: not_provided
+    description: >-
+      InnateDB is a publicly available database of the genes, proteins, experimentally-verified interactions 
+      and signaling pathways involved in the innate immune response of humans, mice and bovines to microbial infection. 
+      The database captures an improved coverage of the innate immunity interactome by integrating known interactions 
+      and pathways from major public databases together with manually-curated data into a centralised resource.
+  - id: infores:biothings-innatedb
+    status: released
+    name: BioThings InnateDB API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-InnateDB-API
+    knowledge level: mixed
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [InnateDB](https://www.innatedb.com/) data. 
+  - id: infores:iptmnet
+    status: released
+    name: iPTMnet
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/iPTMnet
+    knowledge level: mixed
+    agent type: not_provided
+    description: >-
+      iPTMnet is a bioinformatics resource for integrated understanding of protein post-translational 
+      modifications (PTMs) in systems biology context. It connects multiple disparate bioinformatics 
+      tools and systems text mining, data mining, analysis and visualization tools, and databases 
+      and ontologies into an integrated cross-cutting research resource to address the knowledge gaps 
+      in exploring and discovering PTM networks. 
+  - id: infores:fda-orphan-drug-db
+    status: released
+    name: FDA Orphan Drug Project designation database
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/FDA-Orphan-Drug
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Resource for searching FDA Orphan Drug Designations and Approvals
+  - id: infores:complex-portal
+    status: released
+    name: Complex Portal
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Complex-Portal
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      The Complex Portal is a manually curated, encyclopaedic resource of macromolecular complexes 
+      from a number of key model organisms. The majority of complexes are made up of proteins but 
+      may also include nucleic acids or small molecules. All data is freely available for search 
+      and download
+  - id: infores:biothings-repodb
+    status: released
+    name: BioThings repoDB API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-repoDB-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [repoDB](https://unmtid-shinyapps.net/shiny/repodb/) data. 
+      and download
+  - id: infores:biothings-hmdb
+    status: released
+    name: BioThings HMDB API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-HMDB-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [HMDB](https://hmdb.ca/) data. 
+  - id: infores:fooddata-central
+    status: released
+    name: FoodData Central
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/FoodData-Central
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      FoodData Central is an integrated data system that provides expanded nutrient profile data 
+      and links to related agricultural and experimental research. 
+  - id: infores:biothings-fooddata-central
+    status: released
+    name: BioThings FoodData Central API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-FoodData-Central-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for 
+      [FoodData Central](https://fdc.nal.usda.gov/index.html) data. 
+  - id: infores:biothings-foodb
+    status: released
+    name: BioThings FooDB API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-FooDB-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [FooDB](https://foodb.ca/) data. 
+  - id: infores:tissues
+    status: released
+    name: TISSUES
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/TISSUES
+    knowledge level: mixed
+    agent type: not_provided
+    description: >-
+      TISSUES is a weekly updated web resource that integrates evidence on tissue expression 
+      from manually curated literature, proteomics and transcriptomics screens, and automatic 
+      text mining. We map all evidence to common protein identifiers and Brenda Tissue Ontology 
+      terms, and further unify it by assigning confidence scores that facilitate comparison of 
+      the different types and sources of evidence. We finally visualize these scores on a 
+      schematic human body to provide a convenient overview.
+  - id: infores:biothings-tissues
+    status: released
+    name: BioThings TISSUES API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-TISSUES-API
+    knowledge level: mixed
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [TISSUES](https://tissues.jensenlab.org/About) data. 
+  - id: infores:mygeneset-info
+    status: released
+    name: MyGeneset.info API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/MyGeneset
+    knowledge level: other
+    agent type: not_provided
+    description: >-
+      MyGeneset allows scientists to conveniently collect, save, and share sets of genes 
+      from thousands of different species. 
