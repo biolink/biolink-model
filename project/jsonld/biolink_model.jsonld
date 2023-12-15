@@ -7614,7 +7614,7 @@
         "https://www.wikidata.org/prop/P2175",
         "http://purl.obolibrary.org/obo/MONDO_disease_responds_to"
       ],
-      "is_a": "treats_or_taken_to_treat_or_studied_to_treat",
+      "is_a": "treats_or_applied_or_studied_to_treat",
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats",
@@ -7663,7 +7663,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
       "mixins": [
-        "treats_or_taken_to_treat_or_studied_to_treat"
+        "treats_or_applied_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
@@ -7706,7 +7706,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "studied_to_treat",
       "mixins": [
-        "treats_or_taken_to_treat_or_studied_to_treat"
+        "treats_or_applied_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
@@ -7736,7 +7736,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "studied_to_treat",
       "mixins": [
-        "treats_or_taken_to_treat_or_studied_to_treat"
+        "treats_or_applied_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
@@ -7766,7 +7766,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "in_preclinical_trials_for",
       "mixins": [
-        "treats_or_taken_to_treat_or_studied_to_treat"
+        "treats_or_applied_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
@@ -7801,7 +7801,7 @@
       ],
       "is_a": "related_to_at_instance_level",
       "mixins": [
-        "treats_or_taken_to_treat_or_studied_to_treat"
+        "treats_or_applied_or_studied_to_treat"
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/was_applied_to_treat",
@@ -7812,8 +7812,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "treats_or_taken_to_treat_or_studied_to_treat",
-      "definition_uri": "https://w3id.org/biolink/vocab/treats_or_taken_to_treat_or_studied_to_treat",
+      "name": "treats_or_applied_or_studied_to_treat",
+      "definition_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7830,7 +7830,7 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
-      "slot_uri": "https://w3id.org/biolink/vocab/treats_or_taken_to_treat_or_studied_to_treat",
+      "slot_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -33551,9 +33551,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2023-12-14T13:52:09",
-  "source_file_size": 370258,
-  "generation_date": "2023-12-14T13:52:18",
+  "source_file_date": "2023-12-15T10:17:23",
+  "source_file_size": 370209,
+  "generation_date": "2023-12-15T10:17:32",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

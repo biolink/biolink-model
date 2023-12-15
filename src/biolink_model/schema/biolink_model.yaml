@@ -3385,7 +3385,7 @@ slots:
       - translator_minimal
 
   treats:
-    is_a: treats or taken to treat or studied to treat
+    is_a: treats or applied or studied to treat
     mixin: true
     aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
@@ -3478,7 +3478,7 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
-      - treats or taken to treat or studied to treat
+      - treats or applied or studied to treat
     annotations:
       canonical_predicate: true
 
@@ -3506,7 +3506,7 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
-      - treats or taken to treat or studied to treat
+      - treats or applied or studied to treat
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3524,7 +3524,7 @@ slots:
       A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study 
       was observed to have been performed).
     mixins:
-      - treats or taken to treat or studied to treat
+      - treats or applied or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3548,7 +3548,7 @@ slots:
       results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the 
       occurrence of a study).
     mixins:
-      - treats or taken to treat or studied to treat
+      - treats or applied or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3573,7 +3573,7 @@ slots:
       of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
       prescribed for use at some point in time).
     mixins:
-      - treats or taken to treat or studied to treat
+      - treats or applied or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3582,7 +3582,7 @@ slots:
       - translator_minimal
    # TODO: need an inverse for taken to treat
 
-  treats or taken to treat or studied to treat:
+  treats or applied or studied to treat:
     mixin: true
     description: >-
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), 

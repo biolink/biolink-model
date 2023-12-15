@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-14T13:52:45
+# Generation date: 2023-12-15T10:18:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -12980,8 +12980,8 @@ slots.beneficial_in_models_for = Slot(uri=BIOLINK.beneficial_in_models_for, name
 slots.was_applied_to_treat = Slot(uri=BIOLINK.was_applied_to_treat, name="was applied to treat", curie=BIOLINK.curie('was_applied_to_treat'),
                    model_uri=BIOLINK.was_applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.treats_or_taken_to_treat_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_taken_to_treat_or_studied_to_treat, name="treats or taken to treat or studied to treat", curie=BIOLINK.curie('treats_or_taken_to_treat_or_studied_to_treat'),
-                   model_uri=BIOLINK.treats_or_taken_to_treat_or_studied_to_treat, domain=None, range=Optional[str])
+slots.treats_or_applied_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_applied_or_studied_to_treat, name="treats or applied or studied to treat", curie=BIOLINK.curie('treats_or_applied_or_studied_to_treat'),
+                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=None, range=Optional[str])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
