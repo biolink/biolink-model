@@ -3174,6 +3174,8 @@ slots:
       - translator_minimal
     inverse: gene associated with condition
     narrow_mappings:
+       # RO term implies causality making it narrower
+      - RO:0004000
        # narrower since just diseases, not phenotypic features as well
       - NCIT:R176
 
