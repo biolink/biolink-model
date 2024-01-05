@@ -1056,7 +1056,7 @@
       "permissible_values": [
         {
           "text": "pre_clinical_research_phase",
-          "description": "Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.",
+          "description": "Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.",
           "notes": [
             "DrugBank calls this 'experimental'."
           ]
@@ -1211,7 +1211,7 @@
       "permissible_values": [
         {
           "text": "activity_or_abundance",
-          "description": "Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used."
+          "description": "Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used."
         },
         {
           "text": "abundance",
@@ -1408,11 +1408,11 @@
       "permissible_values": [
         {
           "text": "binding",
-          "description": "A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction."
+          "description": "A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction."
         },
         {
           "text": "inhibition",
-          "description": "A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway.",
+          "description": "A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.",
           "is_a": "binding",
           "close_mappings": [
             "DGIdb:inhibitor",
@@ -1437,7 +1437,7 @@
         },
         {
           "text": "antagonism",
-          "description": "A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site.",
+          "description": "A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.",
           "is_a": "inhibition",
           "close_mappings": [
             "DGIdb:antagonist",
@@ -1449,7 +1449,7 @@
         },
         {
           "text": "molecular_channel_blockage",
-          "description": "A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.",
+          "description": "A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.",
           "is_a": "inhibition"
         },
         {
@@ -1463,7 +1463,7 @@
         },
         {
           "text": "negative_allosteric_modulation",
-          "description": "A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
+          "description": "A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
           "is_a": "inhibition",
           "close_mappings": [
             "CHEMBL.MECHANISM:negative_allosteric_modulator",
@@ -1475,7 +1475,7 @@
         },
         {
           "text": "agonism",
-          "description": "A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an  endogenous ligand.",
+          "description": "A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.",
           "is_a": "activation",
           "close_mappings": [
             "CHEMBL.MECHANISM:agonist",
@@ -1488,7 +1488,7 @@
         },
         {
           "text": "molecular_channel_opening",
-          "description": "A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.",
+          "description": "A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.",
           "is_a": "activation",
           "close_mappings": [
             "CHEMBL.MECHANISM:opener"
@@ -1496,7 +1496,7 @@
         },
         {
           "text": "positive_allosteric_modulation",
-          "description": "A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
+          "description": "A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
           "is_a": "activation",
           "close_mappings": [
             "CHEMBL.MECHANISM:positive_allosteric_modulator",
@@ -1510,7 +1510,7 @@
         },
         {
           "text": "potentiation",
-          "description": "A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some  other chemical or drug on its target.",
+          "description": "A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.",
           "is_a": "binding"
         },
         {
@@ -1524,7 +1524,7 @@
         },
         {
           "text": "inducer",
-          "description": "A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that  processes drugs in the body.",
+          "description": "A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.",
           "is_a": "binding",
           "close_mappings": [
             "DGIdb:inducer"
@@ -1536,7 +1536,7 @@
         },
         {
           "text": "signaling_mediated_control",
-          "description": "A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)"
+          "description": "A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)"
         },
         {
           "text": "stabilization",
@@ -1758,19 +1758,19 @@
       "permissible_values": [
         {
           "text": "life_threatening_adverse_event",
-          "description": "An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either  the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death.  It does not include an adverse event or suspected adverse reaction that, had it occurred in a more  severe form, might have caused death."
+          "description": "An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. It does not include an adverse event or suspected adverse reaction that, had it occurred in a more severe form, might have caused death."
         },
         {
           "text": "serious_adverse_event",
-          "description": "An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the  investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity  or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth  defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or  subject and may require medical or surgical intervention to prevent one of the outcomes listed in this  definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment  in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient  hospitalization, or the development of drug dependency or drug abuse."
+          "description": "An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or subject and may require medical or surgical intervention to prevent one of the outcomes listed in this definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient hospitalization, or the development of drug dependency or drug abuse."
         },
         {
           "text": "suspected_adverse_reaction",
-          "description": "means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.  For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a  causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser  degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug."
+          "description": "means any adverse event for which there is a reasonable possibility that the drug caused the adverse event. For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug."
         },
         {
           "text": "unexpected_adverse_event",
-          "description": "An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the  investigator brochure or is not listed at the specificity or severity that has been observed; or, if an  investigator brochure is not required or available, is not consistent with the risk information described  in the general investigational plan or elsewhere in the current application, as amended. For example,  under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the  investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral  thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the  investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition,  also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but  are not specifically mentioned as occurring with the particular drug under investigation."
+          "description": "An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the investigator brochure or is not listed at the specificity or severity that has been observed; or, if an investigator brochure is not required or available, is not consistent with the risk information described in the general investigational plan or elsewhere in the current application, as amended. For example, under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but are not specifically mentioned as occurring with the particular drug under investigation."
         }
       ]
     }
@@ -2374,7 +2374,7 @@
     {
       "name": "xref",
       "definition_uri": "https://w3id.org/biolink/vocab/xref",
-      "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+      "description": "A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -3659,7 +3659,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.",
       "notes": [
-        "please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier' terms in the gene->chemical association space.  the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018Mutated forms of Gene X\u2019. the qualifier \u2018late stage\u2019 combines with a core concept of \u2018Disease X\u2019 to express the  more specific concept \u2018Late Stage forms of Disease X\u2019 the qualifier \u2018recombinant\u2019 combines with a core concept of \u2018FLT1 Gene\u2019 to express the composed concept \u2018Recombinant forms of the FLT1 gene\u2019 the qualifier \u2018chemical analog\u2019 combines with a core concept of \u2018Ditiocarb\u2019 to express the composed concept \u2018analog forms of Ditiocarb\u2019"
+        "please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier' terms in the gene->chemical association space. the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018Mutated forms of Gene X\u2019. the qualifier \u2018late stage\u2019 combines with a core concept of \u2018Disease X\u2019 to express the  more specific concept \u2018Late Stage forms of Disease X\u2019 the qualifier \u2018recombinant\u2019 combines with a core concept of \u2018FLT1 Gene\u2019 to express the composed concept \u2018Recombinant forms of the FLT1 gene\u2019 the qualifier \u2018chemical analog\u2019 combines with a core concept of \u2018Ditiocarb\u2019 to express the composed concept \u2018analog forms of Ditiocarb\u2019"
       ],
       "examples": [
         {
@@ -3698,9 +3698,9 @@
     {
       "name": "aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/aspect_qualifier",
-      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.",
       "notes": [
-        "for good examples of aspects in the gene-> chemical space, please see the  GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify  the gene making the full subject a different ontological type.   the qualifier \u2018expression\u2019 combines with a core concept of \u2018Gene X\u2019 to express the composed concept \u2018expression of Gene X\u2019 (Gene \u2192 Biological Process) the qualifier \u2018exposure\u2019 combines with a core concept of \u2018Chemical X\u2019 to express the composed concept \u2018exposure to Chemical X\u2019 (Chemical \u2192 Exposure Process) the qualifier \u2018activity\u2019 combines with a core concept of \u2018PPARG\u2019 to express the concept \u2018activity of PPARG\u2019 (Gene \u2192 function/activity) the qualifier \u2018emergency Department Visit\u2019 combines with a core concept of \u2018Disease X\u2019 to express the concept \u2018Emergency Department visits for Disease X\u2019 (Disease \u2192 Clinical Event) the qualifier \u2018infection\u2019 combines with a core concept of \u2018Giardia\u2019 to express the concept \u2018Infection with Giardia\u2019 (Taxon \u2192 Biological / Pathological Process) the qualifier \u2018severity\u2019 combines with a core concept of \u2018DILI\u2019 to express the concept \u2018the severity level of DILI\u2019 (Disease \u2192 (intrinsic) Characteristic/Quality) the qualifier \u2018abundance\u2019 combines with a core concept of \u2018BRCA2\u2019 to express the concept \u2018abundance of BRCA2\u2019 (Gene \u2192 (extrinsic) characteristic/quality)"
+        "for good examples of aspects in the gene-> chemical space, please see the GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify the gene making the full subject a different ontological type. the qualifier \u2018expression\u2019 combines with a core concept of \u2018Gene X\u2019 to express the composed concept \u2018expression of Gene X\u2019 (Gene \u2192 Biological Process) the qualifier \u2018exposure\u2019 combines with a core concept of \u2018Chemical X\u2019 to express the composed concept \u2018exposure to Chemical X\u2019 (Chemical \u2192 Exposure Process) the qualifier \u2018activity\u2019 combines with a core concept of \u2018PPARG\u2019 to express the concept \u2018activity of PPARG\u2019 (Gene \u2192 function/activity) the qualifier \u2018emergency Department Visit\u2019 combines with a core concept of \u2018Disease X\u2019 to express the concept \u2018Emergency Department visits for Disease X\u2019 (Disease \u2192 Clinical Event) the qualifier \u2018infection\u2019 combines with a core concept of \u2018Giardia\u2019 to express the concept \u2018Infection with Giardia\u2019 (Taxon \u2192 Biological / Pathological Process) the qualifier \u2018severity\u2019 combines with a core concept of \u2018DILI\u2019 to express the concept \u2018the severity level of DILI\u2019 (Disease \u2192 (intrinsic) Characteristic/Quality) the qualifier \u2018abundance\u2019 combines with a core concept of \u2018BRCA2\u2019 to express the concept \u2018abundance of BRCA2\u2019 (Gene \u2192 (extrinsic) characteristic/quality)"
       ],
       "examples": [
         {
@@ -3811,7 +3811,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.",
       "notes": [
-        "the qualifier \u2018increased\u2019 combines with a core concept of \u2018Gene X\u2019 and an aspect of \u2018expression\u2019 to express the composed concept \u2018increased expression of Gene X\u2019    the qualifier \u2018decreased\u2019 combines with a core concept of \u2018Protein X\u2019 and an aspect of \u2018abundance\u2019 to express the composed concept \u2018decreased abundance of Protein X\u2019"
+        "the qualifier \u2018increased\u2019 combines with a core concept of \u2018Gene X\u2019 and an aspect of \u2018expression\u2019 to express the composed concept \u2018increased expression of Gene X\u2019 the qualifier \u2018decreased\u2019 combines with a core concept of \u2018Protein X\u2019 and an aspect of \u2018abundance\u2019 to express the composed concept \u2018decreased abundance of Protein X\u2019"
       ],
       "in_subset": [
         "translator_minimal"
@@ -3828,7 +3828,7 @@
     {
       "name": "mapped_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/mapped_predicate",
-      "description": "The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.",
+      "description": "The predicate that is being replaced by the fully qualified representation of predicate + subject and object qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/mapped_predicate",
       "owner": "PredicateMapping",
@@ -3841,7 +3841,7 @@
     {
       "name": "predicate_mappings",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate_mappings",
-      "description": "A collection of relationships that are not used in biolink, but have biolink patterns that can  be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.",
+      "description": "A collection of relationships that are not used in biolink, but have biolink patterns that can be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/predicate_mappings",
       "multivalued": true,
@@ -4122,9 +4122,9 @@
     {
       "name": "qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
-        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make  sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)"
+        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "qualifier",
@@ -4179,7 +4179,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019  combines with a core concept of \u2018neuron\u2019  to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies  taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values  here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
@@ -4618,7 +4618,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement \u201cAtrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)\u201d asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).",
+      "description": "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical dependence is demonstrated.  E.g. the statement \u201cAtrial Fibrillation (Afib) is associated with Myocardial Infraction (MI)\u201d asserts that having Afib is not statistically independent from whether a patient will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to the statistical variables, or represent related entities for which the variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004029",
@@ -4990,7 +4990,7 @@
       ],
       "description": "Holds between two entities where the presence or application of one alters the chance that the other will come to be.",
       "notes": [
-        "This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the  actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used  for a statistical associations that describe correlations between two feature variables (use predicates  in the 'associated with likelihood of' hierarchy here.)"
+        "This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used for a statistical associations that describe correlations between two feature variables (use predicates in the 'associated with likelihood of' hierarchy here.)"
       ],
       "in_subset": [
         "translator_minimal"
@@ -5030,7 +5030,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement \u201cAn Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infraction (MI) diagnosis\u201d asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI.",
+      "description": "A a relationship that holds between two concepts represented by variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts the future state or value of the other.  E.g. the statement \u201cAn Atrial Fibrillation (Afib) diagnosis is associated with likelihood of a Myocardial Infraction (MI) diagnosis\u201d asserts that the state of having Afib is associated with an increased or decreased likelihood that a patient will later exhibit MI.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "associated_with",
       "domain": "NamedThing",
@@ -5682,7 +5682,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/interacts_with",
       "description": "holds between any two entities that directly or indirectly interact with each other",
       "notes": [
-        "please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with. "
+        "please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with."
       ],
       "in_subset": [
         "translator_minimal"
@@ -5712,7 +5712,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.",
+      "description": "holds between two entities that make physical contact as part of some interaction. does not imply a causal relationship.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -5758,7 +5758,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).",
+      "description": "A causal mechanism mediated by a direct contact between the effector and target entities (this contact may be weak or strong, transient or stable).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002436"
@@ -5793,7 +5793,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.",
+      "description": "A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.",
       "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "close_mappings": [
@@ -5868,7 +5868,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two independent genes that have fused through  translocation, interstitial deletion, or chromosomal inversion to  form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.",
+      "description": "holds between two independent genes that have fused through translocation, interstitial deletion, or chromosomal inversion to form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -5893,7 +5893,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two genes located nearby one another on a chromosome. ",
+      "description": "holds between two genes located nearby one another on a chromosome.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -5920,7 +5920,7 @@
       ],
       "description": "Describes an entity that has an effect on the state or quality of another existing entity.",
       "notes": [
-        "Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as  'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or  may not come into existence."
+        "Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or may not come into existence."
       ],
       "in_subset": [
         "translator_minimal"
@@ -6078,7 +6078,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.",
+      "description": "a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "http://drugcentral.org/drugcard/5271",
@@ -6366,9 +6366,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.",
+      "description": "A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.",
       "notes": [
-        "The RO definition of 'directly regulates the activity of' is an exact_mapping here because  it describes genetic regulation from the point of view of one genetic entity regulating another, as opposed to \"RO:0002211\" which describes process to process regulation."
+        "The RO definition of 'directly regulates the activity of' is an exact_mapping here because it describes genetic regulation from the point of view of one genetic entity regulating another, as opposed to \"RO:0002211\" which describes process to process regulation."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
@@ -7327,9 +7327,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.",
+      "description": "Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is able to ameliorate symptoms, stabilize progression, or cure the condition.",
       "notes": [
-        "This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing  disease, and excludes interventions that prevent/reduce risk of developing a condition in the future."
+        "This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing disease, and excludes interventions that prevent/reduce risk of developing a condition in the future."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
@@ -7383,7 +7383,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.",
+      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7435,7 +7435,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.",
+      "description": "Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7514,7 +7514,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic \n feature) where the substance, procedure, or activity worsens some or all aspects of the condition.",
+      "description": "Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic\n feature) where the substance, procedure, or activity worsens some or all aspects of the condition.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "exacerbates",
@@ -7567,7 +7567,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting  in the first place.  \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there  is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for  the condition, or is an otherwise established treatment in the medical community (e.g. a  widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. \u2018in clinical trials for\u2019 or  \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence  can however be created as predictions (knowledge_level: prediction) and should point to  the more foundational asserted edges that support them.",
+      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting in the first place. \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is an otherwise established treatment in the medical community (e.g. a widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. \u2018in clinical trials for\u2019 or \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence can however be created as predictions (knowledge_level: prediction) and should point to the more foundational asserted edges that support them.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7657,9 +7657,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more  scientific study has been performed to specifically test the potential of the  substance, procedure, or  activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,  prevent, or reduce the risk of it manifesting in the first place).",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more scientific study has been performed to specifically test the potential of the  substance, procedure, or activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it manifesting in the first place).",
       "notes": [
-        "Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is  not sufficient evidence or demonstrated efficacy against the condition to warrant creating a \u2018treats\u2019 assertion  edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate  'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it  is merely reporting that a study was observed to have been performed)."
+        "Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is not sufficient evidence or demonstrated efficacy against the condition to warrant creating a \u2018treats\u2019 assertion edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study was observed to have been performed)."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
@@ -7697,9 +7697,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been  performed in human patients to test the potential of the intervention to treat the medical condition   (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it  manifesting in the first place).",
+      "description": "Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been performed in human patients to test the potential of the intervention to treat the medical condition (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it manifesting in the first place).",
       "notes": [
-        "This predicate should be used when a source reports a clinical trial where the intervention is being or was  interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements.  A knowledge level of \"\"Observation\"\" MUST be used with this predicate (because it is merely reporting that a  study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4  trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge  SHOULD also be created (with knowledge_level = Assertion)."
+        "This predicate should be used when a source reports a clinical trial where the intervention is being or was interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements. A knowledge level of \"\"Observation\"\" MUST be used with this predicate (because it is merely reporting that a study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4 trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge SHOULD also be created (with knowledge_level = Assertion)."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7727,9 +7727,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical  study has been performed specifically to test the potential of the  substance, procedure, or activity to treat  the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce  the risk of it manifesting in the first place).",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical study has been performed specifically to test the potential of the  substance, procedure, or activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it manifesting in the first place).",
       "notes": [
-        "A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study  was observed to have been performed)."
+        "A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study was observed to have been performed)."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7757,9 +7757,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/  phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
       "notes": [
-        "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention  alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.   (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation  phenotype of zebrafish used to model the human disease Kabuki Syndrome) . A knowledge level of Assertion should be used with this predicate, because it requires interpretation of  results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the  occurrence of a study)."
+        "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease. (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation phenotype of zebrafish used to model the human disease Kabuki Syndrome) . A knowledge level of Assertion should be used with this predicate, because it requires interpretation of results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the occurrence of a study)."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7787,9 +7787,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity was actually taken by one or more patients with the intent of treating the condition.",
       "notes": [
-        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the  treatment is approved for or might be effective in treating the condition. The treatment could be taken by a  patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In  practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging  instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level  of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /  prescribed for use at some point in time)."
+        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the treatment is approved for or might be effective in treating the condition. The treatment could be taken by a patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / prescribed for use at some point in time)."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7822,9 +7822,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the substance, procedure, or activity is able to treat the condition, has been observed to be  taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific  study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).",
+      "description": "Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), and states that the substance, procedure, or activity is able to treat the condition, has been observed to be taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).",
       "notes": [
-        "This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a  condition, and as a catch-all for representing sources that are not clear about the sense of treats that is  being reported. For example, text-mined statements concerning treatments for disease are based on sentences  that can report treatment in any of these different senses and thus require a broader predicate such as  this to safely report statement semantics."
+        "This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a condition, and as a catch-all for representing sources that are not clear about the sense of treats that is being reported. For example, text-mined statements concerning treatments for disease are based on sentences that can report treatment in any of these different senses and thus require a broader predicate such as this to safely report statement semantics."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7845,9 +7845,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.",
+      "description": "A relationship that holds between two concepts represented by variables for which a statistical dependence is demonstrated using a correlation analysis method.",
       "notes": [
-        "These concepts may map exactly to the statistical variables, or represent related entities for which the  variables serve as proxies in an Association (e.g. diseases, chemical entities or processes)."
+        "These concepts may map exactly to the statistical variables, or represent related entities for which the variables serve as proxies in an Association (e.g. diseases, chemical entities or processes)."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7882,7 +7882,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or  presence of one correlates with an increase or presence of the other).",
+      "description": "A relationship that holds between two concepts represented by variables for which a statistical correlation is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or presence of one correlates with an increase or presence of the other).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7915,7 +7915,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of  one correlates with a decrease or absence of the other).",
+      "description": "A relationship that holds between two concepts represented by variables for which a statistical correlation is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of one correlates with a decrease or absence of the other).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -10305,7 +10305,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.",
+      "description": "An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment with a therapeutic agent. Adverse events may be caused by something other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or diseases temporally associated with the treatment, whether or not considered related to the treatment. Adverse events are unintended effects that occur when a medication is administered correctly.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "adverse effect"
@@ -10345,7 +10345,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.",
+      "description": "An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of the medication.",
       "notes": [
         "Side effects are listed on drug labels. There can be positive side effects, while adverse events are always negative. Aeolus, Sider are both resources that provide side effects."
       ],
@@ -10396,9 +10396,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority  has established that the substance, procedure, or activity should not be applied as an intervention in patients  with the condition or circumstance because it can result in detrimental outcomes.",
+      "description": "Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority has established that the substance, procedure, or activity should not be applied as an intervention in patients with the condition or circumstance because it can result in detrimental outcomes.",
       "notes": [
-        "This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that  puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the  drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as  a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who  are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated  in people taking warfarin as a preventative treatment for stroke)."
+        "This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated in people taking warfarin as a preventative treatment for stroke)."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
@@ -10966,7 +10966,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
@@ -10989,11 +10989,11 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "['MONDO:0000167', 'MONDO:0005395']",
-          "description": "The object closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all diseases that are ancestors of 'breast cancer' in the MONDO ontology.  Note: typically the \"subclass of\" and \"part of\"  relations are used to construct the closure, but other relations may be used as well.",
+          "description": "The object closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all diseases that are ancestors of 'breast cancer' in the MONDO ontology.  Note: typically the \"subclass of\" and \"part of\" relations are used to construct the closure, but other relations may be used as well.",
           "@type": "Example"
         }
       ],
@@ -11019,7 +11019,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "biolink:Gene",
@@ -11048,7 +11048,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "biolink:Disease",
@@ -11077,11 +11077,11 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "['biolink:Gene\", \"biolink:NamedThing']",
-          "description": "The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the \"subclass of\" and \"part of\"  relations are used to construct the closure, but other relations may be used as well.",
+          "description": "The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the \"subclass of\" and \"part of\" relations are used to construct the closure, but other relations may be used as well.",
           "@type": "Example"
         }
       ],
@@ -11107,11 +11107,11 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "['biolink:Disease\", \"biolink:NamedThing']",
-          "description": "The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the \"subclass of\" and \"part of\"  relations are used to construct the closure, but other relations may be used as well.",
+          "description": "The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the \"subclass of\" and \"part of\" relations are used to construct the closure, but other relations may be used as well.",
           "@type": "Example"
         }
       ],
@@ -11137,7 +11137,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "['BRACA1']",
@@ -11167,7 +11167,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "['breast cancer', 'cancer']",
@@ -11197,7 +11197,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "NCBIGene",
@@ -11229,7 +11229,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+      "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
           "value": "MONDO",
@@ -11444,7 +11444,7 @@
     {
       "name": "log_odds_ratio",
       "definition_uri": "https://w3id.org/biolink/vocab/log_odds_ratio",
-      "description": "The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the  odds of event Y occurring in a non-exposed group.",
+      "description": "The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the odds of event Y occurring in a non-exposed group.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
@@ -11533,7 +11533,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/primary_knowledge_source",
       "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
       "notes": [
-        "For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then  incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to  the NCATS ARS. The retrieval path for this Edge is as follows:  ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov The \"primary knowledge source\" for this edge is \"infores:clinical-trials-gov\".  \"infores:chembl\" and \"infores:molecular_data_provider\" are listed in the \"aggregator knowledge source\" property."
+        "For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to the NCATS ARS. The retrieval path for this Edge is as follows: ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov The \"primary knowledge source\" for this edge is \"infores:clinical-trials-gov\".  \"infores:chembl\" and \"infores:molecular_data_provider\" are listed in the \"aggregator knowledge source\" property."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "knowledge_source",
@@ -11551,7 +11551,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/aggregator_knowledge_source",
       "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
       "notes": [
-        "For example, in this Feature Variable Association Edge generated by the Exposure Agent\u2019s ICEES KP,  through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse,  the Edge is passed to the Ranking Agent\u2019s ARAGORN ARA,  and then on to the ARS. The retrieval path for this Edge is as follows: ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of  data from which the knowledge was derived.    The \"primary knowledge source\" for this edge is \"infores:icees-asthma\". A \"supporting data source\" for this KP- generated knowledge is \"infores:unc-cdw-health.\"  The \"aggregator knowledge source\" for this data is \"infores:aragorn-ara\""
+        "For example, in this Feature Variable Association Edge generated by the Exposure Agent\u2019s ICEES KP, through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse, the Edge is passed to the Ranking Agent\u2019s ARAGORN ARA, and then on to the ARS. The retrieval path for this Edge is as follows: ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of data from which the knowledge was derived. The \"primary knowledge source\" for this edge is \"infores:icees-asthma\". A \"supporting data source\" for this KP- generated knowledge is \"infores:unc-cdw-health.\"  The \"aggregator knowledge source\" for this data is \"infores:aragorn-ara\""
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "knowledge_source",
@@ -11570,7 +11570,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_data_source",
       "description": "An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).",
       "notes": [
-        "For example, in this Feature Variable Association Edge generated by the Exposure Agent\u2019s ICEES KP,  through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse,  the Edge is passed to the Ranking Agent\u2019s ARAGORN ARA,  and then on to the ARS. The retrieval path for this Edge is as follows: ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of  data from which the knowledge was derived.    The \"primary knowledge source\" for this edge is \"infores:icees-asthma\". A \"supporting data source\" for this KP- generated knowledge is \"infores:unc-cdw-health.\"  The \"aggregator knowledge source\" for this data is \"infores:aragorn-ara\""
+        "For example, in this Feature Variable Association Edge generated by the Exposure Agent\u2019s ICEES KP, through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse, the Edge is passed to the Ranking Agent\u2019s ARAGORN ARA, and then on to the ARS. The retrieval path for this Edge is as follows: ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of data from which the knowledge was derived. The \"primary knowledge source\" for this edge is \"infores:icees-asthma\". A \"supporting data source\" for this KP- generated knowledge is \"infores:unc-cdw-health.\"  The \"aggregator knowledge source\" for this data is \"infores:aragorn-ara\""
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
@@ -11710,7 +11710,7 @@
     {
       "name": "expected_count",
       "definition_uri": "https://w3id.org/biolink/vocab/expected_count",
-      "description": "The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.",
+      "description": "The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and object concept of an association if the subject and object concepts are independent.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
@@ -11722,7 +11722,7 @@
     {
       "name": "relative_frequency_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/relative_frequency_subject",
-      "description": "The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.",
+      "description": "The frequency at which subject and object concepts co-occur in records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.",
       "examples": [
         {
           "value": "0.01840490798",
@@ -11740,7 +11740,7 @@
     {
       "name": "relative_frequency_object",
       "definition_uri": "https://w3id.org/biolink/vocab/relative_frequency_object",
-      "description": "The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the object concept appears in these same records.",
+      "description": "The frequency at which subject and object concepts co-occur in records within a dataset/cohort, relative to the frequency at which the object concept appears in these same records.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
@@ -11776,7 +11776,7 @@
     {
       "name": "adjusted_p_value",
       "definition_uri": "https://w3id.org/biolink/vocab/adjusted_p_value",
-      "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons.   P is always italicized and capitalized. The actual P value* should be expressed (P=. 04)  rather than expressing a statement of inequality (P<. 05), unless P<.",
+      "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "p_value",
       "domain": "Association",
@@ -11788,7 +11788,7 @@
     {
       "name": "bonferonni_adjusted_p_value",
       "definition_uri": "https://w3id.org/biolink/vocab/bonferonni_adjusted_p_value",
-      "description": "The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (\u03b1) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.",
+      "description": "The Bonferroni correction is an adjustment made to P values when several dependent or independent statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni correction, divide the critical P value (\u03b1) by the number of comparisons being made.  P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
       "examples": [
         {
           "value": "0.018",
@@ -11825,7 +11825,7 @@
     {
       "name": "supporting_documents",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_documents",
-      "description": "One or more referenceable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement.",
+      "description": "One or more referenceable documents that report the statement expressed in an Association, or provide information used as evidence supporting this statement.",
       "deprecated": "True",
       "examples": [
         {
@@ -12055,9 +12055,9 @@
     {
       "name": "publications",
       "definition_uri": "https://w3id.org/biolink/vocab/publications",
-      "description": "One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.",
+      "description": "One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.",
       "comments": [
-        "The notion of a \u2018Publication\u2019 is considered broadly to include any  document made available for public consumption. It covers journal issues,  individual articles, and books - and also things like article pre-prints,  white papers, patents, drug labels, web pages, protocol documents, etc. "
+        "The notion of a \u2018Publication\u2019 is considered broadly to include any document made available for public consumption. It covers journal issues, individual articles, and books - and also things like article pre-prints, white papers, patents, drug labels, web pages, protocol documents, etc."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
@@ -12299,7 +12299,7 @@
     {
       "name": "supporting_study_metadata",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_metadata",
-      "description": "Information about a study used to generate information used as evidence to support the knowledge expressed in an  Association. In practice, data creators should use one of the more specific subtypes of this property.",
+      "description": "Information about a study used to generate information used as evidence to support the knowledge expressed in an Association. In practice, data creators should use one of the more specific subtypes of this property.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "abstract": true,
@@ -12312,7 +12312,7 @@
     {
       "name": "supporting_study_method_type",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_method_type",
-      "description": "A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis).",
+      "description": "A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
@@ -12336,7 +12336,7 @@
     {
       "name": "supporting_study_size",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_size",
-      "description": "The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).",
+      "description": "The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a clinical study).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
@@ -12348,7 +12348,7 @@
     {
       "name": "supporting_study_cohort",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_cohort",
-      "description": "A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).",
+      "description": "A description of a study population/cohort that was interrogated to provide evidence for the association (e.g. the inclusion and exclusion criteria).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
@@ -12372,7 +12372,7 @@
     {
       "name": "supporting_study_context",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_context",
-      "description": "A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).",
+      "description": "A term or terms describing the experimental setting/context in which evidence supporting the Association was generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue type, disease, etc.).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
@@ -15946,7 +15946,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019  combines with a core concept of \u2018neuron\u2019  to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies  taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values  here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
@@ -16174,9 +16174,9 @@
     {
       "name": "chemical_affects_gene_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
-        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make  sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)"
+        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "qualified_predicate",
@@ -16356,7 +16356,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019  combines with a core concept of \u2018neuron\u2019  to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies  taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values  here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
@@ -16599,9 +16599,9 @@
     {
       "name": "gene_affects_chemical_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
-        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make  sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)"
+        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "qualified_predicate",
@@ -16800,7 +16800,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019  combines with a core concept of \u2018neuron\u2019  to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies  taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values  here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
@@ -21946,7 +21946,7 @@
         "CHEBI"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalRole",
-      "description": "\tA role played by the molecular entity or part thereof within a chemical context.",
+      "description": "A role played by the molecular entity or part thereof within a chemical context.",
       "examples": [
         {
           "value": "CHEBI:35469",
@@ -22347,7 +22347,7 @@
     {
       "name": "StudyResult",
       "definition_uri": "https://w3id.org/biolink/vocab/StudyResult",
-      "description": "A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.",
+      "description": "A collection of data items from a study that are about a particular study subject or experimental unit (the 'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.",
       "notes": [
         "The data/metadata included in a Study Result object are typically a subset of data from a larger study data set, that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational analyses, or a larger scale clinical trial or experimental research investigation."
       ],
@@ -22448,7 +22448,7 @@
     {
       "name": "CommonDataElement",
       "definition_uri": "https://w3id.org/biolink/vocab/CommonDataElement",
-      "description": "A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)",
+      "description": "A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable responses, used systematically across different sites, studies, or clinical trials to ensure consistent data collection. Multiple CDEs (from one or more Collections) can be curated into Forms. (https://cde.nlm.nih.gov/home)",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "close_mappings": [
         "NCIT:C19984"
@@ -22958,7 +22958,7 @@
         "NLMID"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Publication",
-      "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). ",
+      "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP).",
       "in_subset": [
         "model_organism_database"
       ],
@@ -23132,7 +23132,7 @@
         "PMID"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Article",
-      "description": "a piece of writing on a particular topic presented as a stand-alone  section of a larger publication\t  ",
+      "description": "a piece of writing on a particular topic presented as a stand-alone section of a larger publication",
       "in_subset": [
         "model_organism_database"
       ],
@@ -23182,7 +23182,7 @@
         "doi"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/JournalArticle",
-      "description": "an article, typically presenting results of research, that is published  in an issue of a scientific journal.",
+      "description": "an article, typically presenting results of research, that is published in an issue of a scientific journal.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "IAO:0000013",
@@ -23224,7 +23224,7 @@
     {
       "name": "Patent",
       "definition_uri": "https://w3id.org/biolink/vocab/Patent",
-      "description": "a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. ",
+      "description": "a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use and sell an invention for a set period of time.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "SIO:000153",
@@ -23263,7 +23263,7 @@
     {
       "name": "WebPage",
       "definition_uri": "https://w3id.org/biolink/vocab/WebPage",
-      "description": "a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.",
+      "description": "a document that is published according to World Wide Web standards, which may incorporate text, graphics, sound, and/or other features.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "SIO:000302",
@@ -23302,7 +23302,7 @@
     {
       "name": "PreprintPublication",
       "definition_uri": "https://w3id.org/biolink/vocab/PreprintPublication",
-      "description": "a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.",
+      "description": "a document reresenting an early version of an author's original scholarly work, such as a research paper or a review, prior to formal peer review and publication in a peer-reviewed scholarly or scientific journal.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "EFO:0010558",
@@ -23340,7 +23340,7 @@
     {
       "name": "DrugLabel",
       "definition_uri": "https://w3id.org/biolink/vocab/DrugLabel",
-      "description": "a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. ",
+      "description": "a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions or warnings for administration, storage and disposal instructions, etc.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "broad_mappings": [
         "NCIT-OBO:C41203"
@@ -25586,7 +25586,7 @@
     {
       "name": "Fungus",
       "definition_uri": "https://w3id.org/biolink/vocab/Fungus",
-      "description": "A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).",
+      "description": "A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "STY:T004",
@@ -25755,7 +25755,7 @@
     {
       "name": "DiseaseOrPhenotypicFeature",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
-      "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.",
+      "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "phenome"
@@ -25811,7 +25811,7 @@
         "PHARMGKB.DISEASE"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Disease",
-      "description": "A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.",
+      "description": "A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.",
       "in_subset": [
         "model_organism_database",
         "translator_minimal"
@@ -25878,7 +25878,7 @@
         "TO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicFeature",
-      "description": "A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.",
+      "description": "A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.",
       "examples": [
         {
           "value": "MP:0001262",
@@ -26774,7 +26774,7 @@
     {
       "name": "PosttranslationalModification",
       "definition_uri": "https://w3id.org/biolink/vocab/PosttranslationalModification",
-      "description": "A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.",
+      "description": "A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "BiologicalEntity",
       "mixins": [
@@ -33552,9 +33552,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-01-05T20:07:27",
-  "source_file_size": 370278,
-  "generation_date": "2024-01-05T20:07:34",
+  "source_file_date": "2024-01-05T20:15:20",
+  "source_file_size": 369966,
+  "generation_date": "2024-01-05T20:15:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
