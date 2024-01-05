@@ -9987,6 +9987,15 @@ classes:
       - severity qualifier
       - onset qualifier
 
+  feature or disease qualifiers to entity mixin:
+    description: >-
+      Qualifiers for disease or phenotype to entity associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - severity qualifier
+      - onset qualifier
+
   entity to phenotypic feature association mixin:
     mixin: true
     is_a: entity to feature or disease qualifiers mixin
@@ -9996,6 +10005,27 @@ classes:
       - object
     slot_usage:
       object:
+        range: phenotypic feature
+        values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
+        examples:
+          - value: HP:0002487
+            description: Hyperkinesis
+          - value: WBPhenotype:0000180
+            description: axon morphology variant
+          - value: MP:0001569
+            description: abnormal circulating bilirubin level
+    slots:
+      - sex qualifier
+
+  phenotypic feature to entity association mixin:
+    mixin: true
+    is_a: feature or disease qualifiers to entity mixin
+    mixins:
+      - frequency quantifier
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
         range: phenotypic feature
         values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
         examples:
@@ -10357,6 +10387,19 @@ classes:
     mixins:
       - entity to disease association mixin
       - gene to entity association mixin
+
+  phenotypic feature to disease association:
+    is_a: association
+    slot_usage:
+      predicate:
+        subproperty_of: associated with
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to disease association mixin
+      - phenotypic feature to entity association mixin
 
   variant to gene association:
     description: >-
