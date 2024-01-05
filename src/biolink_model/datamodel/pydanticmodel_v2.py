@@ -5140,7 +5140,28 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
+class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
+    """
+    Qualifiers for disease or phenotype to entity associations.
+    """
+    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
+    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    
+
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin, FrequencyQuantifier):
+    
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
+    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
+    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    
+
+class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin, FrequencyQuantifier):
     
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
@@ -6062,6 +6083,52 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation","biolink:DruggableGeneToDiseaseAssociation"]] = Field(["biolink:DruggableGeneToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
+    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
+    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    
+
+class PhenotypicFeatureToDiseaseAssociation(EntityToDiseaseAssociationMixin, PhenotypicFeatureToEntityAssociationMixin, Association):
+    
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""disease""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    original_subject: Optional[str] = Field(None, description="""used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_predicate: Optional[str] = Field(None, description="""used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_object: Optional[str] = Field(None, description="""used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    subject_category: Optional[str] = Field(None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category: Optional[str] = Field(None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_closure: Optional[List[str]] = Field(None, description="""Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_closure: Optional[List[str]] = Field(None, description="""Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_category_closure: Optional[List[str]] = Field(None, description="""Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category_closure: Optional[List[str]] = Field(None, description="""Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_namespace: Optional[str] = Field(None, description="""Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_namespace: Optional[str] = Field(None, description="""Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_label_closure: Optional[List[str]] = Field(None, description="""Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_label_closure: Optional[List[str]] = Field(None, description="""Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[Literal["https://w3id.org/biolink/vocab/PhenotypicFeatureToDiseaseAssociation","biolink:PhenotypicFeatureToDiseaseAssociation"]] = Field(["biolink:PhenotypicFeatureToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
@@ -7969,7 +8036,9 @@ EntityToOutcomeAssociationMixin.model_rebuild()
 ExposureEventToOutcomeAssociation.model_rebuild()
 FrequencyQualifierMixin.model_rebuild()
 EntityToFeatureOrDiseaseQualifiersMixin.model_rebuild()
+FeatureOrDiseaseQualifiersToEntityMixin.model_rebuild()
 EntityToPhenotypicFeatureAssociationMixin.model_rebuild()
+PhenotypicFeatureToEntityAssociationMixin.model_rebuild()
 InformationContentEntityToNamedThingAssociation.model_rebuild()
 EntityToDiseaseAssociationMixin.model_rebuild()
 DiseaseOrPhenotypicFeatureToEntityAssociationMixin.model_rebuild()
@@ -7996,6 +8065,7 @@ GeneToDiseaseAssociation.model_rebuild()
 CausalGeneToDiseaseAssociation.model_rebuild()
 CorrelatedGeneToDiseaseAssociation.model_rebuild()
 DruggableGeneToDiseaseAssociation.model_rebuild()
+PhenotypicFeatureToDiseaseAssociation.model_rebuild()
 VariantToGeneAssociation.model_rebuild()
 VariantToGeneExpressionAssociation.model_rebuild()
 VariantToPopulationAssociation.model_rebuild()

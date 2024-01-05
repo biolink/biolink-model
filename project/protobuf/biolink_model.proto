@@ -4853,6 +4853,51 @@ message PhenotypicFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
+message PhenotypicFeatureToDiseaseAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  namedThing subject = 0
+  namedThing object = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  predicateType predicate = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
+ }
 // A property of a phenotype
 message PhenotypicQuality
  {

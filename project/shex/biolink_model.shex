@@ -252,10 +252,10 @@ linkml:Sparqlpath xsd:string
     @<MolecularActivityToMolecularActivityAssociation> OR @<MolecularActivityToPathwayAssociation> OR
     @<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
-    @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
-    @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR
-    @<VariantToDiseaseAssociation> OR @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR
-    @<VariantToPopulationAssociation>
+    @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PhenotypicFeatureToDiseaseAssociation> OR
+    @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR @<SequenceFeatureRelationship> OR
+    @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR @<VariantToDiseaseAssociation> OR
+    @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
 )
 
 <Attribute>  (
@@ -1435,6 +1435,18 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<FeatureOrDiseaseQualifiersToEntityMixin>  (
+    {
+       (  $<FeatureOrDiseaseQualifiersToEntityMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
+             rdf:type [ <FrequencyQualifierMixin> ] ? ;
+             <severity_qualifier> @<SeverityValue> ? ;
+             <onset_qualifier> @<Onset> ?
+          ) ;
+          rdf:type [ <FeatureOrDiseaseQualifiersToEntityMixin> ] ?
+       )
+    } OR @<PhenotypicFeatureToEntityAssociationMixin>
+)
+
 <Food> CLOSED {
     (  $<Food_tes> (  &<ChemicalMixture_tes> ;
           rdf:type [ <ChemicalMixture> ] ?
@@ -1452,12 +1464,14 @@ linkml:Sparqlpath xsd:string
 }
 
 <FrequencyQualifierMixin>  (
-    {
-       (  $<FrequencyQualifierMixin_tes> <frequency_qualifier> @<FrequencyValue> ? ;
-          rdf:type [ <FrequencyQualifierMixin> ] ?
-       )
-    } OR @<EntityToFeatureOrDiseaseQualifiersMixin>
+    @<EntityToFeatureOrDiseaseQualifiersMixin> OR @<FeatureOrDiseaseQualifiersToEntityMixin>
 )
+
+<FrequencyQualifierMixin_struct> {
+    (  $<FrequencyQualifierMixin_tes> <frequency_qualifier> @<FrequencyValue> ? ;
+       rdf:type [ <FrequencyQualifierMixin> ] ?
+    )
+}
 
 <FrequencyQuantifier> {
     (  $<FrequencyQuantifier_tes> (  &<RelationshipQuantifier_tes> ;
@@ -2704,6 +2718,43 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<BehavioralFeature> OR @<ClinicalFinding>
 )
+
+<PhenotypicFeatureToDiseaseAssociation> CLOSED {
+    (  $<PhenotypicFeatureToDiseaseAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToDiseaseAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+          &<PhenotypicFeatureToEntityAssociationMixin_tes> ;
+          rdf:type [ <PhenotypicFeatureToEntityAssociationMixin> ] ? ;
+          rdf:predicate @<PredicateType> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
+       ) ;
+       rdf:type [ <PhenotypicFeatureToDiseaseAssociation> ]
+    )
+}
+
+<PhenotypicFeatureToEntityAssociationMixin> {
+    (  $<PhenotypicFeatureToEntityAssociationMixin_tes> (  &<FeatureOrDiseaseQualifiersToEntityMixin_tes> ;
+          rdf:type [ <FeatureOrDiseaseQualifiersToEntityMixin> ] ? ;
+          &<FrequencyQuantifier_tes> ;
+          rdf:type [ <FrequencyQuantifier> ] ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
+          rdf:subject @<PhenotypicFeature> ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
+       ) ;
+       rdf:type [ <PhenotypicFeatureToEntityAssociationMixin> ] ?
+    )
+}
 
 <PhenotypicQuality> CLOSED {
     (  $<PhenotypicQuality_tes> (  &<OrganismAttribute_tes> ;
