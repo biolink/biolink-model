@@ -12,6 +12,7 @@ with open(file_path, 'r') as file:
 # Parse the YAML content
 sv = SchemaView(file_content_str)
 
+
 def get_tree_class_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
     """
     Recursively get the tree node.
@@ -65,6 +66,29 @@ def load_predicate_tree_data(return_parent_to_child_dict: bool = False) -> Union
                 root_node = {"name": "related_to_at_instance_level"}
                 predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
     return ([predicate_tree], parent_to_child_dict) if return_parent_to_child_dict else ([predicate_tree])
+
+
+def load_qualifier_tree_data(return_parent_to_child_dict: bool = False) -> Union[List[List[Any]], dict]:
+    """
+    Load the qualifier tree data from the model.
+
+    :return: The qualifier tree data.
+    """
+    parent_to_child_dict = defaultdict(set)
+    predicate_tree = []
+    for slot_name in sv.all_slots(imports=True):
+        slot = sv.get_slot(slot_name)
+        if slot.deprecated:
+            continue
+        slot_name = convert_predicate_to_trapi_format(slot_name)
+        parent_name_english = slot.is_a
+        if parent_name_english:
+            parent_name = convert_predicate_to_trapi_format(parent_name_english)
+            parent_to_child_dict[parent_name].add(slot_name)
+            root_node = {"name": "qualifier"}
+            predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
+    return ([predicate_tree], parent_to_child_dict) if return_parent_to_child_dict else ([predicate_tree])
+
 
 def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
     """
@@ -250,22 +274,26 @@ def get_predicate_dager(nodes: list, edges: list):
 
 def generate_viz_json():
 
+    # Generate the dagre viz data
     nodes, edges = get_predicate_dager([], [])
     elements = {"nodes": nodes, "edges": edges}
     with open('src/docs/treats_dagre.json', 'w') as json_file:
         json.dump(elements, json_file, indent=4)
 
+    # Generate the d3 viz data
     pred_data = load_predicate_tree_data()
+    qualifier_data = load_qualifier_tree_data()
+    cat_data = load_category_tree_data()
+    aspect_data = load_aspect_tree_data()
 
     with open('src/docs/predicates.json', 'w') as json_file:
         json.dump(pred_data, json_file, indent=4)
 
-    cat_data = load_category_tree_data()
+    with open('src/docs/qualifiers.json', 'w') as json_file:
+        json.dump(qualifier_data, json_file, indent=4)
 
     with open('src/docs/categories.json', 'w') as json_file:
         json.dump(cat_data, json_file, indent=4)
-
-    aspect_data = load_aspect_tree_data()
 
     with open('src/docs/aspects.json', 'w') as json_file:
         json.dump(aspect_data, json_file, indent=4)
