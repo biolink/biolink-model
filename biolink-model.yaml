@@ -1415,11 +1415,32 @@ slots:
     multivalued: true
 
   subject aspect qualifier:
+    description: >-
+      Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
+      the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
+      inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an
+      'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).
+    examples:
+      - value: stability
+      - value: abundance
+      - value: expression
+      - value: exposure
     is_a: aspect qualifier
     in_subset:
       - translator_minimal
 
   subject form or variant qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a specific type, variant,
+      alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
+      For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
+      ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).
+    examples:
+      - value: mutation
+      - value: late stage
+      - value: severe
+      - value: transplant
+      - value: chemical analog
     is_a: form or variant qualifier
     in_subset:
       - translator_minimal
@@ -1440,17 +1461,41 @@ slots:
       - translator_minimal
 
   subject direction qualifier:
+    description: >-
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+      This qualifier qualifies the subject of an association (aka: statement).
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
       - translator_minimal
 
   object aspect qualifier:
+    description: >-
+      Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
+      the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
+      inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an
+      'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).
+    examples:
+      - value: stability
+      - value: abundance
+      - value: expression
+      - value: exposure
     is_a: aspect qualifier
     in_subset:
       - translator_minimal
 
   object form or variant qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a specific type, variant,
+      alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
+      For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
+      ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).
+    examples:
+      - value: mutation
+      - value: late stage
+      - value: severe
+      - value: transplant
+      - value: chemical analog
     is_a: form or variant qualifier
     in_subset:
       - translator_minimal
@@ -1471,6 +1516,9 @@ slots:
       - translator_minimal
 
   object direction qualifier:
+    description: >-
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+      This qualifier qualifies the object of an association (aka: statement).
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
@@ -1496,6 +1544,9 @@ slots:
   statement qualifier:
     is_a: qualifier
     description: >-
+      A property that qualifies the entirety of the statement made in an association.  It applies to both
+      a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate
+      in an association.
     in_subset:
       - translator_minimal
 
@@ -1628,7 +1679,7 @@ slots:
   stage qualifier:
     description: >-
       stage during which gene or protein expression of takes place.
-    is_a: association slot
+    is_a: statement qualifier
     range: life stage
      # path: "object/during"
     examples:
