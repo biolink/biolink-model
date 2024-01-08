@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-15T20:07:45
+# Generation date: 2024-01-05T20:27:41
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1210,6 +1210,10 @@ class CorrelatedGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
 
 
 class DruggableGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
+    pass
+
+
+class PhenotypicFeatureToDiseaseAssociationId(AssociationId):
     pass
 
 
@@ -2875,7 +2879,7 @@ class Serial(Publication):
 @dataclass
 class Article(Publication):
     """
-    a piece of writing on a particular topic presented as a stand-alone  section of a larger publication
+    a piece of writing on a particular topic presented as a stand-alone section of a larger publication
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2923,7 +2927,7 @@ class Article(Publication):
 @dataclass
 class JournalArticle(Article):
     """
-    an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+    an article, typically presenting results of research, that is published in an issue of a scientific journal.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -9170,6 +9174,31 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
 
 
 @dataclass
+class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
+    """
+    Qualifiers for disease or phenotype to entity associations.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["FeatureOrDiseaseQualifiersToEntityMixin"]
+    class_class_curie: ClassVar[str] = "biolink:FeatureOrDiseaseQualifiersToEntityMixin"
+    class_name: ClassVar[str] = "feature or disease qualifiers to entity mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.FeatureOrDiseaseQualifiersToEntityMixin
+
+    severity_qualifier: Optional[Union[str, SeverityValueId]] = None
+    onset_qualifier: Optional[Union[str, OnsetId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.severity_qualifier is not None and not isinstance(self.severity_qualifier, SeverityValueId):
+            self.severity_qualifier = SeverityValueId(self.severity_qualifier)
+
+        if self.onset_qualifier is not None and not isinstance(self.onset_qualifier, OnsetId):
+            self.onset_qualifier = OnsetId(self.onset_qualifier)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -9190,6 +9219,46 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
             self.MissingRequiredField("object")
         if not isinstance(self.object, PhenotypicFeatureId):
             self.object = PhenotypicFeatureId(self.object)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+
+        if self.has_count is not None and not isinstance(self.has_count, int):
+            self.has_count = int(self.has_count)
+
+        if self.has_total is not None and not isinstance(self.has_total, int):
+            self.has_total = int(self.has_total)
+
+        if self.has_quotient is not None and not isinstance(self.has_quotient, float):
+            self.has_quotient = float(self.has_quotient)
+
+        if self.has_percentage is not None and not isinstance(self.has_percentage, float):
+            self.has_percentage = float(self.has_percentage)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToEntityAssociationMixin"]
+    class_class_curie: ClassVar[str] = "biolink:PhenotypicFeatureToEntityAssociationMixin"
+    class_name: ClassVar[str] = "phenotypic feature to entity association mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeatureToEntityAssociationMixin
+
+    subject: Union[str, PhenotypicFeatureId] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    has_count: Optional[int] = None
+    has_total: Optional[int] = None
+    has_quotient: Optional[float] = None
+    has_percentage: Optional[float] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, PhenotypicFeatureId):
+            self.subject = PhenotypicFeatureId(self.subject)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
@@ -10027,6 +10096,53 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         if not isinstance(self.has_evidence, list):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
         self.has_evidence = [v if isinstance(v, DruggableGeneCategoryEnum) else DruggableGeneCategoryEnum(v) for v in self.has_evidence]
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, CategoryType) else CategoryType(v) for v in self.category]
+
+
+@dataclass
+class PhenotypicFeatureToDiseaseAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToDiseaseAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:PhenotypicFeatureToDiseaseAssociation"
+    class_name: ClassVar[str] = "phenotypic feature to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeatureToDiseaseAssociation
+
+    id: Union[str, PhenotypicFeatureToDiseaseAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    object: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    severity_qualifier: Optional[Union[str, SeverityValueId]] = None
+    onset_qualifier: Optional[Union[str, OnsetId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PhenotypicFeatureToDiseaseAssociationId):
+            self.id = PhenotypicFeatureToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.severity_qualifier is not None and not isinstance(self.severity_qualifier, SeverityValueId):
+            self.severity_qualifier = SeverityValueId(self.severity_qualifier)
+
+        if self.onset_qualifier is not None and not isinstance(self.onset_qualifier, OnsetId):
+            self.onset_qualifier = OnsetId(self.onset_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11816,7 +11932,7 @@ class MaxResearchPhaseEnum(EnumDefinitionImpl):
 
     pre_clinical_research_phase = PermissibleValue(
         text="pre_clinical_research_phase",
-        description="""Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and  `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.""")
+        description="""Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.""")
     clinical_trial_phase = PermissibleValue(
         text="clinical_trial_phase",
         description="""Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.""")
@@ -11894,7 +12010,7 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
     activity_or_abundance = PermissibleValue(
         text="activity_or_abundance",
-        description="""Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used.""")
+        description="""Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used.""")
     abundance = PermissibleValue(text="abundance")
     activity = PermissibleValue(text="activity")
     expression = PermissibleValue(text="expression")
@@ -11957,49 +12073,49 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
     binding = PermissibleValue(
         text="binding",
-        description="""A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction.""")
+        description="""A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.""")
     inhibition = PermissibleValue(
         text="inhibition",
-        description="""A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway.""")
+        description="""A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.""")
     antibody_inhibition = PermissibleValue(
         text="antibody_inhibition",
         description="A causal mechanism in which an antibody specifically binds to and interferes with the target.")
     antagonism = PermissibleValue(
         text="antagonism",
-        description="""A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site.""")
+        description="""A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.""")
     molecular_channel_blockage = PermissibleValue(
         text="molecular_channel_blockage",
-        description="""A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.""")
+        description="""A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.""")
     inverse_agonism = PermissibleValue(
         text="inverse_agonism",
         description="""A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.""")
     negative_allosteric_modulation = PermissibleValue(
         text="negative_allosteric_modulation",
-        description="""A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
+        description="""A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
     agonism = PermissibleValue(
         text="agonism",
-        description="""A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an  endogenous ligand.""")
+        description="""A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.""")
     molecular_channel_opening = PermissibleValue(
         text="molecular_channel_opening",
-        description="""A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.""")
+        description="""A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.""")
     positive_allosteric_modulation = PermissibleValue(
         text="positive_allosteric_modulation",
-        description="""A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
+        description="""A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
     potentiation = PermissibleValue(
         text="potentiation",
-        description="""A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some  other chemical or drug on its target.""")
+        description="""A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.""")
     activation = PermissibleValue(
         text="activation",
         description="""A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.""")
     inducer = PermissibleValue(
         text="inducer",
-        description="""A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that  processes drugs in the body.""")
+        description="""A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.""")
     transcriptional_regulation = PermissibleValue(
         text="transcriptional_regulation",
         description="A causal mechanism mediated by through the control of target gene transcription")
     signaling_mediated_control = PermissibleValue(
         text="signaling_mediated_control",
-        description="""A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)""")
+        description="""A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)""")
     stabilization = PermissibleValue(text="stabilization")
     stimulation = PermissibleValue(text="stimulation")
     releasing_activity = PermissibleValue(text="releasing_activity")
@@ -12171,16 +12287,16 @@ class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
     """
     life_threatening_adverse_event = PermissibleValue(
         text="life_threatening_adverse_event",
-        description="""An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either  the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death.  It does not include an adverse event or suspected adverse reaction that, had it occurred in a more  severe form, might have caused death.""")
+        description="""An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. It does not include an adverse event or suspected adverse reaction that, had it occurred in a more severe form, might have caused death.""")
     serious_adverse_event = PermissibleValue(
         text="serious_adverse_event",
-        description="""An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the  investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity  or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth  defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or  subject and may require medical or surgical intervention to prevent one of the outcomes listed in this  definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment  in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient  hospitalization, or the development of drug dependency or drug abuse.""")
+        description="""An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or subject and may require medical or surgical intervention to prevent one of the outcomes listed in this definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient hospitalization, or the development of drug dependency or drug abuse.""")
     suspected_adverse_reaction = PermissibleValue(
         text="suspected_adverse_reaction",
-        description="""means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.  For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a  causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser  degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.""")
+        description="""means any adverse event for which there is a reasonable possibility that the drug caused the adverse event. For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.""")
     unexpected_adverse_event = PermissibleValue(
         text="unexpected_adverse_event",
-        description="""An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the  investigator brochure or is not listed at the specificity or severity that has been observed; or, if an  investigator brochure is not required or available, is not consistent with the risk information described  in the general investigational plan or elsewhere in the current application, as amended. For example,  under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the  investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral  thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the  investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition,  also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but  are not specifically mentioned as occurring with the particular drug under investigation.""")
+        description="""An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the investigator brochure or is not listed at the specificity or severity that has been observed; or, if an investigator brochure is not required or available, is not consistent with the risk information described in the general investigational plan or elsewhere in the current application, as amended. For example, under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but are not specifically mentioned as occurring with the particular drug under investigation.""")
 
     _defn = EnumDefinition(
         name="FDAIDAAdverseEventEnum",
@@ -14016,6 +14132,9 @@ slots.entity_to_outcome_association_mixin_object = Slot(uri=RDF.object, name="en
 slots.entity_to_phenotypic_feature_association_mixin_object = Slot(uri=RDF.object, name="entity to phenotypic feature association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_phenotypic_feature_association_mixin_object, domain=None, range=Union[str, PhenotypicFeatureId])
 
+slots.phenotypic_feature_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="phenotypic feature to entity association mixin_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.phenotypic_feature_to_entity_association_mixin_subject, domain=None, range=Union[str, PhenotypicFeatureId])
+
 slots.information_content_entity_to_named_thing_association_subject = Slot(uri=RDF.subject, name="information content entity to named thing association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.information_content_entity_to_named_thing_association_subject, domain=InformationContentEntityToNamedThingAssociation, range=Union[str, NamedThingId])
 
@@ -14120,6 +14239,9 @@ slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, 
 
 slots.druggable_gene_to_disease_association_has_evidence = Slot(uri=BIOLINK.has_evidence, name="druggable gene to disease association_has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]])
+
+slots.phenotypic_feature_to_disease_association_predicate = Slot(uri=RDF.predicate, name="phenotypic feature to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.phenotypic_feature_to_disease_association_predicate, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, PredicateType])
 
 slots.variant_to_gene_association_object = Slot(uri=RDF.object, name="variant to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.variant_to_gene_association_object, domain=VariantToGeneAssociation, range=Union[str, GeneId])

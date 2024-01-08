@@ -145,7 +145,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   anatomicalEntity object = 0
   predicateType predicate = 0
  }
-// a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
+// a piece of writing on a particular topic presented as a stand-alone section of a larger publication
 message Article
  {
   iriType iri = 0
@@ -1065,7 +1065,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
  }
-// 	A role played by the molecular entity or part thereof within a chemical context.
+// A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
  {
   string id = 0
@@ -1433,7 +1433,7 @@ message Cohort
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
+// A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable responses, used systematically across different sites, studies, or clinical trials to ensure consistent data collection. Multiple CDEs (from one or more Collections) can be curated into Forms. (https://cde.nlm.nih.gov/home)
 message CommonDataElement
  {
   string id = 0
@@ -1740,7 +1740,7 @@ message DiagnosticAid
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
  }
-// A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
+// A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
 message Disease
  {
   string id = 0
@@ -1758,7 +1758,7 @@ message Disease
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
+// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.
 message DiseaseOrPhenotypicFeature
  {
   string id = 0
@@ -2001,7 +2001,7 @@ message DrugExposure
  repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
  }
-// a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
+// a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions or warnings for administration, storage and disposal instructions, etc.
 message DrugLabel
  {
   iriType iri = 0
@@ -2542,7 +2542,7 @@ message FunctionalAssociation
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
  }
-// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
 message Fungus
  {
   string id = 0
@@ -3743,7 +3743,7 @@ message Invertebrate
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+// an article, typically presenting results of research, that is published in an issue of a scientific journal.
 message JournalArticle
  {
   iriType iri = 0
@@ -4694,7 +4694,7 @@ message PairwiseMolecularInteraction
   predicateType predicate = 0
   molecularEntity object = 0
  }
-// a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
+// a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use and sell an invention for a set period of time.
 message Patent
  {
   iriType iri = 0
@@ -4835,7 +4835,7 @@ message Phenomenon
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
  }
-// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
+// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.
 message PhenotypicFeature
  {
   string id = 0
@@ -4852,6 +4852,51 @@ message PhenotypicFeature
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+ }
+message PhenotypicFeatureToDiseaseAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  namedThing subject = 0
+  namedThing object = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  predicateType predicate = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -5034,7 +5079,7 @@ message PopulationToPopulationAssociation
   populationOfIndividualOrganisms object = 0
   predicateType predicate = 0
  }
-// A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.
+// A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
 message PosttranslationalModification
  {
   string id = 0
@@ -5077,7 +5122,7 @@ message PredicateMapping
  repeated  namedThing narrowMatch = 0
  repeated  namedThing broadMatch = 0
  }
-// a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
+// a document reresenting an early version of an author's original scholarly work, such as a research paper or a review, prior to formal peer review and publication in a peer-reviewed scholarly or scientific journal.
 message PreprintPublication
  {
   iriType iri = 0
@@ -5217,7 +5262,7 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
+// Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP).
 message Publication
  {
   iriType iri = 0
@@ -6188,7 +6233,7 @@ message Virus
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
+// a document that is published according to World Wide Web standards, which may incorporate text, graphics, sound, and/or other features.
 message WebPage
  {
   iriType iri = 0
