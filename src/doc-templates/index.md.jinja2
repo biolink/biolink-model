@@ -40,6 +40,8 @@ databases and formats.  For more information, see: [understanding the model](und
 {% endfor %}
 
 ## Qualifiers ([Visualization](qualifiers.html))
+
+| Property | Description |
 {% for p in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
 {%- if 'qualifier' in schemaview.slot_ancestors(p.name) -%}
 | --- | --- |
