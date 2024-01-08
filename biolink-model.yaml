@@ -676,7 +676,7 @@ slots:
 
   support graphs:
     description: >-
-      A list of knowledge graphs that support the existence of this node.
+      A list of knowledge graphs that support the existence of this association.
     multivalued: true
     is_a: association slot
     in_subset:
@@ -3545,8 +3545,7 @@ slots:
       Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is
       not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion
       edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate
-      'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it
-      is merely reporting that a study was observed to have been performed).
+      'treats' prediction edge.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
@@ -3571,10 +3570,6 @@ slots:
       This predicate should be used when a source reports a clinical trial where the intervention is being or was
       interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
       can be capture using other modeling elements.
-      A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a
-      study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4
-      trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge
-      SHOULD also be created (with knowledge_level = Assertion).
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
@@ -3592,9 +3587,6 @@ slots:
       study has been performed specifically to test the potential of the  substance, procedure, or activity to treat
       the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce
       the risk of it manifesting in the first place).
-    notes: >-
-      A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study
-      was observed to have been performed).
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -3616,9 +3608,6 @@ slots:
       alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.
       (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation
       phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
-      A knowledge level of Assertion should be used with this predicate, because it requires interpretation of
-      results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the
-      occurrence of a study).
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -3641,9 +3630,7 @@ slots:
       patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In
       practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
       where patients directly report the condition for which they took a drug, or statements from a database cataloging
-      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level
-      of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /
-      prescribed for use at some point in time).
+      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here).
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
