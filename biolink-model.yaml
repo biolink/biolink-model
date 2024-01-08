@@ -3215,7 +3215,6 @@ slots:
       - translator_minimal
     annotations:
       canonical_predicate: true
-      opposite_of: prevents
     exact_mappings:
       - SEMMEDDB:CAUSES
       - WIKIDATA_PROPERTY:P1542
@@ -3228,7 +3227,6 @@ slots:
       - MONDO:disease_triggers
       - GOREL:0000040
       - MONDO:disease_causes_feature
-      - MONDO:disease_triggers
       - NCIT:allele_has_abnormality
       - NCIT:biological_process_has_result_biological_process
       - NCIT:chemical_or_drug_has_physiologic_effect
@@ -3411,7 +3409,6 @@ slots:
       - MONDO:disease_responds_to
     exact_mappings:
       - DRUGBANK:treats
-      - SEMMEDDB:TREATS
       - WIKIDATA_PROPERTY:P2175
     narrow_mappings:
        # "is substance that treats" constrains statements to
@@ -3599,6 +3596,8 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - SEMMEDDB:TREATS
 
   correlated with:
     is_a: associated with
@@ -4381,7 +4380,6 @@ slots:
     range: biological process or activity
     annotations:
       canonical_predicate: true
-      opposite_of: prevents
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -6176,6 +6174,11 @@ classes:
 
   chemical or drug or treatment:
     mixin: true
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - CHEBI
+      - MAXO
 
    ## ------
    ## THINGS
