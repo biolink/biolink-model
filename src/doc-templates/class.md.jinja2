@@ -29,20 +29,21 @@
 
 ## Slots
 
-| Name | Cardinality and Range | Inheritance |
-| ---  | --- | --- |
+| Name | Cardinality and Range | Inheritance | Examples |
+| ---  | --- | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
 {%- for slot in gen.get_direct_slots(element) -%}
-| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | direct |
+| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | direct | {% if slot.examples %}{{ slot.examples | map(attribute='value') | join(', ') }}{% endif %} |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
 {%- for slot in gen.get_indirect_slots(element) -%}
-| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
+| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} | {% if slot.examples %}{{ slot.examples | map(attribute='value') | join(', ') }}{% endif %} |
 {% endfor -%}
 {% endif %}
 
 {% if schemaview.is_mixin(element.name) %}
+
 ## Mixin Usage
 
 | mixed into | description |
