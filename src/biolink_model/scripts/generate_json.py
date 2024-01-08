@@ -119,6 +119,35 @@ def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
     return ([category_tree], parent_to_child_dict) if return_parent_to_child_dict else ([category_tree])
 
 
+def load_association_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
+    """
+    Load the category tree data from the model.
+
+    :param return_parent_to_child_dict: Whether to return the parent to child dictionary.
+    :type return_parent_to_child_dict: bool
+    :return: The category tree data.
+    :rtype: tuple
+    """
+    parent_to_child_dict = defaultdict(set)
+    category_tree = {}
+    for class_name in sv.all_classes(imports=True):
+        cls = sv.get_class(class_name)
+        if cls.deprecated:
+            continue
+        class_name = convert_predicate_to_trapi_format(class_name)
+        if cls.is_a:
+            parent_name_english = cls.is_a
+            if parent_name_english:
+                parent_name = convert_predicate_to_trapi_format(parent_name_english)
+                parent_to_child_dict[parent_name].add(class_name)
+                root_node = {"name": "Association", "parent": None}
+                category_tree = get_tree_class_recursive(root_node, parent_to_child_dict)
+                parent_name = convert_category_to_trapi_format(parent_name_english)
+                parent_to_child_dict[parent_name].add(class_name)
+
+    return ([category_tree], parent_to_child_dict) if return_parent_to_child_dict else ([category_tree])
+
+
 def load_aspect_tree_data() -> List[dict]:
     aspect_enum_field_name = "GeneOrGeneProductOrChemicalEntityAspectEnum"
     # Build aspects tree
@@ -188,32 +217,6 @@ def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
                 ]
             },
 """
-
-# def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
-#     """
-#     Recursively get the tree node.
-#
-#     :param root_node: The root node of the tree.
-#     :type root_node: dict
-#     :param parent_to_child_map: A dictionary mapping parent nodes to child nodes.
-#     :type parent_to_child_map: dict
-#     :return: The tree node.
-#     :rtype: dict
-#
-#     """
-#     root_name = root_node["name"]
-#     children_names = parent_to_child_map.get(root_name, [])
-#     if children_names:
-#         children = []
-#         for child_name in children_names:
-#             child_node = {"name": child_name, "parent": root_name}
-#             child_node = get_tree_slot_recursive(child_node, parent_to_child_map)
-#             children.append(child_node)
-#         root_node["children"] = sorted(children, key=lambda x: x["name"])
-#         # test
-#
-#     return root_node
-
 
 def get_predicate_dager(nodes: list, edges: list):
     for slot_name in sv.all_slots(imports=True):
@@ -285,6 +288,7 @@ def generate_viz_json():
     qualifier_data = load_qualifier_tree_data()
     cat_data = load_category_tree_data()
     aspect_data = load_aspect_tree_data()
+    association_data = load_association_tree_data()
 
     with open('src/docs/predicates.json', 'w') as json_file:
         json.dump(pred_data, json_file, indent=4)
@@ -294,6 +298,9 @@ def generate_viz_json():
 
     with open('src/docs/categories.json', 'w') as json_file:
         json.dump(cat_data, json_file, indent=4)
+
+    with open('src/docs/associations.json', 'w') as json_file:
+        json.dump(association_data, json_file, indent=4)
 
     with open('src/docs/aspects.json', 'w') as json_file:
         json.dump(aspect_data, json_file, indent=4)
