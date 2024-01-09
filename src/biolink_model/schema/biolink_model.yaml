@@ -1608,9 +1608,8 @@ slots:
     examples:
       - value: zebrafish  # NCBITaxon:7955
       - value: human  # NCBITaxon:9606
-    notes: >-
-      Ontology CURIEs are expected as values
-      here, the examples below are intended to help clarify the content of the CURIEs.
+    notes:
+      - Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs.
     in_subset:
       - translator_minimal
 
@@ -2084,8 +2083,8 @@ slots:
     description: >-
       Holds between two entities where the presence or application of one alters the chance that the other will come
       to be.
-    notes: >-
-      This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the
+    notes: >- 
+      - This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the 
       actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used
       for a statistical associations that describe correlations between two feature variables (use predicates
       in the 'associated with likelihood of' hierarchy here.)
@@ -5383,12 +5382,13 @@ slots:
     domain: association
     range: string
     examples:
-      - value: ["breast cancer", "cancer"]
+      - value: "breast cancer"
         description: >-
           The object label closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
           labels that are ancestors of 'breast cancer' in the
           biolink model.
+      - value: "cancer"
     annotations:
       denormalized: true
 
@@ -6304,6 +6304,8 @@ classes:
       NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
       Can also be used to represent strains or subspecies.
     is_a: named thing
+    slots:
+      - has taxonomic rank
     slot_usage:
       has taxonomic rank:
         range: taxonomic rank
@@ -6599,6 +6601,7 @@ classes:
       - keywords
       - mesh terms
       - xref
+      - publication type
      # In addition to embedded slots, instances of 'contributor association'
      # may be used to more extensively document publisher, editor and author details
     slot_usage:
@@ -9491,6 +9494,10 @@ classes:
     description: >-
       An relationship between a cell line and another entity
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9516,6 +9523,10 @@ classes:
     description: >-
       An interaction between a chemical entity and another entity
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9528,6 +9539,10 @@ classes:
       An interaction between a drug and another entity
     is_a: chemical entity to entity association mixin
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9540,6 +9555,10 @@ classes:
       An interaction between a chemical entity and another entity
     is_a: chemical entity to entity association mixin
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9551,6 +9570,10 @@ classes:
     description: >-
       An abstract association for use where the case is the subject
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9563,6 +9586,10 @@ classes:
       A relationship between two chemical entities. This can encompass actual
       interactions as well as temporal causal edges, e.g. one chemical converted to another.
     is_a: association
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
       - object
@@ -9730,6 +9757,15 @@ classes:
      # TODO: better name
     description: >-
     is_a: association
+    slots:
+      - subject
+      - subject aspect qualifier
+      - subject context qualifier
+      - predicate
+      - object
+      - object aspect qualifier
+      - object context qualifier
+      - population context qualifier
     defining_slots:
       - subject
       - subject aspect qualifier
@@ -9810,9 +9846,11 @@ classes:
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
+      - object direction qualifier
       - causal mechanism qualifier
       - anatomical context qualifier
       - qualified predicate
+      - species context qualifier
     slot_usage:
       subject:
         range: chemical entity
@@ -9875,9 +9913,12 @@ classes:
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
+      - object direction qualifier
+      - object derivative qualifier
       - causal mechanism qualifier
       - anatomical context qualifier
       - qualified predicate
+      - species context qualifier
     slot_usage:
       subject:
         range: gene or gene product
@@ -9936,6 +9977,10 @@ classes:
     description: >-
       An association between a material sample and something.
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9949,6 +9994,10 @@ classes:
       An association between a material sample and
       the material entity from which it is derived.
     is_a: association
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
       - predicate
@@ -9980,6 +10029,10 @@ classes:
 
   disease to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9995,6 +10048,10 @@ classes:
     description: >-
       An association between some entity and an exposure event.
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - object
     slot_usage:
@@ -10017,6 +10074,10 @@ classes:
     description: >-
       An association between some entity and an outcome
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - object
     slot_usage:
@@ -10042,6 +10103,9 @@ classes:
       Qualifier for frequency type associations
     slots:
       - frequency qualifier
+      - subject
+      - predicate
+      - object
 
   entity to feature or disease qualifiers mixin:
     description: >-
@@ -10049,8 +10113,11 @@ classes:
     mixin: true
     is_a: frequency qualifier mixin
     slots:
-      - severity qualifier
-      - onset qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
 
   feature or disease qualifiers to entity mixin:
     description: >-
@@ -10058,14 +10125,22 @@ classes:
     mixin: true
     is_a: frequency qualifier mixin
     slots:
-      - severity qualifier
-      - onset qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
 
   entity to phenotypic feature association mixin:
     mixin: true
     is_a: entity to feature or disease qualifiers mixin
     mixins:
       - frequency quantifier
+    slots:
+      - subject
+      - predicate
+      - object
+      - sex qualifier
     defining_slots:
       - object
     slot_usage:
@@ -10079,8 +10154,6 @@ classes:
             description: axon morphology variant
           - value: MP:0001569
             description: abnormal circulating bilirubin level
-    slots:
-      - sex qualifier
 
   phenotypic feature to entity association mixin:
     mixin: true
@@ -10143,6 +10216,10 @@ classes:
 
   disease or phenotypic feature to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -10191,6 +10268,10 @@ classes:
 
   entity to disease or phenotypic feature association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - object
     slot_usage:
@@ -10205,6 +10286,10 @@ classes:
 
   genotype to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -10300,6 +10385,10 @@ classes:
 
   gene to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -10309,6 +10398,10 @@ classes:
           gene that is the subject of the association
 
   variant to entity association mixin:
+    slots:
+      - subject
+      - predicate
+      - object
     local_names:
       ga4gh: variant annotation
     mixin: true
@@ -10644,6 +10737,10 @@ classes:
       features of the disease in a way that is useful for studying the disease
       outside a patient carrying the disease
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     slot_usage:
       subject:
         description: >-
@@ -10873,6 +10970,10 @@ classes:
     description: >-
       an association which has a macromolecular machine mixin as a subject
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     slot_usage:
       subject:
         domain: macromolecular machine mixin
@@ -11157,6 +11258,10 @@ classes:
     mixin: true
     description: >-
       An association between an organism taxon and another entity
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
