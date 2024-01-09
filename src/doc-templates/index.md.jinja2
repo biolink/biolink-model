@@ -19,7 +19,7 @@ databases and formats.  For more information, see: [understanding the model](und
 {%- endif -%}
 {% endfor %}
 
-## Properties
+## Class Properties
 
 | Property | Description |
 {% for np in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
@@ -39,7 +39,18 @@ databases and formats.  For more information, see: [understanding the model](und
 {%- endif -%}
 {% endfor %}
 
-## Associations (edges)
+## Qualifiers ([Visualization](qualifiers.html))
+
+| Property | Description |
+{% for p in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'qualifier' in schemaview.slot_ancestors(p.name) -%}
+| --- | --- |
+| {{gen.link(p)}} | {{p.description}} |
+{%- endif -%}
+{% endfor %}
+
+
+## Associations
 
 | Association | Description |
 {% for a in schemaview.all_classes(ordered_by="lexical").values()|sort(attribute='name') -%}
@@ -49,7 +60,7 @@ databases and formats.  For more information, see: [understanding the model](und
 {%- endif -%}
 {% endfor %}
 
-## Association (edge) Properties
+## Association Properties
 
 | Property | Description |
 {% for ep in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}

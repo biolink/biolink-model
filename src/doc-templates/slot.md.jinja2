@@ -1,9 +1,10 @@
 # <strong> Slot: {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}{% if element.abstract %}<span style="color: purple;"><strong><small> (Abstract) </small></strong></span> {% endif %}{% if element.multivalued %} (multivalued){% endif -%}
-{% if element.description or element.aliases or element.multivalued or element.required or element.domain or element.range or element.inverse %}
+{% if element.description or element.aliases or element.required or element.inverse %}
 <div class="highlight-box">{% if element.description %}<strong>Description:</strong><i> {{ element.description }}</i><br>{% endif %}
   {% if element.aliases %} <strong>Aliases:</strong> {{ element.aliases | join(', ') }}<br>{% endif -%}
   {% if element.required %} <strong>Required:</strong> {{ element.required }}<br>{% endif %}
   {% if element.inverse %}<strong>Inverse:</strong> {{ element.inverse }}</a></small><br>{% endif %}
+<br>
  {% if element.notes %}<strong> Notes:</strong> {{ element.notes|join(' ') }} {% endif %}
 </div>
 {% endif %}

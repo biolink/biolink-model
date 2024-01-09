@@ -21,12 +21,12 @@ _This is a dynamic enum_
 
 {% set slots_for_enum = schemaview.get_slots_by_enum(element.name) %}
 {% if slots_for_enum is defined and slots_for_enum|length > 0 -%}
-## Slots
+## Slots constrained by this enum
 
-| Name | Description |
-| ---  | --- |
+| Name |
+| ---  |
 {% for s in schemaview.get_slots_by_enum(element.name) -%}
-| {{gen.link(s)}} | {{s.description}} |
+| {{gen.link(s)}} |
 {% endfor %}
 {% endif %}
 

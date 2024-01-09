@@ -676,7 +676,7 @@ slots:
 
   support graphs:
     description: >-
-      A list of knowledge graphs that support the existence of this node.
+      A list of knowledge graphs that support the existence of this association.
     multivalued: true
     is_a: association slot
     in_subset:
@@ -1415,21 +1415,53 @@ slots:
     multivalued: true
 
   subject aspect qualifier:
+    description: >-
+      Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
+      the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
+      inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an
+      'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).
+    examples:
+      - value: stability
+      - value: abundance
+      - value: expression
+      - value: exposure
     is_a: aspect qualifier
     in_subset:
       - translator_minimal
 
   subject form or variant qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a specific type, variant,
+      alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
+      For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
+      ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).
+    examples:
+      - value: mutation
+      - value: late stage
+      - value: severe
+      - value: transplant
+      - value: chemical analog
     is_a: form or variant qualifier
     in_subset:
       - translator_minimal
 
   subject part qualifier:
+    description: >-
+      defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the 
+      subject of an association (or statement).
     is_a: part qualifier
     in_subset:
       - translator_minimal
 
   subject derivative qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object  concept to describe something that is derived from the
+      core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
+      the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association 
+      (or statement).
+    examples:
+      - value: metabolite
     is_a: derivative qualifier
     in_subset:
       - translator_minimal
@@ -1440,27 +1472,62 @@ slots:
       - translator_minimal
 
   subject direction qualifier:
+    description: >-
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+      This qualifier qualifies the subject of an association (aka: statement).
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
       - translator_minimal
 
   object aspect qualifier:
+    description: >-
+      Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
+      the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
+      inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an
+      'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).
+    examples:
+      - value: stability
+      - value: abundance
+      - value: expression
+      - value: exposure
     is_a: aspect qualifier
     in_subset:
       - translator_minimal
 
   object form or variant qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a specific type, variant,
+      alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
+      For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
+      ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).
+    examples:
+      - value: mutation
+      - value: late stage
+      - value: severe
+      - value: transplant
+      - value: chemical analog
     is_a: form or variant qualifier
     in_subset:
       - translator_minimal
 
   object part qualifier:
+    description: >-
+      defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the 
+      object of an association (or statement).
     is_a: part qualifier
     in_subset:
       - translator_minimal
 
   object derivative qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object  concept to describe something that is derived from the
+      core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
+      the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the object of an association 
+      (or statement).
+    examples:
+      - value: metabolite
     is_a: derivative qualifier
     in_subset:
       - translator_minimal
@@ -1471,6 +1538,9 @@ slots:
       - translator_minimal
 
   object direction qualifier:
+    description: >-
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+      This qualifier qualifies the object of an association (aka: statement).
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
@@ -1496,6 +1566,9 @@ slots:
   statement qualifier:
     is_a: qualifier
     description: >-
+      A property that qualifies the entirety of the statement made in an association.  It applies to both
+      a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate
+      in an association.
     in_subset:
       - translator_minimal
 
@@ -1535,9 +1608,8 @@ slots:
     examples:
       - value: zebrafish  # NCBITaxon:7955
       - value: human  # NCBITaxon:9606
-    notes: >-
-      Ontology CURIEs are expected as values
-      here, the examples below are intended to help clarify the content of the CURIEs.
+    notes:
+      - Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs.
     in_subset:
       - translator_minimal
 
@@ -1628,7 +1700,7 @@ slots:
   stage qualifier:
     description: >-
       stage during which gene or protein expression of takes place.
-    is_a: association slot
+    is_a: statement qualifier
     range: life stage
      # path: "object/during"
     examples:
@@ -2011,8 +2083,8 @@ slots:
     description: >-
       Holds between two entities where the presence or application of one alters the chance that the other will come
       to be.
-    notes: >-
-      This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the
+    notes: >- 
+      - This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the 
       actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used
       for a statistical associations that describe correlations between two feature variables (use predicates
       in the 'associated with likelihood of' hierarchy here.)
@@ -3217,7 +3289,6 @@ slots:
       - translator_minimal
     annotations:
       canonical_predicate: true
-      opposite_of: prevents
     exact_mappings:
       - SEMMEDDB:CAUSES
       - WIKIDATA_PROPERTY:P1542
@@ -3230,7 +3301,6 @@ slots:
       - MONDO:disease_triggers
       - GOREL:0000040
       - MONDO:disease_causes_feature
-      - MONDO:disease_triggers
       - NCIT:allele_has_abnormality
       - NCIT:biological_process_has_result_biological_process
       - NCIT:chemical_or_drug_has_physiologic_effect
@@ -3413,7 +3483,6 @@ slots:
       - MONDO:disease_responds_to
     exact_mappings:
       - DRUGBANK:treats
-      - SEMMEDDB:TREATS
       - WIKIDATA_PROPERTY:P2175
     narrow_mappings:
        # "is substance that treats" constrains statements to
@@ -3475,8 +3544,7 @@ slots:
       Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is
       not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion
       edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate
-      'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it
-      is merely reporting that a study was observed to have been performed).
+      'treats' prediction edge.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
@@ -3501,10 +3569,6 @@ slots:
       This predicate should be used when a source reports a clinical trial where the intervention is being or was
       interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
       can be capture using other modeling elements.
-      A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a
-      study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4
-      trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge
-      SHOULD also be created (with knowledge_level = Assertion).
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
@@ -3522,9 +3586,6 @@ slots:
       study has been performed specifically to test the potential of the  substance, procedure, or activity to treat
       the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce
       the risk of it manifesting in the first place).
-    notes: >-
-      A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study
-      was observed to have been performed).
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -3546,9 +3607,6 @@ slots:
       alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.
       (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation
       phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
-      A knowledge level of Assertion should be used with this predicate, because it requires interpretation of
-      results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the
-      occurrence of a study).
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -3571,9 +3629,7 @@ slots:
       patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In
       practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
       where patients directly report the condition for which they took a drug, or statements from a database cataloging
-      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level
-      of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /
-      prescribed for use at some point in time).
+      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here).
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -3601,6 +3657,8 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - SEMMEDDB:TREATS
 
   correlated with:
     is_a: associated with
@@ -4383,7 +4441,6 @@ slots:
     range: biological process or activity
     annotations:
       canonical_predicate: true
-      opposite_of: prevents
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -5325,12 +5382,13 @@ slots:
     domain: association
     range: string
     examples:
-      - value: ["breast cancer", "cancer"]
+      - value: "breast cancer"
         description: >-
           The object label closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
           labels that are ancestors of 'breast cancer' in the
           biolink model.
+      - value: "cancer"
     annotations:
       denormalized: true
 
@@ -6178,6 +6236,11 @@ classes:
 
   chemical or drug or treatment:
     mixin: true
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - CHEBI
+      - MAXO
 
    ## ------
    ## THINGS
@@ -6241,6 +6304,8 @@ classes:
       NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
       Can also be used to represent strains or subspecies.
     is_a: named thing
+    slots:
+      - has taxonomic rank
     slot_usage:
       has taxonomic rank:
         range: taxonomic rank
@@ -6536,6 +6601,7 @@ classes:
       - keywords
       - mesh terms
       - xref
+      - publication type
      # In addition to embedded slots, instances of 'contributor association'
      # may be used to more extensively document publisher, editor and author details
     slot_usage:
@@ -9428,6 +9494,10 @@ classes:
     description: >-
       An relationship between a cell line and another entity
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9453,6 +9523,10 @@ classes:
     description: >-
       An interaction between a chemical entity and another entity
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9465,6 +9539,10 @@ classes:
       An interaction between a drug and another entity
     is_a: chemical entity to entity association mixin
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9477,6 +9555,10 @@ classes:
       An interaction between a chemical entity and another entity
     is_a: chemical entity to entity association mixin
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9488,6 +9570,10 @@ classes:
     description: >-
       An abstract association for use where the case is the subject
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9500,6 +9586,10 @@ classes:
       A relationship between two chemical entities. This can encompass actual
       interactions as well as temporal causal edges, e.g. one chemical converted to another.
     is_a: association
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
       - object
@@ -9667,6 +9757,15 @@ classes:
      # TODO: better name
     description: >-
     is_a: association
+    slots:
+      - subject
+      - subject aspect qualifier
+      - subject context qualifier
+      - predicate
+      - object
+      - object aspect qualifier
+      - object context qualifier
+      - population context qualifier
     defining_slots:
       - subject
       - subject aspect qualifier
@@ -9747,9 +9846,11 @@ classes:
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
+      - object direction qualifier
       - causal mechanism qualifier
       - anatomical context qualifier
       - qualified predicate
+      - species context qualifier
     slot_usage:
       subject:
         range: chemical entity
@@ -9812,9 +9913,12 @@ classes:
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
+      - object direction qualifier
+      - object derivative qualifier
       - causal mechanism qualifier
       - anatomical context qualifier
       - qualified predicate
+      - species context qualifier
     slot_usage:
       subject:
         range: gene or gene product
@@ -9873,6 +9977,10 @@ classes:
     description: >-
       An association between a material sample and something.
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9886,6 +9994,10 @@ classes:
       An association between a material sample and
       the material entity from which it is derived.
     is_a: association
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
       - predicate
@@ -9917,6 +10029,10 @@ classes:
 
   disease to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -9932,6 +10048,10 @@ classes:
     description: >-
       An association between some entity and an exposure event.
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - object
     slot_usage:
@@ -9954,6 +10074,10 @@ classes:
     description: >-
       An association between some entity and an outcome
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - object
     slot_usage:
@@ -9979,6 +10103,9 @@ classes:
       Qualifier for frequency type associations
     slots:
       - frequency qualifier
+      - subject
+      - predicate
+      - object
 
   entity to feature or disease qualifiers mixin:
     description: >-
@@ -9986,8 +10113,11 @@ classes:
     mixin: true
     is_a: frequency qualifier mixin
     slots:
-      - severity qualifier
-      - onset qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
 
   feature or disease qualifiers to entity mixin:
     description: >-
@@ -9995,14 +10125,22 @@ classes:
     mixin: true
     is_a: frequency qualifier mixin
     slots:
-      - severity qualifier
-      - onset qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
 
   entity to phenotypic feature association mixin:
     mixin: true
     is_a: entity to feature or disease qualifiers mixin
     mixins:
       - frequency quantifier
+    slots:
+      - subject
+      - predicate
+      - object
+      - sex qualifier
     defining_slots:
       - object
     slot_usage:
@@ -10016,8 +10154,6 @@ classes:
             description: axon morphology variant
           - value: MP:0001569
             description: abnormal circulating bilirubin level
-    slots:
-      - sex qualifier
 
   phenotypic feature to entity association mixin:
     mixin: true
@@ -10080,6 +10216,10 @@ classes:
 
   disease or phenotypic feature to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -10128,6 +10268,10 @@ classes:
 
   entity to disease or phenotypic feature association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - object
     slot_usage:
@@ -10142,6 +10286,10 @@ classes:
 
   genotype to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -10237,6 +10385,10 @@ classes:
 
   gene to entity association mixin:
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
@@ -10246,6 +10398,10 @@ classes:
           gene that is the subject of the association
 
   variant to entity association mixin:
+    slots:
+      - subject
+      - predicate
+      - object
     local_names:
       ga4gh: variant annotation
     mixin: true
@@ -10581,6 +10737,10 @@ classes:
       features of the disease in a way that is useful for studying the disease
       outside a patient carrying the disease
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     slot_usage:
       subject:
         description: >-
@@ -10810,6 +10970,10 @@ classes:
     description: >-
       an association which has a macromolecular machine mixin as a subject
     mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
     slot_usage:
       subject:
         domain: macromolecular machine mixin
@@ -11094,6 +11258,10 @@ classes:
     mixin: true
     description: >-
       An association between an organism taxon and another entity
+    slots:
+      - subject
+      - predicate
+      - object
     defining_slots:
       - subject
     slot_usage:
