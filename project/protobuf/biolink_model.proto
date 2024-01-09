@@ -167,9 +167,9 @@ message Article
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
   uriorcurie publishedIn = 0
   string isoAbbreviation = 0
   string volume = 0
@@ -308,8 +308,11 @@ message BehaviorToBehavioralFeatureAssociation
   behavior subject = 0
   behavioralFeature object = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -455,8 +458,8 @@ message Book
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
-  labelType name = 0
  repeated  string publicationType = 0
+  labelType name = 0
   string id = 0
  repeated  string type = 0
  }
@@ -481,9 +484,9 @@ message BookChapter
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
   uriorcurie publishedIn = 0
   string volume = 0
   string chapter = 0
@@ -544,8 +547,11 @@ message CaseToPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  categoryType category = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -589,8 +595,9 @@ message CausalGeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -670,8 +677,11 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  categoryType category = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -790,14 +800,14 @@ message ChemicalAffectsGeneAssociation
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   anatomicalEntity objectContextQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   anatomicalEntity anatomicalContextQualifier = 0
   string qualifiedPredicate = 0
+  organismTaxon speciesContextQualifier = 0
   chemicalEntity subject = 0
   predicateType predicate = 0
   geneOrGeneProduct object = 0
-  directionQualifierEnum objectDirectionQualifier = 0
-  organismTaxon speciesContextQualifier = 0
  }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity
@@ -1093,8 +1103,6 @@ message ChemicalToChemicalAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  namedThing subject = 0
-  predicateType predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -1120,6 +1128,8 @@ message ChemicalToChemicalAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
   chemicalEntity object = 0
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
@@ -1612,8 +1622,9 @@ message CorrelatedGeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -1948,8 +1959,11 @@ message DiseaseToPhenotypicFeatureAssociation
   disease subject = 0
   phenotypicFeature object = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2023,9 +2037,9 @@ message DrugLabel
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -2121,8 +2135,9 @@ message DruggableGeneToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2451,8 +2466,11 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  categoryType category = 0
   exposureEvent subject = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2624,15 +2642,15 @@ message GeneAffectsChemicalAssociation
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   anatomicalEntity objectContextQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   anatomicalEntity anatomicalContextQualifier = 0
   string qualifiedPredicate = 0
+  organismTaxon speciesContextQualifier = 0
   geneOrGeneProduct subject = 0
   predicateType predicate = 0
   chemicalEntity object = 0
-  chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
-  directionQualifierEnum objectDirectionQualifier = 0
-  organismTaxon speciesContextQualifier = 0
  }
 message GeneAsAModelOfDiseaseAssociation
  {
@@ -2671,8 +2689,9 @@ message GeneAsAModelOfDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2736,8 +2755,9 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2785,8 +2805,9 @@ message GeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2834,8 +2855,9 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   diseaseOrPhenotypicFeature object = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3150,8 +3172,9 @@ message GeneToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3320,8 +3343,11 @@ message GenotypeAsAModelOfDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   genotype subject = 0
  }
 message GenotypeToDiseaseAssociation
@@ -3361,8 +3387,11 @@ message GenotypeToDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
@@ -3478,8 +3507,11 @@ message GenotypeToPhenotypicFeatureAssociation
   predicateType predicate = 0
   genotype subject = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3765,9 +3797,9 @@ message JournalArticle
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
   uriorcurie publishedIn = 0
   string isoAbbreviation = 0
   string volume = 0
@@ -4012,8 +4044,8 @@ message MaterialSampleDerivationAssociation
  repeated  string type = 0
  repeated  categoryType category = 0
   materialSample subject = 0
-  namedThing object = 0
   predicateType predicate = 0
+  namedThing object = 0
  }
 // An association between a material sample and a disease or phenotype.
 message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
@@ -4276,8 +4308,6 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  namedThing subject = 0
-  namedThing object = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -4303,11 +4333,14 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  predicateType predicate = 0
+  namedThing subject = 0
   string subjectAspectQualifier = 0
   ontologyClass subjectContextQualifier = 0
+  predicateType predicate = 0
+  namedThing object = 0
   string objectAspectQualifier = 0
   ontologyClass objectContextQualifier = 0
+  populationOfIndividualOrganisms populationContextQualifier = 0
  }
 message NoncodingRNAProduct
  {
@@ -4614,8 +4647,11 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  categoryType category = 0
   organismalEntity subject = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
@@ -4716,9 +4752,9 @@ message Patent
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
  }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
@@ -4890,8 +4926,11 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  categoryType category = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -5144,9 +5183,9 @@ message PreprintPublication
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
  }
 // A series of actions conducted in a certain order or manner
 message Procedure
@@ -5284,9 +5323,9 @@ message Publication
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
  }
 // A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 message QuantityValue
@@ -5302,7 +5341,6 @@ message ReactionToCatalystAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -5328,6 +5366,7 @@ message ReactionToCatalystAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
+  predicateType predicate = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
   reactionSideEnum reactionSide = 0
@@ -5342,7 +5381,6 @@ message ReactionToParticipantAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -5368,6 +5406,7 @@ message ReactionToParticipantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
+  predicateType predicate = 0
   chemicalEntity object = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
@@ -5612,8 +5651,8 @@ message Serial
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
-  labelType name = 0
  repeated  string publicationType = 0
+  labelType name = 0
   string isoAbbreviation = 0
   string volume = 0
   string issue = 0
@@ -5985,8 +6024,11 @@ message VariantAsAModelOfDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   sequenceVariant subject = 0
  }
 message VariantToDiseaseAssociation
@@ -6026,8 +6068,11 @@ message VariantToDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
  }
 // An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 message VariantToGeneAssociation
@@ -6146,8 +6191,11 @@ message VariantToPhenotypicFeatureAssociation
  repeated  categoryType category = 0
   sequenceVariant subject = 0
   frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -6255,9 +6303,9 @@ message WebPage
  repeated  string keywords = 0
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
+ repeated  string publicationType = 0
   string id = 0
   labelType name = 0
- repeated  string publicationType = 0
  }
 message Zygosity
  {

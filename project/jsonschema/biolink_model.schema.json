@@ -853,6 +853,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "published_in": {
                     "description": "The enclosing parent serial containing the article should have industry-standard identifier from ISSN.",
                     "type": "string"
@@ -891,6 +898,7 @@
             },
             "required": [
                 "published_in",
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -1481,6 +1489,10 @@
                     "description": "behavioral feature that is the object of the association",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -1499,6 +1511,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -1508,10 +1524,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -1541,6 +1553,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -1559,16 +1575,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "behavior that is the subject of the association",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -1588,6 +1604,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -2339,6 +2359,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -2369,6 +2396,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -2471,6 +2499,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "published_in": {
                     "description": "The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.",
                     "type": "string"
@@ -2509,6 +2544,7 @@
             },
             "required": [
                 "published_in",
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -2693,6 +2729,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -2711,6 +2751,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -2720,10 +2764,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -2753,6 +2793,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -2771,16 +2815,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "the case (e.g. patient) that has the property",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -2800,6 +2844,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -2920,6 +2968,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -2939,7 +2991,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -2950,10 +3003,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -2983,6 +3032,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -3001,10 +3054,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -3014,7 +3063,8 @@
                     "description": "gene in which variation is shown to cause the disease."
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3033,6 +3083,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3347,6 +3401,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -3365,6 +3423,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -3374,10 +3436,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -3407,6 +3465,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -3425,12 +3487,12 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "subject": {
                     "description": "A cell line derived from an organismal entity with a disease state that is used as a model of that disease.",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -3450,6 +3512,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3940,7 +4006,8 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement)."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3963,8 +4030,13 @@
                 "object_context_qualifier": {
                     "type": "string"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_form_or_variant_qualifier": {
-                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3978,7 +4050,8 @@
                     "type": "string"
                 },
                 "object_part_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement)."
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -4029,12 +4102,17 @@
                     },
                     "type": "array"
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -4058,13 +4136,16 @@
                     "type": "string"
                 },
                 "subject_derivative_qualifier": {
-                    "$ref": "#/$defs/ChemicalEntityDerivativeEnum"
+                    "$ref": "#/$defs/ChemicalEntityDerivativeEnum",
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement)."
                 },
                 "subject_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_form_or_variant_qualifier": {
-                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -4078,7 +4159,8 @@
                     "type": "string"
                 },
                 "subject_part_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement)."
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -4499,7 +4581,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -4807,7 +4890,8 @@
                     "type": "string"
                 },
                 "object_form_or_variant_qualifier": {
-                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -4821,7 +4905,8 @@
                     "type": "string"
                 },
                 "object_part_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement)."
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -4894,10 +4979,12 @@
                     "type": "string"
                 },
                 "subject_derivative_qualifier": {
-                    "$ref": "#/$defs/ChemicalEntityDerivativeEnum"
+                    "$ref": "#/$defs/ChemicalEntityDerivativeEnum",
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement)."
                 },
                 "subject_form_or_variant_qualifier": {
-                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -4911,7 +4998,8 @@
                     "type": "string"
                 },
                 "subject_part_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement)."
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -8172,6 +8260,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -8191,7 +8283,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8202,10 +8295,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -8235,6 +8324,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -8253,10 +8346,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -8266,7 +8355,8 @@
                     "description": "gene in which variation is shown to correlate with the disease."
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8285,6 +8375,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -9856,6 +9950,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -9874,6 +9972,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -9883,10 +9985,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -9916,6 +10014,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -9934,16 +10036,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "disease class",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -9963,6 +10065,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -10337,6 +10443,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -10366,6 +10479,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -10774,6 +10888,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -10793,7 +10911,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -10804,10 +10923,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -10837,6 +10952,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -10855,10 +10974,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -10868,7 +10983,8 @@
                     "description": "gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state."
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -10887,6 +11003,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -12459,6 +12579,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -12477,6 +12601,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -12486,10 +12614,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -12519,6 +12643,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -12537,16 +12665,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -12566,6 +12694,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13308,7 +13440,8 @@
                     "type": "string"
                 },
                 "object_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement)."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13331,8 +13464,17 @@
                 "object_context_qualifier": {
                     "type": "string"
                 },
+                "object_derivative_qualifier": {
+                    "$ref": "#/$defs/ChemicalEntityDerivativeEnum",
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the object of an association  (or statement)."
+                },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_form_or_variant_qualifier": {
-                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13346,7 +13488,8 @@
                     "type": "string"
                 },
                 "object_part_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement)."
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -13397,12 +13540,17 @@
                     },
                     "type": "array"
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": "string"
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13426,13 +13574,16 @@
                     "type": "string"
                 },
                 "subject_derivative_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement).",
                     "type": "string"
                 },
                 "subject_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_form_or_variant_qualifier": {
-                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13446,7 +13597,8 @@
                     "type": "string"
                 },
                 "subject_part_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement)."
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -13556,6 +13708,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -13575,7 +13731,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13586,10 +13743,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -13619,6 +13772,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -13637,10 +13794,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -13650,7 +13803,8 @@
                     "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13669,6 +13823,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13888,6 +14046,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -13907,7 +14069,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13918,10 +14081,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -13951,6 +14110,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -13969,10 +14132,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -13982,7 +14141,8 @@
                     "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14002,7 +14162,12 @@
                     },
                     "type": "array"
                 },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
                 "subject_form_or_variant_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_label_closure": {
@@ -14195,6 +14360,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -14214,7 +14383,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14225,10 +14395,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -14258,6 +14424,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -14276,10 +14446,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -14289,7 +14455,8 @@
                     "description": "gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model"
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14308,6 +14475,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14428,6 +14599,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -14447,7 +14622,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14458,10 +14634,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -14491,6 +14663,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -14509,10 +14685,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -14522,7 +14694,8 @@
                     "description": "gene in which variation is correlated with the phenotypic feature"
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -14541,6 +14714,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -16057,6 +16234,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -16076,7 +16257,8 @@
                     "type": "array"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -16087,10 +16269,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -16120,6 +16298,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -16138,10 +16320,6 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
@@ -16151,7 +16329,8 @@
                     "description": "gene in which variation is correlated with the phenotypic feature"
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -16170,6 +16349,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -16902,6 +17085,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -16920,6 +17107,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -16929,10 +17120,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -16962,6 +17149,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -16980,12 +17171,12 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "subject": {
                     "description": "A genotype that has a role in modeling the disease.",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -17005,6 +17196,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -17110,6 +17305,10 @@
                     "description": "a disease that is associated with that genotype",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -17128,6 +17327,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -17137,10 +17340,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -17170,6 +17369,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -17188,12 +17391,12 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "subject": {
                     "description": "a genotype that is associated in some way with a disease state",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -17213,6 +17416,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -17725,6 +17932,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -17743,6 +17954,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -17752,10 +17967,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -17785,6 +17996,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -17803,16 +18018,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "genotype that is associated with the phenotypic feature",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -17832,6 +18047,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -19291,6 +19510,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "published_in": {
                     "description": "The enclosing parent serial containing the article should have industry-standard identifier from ISSN.",
                     "type": "string"
@@ -19329,6 +19555,7 @@
             },
             "required": [
                 "published_in",
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -21975,6 +22202,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -21992,6 +22223,9 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "object_context_qualifier": {
+                    "type": "string"
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -22014,6 +22248,10 @@
                 },
                 "original_subject": {
                     "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
                     "type": "string"
                 },
                 "predicate": {
@@ -22053,6 +22291,10 @@
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": "string"
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -22070,6 +22312,9 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_context_qualifier": {
+                    "type": "string"
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -22833,6 +23078,9 @@
                     },
                     "type": "array"
                 },
+                "has_taxonomic_rank": {
+                    "type": "string"
+                },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
@@ -23543,6 +23791,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -23561,6 +23813,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -23570,10 +23826,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -23603,6 +23855,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -23621,12 +23877,12 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "subject": {
                     "description": "A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -23646,6 +23902,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -24167,6 +24427,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -24196,6 +24463,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -25005,6 +25273,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -25023,6 +25295,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -25032,10 +25308,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -25065,6 +25337,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -25083,16 +25359,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -25112,6 +25388,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -26217,21 +26497,26 @@
                     "type": "array"
                 },
                 "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
                     "type": "string"
                 },
                 "object_context_qualifier": {
                     "type": "string"
                 },
                 "object_derivative_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the object of an association  (or statement).",
                     "type": "string"
                 },
                 "object_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_form_or_variant_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
                     "type": "string"
                 },
                 "object_part_qualifier": {
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).",
                     "type": "string"
                 },
                 "predicate": {
@@ -26247,21 +26532,26 @@
                     "type": "string"
                 },
                 "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_context_qualifier": {
                     "type": "string"
                 },
                 "subject_derivative_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement).",
                     "type": "string"
                 },
                 "subject_direction_qualifier": {
-                    "$ref": "#/$defs/DirectionQualifierEnum"
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_form_or_variant_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_part_qualifier": {
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).",
                     "type": "string"
                 }
             },
@@ -26363,6 +26653,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -26392,6 +26689,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -27079,6 +27377,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -27108,6 +27413,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -28775,6 +29081,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -28809,6 +29122,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],
@@ -30571,6 +30885,10 @@
                     "description": "disease",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -30589,6 +30907,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -30598,10 +30920,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -30631,6 +30949,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -30649,12 +30971,12 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "subject": {
                     "description": "A variant that has a role in modeling the disease.",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -30674,6 +30996,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -30779,6 +31105,10 @@
                     "description": "a disease that is associated with that variant",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -30797,6 +31127,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -30806,10 +31140,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -30839,6 +31169,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -30857,12 +31191,12 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated in some way with the disease state",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -30882,6 +31216,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -31410,6 +31748,10 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": "string"
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
@@ -31428,6 +31770,10 @@
                     },
                     "type": "array"
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -31437,10 +31783,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -31470,6 +31812,10 @@
                     },
                     "type": "array"
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": "string"
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": "string"
@@ -31488,16 +31834,16 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
                 "sex_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
+                    "type": "string"
+                },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": "string"
                 },
                 "subject_category": {
@@ -31517,6 +31863,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -32043,6 +32393,13 @@
                     },
                     "type": "array"
                 },
+                "publication_type": {
+                    "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "rights": {
                     "type": "string"
                 },
@@ -32072,6 +32429,7 @@
                 }
             },
             "required": [
+                "publication_type",
                 "id",
                 "category"
             ],

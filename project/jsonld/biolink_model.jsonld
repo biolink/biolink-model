@@ -2127,6 +2127,10 @@
       ],
       "slot_uri": "http://purl.org/dc/terms/type",
       "multivalued": true,
+      "owner": "Publication",
+      "domain_of": [
+        "Publication"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2422,7 +2426,7 @@
     {
       "name": "support_graphs",
       "definition_uri": "https://w3id.org/biolink/vocab/support_graphs",
-      "description": "A list of knowledge graphs that support the existence of this node.",
+      "description": "A list of knowledge graphs that support the existence of this association.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -2766,7 +2770,10 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_taxonomic_rank",
-      "owner": "has_taxonomic_rank",
+      "owner": "OrganismTaxon",
+      "domain_of": [
+        "OrganismTaxon"
+      ],
       "range": "TaxonomicRank",
       "@type": "SlotDefinition"
     },
@@ -3426,6 +3433,7 @@
       "slot_uri": "https://w3id.org/biolink/vocab/population_context_qualifier",
       "owner": "ExposureEventToOutcomeAssociation",
       "domain_of": [
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ExposureEventToOutcomeAssociation"
       ],
       "range": "PopulationOfIndividualOrganisms",
@@ -3887,6 +3895,25 @@
     {
       "name": "subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -3897,8 +3924,11 @@
       "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
         "PredicateMapping",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
+        "EntityToFeatureOrDiseaseQualifiersMixin",
+        "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "range": "string",
@@ -3907,6 +3937,29 @@
     {
       "name": "subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -3928,6 +3981,7 @@
     {
       "name": "subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -3948,6 +4002,13 @@
     {
       "name": "subject_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -3978,6 +4039,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation"
@@ -3988,6 +4050,7 @@
     {
       "name": "subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -3995,11 +4058,13 @@
       "is_a": "direction_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "EntityToFeatureOrDiseaseQualifiersMixin",
+        "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "DirectionQualifierEnum",
       "@type": "SlotDefinition"
@@ -4007,6 +4072,25 @@
     {
       "name": "object_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -4014,11 +4098,14 @@
       "is_a": "aspect_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "EntityToFeatureOrDiseaseQualifiersMixin",
+        "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4026,6 +4113,29 @@
     {
       "name": "object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -4046,6 +4156,7 @@
     {
       "name": "object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4066,6 +4177,13 @@
     {
       "name": "object_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the object of an association  (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -4073,9 +4191,10 @@
       "is_a": "derivative_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_derivative_qualifier",
-      "owner": "PredicateMapping",
+      "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
-        "PredicateMapping"
+        "PredicateMapping",
+        "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4093,6 +4212,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation"
@@ -4103,6 +4223,7 @@
     {
       "name": "object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4113,6 +4234,10 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalAffectsGeneAssociation",
+        "GeneAffectsChemicalAssociation",
+        "EntityToFeatureOrDiseaseQualifiersMixin",
+        "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToDiseaseOrPhenotypicFeatureAssociation",
         "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
       ],
@@ -4130,11 +4255,13 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "EntityToFeatureOrDiseaseQualifiersMixin",
+        "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4142,7 +4269,7 @@
     {
       "name": "statement_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/statement_qualifier",
-      "description": "",
+      "description": "A property that qualifies the entirety of the statement made in an association.  It applies to both a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate in an association.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -4232,9 +4359,11 @@
       "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
-      "owner": "PredicateMapping",
+      "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
-        "PredicateMapping"
+        "PredicateMapping",
+        "ChemicalAffectsGeneAssociation",
+        "GeneAffectsChemicalAssociation"
       ],
       "range": "OrganismTaxon",
       "@type": "SlotDefinition"
@@ -4293,11 +4422,7 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/severity_qualifier",
-      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
-      "domain_of": [
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "FeatureOrDiseaseQualifiersToEntityMixin"
-      ],
+      "owner": "severity_qualifier",
       "range": "SeverityValue",
       "@type": "SlotDefinition"
     },
@@ -4332,11 +4457,7 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/onset_qualifier",
-      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
-      "domain_of": [
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "FeatureOrDiseaseQualifiersToEntityMixin"
-      ],
+      "owner": "onset_qualifier",
       "range": "Onset",
       "@type": "SlotDefinition"
     },
@@ -4419,7 +4540,7 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "association_slot",
+      "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/stage_qualifier",
       "owner": "GeneToExpressionSiteAssociation",
@@ -4993,7 +5114,7 @@
       ],
       "description": "Holds between two entities where the presence or application of one alters the chance that the other will come to be.",
       "notes": [
-        "This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used for a statistical associations that describe correlations between two feature variables (use predicates in the 'associated with likelihood of' hierarchy here.)"
+        "- This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the  actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used for a statistical associations that describe correlations between two feature variables (use predicates in the 'associated with likelihood of' hierarchy here.)"
       ],
       "in_subset": [
         "translator_minimal"
@@ -7221,11 +7342,6 @@
           "tag": "canonical_predicate",
           "value": true,
           "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "prevents",
-          "@type": "Annotation"
         }
       ],
       "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other",
@@ -7243,7 +7359,6 @@
         "http://purl.obolibrary.org/obo/MONDO_disease_triggers",
         "http://purl.obolibrary.org/obo/GOREL_0000040",
         "http://purl.obolibrary.org/obo/MONDO_disease_causes_feature",
-        "http://purl.obolibrary.org/obo/MONDO_disease_triggers",
         "http://purl.obolibrary.org/obo/NCIT_allele_has_abnormality",
         "http://purl.obolibrary.org/obo/NCIT_biological_process_has_result_biological_process",
         "http://purl.obolibrary.org/obo/NCIT_chemical_or_drug_has_physiologic_effect",
@@ -7582,7 +7697,6 @@
       ],
       "exact_mappings": [
         "http://identifiers.org/drugbank/treats",
-        "https://skr3.nlm.nih.gov/SemMedDBTREATS",
         "https://www.wikidata.org/prop/P2175"
       ],
       "related_mappings": [
@@ -7662,7 +7776,7 @@
       ],
       "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more scientific study has been performed to specifically test the potential of the  substance, procedure, or activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it manifesting in the first place).",
       "notes": [
-        "Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is not sufficient evidence or demonstrated efficacy against the condition to warrant creating a \u2018treats\u2019 assertion edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study was observed to have been performed)."
+        "Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is not sufficient evidence or demonstrated efficacy against the condition to warrant creating a \u2018treats\u2019 assertion edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 'treats' prediction edge."
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
@@ -7702,7 +7816,7 @@
       ],
       "description": "Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been performed in human patients to test the potential of the intervention to treat the medical condition (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it manifesting in the first place).",
       "notes": [
-        "This predicate should be used when a source reports a clinical trial where the intervention is being or was interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements. A knowledge level of \"\"Observation\"\" MUST be used with this predicate (because it is merely reporting that a study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4 trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge SHOULD also be created (with knowledge_level = Assertion)."
+        "This predicate should be used when a source reports a clinical trial where the intervention is being or was interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome can be capture using other modeling elements."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7731,9 +7845,6 @@
         }
       ],
       "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical study has been performed specifically to test the potential of the  substance, procedure, or activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it manifesting in the first place).",
-      "notes": [
-        "A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study was observed to have been performed)."
-      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -7762,7 +7873,7 @@
       ],
       "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
       "notes": [
-        "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease. (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation phenotype of zebrafish used to model the human disease Kabuki Syndrome) . A knowledge level of Assertion should be used with this predicate, because it requires interpretation of results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the occurrence of a study)."
+        "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease. (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation phenotype of zebrafish used to model the human disease Kabuki Syndrome) ."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7792,7 +7903,7 @@
       ],
       "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity was actually taken by one or more patients with the intent of treating the condition.",
       "notes": [
-        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the treatment is approved for or might be effective in treating the condition. The treatment could be taken by a patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / prescribed for use at some point in time)."
+        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the treatment is approved for or might be effective in treating the condition. The treatment could be taken by a patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging instances of off-label prescription of drugs for specific conditions (e.g. here, here, here)."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7833,6 +7944,9 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
+      "exact_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBTREATS"
+      ],
       "mixin": true,
       "slot_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
       "range": "string",
@@ -9189,11 +9303,6 @@
         {
           "tag": "canonical_predicate",
           "value": true,
-          "@type": "Annotation"
-        },
-        {
-          "tag": "opposite_of",
-          "value": "prevents",
           "@type": "Annotation"
         }
       ],
@@ -11173,8 +11282,12 @@
       "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
-          "value": "['breast cancer', 'cancer']",
+          "value": "breast cancer",
           "description": "The object label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'breast cancer' in the biolink model.",
+          "@type": "Example"
+        },
+        {
+          "value": "cancer",
           "@type": "Example"
         }
       ],
@@ -11281,9 +11394,31 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "owner": "Association",
+      "owner": "OrganismTaxonToEntityAssociation",
       "domain_of": [
-        "Association"
+        "Association",
+        "CellLineToEntityAssociationMixin",
+        "ChemicalEntityToEntityAssociationMixin",
+        "DrugToEntityAssociationMixin",
+        "ChemicalToEntityAssociationMixin",
+        "CaseToEntityAssociationMixin",
+        "ChemicalToChemicalAssociation",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "MaterialSampleToEntityAssociationMixin",
+        "MaterialSampleDerivationAssociation",
+        "DiseaseToEntityAssociationMixin",
+        "EntityToExposureEventAssociationMixin",
+        "EntityToOutcomeAssociationMixin",
+        "FrequencyQualifierMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "GenotypeToEntityAssociationMixin",
+        "GeneToEntityAssociationMixin",
+        "VariantToEntityAssociationMixin",
+        "ModelToDiseaseAssociationMixin",
+        "MacromolecularMachineToEntityAssociationMixin",
+        "OrganismTaxonToEntityAssociation"
       ],
       "range": "NamedThing",
       "required": true,
@@ -11316,9 +11451,31 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-      "owner": "Association",
+      "owner": "OrganismTaxonToEntityAssociation",
       "domain_of": [
-        "Association"
+        "Association",
+        "CellLineToEntityAssociationMixin",
+        "ChemicalEntityToEntityAssociationMixin",
+        "DrugToEntityAssociationMixin",
+        "ChemicalToEntityAssociationMixin",
+        "CaseToEntityAssociationMixin",
+        "ChemicalToChemicalAssociation",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "MaterialSampleToEntityAssociationMixin",
+        "MaterialSampleDerivationAssociation",
+        "DiseaseToEntityAssociationMixin",
+        "EntityToExposureEventAssociationMixin",
+        "EntityToOutcomeAssociationMixin",
+        "FrequencyQualifierMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "GenotypeToEntityAssociationMixin",
+        "GeneToEntityAssociationMixin",
+        "VariantToEntityAssociationMixin",
+        "ModelToDiseaseAssociationMixin",
+        "MacromolecularMachineToEntityAssociationMixin",
+        "OrganismTaxonToEntityAssociation"
       ],
       "range": "NamedThing",
       "required": true,
@@ -11354,10 +11511,32 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-      "owner": "Association",
+      "owner": "OrganismTaxonToEntityAssociation",
       "domain_of": [
         "PredicateMapping",
-        "Association"
+        "Association",
+        "CellLineToEntityAssociationMixin",
+        "ChemicalEntityToEntityAssociationMixin",
+        "DrugToEntityAssociationMixin",
+        "ChemicalToEntityAssociationMixin",
+        "CaseToEntityAssociationMixin",
+        "ChemicalToChemicalAssociation",
+        "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "MaterialSampleToEntityAssociationMixin",
+        "MaterialSampleDerivationAssociation",
+        "DiseaseToEntityAssociationMixin",
+        "EntityToExposureEventAssociationMixin",
+        "EntityToOutcomeAssociationMixin",
+        "FrequencyQualifierMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "GenotypeToEntityAssociationMixin",
+        "GeneToEntityAssociationMixin",
+        "VariantToEntityAssociationMixin",
+        "ModelToDiseaseAssociationMixin",
+        "MacromolecularMachineToEntityAssociationMixin",
+        "OrganismTaxonToEntityAssociation"
       ],
       "range": "predicate_type",
       "required": true,
@@ -15614,6 +15793,25 @@
     {
       "name": "named_thing_associated_with_likelihood_of_named_thing_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -15654,6 +15852,25 @@
     {
       "name": "named_thing_associated_with_likelihood_of_named_thing_association_object_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -15807,6 +16024,29 @@
     {
       "name": "chemical_gene_interaction_association_subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -15827,6 +16067,7 @@
     {
       "name": "chemical_gene_interaction_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -15847,6 +16088,13 @@
     {
       "name": "chemical_gene_interaction_association_subject_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -15887,6 +16135,29 @@
     {
       "name": "chemical_gene_interaction_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -15907,6 +16178,7 @@
     {
       "name": "chemical_gene_interaction_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16017,6 +16289,29 @@
     {
       "name": "chemical_affects_gene_association_subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16037,6 +16332,7 @@
     {
       "name": "chemical_affects_gene_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16057,6 +16353,13 @@
     {
       "name": "chemical_affects_gene_association_subject_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association  (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16077,6 +16380,25 @@
     {
       "name": "chemical_affects_gene_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16117,6 +16439,7 @@
     {
       "name": "chemical_affects_gene_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16236,6 +16559,29 @@
     {
       "name": "chemical_affects_gene_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16256,6 +16602,7 @@
     {
       "name": "chemical_affects_gene_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16276,6 +16623,25 @@
     {
       "name": "chemical_affects_gene_association_object_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16316,6 +16682,7 @@
     {
       "name": "chemical_affects_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16462,6 +16829,29 @@
     {
       "name": "gene_affects_chemical_association_subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16482,6 +16872,7 @@
     {
       "name": "gene_affects_chemical_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16502,6 +16893,25 @@
     {
       "name": "gene_affects_chemical_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16542,6 +16952,7 @@
     {
       "name": "gene_affects_chemical_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16660,6 +17071,29 @@
     {
       "name": "gene_affects_chemical_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16680,6 +17114,7 @@
     {
       "name": "gene_affects_chemical_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -16700,6 +17135,13 @@
     {
       "name": "gene_affects_chemical_association_object_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the object of an association  (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16720,6 +17162,25 @@
     {
       "name": "gene_affects_chemical_association_object_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -16760,6 +17221,7 @@
     {
       "name": "gene_affects_chemical_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -18093,6 +18555,25 @@
     {
       "name": "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -18149,6 +18630,7 @@
     {
       "name": "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -18567,7 +19049,7 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "gene_to_disease_or_phenotypic_feature_association_predicate",
+      "is_a": "predicate",
       "domain": "DruggableGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
@@ -21112,6 +21594,7 @@
     {
       "name": "chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -22256,6 +22739,12 @@
     },
     {
       "name": "ChemicalOrDrugOrTreatment",
+      "id_prefixes": [
+        "PUBCHEM.COMPOUND",
+        "CHEMBL.COMPOUND",
+        "CHEBI",
+        "MAXO"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
@@ -23093,9 +23582,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
-        "publication_name",
-        "publication_publication_type"
+        "publication_name"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Publication",
@@ -23133,8 +23622,8 @@
         "keywords",
         "mesh_terms",
         "xref",
-        "publication_name",
         "publication_publication_type",
+        "publication_name",
         "book_id",
         "book_type"
       ],
@@ -23170,9 +23659,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
         "publication_name",
-        "publication_publication_type",
         "book_chapter_published_in",
         "volume",
         "chapter"
@@ -23216,8 +23705,8 @@
         "keywords",
         "mesh_terms",
         "xref",
-        "publication_name",
         "publication_publication_type",
+        "publication_name",
         "iso_abbreviation",
         "volume",
         "issue",
@@ -23264,9 +23753,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
         "publication_name",
-        "publication_publication_type",
         "article_published_in",
         "article_iso_abbreviation",
         "volume",
@@ -23311,9 +23800,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
         "publication_name",
-        "publication_publication_type",
         "article_published_in",
         "article_iso_abbreviation",
         "volume",
@@ -23354,9 +23843,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
-        "publication_name",
-        "publication_publication_type"
+        "publication_name"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Patent",
@@ -23393,9 +23882,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
-        "publication_name",
-        "publication_publication_type"
+        "publication_name"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/WebPage",
@@ -23431,9 +23920,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
-        "publication_name",
-        "publication_publication_type"
+        "publication_name"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PreprintPublication",
@@ -23468,9 +23957,9 @@
         "keywords",
         "mesh_terms",
         "xref",
+        "publication_publication_type",
         "publication_id",
-        "publication_name",
-        "publication_publication_type"
+        "publication_name"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DrugLabel",
@@ -29243,7 +29732,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "cell_line_to_entity_association_mixin_subject"
+        "cell_line_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineToEntityAssociationMixin",
@@ -29309,7 +29800,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "chemical_entity_to_entity_association_mixin_subject"
+        "chemical_entity_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToEntityAssociationMixin",
@@ -29326,6 +29819,9 @@
       "is_a": "ChemicalEntityToEntityAssociationMixin",
       "mixin": true,
       "slots": [
+        "subject",
+        "predicate",
+        "object",
         "drug_to_entity_association_mixin_subject"
       ],
       "slot_usage": {},
@@ -29343,6 +29839,9 @@
       "is_a": "ChemicalEntityToEntityAssociationMixin",
       "mixin": true,
       "slots": [
+        "subject",
+        "predicate",
+        "object",
         "chemical_to_entity_association_mixin_subject"
       ],
       "slot_usage": {},
@@ -29359,7 +29858,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "case_to_entity_association_mixin_subject"
+        "case_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin",
@@ -29384,8 +29885,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
-        "predicate",
         "negated",
         "qualifier",
         "qualifiers",
@@ -29411,6 +29910,8 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
+        "subject",
+        "predicate",
         "chemical_to_chemical_association_object"
       ],
       "slot_usage": {},
@@ -29433,7 +29934,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "predicate",
         "negated",
         "qualifier",
         "qualifiers",
@@ -29459,6 +29959,7 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
+        "predicate",
         "chemical_to_chemical_association_object",
         "stoichiometry",
         "reaction_direction",
@@ -29486,7 +29987,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "predicate",
         "negated",
         "qualifier",
         "qualifiers",
@@ -29512,6 +30012,7 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
+        "predicate",
         "stoichiometry",
         "reaction_direction",
         "reaction_side",
@@ -29911,8 +30412,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -29938,11 +30437,14 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
-        "named_thing_associated_with_likelihood_of_named_thing_association_predicate",
+        "subject",
         "named_thing_associated_with_likelihood_of_named_thing_association_subject_aspect_qualifier",
         "named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier",
+        "named_thing_associated_with_likelihood_of_named_thing_association_predicate",
+        "object",
         "named_thing_associated_with_likelihood_of_named_thing_association_object_aspect_qualifier",
-        "named_thing_associated_with_likelihood_of_named_thing_association_object_context_qualifier"
+        "named_thing_associated_with_likelihood_of_named_thing_association_object_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
@@ -30066,14 +30568,14 @@
         "chemical_affects_gene_association_object_part_qualifier",
         "chemical_affects_gene_association_object_aspect_qualifier",
         "chemical_affects_gene_association_object_context_qualifier",
+        "chemical_affects_gene_association_object_direction_qualifier",
         "chemical_affects_gene_association_causal_mechanism_qualifier",
         "chemical_affects_gene_association_anatomical_context_qualifier",
         "chemical_affects_gene_association_qualified_predicate",
+        "chemical_affects_gene_association_species_context_qualifier",
         "chemical_affects_gene_association_subject",
         "chemical_affects_gene_association_predicate",
-        "chemical_affects_gene_association_object",
-        "chemical_affects_gene_association_object_direction_qualifier",
-        "chemical_affects_gene_association_species_context_qualifier"
+        "chemical_affects_gene_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
@@ -30133,15 +30635,15 @@
         "gene_affects_chemical_association_object_part_qualifier",
         "gene_affects_chemical_association_object_aspect_qualifier",
         "gene_affects_chemical_association_object_context_qualifier",
+        "gene_affects_chemical_association_object_direction_qualifier",
+        "gene_affects_chemical_association_object_derivative_qualifier",
         "gene_affects_chemical_association_causal_mechanism_qualifier",
         "gene_affects_chemical_association_anatomical_context_qualifier",
         "gene_affects_chemical_association_qualified_predicate",
+        "gene_affects_chemical_association_species_context_qualifier",
         "gene_affects_chemical_association_subject",
         "gene_affects_chemical_association_predicate",
-        "gene_affects_chemical_association_object",
-        "gene_affects_chemical_association_object_derivative_qualifier",
-        "gene_affects_chemical_association_object_direction_qualifier",
-        "gene_affects_chemical_association_species_context_qualifier"
+        "gene_affects_chemical_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneAffectsChemicalAssociation",
@@ -30210,7 +30712,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "material_sample_to_entity_association_mixin_subject"
+        "material_sample_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MaterialSampleToEntityAssociationMixin",
@@ -30258,8 +30762,8 @@
         "association_type",
         "association_category",
         "material_sample_derivation_association_subject",
-        "material_sample_derivation_association_object",
-        "material_sample_derivation_association_predicate"
+        "material_sample_derivation_association_predicate",
+        "material_sample_derivation_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MaterialSampleDerivationAssociation",
@@ -30329,7 +30833,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "disease_to_entity_association_mixin_subject"
+        "disease_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin",
@@ -30345,6 +30851,8 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
+        "subject",
+        "predicate",
         "entity_to_exposure_event_association_mixin_object"
       ],
       "slot_usage": {},
@@ -30415,6 +30923,8 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
+        "subject",
+        "predicate",
         "entity_to_outcome_association_mixin_object"
       ],
       "slot_usage": {},
@@ -30486,7 +30996,10 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "frequency_qualifier"
+        "frequency_qualifier",
+        "subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/FrequencyQualifierMixin",
@@ -30501,8 +31014,14 @@
       "mixin": true,
       "slots": [
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier"
+        "subject",
+        "predicate",
+        "object",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin",
@@ -30517,8 +31036,14 @@
       "mixin": true,
       "slots": [
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier"
+        "subject",
+        "predicate",
+        "object",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/FeatureOrDiseaseQualifiersToEntityMixin",
@@ -30535,10 +31060,15 @@
       ],
       "slots": [
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
-        "sex_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
+        "subject",
+        "predicate",
         "entity_to_phenotypic_feature_association_mixin_object",
+        "sex_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -30562,8 +31092,13 @@
       ],
       "slots": [
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "predicate",
+        "object",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "phenotypic_feature_to_entity_association_mixin_subject",
         "has_count",
@@ -30640,8 +31175,13 @@
       "mixin": true,
       "slots": [
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject",
+        "predicate",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "entity_to_disease_association_mixin_object"
       ],
       "slot_usage": {},
@@ -30657,7 +31197,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "disease_or_phenotypic_feature_to_entity_association_mixin_subject"
+        "disease_or_phenotypic_feature_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
@@ -30770,6 +31312,8 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
+        "subject",
+        "predicate",
         "entity_to_disease_or_phenotypic_feature_association_mixin_object"
       ],
       "slot_usage": {},
@@ -30785,7 +31329,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "genotype_to_entity_association_mixin_subject"
+        "genotype_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeToEntityAssociationMixin",
@@ -30840,8 +31386,11 @@
         "genotype_to_phenotypic_feature_association_predicate",
         "genotype_to_phenotypic_feature_association_subject",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -30901,8 +31450,11 @@
         "association_category",
         "exposure_event_to_phenotypic_feature_association_subject",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -30966,8 +31518,11 @@
         "disease_to_phenotypic_feature_association_subject",
         "disease_to_phenotypic_feature_association_object",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31028,8 +31583,11 @@
         "association_type",
         "association_category",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31089,8 +31647,11 @@
         "behavior_to_behavioral_feature_association_subject",
         "behavior_to_behavioral_feature_association_object",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31111,7 +31672,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "gene_to_entity_association_mixin_subject"
+        "gene_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin",
@@ -31133,7 +31696,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "variant_to_entity_association_mixin_subject"
+        "variant_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin",
@@ -31199,8 +31764,9 @@
         "gene_to_disease_or_phenotypic_feature_association_object",
         "gene_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31259,8 +31825,9 @@
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31331,8 +31898,9 @@
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31394,8 +31962,9 @@
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31457,8 +32026,9 @@
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31518,8 +32088,9 @@
         "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31584,8 +32155,11 @@
         "association_category",
         "phenotypic_feature_to_disease_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31868,8 +32442,11 @@
         "association_category",
         "variant_to_phenotypic_feature_association_subject",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -31932,8 +32509,11 @@
         "variant_to_disease_association_predicate",
         "variant_to_disease_association_object",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier"
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToDiseaseAssociation",
@@ -31991,8 +32571,11 @@
         "genotype_to_disease_association_predicate",
         "genotype_to_disease_association_object",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier"
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
@@ -32010,7 +32593,8 @@
       "mixin": true,
       "slots": [
         "model_to_disease_association_mixin_subject",
-        "model_to_disease_association_mixin_predicate"
+        "model_to_disease_association_mixin_predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ModelToDiseaseAssociationMixin",
@@ -32061,8 +32645,9 @@
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -32124,8 +32709,11 @@
         "variant_to_disease_association_predicate",
         "variant_to_disease_association_object",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "variant_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -32181,8 +32769,11 @@
         "genotype_to_disease_association_predicate",
         "genotype_to_disease_association_object",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "genotype_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -32239,8 +32830,11 @@
         "association_category",
         "cell_line_as_a_model_of_disease_association_subject",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier"
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation",
@@ -32296,8 +32890,11 @@
         "association_category",
         "organismal_entity_as_a_model_of_disease_association_subject",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier"
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -32448,8 +33045,9 @@
         "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
         "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
         "frequency_qualifier",
-        "severity_qualifier",
-        "onset_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "qualified_predicate",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -32635,7 +33233,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "macromolecular_machine_to_entity_association_mixin_subject"
+        "macromolecular_machine_to_entity_association_mixin_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToEntityAssociationMixin",
@@ -33545,7 +34145,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slots": [
-        "organism_taxon_to_entity_association_subject"
+        "organism_taxon_to_entity_association_subject",
+        "predicate",
+        "object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismTaxonToEntityAssociation",
@@ -33759,9 +34361,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-01-05T20:27:13",
-  "source_file_size": 371160,
-  "generation_date": "2024-01-05T20:27:20",
+  "source_file_date": "2024-01-09T01:11:41",
+  "source_file_size": 376530,
+  "generation_date": "2024-01-09T01:11:48",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

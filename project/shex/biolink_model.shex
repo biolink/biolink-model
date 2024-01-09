@@ -305,8 +305,11 @@ linkml:Sparqlpath xsd:string
           rdf:subject @<Behavior> ;
           rdf:object @<BehavioralFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
@@ -446,7 +449,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <CaseToEntityAssociationMixin> {
-    (  $<CaseToEntityAssociationMixin_tes> rdf:subject @<Case> ;
+    (  $<CaseToEntityAssociationMixin_tes> (  rdf:subject @<Case> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <CaseToEntityAssociationMixin> ] ?
     )
 }
@@ -459,8 +465,11 @@ linkml:Sparqlpath xsd:string
           &<CaseToEntityAssociationMixin_tes> ;
           rdf:type [ <CaseToEntityAssociationMixin> ] ? ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
@@ -512,8 +521,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           rdf:subject @<CellLine> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ?
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ?
        ) ;
        rdf:type [ <CellLineAsAModelOfDiseaseAssociation> ]
     )
@@ -535,7 +547,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <CellLineToEntityAssociationMixin> {
-    (  $<CellLineToEntityAssociationMixin_tes> rdf:subject @<CellLine> ;
+    (  $<CellLineToEntityAssociationMixin_tes> (  rdf:subject @<CellLine> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <CellLineToEntityAssociationMixin> ] ?
     )
 }
@@ -573,14 +588,14 @@ linkml:Sparqlpath xsd:string
           <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
           <object_context_qualifier> @<AnatomicalEntity> ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
           <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
           <qualified_predicate> @linkml:String ? ;
+          <species_context_qualifier> @<OrganismTaxon> ? ;
           rdf:subject @<ChemicalEntity> ;
           rdf:predicate @<PredicateType> ;
-          rdf:object @<GeneOrGeneProduct> ;
-          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
-          <species_context_qualifier> @<OrganismTaxon> ?
+          rdf:object @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <ChemicalAffectsGeneAssociation> ]
     )
@@ -649,7 +664,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <ChemicalEntityToEntityAssociationMixin_struct> {
-    (  $<ChemicalEntityToEntityAssociationMixin_tes> rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
+    (  $<ChemicalEntityToEntityAssociationMixin_tes> (  rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ?
     )
 }
@@ -787,7 +805,7 @@ linkml:Sparqlpath xsd:string
 <ChemicalToEntityAssociationMixin> {
     (  $<ChemicalToEntityAssociationMixin_tes> (  &<ChemicalEntityToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ? ;
-          rdf:subject @<ChemicalEntityOrGeneOrGeneProduct>
+          rdf:subject @<NamedThing>
        ) ;
        rdf:type [ <ChemicalToEntityAssociationMixin> ] ?
     )
@@ -1068,7 +1086,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> {
-    (  $<DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes> rdf:subject @<DiseaseOrPhenotypicFeature> ;
+    (  $<DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes> (  rdf:subject @<DiseaseOrPhenotypicFeature> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ] ?
     )
 }
@@ -1097,7 +1118,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <DiseaseToEntityAssociationMixin> {
-    (  $<DiseaseToEntityAssociationMixin_tes> rdf:subject @<Disease> ;
+    (  $<DiseaseToEntityAssociationMixin_tes> (  rdf:subject @<Disease> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <DiseaseToEntityAssociationMixin> ] ?
     )
 }
@@ -1124,8 +1148,11 @@ linkml:Sparqlpath xsd:string
           rdf:subject @<Disease> ;
           rdf:object @<PhenotypicFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
@@ -1171,7 +1198,7 @@ linkml:Sparqlpath xsd:string
 <DrugToEntityAssociationMixin> {
     (  $<DrugToEntityAssociationMixin_tes> (  &<ChemicalEntityToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ? ;
-          rdf:subject @<Drug>
+          rdf:subject @<NamedThing>
        ) ;
        rdf:type [ <DrugToEntityAssociationMixin> ] ?
     )
@@ -1251,13 +1278,19 @@ linkml:Sparqlpath xsd:string
 }
 
 <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> {
-    (  $<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> rdf:object @<DiseaseOrPhenotypicFeature> ;
+    (  $<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<DiseaseOrPhenotypicFeature>
+       ) ;
        rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ?
     )
 }
 
 <EntityToExposureEventAssociationMixin> {
-    (  $<EntityToExposureEventAssociationMixin_tes> rdf:object @<ExposureEvent> ;
+    (  $<EntityToExposureEventAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<ExposureEvent>
+       ) ;
        rdf:type [ <EntityToExposureEventAssociationMixin> ] ?
     )
 }
@@ -1269,15 +1302,21 @@ linkml:Sparqlpath xsd:string
 <EntityToFeatureOrDiseaseQualifiersMixin_struct> {
     (  $<EntityToFeatureOrDiseaseQualifiersMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
           rdf:type [ <FrequencyQualifierMixin> ] ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ?
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ?
        ) ;
        rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ?
     )
 }
 
 <EntityToOutcomeAssociationMixin> {
-    (  $<EntityToOutcomeAssociationMixin_tes> rdf:object @<Outcome> ;
+    (  $<EntityToOutcomeAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<Outcome>
+       ) ;
        rdf:type [ <EntityToOutcomeAssociationMixin> ] ?
     )
 }
@@ -1297,8 +1336,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
           &<FrequencyQuantifier_tes> ;
           rdf:type [ <FrequencyQuantifier> ] ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           rdf:object @<PhenotypicFeature> ;
+          <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1423,8 +1462,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           rdf:subject @<ExposureEvent> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
@@ -1439,8 +1481,11 @@ linkml:Sparqlpath xsd:string
     {
        (  $<FeatureOrDiseaseQualifiersToEntityMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
              rdf:type [ <FrequencyQualifierMixin> ] ? ;
-             <severity_qualifier> @<SeverityValue> ? ;
-             <onset_qualifier> @<Onset> ?
+             <subject_aspect_qualifier> @linkml:String ? ;
+             <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
+             <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <qualified_predicate> @linkml:String ?
           ) ;
           rdf:type [ <FeatureOrDiseaseQualifiersToEntityMixin> ] ?
        )
@@ -1468,7 +1513,11 @@ linkml:Sparqlpath xsd:string
 )
 
 <FrequencyQualifierMixin_struct> {
-    (  $<FrequencyQualifierMixin_tes> <frequency_qualifier> @<FrequencyValue> ? ;
+    (  $<FrequencyQualifierMixin_tes> (  <frequency_qualifier> @<FrequencyValue> ? ;
+          rdf:subject @<NamedThing> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <FrequencyQualifierMixin> ] ?
     )
 }
@@ -1539,15 +1588,15 @@ linkml:Sparqlpath xsd:string
           <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
           <object_context_qualifier> @<AnatomicalEntity> ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
           <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
           <qualified_predicate> @linkml:String ? ;
+          <species_context_qualifier> @<OrganismTaxon> ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:predicate @<PredicateType> ;
-          rdf:object @<ChemicalEntity> ;
-          <object_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
-          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
-          <species_context_qualifier> @<OrganismTaxon> ?
+          rdf:object @<ChemicalEntity>
        ) ;
        rdf:type [ <GeneAffectsChemicalAssociation> ]
     )
@@ -1668,8 +1717,9 @@ linkml:Sparqlpath xsd:string
              rdf:object @<DiseaseOrPhenotypicFeature> ;
              rdf:predicate @<PredicateType> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
-             <severity_qualifier> @<SeverityValue> ? ;
-             <onset_qualifier> @<Onset> ? ;
+             <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
+             <qualified_predicate> @linkml:String ? ;
              <sex_qualifier> @<BiologicalSex> ? ;
              <has_count> @linkml:Integer ? ;
              <has_total> @linkml:Integer ? ;
@@ -1682,7 +1732,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <GeneToEntityAssociationMixin> {
-    (  $<GeneToEntityAssociationMixin_tes> rdf:subject @<GeneOrGeneProduct> ;
+    (  $<GeneToEntityAssociationMixin_tes> (  rdf:subject @<GeneOrGeneProduct> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <GeneToEntityAssociationMixin> ] ?
     )
 }
@@ -1909,8 +1962,11 @@ linkml:Sparqlpath xsd:string
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
-             <severity_qualifier> @<SeverityValue> ? ;
-             <onset_qualifier> @<Onset> ?
+             <subject_aspect_qualifier> @linkml:String ? ;
+             <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
+             <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <qualified_predicate> @linkml:String ?
           ) ;
           rdf:type [ <GenotypeToDiseaseAssociation> ]
        )
@@ -1918,7 +1974,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <GenotypeToEntityAssociationMixin> {
-    (  $<GenotypeToEntityAssociationMixin_tes> rdf:subject @<Genotype> ;
+    (  $<GenotypeToEntityAssociationMixin_tes> (  rdf:subject @<Genotype> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <GenotypeToEntityAssociationMixin> ] ?
     )
 }
@@ -1955,8 +2014,11 @@ linkml:Sparqlpath xsd:string
           rdf:predicate @<PredicateType> ;
           rdf:subject @<Genotype> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
@@ -2179,7 +2241,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <MacromolecularMachineToEntityAssociationMixin> {
-    (  $<MacromolecularMachineToEntityAssociationMixin_tes> rdf:subject @<NamedThing> ;
+    (  $<MacromolecularMachineToEntityAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <MacromolecularMachineToEntityAssociationMixin> ] ?
     )
 }
@@ -2227,8 +2292,8 @@ linkml:Sparqlpath xsd:string
     (  $<MaterialSampleDerivationAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<MaterialSample> ;
-          rdf:object @<NamedThing> ;
-          rdf:predicate @<PredicateType>
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <MaterialSampleDerivationAssociation> ]
     )
@@ -2247,7 +2312,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <MaterialSampleToEntityAssociationMixin> {
-    (  $<MaterialSampleToEntityAssociationMixin_tes> rdf:subject @<MaterialSample> ;
+    (  $<MaterialSampleToEntityAssociationMixin_tes> (  rdf:subject @<MaterialSample> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <MaterialSampleToEntityAssociationMixin> ] ?
     )
 }
@@ -2262,7 +2330,8 @@ linkml:Sparqlpath xsd:string
 
 <ModelToDiseaseAssociationMixin> {
     (  $<ModelToDiseaseAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
-          rdf:predicate @<PredicateType>
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <ModelToDiseaseAssociationMixin> ] ?
     )
@@ -2363,11 +2432,12 @@ linkml:Sparqlpath xsd:string
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
     (  $<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:predicate @<PredicateType> ;
           <subject_aspect_qualifier> @linkml:String ? ;
           <subject_context_qualifier> @<OntologyClass> ? ;
+          rdf:predicate @<PredicateType> ;
           <object_aspect_qualifier> @linkml:String ? ;
-          <object_context_qualifier> @<OntologyClass> ?
+          <object_context_qualifier> @<OntologyClass> ? ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> ]
     )
@@ -2481,7 +2551,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <OrganismTaxonToEntityAssociation> {
-    (  $<OrganismTaxonToEntityAssociation_tes> rdf:subject @<OrganismTaxon> ;
+    (  $<OrganismTaxonToEntityAssociation_tes> (  rdf:subject @<OrganismTaxon> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <OrganismTaxonToEntityAssociation> ] ?
     )
 }
@@ -2573,8 +2646,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           rdf:subject @<OrganismalEntity> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ?
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ?
        ) ;
        rdf:type [ <OrganismalEntityAsAModelOfDiseaseAssociation> ]
     )
@@ -2728,8 +2804,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <PhenotypicFeatureToEntityAssociationMixin> ] ? ;
           rdf:predicate @<PredicateType> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
@@ -2987,8 +3066,8 @@ linkml:Sparqlpath xsd:string
              <summary> @linkml:String ? ;
              <keywords> @linkml:String * ;
              <mesh_terms> @linkml:Uriorcurie * ;
-             rdfs:label @<LabelType> ? ;
-             dcterms:type @linkml:String +
+             dcterms:type @linkml:String + ;
+             rdfs:label @<LabelType> ?
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -3417,8 +3496,11 @@ linkml:Sparqlpath xsd:string
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
-             <severity_qualifier> @<SeverityValue> ? ;
-             <onset_qualifier> @<Onset> ?
+             <subject_aspect_qualifier> @linkml:String ? ;
+             <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
+             <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <qualified_predicate> @linkml:String ?
           ) ;
           rdf:type [ <VariantToDiseaseAssociation> ]
        )
@@ -3426,7 +3508,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <VariantToEntityAssociationMixin> {
-    (  $<VariantToEntityAssociationMixin_tes> rdf:subject @<SequenceVariant> ;
+    (  $<VariantToEntityAssociationMixin_tes> (  rdf:subject @<SequenceVariant> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
        rdf:type [ <VariantToEntityAssociationMixin> ] ?
     )
 }
@@ -3469,8 +3554,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           rdf:subject @<SequenceVariant> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;

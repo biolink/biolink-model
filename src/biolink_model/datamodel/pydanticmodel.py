@@ -413,19 +413,19 @@ class PredicateMapping(ConfiguredBaseModel):
     A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
     """
     mapped_predicate: Optional[str] = Field(None, description="""The predicate that is being replaced by the fully qualified representation of predicate + subject and object qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.""")
-    subject_aspect_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    subject_form_or_variant_qualifier: Optional[str] = Field(None)
-    subject_part_qualifier: Optional[str] = Field(None)
-    subject_derivative_qualifier: Optional[str] = Field(None)
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    subject_form_or_variant_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_part_qualifier: Optional[str] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).""")
+    subject_derivative_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association  (or statement).""")
     subject_context_qualifier: Optional[str] = Field(None)
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
-    object_aspect_qualifier: Optional[str] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    object_form_or_variant_qualifier: Optional[str] = Field(None)
-    object_part_qualifier: Optional[str] = Field(None)
-    object_derivative_qualifier: Optional[str] = Field(None)
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    object_form_or_variant_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_part_qualifier: Optional[str] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).""")
+    object_derivative_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the object of an association  (or statement).""")
     object_context_qualifier: Optional[str] = Field(None)
     causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
@@ -666,6 +666,7 @@ class OrganismTaxon(NamedThing):
     """
     A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
     """
+    has_taxonomic_rank: Optional[str] = Field(None)
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -1102,6 +1103,7 @@ class Publication(InformationContentEntity):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1129,6 +1131,7 @@ class Book(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1157,6 +1160,7 @@ class BookChapter(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1187,6 +1191,7 @@ class Serial(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1218,6 +1223,7 @@ class Article(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1249,6 +1255,7 @@ class JournalArticle(Article):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1276,6 +1283,7 @@ class Patent(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1303,6 +1311,7 @@ class WebPage(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1330,6 +1339,7 @@ class PreprintPublication(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1357,6 +1367,7 @@ class DrugLabel(Publication):
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    publication_type: List[str] = Field(..., description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -4474,35 +4485,45 @@ class CellLineToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An relationship between a cell line and another entity
     """
-    None
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class ChemicalEntityToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An interaction between a chemical entity and another entity
     """
-    None
+    subject: str = Field(..., description="""the chemical entity that is an interactor""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a drug and another entity
     """
-    None
+    subject: str = Field(..., description="""the drug that is an interactor""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a chemical entity and another entity
     """
-    None
+    subject: str = Field(..., description="""the chemical entity or entity that is an interactor""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class CaseToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An abstract association for use where the case is the subject
     """
-    None
+    subject: str = Field(..., description="""the case (e.g. patient) that has the property""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Association):
@@ -4751,8 +4772,13 @@ class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_context_qualifier: Optional[str] = Field(None)
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_context_qualifier: Optional[str] = Field(None)
+    population_context_qualifier: Optional[str] = Field(None, description="""a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -4790,12 +4816,12 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     """
     describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     """
-    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
-    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).""")
+    subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None, description="""A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association  (or statement).""")
     subject_context_qualifier: Optional[str] = Field(None)
-    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
-    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).""")
     object_context_qualifier: Optional[str] = Field(None)
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     subject: str = Field(..., description="""the chemical entity or entity that is an interactor""")
@@ -4838,19 +4864,21 @@ class ChemicalAffectsGeneAssociation(Association):
     """
     Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
     """
-    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
-    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).""")
+    subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None, description="""A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association  (or statement).""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_context_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
-    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).""")
+    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     object_context_qualifier: Optional[str] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -4891,19 +4919,22 @@ class GeneAffectsChemicalAssociation(Association):
     """
     Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
     """
-    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
-    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    subject_derivative_qualifier: Optional[str] = Field(None)
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  subject of an association (or statement).""")
+    subject_derivative_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association  (or statement).""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_context_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
-    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None, description="""defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the  object of an association (or statement).""")
+    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     object_context_qualifier: Optional[str] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    object_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None, description="""A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the object of an association  (or statement).""")
     causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -4984,7 +5015,9 @@ class MaterialSampleToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An association between a material sample and something.
     """
-    None
+    subject: str = Field(..., description="""the material sample being described""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class MaterialSampleDerivationAssociation(Association):
@@ -5029,14 +5062,18 @@ class MaterialSampleDerivationAssociation(Association):
 
 class DiseaseToEntityAssociationMixin(ConfiguredBaseModel):
     
-    None
+    subject: str = Field(..., description="""disease class""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class EntityToExposureEventAssociationMixin(ConfiguredBaseModel):
     """
     An association between some entity and an exposure event.
     """
-    None
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, DiseaseToEntityAssociationMixin, Association):
@@ -5083,7 +5120,9 @@ class EntityToOutcomeAssociationMixin(ConfiguredBaseModel):
     """
     An association between some entity and an outcome
     """
-    None
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Association):
@@ -5133,35 +5172,56 @@ class FrequencyQualifierMixin(ConfiguredBaseModel):
     Qualifier for frequency type associations
     """
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     """
     Qualifiers for entity to disease or phenotype associations.
     """
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     """
     Qualifiers for disease or phenotype to entity associations.
     """
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin, FrequencyQuantifier):
     
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -5172,9 +5232,15 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class InformationContentEntityToNamedThingAssociation(Association):
@@ -5221,14 +5287,22 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     """
     mixin class for any association whose object (target node) is a disease
     """
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""disease""")
     
 
 class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(ConfiguredBaseModel):
     
-    None
+    subject: str = Field(..., description="""disease or phenotype""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
@@ -5313,7 +5387,9 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenoty
 
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(ConfiguredBaseModel):
     
-    None
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""disease or phenotype""")
     
 
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, CellLineToEntityAssociationMixin, Association):
@@ -5441,10 +5517,10 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
     """
-    FDA_adverse_event_level: Optional[FDAIDAAdverseEventEnum] = Field(None)
     subject: str = Field(..., description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease or phenotype""")
+    FDA_adverse_event_level: Optional[FDAIDAAdverseEventEnum] = Field(None)
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5520,17 +5596,19 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
 
 class GenotypeToEntityAssociationMixin(ConfiguredBaseModel):
     
-    None
+    subject: str = Field(..., description="""genotype that is the subject of the association""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     """
     Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
     """
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""genotype that is associated with the phenotypic feature""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5566,8 +5644,11 @@ class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, E
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -5575,10 +5656,10 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     """
     Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
     """
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5614,8 +5695,11 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -5623,10 +5707,10 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     """
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
     """
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""disease class""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5662,8 +5746,11 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -5671,10 +5758,10 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     """
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
     """
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""the case (e.g. patient) that has the property""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5710,8 +5797,11 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -5719,10 +5809,10 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     """
     An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
     """
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""behavior that is the subject of the association""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""behavioral feature that is the object of the association""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5758,14 +5848,19 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
 class GeneToEntityAssociationMixin(ConfiguredBaseModel):
     
-    None
+    subject: str = Field(..., description="""gene that is the subject of the association""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
@@ -5810,17 +5905,19 @@ class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
 
 class VariantToEntityAssociationMixin(ConfiguredBaseModel):
     
-    None
+    subject: str = Field(..., description="""a sequence variant in which the allele state is associated with some other entity""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     subject: str = Field(..., description="""gene in which variation is correlated with the phenotypic feature""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5856,19 +5953,20 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, 
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
 class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin):
     
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
     subject: str = Field(..., description="""gene in which variation is correlated with the phenotypic feature""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5904,19 +6002,20 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -5952,19 +6051,20 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, Gene
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is shown to cause the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6000,19 +6100,20 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssoc
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is shown to correlate with the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6048,19 +6149,20 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityA
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
     
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6096,8 +6198,9 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6142,8 +6245,11 @@ class PhenotypicFeatureToDiseaseAssociation(EntityToDiseaseAssociationMixin, Phe
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6235,14 +6341,14 @@ class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQ
     """
     An association between a variant and a population, where the variant has particular frequency in the population
     """
+    subject: str = Field(..., description="""an allele that has a certain frequency in a given population""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""the population that is observed to have the frequency""")
     has_count: Optional[int] = Field(None, description="""number in object population that carry a particular allele, aka allele count""")
     has_total: Optional[int] = Field(None, description="""number all populations that carry a particular allele, aka allele number""")
     has_quotient: Optional[float] = Field(None, description="""frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency""")
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-    subject: str = Field(..., description="""an allele that has a certain frequency in a given population""")
-    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(..., description="""the population that is observed to have the frequency""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6318,10 +6424,10 @@ class PopulationToPopulationAssociation(Association):
 
 class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""a sequence variant in which the allele state is associated in some way with the phenotype state""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6357,8 +6463,11 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6398,8 +6507,11 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6439,8 +6551,11 @@ class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDis
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6448,17 +6563,19 @@ class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
     """
     This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     """
-    None
+    subject: str = Field(..., description="""The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease""")
+    predicate: str = Field(..., description="""The relationship to the disease""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""disease""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6494,8 +6611,9 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6535,8 +6653,11 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6576,8 +6697,11 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6617,8 +6741,11 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6658,8 +6785,11 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6741,13 +6871,13 @@ class TaxonToTaxonAssociation(Association):
 
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     
-    subject_form_or_variant_qualifier: Optional[str] = Field(None)
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
+    subject_form_or_variant_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject: str = Field(..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -6783,8 +6913,9 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-    severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
-    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
@@ -6914,7 +7045,9 @@ class MacromolecularMachineToEntityAssociationMixin(ConfiguredBaseModel):
     """
     an association which has a macromolecular machine mixin as a subject
     """
-    None
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
@@ -7484,7 +7617,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
     A regulatory relationship between two genes
     """
-    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""the direction is always from regulator to regulated""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7643,7 +7776,9 @@ class OrganismTaxonToEntityAssociation(ConfiguredBaseModel):
     """
     An association between an organism taxon and another entity
     """
-    None
+    subject: str = Field(..., description="""organism taxon that is the subject of the association""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     
 
 class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, Association):
