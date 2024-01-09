@@ -174,26 +174,57 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Visualizations
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../categories.html">
 <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../predicates.html">
 <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../qualifiers.html">
+<span class="md-ellipsis">
+    Qualifiers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../associations.html">
+<span class="md-ellipsis">
+    Associations
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../aspects.html">
 <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../faq/">
@@ -260,7 +291,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-disease"><strong>  Class: Disease </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.</i><br/>
+<strong>Description:</strong><i> A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.</i><br/>
 </div>
 <p>Aliases: condition, disorder, medical condition  </p>
 <div class="mermaid"> classDiagram
@@ -324,6 +355,7 @@
 <th>Name</th>
 <th>Cardinality and Range</th>
 <th>Inheritance</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
@@ -331,71 +363,85 @@
 <td><a href="../in_taxon/">in_taxon</a>: <br> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></br></td>
 <td>0..* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../in_taxon_label/">in_taxon_label</a>: <br/> <i> The human readable scientific name for the taxon of the entity. </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
+<td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../full_name/">full_name</a>: <br/> <i> a long-form human readable name for a thing </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
 <td>1..* <br/> <a href="../CategoryType/">CategoryType</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../type/">type</a>: <br/> <i> None </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
 <td>0..1 <br/> <a href="../NarrativeText/">NarrativeText</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
 <td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../deprecated/">deprecated</a>: <br/> <i> A boolean flag indicating that an entity is no longer considered current or valid. </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -411,8 +457,20 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
 <td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociationMixin/">EntityToDiseaseAssociationMixin</a></td>
+<td><a href="../object/">object</a></td>
 <td>range</td>
 <td><a href="./">Disease</a></td>
 </tr>
@@ -442,6 +500,12 @@
 </tr>
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>range</td>
 <td><a href="./">Disease</a></td>
@@ -602,10 +666,10 @@ id_prefixes:
 - HP
 - MP
 - PHARMGKB.DISEASE
-description: A disorder of structure or function, especially one that produces specific  signs,
-  phenotypes or symptoms or that affects a specific location and is not simply a  direct
-  result of physical injury.  A disposition to undergo pathological processes that
-  exists in an  organism because of one or more disorders in that organism.
+description: A disorder of structure or function, especially one that produces specific
+  signs, phenotypes or symptoms or that affects a specific location and is not simply
+  a direct result of physical injury.  A disposition to undergo pathological processes
+  that exists in an organism because of one or more disorders in that organism.
 in_subset:
 - model_organism_database
 - translator_minimal

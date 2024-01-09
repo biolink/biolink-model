@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -500,15 +589,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Applicable Classes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -539,6 +619,7 @@
 <div class="highlight-box"><strong>Description:</strong><i> a qualifier used in a phenotypic association to state when the phenotype appears is in the subject</i><br>
 
 
+<br>
 
 </div>
 
@@ -554,23 +635,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="applicable-classes">Applicable Classes</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Modifies Slot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td>Qualifiers for entity to disease or phenotype associations.</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
@@ -584,8 +648,6 @@ from_schema: https://w3id.org/biolink/biolink-model
 is_a: qualifier
 domain: association
 alias: onset_qualifier
-domain_of:
-- entity to feature or disease qualifiers mixin
 range: onset
 
 </code></pre>

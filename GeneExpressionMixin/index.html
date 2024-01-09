@@ -174,26 +174,57 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Visualizations
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../categories.html">
 <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../predicates.html">
 <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../qualifiers.html">
+<span class="md-ellipsis">
+    Qualifiers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../associations.html">
+<span class="md-ellipsis">
+    Associations
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../aspects.html">
 <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../faq/">
@@ -279,6 +310,7 @@
 <th>Name</th>
 <th>Cardinality and Range</th>
 <th>Inheritance</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
@@ -286,21 +318,25 @@
 <td><a href="../quantifier_qualifier/">quantifier_qualifier</a>: <br> <i> Optional quantitative value indicating degree of expression. </i></br></td>
 <td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td>direct</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../expression_site/">expression_site</a>: <br/> <i> location in which gene or protein expression takes place. May be cell, tissue, or organ. </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td>direct</td>
+<td>UBERON:0002037</td>
 </tr>
 <tr>
 <td><a href="../stage_qualifier/">stage_qualifier</a>: <br/> <i> stage during which gene or protein expression of takes place. </i></td>
 <td>0..1 <br/> <a href="../LifeStage/">LifeStage</a></td>
 <td>direct</td>
+<td>UBERON:0000069</td>
 </tr>
 <tr>
 <td><a href="../phenotypic_state/">phenotypic_state</a>: <br/> <i> in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX. </i></td>
 <td>0..1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
 <td>direct</td>
+<td></td>
 </tr>
 </tbody>
 </table>

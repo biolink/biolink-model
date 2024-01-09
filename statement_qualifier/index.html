@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -527,9 +616,10 @@
 
 
 <h1 id="slot-statement_qualifier"><strong> Slot: statement_qualifier </strong></h1>
-<div class="highlight-box">
+<div class="highlight-box"><strong>Description:</strong><i> A property that qualifies the entirety of the statement made in an association.  It applies to both a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate in an association.</i><br>
 
 
+<br>
 
 </div>
 
@@ -543,6 +633,7 @@
 <li><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a></li>
 <li><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></li>
 <li><a href="../species_context_qualifier/">species_context_qualifier</a></li>
+<li><a href="../stage_qualifier/">stage_qualifier</a></li>
 </ul>
 </li>
 </ul>
@@ -554,7 +645,9 @@
 <details open>
 
 <pre><code class="language-yaml">name: statement qualifier
-description: ''
+description: A property that qualifies the entirety of the statement made in an association.  It
+  applies to both a fully qualified subject and a fully qualified object as well as
+  the predicate and qualified predicate in an association.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model

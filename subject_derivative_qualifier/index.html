@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -509,6 +598,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -536,9 +634,10 @@
 
 
 <h1 id="slot-subject_derivative_qualifier"><strong> Slot: subject_derivative_qualifier </strong></h1>
-<div class="highlight-box">
+<div class="highlight-box"><strong>Description:</strong><i> A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association  (or statement).</i><br>
 
 
+<br>
 
 </div>
 
@@ -589,10 +688,31 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subject_derivative_qualifier</td>
+<td>metabolite</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: subject derivative qualifier
+description: A qualifier that composes with a core subject/object  concept to describe
+  something that is derived from the core concept.  For example, the qualifier ‘metabolite’
+  combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite
+  of Chemical X’.  This qualifier is for the subject of an association  (or statement).
+examples:
+- value: metabolite
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model

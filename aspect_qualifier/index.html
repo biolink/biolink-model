@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -500,6 +589,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -527,10 +625,11 @@
 
 
 <h1 id="slot-aspect_qualifier-abstract"><strong> Slot: aspect_qualifier </strong> <span style="color: purple;"><strong><small> (Abstract) </small></strong></span></h1>
-<div class="highlight-box"><strong>Description:</strong><i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.</i><br>
 
 
- <strong> Notes:</strong> for good examples of aspects in the gene-> chemical space, please see the  GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify  the gene making the full subject a different ontological type.   the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process) the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process) the qualifier ‘activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity) the qualifier ‘emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event) the qualifier ‘infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process) the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality) the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality) 
+<br>
+ <strong> Notes:</strong> for good examples of aspects in the gene-> chemical space, please see the GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify the gene making the full subject a different ontological type. the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process) the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process) the qualifier ‘activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity) the qualifier ‘emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event) the qualifier ‘infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process) the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality) the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality) 
 </div>
 
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
@@ -549,6 +648,33 @@
 </ul>
 </li>
 </ul>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aspect_qualifier</td>
+<td>stability</td>
+</tr>
+<tr>
+<td>aspect_qualifier</td>
+<td>abundance</td>
+</tr>
+<tr>
+<td>aspect_qualifier</td>
+<td>expression</td>
+</tr>
+<tr>
+<td>aspect_qualifier</td>
+<td>exposure</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
@@ -556,14 +682,14 @@
 description: Composes with the core concept to describe new concepts of a different
   ontological type. e.g. a process in which the core concept participates, a function/activity/role
   held by the core concept, or a characteristic/quality that inheres in the core concept.  The
-  purpose of the aspect slot is to indicate what aspect is being affected in an  'affects'
+  purpose of the aspect slot is to indicate what aspect is being affected in an 'affects'
   association.
 notes:
-- for good examples of aspects in the gene-&gt; chemical space, please see the  GeneOrGeneProductOrChemicalEntityAspectEnum
-  (below) which lists many aspects that can be used to qualify  the gene making the
-  full subject a different ontological type.   the qualifier ‘expression’ combines
-  with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene
-  X’ (Gene → Biological Process) the qualifier ‘exposure’ combines with a core concept
+- for good examples of aspects in the gene-&gt; chemical space, please see the GeneOrGeneProductOrChemicalEntityAspectEnum
+  (below) which lists many aspects that can be used to qualify the gene making the
+  full subject a different ontological type. the qualifier ‘expression’ combines with
+  a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’
+  (Gene → Biological Process) the qualifier ‘exposure’ combines with a core concept
   of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical
   → Exposure Process) the qualifier ‘activity’ combines with a core concept of ‘PPARG’
   to express the concept ‘activity of PPARG’ (Gene → function/activity) the qualifier

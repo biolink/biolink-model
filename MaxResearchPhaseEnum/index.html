@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -500,9 +589,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
+  <a href="#slots-constrained-by-this-enum" class="md-nav__link">
     <span class="md-ellipsis">
-      Slots
+      Slots constrained by this enum
     </span>
   </a>
   
@@ -549,7 +638,7 @@
 <tr>
 <td>pre_clinical_research_phase</td>
 <td>None</td>
-<td>Biolink 'pre_clinical_research' is the union of both the <code>FDA discovery and development phase</code> and  <code>FDA preclinical research phase</code>. Discovery involves researchers finding new possibilities for medication  through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of  new technology that allows novel ways of targeting medical products to sites in the body. Drug development  occurs after researchers identify potential compounds for experiments Preclinical Research Phase.   Once researchers have examined the possibilities a new drug may contain, they must do preliminary research  to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of  two types: in vitro or in vivo.</td>
+<td>Biolink 'pre_clinical_research' is the union of both the <code>FDA discovery and development phase</code> and <code>FDA preclinical research phase</code>. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.</td>
 </tr>
 <tr>
 <td>clinical_trial_phase</td>
@@ -583,18 +672,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="slots">Slots</h2>
+<h2 id="slots-constrained-by-this-enum">Slots constrained by this enum</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="../max_research_phase/">max_research_phase</a></td>
-<td>None</td>
 </tr>
 </tbody>
 </table>
@@ -607,15 +694,15 @@ permissible_values:
   pre_clinical_research_phase:
     text: pre_clinical_research_phase
     description: 'Biolink ''pre_clinical_research'' is the union of both the `FDA
-      discovery and development phase` and  `FDA preclinical research phase`. Discovery
-      involves researchers finding new possibilities for medication  through testing
+      discovery and development phase` and `FDA preclinical research phase`. Discovery
+      involves researchers finding new possibilities for medication through testing
       molecular compounds, noting unexpected effects from existing treatments, or
-      the creation of  new technology that allows novel ways of targeting medical
-      products to sites in the body. Drug development  occurs after researchers identify
-      potential compounds for experiments Preclinical Research Phase.   Once researchers
-      have examined the possibilities a new drug may contain, they must do preliminary
-      research  to determine its potential for harm (toxicity). This is categorized
-      as preclinical research and can be one of  two types: in vitro or in vivo.'
+      the creation of new technology that allows novel ways of targeting medical products
+      to sites in the body. Drug development occurs after researchers identify potential
+      compounds for experiments Preclinical Research Phase. Once researchers have
+      examined the possibilities a new drug may contain, they must do preliminary
+      research to determine its potential for harm (toxicity). This is categorized
+      as preclinical research and can be one of two types: in vitro or in vivo.'
     notes:
     - DrugBank calls this 'experimental'.
   clinical_trial_phase:

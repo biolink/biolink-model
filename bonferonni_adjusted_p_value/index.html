@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -500,6 +589,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -527,9 +625,10 @@
 
 
 <h1 id="slot-bonferonni_adjusted_p_value"><strong> Slot: bonferonni_adjusted_p_value </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> The Bonferroni correction is an adjustment made to P values when several dependent or independent statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.</i><br>
 
 
+<br>
 
 </div>
 
@@ -548,16 +647,31 @@
 </ul>
 </li>
 </ul>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bonferonni_adjusted_p_value</td>
+<td>0.018</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: bonferonni adjusted p value
 description: The Bonferroni correction is an adjustment made to P values when several
-  dependent or independent  statistical tests are being performed simultaneously on
-  a single data set. To perform a Bonferroni  correction, divide the critical P value
-  (α) by the number of comparisons being made.  P is always italicized and  capitalized.
+  dependent or independent statistical tests are being performed simultaneously on
+  a single data set. To perform a Bonferroni correction, divide the critical P value
+  (α) by the number of comparisons being made.  P is always italicized and capitalized.
   The actual P value* should be expressed (P=. 04) rather than expressing a statement
-  of inequality  (P&lt;. 05), unless P&lt;.
+  of inequality (P&lt;. 05), unless P&lt;.
 examples:
 - value: '0.018'
 from_schema: https://w3id.org/biolink/biolink-model

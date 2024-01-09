@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -539,7 +628,8 @@
 <div class="highlight-box"><strong>Description:</strong><i> holds between any two entities that directly or indirectly interact with each other</i><br>
 
 
- <strong> Notes:</strong> please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with.  
+<br>
+ <strong> Notes:</strong> please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
@@ -571,13 +661,13 @@
 <tbody>
 <tr>
 <td><a href="../physically_interacts_with/">physically_interacts_with</a></td>
-<td>holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.</td>
+<td>holds between two entities that make physical contact as part of some interaction. does not imply a causal relationship.</td>
 <td>None</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../regulates/">regulates</a></td>
-<td>A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.</td>
+<td>A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.</td>
 <td>physical essence or occurrent</td>
 <td></td>
 </tr>
@@ -590,8 +680,8 @@
 description: holds between any two entities that directly or indirectly interact with
   each other
 notes:
-- 'please use a more specific child predicate of interacts with, either physically
-  interacts with or genetically interacts with. '
+- please use a more specific child predicate of interacts with, either physically
+  interacts with or genetically interacts with.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model

@@ -174,26 +174,57 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Visualizations
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../categories.html">
 <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../predicates.html">
 <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../qualifiers.html">
+<span class="md-ellipsis">
+    Qualifiers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../associations.html">
+<span class="md-ellipsis">
+    Associations
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../aspects.html">
 <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../faq/">
@@ -256,6 +287,16 @@
       ModelToDiseaseAssociationMixin &lt;|-- CellLineAsAModelOfDiseaseAssociation
       ModelToDiseaseAssociationMixin &lt;|-- OrganismalEntityAsAModelOfDiseaseAssociation
 
+      ModelToDiseaseAssociationMixin : object
+
+          ModelToDiseaseAssociationMixin --|&gt; NamedThing : object
+
+      ModelToDiseaseAssociationMixin : predicate
+
+      ModelToDiseaseAssociationMixin : subject
+
+          ModelToDiseaseAssociationMixin --|&gt; NamedThing : subject
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -266,12 +307,26 @@
 <th>Name</th>
 <th>Cardinality and Range</th>
 <th>Inheritance</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><a href="../subject/">subject</a>: <br> <i> The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease </i></br></td>
+<td>1..1 <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>direct</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../predicate/">predicate</a>: <br/> <i> The relationship to the disease </i></td>
+<td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
+<td>direct</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td>1..1 <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>direct</td>
 <td></td>
 </tr>
 </tbody>
@@ -316,18 +371,68 @@ description: This mixin is used for any association class for which the subject 
   the disease
 from_schema: https://w3id.org/biolink/biolink-model
 mixin: true
+slots:
+- subject
+- predicate
+- object
 slot_usage:
   subject:
     name: subject
     description: The entity that serves as the model of the disease. This may be an
       organism, a strain of organism, a genotype or variant that exhibits similar
       features, or a gene that when mutated exhibits features of the disease
+    domain_of:
+    - association
+    - cell line to entity association mixin
+    - chemical entity to entity association mixin
+    - drug to entity association mixin
+    - chemical to entity association mixin
+    - case to entity association mixin
+    - chemical to chemical association
+    - named thing associated with likelihood of named thing association
+    - material sample to entity association mixin
+    - material sample derivation association
+    - disease to entity association mixin
+    - entity to exposure event association mixin
+    - entity to outcome association mixin
+    - frequency qualifier mixin
+    - entity to phenotypic feature association mixin
+    - disease or phenotypic feature to entity association mixin
+    - entity to disease or phenotypic feature association mixin
+    - genotype to entity association mixin
+    - gene to entity association mixin
+    - variant to entity association mixin
+    - model to disease association mixin
+    - macromolecular machine to entity association mixin
+    - organism taxon to entity association
   predicate:
     name: predicate
     description: The relationship to the disease
     domain_of:
     - predicate mapping
     - association
+    - cell line to entity association mixin
+    - chemical entity to entity association mixin
+    - drug to entity association mixin
+    - chemical to entity association mixin
+    - case to entity association mixin
+    - chemical to chemical association
+    - named thing associated with likelihood of named thing association
+    - material sample to entity association mixin
+    - material sample derivation association
+    - disease to entity association mixin
+    - entity to exposure event association mixin
+    - entity to outcome association mixin
+    - frequency qualifier mixin
+    - entity to phenotypic feature association mixin
+    - disease or phenotypic feature to entity association mixin
+    - entity to disease or phenotypic feature association mixin
+    - genotype to entity association mixin
+    - gene to entity association mixin
+    - variant to entity association mixin
+    - model to disease association mixin
+    - macromolecular machine to entity association mixin
+    - organism taxon to entity association
     subproperty_of: model of
 
 </code></pre>

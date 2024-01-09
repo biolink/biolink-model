@@ -228,9 +228,9 @@ type Article
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
     publishedIn: Uriorcurie!
     isoAbbreviation: String
     volume: String
@@ -370,8 +370,11 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     subject: Behavior!
     object: BehavioralFeature!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -540,8 +543,8 @@ type Book
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
-    name: LabelType
     publicationType: [String]!
+    name: LabelType
     id: String!
     type: [String]
   }
@@ -567,9 +570,9 @@ type BookChapter
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
     publishedIn: Uriorcurie!
     volume: String
     chapter: String
@@ -596,6 +599,8 @@ type Case implements SubjectOfInvestigation
 interface CaseToEntityAssociationMixin
   {
     subject: Case!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin
@@ -635,8 +640,11 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     type: [String]
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -681,8 +689,9 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     objectDirectionQualifier: DirectionQualifierEnum
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -765,8 +774,11 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     category: [CategoryType]
     subject: CellLine!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
@@ -810,6 +822,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
 interface CellLineToEntityAssociationMixin
   {
     subject: CellLine!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type CellularComponent
@@ -891,14 +905,14 @@ type ChemicalAffectsGeneAssociation
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectContextQualifier: AnatomicalEntity
+    objectDirectionQualifier: DirectionQualifierEnum
     causalMechanismQualifier: CausalMechanismQualifierEnum
     anatomicalContextQualifier: AnatomicalEntity
     qualifiedPredicate: String
+    speciesContextQualifier: OrganismTaxon
     subject: ChemicalEntity!
     predicate: PredicateType!
     object: GeneOrGeneProduct!
-    objectDirectionQualifier: DirectionQualifierEnum
-    speciesContextQualifier: OrganismTaxon
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -1010,6 +1024,8 @@ interface ChemicalEntityOrProteinOrPolypeptide
 interface ChemicalEntityToEntityAssociationMixin
   {
     subject: ChemicalEntityOrGeneOrGeneProduct!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type ChemicalExposure implements ExposureEvent
@@ -1212,8 +1228,6 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    subject: NamedThing!
-    predicate: PredicateType!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1239,6 +1253,8 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
+    subject: NamedThing!
+    predicate: PredicateType!
     object: ChemicalEntity!
   }
 
@@ -1321,7 +1337,9 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
 
 interface ChemicalToEntityAssociationMixin
   {
-    subject: ChemicalEntityOrGeneOrGeneProduct!
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
@@ -1740,8 +1758,9 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     objectDirectionQualifier: DirectionQualifierEnum
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -1932,6 +1951,8 @@ type DiseaseOrPhenotypicFeatureOutcome implements Outcome
 interface DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     subject: DiseaseOrPhenotypicFeature!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
@@ -2013,6 +2034,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
 interface DiseaseToEntityAssociationMixin
   {
     subject: Disease!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixin, EntityToExposureEventAssociationMixin
@@ -2090,8 +2113,11 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     subject: Disease!
     object: PhenotypicFeature!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -2165,14 +2191,16 @@ type DrugLabel
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
   }
 
 interface DrugToEntityAssociationMixin
   {
-    subject: Drug!
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type DrugToGeneAssociation implements DrugToEntityAssociationMixin
@@ -2269,8 +2297,9 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -2337,30 +2366,47 @@ type EntityToDiseaseAssociation
 interface EntityToDiseaseAssociationMixin
   {
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subject: NamedThing!
+    predicate: PredicateType!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     object: Disease!
   }
 
 interface EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
+    subject: NamedThing!
+    predicate: PredicateType!
     object: DiseaseOrPhenotypicFeature!
   }
 
 interface EntityToExposureEventAssociationMixin
   {
+    subject: NamedThing!
+    predicate: PredicateType!
     object: ExposureEvent!
   }
 
 interface EntityToFeatureOrDiseaseQualifiersMixin
   {
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 interface EntityToOutcomeAssociationMixin
   {
+    subject: NamedThing!
+    predicate: PredicateType!
     object: Outcome!
   }
 
@@ -2407,10 +2453,15 @@ type EntityToPhenotypicFeatureAssociation
 type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
   {
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    subject: NamedThing!
+    predicate: PredicateType!
     object: PhenotypicFeature!
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2674,13 +2725,29 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     category: [CategoryType]
     subject: ExposureEvent!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
     hasPercentage: Double
+  }
+
+interface FeatureOrDiseaseQualifiersToEntityMixin
+  {
+    frequencyQualifier: FrequencyValue
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 type Food
@@ -2732,6 +2799,9 @@ type FoodAdditive
 interface FrequencyQualifierMixin
   {
     frequencyQualifier: FrequencyValue
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 interface FrequencyQuantifier
@@ -2861,15 +2931,15 @@ type GeneAffectsChemicalAssociation
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectContextQualifier: AnatomicalEntity
+    objectDirectionQualifier: DirectionQualifierEnum
+    objectDerivativeQualifier: ChemicalEntityDerivativeEnum
     causalMechanismQualifier: CausalMechanismQualifierEnum
     anatomicalContextQualifier: AnatomicalEntity
     qualifiedPredicate: String
+    speciesContextQualifier: OrganismTaxon
     subject: GeneOrGeneProduct!
     predicate: PredicateType!
     object: ChemicalEntity!
-    objectDerivativeQualifier: ChemicalEntityDerivativeEnum
-    objectDirectionQualifier: DirectionQualifierEnum
-    speciesContextQualifier: OrganismTaxon
   }
 
 type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
@@ -2909,8 +2979,9 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     objectDirectionQualifier: DirectionQualifierEnum
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -2988,8 +3059,9 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -3057,8 +3129,9 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     objectDirectionQualifier: DirectionQualifierEnum
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -3107,8 +3180,9 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     object: DiseaseOrPhenotypicFeature!
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -3119,6 +3193,8 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
 interface GeneToEntityAssociationMixin
   {
     subject: GeneOrGeneProduct!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type GeneToExpressionSiteAssociation
@@ -3468,8 +3544,9 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     objectDirectionQualifier: DirectionQualifierEnum
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -3644,8 +3721,11 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     predicate: PredicateType!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     subject: Genotype!
   }
 
@@ -3686,13 +3766,18 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     predicate: PredicateType!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 interface GenotypeToEntityAssociationMixin
   {
     subject: Genotype!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type GenotypeToGeneAssociation
@@ -3808,8 +3893,11 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     predicate: PredicateType!
     subject: Genotype!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -4121,9 +4209,9 @@ type JournalArticle
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
     publishedIn: Uriorcurie!
     isoAbbreviation: String
     volume: String
@@ -4270,6 +4358,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
 interface MacromolecularMachineToEntityAssociationMixin
   {
     subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type MacromolecularMachineToMolecularActivityAssociation implements MacromolecularMachineToEntityAssociationMixin
@@ -4383,8 +4473,8 @@ type MaterialSampleDerivationAssociation
     type: [String]
     category: [CategoryType]
     subject: MaterialSample!
-    object: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
   }
 
 type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
@@ -4428,6 +4518,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
 interface MaterialSampleToEntityAssociationMixin
   {
     subject: MaterialSample!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type MicroRNA
@@ -4452,6 +4544,7 @@ interface ModelToDiseaseAssociationMixin
   {
     subject: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
   }
 
 type MolecularActivity implements Occurrent, OntologyClass
@@ -4664,8 +4757,6 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    subject: NamedThing!
-    object: NamedThing!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4691,11 +4782,14 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    predicate: PredicateType!
+    subject: NamedThing!
     subjectAspectQualifier: String
     subjectContextQualifier: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
     objectAspectQualifier: String
     objectContextQualifier: OntologyClass
+    populationContextQualifier: PopulationOfIndividualOrganisms
   }
 
 type NoncodingRNAProduct
@@ -4865,6 +4959,8 @@ type OrganismTaxon
 interface OrganismTaxonToEntityAssociation
   {
     subject: OrganismTaxon!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssociation
@@ -5113,8 +5209,11 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     category: [CategoryType]
     subject: OrganismalEntity!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 interface Outcome
@@ -5219,9 +5318,9 @@ type Patent
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
   }
 
 interface PathognomonicityQuantifier
@@ -5372,6 +5471,73 @@ type PhenotypicFeature
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+  }
+
+type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociationMixin, PhenotypicFeatureToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    subject: NamedThing!
+    object: NamedThing!
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    predicate: PredicateType!
+    frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+  }
+
+type PhenotypicFeatureToEntityAssociationMixin implements FrequencyQuantifier
+  {
+    frequencyQualifier: FrequencyValue
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    sexQualifier: BiologicalSex
+    subject: PhenotypicFeature!
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type PhenotypicQuality
@@ -5629,9 +5795,9 @@ type PreprintPublication
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
   }
 
 type Procedure implements ActivityAndBehavior
@@ -5770,9 +5936,9 @@ type Publication
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
   }
 
 type QuantityValue
@@ -5789,7 +5955,6 @@ type ReactionToCatalystAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5815,6 +5980,7 @@ type ReactionToCatalystAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
+    predicate: PredicateType!
     stoichiometry: Integer
     reactionDirection: ReactionDirectionEnum
     reactionSide: ReactionSideEnum
@@ -5830,7 +5996,6 @@ type ReactionToParticipantAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5856,6 +6021,7 @@ type ReactionToParticipantAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
+    predicate: PredicateType!
     object: ChemicalEntity!
     stoichiometry: Integer
     reactionDirection: ReactionDirectionEnum
@@ -6147,8 +6313,8 @@ type Serial
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
-    name: LabelType
     publicationType: [String]!
+    name: LabelType
     isoAbbreviation: String
     volume: String
     issue: String
@@ -6560,8 +6726,11 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     predicate: PredicateType!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     subject: SequenceVariant!
   }
 
@@ -6602,13 +6771,18 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     predicate: PredicateType!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 interface VariantToEntityAssociationMixin
   {
     subject: SequenceVariant!
+    predicate: PredicateType!
+    object: NamedThing!
   }
 
 type VariantToGeneAssociation implements VariantToEntityAssociationMixin
@@ -6728,8 +6902,11 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     category: [CategoryType]
     subject: SequenceVariant!
     frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -6837,9 +7014,9 @@ type WebPage
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
+    publicationType: [String]!
     id: String!
     name: LabelType
-    publicationType: [String]!
   }
 
 type Zygosity

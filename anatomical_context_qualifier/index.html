@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -509,6 +598,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -539,7 +637,8 @@
 <div class="highlight-box"><strong>Description:</strong><i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).</i><br>
 
 
- <strong> Notes:</strong> Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’  combines with a core concept of ‘neuron’  to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies  taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values  here, the examples below are intended to help clarify the content of the CURIEs. 
+<br>
+ <strong> Notes:</strong> Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’ combines with a core concept of ‘neuron’ to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
@@ -589,6 +688,25 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anatomical_context_qualifier</td>
+<td>blood</td>
+</tr>
+<tr>
+<td>anatomical_context_qualifier</td>
+<td>cerebral cortext</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
@@ -598,11 +716,11 @@ description: A statement qualifier representing an anatomical location where an 
   location).
 notes:
 - Anatomical context values can be any term from UBERON. For example, the context
-  qualifier ‘cerebral cortext’  combines with a core concept of ‘neuron’  to express
+  qualifier ‘cerebral cortext’ combines with a core concept of ‘neuron’ to express
   the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier
-  applies  taxonomic context, e.g. species-specific molecular activity.  Ontology
-  CURIEs are expected as values  here, the examples below are intended to help clarify
-  the content of the CURIEs.
+  applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs
+  are expected as values here, the examples below are intended to help clarify the
+  content of the CURIEs.
 examples:
 - value: blood
 - value: cerebral cortext

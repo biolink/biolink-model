@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -545,9 +634,10 @@
 
 
 <h1 id="slot-treats"><strong> Slot: treats </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting  in the first place.  ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there  is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for  the condition, or is an otherwise established treatment in the medical community (e.g. a  widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or  ‘beneficial in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence  can however be created as predictions (knowledge_level: prediction) and should point to  the more foundational asserted edges that support them.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is an otherwise established treatment in the medical community (e.g. a widely-accepted or formally recommended off-label use). In the absence of such evidence, weaker predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence can however be created as predictions (knowledge_level: prediction) and should point to the more foundational asserted edges that support them.</i><br>
    <strong>Aliases:</strong> is substance that treats, indicated for, ameliorates or prevents condition<br>
 
+<br>
 
 </div>
 
@@ -573,13 +663,13 @@
 <tbody>
 <tr>
 <td><a href="../ameliorates_condition/">ameliorates_condition</a></td>
-<td>Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is  able to ameliorate symptoms, stabilize progression, or cure the condition.</td>
+<td>Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is able to ameliorate symptoms, stabilize progression, or cure the condition.</td>
 <td>disease or phenotypic feature</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../preventative_for_condition/">preventative_for_condition</a></td>
-<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),  and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.</td>
+<td>Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.</td>
 <td>disease or phenotypic feature</td>
 <td></td>
 </tr>
@@ -610,16 +700,16 @@ annotations:
     value: true
 description: 'Holds between an intervention (substance, procedure, or activity) and
   a medical condition (disease or phenotypic feature), and states that the intervention
-  is able to ameliorate,  stabilize, or cure the condition or delay, prevent, or reduce
-  the risk of it manifesting  in the first place.  ‘Treats’ edges should be asserted
-  (knowledge_level: assertion) only in cases where there  is strong supporting evidence
-  - i.e. the intervention is approved or in phase 4 trials for  the condition, or
-  is an otherwise established treatment in the medical community (e.g. a  widely-accepted
+  is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce
+  the risk of it manifesting in the first place. ‘Treats’ edges should be asserted
+  (knowledge_level: assertion) only in cases where there is strong supporting evidence
+  - i.e. the intervention is approved or in phase 4 trials for the condition, or is
+  an otherwise established treatment in the medical community (e.g. a widely-accepted
   or formally recommended off-label use). In the absence of such evidence, weaker
-  predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or  ‘beneficial
-  in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence  can
+  predicates should be used in asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial
+  in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence can
   however be created as predictions (knowledge_level: prediction) and should point
-  to  the more foundational asserted edges that support them.'
+  to the more foundational asserted edges that support them.'
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
@@ -629,7 +719,6 @@ aliases:
 - ameliorates or prevents condition
 exact_mappings:
 - DRUGBANK:treats
-- SEMMEDDB:TREATS
 - WIKIDATA_PROPERTY:P2175
 related_mappings:
 - MONDO:disease_responds_to

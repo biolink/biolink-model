@@ -174,26 +174,57 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Visualizations
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../categories.html">
 <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../predicates.html">
 <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../qualifiers.html">
+<span class="md-ellipsis">
+    Qualifiers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../associations.html">
+<span class="md-ellipsis">
+    Associations
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../aspects.html">
 <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../faq/">
@@ -248,6 +279,13 @@
 <a class="md-nav__link" href="#valid-id-prefixes">
 <span class="md-ellipsis">
       Valid ID Prefixes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      Example values
     </span>
 </a>
 </li>
@@ -314,6 +352,7 @@
 <th>Name</th>
 <th>Cardinality and Range</th>
 <th>Inheritance</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
@@ -321,6 +360,7 @@
 <td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1300,6 +1340,18 @@
 </tr>
 <tr>
 <td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../subject_context_qualifier/">subject_context_qualifier</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../object_context_qualifier/">object_context_qualifier</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
 <td><a href="../qualifiers/">qualifiers</a></td>
 <td>range</td>
 <td><a href="./">OntologyClass</a></td>
@@ -1984,6 +2036,36 @@
 </tr>
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>range</td>
+<td><a href="./">OntologyClass</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
 <td><a href="../object_category_closure/">object_category_closure</a></td>
 <td>range</td>
 <td><a href="./">OntologyClass</a></td>
@@ -3235,6 +3317,21 @@
 <tr>
 <td>KEGG.BRITE</td>
 <td><a href="./">OntologyClass</a><br/></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OntologyClass</td>
+<td>UBERON:0000955</td>
 </tr>
 </tbody>
 </table>

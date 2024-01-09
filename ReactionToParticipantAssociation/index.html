@@ -174,26 +174,57 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Visualizations
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../categories.html">
 <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../predicates.html">
 <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../qualifiers.html">
+<span class="md-ellipsis">
+    Qualifiers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../associations.html">
+<span class="md-ellipsis">
+    Associations
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../aspects.html">
 <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../faq/">
@@ -378,6 +409,7 @@
 <th>Name</th>
 <th>Cardinality and Range</th>
 <th>Inheritance</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
@@ -385,186 +417,223 @@
 <td><a href="../stoichiometry/">stoichiometry</a>: <br/> <i> the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers. </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>direct</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../reaction_direction/">reaction_direction</a>: <br/> <i> the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.) </i></td>
 <td>0..1 <br/> <a href="../ReactionDirectionEnum/">ReactionDirectionEnum</a></td>
 <td>direct</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../reaction_side/">reaction_side</a>: <br/> <i> the side of a reaction being modeled (ie: left or right) </i></td>
 <td>0..1 <br/> <a href="../ReactionSideEnum/">ReactionSideEnum</a></td>
 <td>direct</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> the chemical entity or entity that is an interactor </i></td>
 <td>1..1 <br/> <a href="../MolecularEntity/">MolecularEntity</a></td>
-<td><a href="../Association/">Association</a></td>
+<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a></td>
+<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the chemical element that is the target of the statement </i></td>
 <td>1..1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../Association/">Association</a></td>
+<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../qualifier/">qualifier</a>: <br/> <i> grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../qualifiers/">qualifiers</a>: <br/> <i> connects an association to qualifiers that modify or qualify the meaning of that association </i></td>
 <td>0..* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../publications/">publications</a>: <br/> <i> One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement. </i></td>
+<td><a href="../publications/">publications</a>: <br/> <i> One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement. </i></td>
 <td>0..* <br/> <a href="../Publication/">Publication</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../has_evidence/">has_evidence</a>: <br/> <i> connects an association to an instance of supporting evidence </i></td>
 <td>0..* <br/> <a href="../EvidenceType/">EvidenceType</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../knowledge_source/">knowledge_source</a>: <br/> <i> An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../primary_knowledge_source/">primary_knowledge_source</a>: <br/> <i> The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a>: <br/> <i> An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../timepoint/">timepoint</a>: <br/> <i> a point in time </i></td>
 <td>0..1 <br/> <a href="../TimeType/">TimeType</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../original_subject/">original_subject</a>: <br/> <i> used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../original_predicate/">original_predicate</a>: <br/> <i> used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../subject_category/">subject_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../subject_category/">subject_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>biolink:Gene</td>
 </tr>
 <tr>
-<td><a href="../object_category/">object_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../object_category/">object_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>biolink:Disease</td>
 </tr>
 <tr>
-<td><a href="../subject_closure/">subject_closure</a>: <br/> <i> Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../subject_closure/">subject_closure</a>: <br/> <i> Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../object_closure/">object_closure</a>: <br/> <i> Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../object_closure/">object_closure</a>: <br/> <i> Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>['MONDO:0000167', 'MONDO:0005395']</td>
 </tr>
 <tr>
-<td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>['biolink:Gene", "biolink:NamedThing']</td>
 </tr>
 <tr>
-<td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>['biolink:Disease", "biolink:NamedThing']</td>
 </tr>
 <tr>
-<td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>NCBIGene</td>
 </tr>
 <tr>
-<td><a href="../object_namespace/">object_namespace</a>: <br/> <i> Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../object_namespace/">object_namespace</a>: <br/> <i> Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>MONDO</td>
 </tr>
 <tr>
-<td><a href="../subject_label_closure/">subject_label_closure</a>: <br/> <i> Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a>: <br/> <i> Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>['BRACA1']</td>
 </tr>
 <tr>
-<td><a href="../object_label_closure/">object_label_closure</a>: <br/> <i> Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td><a href="../object_label_closure/">object_label_closure</a>: <br/> <i> Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
+<td>breast cancer, cancer</td>
 </tr>
 <tr>
 <td><a href="../retrieval_source_ids/">retrieval_source_ids</a>: <br/> <i> A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge. </i></td>
 <td>0..* <br/> <a href="../RetrievalSource/">RetrievalSource</a></td>
 <td><a href="../Association/">Association</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
 <td>0..* <br/> <a href="../CategoryType/">CategoryType</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../type/">type</a>: <br/> <i> rdf:type of biolink:Association should be fixed at rdf:Statement </i></td>
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
 <td>0..1 <br/> <a href="../NarrativeText/">NarrativeText</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
 <td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../deprecated/">deprecated</a>: <br/> <i> A boolean flag indicating that an entity is no longer considered current or valid. </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -582,6 +651,28 @@ slot_usage:
     name: subject
     domain_of:
     - association
+    - cell line to entity association mixin
+    - chemical entity to entity association mixin
+    - drug to entity association mixin
+    - chemical to entity association mixin
+    - case to entity association mixin
+    - chemical to chemical association
+    - named thing associated with likelihood of named thing association
+    - material sample to entity association mixin
+    - material sample derivation association
+    - disease to entity association mixin
+    - entity to exposure event association mixin
+    - entity to outcome association mixin
+    - frequency qualifier mixin
+    - entity to phenotypic feature association mixin
+    - disease or phenotypic feature to entity association mixin
+    - entity to disease or phenotypic feature association mixin
+    - genotype to entity association mixin
+    - gene to entity association mixin
+    - variant to entity association mixin
+    - model to disease association mixin
+    - macromolecular machine to entity association mixin
+    - organism taxon to entity association
     range: molecular entity
 defining_slots:
 - subject

@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -536,10 +625,11 @@
 
 
 <h1 id="slot-applied_to_treat-multivalued"><strong> Slot: applied_to_treat </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,  procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</i><br>
    <strong>Aliases:</strong> administered to treat, used to treat, given to treat<br>
 
- <strong> Notes:</strong> This predicate is used simply to report observations of use in the real world, and is agnostic to whether the  treatment is approved for or might be effective in treating the condition. The treatment could be taken by a  patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In  practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging  instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level  of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used /  prescribed for use at some point in time). 
+<br>
+ <strong> Notes:</strong> This predicate is used simply to report observations of use in the real world, and is agnostic to whether the treatment is approved for or might be effective in treating the condition. The treatment could be taken by a patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). 
 </div>
 
 <p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a><br>
@@ -578,19 +668,17 @@ annotations:
     tag: canonical_predicate
     value: true
 description: Holds between an  substance, procedure, or activity and a medical condition,
-  and reports that the  substance,  procedure, or activity was actually taken by one
+  and reports that the  substance, procedure, or activity was actually taken by one
   or more patients with the intent of treating the condition.
 notes:
 - This predicate is used simply to report observations of use in the real world, and
-  is agnostic to whether the  treatment is approved for or might be effective in treating
-  the condition. The treatment could be taken by a  patient on their own accord or
-  prescribed by a clinician, as an off-label or an approved intervention. In  practice,
+  is agnostic to whether the treatment is approved for or might be effective in treating
+  the condition. The treatment could be taken by a patient on their own accord or
+  prescribed by a clinician, as an off-label or an approved intervention. In practice,
   it would be used to represent records/statements from patient self-reporting sources
   like FAERS / AEOLUS where patients directly report the condition for which they
-  took a drug, or statements from a database cataloging  instances of off-label prescription
-  of drugs for specific conditions (e.g. here, here, here). A knowledge level  of
-  Observation MUST be used with this predicate (because it is merely reporting that
-  an intervention was used /  prescribed for use at some point in time).
+  took a drug, or statements from a database cataloging instances of off-label prescription
+  of drugs for specific conditions (e.g. here, here, here).
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model

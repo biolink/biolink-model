@@ -390,12 +390,49 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../categories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Visualize Categories
+    Classes (categories)
   </span>
   
 
@@ -403,9 +440,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -415,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Visualize Predicates
+    Predicates
   </span>
   
 
@@ -423,9 +461,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qualifiers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../associations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -435,11 +516,19 @@
         
   
   <span class="md-ellipsis">
-    Visualize Aspects
+    Aspects
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -539,7 +628,8 @@
 <div class="highlight-box"><strong>Description:</strong><i> The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.</i><br>
 
 
- <strong> Notes:</strong> For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then  incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to  the NCATS ARS. The retrieval path for this Edge is as follows:  ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov The "primary knowledge source" for this edge is "infores:clinical-trials-gov".  "infores:chembl" and "infores:molecular_data_provider" are listed in the "aggregator knowledge source" property. 
+<br>
+ <strong> Notes:</strong> For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to the NCATS ARS. The retrieval path for this Edge is as follows: ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov The "primary knowledge source" for this edge is "infores:clinical-trials-gov".  "infores:chembl" and "infores:molecular_data_provider" are listed in the "aggregator knowledge source" property. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
@@ -582,9 +672,9 @@ description: The most upstream source of the knowledge expressed in an Associati
   association.  &quot;aggregator knowledge source&quot; can be used to capture non-primary sources.
 notes:
 - 'For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org,
-  is aggregated by ChEMBL, then  incorporated into the MolePro KP, then sent via TRAPI
-  message to the ARAGORN ARA, and finally sent to  the NCATS ARS. The retrieval path
-  for this Edge is as follows:  ARS--retrieved_from--&gt;  ARAGORN  --retrieved_from--&gt;   MolePro  --retrieved_from--&gt;
+  is aggregated by ChEMBL, then incorporated into the MolePro KP, then sent via TRAPI
+  message to the ARAGORN ARA, and finally sent to the NCATS ARS. The retrieval path
+  for this Edge is as follows: ARS--retrieved_from--&gt;  ARAGORN  --retrieved_from--&gt;   MolePro  --retrieved_from--&gt;
   ChEMBL --retrieved_from--&gt;  ClinicalTrials.gov The &quot;primary knowledge source&quot; for
   this edge is &quot;infores:clinical-trials-gov&quot;.  &quot;infores:chembl&quot; and &quot;infores:molecular_data_provider&quot;
   are listed in the &quot;aggregator knowledge source&quot; property.'
