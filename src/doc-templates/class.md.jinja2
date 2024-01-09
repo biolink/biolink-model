@@ -32,7 +32,7 @@
 | Name | Cardinality and Range | Inheritance | Examples |
 | ---  | --- | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
-{%- for slot in gen.git checkout -b mixin_inheritance_get_indirect_slots(element) -%}
+{%- for slot in gen.get_direct_slots(element) -%}
 | {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | direct | {% if slot.examples %}{{ slot.examples | map(attribute='value') | join(', ') }}{% endif %} |
 {% endfor -%}
 {% endif -%}
