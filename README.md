@@ -57,15 +57,15 @@ be relatively simple to view and edit in its native form.
 
 The yaml definition is currently used to derive:
 
-  - [JSON Schema](json-schema)
+  - [JSON Schema](https://github.com/biolink/biolink-model/blob/master/project/jsonschema/biolink_model.schema.json)
   - [Python dataclasses](biolink/model.py)
   - [Java code gen](java)
-  - [ProtoBuf definitions](biolink-model.proto)
-  - [GraphQL](biolink-model.graphql)
+  - [ProtoBuf definitions](https://github.com/biolink/biolink-model/blob/master/project/protobuf/biolink_model.proto)
+  - [GraphQL](https://github.com/biolink/biolink-model/blob/master/project/graphql/biolink_model.graphql)
   - [RDF](biolink-model.ttl)
-  - [OWL](biolink-model.owl.ttl)
-  - [RDF Shape Expressions](biolink-model.shex)
-  - [JSON-LD context](context.jsonld)
+  - [OWL](https://github.com/biolink/biolink-model/blob/master/project/owl/biolink_model.owl.ttl)
+  - [RDF Shape Expressions](https://github.com/biolink/biolink-model/blob/master/project/shex/biolink_model.shex)
+  - [JSON-LD context](https://github.com/biolink/biolink-model/blob/master/project/jsonld/biolink_model.context.jsonld)
   - [Graphviz](graphviz)
   - [GOlr YAML schemas](golr-views)
     - these can be compiled down to Solr XML schemas
