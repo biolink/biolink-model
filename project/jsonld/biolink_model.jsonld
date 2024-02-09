@@ -31479,6 +31479,7 @@
       ],
       "is_a": "Association",
       "mixins": [
+        "FrequencyQuantifier",
         "EntityToPhenotypicFeatureAssociationMixin",
         "DiseaseToEntityAssociationMixin"
       ],
@@ -31517,17 +31518,17 @@
         "association_category",
         "disease_to_phenotypic_feature_association_subject",
         "disease_to_phenotypic_feature_association_object",
+        "has_count",
+        "has_total",
+        "has_quotient",
+        "has_percentage",
         "frequency_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage"
+        "sex_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation",
@@ -34361,9 +34362,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-01-11T21:14:01",
-  "source_file_size": 376530,
-  "generation_date": "2024-01-11T21:14:09",
+  "source_file_date": "2024-02-09T23:02:26",
+  "source_file_size": 376559,
+  "generation_date": "2024-02-09T23:02:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -1958,6 +1958,10 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  categoryType category = 0
   disease subject = 0
   phenotypicFeature object = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -1965,10 +1969,6 @@ message DiseaseToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
