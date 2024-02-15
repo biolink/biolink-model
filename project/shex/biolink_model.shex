@@ -1141,23 +1141,25 @@ linkml:Sparqlpath xsd:string
 <DiseaseToPhenotypicFeatureAssociation> CLOSED {
     (  $<DiseaseToPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
+          &<FrequencyQuantifier_tes> ;
+          rdf:type [ <FrequencyQuantifier> ] ? ;
           &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           &<DiseaseToEntityAssociationMixin_tes> ;
           rdf:type [ <DiseaseToEntityAssociationMixin> ] ? ;
           rdf:subject @<Disease> ;
           rdf:object @<PhenotypicFeature> ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ? ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
           <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @linkml:Integer ? ;
-          <has_total> @linkml:Integer ? ;
-          <has_quotient> @linkml:Double ? ;
-          <has_percentage> @linkml:Double ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
     )

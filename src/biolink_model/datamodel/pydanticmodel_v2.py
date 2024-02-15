@@ -5699,10 +5699,14 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
     
 
-class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin, Association):
+class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin, Association, FrequencyQuantifier):
     """
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
     """
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     subject: str = Field(..., description="""disease class""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -5738,10 +5742,6 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
-    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
-    has_quotient: Optional[float] = Field(None)
-    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
