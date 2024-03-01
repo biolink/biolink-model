@@ -3554,14 +3554,7 @@ slots:
     mixins:
       - treats or applied or studied to treat
     annotations:
-      canonical_predicate: true
-
-  studied for treatment with:
-    is_a: related to at instance level
-    domain: disease or phenotypic feature
-    range: chemical or drug or treatment
-    # range: chemical or drug or treatment
-    inverse: studied to treat
+      canonical_predicate: tru
 
   in clinical trials for:
     is_a: studied to treat
@@ -3641,7 +3634,7 @@ slots:
     # TODO: need inverse of beneficial_in_models_for
 
   models demonstrating benefits for:
-    is_a: treated in preclinical studies by
+    is_a: tested by preclinical trials of
     inverse: beneficial in models for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
