@@ -3521,6 +3521,7 @@ slots:
       - MONDO:disease_responds_to
 
   treated by:
+    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
     # range: chemical or drug or treatment
@@ -3695,6 +3696,7 @@ slots:
       - SEMMEDDB:TREATS
 
   subject of treatment, application, or study for treatment by:
+    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
     inverse: treats or applied or studied to treat
