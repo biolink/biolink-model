@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/studied_for_treatment_with/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/tested_by_preclinical_trials_of/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: studied_for_treatment_with - Biolink Model Documentation</title>
+        <title>Slot: tested_by_preclinical_trials_of - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-studied_for_treatment_with" class="md-skip">
+        <a href="#slot-tested_by_preclinical_trials_of" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: studied_for_treatment_with </strong>
+              <strong> Slot: tested_by_preclinical_trials_of </strong>
             
           </span>
         </div>
@@ -580,6 +580,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -606,26 +615,38 @@
   
 
 
-<h1 id="slot-studied_for_treatment_with"><strong> Slot: studied_for_treatment_with </strong></h1>
+<h1 id="slot-tested_by_preclinical_trials_of"><strong> Slot: tested_by_preclinical_trials_of </strong></h1>
 <div class="highlight-box">
 
-  <strong>Inverse:</strong> studied to treat</a></small><br>
+  <strong>Inverse:</strong> in preclinical trials for</a></small><br>
 <br>
 
 </div>
 
 <p><strong>Domain:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a><br>
 <strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
-<!-- no inheritance hierarchy -->
-
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../treated_by/">treated_by</a><ul>
+<li><a href="../treated_in_studies_by/">treated_in_studies_by</a><ul>
+<li><strong>tested_by_preclinical_trials_of</strong><ul>
+<li><a href="../models_demonstrating_benefits_for/">models_demonstrating_benefits_for</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: studied for treatment with
+<pre><code class="language-yaml">name: tested by preclinical trials of
 from_schema: https://w3id.org/biolink/biolink-model
+is_a: treated in studies by
 domain: disease or phenotypic feature
-alias: studied_for_treatment_with
-inverse: studied to treat
+alias: tested_by_preclinical_trials_of
+inverse: in preclinical trials for
 range: chemical or drug or treatment
 
 </code></pre>
