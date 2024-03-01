@@ -339,10 +339,6 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
-                        "name": "condition_predisposed_by",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
                         "name": "contains_process",
                         "parent": "related_to_at_instance_level"
                     },
@@ -718,7 +714,17 @@
                     },
                     {
                         "name": "likelihood_affected_by",
-                        "parent": "related_to_at_instance_level"
+                        "parent": "related_to_at_instance_level",
+                        "children": [
+                            {
+                                "name": "condition_predisposed_by",
+                                "parent": "likelihood_affected_by"
+                            },
+                            {
+                                "name": "condition_promoted_by",
+                                "parent": "likelihood_affected_by"
+                            }
+                        ]
                     },
                     {
                         "name": "located_in",
@@ -1016,6 +1022,10 @@
                     },
                     {
                         "name": "translation_of",
+                        "parent": "related_to_at_instance_level"
+                    },
+                    {
+                        "name": "treatment_applications_from",
                         "parent": "related_to_at_instance_level"
                     }
                 ]

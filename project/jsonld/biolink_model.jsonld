@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.1.0",
+  "version": "4.1.4",
   "imports": [
     "linkml:types"
   ],
@@ -7565,7 +7565,23 @@
       "multivalued": true,
       "inherited": true,
       "owner": "promotes_condition",
+      "inverse": "condition_promoted_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "condition_promoted_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "likelihood_affected_by",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "condition_promoted_by",
+      "inverse": "promotes_condition",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7602,11 +7618,8 @@
     {
       "name": "condition_predisposed_by",
       "definition_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
-      "in_subset": [
-        "translator_minimal"
-      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
+      "is_a": "likelihood_affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
       "multivalued": true,
@@ -7770,7 +7783,7 @@
       "annotations": [
         {
           "tag": "canonical_predicate",
-          "value": true,
+          "value": "tru",
           "@type": "Annotation"
         }
       ],
@@ -7788,20 +7801,8 @@
       "multivalued": true,
       "inherited": true,
       "owner": "studied_to_treat",
-      "inverse": "studied_for_treatment_with",
+      "inverse": "treated_in_studies_by",
       "range": "DiseaseOrPhenotypicFeature",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "studied_for_treatment_with",
-      "definition_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/studied_for_treatment_with",
-      "owner": "studied_for_treatment_with",
-      "inverse": "studied_to_treat",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7831,7 +7832,47 @@
       "multivalued": true,
       "inherited": true,
       "owner": "in_clinical_trials_for",
+      "inverse": "tested_by_clinical_trials_of",
       "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tested_by_clinical_trials_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "treated_in_studies_by",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
+      "owner": "tested_by_clinical_trials_of",
+      "inverse": "in_clinical_trials_for",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "treated_in_studies_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "treated_by",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
+      "owner": "treated_in_studies_by",
+      "inverse": "studied_to_treat",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tested_by_preclinical_trials_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "treated_in_studies_by",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
+      "owner": "tested_by_preclinical_trials_of",
+      "inverse": "in_preclinical_trials_for",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7858,6 +7899,7 @@
       "multivalued": true,
       "inherited": true,
       "owner": "in_preclinical_trials_for",
+      "inverse": "tested_by_preclinical_trials_of",
       "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
@@ -7888,7 +7930,21 @@
       "multivalued": true,
       "inherited": true,
       "owner": "beneficial_in_models_for",
+      "inverse": "models_demonstrating_benefits_for",
       "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "models_demonstrating_benefits_for",
+      "definition_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "tested_by_preclinical_trials_of",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
+      "owner": "models_demonstrating_benefits_for",
+      "inverse": "beneficial_in_models_for",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7923,7 +7979,23 @@
       "multivalued": true,
       "inherited": true,
       "owner": "applied_to_treat",
+      "inverse": "treatment_applications_from",
       "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "treatment_applications_from",
+      "definition_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "related_to_at_instance_level",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "treatment_applications_from",
+      "inverse": "applied_to_treat",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7948,8 +8020,23 @@
         "https://skr3.nlm.nih.gov/SemMedDBTREATS"
       ],
       "mixin": true,
+      "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
-      "range": "string",
+      "inverse": "subject_of_treatment_application_or_study_for_treatment_by",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subject_of_treatment_application_or_study_for_treatment_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_of_treatment_application_or_study_for_treatment_by",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mixin": true,
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_of_treatment_application_or_study_for_treatment_by",
+      "owner": "subject_of_treatment_application_or_study_for_treatment_by",
+      "inverse": "treats_or_applied_or_studied_to_treat",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -34362,9 +34449,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-01T00:50:00",
-  "source_file_size": 376559,
-  "generation_date": "2024-03-01T00:50:08",
+  "source_file_date": "2024-02-29T17:01:03",
+  "source_file_size": 377631,
+  "generation_date": "2024-02-29T17:01:12",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.1.0
+version: 4.1.4
 
 
 ## ------------
@@ -3407,6 +3407,12 @@ slots:
     in_subset:
       - translator_minimal
 
+  condition promoted by:
+    is_a: likelihood affected by
+    inverse: promotes condition
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
   predisposes to condition:
     aliases: ['risk factor for']
     is_a: affects likelihood of
@@ -3423,12 +3429,10 @@ slots:
       - translator_minimal
 
   condition predisposed by:
+    is_a: likelihood affected by
     inverse: predisposes to condition
-    is_a: related to at instance level
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    in_subset:
-      - translator_minimal
 
   exacerbates condition:
     aliases: ['exacerbates', 'detrimental for condition']
@@ -3550,13 +3554,7 @@ slots:
     mixins:
       - treats or applied or studied to treat
     annotations:
-      canonical_predicate: true
-
-  studied for treatment with:
-    domain: disease or phenotypic feature
-    range: chemical or drug or treatment
-    # range: chemical or drug or treatment
-    inverse: studied to treat
+      canonical_predicate: tru
 
   in clinical trials for:
     is_a: studied to treat
@@ -3578,6 +3576,24 @@ slots:
     in_subset:
       - translator_minimal
   # TODO: add inverse
+
+  tested by clinical trials of:
+    is_a: treated in studies by
+    inverse: in clinical trials for
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
+  treated in studies by:
+    is_a: treated by
+    inverse: studied to treat
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
+  tested by preclinical trials of:
+    is_a: treated in studies by
+    inverse: in preclinical trials for
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
 
   in preclinical trials for:
     is_a: studied to treat
@@ -3617,6 +3633,12 @@ slots:
       - translator_minimal
     # TODO: need inverse of beneficial_in_models_for
 
+  models demonstrating benefits for:
+    is_a: tested by preclinical trials of
+    inverse: beneficial in models for
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
   applied to treat:
     aliases: ['administered to treat', 'used to treat', 'given to treat']
     is_a: related to at instance level
@@ -3640,6 +3662,12 @@ slots:
       - translator_minimal
    # TODO: need an inverse for taken to treat
 
+  treatment applications from:
+    is_a: related to at instance level
+    inverse: applied to treat
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
   treats or applied or studied to treat:
     mixin: true
     description: >-
@@ -3659,6 +3687,12 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:TREATS
+
+  subject of treatment, application, or study for treatment by:
+    mixin: true
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    inverse: treats or applied or studied to treat
 
   correlated with:
     is_a: associated with
