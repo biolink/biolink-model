@@ -211,6 +211,9 @@ gendoc: $(DOCDIR)
 	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
 	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
 	cp infores_catalog.yaml $(DOCDIR) ; \
+	cp information-resource.yaml $(DOCDIR) ; \
+	cp semmed-exclude-list.yaml $(DOCDIR) ; \
+	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
 	cp biolink-model.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \

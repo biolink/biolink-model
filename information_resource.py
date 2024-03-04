@@ -1,8 +1,8 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-04T09:12:26
+# Generation date: 2024-03-04T09:19:49
 # Schema: Biolink-Model-Information-Resource
 #
-# id: https://w3id.org/biolink/biolink-model/infores
+# id: https://w3id.org/biolink/information-resource
 # description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 

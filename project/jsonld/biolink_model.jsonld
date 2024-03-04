@@ -7510,6 +7510,9 @@
         "prophylactic for",
         "prevents"
       ],
+      "broad_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBPREVENTS"
+      ],
       "is_a": "affects_likelihood_of",
       "mixins": [
         "treats"
@@ -7601,6 +7604,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "risk factor for"
+      ],
+      "broad_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBPREDISPOSES"
       ],
       "is_a": "affects_likelihood_of",
       "mixins": [
@@ -34455,9 +34461,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-04T09:13:27",
-  "source_file_size": 377853,
-  "generation_date": "2024-03-04T09:13:37",
+  "source_file_date": "2024-03-04T09:16:53",
+  "source_file_size": 377948,
+  "generation_date": "2024-03-04T09:17:02",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
