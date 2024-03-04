@@ -1,5 +1,36 @@
 CHANGES
 =======
+4.1.5
+-----
+
+
+4.1.4
+-----
+- Update README.md by @baig in #1449
+- adding inverses for treats hierarchy not currently inversed by @sierra-moxon in #1460
+https://github.com/biolink/biolink-model/compare/v4.1.3...v4.1.4
+
+4.1.3
+-----
+- Remove explicit rdflib dependency by @kevinschaper in #1459
+https://github.com/biolink/biolink-model/compare/v4.1.2...v4.1.3
+
+4.1.2
+-----
+- Bump jinja2 from 3.1.2 to 3.1.3 by @dependabot in #1446
+- Add frequency quantifier mixin to disease to phenotypic feature association by @kevinschaper in #1451
+- Exploring Agent/Service Provider infores updates Jan2024 by @colleenXu in #1450
+https://github.com/biolink/biolink-model/compare/v4.1.1...v4.1.2
+
+4.1.1
+-----
+- Add RO mapping for gene/condition relations by @cbizon in #1443
+- fix whitespace issues by @gprice1129 in #1441
+- Adding 'phenotypic feature to disease association' plus related mixins by @RichardBruskiewich in #1444
+- Documentation bug fixes and adding more examples and visualizations to help with the treats migration by @sierra-moxon in #1445
+
+https://github.com/biolink/biolink-model/compare/v4.1.0...v4.1.1
+
 4.1.0
 -----
 Summary: 4.1.0 implements the "treats" refactoring work, making "treats" a mixin. To view the new predicate
