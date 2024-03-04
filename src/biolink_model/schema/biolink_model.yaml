@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.1.4
+version: 4.1.5
 
 
 ## ------------
@@ -7248,7 +7248,6 @@ classes:
       - KEGG.GLYCAN   # G number
       - KEGG.DRUG     # D number
       - KEGG.ENVIRON  # E number
-      - UMLS
     slot_usage:
       id:
         examples:
@@ -9867,7 +9866,7 @@ classes:
   chemical affects gene association:
     description: >-
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
-      of on its abundance, activity,localization, processing, expression, etc.)
+      of its abundance, activity,localization, processing, expression, etc.)
     is_a: association
     slots:
       - subject form or variant qualifier
