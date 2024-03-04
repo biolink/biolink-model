@@ -25,6 +25,20 @@ predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_abundance_of
+  - mapped predicate: affects activity or abundance of
+    object aspect qualifier: activity or abundance
+    predicate: affects
+    qualified predicate: causes
+  - mapped predicate: increases activity or abundance of
+    object aspect qualifier: activity or abundance
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+  - mapped predicate: decreases activity or abundance of
+    object aspect qualifier: activity or abundance
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
   - mapped predicate: affects activity of
     object aspect qualifier: activity
     predicate: affects

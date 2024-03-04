@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.1.4
+version: 4.1.5
 
 
 ## ------------
@@ -3386,6 +3386,8 @@ slots:
       opposite_of: promotes condition
     in_subset:
       - translator_minimal
+    broad_mappings:
+      - SEMMEDDB:PREVENTS
 
   condition prevented by:
     inverse: preventative for condition
@@ -3427,6 +3429,8 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
+    broad_mappings:
+      - SEMMEDDB:PREDISPOSES
 
   condition predisposed by:
     is_a: likelihood affected by
@@ -3554,7 +3558,7 @@ slots:
     mixins:
       - treats or applied or studied to treat
     annotations:
-      canonical_predicate: tru
+      canonical_predicate: true
 
   in clinical trials for:
     is_a: studied to treat
@@ -5069,7 +5073,7 @@ slots:
       are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated
       in people taking warfarin as a preventative treatment for stroke).
     domain: chemical or drug or treatment
-    range: disease or phenotypic feature
+    range: biological entity
     annotations:
       canonical_predicate: true
       opposite_of: treats
@@ -5083,7 +5087,7 @@ slots:
 
   has contraindication:
     is_a: related to at instance level
-    domain: disease or phenotypic feature
+    domain: biological entity
     range: chemical or drug or treatment
     inverse: contraindicated in
 
@@ -7248,6 +7252,7 @@ classes:
       - KEGG.GLYCAN   # G number
       - KEGG.DRUG     # D number
       - KEGG.ENVIRON  # E number
+      - KEGG
       - UMLS
     slot_usage:
       id:
@@ -8051,6 +8056,14 @@ classes:
       - STY:T019
        # Acquired Abnormality
       - STY:T020
+       # Mental or behavioral disfunction
+      - STY:T048
+      # (Cell or Molecular Dysfunction)
+      - STY:T049
+      # (Neoplastic Process)
+      - STY:T191
+      # disease susceptibility
+      - MONDO:0042489
     id_prefixes:
       - MONDO
       - DOID
@@ -8105,6 +8118,7 @@ classes:
       - FYPO:0000001  # fission yeast phenotype
       - APO:0000017  # phenotype
       - TO:0000387  # more narrowly defined here for plants; our definition conflates trait and phenotype.
+      - STY:T190
     broad_mappings:
       - BFO:0000019  # quality
       - PATO:0000001  # quality
