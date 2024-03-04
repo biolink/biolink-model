@@ -19,4 +19,4 @@ jobs:
         uses: codespell-project/actions-codespell@v1
         with:
           ignore_words_list: amination,ehr,mor,nin,brite,mirgate,BRITE
-          skip: SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*
+          skip: SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*
