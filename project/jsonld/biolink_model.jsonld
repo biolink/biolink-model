@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "imports": [
     "linkml:types"
   ],
@@ -7510,6 +7510,9 @@
         "prophylactic for",
         "prevents"
       ],
+      "broad_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBPREVENTS"
+      ],
       "is_a": "affects_likelihood_of",
       "mixins": [
         "treats"
@@ -7601,6 +7604,9 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
         "risk factor for"
+      ],
+      "broad_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBPREDISPOSES"
       ],
       "is_a": "affects_likelihood_of",
       "mixins": [
@@ -7783,7 +7789,7 @@
       "annotations": [
         {
           "tag": "canonical_predicate",
-          "value": "tru",
+          "value": true,
           "@type": "Annotation"
         }
       ],
@@ -10610,7 +10616,7 @@
       "inherited": true,
       "owner": "contraindicated_in",
       "inverse": "has_contraindication",
-      "range": "DiseaseOrPhenotypicFeature",
+      "range": "BiologicalEntity",
       "@type": "SlotDefinition"
     },
     {
@@ -10628,7 +10634,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/has_contraindication",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
-      "domain": "DiseaseOrPhenotypicFeature",
+      "domain": "BiologicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_contraindication",
       "multivalued": true,
       "inherited": true,
@@ -24808,6 +24814,7 @@
         "KEGG.GLYCAN",
         "KEGG.DRUG",
         "KEGG.ENVIRON",
+        "KEGG",
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/SmallMolecule",
@@ -26512,7 +26519,11 @@
       ],
       "narrow_mappings": [
         "STY:T019",
-        "STY:T020"
+        "STY:T020",
+        "STY:T048",
+        "STY:T049",
+        "STY:T191",
+        "MONDO:0042489"
       ],
       "is_a": "DiseaseOrPhenotypicFeature",
       "slots": [
@@ -26596,7 +26607,8 @@
         "XPO:00000000",
         "FYPO:0000001",
         "APO:0000017",
-        "TO:0000387"
+        "TO:0000387",
+        "STY:T190"
       ],
       "broad_mappings": [
         "BFO:0000019",
@@ -34449,9 +34461,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-01T01:27:32",
-  "source_file_size": 377631,
-  "generation_date": "2024-03-01T01:27:39",
+  "source_file_date": "2024-03-04T09:48:27",
+  "source_file_size": 377948,
+  "generation_date": "2024-03-04T09:48:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

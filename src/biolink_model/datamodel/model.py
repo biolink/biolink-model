@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-01T01:28:00
+# Generation date: 2024-03-04T09:49:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -25,7 +25,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.1.4"
+version = "4.1.5"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -14126,13 +14126,13 @@ slots.is_side_effect_of = Slot(uri=BIOLINK.is_side_effect_of, name="is side effe
                    model_uri=BIOLINK.is_side_effect_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.contraindicated_in = Slot(uri=BIOLINK.contraindicated_in, name="contraindicated in", curie=BIOLINK.curie('contraindicated_in'),
-                   model_uri=BIOLINK.contraindicated_in, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.contraindicated_in, domain=None, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
 
 slots.chemical_entity_or_drug_or_treatment = Slot(uri=BIOLINK.chemical_entity_or_drug_or_treatment, name="chemical entity or drug or treatment", curie=BIOLINK.curie('chemical_entity_or_drug_or_treatment'),
                    model_uri=BIOLINK.chemical_entity_or_drug_or_treatment, domain=None, range=Optional[str])
 
 slots.has_contraindication = Slot(uri=BIOLINK.has_contraindication, name="has contraindication", curie=BIOLINK.curie('has_contraindication'),
-                   model_uri=BIOLINK.has_contraindication, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.has_contraindication, domain=BiologicalEntity, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.has_not_completed = Slot(uri=BIOLINK.has_not_completed, name="has not completed", curie=BIOLINK.curie('has_not_completed'),
                    model_uri=BIOLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

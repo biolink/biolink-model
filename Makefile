@@ -144,7 +144,7 @@ tests:
 	$(RUN) yamllint -c .yamllint-config infores_catalog.yaml
 	$(RUN) python scripts/verify_infores.py
 
-test: test-schema test-python test-examples lint
+test: test-schema test-python test-examples lint spell
 
 test-schema: gen-project
 
@@ -211,6 +211,9 @@ gendoc: $(DOCDIR)
 	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
 	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
 	cp infores_catalog.yaml $(DOCDIR) ; \
+	cp information-resource.yaml $(DOCDIR) ; \
+	cp semmed-exclude-list.yaml $(DOCDIR) ; \
+	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
 	cp biolink-model.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
