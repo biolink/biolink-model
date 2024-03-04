@@ -1,5 +1,5 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-29T17:03:47
+# Generation date: 2024-03-04T09:12:26
 # Schema: Biolink-Model-Information-Resource
 #
 # id: https://w3id.org/biolink/biolink-model/infores
@@ -24,7 +24,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import String
 
 metamodel_version = "1.7.0"
-version = "4.1.0"
+version = "4.1.5"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs

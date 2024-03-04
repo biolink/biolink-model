@@ -3554,7 +3554,7 @@ slots:
     mixins:
       - treats or applied or studied to treat
     annotations:
-      canonical_predicate: tru
+      canonical_predicate: true
 
   in clinical trials for:
     is_a: studied to treat
@@ -7248,6 +7248,8 @@ classes:
       - KEGG.GLYCAN   # G number
       - KEGG.DRUG     # D number
       - KEGG.ENVIRON  # E number
+      - KEGG
+      - UMLS
     slot_usage:
       id:
         examples:
@@ -8050,6 +8052,14 @@ classes:
       - STY:T019
        # Acquired Abnormality
       - STY:T020
+       # Mental or behavioral disfunction
+      - STY:T048
+      # (Cell or Molecular Dysfunction)
+      - STY:T049
+      # (Neoplastic Process)
+      - STY:T191
+      # disease susceptibility
+      - MONDO:0042489
     id_prefixes:
       - MONDO
       - DOID
@@ -8104,6 +8114,7 @@ classes:
       - FYPO:0000001  # fission yeast phenotype
       - APO:0000017  # phenotype
       - TO:0000387  # more narrowly defined here for plants; our definition conflates trait and phenotype.
+      - STY:T190
     broad_mappings:
       - BFO:0000019  # quality
       - PATO:0000001  # quality
@@ -9866,7 +9877,7 @@ classes:
   chemical affects gene association:
     description: >-
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
-      of its abundance, activity,localization, processing, expression, etc.)
+      of on its abundance, activity,localization, processing, expression, etc.)
     is_a: association
     slots:
       - subject form or variant qualifier

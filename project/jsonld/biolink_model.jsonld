@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "imports": [
     "linkml:types"
   ],
@@ -7783,7 +7783,7 @@
       "annotations": [
         {
           "tag": "canonical_predicate",
-          "value": "tru",
+          "value": true,
           "@type": "Annotation"
         }
       ],
@@ -24808,6 +24808,7 @@
         "KEGG.GLYCAN",
         "KEGG.DRUG",
         "KEGG.ENVIRON",
+        "KEGG",
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/SmallMolecule",
@@ -26512,7 +26513,11 @@
       ],
       "narrow_mappings": [
         "STY:T019",
-        "STY:T020"
+        "STY:T020",
+        "STY:T048",
+        "STY:T049",
+        "STY:T191",
+        "MONDO:0042489"
       ],
       "is_a": "DiseaseOrPhenotypicFeature",
       "slots": [
@@ -26596,7 +26601,8 @@
         "XPO:00000000",
         "FYPO:0000001",
         "APO:0000017",
-        "TO:0000387"
+        "TO:0000387",
+        "STY:T190"
       ],
       "broad_mappings": [
         "BFO:0000019",
@@ -34449,9 +34455,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-02-29T17:01:03",
-  "source_file_size": 377631,
-  "generation_date": "2024-02-29T17:01:12",
+  "source_file_date": "2024-03-04T09:09:36",
+  "source_file_size": 377877,
+  "generation_date": "2024-03-04T09:09:46",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
