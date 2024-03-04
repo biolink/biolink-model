@@ -3386,6 +3386,9 @@ slots:
       opposite_of: promotes condition
     in_subset:
       - translator_minimal
+    broad_mappings:
+      - SEMMEDDB:PREVENTS
+      -
 
   condition prevented by:
     inverse: preventative for condition
@@ -3427,6 +3430,8 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
+    broad_mappings:
+      - SEMMEDDB:PREDISPOSES
 
   condition predisposed by:
     is_a: likelihood affected by

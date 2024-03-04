@@ -10610,7 +10610,7 @@
       "inherited": true,
       "owner": "contraindicated_in",
       "inverse": "has_contraindication",
-      "range": "DiseaseOrPhenotypicFeature",
+      "range": "BiologicalEntity",
       "@type": "SlotDefinition"
     },
     {
@@ -10628,7 +10628,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/has_contraindication",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
-      "domain": "DiseaseOrPhenotypicFeature",
+      "domain": "BiologicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_contraindication",
       "multivalued": true,
       "inherited": true,
@@ -34455,9 +34455,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-04T09:09:36",
-  "source_file_size": 377877,
-  "generation_date": "2024-03-04T09:09:46",
+  "source_file_date": "2024-03-04T09:13:27",
+  "source_file_size": 377853,
+  "generation_date": "2024-03-04T09:13:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
