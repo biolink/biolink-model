@@ -8052,6 +8052,14 @@ classes:
       - STY:T019
        # Acquired Abnormality
       - STY:T020
+       # Mental or behavioral disfunction
+      - STY:T048
+      # (Cell or Molecular Dysfunction)
+      - STY:T049
+      # (Neoplastic Process)
+      - STY:T191
+      # disease susceptibility
+      - MONDO:0042489
     id_prefixes:
       - MONDO
       - DOID
@@ -8106,6 +8114,7 @@ classes:
       - FYPO:0000001  # fission yeast phenotype
       - APO:0000017  # phenotype
       - TO:0000387  # more narrowly defined here for plants; our definition conflates trait and phenotype.
+      - STY:T190
     broad_mappings:
       - BFO:0000019  # quality
       - PATO:0000001  # quality
