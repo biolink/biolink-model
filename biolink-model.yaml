@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.1.5
+version: 4.1.6
 
 
 ## ------------
@@ -3692,7 +3692,7 @@ slots:
     exact_mappings:
       - SEMMEDDB:TREATS
 
-  subject of treatment, application, or study for treatment by:
+  subject of treatment application or study for treatment by:
     mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -5220,7 +5220,6 @@ slots:
       The human readable scientific name for the taxon of the entity.
     in_subset:
       - translator_minimal
-    slot_uri: rdfs:label
     exact_mappings:
       - WIKIDATA_PROPERTY:P225
     annotations:
