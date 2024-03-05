@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-05T23:14:22
+# Generation date: 2024-03-05T23:24:15
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -14176,7 +14176,7 @@ slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curi
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
 
-slots.in_taxon_label = Slot(uri=RDFS.label, name="in taxon label", curie=RDFS.curie('label'),
+slots.in_taxon_label = Slot(uri=BIOLINK.in_taxon_label, name="in taxon label", curie=BIOLINK.curie('in_taxon_label'),
                    model_uri=BIOLINK.in_taxon_label, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),

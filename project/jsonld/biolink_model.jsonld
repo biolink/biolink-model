@@ -10997,15 +10997,12 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
-      ],
       "exact_mappings": [
         "https://www.wikidata.org/prop/P225"
       ],
       "is_a": "node_property",
       "domain": "ThingWithTaxon",
-      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#label",
+      "slot_uri": "https://w3id.org/biolink/vocab/in_taxon_label",
       "owner": "ThingWithTaxon",
       "domain_of": [
         "ThingWithTaxon"
@@ -34461,9 +34458,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-05T23:13:51",
-  "source_file_size": 377946,
-  "generation_date": "2024-03-05T23:13:59",
+  "source_file_date": "2024-03-05T23:23:45",
+  "source_file_size": 377921,
+  "generation_date": "2024-03-05T23:23:52",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

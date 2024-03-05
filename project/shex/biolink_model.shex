@@ -360,7 +360,7 @@ linkml:Sparqlpath xsd:string
           &<ThingWithTaxon_tes> ;
           rdf:type [ <ThingWithTaxon> ] ? ;
           <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <BiologicalEntity> ]
     )
@@ -1895,7 +1895,7 @@ linkml:Sparqlpath xsd:string
           <has_gene_or_gene_product> @<Gene> * ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
           <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <GenomicBackgroundExposure> ]
     )
@@ -2468,7 +2468,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OntologyClass> ] ? ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
           <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <NucleicAcidEntity> ]
     )
@@ -3415,7 +3415,7 @@ linkml:Sparqlpath xsd:string
 
 <ThingWithTaxon> {
     (  $<ThingWithTaxon_tes> (  <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <ThingWithTaxon> ] ?
     )
