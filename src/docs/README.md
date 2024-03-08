@@ -15,7 +15,6 @@ The guidelines are organized into five parts:
 - [Reading a Qualifier Based Statement](reading-a-qualifier-based-statement.md)
   - [TRAPI Query Examples](TRAPI-examples.md) 
 - [Knowledge Source Retrieval](knowledge-source-retrieval.md)
-   - [Modifying or Adding to the Information Resource Registry (infores)](information-resource-registry.md)
 - [Supporting Publications Guidelines](supporting-publications-guidelines.md)
 - [Curating the Biolink Model](curating-the-model.md)
 - [Using the Modeling Language](using-the-modeling-language.md)

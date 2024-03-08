@@ -12,7 +12,7 @@ and the latest commit on the `master` branch.
 
 ## Update version in biolink-model.yaml
 
-Update the `version` in [biolink-model.yaml](biolink-model.yaml), [information-resource.yaml](information-resource.yaml), 
+Update the `version` in [biolink-model.yaml](biolink-model.yaml), 
 [semmed-exclude-list-model.yaml](semmed-exclude-list-model.yaml) to reflect the new release (if not already up-to-date).
 
 Commit the changes to `master` branch.

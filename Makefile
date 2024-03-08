@@ -86,19 +86,13 @@ update-linkml:
 	poetry add -D linkml@latest
 
 all: site
-site: gen-project gendoc infores id-prefixes
+site: gen-project gendoc id-prefixes
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
 
 # In future this will be done by conversion
 gen-examples:
 	cp src/data/examples/* $(EXAMPLEDIR)
-
-infores:
-	$(RUN) gen-python information-resource.yaml > information_resource.py
-
-validate_infores:
-	$(RUN) python src/biolink_model/scripts/verify_infores.py
 
 id-prefixes:
 	$(RUN) gen-python class_prefixes.yaml > src/biolink_model/scripts/classprefixes.py
@@ -134,15 +128,13 @@ gen-project: $(PYMODEL)
 	$(RUN) gen-pydantic --pydantic-version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions src/biolink_model/schema/biolink_model.yaml > $(DEST)/owl/biolink_model.owl.ttl
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
-	$(MAKE) id-prefixes infores
+	$(MAKE) id-prefixes
 
 tests:
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(RUN) python -m unittest discover -p 'test_*.py'
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
-	$(RUN) yamllint -c .yamllint-config infores_catalog.yaml
-	$(RUN) python scripts/verify_infores.py
 
 test: test-schema test-python test-examples lint spell
 
@@ -210,8 +202,6 @@ gendoc: $(DOCDIR)
 	cp $(DEST)/shex/biolink_model.shex $(DOCDIR)/biolink-modeln.shex ; \
 	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
 	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
-	cp infores_catalog.yaml $(DOCDIR) ; \
-	cp information-resource.yaml $(DOCDIR) ; \
 	cp semmed-exclude-list.yaml $(DOCDIR) ; \
 	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
