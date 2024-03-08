@@ -12078,10 +12078,9 @@ enums:
           more indirect forms of evidence, that lead to more speculative conclusions.
         notes: >-
           Predictions typically result from non-deductive forms of reasoning - e.g.
-          inductive and abductive inference, or statistical inference where conclusions
+          inductive and deductive inference, or statistical inference where conclusions
           are drawn about a broader/global population based on data from a representative
-          cohort.
-          For example, a prediction that a drug may treat a particular disease based on its chemical
+          cohort. For example, a prediction that a drug may treat a particular disease based on its chemical
           similarity to known drugs that treat the disease, and the fact that it can inhibit proteins 
           in a pathway that is associated with the disease
           As Predictions are based on weaker forms of inference and evidence, they are typically 
@@ -12090,29 +12089,28 @@ enums:
       statistical_association:
         description: >-
           A statement that reports concepts representing variables in a dataset to be statistically
-          associated with each other in a particular cohort (e.g. “Metformin Treatment (variable 1)
-          is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X”).
+          associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1)
+          is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').
         notes: >-
           Such statements report the direct results of some statistical analysis. Their scope is limited
           tp the cohort/dataset interrogated in the analysis, and they do not make broader claims or draw 
           more meaningful conclusions about the domain of discourse. Note however that such Statistical 
           Associations can be used as evidence to support a more pointed/precise Prediction or Assertion 
           of knowledge. For example, e.g. a Statistical Association between 'Metformin Prescription' and
-          'Diabetes Diagnosis' in EHR records could support a Prediction that "Metformin treats Diabetes", 
-          or "Metformin causes Diabetes". This 'treats' edge may have a knowledge_level of 'Prediction', 
+          'Diabetes Diagnosis' in EHR records could support a Prediction that 'Metformin treats Diabetes', 
+          or 'Metformin causes Diabetes'. This 'treats' edge may have a knowledge_level of 'Prediction', 
           but the provider could use the 'evidence_type' edge property to indicate that this prediction is 
-          based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific results, we can consider
-          them to be inherently true statements, whose broader utility is dependent on subsequent generalization
-          of the reported result to a broader population, and/or interpretation of the result as support for 
-          a more meaningful statements about the domain of discourse.
+          based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific 
+          results, we can consider them to be inherently true statements, whose broader utility is dependent on 
+          subsequent generalization of the reported result to a broader population, and/or interpretation of the 
+          result as support for a more meaningful statements about the domain of discourse.
       observation:
         description: >-
           A statement reporting (and possibly quantifying) a phenomenon that was observed to occur - 
           absent any analysis or interpretation that generates a statistical association or supports
           a broader conclusion or inference.
         notes: >-
-          Observation statements make no stronger claim about the generalizability of what was observed.
-          For example, an observation that "56362 people self-reported taking melatonin to treat migraines"
+          An observation that "56362 people self-reported taking melatonin to treat migraines"
           is agnostic to whether melatonin is an effective or approved treatment - it only claims that it was
           taken for this purpose. Such observations, however, may be used as the basis for predicting that a 
           drug may be efficacious against a disease.
