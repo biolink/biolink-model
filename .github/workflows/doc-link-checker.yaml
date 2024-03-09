@@ -1,0 +1,58 @@
+###############################################################################
+# Introduction:
+# -------------
+# This workflow builds the schema documentation, then checks whether any of the
+# links in the documentation are broken. If any are broken, this workflow
+# creates a GitHub Issue containing a list of them.
+#
+# Once the maintainers of `nmdc-schema` feel comfortable with the way this link
+# checker works, they may consolidate it with the `deploy-docs.yaml` workflow.
+###############################################################################
+
+name: Check links
+
+on:
+  # Allow people to trigger the workflow manually.
+  # Reference: https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow
+  workflow_dispatch: {}
+
+run-name: Check links in docs
+jobs:
+  build-docs-and-check-links:
+    name: Build docs and check links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out commit
+        # Reference: https://github.com/actions/checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with: { python-version: 3.9 }
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3
+      - name: Install Python dependencies (including "docs" extras)
+        # Reference: https://python-poetry.org/docs/pyproject/#extras
+        run: poetry install --extras docs
+      - name: Build docs
+        run: make gendoc
+      - name: Use Lychee to check for broken links
+        # This step will populate `env.lychee_exit_code` with the exit code returned by lychee.
+        # Possible exit codes: https://github.com/lycheeverse/lychee?tab=readme-ov-file#exit-codes
+        # Reference: https://github.com/lycheeverse/lychee-action
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          # Reference: https://github.com/lycheeverse/lychee#commandline-parameters
+          args: --base docs --verbose --no-progress --format markdown --timeout 5 'docs/*.md' 'docs/**/*.md'
+          debug: true
+          output: ./lychee/out.md
+          fail: false
+      - name: Create GitHub Issue listing broken links
+        # This step will only run if lychee returned a non-zero exit code.
+        # Reference: https://docs.github.com/en/actions/learn-github-actions/variables#using-the-env-context-to-access-environment-variable-values
+        if: ${{ env.lychee_exit_code != 0 }}
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: Markdown docs contain broken links
+          content-filepath: ./lychee/out.md
+          labels: documentation, broken-link
