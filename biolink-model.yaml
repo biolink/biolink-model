@@ -9328,6 +9328,7 @@ classes:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
+        range: uriorcurie
         required: false
     exact_mappings:
       - OBAN:association
