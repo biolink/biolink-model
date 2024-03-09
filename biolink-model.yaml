@@ -12048,7 +12048,7 @@ enums:
   KnowledgeLevelEnum:
     permissible_values:
       knowledge_assertion:
-        aliases: [ 'assertion' ]
+        aliases: ['assertion']
         description: >-
           A statement of purported fact that is put forth by an agent as true,
           based on assessment of direct evidence. Assertions are likely but not 
@@ -12058,7 +12058,7 @@ enums:
           by some agent to support a confidence assertion of truth. Our certainty 
           in this truth is not absolute, but is typically higher than for Predictions.
       logical_entailment:
-        aliases: [ 'deductive_inference' ]
+        aliases: ['deductive_inference']
         description: >-
           A statement reporting a conclusion that follows logically from premises
           representing established facts or knowledge assertions (e.g. fingernail
@@ -12072,7 +12072,7 @@ enums:
           across paths through a graph constructed from transitive relationships, or sets of 
           relationships that support property chain inference.
       prediction:
-        aliases: [ 'hypothesis' ]
+        aliases: ['hypothesis']
         description: >-
           A statement of a possible fact based on probabilistic forms of reasoning over
           more indirect forms of evidence, that lead to more speculative conclusions.
