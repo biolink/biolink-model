@@ -586,17 +586,6 @@
       "@type": "TypeDefinition"
     },
     {
-      "name": "category_type",
-      "definition_uri": "https://w3id.org/biolink/vocab/CategoryType",
-      "description": "A primitive type in which the value denotes a class within the biolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation, the value should be a URI such as https://w3id.org/biolink/vocab/Gene",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "typeof": "uriorcurie",
-      "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-      "repr": "str",
-      "@type": "TypeDefinition"
-    },
-    {
       "name": "iri_type",
       "definition_uri": "https://w3id.org/biolink/vocab/IriType",
       "description": "An IRI",
@@ -2229,7 +2218,7 @@
         "Entity"
       ],
       "is_class_field": true,
-      "range": "category_type",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -12899,9 +12888,8 @@
       "is_class_field": true,
       "is_usage_slot": true,
       "usage_slot_name": "category",
-      "range": "category_type",
+      "range": "uriorcurie",
       "required": true,
-      "pattern": "^biolink:[A-Z][A-Za-z]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -14043,7 +14031,7 @@
       "is_class_field": true,
       "is_usage_slot": true,
       "usage_slot_name": "category",
-      "range": "category_type",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -34645,9 +34633,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-08T16:03:48",
-  "source_file_size": 391684,
-  "generation_date": "2024-03-08T16:03:58",
+  "source_file_date": "2024-03-08T16:24:26",
+  "source_file_size": 391227,
+  "generation_date": "2024-03-08T16:24:35",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
