@@ -7225,7 +7225,6 @@ classes:
       - CHEBI
       - MESH
       - CAS  # CAS numbers are given for things like plant extracts as well.
-      - UMLS
       - ncats.drug
       - PHARMGKB.CHEMICAL
       - PUBCHEM.COMPOUND
@@ -7245,6 +7244,7 @@ classes:
       - KEGG.DRUG     # D number
       - KEGG.ENVIRON  # E number
       - KEGG
+      - UMLS
 
   small molecule:
     is_a: molecular entity
