@@ -10,8 +10,6 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 
 <ChemicalFormulaValue> xsd:string
 
-<CategoryType> IRI
-
 <IriType> IRI
 
 <LabelType> xsd:string
@@ -230,7 +228,7 @@ linkml:Sparqlpath xsd:string
              <object_label_closure> @linkml:String * ;
              <retrieval_source_ids> @<RetrievalSource> * ;
              rdf:type @linkml:String * ;
-             <category> @<CategoryType> *
+             <category> @linkml:Uriorcurie *
           ) ;
           rdf:type [ <Association> ]
        )
@@ -1249,7 +1247,7 @@ linkml:Sparqlpath xsd:string
 
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
-          <category> @<CategoryType> * ;
+          <category> @linkml:Uriorcurie * ;
           rdf:type @linkml:String * ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
@@ -2422,7 +2420,7 @@ linkml:Sparqlpath xsd:string
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
-             <category> @<CategoryType> +
+             <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
        )
