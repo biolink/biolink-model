@@ -269,6 +269,21 @@
             "title": "Agent",
             "type": "object"
         },
+        "AgentTypeEnum": {
+            "description": "",
+            "enum": [
+                "manual_agent",
+                "automated_agent",
+                "data_analysis_pipeline",
+                "computational_model",
+                "text_mining_agent",
+                "image_processing_agent",
+                "manual_validation_of_automated_agent",
+                "not_provided"
+            ],
+            "title": "AgentTypeEnum",
+            "type": "string"
+        },
         "AnatomicalEntity": {
             "additionalProperties": false,
             "description": "A subcellular location, cell type or gross anatomical part",
@@ -19561,6 +19576,19 @@
             ],
             "title": "JournalArticle",
             "type": "object"
+        },
+        "KnowledgeLevelEnum": {
+            "description": "",
+            "enum": [
+                "knowledge_assertion",
+                "logical_entailment",
+                "prediction",
+                "statistical_association",
+                "observation",
+                "not_provided"
+            ],
+            "title": "KnowledgeLevelEnum",
+            "type": "string"
         },
         "LifeStage": {
             "additionalProperties": false,
