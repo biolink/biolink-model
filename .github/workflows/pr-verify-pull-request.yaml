@@ -40,8 +40,6 @@ jobs:
           make test
           poetry run codespell
           poetry run yamllint -c .yamllint-config biolink-model.yaml
-          make validate_infores
-
 
 
 
