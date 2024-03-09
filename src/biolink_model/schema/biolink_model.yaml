@@ -213,14 +213,6 @@ types:
     notes:
       - Should be implemented as a stronger type
 
-  category type:
-    typeof: uriorcurie
-    description: >-
-      A primitive type in which the value denotes a class within the biolink model.
-      The value must be a URI or a CURIE. In a Neo4j representation, the value should
-      be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation,
-      the value should be a URI such as https://w3id.org/biolink/vocab/Gene
-
   iri type:
     typeof: uriorcurie
     description: >-
@@ -501,7 +493,7 @@ slots:
   category:
     is_a: type
     domain: entity
-    range: category type
+    range: uriorcurie
     designates_type: true
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the
@@ -6309,7 +6301,6 @@ classes:
     slot_usage:
       category:
         required: true
-        pattern: '^biolink:[A-Z][A-Za-z]+$'
     exact_mappings:
       - BFO:0000001
       - WIKIDATA:Q35120
@@ -9283,7 +9274,7 @@ classes:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
-        range: category type
+        range: uriorcurie
         required: false
     exact_mappings:
       - OBAN:association
