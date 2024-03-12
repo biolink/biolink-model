@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.1.6",
+  "version": "4.2.0-rc.1",
   "imports": [
     "linkml:types"
   ],
@@ -3583,13 +3583,13 @@
       "description": "",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "node_property",
-      "domain": "NamedThing",
+      "domain": "ChemicalMixture",
       "slot_uri": "https://w3id.org/biolink/vocab/is_supplement",
       "owner": "ChemicalMixture",
       "domain_of": [
         "ChemicalMixture"
       ],
-      "range": "ChemicalMixture",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -3598,13 +3598,13 @@
       "description": "",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "node_property",
-      "domain": "NamedThing",
+      "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/trade_name",
       "owner": "ChemicalEntity",
       "domain_of": [
         "ChemicalEntity"
       ],
-      "range": "ChemicalEntity",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -4675,10 +4675,7 @@
       "description": "A relationship that is asserted between two named things",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
-        "http://www.w3.org/2004/02/skos/core#relatedMatch",
-        "http://identifiers.org/umls/related_to",
-        "https://skr3.nlm.nih.gov/SemMedDBASSOCIATED_WITH",
-        "https://skr3.nlm.nih.gov/SemMedDBADMINISTERED_TO"
+        "http://identifiers.org/umls/related_to"
       ],
       "narrow_mappings": [
         "https://skr3.nlm.nih.gov/SemMedDBcompared_with",
@@ -4858,6 +4855,9 @@
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004029",
         "http://snomed.info/id/47429007"
+      ],
+      "broad_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBASSOCIATED_WITH"
       ],
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
@@ -8086,6 +8086,9 @@
         "administered to treat",
         "used to treat",
         "given to treat"
+      ],
+      "broad_mappings": [
+        "https://skr3.nlm.nih.gov/SemMedDBADMINISTERED_TO"
       ],
       "is_a": "related_to_at_instance_level",
       "mixins": [
@@ -24894,7 +24897,6 @@
         "CHEBI",
         "MESH",
         "CAS",
-        "UMLS",
         "ncats.drug",
         "PHARMGKB.CHEMICAL",
         "PUBCHEM.COMPOUND",
@@ -24911,7 +24913,8 @@
         "KEGG.GLYCAN",
         "KEGG.DRUG",
         "KEGG.ENVIRON",
-        "KEGG"
+        "KEGG",
+        "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntity",
       "description": "A chemical entity is a physical entity that pertains to chemistry or biochemistry.",
@@ -24926,7 +24929,9 @@
         "STY:T103"
       ],
       "narrow_mappings": [
-        "WIKIDATA:Q43460564"
+        "WIKIDATA:Q43460564",
+        "STY:T123",
+        "STY:T131"
       ],
       "broad_mappings": [
         "STY:T167"
@@ -25003,8 +25008,6 @@
         "STY:T196",
         "CHEBI:59999",
         "bioschemas:ChemicalSubstance",
-        "STY:T123",
-        "STY:T131",
         "STY:T125",
         "STY:T197",
         "STY:T109",
@@ -34633,9 +34636,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-12T15:08:19",
-  "source_file_size": 391227,
-  "generation_date": "2024-03-12T15:08:27",
+  "source_file_date": "2024-03-12T16:33:54",
+  "source_file_size": 391247,
+  "generation_date": "2024-03-12T16:34:05",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

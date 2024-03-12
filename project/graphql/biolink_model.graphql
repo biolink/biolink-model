@@ -929,7 +929,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
@@ -1108,12 +1108,12 @@ type ChemicalMixture
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
-    isSupplement: ChemicalMixture
+    isSupplement: String
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
@@ -1632,12 +1632,12 @@ type ComplexMolecularMixture
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
-    isSupplement: ChemicalMixture
+    isSupplement: String
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
@@ -2139,12 +2139,12 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
-    isSupplement: ChemicalMixture
+    isSupplement: String
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
@@ -2518,7 +2518,7 @@ type EnvironmentalFoodContaminant
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
@@ -2764,12 +2764,12 @@ type Food
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
-    isSupplement: ChemicalMixture
+    isSupplement: String
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
@@ -2789,7 +2789,7 @@ type FoodAdditive
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
@@ -4696,7 +4696,7 @@ type MolecularEntity
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
@@ -4718,12 +4718,12 @@ type MolecularMixture
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
-    isSupplement: ChemicalMixture
+    isSupplement: String
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
@@ -4824,7 +4824,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
@@ -5830,12 +5830,12 @@ type ProcessedMaterial
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
-    isSupplement: ChemicalMixture
+    isSupplement: String
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
@@ -6372,7 +6372,7 @@ type SmallMolecule
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
-    tradeName: ChemicalEntity
+    tradeName: String
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
     isToxic: Boolean
