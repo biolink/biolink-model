@@ -1174,12 +1174,12 @@ slots:
   is supplement:
     description: >-
     is_a: node property
-    range: chemical mixture
+    domain: chemical mixture
 
   trade name:
     description: >-
     is_a: node property
-    range: chemical entity
+    domain: chemical entity
 
   available from:
     description: >-
@@ -1716,10 +1716,7 @@ slots:
     annotations:
       canonical_predicate: true
     exact_mappings:
-      - skos:relatedMatch
       - UMLS:related_to
-      - SEMMEDDB:ASSOCIATED_WITH
-      - SEMMEDDB:ADMINISTERED_TO
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
@@ -1868,6 +1865,8 @@ slots:
     narrow_mappings:
       - RO:0004029
       - SNOMEDCT:47429007
+    broad_mappings:
+      - SEMMEDDB:ASSOCIATED_WITH
 
   superclass of:
     is_a: related to at concept level
@@ -3656,6 +3655,8 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
+    broad_mappings:
+      - SEMMEDDB:ADMINISTERED_TO
    # TODO: need an inverse for taken to treat
 
   treatment applications from:
@@ -7218,6 +7219,8 @@ classes:
       - STY:T167  # Substance, children include food, body substance, chemical.
     narrow_mappings:
       - WIKIDATA:Q43460564
+      - STY:T123  # (bacs, full name: Biologically Active Substance)
+      - STY:T131  # (hops, full name: Hazardous or Poisonous Substance)
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -7225,7 +7228,6 @@ classes:
       - CHEBI
       - MESH
       - CAS  # CAS numbers are given for things like plant extracts as well.
-      - UMLS
       - ncats.drug
       - PHARMGKB.CHEMICAL
       - PUBCHEM.COMPOUND
@@ -7245,6 +7247,7 @@ classes:
       - KEGG.DRUG     # D number
       - KEGG.ENVIRON  # E number
       - KEGG
+      - UMLS
 
   small molecule:
     is_a: molecular entity
@@ -7259,8 +7262,6 @@ classes:
       - STY:T196  # Element, Ion, or Isotope
       - CHEBI:59999
       - bioschemas:ChemicalSubstance
-      - STY:T123  # (bacs, full name: Biologically Active Substance)
-      - STY:T131  # (hops, full name: Hazardous or Poisonous Substance)
       - STY:T125  # (horm, full name: Hormone)
       - STY:T197  # (inch, full name: Inorganic Chemical)
       - STY:T109  # (orch, full name: Organic Chemical)
