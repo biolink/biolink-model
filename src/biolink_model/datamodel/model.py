@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-12T15:08:50
+# Generation date: 2024-03-12T16:41:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -25,7 +25,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.1.6"
+version = "4.2.0-rc.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -3676,7 +3676,7 @@ class ChemicalEntity(NamedThing):
 
     id: Union[str, ChemicalEntityId] = None
     category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    trade_name: Optional[Union[str, ChemicalEntityId]] = None
+    trade_name: Optional[str] = None
     available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
@@ -3688,8 +3688,8 @@ class ChemicalEntity(NamedThing):
         if not isinstance(self.id, ChemicalEntityId):
             self.id = ChemicalEntityId(self.id)
 
-        if self.trade_name is not None and not isinstance(self.trade_name, ChemicalEntityId):
-            self.trade_name = ChemicalEntityId(self.trade_name)
+        if self.trade_name is not None and not isinstance(self.trade_name, str):
+            self.trade_name = str(self.trade_name)
 
         if not isinstance(self.available_from, list):
             self.available_from = [self.available_from] if self.available_from is not None else []
@@ -3792,7 +3792,7 @@ class ChemicalMixture(ChemicalEntity):
 
     id: Union[str, ChemicalMixtureId] = None
     category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    is_supplement: Optional[Union[str, ChemicalMixtureId]] = None
+    is_supplement: Optional[str] = None
     highest_FDA_approval_status: Optional[str] = None
     drug_regulatory_status_world_wide: Optional[str] = None
     routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
@@ -3803,8 +3803,8 @@ class ChemicalMixture(ChemicalEntity):
         if not isinstance(self.id, ChemicalMixtureId):
             self.id = ChemicalMixtureId(self.id)
 
-        if self.is_supplement is not None and not isinstance(self.is_supplement, ChemicalMixtureId):
-            self.is_supplement = ChemicalMixtureId(self.is_supplement)
+        if self.is_supplement is not None and not isinstance(self.is_supplement, str):
+            self.is_supplement = str(self.is_supplement)
 
         if self.highest_FDA_approval_status is not None and not isinstance(self.highest_FDA_approval_status, str):
             self.highest_FDA_approval_status = str(self.highest_FDA_approval_status)
@@ -13352,10 +13352,10 @@ slots.temporal_interval_qualifier = Slot(uri=BIOLINK.temporal_interval_qualifier
                    model_uri=BIOLINK.temporal_interval_qualifier, domain=Association, range=Optional[Union[str, TimeType]])
 
 slots.is_supplement = Slot(uri=BIOLINK.is_supplement, name="is supplement", curie=BIOLINK.curie('is_supplement'),
-                   model_uri=BIOLINK.is_supplement, domain=NamedThing, range=Optional[Union[str, ChemicalMixtureId]])
+                   model_uri=BIOLINK.is_supplement, domain=ChemicalMixture, range=Optional[str])
 
 slots.trade_name = Slot(uri=BIOLINK.trade_name, name="trade name", curie=BIOLINK.curie('trade_name'),
-                   model_uri=BIOLINK.trade_name, domain=NamedThing, range=Optional[Union[str, ChemicalEntityId]])
+                   model_uri=BIOLINK.trade_name, domain=ChemicalEntity, range=Optional[str])
 
 slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", curie=BIOLINK.curie('available_from'),
                    model_uri=BIOLINK.available_from, domain=NamedThing, range=Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]])
