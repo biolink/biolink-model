@@ -3423,7 +3423,7 @@ class ClinicalCourse(ClinicalAttribute):
 
 class Onset(ClinicalCourse):
     """
-    The age group in which (disease) symptom manifestations appear
+    The age group in which (disease) symptom manifestations appear.
     """
     name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(..., description="""connects an attribute to a class that describes it""")
@@ -5741,6 +5741,7 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     """
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
     """
+    onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)

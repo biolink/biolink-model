@@ -10433,6 +10433,8 @@ classes:
 
   disease to phenotypic feature association:
     is_a: association
+    slots:
+      - onset qualifier
     defining_slots:
       - subject
       - object
@@ -10443,7 +10445,6 @@ classes:
       - frequency quantifier
       - entity to phenotypic feature association mixin
       - disease to entity association mixin
-      - onset qualifier
     close_mappings:
       - dcid:DiseaseSymptomAssociation
     slot_usage:

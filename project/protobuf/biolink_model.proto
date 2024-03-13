@@ -1956,6 +1956,7 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  onset onsetQualifier = 0
   disease subject = 0
   phenotypicFeature object = 0
   integer hasCount = 0
@@ -4441,7 +4442,7 @@ message ObservedExpectedFrequencyAnalysisResult
   string format = 0
   date creationDate = 0
  }
-// The age group in which (disease) symptom manifestations appear
+// The age group in which (disease) symptom manifestations appear.
 message Onset
  {
   string id = 0
