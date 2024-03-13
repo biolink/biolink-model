@@ -2110,6 +2110,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [Uriorcurie]
+    onsetQualifier: Onset
     subject: Disease!
     object: PhenotypicFeature!
     hasCount: Integer

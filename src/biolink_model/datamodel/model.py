@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-13T16:34:36
+# Generation date: 2024-03-13T09:42:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -6286,7 +6286,7 @@ class ClinicalCourse(ClinicalAttribute):
 @dataclass
 class Onset(ClinicalCourse):
     """
-    The age group in which (disease) symptom manifestations appear
+    The age group in which (disease) symptom manifestations appear.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10001,6 +10001,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     subject: Union[str, DiseaseId] = None
     object: Union[str, PhenotypicFeatureId] = None
+    onset_qualifier: Optional[Union[str, OnsetId]] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_quotient: Optional[float] = None
@@ -10033,6 +10034,9 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, PhenotypicFeatureId):
             self.object = PhenotypicFeatureId(self.object)
+
+        if self.onset_qualifier is not None and not isinstance(self.onset_qualifier, OnsetId):
+            self.onset_qualifier = OnsetId(self.onset_qualifier)
 
         if self.has_count is not None and not isinstance(self.has_count, int):
             self.has_count = int(self.has_count)

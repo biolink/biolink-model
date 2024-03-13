@@ -1145,6 +1145,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           &<DiseaseToEntityAssociationMixin_tes> ;
           rdf:type [ <DiseaseToEntityAssociationMixin> ] ? ;
+          <onset_qualifier> @<Onset> ? ;
           rdf:subject @<Disease> ;
           rdf:object @<PhenotypicFeature> ;
           <has_count> @linkml:Integer ? ;
