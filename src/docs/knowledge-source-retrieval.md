@@ -40,11 +40,8 @@ In practice, for a linear chain of retrieval, one source should be declared prim
 Knowledge Providers will add source provenance related to upstream sources, as well as the provenance related to themselves in their data/messages.  
 
 ### A Shared Identifiers for Information Resources (Standardize the Value)
+
 We also define a standard ‘InfoRes identifier’ for each Information Resource that provides data. The identifier component of the IRI is a short form human readable name or abbreviation.  
 The following are examples of InfoRes IRI identifiers and their CURIE forms:
 External Resource CURIE: infores:dgidb
 Translator Resource CURIE: infores:molepro
-
-### Adding a new Information Resource entry: 
-Please see the editing guidelines here for more information: [Modifying or Adding to the Information Resource Registry (infores)](information-resource-registry.md)
-
