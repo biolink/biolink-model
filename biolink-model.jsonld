@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.2.0-rc.1",
+  "version": "4.2.0-rc.2",
   "imports": [
     "linkml:types"
   ],
@@ -4559,8 +4559,10 @@
     {
       "name": "onset_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/onset_qualifier",
-      "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-      "deprecated": "True",
+      "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.",
+      "notes": [
+        "This  is in Biolink to support HP ontology annotations which use \"onset\" (with terms from HP)  as an annotation on a disease to phenotypic feature association.  Please only use it for this purpose.  If the intent is to describe the onset of a disease in the context of a treatment,  use object_aspect_qualifier and object_direction_qualifier to capture \"delayed onset\" or \"exacerbated onset\" slot."
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -4568,7 +4570,10 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/onset_qualifier",
-      "owner": "onset_qualifier",
+      "owner": "DiseaseToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "DiseaseToPhenotypicFeatureAssociation"
+      ],
       "range": "Onset",
       "@type": "SlotDefinition"
     },
@@ -28393,8 +28398,10 @@
     {
       "name": "Onset",
       "definition_uri": "https://w3id.org/biolink/vocab/Onset",
-      "description": "The age group in which (disease) symptom manifestations appear",
-      "deprecated": "True",
+      "description": "The age group in which (disease) symptom manifestations appear.",
+      "notes": [
+        "This class is in Biolink to support HP ontology annotations which use \"onset\" (with terms from HP)  as an annotation on a disease to phenotypic feature association.  This should be the primary use case for this class."
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "HP:0003674"
@@ -31790,6 +31797,7 @@
         "retrieval_source_ids",
         "association_type",
         "association_category",
+        "onset_qualifier",
         "disease_to_phenotypic_feature_association_subject",
         "disease_to_phenotypic_feature_association_object",
         "has_count",
@@ -34636,9 +34644,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-03-12T16:54:32",
-  "source_file_size": 391247,
-  "generation_date": "2024-03-12T16:54:40",
+  "source_file_date": "2024-03-13T10:07:14",
+  "source_file_size": 391934,
+  "generation_date": "2024-03-13T10:07:22",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: onset_qualifier (DEPRECATED) - Biolink Model Documentation</title>
+        <title>Slot: onset_qualifier - Biolink Model Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-onset_qualifier-deprecated" class="md-skip">
+        <a href="#slot-onset_qualifier" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: onset_qualifier </strong>  <span style="color: red;"><strong> (DEPRECATED) </strong></span>
+              <strong> Slot: onset_qualifier </strong>
             
           </span>
         </div>
@@ -371,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../information-resource-registry/" class="md-nav__link">
+      <a href="https://biolink.github.io/information-resource-registry" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -589,6 +589,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -615,12 +624,12 @@
   
 
 
-<h1 id="slot-onset_qualifier-deprecated"><strong> Slot: onset_qualifier </strong>  <span style="color: red;"><strong> (DEPRECATED) </strong></span></h1>
-<div class="highlight-box"><strong>Description:</strong><i> a qualifier used in a phenotypic association to state when the phenotype appears is in the subject</i><br>
+<h1 id="slot-onset_qualifier"><strong> Slot: onset_qualifier </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.</i><br>
 
 
 <br>
-
+ <strong> Notes:</strong> This  is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)  as an annotation on a disease to phenotypic feature association.  Please only use it for this purpose.  If the intent is to describe the onset of a disease in the context of a treatment,  use object_aspect_qualifier and object_direction_qualifier to capture "delayed onset" or "exacerbated onset" slot. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
@@ -635,19 +644,43 @@
 </ul>
 </li>
 </ul>
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td>An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: onset qualifier
 description: a qualifier used in a phenotypic association to state when the phenotype
-  appears is in the subject
-deprecated: 'True'
+  appears is in the subject.
+notes:
+- This  is in Biolink to support HP ontology annotations which use &quot;onset&quot; (with terms
+  from HP)  as an annotation on a disease to phenotypic feature association.  Please
+  only use it for this purpose.  If the intent is to describe the onset of a disease
+  in the context of a treatment,  use object_aspect_qualifier and object_direction_qualifier
+  to capture &quot;delayed onset&quot; or &quot;exacerbated onset&quot; slot.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: qualifier
 domain: association
 alias: onset_qualifier
+domain_of:
+- disease to phenotypic feature association
 range: onset
 
 </code></pre>
