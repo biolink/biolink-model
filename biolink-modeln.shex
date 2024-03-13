@@ -10,8 +10,6 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 
 <ChemicalFormulaValue> xsd:string
 
-<CategoryType> IRI
-
 <IriType> IRI
 
 <LabelType> xsd:string
@@ -230,7 +228,7 @@ linkml:Sparqlpath xsd:string
              <object_label_closure> @linkml:String * ;
              <retrieval_source_ids> @<RetrievalSource> * ;
              rdf:type @linkml:String * ;
-             <category> @<CategoryType> *
+             <category> @linkml:Uriorcurie *
           ) ;
           rdf:type [ <Association> ]
        )
@@ -360,7 +358,7 @@ linkml:Sparqlpath xsd:string
           &<ThingWithTaxon_tes> ;
           rdf:type [ <ThingWithTaxon> ] ? ;
           <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <BiologicalEntity> ]
     )
@@ -613,7 +611,7 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
              &<ChemicalEntityOrProteinOrPolypeptide_tes> ;
              rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ? ;
-             <trade_name> @<ChemicalEntity> ? ;
+             <trade_name> @linkml:String ? ;
              <available_from> @<DrugAvailabilityEnum> * ;
              <max_tolerated_dose> @linkml:String ? ;
              <is_toxic> @linkml:Boolean ? ;
@@ -710,7 +708,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalMixture_tes> (  &<ChemicalEntity_tes> ;
              rdf:type [ <ChemicalEntity> ] ? ;
-             <is_supplement> @<ChemicalMixture> ? ;
+             <is_supplement> @linkml:String ? ;
              <highest_FDA_approval_status> @linkml:String ? ;
              <drug_regulatory_status_world_wide> @linkml:String ? ;
              <routes_of_delivery> @<DrugDeliveryEnum> *
@@ -1249,7 +1247,7 @@ linkml:Sparqlpath xsd:string
 
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
-          <category> @<CategoryType> * ;
+          <category> @linkml:Uriorcurie * ;
           rdf:type @linkml:String * ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
@@ -1895,7 +1893,7 @@ linkml:Sparqlpath xsd:string
           <has_gene_or_gene_product> @<Gene> * ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
           <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <GenomicBackgroundExposure> ]
     )
@@ -2422,7 +2420,7 @@ linkml:Sparqlpath xsd:string
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
-             <category> @<CategoryType> +
+             <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
        )
@@ -2468,7 +2466,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OntologyClass> ] ? ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
           <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <NucleicAcidEntity> ]
     )
@@ -3415,7 +3413,7 @@ linkml:Sparqlpath xsd:string
 
 <ThingWithTaxon> {
     (  $<ThingWithTaxon_tes> (  <in_taxon> @<OrganismTaxon> * ;
-          rdfs:label @<LabelType> ?
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <ThingWithTaxon> ] ?
     )

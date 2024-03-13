@@ -10,7 +10,6 @@
                         "biolink:AccessibleDnaRegion"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -106,7 +105,6 @@
                         "biolink:Activity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -198,7 +196,6 @@
                         "biolink:Agent"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -269,6 +266,21 @@
             "title": "Agent",
             "type": "object"
         },
+        "AgentTypeEnum": {
+            "description": "",
+            "enum": [
+                "manual_agent",
+                "automated_agent",
+                "data_analysis_pipeline",
+                "computational_model",
+                "text_mining_agent",
+                "image_processing_agent",
+                "manual_validation_of_automated_agent",
+                "not_provided"
+            ],
+            "title": "AgentTypeEnum",
+            "type": "string"
+        },
         "AnatomicalEntity": {
             "additionalProperties": false,
             "description": "A subcellular location, cell type or gross anatomical part",
@@ -279,7 +291,6 @@
                         "biolink:AnatomicalEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -770,7 +781,6 @@
                         "biolink:Article"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1111,7 +1121,6 @@
                         "biolink:Attribute"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1208,7 +1217,6 @@
                         "biolink:Bacterium"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1300,7 +1308,6 @@
                         "biolink:Behavior"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1652,7 +1659,6 @@
                         "biolink:BehavioralExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1754,7 +1760,6 @@
                         "biolink:BehavioralFeature"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1852,7 +1857,6 @@
                         "biolink:BiologicalProcess"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -1965,7 +1969,6 @@
                         "biolink:BiologicalProcessOrActivity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -2078,7 +2081,6 @@
                         "biolink:BiologicalSex"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -2175,7 +2177,6 @@
                         "biolink:BioticExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -2284,7 +2285,6 @@
                         "biolink:Book"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -2420,7 +2420,6 @@
                         "biolink:BookChapter"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -2561,7 +2560,6 @@
                         "biolink:Case"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -3156,7 +3154,6 @@
                         "biolink:Cell"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -3248,7 +3245,6 @@
                         "biolink:CellLine"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -3756,7 +3752,6 @@
                         "biolink:CellularComponent"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -3848,7 +3843,6 @@
                         "biolink:CellularOrganism"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -4201,7 +4195,6 @@
                         "biolink:ChemicalEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -4705,7 +4698,6 @@
                         "biolink:ChemicalExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -5040,7 +5032,6 @@
                         "biolink:ChemicalMixture"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -5573,7 +5564,6 @@
                         "biolink:ChemicalRole"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -6461,7 +6451,6 @@
                         "biolink:ChiSquaredAnalysisResult"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -6569,7 +6558,6 @@
                         "biolink:ClinicalAttribute"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -6666,7 +6654,6 @@
                         "biolink:ClinicalCourse"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -6763,7 +6750,6 @@
                         "biolink:ClinicalEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -6844,7 +6830,6 @@
                         "biolink:ClinicalFinding"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -6936,7 +6921,6 @@
                         "biolink:ClinicalIntervention"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7017,7 +7001,6 @@
                         "biolink:ClinicalMeasurement"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7114,7 +7097,6 @@
                         "biolink:ClinicalModifier"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7211,7 +7193,6 @@
                         "biolink:ClinicalTrial"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7292,7 +7273,6 @@
                         "biolink:CodingSequence"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7388,7 +7368,6 @@
                         "biolink:Cohort"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7480,7 +7459,6 @@
                         "biolink:CommonDataElement"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7575,7 +7553,6 @@
                         "biolink:ComplexChemicalExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7679,7 +7656,6 @@
                         "biolink:ComplexMolecularMixture"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7798,7 +7774,6 @@
                         "biolink:ConceptCountAnalysisResult"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -7893,7 +7868,6 @@
                         "biolink:ConfidenceLevel"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8423,7 +8397,6 @@
                         "biolink:Dataset"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8518,7 +8491,6 @@
                         "biolink:DatasetDistribution"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8616,7 +8588,6 @@
                         "biolink:DatasetSummary"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8717,7 +8688,6 @@
                         "biolink:DatasetVersion"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8821,7 +8791,6 @@
                         "biolink:Device"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8902,7 +8871,6 @@
                         "biolink:DiagnosticAid"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -8994,7 +8962,6 @@
                         "biolink:Disease"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -9086,7 +9053,6 @@
                         "biolink:DiseaseOrPhenotypicFeature"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -9178,7 +9144,6 @@
                         "biolink:DiseaseOrPhenotypicFeatureExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -10120,7 +10085,6 @@
                         "biolink:Drug"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -10259,7 +10223,6 @@
                         "biolink:DrugExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -10368,7 +10331,6 @@
                         "biolink:DrugLabel"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -10692,7 +10654,6 @@
                         "biolink:DrugToGeneInteractionExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -11457,7 +11418,6 @@
                         "biolink:EnvironmentalExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -11559,7 +11519,6 @@
                         "biolink:EnvironmentalFeature"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -11647,7 +11606,6 @@
                         "biolink:EnvironmentalFoodContaminant"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -11747,7 +11705,6 @@
                         "biolink:EnvironmentalProcess"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -11834,7 +11791,6 @@
                         "biolink:Event"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -11915,7 +11871,6 @@
                         "biolink:EvidenceType"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -12010,7 +11965,6 @@
                         "biolink:Exon"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -12760,7 +12714,6 @@
                         "biolink:Food"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -12886,7 +12839,6 @@
                         "biolink:FoodAdditive"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -13182,7 +13134,6 @@
                         "biolink:Fungus"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -13274,7 +13225,6 @@
                         "biolink:Gene"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -13871,7 +13821,6 @@
                         "biolink:GeneFamily"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -16397,7 +16346,6 @@
                         "biolink:GeneticInheritance"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -16489,7 +16437,6 @@
                         "biolink:Genome"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -16585,7 +16532,6 @@
                         "biolink:GenomicBackgroundExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -16925,7 +16871,6 @@
                         "biolink:Genotype"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18291,7 +18236,6 @@
                         "biolink:GenotypicSex"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18388,7 +18332,6 @@
                         "biolink:GeographicExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18490,7 +18433,6 @@
                         "biolink:GeographicLocation"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18579,7 +18521,6 @@
                         "biolink:GeographicLocationAtTime"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18673,7 +18614,6 @@
                         "biolink:GrossAnatomicalStructure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18765,7 +18705,6 @@
                         "biolink:Haplotype"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18861,7 +18800,6 @@
                         "biolink:Hospitalization"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -18948,7 +18886,6 @@
                         "biolink:Human"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -19040,7 +18977,6 @@
                         "biolink:IndividualOrganism"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -19328,7 +19264,6 @@
                         "biolink:Invertebrate"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -19427,7 +19362,6 @@
                         "biolink:JournalArticle"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -19562,6 +19496,19 @@
             "title": "JournalArticle",
             "type": "object"
         },
+        "KnowledgeLevelEnum": {
+            "description": "",
+            "enum": [
+                "knowledge_assertion",
+                "logical_entailment",
+                "prediction",
+                "statistical_association",
+                "observation",
+                "not_provided"
+            ],
+            "title": "KnowledgeLevelEnum",
+            "type": "string"
+        },
         "LifeStage": {
             "additionalProperties": false,
             "description": "A stage of development or growth of an organism, including post-natal adult stages",
@@ -19572,7 +19519,6 @@
                         "biolink:LifeStage"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -19664,7 +19610,6 @@
                         "biolink:LogOddsAnalysisResult"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -19769,7 +19714,6 @@
                         "biolink:MacromolecularComplex"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -20449,7 +20393,6 @@
                         "biolink:Mammal"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -20541,7 +20484,6 @@
                         "biolink:MaterialSample"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -21028,7 +20970,6 @@
                         "biolink:MicroRNA"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -21120,7 +21061,6 @@
                         "biolink:MolecularActivity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -21828,7 +21768,6 @@
                         "biolink:MolecularEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -21939,7 +21878,6 @@
                         "biolink:MolecularMixture"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22064,7 +22002,6 @@
                         "biolink:NamedThing"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22359,7 +22296,6 @@
                         "biolink:NoncodingRNAProduct"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22458,7 +22394,6 @@
                         "biolink:NucleicAcidEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22577,7 +22512,6 @@
                         "biolink:NucleicAcidSequenceMotif"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22669,7 +22603,6 @@
                         "biolink:NucleosomeModification"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22765,7 +22698,6 @@
                         "biolink:ObservedExpectedFrequencyAnalysisResult"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22860,7 +22792,6 @@
                         "biolink:Onset"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -22957,7 +22888,6 @@
                         "biolink:OrganismAttribute"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -23054,7 +22984,6 @@
                         "biolink:OrganismTaxon"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -24352,7 +24281,6 @@
                         "biolink:Patent"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -24480,7 +24408,6 @@
                         "biolink:PathologicalAnatomicalExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -24588,7 +24515,6 @@
                         "biolink:PathologicalAnatomicalStructure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -24680,7 +24606,6 @@
                         "biolink:PathologicalProcess"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -24793,7 +24718,6 @@
                         "biolink:PathologicalProcessExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -24901,7 +24825,6 @@
                         "biolink:Pathway"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25024,7 +24947,6 @@
                         "biolink:Phenomenon"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25105,7 +25027,6 @@
                         "biolink:PhenotypicFeature"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25436,7 +25357,6 @@
                         "biolink:PhenotypicQuality"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25533,7 +25453,6 @@
                         "biolink:PhenotypicSex"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25630,7 +25549,6 @@
                         "biolink:PhysicalEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25711,7 +25629,6 @@
                         "biolink:PhysiologicalProcess"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25824,7 +25741,6 @@
                         "biolink:PlanetaryEntity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25905,7 +25821,6 @@
                         "biolink:Plant"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -25997,7 +25912,6 @@
                         "biolink:Polypeptide"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -26089,7 +26003,6 @@
                         "biolink:PopulationOfIndividualOrganisms"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -26377,7 +26290,6 @@
                         "biolink:PosttranslationalModification"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -26578,7 +26490,6 @@
                         "biolink:PreprintPublication"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -26706,7 +26617,6 @@
                         "biolink:Procedure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -26794,7 +26704,6 @@
                         "biolink:ProcessedMaterial"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -26913,7 +26822,6 @@
                         "biolink:Protein"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -27005,7 +26913,6 @@
                         "biolink:ProteinDomain"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -27104,7 +27011,6 @@
                         "biolink:ProteinFamily"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -27203,7 +27109,6 @@
                         "biolink:ProteinIsoform"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -27302,7 +27207,6 @@
                         "biolink:Publication"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -27446,7 +27350,6 @@
                         "biolink:RNAProduct"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -27538,7 +27441,6 @@
                         "biolink:RNAProductIsoform"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -28066,7 +27968,6 @@
                         "biolink:ReagentTargetedGene"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -28162,7 +28063,6 @@
                         "biolink:RegulatoryRegion"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -28273,7 +28173,6 @@
                         "biolink:RelativeFrequencyAnalysisResult"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -28378,7 +28277,6 @@
                         "biolink:RetrievalSource"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -28888,7 +28786,6 @@
                         "biolink:SequenceVariant"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -28998,7 +28895,6 @@
                         "biolink:Serial"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29139,7 +29035,6 @@
                         "biolink:SeverityValue"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29236,7 +29131,6 @@
                         "biolink:SiRNA"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29335,7 +29229,6 @@
                         "biolink:SmallMolecule"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29439,7 +29332,6 @@
                         "biolink:Snv"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29542,7 +29434,6 @@
                         "biolink:SocioeconomicAttribute"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29639,7 +29530,6 @@
                         "biolink:SocioeconomicExposure"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29759,7 +29649,6 @@
                         "biolink:Study"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29840,7 +29729,6 @@
                         "biolink:StudyPopulation"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -29932,7 +29820,6 @@
                         "biolink:StudyVariable"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -30238,7 +30125,6 @@
                         "biolink:TextMiningResult"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -30333,7 +30219,6 @@
                         "biolink:Transcript"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -30621,7 +30506,6 @@
                         "biolink:TranscriptionFactorBindingSite"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -30717,7 +30601,6 @@
                         "biolink:Treatment"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -32127,7 +32010,6 @@
                         "biolink:Vertebrate"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -32219,7 +32101,6 @@
                         "biolink:Virus"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -32318,7 +32199,6 @@
                         "biolink:WebPage"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -32446,7 +32326,6 @@
                         "biolink:Zygosity"
                     ],
                     "items": {
-                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
                         "type": "string"
                     },
                     "type": "array"
@@ -32540,5 +32419,5 @@
     "metamodel_version": "1.7.0",
     "title": "Biolink-Model",
     "type": "object",
-    "version": "4.1.6"
+    "version": "4.2.0-rc.1"
 }

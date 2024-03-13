@@ -344,8 +344,6 @@
 
       ChemicalEntity : trade_name
 
-          ChemicalEntity --|&gt; ChemicalEntity : trade_name
-
       ChemicalEntity : type
 
       ChemicalEntity : xref
@@ -381,7 +379,7 @@
 <tbody>
 <tr>
 <td><a href="../trade_name/">trade_name</a>: <br> <i> </i></br></td>
-<td>0..1 <br/> <a href="./">ChemicalEntity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -447,7 +445,7 @@
 </tr>
 <tr>
 <td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
-<td>1..* <br/> <a href="../CategoryType/">CategoryType</a></td>
+<td>1..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -497,73 +495,73 @@
 <tr>
 <td><a href="../MolecularEntity/">MolecularEntity</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="./">ChemicalEntity</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../SmallMolecule/">SmallMolecule</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../NucleicAcidEntity/">NucleicAcidEntity</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../MolecularMixture/">MolecularMixture</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../ProcessedMaterial/">ProcessedMaterial</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../Drug/">Drug</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../FoodAdditive/">FoodAdditive</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
 <td><a href="../Food/">Food</a></td>
 <td><a href="../trade_name/">trade_name</a></td>
-<td>range</td>
+<td>domain</td>
 <td><a href="./">ChemicalEntity</a></td>
 </tr>
 <tr>
@@ -655,10 +653,6 @@
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="./">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
-<td>UMLS</td>
-<td><a href="../OntologyClass/">OntologyClass</a><br/><a href="../OrganismTaxon/">OrganismTaxon</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="./">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="../Disease/">Disease</a><br/><a href="../PhenotypicFeature/">PhenotypicFeature</a><br/><a href="../AnatomicalEntity/">AnatomicalEntity</a><br/><a href="../CellularComponent/">CellularComponent</a><br/><a href="../Cell/">Cell</a><br/><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a><br/><a href="../Gene/">Gene</a><br/><a href="../Polypeptide/">Polypeptide</a><br/><a href="../Protein/">Protein</a><br/></td>
-</tr>
-<tr>
 <td>ncats.drug</td>
 <td><a href="./">ChemicalEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Protein/">Protein</a><br/></td>
 </tr>
@@ -726,6 +720,10 @@
 <td>KEGG</td>
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="./">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../BiologicalProcess/">BiologicalProcess</a><br/><a href="../Pathway/">Pathway</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
+<tr>
+<td>UMLS</td>
+<td><a href="../OntologyClass/">OntologyClass</a><br/><a href="../OrganismTaxon/">OrganismTaxon</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="./">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="../Disease/">Disease</a><br/><a href="../PhenotypicFeature/">PhenotypicFeature</a><br/><a href="../AnatomicalEntity/">AnatomicalEntity</a><br/><a href="../CellularComponent/">CellularComponent</a><br/><a href="../Cell/">Cell</a><br/><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a><br/><a href="../Gene/">Gene</a><br/><a href="../Polypeptide/">Polypeptide</a><br/><a href="../Protein/">Protein</a><br/></td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -736,7 +734,6 @@ id_prefixes:
 - CHEBI
 - MESH
 - CAS
-- UMLS
 - ncats.drug
 - PHARMGKB.CHEMICAL
 - PUBCHEM.COMPOUND
@@ -754,6 +751,7 @@ id_prefixes:
 - KEGG.DRUG
 - KEGG.ENVIRON
 - KEGG
+- UMLS
 description: A chemical entity is a physical entity that pertains to chemistry or
   biochemistry.
 in_subset:
@@ -766,6 +764,8 @@ exact_mappings:
 - STY:T103
 narrow_mappings:
 - WIKIDATA:Q43460564
+- STY:T123
+- STY:T131
 broad_mappings:
 - STY:T167
 is_a: named thing
