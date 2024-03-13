@@ -1643,10 +1643,15 @@ slots:
       - translator_minimal
 
   onset qualifier:
-    deprecated: true
     description: >-
       a qualifier used in a phenotypic association to state
-      when the phenotype appears is in the subject
+      when the phenotype appears is in the subject.
+    notes: >-
+      This  is in Biolink to support HP ontology annotations which use "onset" (with terms from HP) 
+      as an annotation on a disease to phenotypic feature association.  Please only use it for this
+      purpose.  If the intent is to describe the onset of a disease in the context of a treatment, 
+      use object_aspect_qualifier and object_direction_qualifier to capture "delayed onset" or "exacerbated onset"
+      slot.
     is_a: qualifier
     range: onset
     in_subset:
@@ -8921,10 +8926,13 @@ classes:
       - HP:0031797
 
   onset:
-    deprecated: true
     is_a: clinical course
     description: >-
-      The age group in which (disease) symptom manifestations appear
+      The age group in which (disease) symptom manifestations appear.
+    notes: >-
+      This class is in Biolink to support HP ontology annotations which use "onset" (with terms from HP) 
+      as an annotation on a disease to phenotypic feature association.  This should be the primary use
+      case for this class.
     exact_mappings:
       - HP:0003674
 
@@ -10435,6 +10443,7 @@ classes:
       - frequency quantifier
       - entity to phenotypic feature association mixin
       - disease to entity association mixin
+      - onset qualifier
     close_mappings:
       - dcid:DiseaseSymptomAssociation
     slot_usage:
