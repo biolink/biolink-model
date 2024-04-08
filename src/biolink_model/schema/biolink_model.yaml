@@ -6091,6 +6091,8 @@ slots:
     domain: association
     range: KnowledgeLevelEnum
     multivalued: false
+    required: true
+    ifabsent: string(not provided)
     examples:
       - value: knowledge_assertion
       - value: prediction
@@ -6117,6 +6119,8 @@ slots:
     domain: association
     range: AgentTypeEnum
     multivalued: false
+    required: true
+    ifabsent: string(not provided)
     examples:
       - value: manual_agent
       - value: automated_agent

@@ -12800,11 +12800,13 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/knowledge_level",
+      "ifabsent": "string(not provided)",
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "KnowledgeLevelEnum",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12836,11 +12838,13 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/agent_type",
+      "ifabsent": "string(not provided)",
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "AgentTypeEnum",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -34824,9 +34828,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-04-08T13:03:33",
-  "source_file_size": 392022,
-  "generation_date": "2024-04-08T13:03:42",
+  "source_file_date": "2024-04-08T13:56:23",
+  "source_file_size": 392130,
+  "generation_date": "2024-04-08T13:56:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -106,8 +106,8 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -145,8 +145,8 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -185,8 +185,8 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -262,8 +262,8 @@ type Association
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -358,8 +358,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -632,8 +632,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -680,8 +680,8 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -769,8 +769,8 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -815,8 +815,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -896,8 +896,8 @@ type ChemicalAffectsGeneAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -972,8 +972,8 @@ type ChemicalEntityAssessesNamedThingAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1016,8 +1016,8 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1088,8 +1088,8 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1167,8 +1167,8 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1208,8 +1208,8 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1266,8 +1266,8 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1306,8 +1306,8 @@ type ChemicalToChemicalDerivationAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1349,8 +1349,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1395,8 +1395,8 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1736,8 +1736,8 @@ type ContributorAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1777,8 +1777,8 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2014,8 +2014,8 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2055,8 +2055,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2103,8 +2103,8 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2141,8 +2141,8 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2272,8 +2272,8 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2330,8 +2330,8 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2397,8 +2397,8 @@ type EntityToDiseaseAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2486,8 +2486,8 @@ type EntityToPhenotypicFeatureAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2680,8 +2680,8 @@ type ExonToTranscriptRelationship
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2728,8 +2728,8 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2769,8 +2769,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2894,8 +2894,8 @@ type FunctionalAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2971,8 +2971,8 @@ type GeneAffectsChemicalAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3027,8 +3027,8 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3110,8 +3110,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3181,8 +3181,8 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3232,8 +3232,8 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3290,8 +3290,8 @@ type GeneToExpressionSiteAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3333,8 +3333,8 @@ interface GeneToGeneAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3372,8 +3372,8 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3416,8 +3416,8 @@ type GeneToGeneFamilyAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3456,8 +3456,8 @@ type GeneToGeneHomologyAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3496,8 +3496,8 @@ type GeneToGeneProductRelationship
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3537,8 +3537,8 @@ type GeneToGoTermAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3577,8 +3577,8 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3616,8 +3616,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3733,8 +3733,8 @@ type GenomicSequenceLocalization
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3798,8 +3798,8 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3844,8 +3844,8 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3897,8 +3897,8 @@ type GenotypeToGeneAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3937,8 +3937,8 @@ type GenotypeToGenotypePartAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3978,8 +3978,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4028,8 +4028,8 @@ type GenotypeToVariantAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4257,8 +4257,8 @@ type InformationContentEntityToNamedThingAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4407,8 +4407,8 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4447,8 +4447,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4494,8 +4494,8 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4572,8 +4572,8 @@ type MaterialSampleDerivationAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4615,8 +4615,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4706,8 +4706,8 @@ type MolecularActivityToChemicalEntityAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4746,8 +4746,8 @@ type MolecularActivityToMolecularActivityAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4785,8 +4785,8 @@ type MolecularActivityToPathwayAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4892,8 +4892,8 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5108,8 +5108,8 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5149,8 +5149,8 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5188,8 +5188,8 @@ type OrganismTaxonToOrganismTaxonInteraction
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5229,8 +5229,8 @@ type OrganismTaxonToOrganismTaxonSpecialization
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5270,8 +5270,8 @@ type OrganismToOrganismAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5329,8 +5329,8 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5377,8 +5377,8 @@ type PairwiseGeneToGeneInteraction
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5416,8 +5416,8 @@ type PairwiseMolecularInteraction
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5636,8 +5636,8 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5856,8 +5856,8 @@ type PopulationToPopulationAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6112,8 +6112,8 @@ type ReactionToCatalystAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6155,8 +6155,8 @@ type ReactionToParticipantAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6331,8 +6331,8 @@ type SequenceAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6369,8 +6369,8 @@ type SequenceFeatureRelationship
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6429,8 +6429,8 @@ interface SequenceVariantModulatesTreatmentAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6702,8 +6702,8 @@ type TaxonToTaxonAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6791,8 +6791,8 @@ type TranscriptToGeneRelationship
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6869,8 +6869,8 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6915,8 +6915,8 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -6969,8 +6969,8 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -7009,8 +7009,8 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -7054,8 +7054,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -7104,8 +7104,8 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum
-    agentType: AgentTypeEnum
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
