@@ -212,6 +212,8 @@ linkml:Sparqlpath xsd:string
              <knowledge_source> @linkml:String ? ;
              <primary_knowledge_source> @linkml:String ? ;
              <aggregator_knowledge_source> @linkml:String * ;
+             <knowledge_level> @<KnowledgeLevelEnum> ? ;
+             <agent_type> @<AgentTypeEnum> ? ;
              <timepoint> @<TimeType> ? ;
              <original_subject> @linkml:String ? ;
              <original_predicate> @linkml:Uriorcurie ? ;

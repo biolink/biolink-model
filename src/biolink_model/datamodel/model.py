@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-21T20:31:05
+# Generation date: 2024-04-08T13:03:56
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7303,6 +7303,8 @@ class Association(Entity):
     knowledge_source: Optional[str] = None
     primary_knowledge_source: Optional[str] = None
     aggregator_knowledge_source: Optional[Union[str, List[str]]] = empty_list()
+    knowledge_level: Optional[Union[str, "KnowledgeLevelEnum"]] = None
+    agent_type: Optional[Union[str, "AgentTypeEnum"]] = None
     timepoint: Optional[Union[str, TimeType]] = None
     original_subject: Optional[str] = None
     original_predicate: Optional[Union[str, URIorCURIE]] = None
@@ -7369,6 +7371,12 @@ class Association(Entity):
         if not isinstance(self.aggregator_knowledge_source, list):
             self.aggregator_knowledge_source = [self.aggregator_knowledge_source] if self.aggregator_knowledge_source is not None else []
         self.aggregator_knowledge_source = [v if isinstance(v, str) else str(v) for v in self.aggregator_knowledge_source]
+
+        if self.knowledge_level is not None and not isinstance(self.knowledge_level, KnowledgeLevelEnum):
+            self.knowledge_level = KnowledgeLevelEnum(self.knowledge_level)
+
+        if self.agent_type is not None and not isinstance(self.agent_type, AgentTypeEnum):
+            self.agent_type = AgentTypeEnum(self.agent_type)
 
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)

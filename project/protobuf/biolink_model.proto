@@ -86,6 +86,8 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -124,6 +126,8 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -195,6 +199,8 @@ message Association
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -288,6 +294,8 @@ message BehaviorToBehavioralFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -529,6 +537,8 @@ message CaseToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -574,6 +584,8 @@ message CausalGeneToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -658,6 +670,8 @@ message CellLineAsAModelOfDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -702,6 +716,8 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -773,6 +789,8 @@ message ChemicalAffectsGeneAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -846,6 +864,8 @@ message ChemicalEntityAssessesNamedThingAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -884,6 +904,8 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -943,6 +965,8 @@ message ChemicalGeneInteractionAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1016,6 +1040,8 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1055,6 +1081,8 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1111,6 +1139,8 @@ message ChemicalToChemicalAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1149,6 +1179,8 @@ message ChemicalToChemicalDerivationAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1190,6 +1222,8 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1227,6 +1261,8 @@ message ChemicalToPathwayAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1563,6 +1599,8 @@ message ContributorAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1601,6 +1639,8 @@ message CorrelatedGeneToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1825,6 +1865,8 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1864,6 +1906,8 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1903,6 +1947,8 @@ message DiseaseToExposureEventAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1939,6 +1985,8 @@ message DiseaseToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2061,6 +2109,8 @@ message DrugToGeneAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2116,6 +2166,8 @@ message DruggableGeneToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2168,6 +2220,8 @@ message EntityToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2207,6 +2261,8 @@ message EntityToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2369,6 +2425,8 @@ message ExonToTranscriptRelationship
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2409,6 +2467,8 @@ message ExposureEventToOutcomeAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2448,6 +2508,8 @@ message ExposureEventToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2541,6 +2603,8 @@ message FunctionalAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2616,6 +2680,8 @@ message GeneAffectsChemicalAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2669,6 +2735,8 @@ message GeneAsAModelOfDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2736,6 +2804,8 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2785,6 +2855,8 @@ message GeneToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2833,6 +2905,8 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2882,6 +2956,8 @@ message GeneToExpressionSiteAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2922,6 +2998,8 @@ message GeneToGeneCoexpressionAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2964,6 +3042,8 @@ message GeneToGeneFamilyAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3002,6 +3082,8 @@ message GeneToGeneHomologyAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3040,6 +3122,8 @@ message GeneToGeneProductRelationship
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3078,6 +3162,8 @@ message GeneToGoTermAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3116,6 +3202,8 @@ message GeneToPathwayAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3152,6 +3240,8 @@ message GeneToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3262,6 +3352,8 @@ message GenomicSequenceLocalization
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3324,6 +3416,8 @@ message GenotypeAsAModelOfDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3367,6 +3461,8 @@ message GenotypeToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3411,6 +3507,8 @@ message GenotypeToGeneAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3449,6 +3547,8 @@ message GenotypeToGenotypePartAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3488,6 +3588,8 @@ message GenotypeToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3536,6 +3638,8 @@ message GenotypeToVariantAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3737,6 +3841,8 @@ message InformationContentEntityToNamedThingAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3880,6 +3986,8 @@ message MacromolecularMachineToBiologicalProcessAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3918,6 +4026,8 @@ message MacromolecularMachineToCellularComponentAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3956,6 +4066,8 @@ message MacromolecularMachineToMolecularActivityAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4027,6 +4139,8 @@ message MaterialSampleDerivationAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4068,6 +4182,8 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4142,6 +4258,8 @@ message MolecularActivityToChemicalEntityAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4180,6 +4298,8 @@ message MolecularActivityToMolecularActivityAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4217,6 +4337,8 @@ message MolecularActivityToPathwayAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4317,6 +4439,8 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4514,6 +4638,8 @@ message OrganismTaxonToOrganismTaxonInteraction
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4553,6 +4679,8 @@ message OrganismTaxonToOrganismTaxonSpecialization
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4591,6 +4719,8 @@ message OrganismToOrganismAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4629,6 +4759,8 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4671,6 +4803,8 @@ message PairwiseGeneToGeneInteraction
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4708,6 +4842,8 @@ message PairwiseMolecularInteraction
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4908,6 +5044,8 @@ message PhenotypicFeatureToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5098,6 +5236,8 @@ message PopulationToPopulationAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5350,6 +5490,8 @@ message ReactionToCatalystAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5390,6 +5532,8 @@ message ReactionToParticipantAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5555,6 +5699,8 @@ message SequenceAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5591,6 +5737,8 @@ message SequenceFeatureRelationship
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5849,6 +5997,8 @@ message TaxonToTaxonAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5930,6 +6080,8 @@ message TranscriptToGeneRelationship
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -6005,6 +6157,8 @@ message VariantAsAModelOfDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -6048,6 +6202,8 @@ message VariantToDiseaseAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -6093,6 +6249,8 @@ message VariantToGeneAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -6131,6 +6289,8 @@ message VariantToGeneExpressionAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -6173,6 +6333,8 @@ message VariantToPhenotypicFeatureAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -6221,6 +6383,8 @@ message VariantToPopulationAssociation
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
