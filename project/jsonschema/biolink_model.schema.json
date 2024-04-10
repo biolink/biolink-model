@@ -376,10 +376,6 @@
             "additionalProperties": false,
             "description": "A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -426,10 +422,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -571,8 +563,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
@@ -582,10 +572,6 @@
             "additionalProperties": false,
             "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -632,10 +618,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -777,8 +759,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
@@ -939,10 +919,6 @@
             "additionalProperties": false,
             "description": "A typed association between two entities, supported by evidence",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -989,10 +965,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -1134,8 +1106,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "Association",
@@ -1444,10 +1414,6 @@
             "additionalProperties": false,
             "description": "An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -1513,10 +1479,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -1682,8 +1644,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "BehaviorToBehavioralFeatureAssociation",
@@ -2685,10 +2645,6 @@
             "additionalProperties": false,
             "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -2754,10 +2710,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -2923,8 +2875,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "CaseToPhenotypicFeatureAssociation",
@@ -2934,10 +2884,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -3003,10 +2949,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -3172,8 +3114,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "CausalGeneToDiseaseAssociation",
@@ -3390,10 +3330,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -3444,10 +3380,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -3609,8 +3541,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "CellLineAsAModelOfDiseaseAssociation",
@@ -3620,10 +3550,6 @@
             "additionalProperties": false,
             "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -3670,10 +3596,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -3815,8 +3737,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -4008,10 +3928,6 @@
             "additionalProperties": false,
             "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -4066,10 +3982,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -4261,8 +4173,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalAffectsGeneAssociation",
@@ -4378,10 +4288,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -4428,10 +4334,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -4573,8 +4475,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalEntityAssessesNamedThingAssociation",
@@ -4592,10 +4492,6 @@
             "additionalProperties": false,
             "description": "A regulatory relationship between two genes",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -4642,10 +4538,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -4791,8 +4683,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
@@ -4903,10 +4793,6 @@
             "additionalProperties": false,
             "description": "describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -4957,10 +4843,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -5128,8 +5010,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalGeneInteractionAssociation",
@@ -5268,10 +5148,6 @@
                     "$ref": "#/$defs/FDAIDAAdverseEventEnum",
                     "description": ""
                 },
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -5318,10 +5194,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -5463,8 +5335,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
@@ -5477,10 +5347,6 @@
                 "FDA_adverse_event_level": {
                     "$ref": "#/$defs/FDAIDAAdverseEventEnum",
                     "description": ""
-                },
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
                 },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
@@ -5529,10 +5395,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -5673,8 +5535,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
@@ -5794,10 +5654,6 @@
             "additionalProperties": false,
             "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -5844,10 +5700,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -5989,8 +5841,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalToChemicalAssociation",
@@ -6000,10 +5850,6 @@
             "additionalProperties": false,
             "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -6057,10 +5903,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -6202,8 +6044,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalToChemicalDerivationAssociation",
@@ -6213,10 +6053,6 @@
             "additionalProperties": false,
             "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -6263,10 +6099,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -6408,8 +6240,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -6419,10 +6249,6 @@
             "additionalProperties": false,
             "description": "An interaction between a chemical entity and a biological process or pathway.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -6469,10 +6295,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -6614,8 +6436,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ChemicalToPathwayAssociation",
@@ -8136,10 +7956,6 @@
             "additionalProperties": false,
             "description": "Any association between an entity (such as a publication) and various agents that contribute to its realisation",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -8186,10 +8002,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -8331,8 +8143,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ContributorAssociation",
@@ -8342,10 +8152,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -8411,10 +8217,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -8580,8 +8382,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "CorrelatedGeneToDiseaseAssociation",
@@ -9445,10 +9245,6 @@
             "additionalProperties": false,
             "description": "An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -9495,10 +9291,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -9640,8 +9432,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
@@ -9651,10 +9441,6 @@
             "additionalProperties": false,
             "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -9701,10 +9487,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -9846,8 +9628,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "DiseaseOrPhenotypicFeatureToLocationAssociation",
@@ -9857,10 +9637,6 @@
             "additionalProperties": false,
             "description": "An association between an exposure event and a disease.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -9907,10 +9683,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -10052,8 +9824,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "DiseaseToExposureEventAssociation",
@@ -10063,10 +9833,6 @@
             "additionalProperties": false,
             "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -10132,10 +9898,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -10305,8 +10067,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "DiseaseToPhenotypicFeatureAssociation",
@@ -10696,10 +10456,6 @@
             "additionalProperties": false,
             "description": "An interaction between a drug and a gene or gene product.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -10746,10 +10502,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -10891,8 +10643,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "DrugToGeneAssociation",
@@ -11021,10 +10771,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -11090,10 +10836,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -11259,8 +11001,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "DruggableGeneToDiseaseAssociation",
@@ -11270,10 +11010,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -11325,10 +11061,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -11472,8 +11204,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "EntityToDiseaseAssociation",
@@ -11483,10 +11213,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -11538,10 +11264,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -11685,8 +11407,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "EntityToPhenotypicFeatureAssociation",
@@ -12334,10 +12054,6 @@
             "additionalProperties": false,
             "description": "A transcript is formed from multiple exons",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -12384,10 +12100,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -12529,8 +12241,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ExonToTranscriptRelationship",
@@ -12540,10 +12250,6 @@
             "additionalProperties": false,
             "description": "An association between an exposure event and an outcome.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -12590,10 +12296,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -12744,8 +12446,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ExposureEventToOutcomeAssociation",
@@ -12755,10 +12455,6 @@
             "additionalProperties": false,
             "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -12824,10 +12520,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -12993,8 +12685,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ExposureEventToPhenotypicFeatureAssociation",
@@ -13246,10 +12936,6 @@
             "additionalProperties": false,
             "description": "An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -13296,10 +12982,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -13441,8 +13123,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "FunctionalAssociation",
@@ -13642,10 +13322,6 @@
             "additionalProperties": false,
             "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -13700,10 +13376,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -13899,8 +13571,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneAffectsChemicalAssociation",
@@ -13910,10 +13580,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -13979,10 +13645,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -14148,8 +13810,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneAsAModelOfDiseaseAssociation",
@@ -14257,10 +13917,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -14326,10 +13982,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -14499,8 +14151,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneHasVariantThatContributesToDiseaseAssociation",
@@ -14581,10 +14231,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -14650,10 +14296,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -14819,8 +14461,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToDiseaseAssociation",
@@ -14830,10 +14470,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -14899,10 +14535,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -15068,8 +14700,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToDiseaseOrPhenotypicFeatureAssociation",
@@ -15079,10 +14709,6 @@
             "additionalProperties": false,
             "description": "An association between a gene and a gene expression site, possibly qualified by stage/timing info.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -15129,10 +14755,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -15282,8 +14904,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToExpressionSiteAssociation",
@@ -15293,10 +14913,6 @@
             "additionalProperties": false,
             "description": "Indicates that two genes are co-expressed, generally under the same conditions.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -15347,10 +14963,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -15504,8 +15116,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToGeneCoexpressionAssociation",
@@ -15515,10 +15125,6 @@
             "additionalProperties": false,
             "description": "Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -15565,10 +15171,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -15710,8 +15312,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToGeneFamilyAssociation",
@@ -15721,10 +15321,6 @@
             "additionalProperties": false,
             "description": "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -15771,10 +15367,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -15916,8 +15508,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToGeneHomologyAssociation",
@@ -15927,10 +15517,6 @@
             "additionalProperties": false,
             "description": "A gene is transcribed and potentially translated to a gene product",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -15977,10 +15563,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -16122,8 +15704,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToGeneProductRelationship",
@@ -16133,10 +15713,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -16183,10 +15759,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -16328,8 +15900,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToGoTermAssociation",
@@ -16339,10 +15909,6 @@
             "additionalProperties": false,
             "description": "An interaction between a gene or gene product and a biological process or pathway.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -16389,10 +15955,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -16534,8 +16096,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToPathwayAssociation",
@@ -16545,10 +16105,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -16614,10 +16170,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -16783,8 +16335,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GeneToPhenotypicFeatureAssociation",
@@ -17103,10 +16653,6 @@
             "additionalProperties": false,
             "description": "A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -17161,10 +16707,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -17318,8 +16860,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenomicSequenceLocalization",
@@ -17427,10 +16967,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -17481,10 +17017,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -17646,8 +17178,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenotypeAsAModelOfDiseaseAssociation",
@@ -17657,10 +17187,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -17711,10 +17237,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -17876,8 +17398,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenotypeToDiseaseAssociation",
@@ -17887,10 +17407,6 @@
             "additionalProperties": false,
             "description": "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -17937,10 +17453,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -18082,8 +17594,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenotypeToGeneAssociation",
@@ -18093,10 +17603,6 @@
             "additionalProperties": false,
             "description": "Any association between one genotype and a genotypic entity that is a sub-component of it",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -18143,10 +17649,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -18288,8 +17790,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenotypeToGenotypePartAssociation",
@@ -18299,10 +17799,6 @@
             "additionalProperties": false,
             "description": "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -18368,10 +17864,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -18537,8 +18029,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenotypeToPhenotypicFeatureAssociation",
@@ -18548,10 +18038,6 @@
             "additionalProperties": false,
             "description": "Any association between a genotype and a sequence variant.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -18598,10 +18084,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -18743,8 +18225,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "GenotypeToVariantAssociation",
@@ -19586,10 +19066,6 @@
             "additionalProperties": false,
             "description": "association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -19636,10 +19112,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -19781,8 +19253,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "InformationContentEntityToNamedThingAssociation",
@@ -20333,10 +19803,6 @@
             "additionalProperties": false,
             "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -20384,10 +19850,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -20528,8 +19990,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MacromolecularMachineToBiologicalProcessAssociation",
@@ -20539,10 +19999,6 @@
             "additionalProperties": false,
             "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -20590,10 +20046,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -20734,8 +20186,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MacromolecularMachineToCellularComponentAssociation",
@@ -20745,10 +20195,6 @@
             "additionalProperties": false,
             "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -20796,10 +20242,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -20940,8 +20382,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MacromolecularMachineToMolecularActivityAssociation",
@@ -21122,10 +20562,6 @@
             "additionalProperties": false,
             "description": "An association between a material sample and the material entity from which it is derived.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -21172,10 +20608,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -21317,8 +20749,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MaterialSampleDerivationAssociation",
@@ -21328,10 +20758,6 @@
             "additionalProperties": false,
             "description": "An association between a material sample and a disease or phenotype.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -21378,10 +20804,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -21523,8 +20945,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
@@ -21751,10 +21171,6 @@
             "additionalProperties": false,
             "description": "Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -21802,10 +21218,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -21946,8 +21358,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MolecularActivityToChemicalEntityAssociation",
@@ -21957,10 +21367,6 @@
             "additionalProperties": false,
             "description": "Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -22008,10 +21414,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -22152,8 +21554,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MolecularActivityToMolecularActivityAssociation",
@@ -22163,10 +21563,6 @@
             "additionalProperties": false,
             "description": "Association that holds the relationship between a reaction and the pathway it participates in.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -22214,10 +21610,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -22358,8 +21750,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "MolecularActivityToPathwayAssociation",
@@ -22690,10 +22080,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -22740,10 +22126,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -22903,8 +22285,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
@@ -23685,10 +23065,6 @@
             "additionalProperties": false,
             "description": "An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -23739,10 +23115,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -23884,8 +23256,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "OrganismTaxonToOrganismTaxonInteraction",
@@ -23895,10 +23265,6 @@
             "additionalProperties": false,
             "description": "A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -23945,10 +23311,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -24090,8 +23452,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "OrganismTaxonToOrganismTaxonSpecialization",
@@ -24101,10 +23461,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -24151,10 +23507,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -24296,8 +23648,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "OrganismToOrganismAssociation",
@@ -24307,10 +23657,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -24361,10 +23707,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -24526,8 +23868,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -24537,10 +23877,6 @@
             "additionalProperties": false,
             "description": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -24587,10 +23923,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -24732,8 +24064,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "PairwiseGeneToGeneInteraction",
@@ -24743,10 +24073,6 @@
             "additionalProperties": false,
             "description": "An interaction at the molecular level between two physical entities",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -24796,10 +24122,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -24941,8 +24263,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "PairwiseMolecularInteraction",
@@ -25796,10 +25116,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -25865,10 +25181,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -26034,8 +25346,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "PhenotypicFeatureToDiseaseAssociation",
@@ -26782,10 +26092,6 @@
             "additionalProperties": false,
             "description": "An association between a two populations",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -26832,10 +26138,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -26977,8 +26279,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "PopulationToPopulationAssociation",
@@ -28250,10 +27550,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -28300,10 +27596,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -28457,8 +27749,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ReactionToCatalystAssociation",
@@ -28468,10 +27758,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -28518,10 +27804,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -28675,8 +27957,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "ReactionToParticipantAssociation",
@@ -29103,10 +28383,6 @@
             "additionalProperties": false,
             "description": "An association between a sequence feature and a nucleic acid entity it is localized to.",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -29154,10 +28430,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -29298,8 +28570,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "SequenceAssociation",
@@ -29318,10 +28588,6 @@
             "additionalProperties": false,
             "description": "For example, a particular exon is part of a particular transcript or gene",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -29369,10 +28635,6 @@
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
                 },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
-                },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
                     "type": "string"
@@ -29513,8 +28775,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "SequenceFeatureRelationship",
@@ -30652,10 +29912,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -30702,10 +29958,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -30847,8 +30099,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "TaxonToTaxonAssociation",
@@ -31058,10 +30308,6 @@
             "additionalProperties": false,
             "description": "A gene is a collection of transcripts",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -31108,10 +30354,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -31253,8 +30495,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "TranscriptToGeneRelationship",
@@ -31465,10 +30705,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -31519,10 +30755,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -31684,8 +30916,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "VariantAsAModelOfDiseaseAssociation",
@@ -31695,10 +30925,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -31749,10 +30975,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -31914,8 +31136,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "VariantToDiseaseAssociation",
@@ -31925,10 +31145,6 @@
             "additionalProperties": false,
             "description": "An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -31975,10 +31191,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -32120,8 +31332,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "VariantToGeneAssociation",
@@ -32131,10 +31341,6 @@
             "additionalProperties": false,
             "description": "An association between a variant and expression of a gene (i.e. e-QTL)",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -32185,10 +31391,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -32342,8 +31544,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "VariantToGeneExpressionAssociation",
@@ -32353,10 +31553,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -32422,10 +31618,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -32591,8 +31783,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "VariantToPhenotypicFeatureAssociation",
@@ -32602,10 +31792,6 @@
             "additionalProperties": false,
             "description": "An association between a variant and a population, where the variant has particular frequency in the population",
             "properties": {
-                "agent_type": {
-                    "$ref": "#/$defs/AgentTypeEnum",
-                    "description": "Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information."
-                },
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
                     "items": {
@@ -32672,10 +31858,6 @@
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
-                },
-                "knowledge_level": {
-                    "$ref": "#/$defs/KnowledgeLevelEnum",
-                    "description": "Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true."
                 },
                 "knowledge_source": {
                     "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
@@ -32817,8 +31999,6 @@
                 "subject",
                 "predicate",
                 "object",
-                "knowledge_level",
-                "agent_type",
                 "id"
             ],
             "title": "VariantToPopulationAssociation",
