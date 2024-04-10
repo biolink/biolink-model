@@ -6091,6 +6091,8 @@ slots:
     domain: association
     range: KnowledgeLevelEnum
     multivalued: false
+    required: true
+    ifabsent: string(not_provided)
     examples:
       - value: knowledge_assertion
       - value: prediction
@@ -6117,6 +6119,8 @@ slots:
     domain: association
     range: AgentTypeEnum
     multivalued: false
+    required: true
+    ifabsent: string(not_provided)
     examples:
       - value: manual_agent
       - value: automated_agent
@@ -9317,6 +9321,8 @@ classes:
       - knowledge source
       - primary knowledge source
       - aggregator knowledge source
+      - knowledge level
+      - agent type
       - timepoint
       - original subject
       - original predicate
