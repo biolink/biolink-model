@@ -75,7 +75,13 @@
                         "children": [
                             {
                                 "name": "clinical_course",
-                                "parent": "clinical_attribute"
+                                "parent": "clinical_attribute",
+                                "children": [
+                                    {
+                                        "name": "onset",
+                                        "parent": "clinical_course"
+                                    }
+                                ]
                             },
                             {
                                 "name": "clinical_measurement",
