@@ -1,61 +1,46 @@
-from __future__ import annotations 
-from datetime import (
-    datetime,
-    date
-)
-from decimal import Decimal 
-from enum import Enum 
-import re
+from __future__ import annotations
+from datetime import datetime, date
+from enum import Enum
+from typing import List, Dict, Optional, Any, Union
+from pydantic import BaseModel as BaseModel, ConfigDict, Field
 import sys
-from typing import (
-    Any,
-    List,
-    Literal,
-    Dict,
-    Optional,
-    Union
-)
-from pydantic.version import VERSION  as PYDANTIC_VERSION 
-if int(PYDANTIC_VERSION[0])>=2:
-    from pydantic import (
-        BaseModel,
-        ConfigDict,
-        Field,
-        field_validator
-    )
+if sys.version_info >= (3, 8):
+    from typing import Literal
 else:
-    from pydantic import (
-        BaseModel,
-        Field,
-        validator
-    )
+    from typing_extensions import Literal
+
 
 metamodel_version = "None"
 version = "4.2.0"
 
-
 class ConfiguredBaseModel(BaseModel):
     model_config = ConfigDict(
-        validate_assignment = True,
-        validate_default = True,
-        extra = "forbid",
-        arbitrary_types_allowed = True,
-        use_enum_values = True,
-        strict = False,
-    )
-    pass
+        validate_assignment=True,
+        validate_default=True,
+        extra = 'forbid',
+        arbitrary_types_allowed=True,
+        use_enum_values = True)
 
 
 class ClinicalApprovalStatusEnum(str, Enum):
+    
+    
     approved_for_condition = "approved_for_condition"
+    
     fda_approved_for_condition = "fda_approved_for_condition"
+    
     not_approved_for_condition = "not_approved_for_condition"
+    
     post_approval_withdrawal = "post_approval_withdrawal"
+    
     off_label_use = "off_label_use"
+    
     not_provided = "not_provided"
-
+    
+    
 
 class MaxResearchPhaseEnum(str, Enum):
+    
     # Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
     pre_clinical_research_phase = "pre_clinical_research_phase"
     # Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
@@ -68,95 +53,176 @@ class MaxResearchPhaseEnum(str, Enum):
     clinical_trial_phase_3 = "clinical_trial_phase_3"
     # In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
     clinical_trial_phase_4 = "clinical_trial_phase_4"
+    
     not_provided = "not_provided"
-
+    
+    
 
 class DirectionQualifierEnum(str, Enum):
+    
+    
     increased = "increased"
+    
     upregulated = "upregulated"
+    
     decreased = "decreased"
+    
     downregulated = "downregulated"
-
+    
+    
 
 class ChemicalEntityDerivativeEnum(str, Enum):
+    
+    
     metabolite = "metabolite"
-
+    
+    
 
 class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
+    
+    
     genetic_variant_form = "genetic_variant_form"
+    
     modified_form = "modified_form"
+    
     loss_of_function_variant_form = "loss_of_function_variant_form"
+    
     gain_of_function_variant_form = "gain_of_function_variant_form"
+    
     polymorphic_form = "polymorphic_form"
+    
     snp_form = "snp_form"
+    
     analog_form = "analog_form"
-
+    
+    
 
 class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
+    
+    
     number_3_prime_utr = "3_prime_utr"
+    
     number_5_prime_utr = "5_prime_utr"
+    
     polya_tail = "polya_tail"
+    
     promoter = "promoter"
+    
     enhancer = "enhancer"
+    
     exon = "exon"
+    
     intron = "intron"
-
+    
+    
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
+    
     # Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used.
     activity_or_abundance = "activity_or_abundance"
+    
     abundance = "abundance"
+    
     activity = "activity"
+    
     expression = "expression"
+    
     synthesis = "synthesis"
+    
     degradation = "degradation"
+    
     cleavage = "cleavage"
+    
     hydrolysis = "hydrolysis"
+    
     metabolic_processing = "metabolic_processing"
+    
     mutation_rate = "mutation_rate"
+    
     stability = "stability"
+    
     folding = "folding"
+    
     localization = "localization"
+    
     transport = "transport"
+    
     secretion = "secretion"
+    
     uptake = "uptake"
+    
     splicing = "splicing"
+    
     molecular_interaction = "molecular_interaction"
+    
     molecular_modification = "molecular_modification"
+    
     acetylation = "acetylation"
+    
     acylation = "acylation"
+    
     alkylation = "alkylation"
+    
     amination = "amination"
+    
     carbamoylation = "carbamoylation"
+    
     ethylation = "ethylation"
+    
     glutathionylation = "glutathionylation"
+    
     glycation = "glycation"
+    
     glycosylation = "glycosylation"
+    
     glucuronidation = "glucuronidation"
+    
     n_linked_glycosylation = "n_linked_glycosylation"
+    
     o_linked_glycosylation = "o_linked_glycosylation"
+    
     hydroxylation = "hydroxylation"
+    
     lipidation = "lipidation"
+    
     farnesylation = "farnesylation"
+    
     geranoylation = "geranoylation"
+    
     myristoylation = "myristoylation"
+    
     palmitoylation = "palmitoylation"
+    
     prenylation = "prenylation"
+    
     methylation = "methylation"
+    
     nitrosation = "nitrosation"
+    
     nucleotidylation = "nucleotidylation"
+    
     phosphorylation = "phosphorylation"
+    
     ribosylation = "ribosylation"
+    
     ADP_ribosylation = "ADP-ribosylation"
+    
     sulfation = "sulfation"
+    
     sumoylation = "sumoylation"
+    
     ubiquitination = "ubiquitination"
+    
     oxidation = "oxidation"
+    
     reduction = "reduction"
+    
     carboxylation = "carboxylation"
-
+    
+    
 
 class CausalMechanismQualifierEnum(str, Enum):
+    
     # A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.
     binding = "binding"
     # A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.
@@ -187,39 +253,60 @@ class CausalMechanismQualifierEnum(str, Enum):
     transcriptional_regulation = "transcriptional_regulation"
     # A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)
     signaling_mediated_control = "signaling_mediated_control"
+    
     stabilization = "stabilization"
+    
     stimulation = "stimulation"
+    
     releasing_activity = "releasing_activity"
-
+    
+    
 
 class LogicalInterpretationEnum(str, Enum):
+    
     # A modifier on a triple that causes the triple to be interpreted as a some-some statement
     some_some = "some_some"
     # A modifier on a triple that causes the triple to be interpreted as an all-some statement.
     all_some = "all_some"
+    
     inverse_all_some = "inverse_all_some"
-
+    
+    
 
 class ReactionDirectionEnum(str, Enum):
+    
+    
     left_to_right = "left_to_right"
+    
     right_to_left = "right_to_left"
+    
     bidirectional = "bidirectional"
+    
     neutral = "neutral"
-
+    
+    
 
 class ReactionSideEnum(str, Enum):
+    
+    
     left = "left"
+    
     right = "right"
-
+    
+    
 
 class PhaseEnum(str, Enum):
     """
     phase
     """
+    
     number_0 = "0"
+    
     number_1 = "1"
+    
     number_2 = "2"
-
+    
+    
 
 class StrandEnum(str, Enum):
     """
@@ -233,7 +320,8 @@ class StrandEnum(str, Enum):
     FULL_STOP = "."
     # Unknown
     QUESTION_MARK = "?"
-
+    
+    
 
 class SequenceEnum(str, Enum):
     """
@@ -243,9 +331,11 @@ class SequenceEnum(str, Enum):
     na = "na"
     # amino acid
     aa = "aa"
-
+    
+    
 
 class DruggableGeneCategoryEnum(str, Enum):
+    
     # These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
     tclin = "tclin"
     # These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.
@@ -254,30 +344,43 @@ class DruggableGeneCategoryEnum(str, Enum):
     tchem = "tchem"
     # These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.
     tdark = "tdark"
-
+    
+    
 
 class DrugAvailabilityEnum(str, Enum):
+    
     # chemical entity is available over the counter without a prescription.
     over_the_counter = "over_the_counter"
     # chemical entity is available by prescription.
     prescription = "prescription"
-
+    
+    
 
 class DrugDeliveryEnum(str, Enum):
+    
+    
     inhalation = "inhalation"
+    
     oral = "oral"
+    
     absorption_through_the_skin = "absorption_through_the_skin"
+    
     intravenous_injection = "intravenous_injection"
-
+    
+    
 
 class ResourceRoleEnum(str, Enum):
     """
     The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.
     """
+    
     primary_knowledge_source = "primary_knowledge_source"
+    
     aggregator_knowledge_source = "aggregator_knowledge_source"
+    
     supporting_data_source = "supporting_data_source"
-
+    
+    
 
 class FDAIDAAdverseEventEnum(str, Enum):
     """
@@ -291,9 +394,11 @@ class FDAIDAAdverseEventEnum(str, Enum):
     suspected_adverse_reaction = "suspected_adverse_reaction"
     # An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the investigator brochure or is not listed at the specificity or severity that has been observed; or, if an investigator brochure is not required or available, is not consistent with the risk information described in the general investigational plan or elsewhere in the current application, as amended. For example, under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but are not specifically mentioned as occurring with the particular drug under investigation.
     unexpected_adverse_event = "unexpected_adverse_event"
-
+    
+    
 
 class AgentTypeEnum(str, Enum):
+    
     # A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge,  but the human is the one who ultimately interprets/reasons with  this evidence to produce a statement of knowledge.
     manual_agent = "manual_agent"
     # An automated agent, typically a software program or tool, that is  responsible for generating a statement of knowledge. Human contribution  to the knowledge creation process ends with the definition and coding of algorithms or analysis pipelines that get executed by the automated agent.
@@ -310,9 +415,11 @@ class AgentTypeEnum(str, Enum):
     manual_validation_of_automated_agent = "manual_validation_of_automated_agent"
     # The agent type is not provided, typically because it cannot be determined from available information if the agent that generated the knowledge is  manual or automated.
     not_provided = "not_provided"
-
+    
+    
 
 class KnowledgeLevelEnum(str, Enum):
+    
     # A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not  definitively true.
     knowledge_assertion = "knowledge_assertion"
     # A statement reporting a conclusion that follows logically from premises representing established facts or knowledge assertions (e.g. fingernail part of finger, finger part of hand --> fingernail part of hand).
@@ -325,14 +432,15 @@ class KnowledgeLevelEnum(str, Enum):
     observation = "observation"
     # The knowledge level is not provided, typically because it cannot be determined from available. information.
     not_provided = "not_provided"
-
+    
+    
 
 class MappingCollection(ConfiguredBaseModel):
     """
     A collection of deprecated mappings.
     """
     predicate_mappings: Optional[List[PredicateMapping]] = Field(None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
-
+    
 
 class PredicateMapping(ConfiguredBaseModel):
     """
@@ -359,21 +467,21 @@ class PredicateMapping(ConfiguredBaseModel):
     exact_match: Optional[List[str]] = Field(None, description="""holds between two entities that have strictly equivalent meanings, with a high degree of confidence""")
     narrow_match: Optional[List[str]] = Field(None, description="""a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.""")
     broad_match: Optional[List[str]] = Field(None, description="""a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.""")
-
+    
 
 class OntologyClass(ConfiguredBaseModel):
     """
     a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
     """
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-
+    
 
 class Annotation(ConfiguredBaseModel):
     """
     Biolink Model root class for entity annotations.
     """
-    pass
-
+    None
+    
 
 class QuantityValue(Annotation):
     """
@@ -381,37 +489,42 @@ class QuantityValue(Annotation):
     """
     has_unit: Optional[str] = Field(None, description="""connects a quantity value to a unit""")
     has_numeric_value: Optional[float] = Field(None, description="""connects a quantity value to a number""")
-
+    
 
 class RelationshipQuantifier(ConfiguredBaseModel):
-    pass
-
+    
+    None
+    
 
 class SensitivityQuantifier(RelationshipQuantifier):
-    pass
-
+    
+    None
+    
 
 class SpecificityQuantifier(RelationshipQuantifier):
-    pass
-
+    
+    None
+    
 
 class PathognomonicityQuantifier(SpecificityQuantifier):
     """
     A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
     """
-    pass
-
+    None
+    
 
 class FrequencyQuantifier(RelationshipQuantifier):
+    
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(None)
     has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
-
+    
 
 class ChemicalOrDrugOrTreatment(ConfiguredBaseModel):
-    pass
-
+    
+    None
+    
 
 class Entity(ConfiguredBaseModel):
     """
@@ -425,7 +538,7 @@ class Entity(ConfiguredBaseModel):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class NamedThing(Entity):
     """
@@ -443,7 +556,7 @@ class NamedThing(Entity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Attribute(NamedThing, OntologyClass):
     """
@@ -464,7 +577,7 @@ class Attribute(NamedThing, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalRole(Attribute):
     """
@@ -485,9 +598,10 @@ class ChemicalRole(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class BiologicalSex(Attribute):
+    
     name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(..., description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
@@ -503,7 +617,7 @@ class BiologicalSex(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PhenotypicSex(BiologicalSex):
     """
@@ -524,7 +638,7 @@ class PhenotypicSex(BiologicalSex):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenotypicSex(BiologicalSex):
     """
@@ -545,7 +659,7 @@ class GenotypicSex(BiologicalSex):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SeverityValue(Attribute):
     """
@@ -566,21 +680,21 @@ class SeverityValue(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class RelationshipType(OntologyClass):
     """
     An OWL property used as an edge label
     """
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-
+    
 
 class TaxonomicRank(OntologyClass):
     """
     A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
     """
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-
+    
 
 class OrganismTaxon(NamedThing):
     """
@@ -599,7 +713,7 @@ class OrganismTaxon(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Event(NamedThing):
     """
@@ -617,9 +731,10 @@ class Event(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class AdministrativeEntity(NamedThing):
+    
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -632,7 +747,7 @@ class AdministrativeEntity(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Agent(AdministrativeEntity):
     """
@@ -652,7 +767,7 @@ class Agent(AdministrativeEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class InformationContentEntity(NamedThing):
     """
@@ -674,7 +789,7 @@ class InformationContentEntity(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class StudyResult(InformationContentEntity):
     """
@@ -696,7 +811,7 @@ class StudyResult(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class StudyVariable(InformationContentEntity):
     """
@@ -718,7 +833,7 @@ class StudyVariable(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class CommonDataElement(InformationContentEntity):
     """
@@ -740,7 +855,7 @@ class CommonDataElement(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ConceptCountAnalysisResult(StudyResult):
     """
@@ -762,7 +877,7 @@ class ConceptCountAnalysisResult(StudyResult):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     """
@@ -784,7 +899,7 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class RelativeFrequencyAnalysisResult(StudyResult):
     """
@@ -806,7 +921,7 @@ class RelativeFrequencyAnalysisResult(StudyResult):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class TextMiningResult(StudyResult):
     """
@@ -828,7 +943,7 @@ class TextMiningResult(StudyResult):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChiSquaredAnalysisResult(StudyResult):
     """
@@ -850,7 +965,7 @@ class ChiSquaredAnalysisResult(StudyResult):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class LogOddsAnalysisResult(StudyResult):
     """
@@ -872,7 +987,7 @@ class LogOddsAnalysisResult(StudyResult):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Dataset(InformationContentEntity):
     """
@@ -894,7 +1009,7 @@ class Dataset(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DatasetDistribution(InformationContentEntity):
     """
@@ -917,7 +1032,7 @@ class DatasetDistribution(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DatasetVersion(InformationContentEntity):
     """
@@ -942,7 +1057,7 @@ class DatasetVersion(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DatasetSummary(InformationContentEntity):
     """
@@ -966,7 +1081,7 @@ class DatasetSummary(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ConfidenceLevel(InformationContentEntity):
     """
@@ -988,7 +1103,7 @@ class ConfidenceLevel(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EvidenceType(InformationContentEntity):
     """
@@ -1010,7 +1125,7 @@ class EvidenceType(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Publication(InformationContentEntity):
     """
@@ -1038,7 +1153,7 @@ class Publication(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Book(Publication):
     """
@@ -1066,9 +1181,10 @@ class Book(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class BookChapter(Publication):
+    
     published_in: str = Field(..., description="""The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.""")
     volume: Optional[str] = Field(None, description="""volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication""")
     chapter: Optional[str] = Field(None, description="""chapter of a book""")
@@ -1094,7 +1210,7 @@ class BookChapter(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Serial(Publication):
     """
@@ -1125,7 +1241,7 @@ class Serial(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Article(Publication):
     """
@@ -1157,7 +1273,7 @@ class Article(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class JournalArticle(Article):
     """
@@ -1189,7 +1305,7 @@ class JournalArticle(Article):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Patent(Publication):
     """
@@ -1217,7 +1333,7 @@ class Patent(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class WebPage(Publication):
     """
@@ -1245,7 +1361,7 @@ class WebPage(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PreprintPublication(Publication):
     """
@@ -1273,7 +1389,7 @@ class PreprintPublication(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DrugLabel(Publication):
     """
@@ -1301,7 +1417,7 @@ class DrugLabel(Publication):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class RetrievalSource(InformationContentEntity):
     """
@@ -1326,21 +1442,21 @@ class RetrievalSource(InformationContentEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PhysicalEssenceOrOccurrent(ConfiguredBaseModel):
     """
     Either a physical or processual entity.
     """
-    pass
-
+    None
+    
 
 class PhysicalEssence(PhysicalEssenceOrOccurrent):
     """
     Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
     """
-    pass
-
+    None
+    
 
 class PhysicalEntity(PhysicalEssence, NamedThing):
     """
@@ -1358,21 +1474,21 @@ class PhysicalEntity(PhysicalEssence, NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Occurrent(PhysicalEssenceOrOccurrent):
     """
     A processual entity.
     """
-    pass
-
+    None
+    
 
 class ActivityAndBehavior(Occurrent):
     """
     Activity or behavior of any independent integral living, organization or mechanical actor in the world
     """
-    pass
-
+    None
+    
 
 class Activity(ActivityAndBehavior, NamedThing):
     """
@@ -1390,7 +1506,7 @@ class Activity(ActivityAndBehavior, NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Study(Activity):
     """
@@ -1408,7 +1524,7 @@ class Study(Activity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Procedure(ActivityAndBehavior, NamedThing):
     """
@@ -1426,7 +1542,7 @@ class Procedure(ActivityAndBehavior, NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Phenomenon(Occurrent, NamedThing):
     """
@@ -1444,7 +1560,7 @@ class Phenomenon(Occurrent, NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Device(NamedThing):
     """
@@ -1462,7 +1578,7 @@ class Device(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DiagnosticAid(NamedThing):
     """
@@ -1480,14 +1596,14 @@ class DiagnosticAid(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SubjectOfInvestigation(ConfiguredBaseModel):
     """
     An entity that has the role of being studied in an investigation, study, or experiment
     """
-    pass
-
+    None
+    
 
 class MaterialSample(SubjectOfInvestigation, PhysicalEntity):
     """
@@ -1505,7 +1621,7 @@ class MaterialSample(SubjectOfInvestigation, PhysicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PlanetaryEntity(NamedThing):
     """
@@ -1523,9 +1639,10 @@ class PlanetaryEntity(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EnvironmentalProcess(PlanetaryEntity, Occurrent):
+    
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -1538,9 +1655,10 @@ class EnvironmentalProcess(PlanetaryEntity, Occurrent):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EnvironmentalFeature(PlanetaryEntity):
+    
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -1553,7 +1671,7 @@ class EnvironmentalFeature(PlanetaryEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeographicLocation(PlanetaryEntity):
     """
@@ -1573,7 +1691,7 @@ class GeographicLocation(PlanetaryEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeographicLocationAtTime(GeographicLocation):
     """
@@ -1594,7 +1712,7 @@ class GeographicLocationAtTime(GeographicLocation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ThingWithTaxon(ConfiguredBaseModel):
     """
@@ -1602,9 +1720,10 @@ class ThingWithTaxon(ConfiguredBaseModel):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
-
+    
 
 class BiologicalEntity(ThingWithTaxon, NamedThing):
+    
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1619,15 +1738,17 @@ class BiologicalEntity(ThingWithTaxon, NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenomicEntity(ConfiguredBaseModel):
+    
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
-
+    
 
 class EpigenomicEntity(ConfiguredBaseModel):
+    
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
-
+    
 
 class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     """
@@ -1650,7 +1771,7 @@ class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     """
@@ -1673,7 +1794,7 @@ class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     """
@@ -1696,9 +1817,10 @@ class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Pathway(BiologicalProcess, OntologyClass):
+    
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[List[str]] = Field(None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[List[str]] = Field(None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
@@ -1716,9 +1838,10 @@ class Pathway(BiologicalProcess, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PhysiologicalProcess(BiologicalProcess, OntologyClass):
+    
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[List[str]] = Field(None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[List[str]] = Field(None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
@@ -1736,9 +1859,10 @@ class PhysiologicalProcess(BiologicalProcess, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
+    
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[List[str]] = Field(None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[List[str]] = Field(None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
@@ -1756,7 +1880,7 @@ class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class OrganismAttribute(Attribute):
     """
@@ -1777,7 +1901,7 @@ class OrganismAttribute(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PhenotypicQuality(OrganismAttribute):
     """
@@ -1798,7 +1922,7 @@ class PhenotypicQuality(OrganismAttribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneticInheritance(BiologicalEntity):
     """
@@ -1818,7 +1942,7 @@ class GeneticInheritance(BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
     """
@@ -1838,7 +1962,7 @@ class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Bacterium(OrganismalEntity):
     """
@@ -1858,7 +1982,7 @@ class Bacterium(OrganismalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Virus(OrganismalEntity, SubjectOfInvestigation):
     """
@@ -1878,9 +2002,10 @@ class Virus(OrganismalEntity, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
+    
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1895,7 +2020,7 @@ class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Mammal(CellularOrganism, SubjectOfInvestigation):
     """
@@ -1915,7 +2040,7 @@ class Mammal(CellularOrganism, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Human(Mammal, SubjectOfInvestigation):
     """
@@ -1935,9 +2060,10 @@ class Human(Mammal, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Plant(CellularOrganism):
+    
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1952,7 +2078,7 @@ class Plant(CellularOrganism):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Invertebrate(CellularOrganism):
     """
@@ -1972,7 +2098,7 @@ class Invertebrate(CellularOrganism):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Vertebrate(CellularOrganism):
     """
@@ -1992,7 +2118,7 @@ class Vertebrate(CellularOrganism):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Fungus(CellularOrganism):
     """
@@ -2012,7 +2138,7 @@ class Fungus(CellularOrganism):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class LifeStage(OrganismalEntity):
     """
@@ -2032,7 +2158,7 @@ class LifeStage(OrganismalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     """
@@ -2052,7 +2178,7 @@ class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
     """
@@ -2072,7 +2198,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class StudyPopulation(PopulationOfIndividualOrganisms):
     """
@@ -2092,7 +2218,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
@@ -2112,7 +2238,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Disease(DiseaseOrPhenotypicFeature):
     """
@@ -2132,7 +2258,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
@@ -2152,7 +2278,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class BehavioralFeature(PhenotypicFeature):
     """
@@ -2172,7 +2298,7 @@ class BehavioralFeature(PhenotypicFeature):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class AnatomicalEntity(OrganismalEntity, PhysicalEssence):
     """
@@ -2192,7 +2318,7 @@ class AnatomicalEntity(OrganismalEntity, PhysicalEssence):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class CellularComponent(AnatomicalEntity):
     """
@@ -2212,9 +2338,10 @@ class CellularComponent(AnatomicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Cell(AnatomicalEntity):
+    
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2229,9 +2356,10 @@ class Cell(AnatomicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class CellLine(OrganismalEntity, SubjectOfInvestigation):
+    
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2246,9 +2374,10 @@ class CellLine(OrganismalEntity, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GrossAnatomicalStructure(AnatomicalEntity):
+    
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2263,14 +2392,14 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalEntityOrGeneOrGeneProduct(ConfiguredBaseModel):
     """
     A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
     """
-    pass
-
+    None
+    
 
 class RegulatoryRegion(ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -2291,7 +2420,7 @@ class RegulatoryRegion(ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, Biologi
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, PhysicalEssence, OntologyClass):
     """
@@ -2312,7 +2441,7 @@ class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, G
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, PhysicalEssence, OntologyClass):
     """
@@ -2333,14 +2462,14 @@ class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGen
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalEntityOrProteinOrPolypeptide(ConfiguredBaseModel):
     """
     A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
     """
-    pass
-
+    None
+    
 
 class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, NamedThing, ChemicalOrDrugOrTreatment):
     """
@@ -2363,7 +2492,7 @@ class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneO
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MolecularEntity(ChemicalEntity):
     """
@@ -2387,7 +2516,7 @@ class MolecularEntity(ChemicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SmallMolecule(MolecularEntity):
     """
@@ -2411,7 +2540,7 @@ class SmallMolecule(MolecularEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalMixture(ChemicalEntity):
     """
@@ -2438,7 +2567,7 @@ class ChemicalMixture(ChemicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, PhysicalEssence, OntologyClass):
     """
@@ -2465,7 +2594,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MolecularMixture(ChemicalMixture):
     """
@@ -2492,7 +2621,7 @@ class MolecularMixture(ChemicalMixture):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ComplexMolecularMixture(ChemicalMixture):
     """
@@ -2519,7 +2648,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ProcessedMaterial(ChemicalMixture):
     """
@@ -2546,7 +2675,7 @@ class ProcessedMaterial(ChemicalMixture):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     """
@@ -2573,9 +2702,10 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EnvironmentalFoodContaminant(ChemicalEntity):
+    
     trade_name: Optional[str] = Field(None)
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -2593,9 +2723,10 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class FoodAdditive(ChemicalEntity):
+    
     trade_name: Optional[str] = Field(None)
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -2613,7 +2744,7 @@ class FoodAdditive(ChemicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Food(ChemicalMixture):
     """
@@ -2640,21 +2771,21 @@ class Food(ChemicalMixture):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MacromolecularMachineMixin(ConfiguredBaseModel):
     """
     A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
     """
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
-
+    
 
 class GeneOrGeneProduct(MacromolecularMachineMixin):
     """
     A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
     """
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
-
+    
 
 class Gene(GeneOrGeneProduct, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -2676,7 +2807,7 @@ class Gene(GeneOrGeneProduct, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, 
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneProductMixin(GeneOrGeneProduct):
     """
@@ -2685,7 +2816,7 @@ class GeneProductMixin(GeneOrGeneProduct):
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
-
+    
 
 class GeneProductIsoformMixin(GeneProductMixin):
     """
@@ -2694,7 +2825,7 @@ class GeneProductIsoformMixin(GeneProductMixin):
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
-
+    
 
 class MacromolecularComplex(MacromolecularMachineMixin, BiologicalEntity):
     """
@@ -2714,7 +2845,7 @@ class MacromolecularComplex(MacromolecularMachineMixin, BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicEntity, BiologicalEntity):
     """
@@ -2735,7 +2866,7 @@ class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicE
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -2756,7 +2887,7 @@ class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Exon(BiologicalEntity):
     """
@@ -2776,7 +2907,7 @@ class Exon(BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Transcript(BiologicalEntity):
     """
@@ -2796,9 +2927,10 @@ class Transcript(BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class CodingSequence(GenomicEntity, BiologicalEntity):
+    
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -2814,7 +2946,7 @@ class CodingSequence(GenomicEntity, BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Polypeptide(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
@@ -2834,7 +2966,7 @@ class Polypeptide(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGe
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Protein(Polypeptide, GeneProductMixin):
     """
@@ -2854,7 +2986,7 @@ class Protein(Polypeptide, GeneProductMixin):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ProteinIsoform(Protein, GeneProductIsoformMixin):
     """
@@ -2874,7 +3006,7 @@ class ProteinIsoform(Protein, GeneProductIsoformMixin):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
     """
@@ -2894,7 +3026,7 @@ class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class NucleicAcidSequenceMotif(BiologicalEntity):
     """
@@ -2914,9 +3046,10 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class RNAProduct(Transcript, GeneProductMixin):
+    
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2931,7 +3064,7 @@ class RNAProduct(Transcript, GeneProductMixin):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     """
@@ -2951,9 +3084,10 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class NoncodingRNAProduct(RNAProduct):
+    
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2968,9 +3102,10 @@ class NoncodingRNAProduct(RNAProduct):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MicroRNA(NoncodingRNAProduct):
+    
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2985,7 +3120,7 @@ class MicroRNA(NoncodingRNAProduct):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SiRNA(NoncodingRNAProduct):
     """
@@ -3005,14 +3140,14 @@ class SiRNA(NoncodingRNAProduct):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneGroupingMixin(ConfiguredBaseModel):
     """
     any grouping of multiple genes or gene products
     """
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
-
+    
 
 class ProteinDomain(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
@@ -3033,9 +3168,10 @@ class ProteinDomain(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
+    
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -3051,7 +3187,7 @@ class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
@@ -3072,9 +3208,10 @@ class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biologica
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Zygosity(Attribute):
+    
     name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(..., description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
@@ -3090,7 +3227,7 @@ class Zygosity(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3112,7 +3249,7 @@ class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3133,7 +3270,7 @@ class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3155,7 +3292,7 @@ class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, Ontology
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Snv(SequenceVariant):
     """
@@ -3177,7 +3314,7 @@ class Snv(SequenceVariant):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
@@ -3198,7 +3335,7 @@ class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, Onto
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalAttribute(Attribute):
     """
@@ -3219,7 +3356,7 @@ class ClinicalAttribute(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalMeasurement(ClinicalAttribute):
     """
@@ -3240,7 +3377,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalModifier(ClinicalAttribute):
     """
@@ -3261,7 +3398,7 @@ class ClinicalModifier(ClinicalAttribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalCourse(ClinicalAttribute):
     """
@@ -3282,7 +3419,7 @@ class ClinicalCourse(ClinicalAttribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Onset(ClinicalCourse):
     """
@@ -3303,7 +3440,7 @@ class Onset(ClinicalCourse):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalEntity(NamedThing):
     """
@@ -3321,9 +3458,10 @@ class ClinicalEntity(NamedThing):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalTrial(ClinicalEntity):
+    
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -3336,9 +3474,10 @@ class ClinicalTrial(ClinicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalIntervention(ClinicalEntity):
+    
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -3351,7 +3490,7 @@ class ClinicalIntervention(ClinicalEntity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ClinicalFinding(PhenotypicFeature):
     """
@@ -3371,9 +3510,10 @@ class ClinicalFinding(PhenotypicFeature):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Hospitalization(ClinicalIntervention):
+    
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(None, description="""a long-form human readable name for a thing""")
@@ -3386,7 +3526,7 @@ class Hospitalization(ClinicalIntervention):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SocioeconomicAttribute(Attribute):
     """
@@ -3407,7 +3547,7 @@ class SocioeconomicAttribute(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Case(IndividualOrganism, SubjectOfInvestigation):
     """
@@ -3427,7 +3567,7 @@ class Case(IndividualOrganism, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Cohort(StudyPopulation, SubjectOfInvestigation):
     """
@@ -3447,7 +3587,7 @@ class Cohort(StudyPopulation, SubjectOfInvestigation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ExposureEvent(OntologyClass):
     """
@@ -3455,7 +3595,7 @@ class ExposureEvent(OntologyClass):
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-
+    
 
 class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity, ThingWithTaxon, PhysicalEssence, Attribute, OntologyClass):
     """
@@ -3481,14 +3621,14 @@ class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity,
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PathologicalEntityMixin(ConfiguredBaseModel):
     """
     A pathological (abnormal) structure or process.
     """
-    pass
-
+    None
+    
 
 class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     """
@@ -3511,7 +3651,7 @@ class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PathologicalProcessExposure(ExposureEvent, Attribute):
     """
@@ -3533,7 +3673,7 @@ class PathologicalProcessExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity):
     """
@@ -3553,7 +3693,7 @@ class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     """
@@ -3575,7 +3715,7 @@ class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent, Attribute):
     """
@@ -3597,7 +3737,7 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent,
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalExposure(ExposureEvent, Attribute):
     """
@@ -3619,7 +3759,7 @@ class ChemicalExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ComplexChemicalExposure(Attribute):
     """
@@ -3640,7 +3780,7 @@ class ComplexChemicalExposure(Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DrugExposure(ChemicalExposure, ExposureEvent):
     """
@@ -3662,7 +3802,7 @@ class DrugExposure(ChemicalExposure, ExposureEvent):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     """
@@ -3685,7 +3825,7 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     """
@@ -3707,7 +3847,7 @@ class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class BioticExposure(ExposureEvent, Attribute):
     """
@@ -3729,7 +3869,7 @@ class BioticExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EnvironmentalExposure(ExposureEvent, Attribute):
     """
@@ -3751,7 +3891,7 @@ class EnvironmentalExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     """
@@ -3773,7 +3913,7 @@ class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class BehavioralExposure(ExposureEvent, Attribute):
     """
@@ -3795,7 +3935,7 @@ class BehavioralExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SocioeconomicExposure(ExposureEvent, Attribute):
     """
@@ -3817,70 +3957,70 @@ class SocioeconomicExposure(ExposureEvent, Attribute):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: List[str] = Field(..., description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class Outcome(ConfiguredBaseModel):
     """
     An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
     """
-    pass
-
+    None
+    
 
 class PathologicalProcessOutcome(Outcome):
     """
     An outcome resulting from an exposure event which is the manifestation of a pathological process.
     """
-    pass
-
+    None
+    
 
 class PathologicalAnatomicalOutcome(Outcome):
     """
     An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
     """
-    pass
-
+    None
+    
 
 class DiseaseOrPhenotypicFeatureOutcome(Outcome):
     """
     Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
     """
-    pass
-
+    None
+    
 
 class BehavioralOutcome(Outcome):
     """
     An outcome resulting from an exposure event which is the manifestation of human behavior.
     """
-    pass
-
+    None
+    
 
 class HospitalizationOutcome(Outcome):
     """
     An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
     """
-    pass
-
+    None
+    
 
 class MortalityOutcome(Outcome):
     """
     An outcome of death from resulting from an exposure event.
     """
-    pass
-
+    None
+    
 
 class EpidemiologicalOutcome(Outcome):
     """
     An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
     """
-    pass
-
+    None
+    
 
 class SocioeconomicOutcome(Outcome):
     """
     An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
     """
-    pass
-
+    None
+    
 
 class Association(Entity):
     """
@@ -3922,9 +4062,10 @@ class Association(Entity):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalEntityAssessesNamedThingAssociation(Association):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -3961,7 +4102,7 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ContributorAssociation(Association):
     """
@@ -4003,7 +4144,7 @@ class ContributorAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenotypeToGenotypePartAssociation(Association):
     """
@@ -4045,7 +4186,7 @@ class GenotypeToGenotypePartAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenotypeToGeneAssociation(Association):
     """
@@ -4087,7 +4228,7 @@ class GenotypeToGeneAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenotypeToVariantAssociation(Association):
     """
@@ -4129,7 +4270,7 @@ class GenotypeToVariantAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneToGeneAssociation(Association):
     """
@@ -4171,7 +4312,7 @@ class GeneToGeneAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
@@ -4213,7 +4354,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneToGeneFamilyAssociation(Association):
     """
@@ -4255,7 +4396,7 @@ class GeneToGeneFamilyAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneExpressionMixin(ConfiguredBaseModel):
     """
@@ -4265,7 +4406,7 @@ class GeneExpressionMixin(ConfiguredBaseModel):
     expression_site: Optional[str] = Field(None, description="""location in which gene or protein expression takes place. May be cell, tissue, or organ.""")
     stage_qualifier: Optional[str] = Field(None, description="""stage during which gene or protein expression of takes place.""")
     phenotypic_state: Optional[str] = Field(None, description="""in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.""")
-
+    
 
 class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociation):
     """
@@ -4311,7 +4452,7 @@ class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociati
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
@@ -4353,7 +4494,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     """
@@ -4396,7 +4537,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class CellLineToEntityAssociationMixin(ConfiguredBaseModel):
     """
@@ -4405,7 +4546,7 @@ class CellLineToEntityAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class ChemicalEntityToEntityAssociationMixin(ConfiguredBaseModel):
     """
@@ -4414,7 +4555,7 @@ class ChemicalEntityToEntityAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""the chemical entity that is an interactor""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
@@ -4423,7 +4564,7 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     subject: str = Field(..., description="""the drug that is an interactor""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
@@ -4432,7 +4573,7 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     subject: str = Field(..., description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class CaseToEntityAssociationMixin(ConfiguredBaseModel):
     """
@@ -4441,7 +4582,7 @@ class CaseToEntityAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""the case (e.g. patient) that has the property""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Association):
     """
@@ -4483,9 +4624,10 @@ class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Associatio
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
+    
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
     reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(None, description="""the side of a reaction being modeled (ie: left or right)""")
@@ -4525,9 +4667,10 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
+    
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
     reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(None, description="""the side of a reaction being modeled (ie: left or right)""")
@@ -4567,7 +4710,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
@@ -4610,7 +4753,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MolecularActivityToPathwayAssociation(Association):
     """
@@ -4652,7 +4795,7 @@ class MolecularActivityToPathwayAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association):
     """
@@ -4694,9 +4837,10 @@ class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     subject_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_context_qualifier: Optional[str] = Field(None)
@@ -4738,7 +4882,7 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Association):
     """
@@ -4788,7 +4932,7 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalAffectsGeneAssociation(Association):
     """
@@ -4845,7 +4989,7 @@ class ChemicalAffectsGeneAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneAffectsChemicalAssociation(Association):
     """
@@ -4903,7 +5047,7 @@ class GeneAffectsChemicalAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     """
@@ -4945,7 +5089,7 @@ class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MaterialSampleToEntityAssociationMixin(ConfiguredBaseModel):
     """
@@ -4954,7 +5098,7 @@ class MaterialSampleToEntityAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""the material sample being described""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class MaterialSampleDerivationAssociation(Association):
     """
@@ -4996,13 +5140,14 @@ class MaterialSampleDerivationAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DiseaseToEntityAssociationMixin(ConfiguredBaseModel):
+    
     subject: str = Field(..., description="""disease class""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class EntityToExposureEventAssociationMixin(ConfiguredBaseModel):
     """
@@ -5011,7 +5156,7 @@ class EntityToExposureEventAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, DiseaseToEntityAssociationMixin, Association):
     """
@@ -5053,7 +5198,7 @@ class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, D
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EntityToOutcomeAssociationMixin(ConfiguredBaseModel):
     """
@@ -5062,7 +5207,7 @@ class EntityToOutcomeAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Association):
     """
@@ -5106,7 +5251,7 @@ class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Associa
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class FrequencyQualifierMixin(ConfiguredBaseModel):
     """
@@ -5116,7 +5261,7 @@ class FrequencyQualifierMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     """
@@ -5131,7 +5276,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     """
@@ -5146,9 +5291,10 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin, FrequencyQuantifier):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -5163,9 +5309,10 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin, FrequencyQuantifier):
+    
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
@@ -5180,7 +5327,7 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class InformationContentEntityToNamedThingAssociation(Association):
     """
@@ -5222,7 +5369,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     """
@@ -5237,13 +5384,14 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
-
+    
 
 class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(ConfiguredBaseModel):
+    
     subject: str = Field(..., description="""disease or phenotype""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
     """
@@ -5285,7 +5433,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeature
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
     """
@@ -5327,13 +5475,14 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenoty
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(ConfiguredBaseModel):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease or phenotype""")
-
+    
 
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, CellLineToEntityAssociationMixin, Association):
     """
@@ -5375,7 +5524,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin, Association):
     """
@@ -5417,7 +5566,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin, Association):
     """
@@ -5460,7 +5609,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToD
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ChemicalToEntityAssociationMixin):
     """
@@ -5503,7 +5652,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, MaterialSampleToEntityAssociationMixin, Association):
     """
@@ -5545,13 +5694,14 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenotypeToEntityAssociationMixin(ConfiguredBaseModel):
+    
     subject: str = Field(..., description="""genotype that is the subject of the association""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
     """
@@ -5604,7 +5754,7 @@ class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, E
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, Association):
     """
@@ -5657,7 +5807,7 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin, Association, FrequencyQuantifier):
     """
@@ -5711,7 +5861,7 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin, Association):
     """
@@ -5764,7 +5914,7 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, Association):
     """
@@ -5817,13 +5967,14 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class GeneToEntityAssociationMixin(ConfiguredBaseModel):
+    
     subject: str = Field(..., description="""gene that is the subject of the association""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     """
@@ -5865,15 +6016,17 @@ class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class VariantToEntityAssociationMixin(ConfiguredBaseModel):
+    
     subject: str = Field(..., description="""a sequence variant in which the allele state is associated with some other entity""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
+    
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     subject: str = Field(..., description="""gene in which variation is correlated with the phenotypic feature""")
@@ -5921,9 +6074,10 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, 
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin):
+    
     subject: str = Field(..., description="""gene in which variation is correlated with the phenotypic feature""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -5971,9 +6125,10 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
@@ -6021,9 +6176,10 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, Gene
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""gene in which variation is shown to cause the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
@@ -6071,9 +6227,10 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssoc
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""gene in which variation is shown to correlate with the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
@@ -6121,9 +6278,10 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityA
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""disease""")
@@ -6171,9 +6329,10 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class PhenotypicFeatureToDiseaseAssociation(EntityToDiseaseAssociationMixin, PhenotypicFeatureToEntityAssociationMixin, Association):
+    
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -6221,7 +6380,7 @@ class PhenotypicFeatureToDiseaseAssociation(EntityToDiseaseAssociationMixin, Phe
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     """
@@ -6263,7 +6422,7 @@ class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressionMixin):
     """
@@ -6309,7 +6468,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressio
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQualifierMixin, Association, FrequencyQuantifier):
     """
@@ -6356,7 +6515,7 @@ class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQ
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class PopulationToPopulationAssociation(Association):
     """
@@ -6398,9 +6557,10 @@ class PopulationToPopulationAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
+    
     subject: str = Field(..., description="""a sequence variant in which the allele state is associated in some way with the phenotype state""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -6448,9 +6608,10 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    
     subject: str = Field(..., description="""a sequence variant in which the allele state is associated in some way with the disease state""")
     predicate: str = Field(..., description="""E.g. is pathogenic for""")
     object: str = Field(..., description="""a disease that is associated with that variant""")
@@ -6493,9 +6654,10 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    
     subject: str = Field(..., description="""a genotype that is associated in some way with a disease state""")
     predicate: str = Field(..., description="""E.g. is pathogenic for""")
     object: str = Field(..., description="""a disease that is associated with that genotype""")
@@ -6538,7 +6700,7 @@ class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDis
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
     """
@@ -6547,9 +6709,10 @@ class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDiseaseAssociation, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""disease""")
@@ -6597,9 +6760,10 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, VariantToDiseaseAssociation, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""A variant that has a role in modeling the disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""disease""")
@@ -6642,9 +6806,10 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GenotypeToDiseaseAssociation, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""A genotype that has a role in modeling the disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""disease""")
@@ -6687,9 +6852,10 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellLineToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseAssociationMixin):
+    
     subject: str = Field(..., description="""A cell line derived from an organismal entity with a disease state that is used as a model of that disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""disease""")
@@ -6732,9 +6898,10 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    
     subject: str = Field(..., description="""A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.""")
     predicate: str = Field(..., description="""The relationship to the disease""")
     object: str = Field(..., description="""disease""")
@@ -6777,9 +6944,10 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class OrganismToOrganismAssociation(Association):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""An association between two individual organisms.""")
@@ -6816,9 +6984,10 @@ class OrganismToOrganismAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class TaxonToTaxonAssociation(Association):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""An association between individuals of different taxa.""")
@@ -6855,9 +7024,10 @@ class TaxonToTaxonAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
+    
     subject_form_or_variant_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject: str = Field(..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -6906,7 +7076,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     object_aspect_qualifier: Optional[str] = Field(None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
-
+    
 
 class GeneToExpressionSiteAssociation(Association):
     """
@@ -6950,7 +7120,7 @@ class GeneToExpressionSiteAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SequenceVariantModulatesTreatmentAssociation(Association):
     """
@@ -6992,7 +7162,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class FunctionalAssociation(Association):
     """
@@ -7034,7 +7204,7 @@ class FunctionalAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MacromolecularMachineToEntityAssociationMixin(ConfiguredBaseModel):
     """
@@ -7043,7 +7213,7 @@ class MacromolecularMachineToEntityAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
     """
@@ -7085,7 +7255,7 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
     """
@@ -7127,7 +7297,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
     """
@@ -7169,7 +7339,7 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MolecularActivityToChemicalEntityAssociation(Association):
     """
@@ -7211,7 +7381,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class MolecularActivityToMolecularActivityAssociation(Association):
     """
@@ -7253,9 +7423,10 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneToGoTermAssociation(FunctionalAssociation):
+    
     subject: str = Field(..., description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""class describing the activity, process or localization of the gene product""")
@@ -7292,9 +7463,10 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EntityToDiseaseAssociation(Association):
+    
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(None)
     max_research_phase: Optional[MaxResearchPhaseEnum] = Field(None)
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7333,9 +7505,10 @@ class EntityToDiseaseAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class EntityToPhenotypicFeatureAssociation(Association):
+    
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(None)
     max_research_phase: Optional[MaxResearchPhaseEnum] = Field(None)
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7374,7 +7547,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SequenceAssociation(Association):
     """
@@ -7416,7 +7589,7 @@ class SequenceAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GenomicSequenceLocalization(SequenceAssociation):
     """
@@ -7463,7 +7636,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class SequenceFeatureRelationship(Association):
     """
@@ -7505,7 +7678,7 @@ class SequenceFeatureRelationship(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
@@ -7547,7 +7720,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
@@ -7589,7 +7762,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
@@ -7631,7 +7804,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
@@ -7674,9 +7847,10 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
+    
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7713,7 +7887,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
@@ -7755,7 +7929,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
@@ -7797,7 +7971,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class OrganismTaxonToEntityAssociation(ConfiguredBaseModel):
     """
@@ -7806,7 +7980,7 @@ class OrganismTaxonToEntityAssociation(ConfiguredBaseModel):
     subject: str = Field(..., description="""organism taxon that is the subject of the association""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-
+    
 
 class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, Association):
     """
@@ -7848,7 +8022,7 @@ class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, 
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAssociation):
     """
@@ -7890,7 +8064,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssociation):
     """
@@ -7933,9 +8107,10 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
-
+    
 
 class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, Association):
+    
     subject: str = Field(..., description="""the taxon that is the subject of the association""")
     predicate: str = Field(..., description="""predicate describing the relationship between the taxon and the environment""")
     object: str = Field(..., description="""the environment in which the organism occurs""")
@@ -7972,6 +8147,7 @@ class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, As
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+    
 
 
 # Model rebuild
