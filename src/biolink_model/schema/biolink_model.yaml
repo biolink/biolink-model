@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.0
+version: 4.2.1
 
 ## ------------
 ##
@@ -1871,8 +1871,6 @@ slots:
     narrow_mappings:
       - RO:0004029
       - SNOMEDCT:47429007
-    broad_mappings:
-      - SEMMEDDB:ASSOCIATED_WITH
 
   superclass of:
     is_a: related to at concept level
@@ -3662,8 +3660,6 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-    broad_mappings:
-      - SEMMEDDB:ADMINISTERED_TO
    # TODO: need an inverse for taken to treat
 
   treatment applications from:
