@@ -496,24 +496,32 @@ predicate mappings:
     exact matches:
       - CTD:decreases_molecular_interaction
   - mapped predicate: entity negatively regulates entity
+    object aspect qualifier: activity or abundance
     object direction qualifier: downregulated
     predicate: regulates
+    qualified predicate: causes
     exact matches:
       - RO:0002212
       - RO:0002449
   - mapped predicate: entity positively regulates entity
+    object aspect qualifier: activity or abundance
     object direction qualifier: upregulated
     predicate: regulates
+    qualified predicate: causes
     exact matches:
       - RO:0002450
   - mapped predicate: process positively regulates process
+    object aspect qualifier: activity or abundance
     object direction qualifier: upregulated
     predicate: regulates
+    qualified predicate: causes
     exact matches:
       - RO:0002213
   - mapped predicate: process negatively regulates process
+    object aspect qualifier: activity or abundance
     object direction qualifier: downregulated
     predicate: regulates
+    qualified predicate: causes
     exact matches:
       - RO:0002212
 
