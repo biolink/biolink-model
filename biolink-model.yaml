@@ -9973,6 +9973,22 @@ classes:
         object_aspect_qualifier: activity_or_abundance
         object_direction_qualifier: downregulated
 
+  process regulates process association:
+    is_a: association
+    description: >-
+      Describes a regulatory relationship between two genes or gene products.
+    slots:
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+      - species context qualifier
+    slot_usage:
+      subject:
+        range: biological process
+      predicate: regulates
+      object:
+        range: biological process
+
   chemical affects gene association:
     description: >-
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
