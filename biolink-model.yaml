@@ -9946,19 +9946,19 @@ classes:
       - species context qualifier
     slot_usage:
       subject:
-          range: gene or gene product
+        range: gene or gene product
       predicate: regulates
       object:
-          range: gene or gene product
+        range: gene or gene product
       object aspect qualifier:
-          range: GeneOrGeneProductOrChemicalEntityAspectEnum
-          required: true
-          description: >-
-            the aspect of the object gene or gene product that is being regulated, must be a descendant of 
-            "activity_or_abundance""
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+        required: true
+        description: >-
+          the aspect of the object gene or gene product that is being regulated, must be a descendant of 
+          "activity_or_abundance""
       object direction qualifier:
-          range: DirectionQualifierEnum
-          required: true
+        range: DirectionQualifierEnum
+        required: true
       qualified predicate:
         subproperty_of: causes
         required: true
