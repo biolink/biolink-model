@@ -9977,15 +9977,11 @@ classes:
     is_a: association
     description: >-
       Describes a regulatory relationship between two genes or gene products.
-    slots:
-      - object aspect qualifier
-      - object direction qualifier
-      - qualified predicate
-      - species context qualifier
     slot_usage:
       subject:
         range: biological process
-      predicate: regulates
+      predicate:
+        subproperty_of: regulates
       object:
         range: biological process
 
