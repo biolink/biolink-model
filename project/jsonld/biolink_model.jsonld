@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "imports": [
     "linkml:types"
   ],
@@ -4686,6 +4686,8 @@
         "https://skr3.nlm.nih.gov/SemMedDBcompared_with",
         "https://skr3.nlm.nih.gov/SemMedDBhigher_than",
         "https://skr3.nlm.nih.gov/SemMedDBlower_than",
+        "https://skr3.nlm.nih.gov/SemMedDBADMINISTERED_TO",
+        "https://skr3.nlm.nih.gov/SemMedDBASSOCIATED_WITH",
         "http://purl.obolibrary.org/obo/BFO_0000054",
         "http://purl.obolibrary.org/obo/uberon/core#protects",
         "http://purl.obolibrary.org/obo/GOREL_0002005",
@@ -4860,9 +4862,6 @@
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004029",
         "http://snomed.info/id/47429007"
-      ],
-      "broad_mappings": [
-        "https://skr3.nlm.nih.gov/SemMedDBASSOCIATED_WITH"
       ],
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
@@ -8091,9 +8090,6 @@
         "administered to treat",
         "used to treat",
         "given to treat"
-      ],
-      "broad_mappings": [
-        "https://skr3.nlm.nih.gov/SemMedDBADMINISTERED_TO"
       ],
       "is_a": "related_to_at_instance_level",
       "mixins": [
@@ -34828,9 +34824,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-04-12T22:30:39",
-  "source_file_size": 392125,
-  "generation_date": "2024-04-12T22:30:44",
+  "source_file_date": "2024-04-15T20:19:45",
+  "source_file_size": 392085,
+  "generation_date": "2024-04-15T20:19:50",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
