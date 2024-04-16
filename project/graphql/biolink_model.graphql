@@ -6009,6 +6009,46 @@ type Procedure implements ActivityAndBehavior
     category: [Uriorcurie]!
   }
 
+type ProcessRegulatesProcessAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [Uriorcurie]
+    subject: BiologicalProcess!
+    predicate: PredicateType!
+    object: BiologicalProcess!
+  }
+
 type ProcessedMaterial
   {
     id: String!

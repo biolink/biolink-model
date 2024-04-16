@@ -265,9 +265,10 @@ linkml:Sparqlpath xsd:string
     @<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
     @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PhenotypicFeatureToDiseaseAssociation> OR
-    @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR @<SequenceFeatureRelationship> OR
-    @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR @<VariantToDiseaseAssociation> OR
-    @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
+    @<PopulationToPopulationAssociation> OR @<ProcessRegulatesProcessAssociation> OR @<SequenceAssociation> OR
+    @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR
+    @<VariantToDiseaseAssociation> OR @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR
+    @<VariantToPopulationAssociation>
 )
 
 <Attribute>  (
@@ -3588,6 +3589,17 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ActivityAndBehavior> ] ?
        ) ;
        rdf:type [ <Procedure> ]
+    )
+}
+
+<ProcessRegulatesProcessAssociation> CLOSED {
+    (  $<ProcessRegulatesProcessAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<BiologicalProcess> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<BiologicalProcess>
+       ) ;
+       rdf:type [ <ProcessRegulatesProcessAssociation> ]
     )
 }
 

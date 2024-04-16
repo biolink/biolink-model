@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.0
+version: 4.2.1
 
 ## ------------
 ##
@@ -1727,6 +1727,8 @@ slots:
       - SEMMEDDB:compared_with
       - SEMMEDDB:higher_than
       - SEMMEDDB:lower_than
+      - SEMMEDDB:ADMINISTERED_TO
+      - SEMMEDDB:ASSOCIATED_WITH
       - BFO:0000054
       - UBERON_CORE:protects
       - GOREL:0002005
@@ -1869,8 +1871,6 @@ slots:
     narrow_mappings:
       - RO:0004029
       - SNOMEDCT:47429007
-    broad_mappings:
-      - SEMMEDDB:ASSOCIATED_WITH
 
   superclass of:
     is_a: related to at concept level
@@ -3660,8 +3660,6 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-    broad_mappings:
-      - SEMMEDDB:ADMINISTERED_TO
    # TODO: need an inverse for taken to treat
 
   treatment applications from:
@@ -9972,6 +9970,18 @@ classes:
         object: "NCBIGene:1636"
         object_aspect_qualifier: activity_or_abundance
         object_direction_qualifier: downregulated
+
+  process regulates process association:
+    is_a: association
+    description: >-
+      Describes a regulatory relationship between two genes or gene products.
+    slot_usage:
+      subject:
+        range: biological process
+      predicate:
+        subproperty_of: regulates
+      object:
+        range: biological process
 
   chemical affects gene association:
     description: >-

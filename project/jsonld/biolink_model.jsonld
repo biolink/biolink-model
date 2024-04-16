@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "imports": [
     "linkml:types"
   ],
@@ -4690,6 +4690,8 @@
         "https://skr3.nlm.nih.gov/SemMedDBcompared_with",
         "https://skr3.nlm.nih.gov/SemMedDBhigher_than",
         "https://skr3.nlm.nih.gov/SemMedDBlower_than",
+        "https://skr3.nlm.nih.gov/SemMedDBADMINISTERED_TO",
+        "https://skr3.nlm.nih.gov/SemMedDBASSOCIATED_WITH",
         "http://purl.obolibrary.org/obo/BFO_0000054",
         "http://purl.obolibrary.org/obo/uberon/core#protects",
         "http://purl.obolibrary.org/obo/GOREL_0002005",
@@ -4864,9 +4866,6 @@
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004029",
         "http://snomed.info/id/47429007"
-      ],
-      "broad_mappings": [
-        "https://skr3.nlm.nih.gov/SemMedDBASSOCIATED_WITH"
       ],
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
@@ -8095,9 +8094,6 @@
         "administered to treat",
         "used to treat",
         "given to treat"
-      ],
-      "broad_mappings": [
-        "https://skr3.nlm.nih.gov/SemMedDBADMINISTERED_TO"
       ],
       "is_a": "related_to_at_instance_level",
       "mixins": [
@@ -16735,6 +16731,118 @@
       "is_usage_slot": true,
       "usage_slot_name": "qualified predicate",
       "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process_regulates_process_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ProcessRegulatesProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ProcessRegulatesProcessAssociation",
+      "domain_of": [
+        "ProcessRegulatesProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "BiologicalProcess",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process_regulates_process_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "ProcessRegulatesProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "ProcessRegulatesProcessAssociation",
+      "domain_of": [
+        "ProcessRegulatesProcessAssociation"
+      ],
+      "subproperty_of": "regulates",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process_regulates_process_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ProcessRegulatesProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ProcessRegulatesProcessAssociation",
+      "domain_of": [
+        "ProcessRegulatesProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "BiologicalProcess",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -31072,7 +31180,7 @@
       "description": "Describes a regulatory relationship between two genes or gene products.",
       "examples": [
         {
-          "value": "JsonObj(subject='NCBIGene:551', predicate='biolink:regulates', qualified_predicte='biolink:causes', object='NCBIGene:1636', object_aspect_qualifier='activity_or_abundance', object_direction_qualifier='downregulated')",
+          "value": "JsonObj(subject='NCBIGene:551', predicate='regulates', qualified_predicte='causes', object='NCBIGene:1636', object_aspect_qualifier='activity_or_abundance', object_direction_qualifier='downregulated')",
           "@type": "Example"
         }
       ],
@@ -31122,6 +31230,54 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneRegulatesGeneAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProcessRegulatesProcessAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ProcessRegulatesProcessAssociation",
+      "description": "Describes a regulatory relationship between two genes or gene products.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "association_type",
+        "association_category",
+        "process_regulates_process_association_subject",
+        "process_regulates_process_association_predicate",
+        "process_regulates_process_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ProcessRegulatesProcessAssociation",
       "@type": "ClassDefinition"
     },
     {
@@ -35091,9 +35247,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-04-15T21:08:45",
-  "source_file_size": 393315,
-  "generation_date": "2024-04-15T21:08:50",
+  "source_file_date": "2024-04-16T07:38:29",
+  "source_file_size": 393583,
+  "generation_date": "2024-04-16T07:38:34",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

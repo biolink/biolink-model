@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-04-15T21:09:02
+# Generation date: 2024-04-16T07:38:46
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.2.0"
+version = "4.2.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -1124,6 +1124,10 @@ class ChemicalGeneInteractionAssociationId(AssociationId):
 
 
 class GeneRegulatesGeneAssociationId(AssociationId):
+    pass
+
+
+class ProcessRegulatesProcessAssociationId(AssociationId):
     pass
 
 
@@ -8922,6 +8926,52 @@ class GeneRegulatesGeneAssociation(Association):
 
 
 @dataclass
+class ProcessRegulatesProcessAssociation(Association):
+    """
+    Describes a regulatory relationship between two genes or gene products.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ProcessRegulatesProcessAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ProcessRegulatesProcessAssociation"
+    class_name: ClassVar[str] = "process regulates process association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ProcessRegulatesProcessAssociation
+
+    id: Union[str, ProcessRegulatesProcessAssociationId] = None
+    subject: Union[str, BiologicalProcessId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, BiologicalProcessId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
+    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ProcessRegulatesProcessAssociationId):
+            self.id = ProcessRegulatesProcessAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, BiologicalProcessId):
+            self.subject = BiologicalProcessId(self.subject)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, BiologicalProcessId):
+            self.object = BiologicalProcessId(self.object)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass
 class ChemicalAffectsGeneAssociation(Association):
     """
     Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance,
@@ -15073,6 +15123,15 @@ slots.gene_regulates_gene_association_object_direction_qualifier = Slot(uri=BIOL
 
 slots.gene_regulates_gene_association_qualified_predicate = Slot(uri=BIOLINK.qualified_predicate, name="gene regulates gene association_qualified predicate", curie=BIOLINK.curie('qualified_predicate'),
                    model_uri=BIOLINK.gene_regulates_gene_association_qualified_predicate, domain=GeneRegulatesGeneAssociation, range=str)
+
+slots.process_regulates_process_association_subject = Slot(uri=RDF.subject, name="process regulates process association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.process_regulates_process_association_subject, domain=ProcessRegulatesProcessAssociation, range=Union[str, BiologicalProcessId])
+
+slots.process_regulates_process_association_predicate = Slot(uri=RDF.predicate, name="process regulates process association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.process_regulates_process_association_predicate, domain=ProcessRegulatesProcessAssociation, range=Union[str, PredicateType])
+
+slots.process_regulates_process_association_object = Slot(uri=RDF.object, name="process regulates process association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.process_regulates_process_association_object, domain=ProcessRegulatesProcessAssociation, range=Union[str, BiologicalProcessId])
 
 slots.chemical_affects_gene_association_subject = Slot(uri=RDF.subject, name="chemical affects gene association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_affects_gene_association_subject, domain=ChemicalAffectsGeneAssociation, range=Union[str, ChemicalEntityId])
