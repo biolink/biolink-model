@@ -661,9 +661,9 @@ slots:
     is_a: node property
     description: >-
       This slot holds a string representation of a URL for an external resource about the node it is 
-      present on. Unlink an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full 
-      URL that can be used to directly access a resource. When linking to an external resource that can not be 
-      represented by an unique CURIE, this slot should be used.  However, when the intent is to link to the 
+      present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full 
+      URL that can be used to directly access a resource. When linking to an external resource that cannot be 
+      represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the 
       default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.
     domain: entity
     range: string
