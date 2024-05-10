@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-05-10T15:11:55
+# Generation date: 2024-05-10T22:34:27
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -13350,6 +13350,9 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
 
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
                    model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+
+slots.url = Slot(uri=BIOLINK.url, name="url", curie=BIOLINK.curie('url'),
+                   model_uri=BIOLINK.url, domain=Entity, range=Optional[str])
 
 slots.semmed_agreement_count = Slot(uri=BIOLINK.semmed_agreement_count, name="semmed agreement count", curie=BIOLINK.curie('semmed_agreement_count'),
                    model_uri=BIOLINK.semmed_agreement_count, domain=Association, range=Optional[int])

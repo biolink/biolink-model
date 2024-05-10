@@ -2520,6 +2520,18 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "url",
+      "definition_uri": "https://w3id.org/biolink/vocab/url",
+      "description": "This slot holds a string representation of a URL for an external resource about the node it is  present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full  URL that can be used to directly access a resource. When linking to an external resource that cannot be  represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the  default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "Entity",
+      "slot_uri": "https://w3id.org/biolink/vocab/url",
+      "owner": "url",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "semmed_agreement_count",
       "definition_uri": "https://w3id.org/biolink/vocab/semmed_agreement_count",
       "description": "The number of times this concept has been asserted in the SemMedDB literature database.",
@@ -34832,9 +34844,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-05-10T15:11:39",
-  "source_file_size": 392295,
-  "generation_date": "2024-05-10T15:11:44",
+  "source_file_date": "2024-05-10T22:34:09",
+  "source_file_size": 392935,
+  "generation_date": "2024-05-10T22:34:14",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
