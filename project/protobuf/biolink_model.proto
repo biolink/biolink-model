@@ -103,6 +103,8 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -143,6 +145,8 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -216,6 +220,8 @@ message Association
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -311,6 +317,8 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   behavior subject = 0
@@ -554,6 +562,8 @@ message CaseToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
@@ -601,6 +611,8 @@ message CausalGeneToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -687,6 +699,8 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   cellLine subject = 0
@@ -733,6 +747,8 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
@@ -806,6 +822,8 @@ message ChemicalAffectsGeneAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -881,6 +899,8 @@ message ChemicalEntityAssessesNamedThingAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -921,6 +941,8 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -982,6 +1004,8 @@ message ChemicalGeneInteractionAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1057,6 +1081,8 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -1098,6 +1124,8 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -1156,6 +1184,8 @@ message ChemicalToChemicalAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1196,6 +1226,8 @@ message ChemicalToChemicalDerivationAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
@@ -1239,6 +1271,8 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature object = 0
@@ -1278,6 +1312,8 @@ message ChemicalToPathwayAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -1616,6 +1652,8 @@ message ContributorAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   informationContentEntity subject = 0
@@ -1656,6 +1694,8 @@ message CorrelatedGeneToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -1882,6 +1922,8 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -1923,6 +1965,8 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity object = 0
@@ -1964,6 +2008,8 @@ message DiseaseToExposureEventAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -2002,6 +2048,8 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   onset onsetQualifier = 0
@@ -2126,6 +2174,8 @@ message DrugToGeneAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct object = 0
@@ -2183,6 +2233,8 @@ message DruggableGeneToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -2237,6 +2289,8 @@ message EntityToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -2278,6 +2332,8 @@ message EntityToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -2442,6 +2498,8 @@ message ExonToTranscriptRelationship
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exon subject = 0
@@ -2484,6 +2542,8 @@ message ExposureEventToOutcomeAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -2525,6 +2585,8 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
@@ -2620,6 +2682,8 @@ message FunctionalAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -2697,6 +2761,8 @@ message GeneAffectsChemicalAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -2752,6 +2818,8 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -2821,6 +2889,8 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -2872,6 +2942,8 @@ message GeneToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -2922,6 +2994,8 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -2973,6 +3047,8 @@ message GeneToExpressionSiteAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
@@ -3015,6 +3091,8 @@ message GeneToGeneCoexpressionAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -3059,6 +3137,8 @@ message GeneToGeneFamilyAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -3099,6 +3179,8 @@ message GeneToGeneHomologyAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -3139,6 +3221,8 @@ message GeneToGeneProductRelationship
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -3179,6 +3263,8 @@ message GeneToGoTermAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -3219,6 +3305,8 @@ message GeneToPathwayAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -3257,6 +3345,8 @@ message GeneToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -3369,6 +3459,8 @@ message GenomicSequenceLocalization
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   integer startInterbaseCoordinate = 0
@@ -3433,6 +3525,8 @@ message GenotypeAsAModelOfDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -3478,6 +3572,8 @@ message GenotypeToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -3524,6 +3620,8 @@ message GenotypeToGeneAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -3564,6 +3662,8 @@ message GenotypeToGenotypePartAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -3605,6 +3705,8 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -3655,6 +3757,8 @@ message GenotypeToVariantAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -3858,6 +3962,8 @@ message InformationContentEntityToNamedThingAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -4003,6 +4109,8 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4043,6 +4151,8 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4083,6 +4193,8 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4156,6 +4268,8 @@ message MaterialSampleDerivationAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   materialSample subject = 0
@@ -4199,6 +4313,8 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -4275,6 +4391,8 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -4315,6 +4433,8 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -4354,6 +4474,8 @@ message MolecularActivityToPathwayAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -4456,6 +4578,8 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -4655,6 +4779,8 @@ message OrganismTaxonToOrganismTaxonInteraction
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string associatedEnvironmentalContext = 0
@@ -4696,6 +4822,8 @@ message OrganismTaxonToOrganismTaxonSpecialization
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -4736,6 +4864,8 @@ message OrganismToOrganismAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   individualOrganism subject = 0
@@ -4776,6 +4906,8 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
@@ -4820,6 +4952,8 @@ message PairwiseGeneToGeneInteraction
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -4859,6 +4993,8 @@ message PairwiseMolecularInteraction
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   ontologyClass interactingMoleculesCategory = 0
@@ -5061,6 +5197,8 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -5253,6 +5391,8 @@ message PopulationToPopulationAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms subject = 0
@@ -5507,6 +5647,8 @@ message ReactionToCatalystAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -5549,6 +5691,8 @@ message ReactionToParticipantAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -5716,6 +5860,8 @@ message SequenceAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -5754,6 +5900,8 @@ message SequenceFeatureRelationship
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   nucleicAcidEntity subject = 0
@@ -6014,6 +6162,8 @@ message TaxonToTaxonAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -6097,6 +6247,8 @@ message TranscriptToGeneRelationship
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   transcript subject = 0
@@ -6174,6 +6326,8 @@ message VariantAsAModelOfDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -6219,6 +6373,8 @@ message VariantToDiseaseAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -6266,6 +6422,8 @@ message VariantToGeneAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -6306,6 +6464,8 @@ message VariantToGeneExpressionAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -6350,6 +6510,8 @@ message VariantToPhenotypicFeatureAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
@@ -6400,6 +6562,8 @@ message VariantToPopulationAssociation
  repeated  string subjectLabelClosure = 0
  repeated  string objectLabelClosure = 0
  repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0

@@ -241,6 +241,8 @@ linkml:Sparqlpath xsd:string
              <subject_label_closure> @linkml:String * ;
              <object_label_closure> @linkml:String * ;
              <retrieval_source_ids> @<RetrievalSource> * ;
+             <p_value> @linkml:Float ? ;
+             <adjusted_p_value> @linkml:Float ? ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
