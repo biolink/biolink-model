@@ -3403,7 +3403,7 @@ slots:
 
   promotes condition:
     mixin: true
-    is_a: related to at instance level
+    is_a: affects likelihood of
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),
       and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.
@@ -3417,7 +3417,7 @@ slots:
 
   condition promoted by:
     mixin: true
-    is_a: related to at instance level
+    is_a: likelihood affected by
     inverse: promotes condition
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3634,7 +3634,7 @@ slots:
   beneficial in models for:
     is_a: in preclinical trials for
     description: >-
-      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance,
       procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/
       phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
     notes: >-

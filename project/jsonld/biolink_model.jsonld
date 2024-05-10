@@ -7688,7 +7688,7 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
+      "is_a": "affects_likelihood_of",
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/promotes_condition",
@@ -7704,6 +7704,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "likelihood_affected_by",
+      "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
       "multivalued": true,
@@ -7979,6 +7980,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_in_studies_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
       "multivalued": true,
@@ -7994,6 +7998,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
       "multivalued": true,
@@ -8009,6 +8016,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_in_studies_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
       "multivalued": true,
@@ -8057,7 +8067,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
       "notes": [
         "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease. (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation phenotype of zebrafish used to model the human disease Kabuki Syndrome) ."
       ],
@@ -8083,6 +8093,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "tested_by_preclinical_trials_of",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
       "multivalued": true,
@@ -8134,6 +8147,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
       "multivalued": true,
@@ -35037,9 +35053,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-05-10T23:03:07",
-  "source_file_size": 393015,
-  "generation_date": "2024-05-10T23:03:12",
+  "source_file_date": "2024-05-10T16:31:01",
+  "source_file_size": 393418,
+  "generation_date": "2024-05-10T16:31:06",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
