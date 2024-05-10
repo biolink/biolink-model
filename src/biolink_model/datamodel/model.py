@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-04-29T18:31:41
+# Generation date: 2024-05-10T15:11:55
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -14039,7 +14039,7 @@ slots.condition_exacerbated_by = Slot(uri=BIOLINK.condition_exacerbated_by, name
                    model_uri=BIOLINK.condition_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
-                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
+                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
                    model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[dict, ChemicalOrDrugOrTreatment]])
@@ -14075,10 +14075,10 @@ slots.treatment_applications_from = Slot(uri=BIOLINK.treatment_applications_from
                    model_uri=BIOLINK.treatment_applications_from, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treats_or_applied_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_applied_or_studied_to_treat, name="treats or applied or studied to treat", curie=BIOLINK.curie('treats_or_applied_or_studied_to_treat'),
-                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=None, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
+                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.subject_of_treatment_application_or_study_for_treatment_by = Slot(uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, name="subject of treatment application or study for treatment by", curie=BIOLINK.curie('subject_of_treatment_application_or_study_for_treatment_by'),
-                   model_uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[dict, ChemicalOrDrugOrTreatment]])
+                   model_uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, domain=None, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
