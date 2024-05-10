@@ -7870,6 +7870,8 @@
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats",
+      "multivalued": true,
+      "inherited": true,
       "owner": "treats",
       "inverse": "treated_by",
       "range": "DiseaseOrPhenotypicFeature",
@@ -7889,6 +7891,7 @@
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002302"
       ],
+      "is_a": "subject_of_treatment_application_or_study_for_treatment_by",
       "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_by",
@@ -8140,11 +8143,16 @@
       "exact_mappings": [
         "https://skr3.nlm.nih.gov/SemMedDBTREATS"
       ],
+      "is_a": "related_to_at_instance_level",
       "mixin": true,
-      "domain": "ChemicalOrDrugOrTreatment",
+      "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "treats_or_applied_or_studied_to_treat",
       "inverse": "subject_of_treatment_application_or_study_for_treatment_by",
-      "range": "DiseaseOrPhenotypicFeature",
+      "range": "ChemicalOrDrugOrTreatment",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8152,12 +8160,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/subject_of_treatment_application_or_study_for_treatment_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
-      "domain": "DiseaseOrPhenotypicFeature",
+      "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_of_treatment_application_or_study_for_treatment_by",
       "owner": "subject_of_treatment_application_or_study_for_treatment_by",
       "inverse": "treats_or_applied_or_studied_to_treat",
-      "range": "ChemicalOrDrugOrTreatment",
-      "inlined": true,
+      "range": "DiseaseOrPhenotypicFeature",
       "@type": "SlotDefinition"
     },
     {
@@ -34825,9 +34832,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-04-29T18:31:23",
-  "source_file_size": 392104,
-  "generation_date": "2024-04-29T18:31:28",
+  "source_file_date": "2024-05-10T15:11:39",
+  "source_file_size": 392295,
+  "generation_date": "2024-05-10T15:11:44",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

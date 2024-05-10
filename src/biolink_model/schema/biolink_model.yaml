@@ -3521,6 +3521,7 @@ slots:
       - MONDO:disease_responds_to
 
   treated by:
+    is_a: subject of treatment application or study for treatment by
     mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3669,6 +3670,7 @@ slots:
     range: chemical or drug or treatment
 
   treats or applied or studied to treat:
+    is_a: related to at instance level
     mixin: true
     description: >-
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),
@@ -3687,11 +3689,13 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:TREATS
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
 
   subject of treatment application or study for treatment by:
     mixin: true
-    domain: disease or phenotypic feature
-    range: chemical or drug or treatment
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
     inverse: treats or applied or studied to treat
 
   correlated with:
