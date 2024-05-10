@@ -5996,6 +5996,7 @@ message SiRNA
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 message SmallMolecule
  {
+  string id = 0
   iriType iri = 0
  repeated  string type = 0
   labelType name = 0
@@ -6013,7 +6014,6 @@ message SmallMolecule
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   boolean isMetabolite = 0
-  string id = 0
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
