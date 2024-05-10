@@ -6520,6 +6520,7 @@ type SiRNA
 
 type SmallMolecule
   {
+    id: String!
     iri: IriType
     type: [String]
     name: LabelType
@@ -6537,7 +6538,6 @@ type SmallMolecule
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    id: String!
   }
 
 type Snv

@@ -113,7 +113,7 @@ prefixes:
   PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'   #  See also https://smpdb.ca/pathwhiz/
   pav: 'http://purl.org/pav/'
-  PHARMGKB.CHEMICAL: 'https://www.pharmgkb.org/chemical/'
+  PHARMGKB.DRUG: 'https://www.pharmgkb.org/chemical/'
   PHARMGKB.DISEASE: 'https://www.pharmgkb.org/disease/'
   PHARMGKB.GENE: 'https://www.pharmgkb.org/gene/'
   PHARMGKB.PATHWAYS: 'https://www.pharmgkb.org/pathway/'
@@ -7178,10 +7178,10 @@ classes:
     in_subset:
       - translator_minimal
     id_prefixes:
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
       - DRUGBANK
       - MESH
       - CAS
@@ -7189,16 +7189,17 @@ classes:
       - GTOPDB
       - HMDB
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
       - INCHIKEY
-       # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-       # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.DRUG     # D number
-      - KEGG.ENVIRON  # E number
+      - BIGG.METABOLITE
+      - foodb.compound
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
       - KEGG
       - UMLS
 
@@ -7232,28 +7233,28 @@ classes:
     in_subset:
       - translator_minimal
     id_prefixes:
-      - UNII
       - CHEBI
-      - MESH
-      - CAS  # CAS numbers are given for things like plant extracts as well.
-      - ncats.drug
-      - PHARMGKB.CHEMICAL
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
+      - DRUGBANK
+      - MESH
+      - CAS
       - DrugCentral
       - GTOPDB
       - HMDB
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.DRUG     # D number
-      - KEGG.ENVIRON  # E number
+      - BIGG.METABOLITE
+      - foodb.compound
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
       - KEGG
       - UMLS
 
@@ -7282,9 +7283,9 @@ classes:
       - STY:T127  # vitamin
     id_prefixes:
       - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
       - DRUGBANK
       - MESH
       - CAS
@@ -7292,26 +7293,19 @@ classes:
       - GTOPDB
       - HMDB
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
       - INCHIKEY
-       # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-       # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
       - BIGG.METABOLITE
-      - UMLS
       - foodb.compound
-      - KEGG.GLYCAN   # G number
-      - KEGG.DRUG     # D number
-      - KEGG.ENVIRON  # E number
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
       - KEGG
       - UMLS
-    slot_usage:
-      id:
-        examples:
-          - value: CHEBI:29101
-            description: sodium ion
     in_subset:
       - model_organism_database
       - translator_minimal
@@ -7330,10 +7324,10 @@ classes:
     in_subset:
       - translator_minimal
     id_prefixes:
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
       - DRUGBANK
       - MESH
       - CAS
@@ -7341,17 +7335,18 @@ classes:
       - GTOPDB
       - HMDB
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
       - INCHIKEY
-       # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-       # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   ## G number
-      - KEGG.DRUG     ## D number
+      - BIGG.METABOLITE
+      - foodb.compound
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
       - KEGG
-      - KEGG.ENVIRON  ## E number
       - UMLS
     close_mappings:
       - dcid:ChemicalCompound
@@ -7457,10 +7452,10 @@ classes:
     in_subset:
       - translator_minimal
     id_prefixes:
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
       - DRUGBANK
       - MESH
       - CAS
@@ -7468,19 +7463,19 @@ classes:
       - GTOPDB
       - HMDB
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
       - INCHIKEY
-       # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-       # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   ## G number
-      - KEGG.DRUG     ## D number
+      - BIGG.METABOLITE
+      - foodb.compound
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
       - KEGG
-      - KEGG.ENVIRON  ## E number
       - UMLS
-      - ncats.drug
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -7667,31 +7662,31 @@ classes:
     exact_mappings:
       - OBI:0000047
     id_prefixes:
-      - UMLS
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
+      - DRUGBANK
       - MESH
       - CAS
+      - DrugCentral
       - GTOPDB
       - HMDB
-      - KEGG
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
       - BIGG.METABOLITE
       - foodb.compound
-      - UMLS
       - foodb.food
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
+      - KEGG
+      - UMLS
 
   drug:
     is_a: molecular mixture
@@ -7721,28 +7716,29 @@ classes:
       - RXCUI
       - NDC
       - UMLS
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
+      - DRUGBANK
       - MESH
       - CAS
+      - DrugCentral
       - GTOPDB
       - HMDB
-      - KEGG
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
       - BIGG.METABOLITE
       - foodb.compound
+      - KEGG.GLYCAN
+      - KEGG.ENVIRON
+      - KEGG.ENVIRON
+      - KEGG
 
    ## Food
 
@@ -7752,32 +7748,31 @@ classes:
        # substance role
       - CHEBI:78299
     id_prefixes:
-      - ncats.drug
-      - RXCUI
-      - NDC
-      - UMLS
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
+      - DRUGBANK
       - MESH
       - CAS
+      - DrugCentral
       - GTOPDB
       - HMDB
-      - KEGG
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
       - BIGG.METABOLITE
       - foodb.compound
+      - foodb.food
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
+      - KEGG
+      - UMLS
 
   food additive:
     is_a: chemical entity
@@ -7785,32 +7780,31 @@ classes:
        # substance role
       - CHEBI:64047
     id_prefixes:
-      - ncats.drug
-      - RXCUI
-      - NDC
-      - UMLS
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
+      - DRUGBANK
       - MESH
       - CAS
+      - DrugCentral
       - GTOPDB
       - HMDB
-      - KEGG
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
       - BIGG.METABOLITE
       - foodb.compound
+      - foodb.food
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
+      - KEGG
+      - UMLS
 
   food:
     is_a: chemical mixture
@@ -7820,32 +7814,29 @@ classes:
       - foodb.food
       - foodb.compound
       - FOODON
-      - UMLS
-      - NCIT
+      - CHEBI
+      - UNII
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
+      - DRUGBANK
       - MESH
       - CAS
+      - DrugCentral
       - GTOPDB
       - HMDB
-      - KEGG
       - KEGG.COMPOUND
+      - PHARMGKB.DRUG
       - ChemBank
       - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
-      - ChemBank
-      - SIDER.DRUG
       - BIGG.METABOLITE
-    exact_mappings:
-       # Food
-      - STY:T168
+      - KEGG.GLYCAN
+      - KEGG.DRUG
+      - KEGG.ENVIRON
+      - KEGG
+      - UMLS
 
    ## Biology and Biomedical Sciences
 

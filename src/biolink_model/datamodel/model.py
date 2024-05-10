@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-04-29T18:31:41
+# Generation date: 2024-05-10T15:53:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -170,8 +170,8 @@ PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/pant
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 PCO = CurieNamespace('PCO', 'http://purl.obolibrary.org/obo/PCO_')
 PFAM = CurieNamespace('PFAM', 'http://identifiers.org/pfam/')
-PHARMGKB_CHEMICAL = CurieNamespace('PHARMGKB_CHEMICAL', 'https://www.pharmgkb.org/chemical/')
 PHARMGKB_DISEASE = CurieNamespace('PHARMGKB_DISEASE', 'https://www.pharmgkb.org/disease/')
+PHARMGKB_DRUG = CurieNamespace('PHARMGKB_DRUG', 'https://www.pharmgkb.org/chemical/')
 PHARMGKB_GENE = CurieNamespace('PHARMGKB_GENE', 'https://www.pharmgkb.org/gene/')
 PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'https://www.pharmgkb.org/pathway/')
 PHARMGKB_VARIANT = CurieNamespace('PHARMGKB_VARIANT', 'https://www.pharmgkb.org/variant/')
@@ -14730,9 +14730,6 @@ slots.retrieval_source_resource_role = Slot(uri=BIOLINK.resource_role, name="ret
 
 slots.retrieval_source_upstream_resource_ids = Slot(uri=BIOLINK.upstream_resource_ids, name="retrieval source_upstream resource ids", curie=BIOLINK.curie('upstream_resource_ids'),
                    model_uri=BIOLINK.retrieval_source_upstream_resource_ids, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
-
-slots.small_molecule_id = Slot(uri=BIOLINK.id, name="small molecule_id", curie=BIOLINK.curie('id'),
-                   model_uri=BIOLINK.small_molecule_id, domain=SmallMolecule, range=Union[str, SmallMoleculeId])
 
 slots.molecular_activity_has_input = Slot(uri=BIOLINK.has_input, name="molecular activity_has input", curie=BIOLINK.curie('has_input'),
                    model_uri=BIOLINK.molecular_activity_has_input, domain=MolecularActivity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
