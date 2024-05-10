@@ -3416,7 +3416,8 @@ slots:
       - translator_minimal
 
   condition promoted by:
-    is_a: likelihood affected by
+    mixin: true
+    is_a: related to at instance level
     inverse: promotes condition
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3591,18 +3592,24 @@ slots:
 
   tested by clinical trials of:
     is_a: treated in studies by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: in clinical trials for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
   treated in studies by:
     is_a: treated by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: studied to treat
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
   tested by preclinical trials of:
     is_a: treated in studies by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: in preclinical trials for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3647,6 +3654,8 @@ slots:
 
   models demonstrating benefits for:
     is_a: tested by preclinical trials of
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: beneficial in models for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3676,6 +3685,8 @@ slots:
 
   treatment applications from:
     is_a: related to at instance level
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: applied to treat
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
