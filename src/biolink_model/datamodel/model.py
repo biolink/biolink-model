@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-05-10T15:57:20
+# Generation date: 2024-05-10T16:08:36
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7321,6 +7321,8 @@ class Association(Entity):
     subject_label_closure: Optional[Union[str, List[str]]] = empty_list()
     object_label_closure: Optional[Union[str, List[str]]] = empty_list()
     retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], List[Union[str, RetrievalSourceId]]]] = empty_list()
+    p_value: Optional[float] = None
+    adjusted_p_value: Optional[float] = None
     type: Optional[Union[str, List[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7434,6 +7436,12 @@ class Association(Entity):
         if not isinstance(self.retrieval_source_ids, list):
             self.retrieval_source_ids = [self.retrieval_source_ids] if self.retrieval_source_ids is not None else []
         self.retrieval_source_ids = [v if isinstance(v, RetrievalSourceId) else RetrievalSourceId(v) for v in self.retrieval_source_ids]
+
+        if self.p_value is not None and not isinstance(self.p_value, float):
+            self.p_value = float(self.p_value)
+
+        if self.adjusted_p_value is not None and not isinstance(self.adjusted_p_value, float):
+            self.adjusted_p_value = float(self.adjusted_p_value)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
