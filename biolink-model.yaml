@@ -657,6 +657,17 @@ slots:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
+  url:
+    is_a: node property
+    description: >-
+      This slot holds a string representation of a URL for an external resource about the node it is 
+      present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full 
+      URL that can be used to directly access a resource. When linking to an external resource that cannot be 
+      represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the 
+      default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.
+    domain: entity
+    range: string
+
   semmed agreement count:
     is_a: association slot
     range: integer
@@ -3521,6 +3532,7 @@ slots:
       - MONDO:disease_responds_to
 
   treated by:
+    is_a: subject of treatment application or study for treatment by
     mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3669,6 +3681,7 @@ slots:
     range: chemical or drug or treatment
 
   treats or applied or studied to treat:
+    is_a: related to at instance level
     mixin: true
     description: >-
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),
@@ -3687,11 +3700,14 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:TREATS
-
-  subject of treatment application or study for treatment by:
-    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
+
+  subject of treatment application or study for treatment by:
+    is_a: related to at instance level
+    mixin: true
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
     inverse: treats or applied or studied to treat
 
   correlated with:
