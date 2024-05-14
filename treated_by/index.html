@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: treated_by - Biolink Model Documentation</title>
+        <title>Slot: treated_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treated_by" class="md-skip">
+        <a href="#slot-treated_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treated_by </strong>
+              <strong> Slot: treated_by </strong>  (multivalued)
             
           </span>
         </div>
@@ -622,7 +622,7 @@
   
 
 
-<h1 id="slot-treated_by"><strong> Slot: treated_by </strong></h1>
+<h1 id="slot-treated_by-multivalued"><strong> Slot: treated_by </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
   <strong>Inverse:</strong> treats</a></small><br>
@@ -634,8 +634,17 @@
 <strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
+<li><a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a><ul>
 <li><strong>treated_by</strong><ul>
 <li><a href="../treated_in_studies_by/">treated_in_studies_by</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -670,8 +679,11 @@ exact_mappings:
 - MONDO:disease_responds_to
 narrow_mappings:
 - RO:0002302
+is_a: subject of treatment application or study for treatment by
 mixin: true
 domain: disease or phenotypic feature
+multivalued: true
+inherited: true
 alias: treated_by
 inverse: treats
 range: chemical or drug or treatment

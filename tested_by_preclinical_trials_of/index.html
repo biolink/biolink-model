@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: tested_by_preclinical_trials_of - Biolink Model Documentation</title>
+        <title>Slot: tested_by_preclinical_trials_of (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-tested_by_preclinical_trials_of" class="md-skip">
+        <a href="#slot-tested_by_preclinical_trials_of-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: tested_by_preclinical_trials_of </strong>
+              <strong> Slot: tested_by_preclinical_trials_of </strong>  (multivalued)
             
           </span>
         </div>
@@ -613,7 +613,7 @@
   
 
 
-<h1 id="slot-tested_by_preclinical_trials_of"><strong> Slot: tested_by_preclinical_trials_of </strong></h1>
+<h1 id="slot-tested_by_preclinical_trials_of-multivalued"><strong> Slot: tested_by_preclinical_trials_of </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
   <strong>Inverse:</strong> in preclinical trials for</a></small><br>
@@ -625,10 +625,19 @@
 <strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
+<li><a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a><ul>
 <li><a href="../treated_by/">treated_by</a><ul>
 <li><a href="../treated_in_studies_by/">treated_in_studies_by</a><ul>
 <li><strong>tested_by_preclinical_trials_of</strong><ul>
 <li><a href="../models_demonstrating_benefits_for/">models_demonstrating_benefits_for</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -643,6 +652,8 @@
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: treated in studies by
 domain: disease or phenotypic feature
+multivalued: true
+inherited: true
 alias: tested_by_preclinical_trials_of
 inverse: in preclinical trials for
 range: chemical or drug or treatment

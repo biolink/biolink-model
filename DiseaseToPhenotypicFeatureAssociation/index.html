@@ -286,6 +286,8 @@
       DiseaseToEntityAssociationMixin &lt;|-- DiseaseToPhenotypicFeatureAssociation
       Association &lt;|-- DiseaseToPhenotypicFeatureAssociation
 
+      DiseaseToPhenotypicFeatureAssociation : adjusted_p_value
+
       DiseaseToPhenotypicFeatureAssociation : agent_type
 
           DiseaseToPhenotypicFeatureAssociation --|&gt; AgentTypeEnum : agent_type
@@ -363,6 +365,8 @@
       DiseaseToPhenotypicFeatureAssociation : original_predicate
 
       DiseaseToPhenotypicFeatureAssociation : original_subject
+
+      DiseaseToPhenotypicFeatureAssociation : p_value
 
       DiseaseToPhenotypicFeatureAssociation : predicate
 
@@ -472,19 +476,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> disease class </i></td>
 <td>1..1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1..1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -640,6 +644,18 @@
 <tr>
 <td><a href="../retrieval_source_ids/">retrieval_source_ids</a>: <br/> <i> A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge. </i></td>
 <td>0..* <br/> <a href="../RetrievalSource/">RetrievalSource</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../p_value/">p_value</a>: <br/> <i> A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a>: <br/> <i> The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P&lt;. 05), unless P&lt;. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

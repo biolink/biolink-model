@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: treats - Biolink Model Documentation</title>
+        <title>Slot: treats (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treats" class="md-skip">
+        <a href="#slot-treats-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treats </strong>
+              <strong> Slot: treats </strong>  (multivalued)
             
           </span>
         </div>
@@ -631,7 +631,7 @@
   
 
 
-<h1 id="slot-treats"><strong> Slot: treats </strong></h1>
+<h1 id="slot-treats-multivalued"><strong> Slot: treats </strong>  (multivalued)</h1>
 <div class="highlight-box"><strong>Description:</strong><i> Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. the intervention is approved for the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise established  treatment in the medical community (e.g. a widely-accepted or formally recommended  off-label use). In the absence of such evidence, weaker predicates should be used in  asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence can however be created as predictions  (knowledge_level: prediction) and should point to the more foundational asserted edges that  support them.</i><br>
    <strong>Aliases:</strong> is substance that treats, indicated for, ameliorates or prevents condition<br>
 
@@ -643,8 +643,14 @@
 <strong>Range:</strong>   <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
 <li><a href="../treats_or_applied_or_studied_to_treat/">treats_or_applied_or_studied_to_treat</a><ul>
 <li><strong>treats</strong></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -752,6 +758,8 @@ broad_mappings:
 is_a: treats or applied or studied to treat
 mixin: true
 domain: chemical or drug or treatment
+multivalued: true
+inherited: true
 alias: treats
 range: disease or phenotypic feature
 

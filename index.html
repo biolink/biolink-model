@@ -1789,6 +1789,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.</td>
 </tr>
 <tr>
+<td><a href="url/">url</a></td>
+<td>This slot holds a string representation of a URL for an external resource about the node it is  present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full  URL that can be used to directly access a resource. When linking to an external resource that cannot be  represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the  default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.</td>
+</tr>
+<tr>
 <td><a href="version/">version</a></td>
 <td>None</td>
 </tr>
@@ -2544,6 +2548,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
+<td><a href="models_demonstrating_benefits_for/">models_demonstrating_benefits_for</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="narrow_match/">narrow_match</a></td>
 <td>a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.</td>
 </tr>
@@ -2716,6 +2724,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>holds between two classes where the domain class is a specialization of the range class</td>
 </tr>
 <tr>
+<td><a href="subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="superclass_of/">superclass_of</a></td>
 <td>holds between two classes where the domain class is a super class of the range class</td>
 </tr>
@@ -2730,6 +2742,14 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="temporally_related_to/">temporally_related_to</a></td>
 <td>holds between two entities with a temporal relationship</td>
+</tr>
+<tr>
+<td><a href="tested_by_clinical_trials_of/">tested_by_clinical_trials_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tested_by_preclinical_trials_of/">tested_by_preclinical_trials_of</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td><a href="transcribed_from/">transcribed_from</a></td>
@@ -2748,8 +2768,24 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>inverse of translates to</td>
 </tr>
 <tr>
+<td><a href="treated_by/">treated_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="treated_in_studies_by/">treated_in_studies_by</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="treatment_applications_from/">treatment_applications_from</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="treats/">treats</a></td>
+<td>Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. the intervention is approved for the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise established  treatment in the medical community (e.g. a widely-accepted or formally recommended  off-label use). In the absence of such evidence, weaker predicates should be used in  asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges based on weaker or indirect forms of evidence can however be created as predictions  (knowledge_level: prediction) and should point to the more foundational asserted edges that  support them.</td>
+</tr>
+<tr>
+<td><a href="treats_or_applied_or_studied_to_treat/">treats_or_applied_or_studied_to_treat</a></td>
+<td>Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), and states that the substance, procedure, or activity is able to treat the condition, has been observed to be taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).</td>
 </tr>
 <tr>
 <td><a href="variant_part_of/">variant_part_of</a></td>

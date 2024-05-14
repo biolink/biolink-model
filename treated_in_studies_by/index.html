@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: treated_in_studies_by - Biolink Model Documentation</title>
+        <title>Slot: treated_in_studies_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-treated_in_studies_by" class="md-skip">
+        <a href="#slot-treated_in_studies_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: treated_in_studies_by </strong>
+              <strong> Slot: treated_in_studies_by </strong>  (multivalued)
             
           </span>
         </div>
@@ -613,7 +613,7 @@
   
 
 
-<h1 id="slot-treated_in_studies_by"><strong> Slot: treated_in_studies_by </strong></h1>
+<h1 id="slot-treated_in_studies_by-multivalued"><strong> Slot: treated_in_studies_by </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
   <strong>Inverse:</strong> studied to treat</a></small><br>
@@ -625,10 +625,19 @@
 <strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
+<li><a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a><ul>
 <li><a href="../treated_by/">treated_by</a><ul>
 <li><strong>treated_in_studies_by</strong><ul>
 <li><a href="../tested_by_clinical_trials_of/">tested_by_clinical_trials_of</a></li>
 <li><a href="../tested_by_preclinical_trials_of/">tested_by_preclinical_trials_of</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -641,6 +650,8 @@
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: treated by
 domain: disease or phenotypic feature
+multivalued: true
+inherited: true
 alias: treated_in_studies_by
 inverse: studied to treat
 range: chemical or drug or treatment

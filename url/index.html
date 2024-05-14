@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/object_direction_qualifier/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/url/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: object_direction_qualifier - Biolink Model Documentation</title>
+        <title>Slot: url - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-object_direction_qualifier" class="md-skip">
+        <a href="#slot-url" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: object_direction_qualifier </strong>
+              <strong> Slot: url </strong>
             
           </span>
         </div>
@@ -587,15 +587,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Applicable Classes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -622,98 +613,39 @@
   
 
 
-<h1 id="slot-object_direction_qualifier"><strong> Slot: object_direction_qualifier </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).</i><br>
+<h1 id="slot-url"><strong> Slot: url </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> This slot holds a string representation of a URL for an external resource about the node it is  present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full  URL that can be used to directly access a resource. When linking to an external resource that cannot be  represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the  default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.</i><br>
 
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
-<strong>Range:</strong>   <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a> <br></p>
+<p><strong>Domain:</strong> <a href="../Entity/">Entity</a><br>
+<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../association_slot/">association_slot</a><ul>
-<li><a href="../qualifier/">qualifier</a><ul>
-<li><a href="../direction_qualifier/">direction_qualifier</a><ul>
-<li><strong>object_direction_qualifier</strong></li>
+<li><a href="../node_property/">node_property</a><ul>
+<li><strong>url</strong></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="applicable-classes">Applicable Classes</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Modifies Slot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
-<td>Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td>None</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
-<td>A regulatory relationship between two genes</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td>Qualifiers for entity to disease or phenotype associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: object direction qualifier
-description: 'Composes with the core concept (+ aspect if provided) to describe a
-  change in its direction or degree. This qualifier qualifies the object of an association
-  (aka: statement).'
-in_subset:
-- translator_minimal
+<pre><code class="language-yaml">name: url
+description: This slot holds a string representation of a URL for an external resource
+  about the node it is  present on. Unlike an 'xref' that is primarily represented
+  by a CURIE, this slot is intended to hold a full  URL that can be used to directly
+  access a resource. When linking to an external resource that cannot be  represented
+  by a unique CURIE, this slot should be used.  However, when the intent is to link
+  to the  default URI expansion of a CURIE related to the node it is present on, the
+  xref slot should be used instead.
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: direction qualifier
-domain: association
-alias: object_direction_qualifier
-domain_of:
-- predicate mapping
-- chemical affects gene association
-- gene affects chemical association
-- entity to feature or disease qualifiers mixin
-- feature or disease qualifiers to entity mixin
-- gene to disease or phenotypic feature association
-- chemical entity or gene or gene product regulates gene association
-range: DirectionQualifierEnum
+is_a: node property
+domain: entity
+alias: url
+range: string
 
 </code></pre>
 

@@ -283,6 +283,8 @@
     class SequenceVariantModulatesTreatmentAssociation
       Association &lt;|-- SequenceVariantModulatesTreatmentAssociation
 
+      SequenceVariantModulatesTreatmentAssociation : adjusted_p_value
+
       SequenceVariantModulatesTreatmentAssociation : agent_type
 
           SequenceVariantModulatesTreatmentAssociation --|&gt; AgentTypeEnum : agent_type
@@ -340,6 +342,8 @@
       SequenceVariantModulatesTreatmentAssociation : original_predicate
 
       SequenceVariantModulatesTreatmentAssociation : original_subject
+
+      SequenceVariantModulatesTreatmentAssociation : p_value
 
       SequenceVariantModulatesTreatmentAssociation : predicate
 
@@ -569,6 +573,18 @@
 <tr>
 <td><a href="../retrieval_source_ids/">retrieval_source_ids</a>: <br/> <i> A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge. </i></td>
 <td>0..* <br/> <a href="../RetrievalSource/">RetrievalSource</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../p_value/">p_value</a>: <br/> <i> A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a>: <br/> <i> The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P&lt;. 05), unless P&lt;. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

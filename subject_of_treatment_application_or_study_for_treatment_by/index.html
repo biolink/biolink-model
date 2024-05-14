@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: subject_of_treatment_application_or_study_for_treatment_by - Biolink Model Documentation</title>
+        <title>Slot: subject_of_treatment_application_or_study_for_treatment_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-subject_of_treatment_application_or_study_for_treatment_by" class="md-skip">
+        <a href="#slot-subject_of_treatment_application_or_study_for_treatment_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: subject_of_treatment_application_or_study_for_treatment_by </strong>
+              <strong> Slot: subject_of_treatment_application_or_study_for_treatment_by </strong>  (multivalued)
             
           </span>
         </div>
@@ -578,6 +578,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mixin-usage" class="md-nav__link">
     <span class="md-ellipsis">
       Mixin Usage
@@ -613,7 +622,7 @@
   
 
 
-<h1 id="slot-subject_of_treatment_application_or_study_for_treatment_by"><strong> Slot: subject_of_treatment_application_or_study_for_treatment_by </strong></h1>
+<h1 id="slot-subject_of_treatment_application_or_study_for_treatment_by-multivalued"><strong> Slot: subject_of_treatment_application_or_study_for_treatment_by </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
   <strong>Inverse:</strong> treats or applied or studied to treat</a></small><br>
@@ -621,10 +630,21 @@
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a><br>
-<strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
-<!-- no inheritance hierarchy -->
-
+<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a><br>
+<strong>Range:</strong>   <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br></p>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
+<li><strong>subject_of_treatment_application_or_study_for_treatment_by</strong><ul>
+<li><a href="../treated_by/">treated_by</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="mixin-usage">Mixin Usage</h2>
 <table>
 <thead>
@@ -649,11 +669,14 @@
 
 <pre><code class="language-yaml">name: subject of treatment application or study for treatment by
 from_schema: https://w3id.org/biolink/biolink-model
+is_a: related to at instance level
 mixin: true
-domain: disease or phenotypic feature
+domain: chemical or drug or treatment
+multivalued: true
+inherited: true
 alias: subject_of_treatment_application_or_study_for_treatment_by
 inverse: treats or applied or studied to treat
-range: chemical or drug or treatment
+range: disease or phenotypic feature
 
 </code></pre>
 

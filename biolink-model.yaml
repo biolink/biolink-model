@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.0
+version: 4.2.1
 
 ## ------------
 ##
@@ -656,6 +656,17 @@ slots:
     narrow_mappings:
       - gff3:Dbxref
       - gpi:DB_Xrefs
+
+  url:
+    is_a: node property
+    description: >-
+      This slot holds a string representation of a URL for an external resource about the node it is 
+      present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full 
+      URL that can be used to directly access a resource. When linking to an external resource that cannot be 
+      represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the 
+      default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.
+    domain: entity
+    range: string
 
   semmed agreement count:
     is_a: association slot
@@ -1727,6 +1738,8 @@ slots:
       - SEMMEDDB:compared_with
       - SEMMEDDB:higher_than
       - SEMMEDDB:lower_than
+      - SEMMEDDB:ADMINISTERED_TO
+      - SEMMEDDB:ASSOCIATED_WITH
       - BFO:0000054
       - UBERON_CORE:protects
       - GOREL:0002005
@@ -1869,8 +1882,6 @@ slots:
     narrow_mappings:
       - RO:0004029
       - SNOMEDCT:47429007
-    broad_mappings:
-      - SEMMEDDB:ASSOCIATED_WITH
 
   superclass of:
     is_a: related to at concept level
@@ -3521,6 +3532,7 @@ slots:
       - MONDO:disease_responds_to
 
   treated by:
+    is_a: subject of treatment application or study for treatment by
     mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3660,8 +3672,6 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-    broad_mappings:
-      - SEMMEDDB:ADMINISTERED_TO
    # TODO: need an inverse for taken to treat
 
   treatment applications from:
@@ -3671,6 +3681,7 @@ slots:
     range: chemical or drug or treatment
 
   treats or applied or studied to treat:
+    is_a: related to at instance level
     mixin: true
     description: >-
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),
@@ -3689,11 +3700,14 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:TREATS
-
-  subject of treatment application or study for treatment by:
-    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
+
+  subject of treatment application or study for treatment by:
+    is_a: related to at instance level
+    mixin: true
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
     inverse: treats or applied or studied to treat
 
   correlated with:
@@ -3876,6 +3890,7 @@ slots:
       - NCIT:R89
       - DOID-PROPERTY:has_symptom
       - RO:0004022
+      - RO:0004029
 
   phenotype of:
     is_a: related to at instance level
@@ -9339,6 +9354,8 @@ classes:
       - subject label closure
       - object label closure
       - retrieval source ids
+      - p value
+      - adjusted p value
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
