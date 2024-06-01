@@ -10300,6 +10300,20 @@ classes:
     slots:
       - sex qualifier
 
+  phenotypic feature to phenotypic feature association:
+    description: >-
+      Association between two concept nodes of phenotypic character,
+      qualified by the predicate used. This association may typically
+      be used to specify 'similar_to' or 'member_of' relationships.
+    is_a: association
+    mixins:
+      - phenotypic feature to entity association mixin
+      - entity to phenotypic feature association mixin
+    defining_slots:
+      - subject
+      - predicate
+      - object
+
   information content entity to named thing association:
     description: >-
       association between a named thing and a information content entity where the specific context
