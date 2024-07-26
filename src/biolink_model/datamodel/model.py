@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-07-26T01:19:49
+# Generation date: 2024-07-26T21:39:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1147,6 +1147,10 @@ class DiseaseToExposureEventAssociationId(AssociationId):
 
 
 class ExposureEventToOutcomeAssociationId(AssociationId):
+    pass
+
+
+class PhenotypicFeatureToPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
@@ -9660,6 +9664,81 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
             self.has_percentage = float(self.has_percentage)
 
         super().__post_init__(**kwargs)
+
+
+@dataclass
+class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
+    """
+    Association between two concept nodes of phenotypic character, qualified by the predicate used. This association
+    may typically be used to specify 'similar_to' or 'member_of' relationships.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToPhenotypicFeatureAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:PhenotypicFeatureToPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "phenotypic feature to phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeatureToPhenotypicFeatureAssociation
+
+    id: Union[str, PhenotypicFeatureToPhenotypicFeatureAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
+    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_aspect_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[str] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PhenotypicFeatureToPhenotypicFeatureAssociationId):
+            self.id = PhenotypicFeatureToPhenotypicFeatureAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
+            self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
 @dataclass
