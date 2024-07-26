@@ -1166,8 +1166,8 @@ type ChemicalMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -1714,8 +1714,8 @@ type ComplexMolecularMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -2246,8 +2246,8 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -2899,8 +2899,8 @@ type Food
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -4977,8 +4977,8 @@ type MolecularMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -6133,8 +6133,8 @@ type ProcessedMaterial
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -6678,6 +6678,7 @@ type SiRNA
 
 type SmallMolecule
   {
+    id: String!
     iri: IriType
     type: [String]
     name: LabelType
@@ -6695,7 +6696,6 @@ type SmallMolecule
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    id: String!
   }
 
 type Snv

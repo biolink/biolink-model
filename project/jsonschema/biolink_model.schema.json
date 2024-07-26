@@ -800,6 +800,28 @@
             "title": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
             "type": "object"
         },
+        "ApprovalStatusEnum": {
+            "description": "",
+            "enum": [
+                "discovery_and_development_phase",
+                "preclinical_research_phase",
+                "fda_clinical_research_phase",
+                "fda_review_phase_4",
+                "fda_post_market_safety_review",
+                "fda_clinical_research_phase_1",
+                "fda_clinical_research_phase_2",
+                "fda_clinical_research_phase_3",
+                "fda_clinical_research_phase_4",
+                "fda_fast_track",
+                "fda_breakthrough_therapy",
+                "fda_accelerated_approval",
+                "fda_priority_review",
+                "regular_fda_approval",
+                "post_approval_withdrawal"
+            ],
+            "title": "ApprovalStatusEnum",
+            "type": "string"
+        },
         "Article": {
             "additionalProperties": false,
             "description": "a piece of writing on a particular topic presented as a stand-alone section of a larger publication",
@@ -5261,8 +5283,8 @@
                     "type": "string"
                 },
                 "drug_regulatory_status_world_wide": {
-                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA."
                 },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
@@ -5283,8 +5305,8 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -7993,8 +8015,8 @@
                     "type": "string"
                 },
                 "drug_regulatory_status_world_wide": {
-                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA."
                 },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
@@ -8015,8 +8037,8 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -10534,8 +10556,8 @@
                     "type": "string"
                 },
                 "drug_regulatory_status_world_wide": {
-                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA."
                 },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
@@ -10556,8 +10578,8 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -13289,8 +13311,8 @@
                     "type": "string"
                 },
                 "drug_regulatory_status_world_wide": {
-                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA."
                 },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
@@ -13311,8 +13333,8 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -14803,6 +14825,10 @@
                 "folding",
                 "localization",
                 "transport",
+                "absorption",
+                "aggregation",
+                "interaction",
+                "release",
                 "secretion",
                 "uptake",
                 "splicing",
@@ -22993,8 +23019,8 @@
                     "type": "string"
                 },
                 "drug_regulatory_status_world_wide": {
-                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA."
                 },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
@@ -23015,8 +23041,8 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -27981,8 +28007,8 @@
                     "type": "string"
                 },
                 "drug_regulatory_status_world_wide": {
-                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA."
                 },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
@@ -28003,8 +28029,8 @@
                     "type": "array"
                 },
                 "highest_FDA_approval_status": {
-                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'",
-                    "type": "string"
+                    "$ref": "#/$defs/ApprovalStatusEnum",
+                    "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
