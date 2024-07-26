@@ -11976,6 +11976,10 @@ enums:
       - translator_minimal
 
   AgentTypeEnum:
+    description: >-
+      Classifies the different types of agents, including manual and automated agents, that are responsible for 
+      generating statements of knowledge in a biological context, encompassing roles from human interpretation to 
+      automated data analysis and validation.
     permissible_values:
       manual_agent:
         description: >-
