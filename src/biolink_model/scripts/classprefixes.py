@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Integer, String, Uri, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URI, URIorCURIE
 
 metamodel_version = "1.7.0"
-version = "4.2.1"
+version = "4.2.2"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs

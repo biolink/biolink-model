@@ -1,5 +1,18 @@
 CHANGES
 =======
+4.2.2
+-----
+* Bump requests from 2.31.0 to 2.32.0 by @dependabot in https://github.com/biolink/biolink-model/pull/1508
+* fix: flip domain/range for top-level "treats" predicates by @colleenXu in https://github.com/biolink/biolink-model/pull/1512
+* Add a description to AgentTypeEnum by @nicholsn in https://github.com/biolink/biolink-model/pull/1510
+* Bump urllib3 from 2.1.0 to 2.2.2 by @dependabot in https://github.com/biolink/biolink-model/pull/1513
+* Bump certifi from 2023.11.17 to 2024.7.4 by @dependabot in https://github.com/biolink/biolink-model/pull/1518
+* Bump zipp from 3.17.0 to 3.19.1 by @dependabot in https://github.com/biolink/biolink-model/pull/1519
+* Bump setuptools from 69.0.2 to 70.0.0 by @dependabot in https://github.com/biolink/biolink-model/pull/1520
+* restore enumeration to use just for denormalized node properties for … by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1506
+* make necessary changes to id_prefixes for chemical entity hierarchy by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1500
+* TRAPI multi-CURIE query use cases semantics by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/150
+
 4.2.1
 -----
 * administered_to, associated_with moved back to related_to in top level yaml
