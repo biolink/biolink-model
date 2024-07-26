@@ -1041,8 +1041,8 @@ message ChemicalMixture
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   string isSupplement = 0
-  string highestFDAApprovalStatus = 0
-  string drugRegulatoryStatusWorldWide = 0
+  approvalStatusEnum highestFDAApprovalStatus = 0
+  approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
@@ -1575,8 +1575,8 @@ message ComplexMolecularMixture
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   string isSupplement = 0
-  string highestFDAApprovalStatus = 0
-  string drugRegulatoryStatusWorldWide = 0
+  approvalStatusEnum highestFDAApprovalStatus = 0
+  approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // A result of a concept count analysis.
@@ -2088,8 +2088,8 @@ message Drug
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   string isSupplement = 0
-  string highestFDAApprovalStatus = 0
-  string drugRegulatoryStatusWorldWide = 0
+  approvalStatusEnum highestFDAApprovalStatus = 0
+  approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // A drug exposure is an intake of a particular drug.
@@ -2623,8 +2623,8 @@ message Food
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   string isSupplement = 0
-  string highestFDAApprovalStatus = 0
-  string drugRegulatoryStatusWorldWide = 0
+  approvalStatusEnum highestFDAApprovalStatus = 0
+  approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 message FoodAdditive
@@ -4525,8 +4525,8 @@ message MolecularMixture
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   string isSupplement = 0
-  string highestFDAApprovalStatus = 0
-  string drugRegulatoryStatusWorldWide = 0
+  approvalStatusEnum highestFDAApprovalStatus = 0
+  approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // a databased entity or concept/class
@@ -5505,8 +5505,8 @@ message ProcessedMaterial
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
   string isSupplement = 0
-  string highestFDAApprovalStatus = 0
-  string drugRegulatoryStatusWorldWide = 0
+  approvalStatusEnum highestFDAApprovalStatus = 0
+  approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
