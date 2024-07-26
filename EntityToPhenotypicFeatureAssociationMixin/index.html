@@ -289,6 +289,7 @@
       EntityToFeatureOrDiseaseQualifiersMixin &lt;|-- EntityToPhenotypicFeatureAssociationMixin
 
 
+      EntityToPhenotypicFeatureAssociationMixin &lt;|-- PhenotypicFeatureToPhenotypicFeatureAssociation
       EntityToPhenotypicFeatureAssociationMixin &lt;|-- GenotypeToPhenotypicFeatureAssociation
       EntityToPhenotypicFeatureAssociationMixin &lt;|-- ExposureEventToPhenotypicFeatureAssociation
       EntityToPhenotypicFeatureAssociationMixin &lt;|-- DiseaseToPhenotypicFeatureAssociation
@@ -455,6 +456,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td>Association between two concept nodes of phenotypic character, qualified by the predicate used. This association may typically be used to specify 'similar_to' or 'member_of' relationships.</td>
+</tr>
 <tr>
 <td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
 <td>Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment</td>

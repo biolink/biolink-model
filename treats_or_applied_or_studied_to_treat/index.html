@@ -639,8 +639,8 @@
  <strong> Notes:</strong> This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a condition, and as a catch-all for representing sources that are not clear about the sense of treats that is being reported. For example, text-mined statements concerning treatments for disease are based on sentences that can report treatment in any of these different senses and thus require a broader predicate such as this to safely report statement semantics. 
 </div>
 
-<p><strong>Domain:</strong> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a><br>
-<strong>Range:</strong>   <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <br></p>
+<p><strong>Domain:</strong> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a><br>
+<strong>Range:</strong>   <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
@@ -740,11 +740,11 @@ exact_mappings:
 - SEMMEDDB:TREATS
 is_a: related to at instance level
 mixin: true
-domain: disease or phenotypic feature
+domain: chemical or drug or treatment
 multivalued: true
 inherited: true
 alias: treats_or_applied_or_studied_to_treat
-range: chemical or drug or treatment
+range: disease or phenotypic feature
 
 </code></pre>
 

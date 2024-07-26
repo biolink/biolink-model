@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/OrganismTaxonToOrganismTaxonSpecialization/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/PhenotypicFeatureToPhenotypicFeatureAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.17" name="generator"/>
-<title>Class: OrganismTaxonToOrganismTaxonSpecialization - Biolink Model Documentation</title>
+<title>Class: PhenotypicFeatureToPhenotypicFeatureAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.bcfcd587.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-organismtaxontoorganismtaxonspecialization">
+<a class="md-skip" href="#class-phenotypicfeaturetophenotypicfeatureassociation">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  Class: OrganismTaxonToOrganismTaxonSpecialization </strong>
+<strong>  Class: PhenotypicFeatureToPhenotypicFeatureAssociation </strong>
 </span>
 </div>
 </div>
@@ -275,115 +275,145 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-organismtaxontoorganismtaxonspecialization"><strong>  Class: OrganismTaxonToOrganismTaxonSpecialization </strong></h1>
+<h1 id="class-phenotypicfeaturetophenotypicfeatureassociation"><strong>  Class: PhenotypicFeatureToPhenotypicFeatureAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo</i><br/>
+<strong>Description:</strong><i> Association between two concept nodes of phenotypic character, qualified by the predicate used. This association may typically be used to specify 'similar_to' or 'member_of' relationships.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class OrganismTaxonToOrganismTaxonSpecialization
-      OrganismTaxonToOrganismTaxonAssociation &lt;|-- OrganismTaxonToOrganismTaxonSpecialization
+    class PhenotypicFeatureToPhenotypicFeatureAssociation
+      PhenotypicFeatureToEntityAssociationMixin &lt;|-- PhenotypicFeatureToPhenotypicFeatureAssociation
+      EntityToPhenotypicFeatureAssociationMixin &lt;|-- PhenotypicFeatureToPhenotypicFeatureAssociation
+      Association &lt;|-- PhenotypicFeatureToPhenotypicFeatureAssociation
 
-      OrganismTaxonToOrganismTaxonSpecialization : adjusted_p_value
+      PhenotypicFeatureToPhenotypicFeatureAssociation : adjusted_p_value
 
-      OrganismTaxonToOrganismTaxonSpecialization : agent_type
+      PhenotypicFeatureToPhenotypicFeatureAssociation : agent_type
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; AgentTypeEnum : agent_type
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; AgentTypeEnum : agent_type
 
-      OrganismTaxonToOrganismTaxonSpecialization : aggregator_knowledge_source
+      PhenotypicFeatureToPhenotypicFeatureAssociation : aggregator_knowledge_source
 
-      OrganismTaxonToOrganismTaxonSpecialization : category
+      PhenotypicFeatureToPhenotypicFeatureAssociation : category
 
-      OrganismTaxonToOrganismTaxonSpecialization : deprecated
+      PhenotypicFeatureToPhenotypicFeatureAssociation : deprecated
 
-      OrganismTaxonToOrganismTaxonSpecialization : description
+      PhenotypicFeatureToPhenotypicFeatureAssociation : description
 
-      OrganismTaxonToOrganismTaxonSpecialization : has_attribute
+      PhenotypicFeatureToPhenotypicFeatureAssociation : frequency_qualifier
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; Attribute : has_attribute
+      PhenotypicFeatureToPhenotypicFeatureAssociation : has_attribute
 
-      OrganismTaxonToOrganismTaxonSpecialization : has_evidence
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; Attribute : has_attribute
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; EvidenceType : has_evidence
+      PhenotypicFeatureToPhenotypicFeatureAssociation : has_count
 
-      OrganismTaxonToOrganismTaxonSpecialization : id
+      PhenotypicFeatureToPhenotypicFeatureAssociation : has_evidence
 
-      OrganismTaxonToOrganismTaxonSpecialization : iri
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; EvidenceType : has_evidence
 
-      OrganismTaxonToOrganismTaxonSpecialization : knowledge_level
+      PhenotypicFeatureToPhenotypicFeatureAssociation : has_percentage
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; KnowledgeLevelEnum : knowledge_level
+      PhenotypicFeatureToPhenotypicFeatureAssociation : has_quotient
 
-      OrganismTaxonToOrganismTaxonSpecialization : knowledge_source
+      PhenotypicFeatureToPhenotypicFeatureAssociation : has_total
 
-      OrganismTaxonToOrganismTaxonSpecialization : name
+      PhenotypicFeatureToPhenotypicFeatureAssociation : id
 
-      OrganismTaxonToOrganismTaxonSpecialization : negated
+      PhenotypicFeatureToPhenotypicFeatureAssociation : iri
 
-      OrganismTaxonToOrganismTaxonSpecialization : object
+      PhenotypicFeatureToPhenotypicFeatureAssociation : knowledge_level
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OrganismTaxon : object
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
 
-      OrganismTaxonToOrganismTaxonSpecialization : object_category
+      PhenotypicFeatureToPhenotypicFeatureAssociation : knowledge_source
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OntologyClass : object_category
+      PhenotypicFeatureToPhenotypicFeatureAssociation : name
 
-      OrganismTaxonToOrganismTaxonSpecialization : object_category_closure
+      PhenotypicFeatureToPhenotypicFeatureAssociation : negated
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OntologyClass : object_category_closure
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object
 
-      OrganismTaxonToOrganismTaxonSpecialization : object_closure
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; PhenotypicFeature : object
 
-      OrganismTaxonToOrganismTaxonSpecialization : object_label_closure
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_aspect_qualifier
 
-      OrganismTaxonToOrganismTaxonSpecialization : object_namespace
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_category
 
-      OrganismTaxonToOrganismTaxonSpecialization : original_object
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category
 
-      OrganismTaxonToOrganismTaxonSpecialization : original_predicate
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_category_closure
 
-      OrganismTaxonToOrganismTaxonSpecialization : original_subject
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category_closure
 
-      OrganismTaxonToOrganismTaxonSpecialization : p_value
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_closure
 
-      OrganismTaxonToOrganismTaxonSpecialization : predicate
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_direction_qualifier
 
-      OrganismTaxonToOrganismTaxonSpecialization : primary_knowledge_source
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; DirectionQualifierEnum : object_direction_qualifier
 
-      OrganismTaxonToOrganismTaxonSpecialization : publications
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_label_closure
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; Publication : publications
+      PhenotypicFeatureToPhenotypicFeatureAssociation : object_namespace
 
-      OrganismTaxonToOrganismTaxonSpecialization : qualifier
+      PhenotypicFeatureToPhenotypicFeatureAssociation : original_object
 
-      OrganismTaxonToOrganismTaxonSpecialization : qualifiers
+      PhenotypicFeatureToPhenotypicFeatureAssociation : original_predicate
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OntologyClass : qualifiers
+      PhenotypicFeatureToPhenotypicFeatureAssociation : original_subject
 
-      OrganismTaxonToOrganismTaxonSpecialization : retrieval_source_ids
+      PhenotypicFeatureToPhenotypicFeatureAssociation : p_value
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; RetrievalSource : retrieval_source_ids
+      PhenotypicFeatureToPhenotypicFeatureAssociation : predicate
 
-      OrganismTaxonToOrganismTaxonSpecialization : subject
+      PhenotypicFeatureToPhenotypicFeatureAssociation : primary_knowledge_source
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OrganismTaxon : subject
+      PhenotypicFeatureToPhenotypicFeatureAssociation : publications
 
-      OrganismTaxonToOrganismTaxonSpecialization : subject_category
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; Publication : publications
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OntologyClass : subject_category
+      PhenotypicFeatureToPhenotypicFeatureAssociation : qualified_predicate
 
-      OrganismTaxonToOrganismTaxonSpecialization : subject_category_closure
+      PhenotypicFeatureToPhenotypicFeatureAssociation : qualifier
 
-          OrganismTaxonToOrganismTaxonSpecialization --|&gt; OntologyClass : subject_category_closure
+      PhenotypicFeatureToPhenotypicFeatureAssociation : qualifiers
 
-      OrganismTaxonToOrganismTaxonSpecialization : subject_closure
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; OntologyClass : qualifiers
 
-      OrganismTaxonToOrganismTaxonSpecialization : subject_label_closure
+      PhenotypicFeatureToPhenotypicFeatureAssociation : retrieval_source_ids
 
-      OrganismTaxonToOrganismTaxonSpecialization : subject_namespace
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; RetrievalSource : retrieval_source_ids
 
-      OrganismTaxonToOrganismTaxonSpecialization : timepoint
+      PhenotypicFeatureToPhenotypicFeatureAssociation : sex_qualifier
 
-      OrganismTaxonToOrganismTaxonSpecialization : type
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; BiologicalSex : sex_qualifier
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject
+
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; PhenotypicFeature : subject
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_aspect_qualifier
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_category
+
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_category_closure
+
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category_closure
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_closure
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_direction_qualifier
+
+          PhenotypicFeatureToPhenotypicFeatureAssociation --|&gt; DirectionQualifierEnum : subject_direction_qualifier
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_label_closure
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : subject_namespace
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : timepoint
+
+      PhenotypicFeatureToPhenotypicFeatureAssociation : type
 
 
 </div>
@@ -391,10 +421,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a> [ <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>]<ul>
-<li><strong>OrganismTaxonToOrganismTaxonSpecialization</strong></li>
-</ul>
-</li>
+<li><strong>PhenotypicFeatureToPhenotypicFeatureAssociation</strong> [ <a href="../PhenotypicFeatureToEntityAssociationMixin/">PhenotypicFeatureToEntityAssociationMixin</a> <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>]</li>
 </ul>
 </li>
 </ul>
@@ -412,22 +439,28 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> the more specific taxon </i></br></td>
-<td>1..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>, <a href="../Association/">Association</a></td>
+<td><a href="../sex_qualifier/">sex_qualifier</a>: <br> <i> a qualifier used in a phenotypic association to state whether the association is specific to a particular sex. </i></br></td>
+<td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../PhenotypicFeatureToEntityAssociationMixin/">PhenotypicFeatureToEntityAssociationMixin</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../subject/">subject</a>: <br/> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td>1..1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td>HP:0002487, WBPhenotype:0000180, MP:0001569</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../object/">object</a>: <br/> <i> the more general taxon </i></td>
-<td>1..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>, <a href="../Association/">Association</a></td>
-<td></td>
+<td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td>1..1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td>HP:0002487, WBPhenotype:0000180, MP:0001569</td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
@@ -639,104 +672,83 @@
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="../has_count/">has_count</a>: <br/> <i> number of things with a particular property </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_total/">has_total</a>: <br/> <i> total number of things in a particular reference set </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_quotient/">has_quotient</a>: <br/> <i> None </i></td>
+<td>0..1 <br/> <a href="../Double/">Double</a></td>
+<td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_percentage/">has_percentage</a>: <br/> <i> equivalent to has quotient multiplied by 100 </i></td>
+<td>0..1 <br/> <a href="../Double/">Double</a></td>
+<td><a href="../FrequencyQuantifier/">FrequencyQuantifier</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>stability, abundance, expression, exposure</td>
+</tr>
+<tr>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>stability, abundance, expression, exposure</td>
+</tr>
+<tr>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>
+<td>0..1 <br/> <a href="../FrequencyValue/">FrequencyValue</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: organism taxon to organism taxon specialization
-description: 'A child-parent relationship between two taxa. For example: Homo sapiens
-  subclass_of Homo'
+<pre><code class="language-yaml">name: phenotypic feature to phenotypic feature association
+description: Association between two concept nodes of phenotypic character, qualified
+  by the predicate used. This association may typically be used to specify 'similar_to'
+  or 'member_of' relationships.
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: organism taxon to organism taxon association
-slot_usage:
-  subject:
-    name: subject
-    description: the more specific taxon
-    domain_of:
-    - association
-    - cell line to entity association mixin
-    - chemical entity to entity association mixin
-    - drug to entity association mixin
-    - chemical to entity association mixin
-    - case to entity association mixin
-    - chemical to chemical association
-    - named thing associated with likelihood of named thing association
-    - material sample to entity association mixin
-    - material sample derivation association
-    - disease to entity association mixin
-    - entity to exposure event association mixin
-    - entity to outcome association mixin
-    - frequency qualifier mixin
-    - entity to phenotypic feature association mixin
-    - disease or phenotypic feature to entity association mixin
-    - entity to disease or phenotypic feature association mixin
-    - genotype to entity association mixin
-    - gene to entity association mixin
-    - variant to entity association mixin
-    - model to disease association mixin
-    - macromolecular machine to entity association mixin
-    - organism taxon to entity association
-    role: child taxon
-    range: organism taxon
-  object:
-    name: object
-    description: the more general taxon
-    domain_of:
-    - association
-    - cell line to entity association mixin
-    - chemical entity to entity association mixin
-    - drug to entity association mixin
-    - chemical to entity association mixin
-    - case to entity association mixin
-    - chemical to chemical association
-    - named thing associated with likelihood of named thing association
-    - material sample to entity association mixin
-    - material sample derivation association
-    - disease to entity association mixin
-    - entity to exposure event association mixin
-    - entity to outcome association mixin
-    - frequency qualifier mixin
-    - entity to phenotypic feature association mixin
-    - disease or phenotypic feature to entity association mixin
-    - entity to disease or phenotypic feature association mixin
-    - genotype to entity association mixin
-    - gene to entity association mixin
-    - variant to entity association mixin
-    - model to disease association mixin
-    - macromolecular machine to entity association mixin
-    - organism taxon to entity association
-    role: parent taxon
-    range: organism taxon
-  predicate:
-    name: predicate
-    domain_of:
-    - predicate mapping
-    - association
-    - cell line to entity association mixin
-    - chemical entity to entity association mixin
-    - drug to entity association mixin
-    - chemical to entity association mixin
-    - case to entity association mixin
-    - chemical to chemical association
-    - named thing associated with likelihood of named thing association
-    - material sample to entity association mixin
-    - material sample derivation association
-    - disease to entity association mixin
-    - entity to exposure event association mixin
-    - entity to outcome association mixin
-    - frequency qualifier mixin
-    - entity to phenotypic feature association mixin
-    - disease or phenotypic feature to entity association mixin
-    - entity to disease or phenotypic feature association mixin
-    - genotype to entity association mixin
-    - gene to entity association mixin
-    - variant to entity association mixin
-    - model to disease association mixin
-    - macromolecular machine to entity association mixin
-    - organism taxon to entity association
-    subproperty_of: subclass of
+is_a: association
+mixins:
+- phenotypic feature to entity association mixin
+- entity to phenotypic feature association mixin
 defining_slots:
+- subject
 - predicate
+- object
 
 </code></pre>
 </details>

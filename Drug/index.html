@@ -311,6 +311,8 @@
 
       Drug : drug_regulatory_status_world_wide
 
+          Drug --|&gt; ApprovalStatusEnum : drug_regulatory_status_world_wide
+
       Drug : full_name
 
       Drug : has_attribute
@@ -322,6 +324,8 @@
           Drug --|&gt; ChemicalRole : has_chemical_role
 
       Drug : highest_FDA_approval_status
+
+          Drug --|&gt; ApprovalStatusEnum : highest_FDA_approval_status
 
       Drug : id
 
@@ -384,7 +388,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>
 <tr>
@@ -395,13 +399,13 @@
 </tr>
 <tr>
 <td><a href="../highest_FDA_approval_status/">highest_FDA_approval_status</a>: <br/> <i> Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.' </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../ApprovalStatusEnum/">ApprovalStatusEnum</a></td>
 <td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../drug_regulatory_status_world_wide/">drug_regulatory_status_world_wide</a>: <br/> <i> An agglomeration of drug regulatory status worldwide. Not specific to FDA. </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../ApprovalStatusEnum/">ApprovalStatusEnum</a></td>
 <td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
 <td></td>
 </tr>
@@ -552,19 +556,27 @@
 <tbody>
 <tr>
 <td>ncats.drug</td>
-<td><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Protein/">Protein</a><br/></td>
+<td><a href="./">Drug</a><br/><a href="../Protein/">Protein</a><br/></td>
 </tr>
 <tr>
 <td>RXCUI</td>
-<td><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/></td>
+<td><a href="./">Drug</a><br/></td>
 </tr>
 <tr>
 <td>NDC</td>
-<td><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/></td>
+<td><a href="./">Drug</a><br/></td>
 </tr>
 <tr>
 <td>UMLS</td>
 <td><a href="../OntologyClass/">OntologyClass</a><br/><a href="../OrganismTaxon/">OrganismTaxon</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="../Disease/">Disease</a><br/><a href="../PhenotypicFeature/">PhenotypicFeature</a><br/><a href="../AnatomicalEntity/">AnatomicalEntity</a><br/><a href="../CellularComponent/">CellularComponent</a><br/><a href="../Cell/">Cell</a><br/><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a><br/><a href="../Gene/">Gene</a><br/><a href="../Polypeptide/">Polypeptide</a><br/><a href="../Protein/">Protein</a><br/></td>
+</tr>
+<tr>
+<td>CHEBI</td>
+<td><a href="../ChemicalRole/">ChemicalRole</a><br/><a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="../has_chemical_role/">has_chemical_role</a><br/></td>
+</tr>
+<tr>
+<td>UNII</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
 <td>PUBCHEM.COMPOUND</td>
@@ -575,12 +587,8 @@
 <td><a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
-<td>UNII</td>
-<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
-</tr>
-<tr>
-<td>CHEBI</td>
-<td><a href="../ChemicalRole/">ChemicalRole</a><br/><a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="../has_chemical_role/">has_chemical_role</a><br/></td>
+<td>DRUGBANK</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
 <td>MESH</td>
@@ -591,6 +599,10 @@
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
+<td>DrugCentral</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
+</tr>
+<tr>
 <td>GTOPDB</td>
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
@@ -599,12 +611,12 @@
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
-<td>KEGG</td>
-<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../BiologicalProcess/">BiologicalProcess</a><br/><a href="../Pathway/">Pathway</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
-</tr>
-<tr>
 <td>KEGG.COMPOUND</td>
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
+</tr>
+<tr>
+<td>PHARMGKB.DRUG</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
 <td>ChemBank</td>
@@ -612,6 +624,10 @@
 </tr>
 <tr>
 <td>PUBCHEM.SUBSTANCE</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
+</tr>
+<tr>
+<td>SIDER.DRUG</td>
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
@@ -623,6 +639,14 @@
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
+<td>BIGG.METABOLITE</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
+</tr>
+<tr>
+<td>foodb.compound</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
+</tr>
+<tr>
 <td>KEGG.GLYCAN</td>
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
@@ -631,20 +655,12 @@
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
-<td>ChemBank</td>
+<td>KEGG.ENVIRON</td>
 <td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 <tr>
-<td>SIDER.DRUG</td>
-<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
-</tr>
-<tr>
-<td>BIGG.METABOLITE</td>
-<td><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
-</tr>
-<tr>
-<td>foodb.compound</td>
-<td><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
+<td>KEGG</td>
+<td><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../BiologicalProcess/">BiologicalProcess</a><br/><a href="../Pathway/">Pathway</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="./">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/></td>
 </tr>
 </tbody>
 </table>
@@ -656,26 +672,29 @@ id_prefixes:
 - RXCUI
 - NDC
 - UMLS
+- CHEBI
+- UNII
 - PUBCHEM.COMPOUND
 - CHEMBL.COMPOUND
-- UNII
-- CHEBI
+- DRUGBANK
 - MESH
 - CAS
+- DrugCentral
 - GTOPDB
 - HMDB
-- KEGG
 - KEGG.COMPOUND
+- PHARMGKB.DRUG
 - ChemBank
 - PUBCHEM.SUBSTANCE
+- SIDER.DRUG
 - INCHI
 - INCHIKEY
-- KEGG.GLYCAN
-- KEGG.ENVIRON
-- ChemBank
-- SIDER.DRUG
 - BIGG.METABOLITE
 - foodb.compound
+- KEGG.GLYCAN
+- KEGG.ENVIRON
+- KEGG.ENVIRON
+- KEGG
 description: A substance intended for use in the diagnosis, cure, mitigation, treatment,
   or prevention of disease
 comments:
