@@ -3,7 +3,12 @@ CHANGES
 4.2.1
 -----
 * administered_to, associated_with moved back to related_to in top level yaml
-
+* make sure treats hierarchy (mixin or not) has its ancestry in "related_to" - Richard B.
+* add "url" property to the model to support MolePro, non-curie expandable cross references. - Larry C.
+* add two statistical properties p-value and adjusted p-value to association class for use in Monarch KG. - Kevin S.
+* bump jinja2 from 3.1.3 to 3.1.4 - dependabot
+* bump tqdm from 4.66.1 to 4.66.3 - dependabot
+* add RO:0004029 narrow mapping to has_phenotype predicate to support Mondo KG - Kevin S.
 
 4.2.0
 -----
@@ -245,7 +250,7 @@ remove singular_name from attributes
 3.2.6
 -----
 some minor fixes to infores URL properties
-add denormalized edge properties to association class to support KGX SQLlite sink
+add denormalized edge properties to association class to support KGX sqlite sink
 
 3.2.5
 -----
@@ -262,7 +267,7 @@ deprecate a few infores entries for automat KGs no longer in use.
 3.2.2
 ----
 several new infores parameters added
-repalced smart-api URLs in the infores registry with github projects where possible
+replaced smart-api URLs in the infores registry with github projects where possible
 added support for reasoner-validator to validate retrieval source object
 
 3.2.1

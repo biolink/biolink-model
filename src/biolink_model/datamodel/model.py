@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-05-10T16:08:36
+# Generation date: 2024-07-25T18:01:02
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -3794,8 +3794,8 @@ class ChemicalMixture(ChemicalEntity):
     id: Union[str, ChemicalMixtureId] = None
     category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
     is_supplement: Optional[str] = None
-    highest_FDA_approval_status: Optional[str] = None
-    drug_regulatory_status_world_wide: Optional[str] = None
+    highest_FDA_approval_status: Optional[Union[str, "ApprovalStatusEnum"]] = None
+    drug_regulatory_status_world_wide: Optional[Union[str, "ApprovalStatusEnum"]] = None
     routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3807,11 +3807,11 @@ class ChemicalMixture(ChemicalEntity):
         if self.is_supplement is not None and not isinstance(self.is_supplement, str):
             self.is_supplement = str(self.is_supplement)
 
-        if self.highest_FDA_approval_status is not None and not isinstance(self.highest_FDA_approval_status, str):
-            self.highest_FDA_approval_status = str(self.highest_FDA_approval_status)
+        if self.highest_FDA_approval_status is not None and not isinstance(self.highest_FDA_approval_status, ApprovalStatusEnum):
+            self.highest_FDA_approval_status = ApprovalStatusEnum(self.highest_FDA_approval_status)
 
-        if self.drug_regulatory_status_world_wide is not None and not isinstance(self.drug_regulatory_status_world_wide, str):
-            self.drug_regulatory_status_world_wide = str(self.drug_regulatory_status_world_wide)
+        if self.drug_regulatory_status_world_wide is not None and not isinstance(self.drug_regulatory_status_world_wide, ApprovalStatusEnum):
+            self.drug_regulatory_status_world_wide = ApprovalStatusEnum(self.drug_regulatory_status_world_wide)
 
         if not isinstance(self.routes_of_delivery, list):
             self.routes_of_delivery = [self.routes_of_delivery] if self.routes_of_delivery is not None else []
@@ -12830,6 +12830,56 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class ApprovalStatusEnum(EnumDefinitionImpl):
+
+    discovery_and_development_phase = PermissibleValue(
+        text="discovery_and_development_phase",
+        description="""Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.""")
+    preclinical_research_phase = PermissibleValue(
+        text="preclinical_research_phase",
+        description="""Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.""")
+    fda_clinical_research_phase = PermissibleValue(
+        text="fda_clinical_research_phase",
+        description="""Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.""")
+    fda_review_phase_4 = PermissibleValue(
+        text="fda_review_phase_4",
+        description="FDA Review")
+    fda_post_market_safety_review = PermissibleValue(
+        text="fda_post_market_safety_review",
+        description="""FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.""")
+    fda_clinical_research_phase_1 = PermissibleValue(
+        text="fda_clinical_research_phase_1",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.""")
+    fda_clinical_research_phase_2 = PermissibleValue(
+        text="fda_clinical_research_phase_2",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.""")
+    fda_clinical_research_phase_3 = PermissibleValue(
+        text="fda_clinical_research_phase_3",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.""")
+    fda_clinical_research_phase_4 = PermissibleValue(
+        text="fda_clinical_research_phase_4",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.""")
+    fda_fast_track = PermissibleValue(
+        text="fda_fast_track",
+        description="""Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track""")
+    fda_breakthrough_therapy = PermissibleValue(
+        text="fda_breakthrough_therapy",
+        description="""Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy""")
+    fda_accelerated_approval = PermissibleValue(
+        text="fda_accelerated_approval",
+        description="""When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval""")
+    fda_priority_review = PermissibleValue(
+        text="fda_priority_review",
+        description="""Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review""")
+    regular_fda_approval = PermissibleValue(
+        text="regular_fda_approval",
+        description="""Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.""")
+    post_approval_withdrawal = PermissibleValue(text="post_approval_withdrawal")
+
+    _defn = EnumDefinition(
+        name="ApprovalStatusEnum",
+    )
+
 class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
 
     approved_for_condition = PermissibleValue(text="approved_for_condition")
@@ -12939,6 +12989,10 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     folding = PermissibleValue(text="folding")
     localization = PermissibleValue(text="localization")
     transport = PermissibleValue(text="transport")
+    absorption = PermissibleValue(text="absorption")
+    aggregation = PermissibleValue(text="aggregation")
+    interaction = PermissibleValue(text="interaction")
+    release = PermissibleValue(text="release")
     secretion = PermissibleValue(text="secretion")
     uptake = PermissibleValue(text="uptake")
     splicing = PermissibleValue(text="splicing")
@@ -13576,10 +13630,10 @@ slots.FDA_adverse_event_level = Slot(uri=BIOLINK.FDA_adverse_event_level, name="
                    model_uri=BIOLINK.FDA_adverse_event_level, domain=Association, range=Optional[Union[str, "FDAIDAAdverseEventEnum"]])
 
 slots.highest_FDA_approval_status = Slot(uri=BIOLINK.highest_FDA_approval_status, name="highest FDA approval status", curie=BIOLINK.curie('highest_FDA_approval_status'),
-                   model_uri=BIOLINK.highest_FDA_approval_status, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.highest_FDA_approval_status, domain=None, range=Optional[Union[str, "ApprovalStatusEnum"]])
 
 slots.drug_regulatory_status_world_wide = Slot(uri=BIOLINK.drug_regulatory_status_world_wide, name="drug regulatory status world wide", curie=BIOLINK.curie('drug_regulatory_status_world_wide'),
-                   model_uri=BIOLINK.drug_regulatory_status_world_wide, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.drug_regulatory_status_world_wide, domain=None, range=Optional[Union[str, "ApprovalStatusEnum"]])
 
 slots.routes_of_delivery = Slot(uri=BIOLINK.routes_of_delivery, name="routes of delivery", curie=BIOLINK.curie('routes_of_delivery'),
                    model_uri=BIOLINK.routes_of_delivery, domain=None, range=Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]])
@@ -14086,10 +14140,10 @@ slots.treatment_applications_from = Slot(uri=BIOLINK.treatment_applications_from
                    model_uri=BIOLINK.treatment_applications_from, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treats_or_applied_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_applied_or_studied_to_treat, name="treats or applied or studied to treat", curie=BIOLINK.curie('treats_or_applied_or_studied_to_treat'),
-                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.subject_of_treatment_application_or_study_for_treatment_by = Slot(uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, name="subject of treatment application or study for treatment by", curie=BIOLINK.curie('subject_of_treatment_application_or_study_for_treatment_by'),
-                   model_uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
