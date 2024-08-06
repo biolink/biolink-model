@@ -7910,7 +7910,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting in the first place. \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. the intervention is approved for the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise established  treatment in the medical community (e.g. a widely-accepted or formally recommended  off-label use). In the absence of such evidence, weaker predicates should be used in  asserted edges (e.g. \u2018in clinical trials for\u2019 or \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence can however be created as predictions  (knowledge_level: prediction) and should point to the more foundational asserted edges that  support them.",
+      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is, in some population(s),  able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk  of it manifesting in the first place. \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. in some population(s) the intervention is approved for the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise  established treatment in the medical community (e.g. a widely-accepted or formally recommended  off-label use). In the absence of such evidence, weaker predicates should be used in  asserted edges (e.g. \u2018in clinical trials for\u2019 or \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence can however be created as predictions  (knowledge_level: prediction) and should point to the more foundational asserted edges that  support them.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -35166,9 +35166,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-07-26T22:06:39",
-  "source_file_size": 398264,
-  "generation_date": "2024-07-26T22:06:44",
+  "source_file_date": "2024-08-06T22:04:29",
+  "source_file_size": 398312,
+  "generation_date": "2024-08-06T22:04:34",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
