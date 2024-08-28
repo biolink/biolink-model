@@ -9156,10 +9156,16 @@ classes:
     mixins:
       - gene grouping mixin
 
-  treatment:
+  medical action:
     aliases: ['medical action', 'medical intervention']
-     # 'named thing' seems too generic here but not sure what applies better here
     is_a: named thing
+    description: >-
+      A clinically prescribed procedure, therapy, intervention, or recommendation.
+    exact_mappings:
+      - MAXO:0000001
+
+  treatment:
+    is_a: medical action
     mixins:
       - exposure event
       - chemical or drug or treatment
@@ -9347,6 +9353,22 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - subject aspect qualifier
+      - subject direction qualifier
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject context qualifier
+      - qualified predicate
+      - object aspect qualifier
+      - object direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object derivative qualifier
+      - object context qualifier
+      - causal mechanism qualifier
+      - anatomical context qualifier
+      - species context qualifier
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -9785,6 +9807,46 @@ classes:
       object:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
+
+  medical action to disease or phenotypic feature association:
+    is_a: association
+    description: >-
+      This association defines a relationship between a medical action and a disease or phenotypic feature 
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+        - medical action to entity association mixin
+        - entity to disease or phenotypic feature association mixin
+    slot_usage:
+      predicate:
+        subproperty_of:
+
+    medical action to disease association:
+      is_a: medical action to disease or phenotypic feature association
+      description: >-
+        This association defines a relationship between a medical action and a disease
+      defining_slots:
+        - subject
+        - predicate
+        - object
+      mixins:
+        - medical action to entity association mixin
+        - entity to disease association mixin
+
+    medical action to phenotypic feature association:
+      is_a: medical action to disease or phenotypic feature association
+      description: >-
+        This association defines a relationship between a medical action and a phenotypic feature
+      defining_slots:
+        - subject
+        - predicate
+        - object
+      mixins:
+        - medical action to entity association mixin
+        - entity to phenotypic feature association mixin
+
 
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
@@ -10245,6 +10307,20 @@ classes:
       - object aspect qualifier
       - object direction qualifier
       - qualified predicate
+
+  medical action to entity association mixin:
+    description: >-
+      An association between a medical action and another entity
+    mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: medical action
 
   entity to phenotypic feature association mixin:
     mixin: true
