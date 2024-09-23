@@ -213,27 +213,32 @@ types:
       - Should be implemented as a stronger type
 
   iri type:
+    uri: xsd:string
     typeof: uriorcurie
     description: >-
       An IRI
 
   label type:
+    uri: xsd:string
     typeof: string
     description: >-
       A string that provides a human-readable name for an entity
 
   predicate type:
+    uri: xsd:string
     typeof: uriorcurie
     description: >-
       A CURIE from the biolink related_to hierarchy.
       For example, biolink:related_to, biolink:causes, biolink:treats.
 
   narrative text:
+    uri: xsd:string
     typeof: string
     description: >-
       A string that provides a human-readable description of something
 
   symbol type:
+    uri: xsd:string
     typeof: string
 
   frequency value:
@@ -258,9 +263,11 @@ types:
       - qud:Unit
 
   time type:
+    uri: xsd:string
     typeof: time
 
   biological sequence:
+    uri: xsd:string
     typeof: string
 
 ## ------------
