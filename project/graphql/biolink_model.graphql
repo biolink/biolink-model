@@ -1,3 +1,5 @@
+# metamodel_version: 1.7.0
+# version: 4.2.2
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -123,6 +125,8 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -162,6 +166,8 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -202,6 +208,8 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -279,6 +287,8 @@ type Association
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -375,6 +385,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: Behavior!
@@ -649,6 +661,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     frequencyQualifier: FrequencyValue
@@ -697,6 +711,8 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -786,6 +802,8 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: CellLine!
@@ -832,6 +850,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: DiseaseOrPhenotypicFeature!
@@ -913,6 +933,8 @@ type ChemicalAffectsGeneAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -989,6 +1011,8 @@ type ChemicalEntityAssessesNamedThingAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -1033,6 +1057,8 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     objectDirectionQualifier: DirectionQualifierEnum
@@ -1105,6 +1131,8 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1140,8 +1168,8 @@ type ChemicalMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -1184,6 +1212,8 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -1225,6 +1255,8 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -1283,6 +1315,8 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1323,6 +1357,8 @@ type ChemicalToChemicalDerivationAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -1366,6 +1402,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     object: DiseaseOrPhenotypicFeature!
@@ -1412,6 +1450,8 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -1676,8 +1716,8 @@ type ComplexMolecularMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -1753,6 +1793,8 @@ type ContributorAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: InformationContentEntity!
@@ -1794,6 +1836,8 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -2031,6 +2075,8 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -2072,6 +2118,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     object: AnatomicalEntity!
@@ -2120,6 +2168,8 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -2158,6 +2208,8 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     onsetQualifier: Onset
@@ -2196,8 +2248,8 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -2289,6 +2341,8 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     object: GeneOrGeneProduct!
@@ -2347,6 +2401,8 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -2414,6 +2470,8 @@ type EntityToDiseaseAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -2503,6 +2561,8 @@ type EntityToPhenotypicFeatureAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -2697,6 +2757,8 @@ type ExonToTranscriptRelationship
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: Exon!
@@ -2745,6 +2807,8 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -2786,6 +2850,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: ExposureEvent!
@@ -2835,8 +2901,8 @@ type Food
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -2911,6 +2977,8 @@ type FunctionalAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -2988,6 +3056,8 @@ type GeneAffectsChemicalAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -3044,6 +3114,8 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -3127,6 +3199,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -3198,6 +3272,8 @@ type GeneRegulatesGeneAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum!
@@ -3242,6 +3318,8 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -3293,6 +3371,8 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -3351,6 +3431,8 @@ type GeneToExpressionSiteAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     stageQualifier: LifeStage
@@ -3394,6 +3476,8 @@ interface GeneToGeneAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3433,6 +3517,8 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3477,6 +3563,8 @@ type GeneToGeneFamilyAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -3517,6 +3605,8 @@ type GeneToGeneHomologyAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3557,6 +3647,8 @@ type GeneToGeneProductRelationship
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -3598,6 +3690,8 @@ type GeneToGoTermAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -3638,6 +3732,8 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3677,6 +3773,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -3794,6 +3892,8 @@ type GenomicSequenceLocalization
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     startInterbaseCoordinate: Integer
@@ -3859,6 +3959,8 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -3905,6 +4007,8 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -3958,6 +4062,8 @@ type GenotypeToGeneAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -3998,6 +4104,8 @@ type GenotypeToGenotypePartAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4039,6 +4147,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4089,6 +4199,8 @@ type GenotypeToVariantAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4318,6 +4430,8 @@ type InformationContentEntityToNamedThingAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -4468,6 +4582,8 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4508,6 +4624,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4555,6 +4673,8 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4633,6 +4753,8 @@ type MaterialSampleDerivationAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MaterialSample!
@@ -4676,6 +4798,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -4767,6 +4891,8 @@ type MolecularActivityToChemicalEntityAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -4807,6 +4933,8 @@ type MolecularActivityToMolecularActivityAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -4846,6 +4974,8 @@ type MolecularActivityToPathwayAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -4895,8 +5025,8 @@ type MolecularMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -4953,6 +5083,8 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -5169,6 +5301,8 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -5210,6 +5344,8 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -5249,6 +5385,8 @@ type OrganismTaxonToOrganismTaxonInteraction
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     associatedEnvironmentalContext: String
@@ -5290,6 +5428,8 @@ type OrganismTaxonToOrganismTaxonSpecialization
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -5331,6 +5471,8 @@ type OrganismToOrganismAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: IndividualOrganism!
@@ -5390,6 +5532,8 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismalEntity!
@@ -5438,6 +5582,8 @@ type PairwiseGeneToGeneInteraction
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -5477,6 +5623,8 @@ type PairwiseMolecularInteraction
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     interactingMoleculesCategory: OntologyClass
@@ -5697,6 +5845,8 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -5725,6 +5875,59 @@ type PhenotypicFeatureToEntityAssociationMixin implements FrequencyQuantifier
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     subject: PhenotypicFeature!
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+  }
+
+type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatureToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    type: [String]
+    category: [Uriorcurie]
+    frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -5917,6 +6120,8 @@ type PopulationToPopulationAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: PopulationOfIndividualOrganisms!
@@ -6042,6 +6247,8 @@ type ProcessRegulatesProcessAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcess!
@@ -6069,8 +6276,8 @@ type ProcessedMaterial
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -6213,6 +6420,8 @@ type ReactionToCatalystAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -6256,6 +6465,8 @@ type ReactionToParticipantAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -6432,6 +6643,8 @@ type SequenceAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -6470,6 +6683,8 @@ type SequenceFeatureRelationship
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: NucleicAcidEntity!
@@ -6530,6 +6745,8 @@ interface SequenceVariantModulatesTreatmentAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -6604,6 +6821,7 @@ type SiRNA
 
 type SmallMolecule
   {
+    id: String!
     iri: IriType
     type: [String]
     name: LabelType
@@ -6621,7 +6839,6 @@ type SmallMolecule
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    id: String!
   }
 
 type Snv
@@ -6803,6 +7020,8 @@ type TaxonToTaxonAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -6892,6 +7111,8 @@ type TranscriptToGeneRelationship
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: Transcript!
@@ -6970,6 +7191,8 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -7016,6 +7239,8 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -7070,6 +7295,8 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -7110,6 +7337,8 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -7155,6 +7384,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -7205,6 +7436,8 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     subjectLabelClosure: [String]
     objectLabelClosure: [String]
     retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
