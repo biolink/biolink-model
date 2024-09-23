@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-23T16:10:19
+# Generation date: 2024-09-23T16:15:19
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -306,8 +306,8 @@ class ChemicalFormulaValue(str):
 
 class IriType(Uriorcurie):
     """ An IRI """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
     type_name = "iri type"
     type_model_uri = BIOLINK.IriType
 
@@ -322,8 +322,8 @@ class LabelType(String):
 
 class PredicateType(Uriorcurie):
     """ A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats. """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
     type_name = "predicate type"
     type_model_uri = BIOLINK.PredicateType
 
@@ -372,8 +372,8 @@ class Unit(String):
 
 
 class TimeType(Time):
-    type_class_uri = XSD["time"]
-    type_class_curie = "xsd:time"
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
     type_name = "time type"
     type_model_uri = BIOLINK.TimeType
 

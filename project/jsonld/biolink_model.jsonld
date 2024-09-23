@@ -592,7 +592,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -613,7 +613,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -687,7 +687,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "time",
       "base": "XSDTime",
-      "uri": "http://www.w3.org/2001/XMLSchema#time",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -35446,9 +35446,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-09-23T16:10:02",
-  "source_file_size": 401843,
-  "generation_date": "2024-09-23T16:10:08",
+  "source_file_date": "2024-09-23T16:15:02",
+  "source_file_size": 401983,
+  "generation_date": "2024-09-23T16:15:09",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
