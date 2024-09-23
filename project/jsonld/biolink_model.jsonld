@@ -592,7 +592,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -613,7 +613,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -2058,12 +2058,12 @@
       ],
       "domain": "Entity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_attribute",
-      "multivalued": true,
       "owner": "Entity",
       "domain_of": [
         "Entity"
       ],
       "range": "Attribute",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2123,13 +2123,13 @@
       ],
       "domain": "Attribute",
       "slot_uri": "https://w3id.org/biolink/vocab/has_quantitative_value",
-      "multivalued": true,
       "owner": "ChemicalExposure",
       "domain_of": [
         "Attribute",
         "ChemicalExposure"
       ],
       "range": "QuantityValue",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -2271,12 +2271,12 @@
       ],
       "domain": "Entity",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "multivalued": true,
       "owner": "Entity",
       "domain_of": [
         "Entity"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2290,7 +2290,6 @@
       "is_a": "type",
       "domain": "Entity",
       "slot_uri": "https://w3id.org/biolink/vocab/category",
-      "multivalued": true,
       "designates_type": true,
       "owner": "Entity",
       "domain_of": [
@@ -2298,6 +2297,7 @@
       ],
       "is_class_field": true,
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2316,12 +2316,12 @@
         "WIKIDATA"
       ],
       "slot_uri": "http://purl.org/dc/terms/type",
-      "multivalued": true,
       "owner": "Publication",
       "domain_of": [
         "Publication"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2461,13 +2461,13 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/synonym",
-      "multivalued": true,
       "owner": "GeneProductMixin",
       "domain_of": [
         "NamedThing",
         "GeneProductMixin"
       ],
       "range": "label_type",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2480,9 +2480,9 @@
       "is_a": "synonym",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/exact_synonym",
-      "multivalued": true,
       "owner": "exact_synonym",
       "range": "label_type",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2495,9 +2495,9 @@
       "is_a": "synonym",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/broad_synonym",
-      "multivalued": true,
       "owner": "broad_synonym",
       "range": "label_type",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2510,9 +2510,9 @@
       "is_a": "synonym",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/narrow_synonym",
-      "multivalued": true,
       "owner": "narrow_synonym",
       "range": "label_type",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2525,9 +2525,9 @@
       "is_a": "synonym",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/related_synonym",
-      "multivalued": true,
       "owner": "related_synonym",
       "range": "label_type",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2586,7 +2586,6 @@
       ],
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/xref",
-      "multivalued": true,
       "owner": "GeneProductMixin",
       "domain_of": [
         "NamedThing",
@@ -2596,6 +2595,7 @@
         "GeneProductMixin"
       ],
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2636,9 +2636,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/support_graphs",
-      "multivalued": true,
       "owner": "support_graphs",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2686,12 +2686,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/retrieval_source_ids",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "RetrievalSource",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2764,9 +2764,9 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "http://purl.obolibrary.org/obo/go#systematic_synonym",
-      "multivalued": true,
       "owner": "systematic_synonym",
       "range": "label_type",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2777,12 +2777,12 @@
       "is_a": "node_property",
       "domain": "Agent",
       "slot_uri": "https://w3id.org/biolink/vocab/affiliation",
-      "multivalued": true,
       "owner": "Agent",
       "domain_of": [
         "Agent"
       ],
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3272,12 +3272,12 @@
       "is_a": "node_property",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/authors",
-      "multivalued": true,
       "owner": "Publication",
       "domain_of": [
         "Publication"
       ],
       "range": "Agent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3348,12 +3348,12 @@
       "is_a": "node_property",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/pages",
-      "multivalued": true,
       "owner": "Publication",
       "domain_of": [
         "Publication"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3386,12 +3386,12 @@
       "is_a": "node_property",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/keywords",
-      "multivalued": true,
       "owner": "Publication",
       "domain_of": [
         "Publication"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3408,12 +3408,12 @@
       ],
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/mesh_terms",
-      "multivalued": true,
       "owner": "Publication",
       "domain_of": [
         "Publication"
       ],
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3440,12 +3440,12 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_gene_or_gene_product",
-      "multivalued": true,
       "owner": "GeneGroupingMixin",
       "domain_of": [
         "GeneGroupingMixin"
       ],
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3456,12 +3456,12 @@
       "is_a": "has_gene_or_gene_product",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_gene",
-      "multivalued": true,
       "owner": "SequenceVariant",
       "domain_of": [
         "SequenceVariant"
       ],
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3519,9 +3519,9 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_constituent",
-      "multivalued": true,
       "owner": "has_constituent",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3532,12 +3532,12 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_drug",
-      "multivalued": true,
       "owner": "Treatment",
       "domain_of": [
         "Treatment"
       ],
       "range": "Drug",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3548,12 +3548,12 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_device",
-      "multivalued": true,
       "owner": "Treatment",
       "domain_of": [
         "Treatment"
       ],
       "range": "Device",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3564,12 +3564,12 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_procedure",
-      "multivalued": true,
       "owner": "Treatment",
       "domain_of": [
         "Treatment"
       ],
       "range": "Procedure",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3706,12 +3706,12 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/available_from",
-      "multivalued": true,
       "owner": "ChemicalEntity",
       "domain_of": [
         "ChemicalEntity"
       ],
       "range": "DrugAvailabilityEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3743,13 +3743,13 @@
       "is_a": "related_to_at_concept_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_chemical_role",
-      "multivalued": true,
       "inherited": true,
       "owner": "ChemicalEntity",
       "domain_of": [
         "ChemicalEntity"
       ],
       "range": "ChemicalRole",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3775,9 +3775,9 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/animal_model_available_from",
-      "multivalued": true,
       "owner": "animal_model_available_from",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3856,12 +3856,12 @@
       "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/routes_of_delivery",
-      "multivalued": true,
       "owner": "ChemicalMixture",
       "domain_of": [
         "ChemicalMixture"
       ],
       "range": "DrugDeliveryEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4054,12 +4054,12 @@
       "description": "A collection of relationships that are not used in biolink, but have biolink patterns that can be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/predicate_mappings",
-      "multivalued": true,
       "owner": "MappingCollection",
       "domain_of": [
         "MappingCollection"
       ],
       "range": "PredicateMapping",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -4070,8 +4070,8 @@
       "description": "A list of terms from different schemas or terminology systems that have an identical meaning. Such terms often describe the same concept from different ontological perspectives.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/exact_matches",
-      "multivalued": true,
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4080,8 +4080,8 @@
       "description": "A list of terms from different schemas or terminology systems that have a narrower meaning. Such terms often describe a more specific concept from different ontological perspectives.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/narrow_matches",
-      "multivalued": true,
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4090,8 +4090,8 @@
       "description": "A list of terms from different schemas or terminology systems that have a broader meaning. Such terms often describe a more general concept from different ontological perspectives.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "slot_uri": "https://w3id.org/biolink/vocab/broad_matches",
-      "multivalued": true,
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4590,12 +4590,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/qualifiers",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4727,12 +4727,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
-      "multivalued": true,
       "owner": "ChemicalToChemicalDerivationAssociation",
       "domain_of": [
         "ChemicalToChemicalDerivationAssociation"
       ],
       "range": "MacromolecularMachineMixin",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -4891,11 +4891,11 @@
       ],
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/related_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "related_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4913,11 +4913,11 @@
       "is_a": "related_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/related_to_at_concept_level",
-      "multivalued": true,
       "inherited": true,
       "owner": "related_to_at_concept_level",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4935,11 +4935,11 @@
       "is_a": "related_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/related_to_at_instance_level",
-      "multivalued": true,
       "inherited": true,
       "owner": "related_to_at_instance_level",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4961,11 +4961,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "associated_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4995,11 +4995,11 @@
       "is_a": "related_to_at_concept_level",
       "domain": "OntologyClass",
       "slot_uri": "https://w3id.org/biolink/vocab/superclass_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "superclass_of",
       "inverse": "subclass_of",
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5053,11 +5053,11 @@
       "is_a": "related_to_at_concept_level",
       "domain": "OntologyClass",
       "slot_uri": "https://w3id.org/biolink/vocab/subclass_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "subclass_of",
       "inverse": "superclass_of",
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5091,11 +5091,11 @@
       "is_a": "exact_match",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/same_as",
-      "multivalued": true,
       "inherited": true,
       "owner": "same_as",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5128,11 +5128,11 @@
       "is_a": "related_to_at_concept_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/close_match",
-      "multivalued": true,
       "inherited": true,
       "owner": "close_match",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5158,7 +5158,6 @@
       "is_a": "close_match",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/exact_match",
-      "multivalued": true,
       "inherited": true,
       "owner": "PredicateMapping",
       "domain_of": [
@@ -5166,6 +5165,7 @@
       ],
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5195,7 +5195,6 @@
       "is_a": "related_to_at_concept_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/broad_match",
-      "multivalued": true,
       "inherited": true,
       "owner": "PredicateMapping",
       "domain_of": [
@@ -5203,6 +5202,7 @@
       ],
       "inverse": "narrow_match",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5227,7 +5227,6 @@
       "is_a": "related_to_at_concept_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/narrow_match",
-      "multivalued": true,
       "inherited": true,
       "owner": "PredicateMapping",
       "domain_of": [
@@ -5235,6 +5234,7 @@
       ],
       "inverse": "broad_match",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5254,11 +5254,11 @@
       "is_a": "related_to_at_concept_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/member_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "member_of",
       "inverse": "has_member",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5276,11 +5276,11 @@
       "is_a": "related_to_at_concept_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_member",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_member",
       "inverse": "member_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5305,11 +5305,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/opposite_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "opposite_of",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5333,11 +5333,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/affects_likelihood_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "affects_likelihood_of",
       "inverse": "likelihood_affected_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5347,11 +5347,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/likelihood_affected_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "likelihood_affected_by",
       "inverse": "affects_likelihood_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5369,11 +5369,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_likelihood_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "associated_with_likelihood_of",
       "inverse": "likelihood_associated_with",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5384,11 +5384,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/likelihood_associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "likelihood_associated_with",
       "inverse": "associated_with_likelihood_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5406,11 +5406,11 @@
       "is_a": "associated_with_likelihood_of",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_increased_likelihood_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "associated_with_increased_likelihood_of",
       "inverse": "increased_likelihood_associated_with",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5421,11 +5421,11 @@
       "is_a": "likelihood_associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/increased_likelihood_associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "increased_likelihood_associated_with",
       "inverse": "associated_with_increased_likelihood_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5443,11 +5443,11 @@
       "is_a": "associated_with_likelihood_of",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_decreased_likelihood_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "associated_with_decreased_likelihood_of",
       "inverse": "decreased_likelihood_associated_with",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5458,11 +5458,11 @@
       "is_a": "likelihood_associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/decreased_likelihood_associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "decreased_likelihood_associated_with",
       "inverse": "associated_with_decreased_likelihood_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5480,11 +5480,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/target_for",
-      "multivalued": true,
       "inherited": true,
       "owner": "target_for",
       "inverse": "has_target",
       "range": "Disease",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5494,11 +5494,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Disease",
       "slot_uri": "https://w3id.org/biolink/vocab/has_target",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_target",
       "inverse": "target_for",
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5518,11 +5518,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/active_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "active_in",
       "inverse": "has_active_component",
       "range": "CellularComponent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5532,11 +5532,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "CellularComponent",
       "slot_uri": "https://w3id.org/biolink/vocab/has_active_component",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_active_component",
       "inverse": "active_in",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5557,11 +5557,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/acts_upstream_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "acts_upstream_of",
       "inverse": "has_upstream_actor",
       "range": "BiologicalProcess",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5571,11 +5571,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "BiologicalProcess",
       "slot_uri": "https://w3id.org/biolink/vocab/has_upstream_actor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_upstream_actor",
       "inverse": "acts_upstream_of",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5596,11 +5596,11 @@
       "is_a": "acts_upstream_of",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/acts_upstream_of_positive_effect",
-      "multivalued": true,
       "inherited": true,
       "owner": "acts_upstream_of_positive_effect",
       "inverse": "has_positive_upstream_actor",
       "range": "BiologicalProcess",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5610,11 +5610,11 @@
       "is_a": "has_upstream_actor",
       "domain": "BiologicalProcess",
       "slot_uri": "https://w3id.org/biolink/vocab/has_positive_upstream_actor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_positive_upstream_actor",
       "inverse": "acts_upstream_of_positive_effect",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5635,11 +5635,11 @@
       "is_a": "acts_upstream_of",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/acts_upstream_of_negative_effect",
-      "multivalued": true,
       "inherited": true,
       "owner": "acts_upstream_of_negative_effect",
       "inverse": "has_negative_upstream_actor",
       "range": "BiologicalProcess",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5649,11 +5649,11 @@
       "is_a": "has_upstream_actor",
       "domain": "BiologicalProcess",
       "slot_uri": "https://w3id.org/biolink/vocab/has_negative_upstream_actor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_negative_upstream_actor",
       "inverse": "acts_upstream_of_negative_effect",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5674,11 +5674,11 @@
       "is_a": "acts_upstream_of",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/acts_upstream_of_or_within",
-      "multivalued": true,
       "inherited": true,
       "owner": "acts_upstream_of_or_within",
       "inverse": "has_upstream_or_within_actor",
       "range": "BiologicalProcess",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5688,11 +5688,11 @@
       "is_a": "has_upstream_actor",
       "domain": "BiologicalProcess",
       "slot_uri": "https://w3id.org/biolink/vocab/has_upstream_or_within_actor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_upstream_or_within_actor",
       "inverse": "acts_upstream_of_or_within",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5713,11 +5713,11 @@
       "is_a": "acts_upstream_of_or_within",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/acts_upstream_of_or_within_positive_effect",
-      "multivalued": true,
       "inherited": true,
       "owner": "acts_upstream_of_or_within_positive_effect",
       "inverse": "has_positive_upstream_or_within_actor",
       "range": "BiologicalProcess",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5727,11 +5727,11 @@
       "is_a": "has_upstream_or_within_actor",
       "domain": "BiologicalProcess",
       "slot_uri": "https://w3id.org/biolink/vocab/has_positive_upstream_or_within_actor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_positive_upstream_or_within_actor",
       "inverse": "acts_upstream_of_or_within_positive_effect",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5752,11 +5752,11 @@
       "is_a": "acts_upstream_of_or_within",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/acts_upstream_of_or_within_negative_effect",
-      "multivalued": true,
       "inherited": true,
       "owner": "acts_upstream_of_or_within_negative_effect",
       "inverse": "has_negative_upstream_or_within_actor",
       "range": "BiologicalProcess",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5766,11 +5766,11 @@
       "is_a": "has_upstream_or_within_actor",
       "domain": "BiologicalProcess",
       "slot_uri": "https://w3id.org/biolink/vocab/has_negative_upstream_or_within_actor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_negative_upstream_or_within_actor",
       "inverse": "acts_upstream_of_or_within_negative_effect",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5788,11 +5788,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/mentions",
-      "multivalued": true,
       "inherited": true,
       "owner": "mentions",
       "inverse": "mentioned_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5803,11 +5803,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/mentioned_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "mentioned_by",
       "inverse": "mentions",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5824,11 +5824,11 @@
       "abstract": true,
       "domain": "Agent",
       "slot_uri": "https://w3id.org/biolink/vocab/contributor",
-      "multivalued": true,
       "inherited": true,
       "owner": "contributor",
       "inverse": "has_contributor",
       "range": "InformationContentEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5838,11 +5838,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "InformationContentEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_contributor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_contributor",
       "inverse": "contributor",
       "range": "Agent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5853,11 +5853,11 @@
       "is_a": "contributor",
       "domain": "Agent",
       "slot_uri": "https://w3id.org/biolink/vocab/provider",
-      "multivalued": true,
       "inherited": true,
       "owner": "provider",
       "inverse": "has_provider",
       "range": "InformationContentEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5867,11 +5867,11 @@
       "is_a": "has_contributor",
       "domain": "InformationContentEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_provider",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_provider",
       "inverse": "provider",
       "range": "Agent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5886,11 +5886,11 @@
       "is_a": "contributor",
       "domain": "Agent",
       "slot_uri": "https://w3id.org/biolink/vocab/publisher",
-      "multivalued": true,
       "inherited": true,
       "owner": "publisher",
       "inverse": "has_publisher",
       "range": "Publication",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5900,11 +5900,11 @@
       "is_a": "has_contributor",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/has_publisher",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_publisher",
       "inverse": "publisher",
       "range": "Agent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5918,11 +5918,11 @@
       "is_a": "contributor",
       "domain": "Agent",
       "slot_uri": "https://w3id.org/biolink/vocab/editor",
-      "multivalued": true,
       "inherited": true,
       "owner": "editor",
       "inverse": "has_editor",
       "range": "Publication",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5932,11 +5932,11 @@
       "is_a": "has_contributor",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/has_editor",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_editor",
       "inverse": "editor",
       "range": "Agent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5951,11 +5951,11 @@
       "is_a": "contributor",
       "domain": "Agent",
       "slot_uri": "https://w3id.org/biolink/vocab/author",
-      "multivalued": true,
       "inherited": true,
       "owner": "author",
       "inverse": "has_author",
       "range": "Publication",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5965,11 +5965,11 @@
       "is_a": "has_contributor",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/has_author",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_author",
       "inverse": "author",
       "range": "Agent",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5990,11 +5990,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/assesses",
-      "multivalued": true,
       "inherited": true,
       "owner": "assesses",
       "inverse": "is_assessed_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6004,11 +6004,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/is_assessed_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_assessed_by",
       "inverse": "assesses",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6029,11 +6029,11 @@
       "mixin": true,
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/interacts_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "interacts_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6075,11 +6075,11 @@
       ],
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/physically_interacts_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "physically_interacts_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6110,11 +6110,11 @@
       "is_a": "physically_interacts_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/directly_physically_interacts_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "directly_physically_interacts_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6136,11 +6136,11 @@
       "is_a": "directly_physically_interacts_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/binds",
-      "multivalued": true,
       "inherited": true,
       "owner": "binds",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6157,11 +6157,11 @@
       "is_a": "physically_interacts_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/indirectly_physically_interacts_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "indirectly_physically_interacts_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6185,11 +6185,11 @@
       "is_a": "interacts_with",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/genetically_interacts_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "genetically_interacts_with",
       "symmetric": true,
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6210,11 +6210,11 @@
       "is_a": "genetically_interacts_with",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/gene_fusion_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "gene_fusion_with",
       "symmetric": true,
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6235,11 +6235,11 @@
       "is_a": "genetically_interacts_with",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/genetic_neighborhood_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "genetic_neighborhood_of",
       "symmetric": true,
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6302,11 +6302,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/affects",
-      "multivalued": true,
       "inherited": true,
       "owner": "affects",
       "inverse": "affected_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6317,11 +6317,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/affected_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "affected_by",
       "inverse": "affects",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6345,11 +6345,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_sensitivity_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "associated_with_sensitivity_to",
       "inverse": "sensitivity_associated_with",
       "range": "ChemicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6359,11 +6359,11 @@
       "is_a": "associated_with",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "sensitivity_associated_with",
       "inverse": "associated_with_sensitivity_to",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6381,11 +6381,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_resistance_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "associated_with_resistance_to",
       "inverse": "resistance_associated_with",
       "range": "ChemicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6395,11 +6395,11 @@
       "is_a": "associated_with",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/resistance_associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "resistance_associated_with",
       "inverse": "associated_with_resistance_to",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6425,11 +6425,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "DiagnosticAid",
       "slot_uri": "https://w3id.org/biolink/vocab/diagnoses",
-      "multivalued": true,
       "inherited": true,
       "owner": "diagnoses",
       "inverse": "is_diagnosed_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6439,11 +6439,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/is_diagnosed_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_diagnosed_by",
       "inverse": "diagnoses",
       "range": "DiagnosticAid",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6456,11 +6456,11 @@
       "mixin": true,
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/increases_amount_or_activity_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "increases_amount_or_activity_of",
       "inverse": "amount_or_activity_increased_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6471,11 +6471,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/amount_or_activity_increased_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "amount_or_activity_increased_by",
       "inverse": "increases_amount_or_activity_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6488,11 +6488,11 @@
       "mixin": true,
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/decreases_amount_or_activity_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "decreases_amount_or_activity_of",
       "inverse": "amount_or_activity_decreased_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6503,11 +6503,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/amount_or_activity_decreased_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "amount_or_activity_decreased_by",
       "inverse": "decreases_amount_or_activity_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6556,11 +6556,11 @@
       "is_a": "affects",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/affects_response_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "affects_response_to",
       "inverse": "response_affected_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6575,11 +6575,11 @@
       "is_a": "affected_by",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/response_affected_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "response_affected_by",
       "inverse": "affects_response_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6609,11 +6609,11 @@
       "is_a": "affects_response_to",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/increases_response_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "increases_response_to",
       "inverse": "response_increased_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6627,11 +6627,11 @@
       "is_a": "response_affected_by",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/response_increased_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "response_increased_by",
       "inverse": "increases_response_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6664,11 +6664,11 @@
       "is_a": "affects_response_to",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/decreases_response_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "decreases_response_to",
       "inverse": "response_decreased_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6682,11 +6682,11 @@
       "is_a": "response_affected_by",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/response_decreased_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "response_decreased_by",
       "inverse": "decreases_response_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6721,11 +6721,11 @@
       ],
       "domain": "PhysicalEssenceOrOccurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/regulates",
-      "multivalued": true,
       "inherited": true,
       "owner": "regulates",
       "inverse": "regulated_by",
       "range": "PhysicalEssenceOrOccurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6736,11 +6736,11 @@
       "is_a": "affected_by",
       "domain": "PhysicalEssenceOrOccurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/regulated_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "regulated_by",
       "inverse": "regulates",
       "range": "PhysicalEssenceOrOccurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6778,11 +6778,11 @@
       "is_a": "affects",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/disrupts",
-      "multivalued": true,
       "inherited": true,
       "owner": "disrupts",
       "inverse": "disrupted_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6793,11 +6793,11 @@
       "is_a": "affected_by",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/disrupted_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "disrupted_by",
       "inverse": "disrupts",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6821,11 +6821,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "GeneProductMixin",
       "slot_uri": "https://w3id.org/biolink/vocab/gene_product_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "gene_product_of",
       "inverse": "has_gene_product",
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6850,11 +6850,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/has_gene_product",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_gene_product",
       "inverse": "gene_product_of",
       "range": "GeneProductMixin",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6870,11 +6870,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/transcribed_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "transcribed_to",
       "inverse": "transcribed_from",
       "range": "Transcript",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6896,11 +6896,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Transcript",
       "slot_uri": "https://w3id.org/biolink/vocab/transcribed_from",
-      "multivalued": true,
       "inherited": true,
       "owner": "transcribed_from",
       "inverse": "transcribed_to",
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6922,11 +6922,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Transcript",
       "slot_uri": "https://w3id.org/biolink/vocab/translates_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "translates_to",
       "inverse": "translation_of",
       "range": "Protein",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6941,11 +6941,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/biolink/vocab/translation_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "translation_of",
       "inverse": "translates_to",
       "range": "Transcript",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6979,11 +6979,11 @@
       "is_a": "similar_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/homologous_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "homologous_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7007,11 +7007,11 @@
       "is_a": "homologous_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/paralogous_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "paralogous_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7036,11 +7036,11 @@
       "is_a": "homologous_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/orthologous_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "orthologous_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7064,11 +7064,11 @@
       "is_a": "homologous_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/xenologous_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "xenologous_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7260,11 +7260,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/coexists_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "coexists_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7288,11 +7288,11 @@
       "is_a": "coexists_with",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/in_pathway_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "in_pathway_with",
       "symmetric": true,
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7320,11 +7320,11 @@
       "is_a": "coexists_with",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/in_complex_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "in_complex_with",
       "symmetric": true,
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7346,11 +7346,11 @@
       "is_a": "coexists_with",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/in_cell_population_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "in_cell_population_with",
       "symmetric": true,
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7375,11 +7375,11 @@
       "is_a": "coexists_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/colocalizes_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "colocalizes_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7391,11 +7391,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/genetic_association",
-      "multivalued": true,
       "inherited": true,
       "owner": "genetic_association",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7424,11 +7424,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/genetically_associated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "genetically_associated_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7458,11 +7458,11 @@
       "is_a": "genetically_associated_with",
       "domain": "Gene",
       "slot_uri": "https://w3id.org/biolink/vocab/gene_associated_with_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "gene_associated_with_condition",
       "inverse": "condition_associated_with_gene",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7483,11 +7483,11 @@
       "is_a": "genetically_associated_with",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_associated_with_gene",
-      "multivalued": true,
       "inherited": true,
       "owner": "condition_associated_with_gene",
       "inverse": "gene_associated_with_condition",
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7520,11 +7520,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/contributes_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "contributes_to",
       "inverse": "contribution_from",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7537,11 +7537,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/contribution_from",
-      "multivalued": true,
       "inherited": true,
       "owner": "contribution_from",
       "inverse": "contributes_to",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7598,11 +7598,11 @@
       "is_a": "contributes_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/causes",
-      "multivalued": true,
       "inherited": true,
       "owner": "causes",
       "inverse": "caused_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7633,11 +7633,11 @@
       "is_a": "contribution_from",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/caused_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "caused_by",
       "inverse": "causes",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7674,11 +7674,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/ameliorates_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "ameliorates_condition",
       "inverse": "condition_ameliorated_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7688,11 +7688,11 @@
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_ameliorated_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "condition_ameliorated_by",
       "inverse": "ameliorates_condition",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7729,11 +7729,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/preventative_for_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "preventative_for_condition",
       "inverse": "condition_prevented_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7743,11 +7743,11 @@
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_prevented_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "condition_prevented_by",
       "inverse": "preventative_for_condition",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7771,15 +7771,15 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
+      "is_a": "affects_likelihood_of",
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/promotes_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "promotes_condition",
       "inverse": "condition_promoted_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7787,13 +7787,14 @@
       "definition_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "likelihood_affected_by",
+      "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "condition_promoted_by",
       "inverse": "promotes_condition",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7824,11 +7825,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/predisposes_to_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "predisposes_to_condition",
       "inverse": "condition_predisposed_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7838,11 +7839,11 @@
       "is_a": "likelihood_affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_predisposed_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "condition_predisposed_by",
       "inverse": "predisposes_to_condition",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7879,11 +7880,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/exacerbates_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "exacerbates_condition",
       "inverse": "condition_exacerbated_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7896,11 +7897,11 @@
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_exacerbated_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "condition_exacerbated_by",
       "inverse": "exacerbates_condition",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7965,11 +7966,11 @@
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats",
-      "multivalued": true,
       "inherited": true,
       "owner": "treats",
       "inverse": "treated_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7990,11 +7991,11 @@
       "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "treated_by",
       "inverse": "treats",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8019,11 +8020,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/studied_to_treat",
-      "multivalued": true,
       "inherited": true,
       "owner": "studied_to_treat",
       "inverse": "treated_in_studies_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8050,11 +8051,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/in_clinical_trials_for",
-      "multivalued": true,
       "inherited": true,
       "owner": "in_clinical_trials_for",
       "inverse": "tested_by_clinical_trials_of",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8062,13 +8063,16 @@
       "definition_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_in_studies_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "tested_by_clinical_trials_of",
       "inverse": "in_clinical_trials_for",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8077,13 +8081,16 @@
       "definition_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "treated_in_studies_by",
       "inverse": "studied_to_treat",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8092,13 +8099,16 @@
       "definition_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_in_studies_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "tested_by_preclinical_trials_of",
       "inverse": "in_preclinical_trials_for",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8123,11 +8133,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/in_preclinical_trials_for",
-      "multivalued": true,
       "inherited": true,
       "owner": "in_preclinical_trials_for",
       "inverse": "tested_by_preclinical_trials_of",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8140,7 +8150,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
       "notes": [
         "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease. (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation phenotype of zebrafish used to model the human disease Kabuki Syndrome) ."
       ],
@@ -8154,11 +8164,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/beneficial_in_models_for",
-      "multivalued": true,
       "inherited": true,
       "owner": "beneficial_in_models_for",
       "inverse": "models_demonstrating_benefits_for",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8166,13 +8176,16 @@
       "definition_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "tested_by_preclinical_trials_of",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
-      "multivalued": true,
       "inherited": true,
       "owner": "models_demonstrating_benefits_for",
       "inverse": "beneficial_in_models_for",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8205,11 +8218,11 @@
       ],
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/applied_to_treat",
-      "multivalued": true,
       "inherited": true,
       "owner": "applied_to_treat",
       "inverse": "treatment_applications_from",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8217,13 +8230,16 @@
       "definition_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
-      "multivalued": true,
       "inherited": true,
       "owner": "treatment_applications_from",
       "inverse": "applied_to_treat",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8252,11 +8268,11 @@
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/treats_or_applied_or_studied_to_treat",
-      "multivalued": true,
       "inherited": true,
       "owner": "treats_or_applied_or_studied_to_treat",
       "inverse": "subject_of_treatment_application_or_study_for_treatment_by",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8267,11 +8283,11 @@
       "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_of_treatment_application_or_study_for_treatment_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "subject_of_treatment_application_or_study_for_treatment_by",
       "inverse": "treats_or_applied_or_studied_to_treat",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8300,11 +8316,11 @@
       "is_a": "associated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/correlated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "correlated_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8333,11 +8349,11 @@
       "is_a": "correlated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/positively_correlated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "positively_correlated_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8366,11 +8382,11 @@
       "is_a": "correlated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/negatively_correlated_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "negatively_correlated_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8391,11 +8407,11 @@
       "is_a": "correlated_with",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/occurs_together_in_literature_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "occurs_together_in_literature_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8413,11 +8429,11 @@
       "is_a": "correlated_with",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/coexpressed_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "coexpressed_with",
       "symmetric": true,
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8436,11 +8452,11 @@
       "is_a": "correlated_with",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/has_biomarker",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_biomarker",
       "inverse": "biomarker_for",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8474,11 +8490,11 @@
       "is_a": "correlated_with",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/biomarker_for",
-      "multivalued": true,
       "inherited": true,
       "owner": "biomarker_for",
       "inverse": "has_biomarker",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8506,11 +8522,11 @@
       "is_a": "located_in",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/expressed_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "expressed_in",
       "inverse": "expresses",
       "range": "AnatomicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8530,11 +8546,11 @@
       "is_a": "location_of",
       "domain": "AnatomicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/expresses",
-      "multivalued": true,
       "inherited": true,
       "owner": "expresses",
       "inverse": "expressed_in",
       "range": "GeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8575,11 +8591,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "BiologicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_phenotype",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_phenotype",
       "inverse": "phenotype_of",
       "range": "PhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8589,11 +8605,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "PhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/phenotype_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "phenotype_of",
       "inverse": "has_phenotype",
       "range": "BiologicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8636,11 +8652,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/occurs_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "occurs_in",
       "inverse": "contains_process",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8650,11 +8666,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/contains_process",
-      "multivalued": true,
       "inherited": true,
       "owner": "contains_process",
       "inverse": "occurs_in",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8722,11 +8738,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/located_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "located_in",
       "inverse": "location_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8753,11 +8769,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/location_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "location_of",
       "inverse": "located_in",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8772,11 +8788,11 @@
       "is_a": "related_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/disease_has_location",
-      "multivalued": true,
       "inherited": true,
       "owner": "disease_has_location",
       "inverse": "location_of_disease",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8786,11 +8802,11 @@
       "is_a": "related_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/location_of_disease",
-      "multivalued": true,
       "inherited": true,
       "owner": "location_of_disease",
       "inverse": "disease_has_location",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8815,11 +8831,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/similar_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "similar_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8849,11 +8865,11 @@
       "is_a": "similar_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chemically_similar_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "chemically_similar_to",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8874,11 +8890,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NucleicAcidEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_sequence_location",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_sequence_location",
       "inverse": "sequence_location_of",
       "range": "NucleicAcidEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8888,11 +8904,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NucleicAcidEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/sequence_location_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "sequence_location_of",
       "inverse": "has_sequence_location",
       "range": "NucleicAcidEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8919,11 +8935,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/model_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "model_of",
       "inverse": "models",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8933,11 +8949,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/models",
-      "multivalued": true,
       "inherited": true,
       "owner": "models",
       "inverse": "model_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8968,11 +8984,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/overlaps",
-      "multivalued": true,
       "inherited": true,
       "owner": "overlaps",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9037,11 +9053,11 @@
       "is_a": "overlaps",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_part",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_part",
       "inverse": "part_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9065,11 +9081,11 @@
       "is_a": "has_part",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_plasma_membrane_part",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_plasma_membrane_part",
       "inverse": "plasma_membrane_part_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9093,11 +9109,11 @@
       "is_a": "related_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/composed_primarily_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "composed_primarily_of",
       "inverse": "primarily_composed_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9107,11 +9123,11 @@
       "is_a": "related_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/primarily_composed_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "primarily_composed_of",
       "inverse": "composed_primarily_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9121,11 +9137,11 @@
       "is_a": "part_of",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/plasma_membrane_part_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "plasma_membrane_part_of",
       "inverse": "has_plasma_membrane_part",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9203,11 +9219,11 @@
       "is_a": "overlaps",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/part_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "part_of",
       "inverse": "has_part",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9252,7 +9268,6 @@
       "is_a": "has_participant",
       "domain": "BiologicalProcessOrActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_input",
-      "multivalued": true,
       "inherited": true,
       "owner": "BiologicalProcessOrActivity",
       "domain_of": [
@@ -9260,6 +9275,7 @@
       ],
       "inverse": "is_input_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9275,11 +9291,11 @@
       "is_a": "participates_in",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/is_input_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_input_of",
       "inverse": "has_input",
       "range": "BiologicalProcessOrActivity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9319,7 +9335,6 @@
       "is_a": "has_participant",
       "domain": "BiologicalProcessOrActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_output",
-      "multivalued": true,
       "inherited": true,
       "owner": "BiologicalProcessOrActivity",
       "domain_of": [
@@ -9327,6 +9342,7 @@
       ],
       "inverse": "is_output_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9345,11 +9361,11 @@
       "is_a": "participates_in",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/is_output_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_output_of",
       "inverse": "has_output",
       "range": "BiologicalProcessOrActivity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9398,11 +9414,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "BiologicalProcessOrActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_participant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_participant",
       "inverse": "participates_in",
       "range": "Occurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9423,11 +9439,11 @@
       "is_a": "participates_in",
       "domain": "Occurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyzes",
-      "multivalued": true,
       "inherited": true,
       "owner": "catalyzes",
       "inverse": "has_catalyst",
       "range": "BiologicalProcessOrActivity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9437,11 +9453,11 @@
       "is_a": "has_participant",
       "domain": "BiologicalProcessOrActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_catalyst",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_catalyst",
       "inverse": "catalyzes",
       "range": "Occurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9459,11 +9475,11 @@
       "is_a": "has_participant",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/has_substrate",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_substrate",
       "inverse": "is_substrate_of",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9474,11 +9490,11 @@
       "is_a": "participates_in",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/is_substrate_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_substrate_of",
       "inverse": "has_substrate",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9511,11 +9527,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Occurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/participates_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "participates_in",
       "inverse": "has_participant",
       "range": "BiologicalProcessOrActivity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9549,11 +9565,11 @@
       "is_a": "participates_in",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/actively_involved_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "actively_involved_in",
       "inverse": "actively_involves",
       "range": "BiologicalProcessOrActivity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9566,11 +9582,11 @@
       "is_a": "has_participant",
       "domain": "BiologicalProcessOrActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/actively_involves",
-      "multivalued": true,
       "inherited": true,
       "owner": "actively_involves",
       "inverse": "actively_involved_in",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9598,11 +9614,11 @@
       "is_a": "actively_involved_in",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/capable_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "capable_of",
       "inverse": "can_be_carried_out_by",
       "range": "Occurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9613,11 +9629,11 @@
       "is_a": "actively_involves",
       "domain": "Occurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/can_be_carried_out_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "can_be_carried_out_by",
       "inverse": "capable_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9641,11 +9657,11 @@
       "is_a": "participates_in",
       "domain": "PhysicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/enables",
-      "multivalued": true,
       "inherited": true,
       "owner": "enables",
       "inverse": "enabled_by",
       "range": "BiologicalProcessOrActivity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9669,7 +9685,6 @@
       "is_a": "has_participant",
       "domain": "BiologicalProcessOrActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/enabled_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "BiologicalProcessOrActivity",
       "domain_of": [
@@ -9677,6 +9692,7 @@
       ],
       "inverse": "enables",
       "range": "PhysicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9699,11 +9715,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/derives_into",
-      "multivalued": true,
       "inherited": true,
       "owner": "derives_into",
       "inverse": "derives_from",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9734,11 +9750,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/derives_from",
-      "multivalued": true,
       "inherited": true,
       "owner": "derives_from",
       "inverse": "derives_into",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9758,11 +9774,11 @@
       "is_a": "derives_from",
       "domain": "MolecularEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/is_metabolite_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_metabolite_of",
       "inverse": "has_metabolite",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9789,11 +9805,11 @@
       "is_a": "derives_into",
       "domain": "MolecularEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_metabolite",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_metabolite",
       "inverse": "is_metabolite_of",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9807,11 +9823,11 @@
       "is_a": "part_of",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/food_component_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "food_component_of",
       "inverse": "has_food_component",
       "range": "ChemicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9832,11 +9848,11 @@
       "is_a": "has_part",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_food_component",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_food_component",
       "inverse": "food_component_of",
       "range": "ChemicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9850,11 +9866,11 @@
       "is_a": "food_component_of",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/nutrient_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "nutrient_of",
       "inverse": "has_nutrient",
       "range": "ChemicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9878,11 +9894,11 @@
       "is_a": "has_food_component",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_nutrient",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_nutrient",
       "inverse": "nutrient_of",
       "range": "ChemicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9899,11 +9915,11 @@
       "is_a": "part_of",
       "domain": "MolecularEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/is_active_ingredient_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_active_ingredient_of",
       "inverse": "has_active_ingredient",
       "range": "Drug",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9932,11 +9948,11 @@
       "is_a": "has_part",
       "domain": "Drug",
       "slot_uri": "https://w3id.org/biolink/vocab/has_active_ingredient",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_active_ingredient",
       "inverse": "is_active_ingredient_of",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9953,11 +9969,11 @@
       "is_a": "part_of",
       "domain": "MolecularEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/is_excipient_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_excipient_of",
       "inverse": "has_excipient",
       "range": "Drug",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9981,11 +9997,11 @@
       "is_a": "has_part",
       "domain": "Drug",
       "slot_uri": "https://w3id.org/biolink/vocab/has_excipient",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_excipient",
       "inverse": "is_excipient_of",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10016,11 +10032,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/manifestation_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "manifestation_of",
       "inverse": "has_manifestation",
       "range": "Disease",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10030,11 +10046,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Disease",
       "slot_uri": "https://w3id.org/biolink/vocab/has_manifestation",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_manifestation",
       "inverse": "manifestation_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10044,11 +10060,11 @@
       "is_a": "manifestation_of",
       "domain": "GeneticInheritance",
       "slot_uri": "https://w3id.org/biolink/vocab/mode_of_inheritance_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "mode_of_inheritance_of",
       "inverse": "has_mode_of_inheritance",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10069,11 +10085,11 @@
       "is_a": "has_manifestation",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/has_mode_of_inheritance",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_mode_of_inheritance",
       "inverse": "mode_of_inheritance_of",
       "range": "GeneticInheritance",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10107,11 +10123,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/produces",
-      "multivalued": true,
       "inherited": true,
       "owner": "produces",
       "inverse": "produced_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10124,11 +10140,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/produced_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "produced_by",
       "inverse": "produces",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10148,11 +10164,11 @@
       "is_a": "has_input",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/consumes",
-      "multivalued": true,
       "inherited": true,
       "owner": "consumes",
       "inverse": "consumed_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10162,11 +10178,11 @@
       "is_a": "is_input_of",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/consumed_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "consumed_by",
       "inverse": "consumes",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10203,11 +10219,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "Occurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/temporally_related_to",
-      "multivalued": true,
       "inherited": true,
       "owner": "temporally_related_to",
       "symmetric": true,
       "range": "Occurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10247,11 +10263,11 @@
       "is_a": "temporally_related_to",
       "domain": "Occurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/precedes",
-      "multivalued": true,
       "inherited": true,
       "owner": "precedes",
       "inverse": "preceded_by",
       "range": "Occurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10277,11 +10293,11 @@
       "is_a": "temporally_related_to",
       "domain": "Occurrent",
       "slot_uri": "https://w3id.org/biolink/vocab/preceded_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "preceded_by",
       "inverse": "precedes",
       "range": "Occurrent",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10303,11 +10319,11 @@
       "is_a": "has_part",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_variant_part",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_variant_part",
       "inverse": "variant_part_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10317,11 +10333,11 @@
       "is_a": "part_of",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/variant_part_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "variant_part_of",
       "inverse": "has_variant_part",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10341,11 +10357,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/related_condition",
-      "multivalued": true,
       "inherited": true,
       "owner": "related_condition",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10371,11 +10387,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_sequence_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_sequence_variant_of",
       "inverse": "has_sequence_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10386,11 +10402,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_sequence_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_sequence_variant",
       "inverse": "is_sequence_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10411,11 +10427,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_missense_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_missense_variant_of",
       "inverse": "has_missense_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10426,11 +10442,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_missense_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_missense_variant",
       "inverse": "is_missense_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10451,11 +10467,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_synonymous_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_synonymous_variant_of",
       "inverse": "has_synonymous_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10469,11 +10485,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_synonymous_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_synonymous_variant",
       "inverse": "is_synonymous_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10494,11 +10510,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_nonsense_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_nonsense_variant_of",
       "inverse": "has_nonsense_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10509,11 +10525,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_nonsense_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_nonsense_variant",
       "inverse": "is_nonsense_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10539,11 +10555,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_frameshift_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_frameshift_variant_of",
       "inverse": "has_frameshift_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10559,11 +10575,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_frameshift_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_frameshift_variant",
       "inverse": "is_frameshift_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10584,11 +10600,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_splice_site_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_splice_site_variant_of",
       "inverse": "has_splice_site_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10603,11 +10619,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_splice_site_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_splice_site_variant",
       "inverse": "is_splice_site_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10625,11 +10641,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_nearby_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_nearby_variant_of",
       "inverse": "has_nearby_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10647,11 +10663,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_nearby_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_nearby_variant",
       "inverse": "is_nearby_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10669,11 +10685,11 @@
       "is_a": "is_sequence_variant_of",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/is_non_coding_variant_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_non_coding_variant_of",
       "inverse": "has_non_coding_variant",
       "range": "GenomicEntity",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10684,11 +10700,11 @@
       "is_a": "has_sequence_variant",
       "domain": "GenomicEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_non_coding_variant",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_non_coding_variant",
       "inverse": "is_non_coding_variant_of",
       "range": "SequenceVariant",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10710,11 +10726,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/disease_has_basis_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "disease_has_basis_in",
       "inverse": "occurs_in_disease",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10724,11 +10740,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/occurs_in_disease",
-      "multivalued": true,
       "inherited": true,
       "owner": "occurs_in_disease",
       "inverse": "disease_has_basis_in",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10749,11 +10765,11 @@
       "is_a": "affects",
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/has_adverse_event",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_adverse_event",
       "inverse": "adverse_event_of",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10763,11 +10779,11 @@
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/adverse_event_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "adverse_event_of",
       "inverse": "has_adverse_event",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10795,11 +10811,11 @@
       "is_a": "affects",
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/has_side_effect",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_side_effect",
       "inverse": "is_side_effect_of",
       "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10809,11 +10825,11 @@
       "is_a": "affected_by",
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/is_side_effect_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_side_effect_of",
       "inverse": "has_side_effect",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10843,11 +10859,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/contraindicated_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "contraindicated_in",
       "inverse": "has_contraindication",
       "range": "BiologicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10867,11 +10883,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "BiologicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_contraindication",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_contraindication",
       "inverse": "contraindicated_in",
       "range": "ChemicalOrDrugOrTreatment",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -10898,11 +10914,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_not_completed",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_not_completed",
       "inverse": "not_completed_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10912,11 +10928,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/not_completed_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "not_completed_by",
       "inverse": "has_not_completed",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10942,11 +10958,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_completed",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_completed",
       "inverse": "completed_by",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10956,11 +10972,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/completed_by",
-      "multivalued": true,
       "inherited": true,
       "owner": "completed_by",
       "inverse": "has_completed",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10981,11 +10997,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with",
-      "multivalued": true,
       "inherited": true,
       "owner": "in_linkage_disequilibrium_with",
       "symmetric": true,
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11010,11 +11026,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_increased_amount",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_increased_amount",
       "inverse": "increased_amount_of",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11024,11 +11040,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/increased_amount_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "increased_amount_of",
       "inverse": "has_increased_amount",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11053,11 +11069,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_decreased_amount",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_decreased_amount",
       "inverse": "decreased_amount_in",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11067,11 +11083,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/decreased_amount_in",
-      "multivalued": true,
       "inherited": true,
       "owner": "decreased_amount_in",
       "inverse": "has_decreased_amount",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11100,11 +11116,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/lacks_part",
-      "multivalued": true,
       "inherited": true,
       "owner": "lacks_part",
       "inverse": "missing_from",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11114,11 +11130,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/missing_from",
-      "multivalued": true,
       "inherited": true,
       "owner": "missing_from",
       "inverse": "lacks_part",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11150,11 +11166,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/develops_from",
-      "multivalued": true,
       "inherited": true,
       "owner": "develops_from",
       "inverse": "develops_into",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11164,11 +11180,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/develops_into",
-      "multivalued": true,
       "inherited": true,
       "owner": "develops_into",
       "inverse": "develops_from",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11203,7 +11219,6 @@
       "is_a": "related_to_at_instance_level",
       "domain": "ThingWithTaxon",
       "slot_uri": "https://w3id.org/biolink/vocab/in_taxon",
-      "multivalued": true,
       "inherited": true,
       "owner": "ThingWithTaxon",
       "domain_of": [
@@ -11211,6 +11226,7 @@
       ],
       "inverse": "taxon_of",
       "range": "OrganismTaxon",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11248,11 +11264,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "OrganismTaxon",
       "slot_uri": "https://w3id.org/biolink/vocab/taxon_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "taxon_of",
       "inverse": "in_taxon",
       "range": "ThingWithTaxon",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -11277,11 +11293,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/has_molecular_consequence",
-      "multivalued": true,
       "inherited": true,
       "owner": "has_molecular_consequence",
       "inverse": "is_molecular_consequence_of",
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11291,11 +11307,11 @@
       "is_a": "related_to_at_instance_level",
       "domain": "OntologyClass",
       "slot_uri": "https://w3id.org/biolink/vocab/is_molecular_consequence_of",
-      "multivalued": true,
       "inherited": true,
       "owner": "is_molecular_consequence_of",
       "inverse": "has_molecular_consequence",
       "range": "NamedThing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11404,12 +11420,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_closure",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11434,12 +11450,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_closure",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11522,12 +11538,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_category_closure",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11552,12 +11568,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_category_closure",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11582,12 +11598,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_label_closure",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11616,12 +11632,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_label_closure",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11924,12 +11940,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/has_evidence",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "EvidenceType",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12023,12 +12039,12 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/provided_by",
-      "multivalued": true,
       "owner": "NamedThing",
       "domain_of": [
         "NamedThing"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12060,12 +12076,12 @@
       "is_a": "knowledge_source",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/aggregator_knowledge_source",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12079,9 +12095,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_data_source",
-      "multivalued": true,
       "owner": "supporting_data_source",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12092,9 +12108,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_data_set",
-      "multivalued": true,
       "owner": "supporting_data_set",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12326,9 +12342,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_text",
-      "multivalued": true,
       "owner": "supporting_text",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12346,9 +12362,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_documents",
-      "multivalued": true,
       "owner": "supporting_documents",
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12365,9 +12381,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_location_in_text",
-      "multivalued": true,
       "owner": "subject_location_in_text",
       "range": "integer",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12384,9 +12400,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_location_in_text",
-      "multivalued": true,
       "owner": "object_location_in_text",
       "range": "integer",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12576,12 +12592,12 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/publications",
-      "multivalued": true,
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "Publication",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13014,7 +13030,6 @@
       "is_a": "category",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/category",
-      "multivalued": true,
       "designates_type": true,
       "alias": "category",
       "owner": "NamedThing",
@@ -13026,6 +13041,7 @@
       "usage_slot_name": "category",
       "range": "uriorcurie",
       "required": true,
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13206,7 +13222,6 @@
       ],
       "domain": "Publication",
       "slot_uri": "http://purl.org/dc/terms/type",
-      "multivalued": true,
       "alias": "publication type",
       "owner": "Publication",
       "domain_of": [
@@ -13216,6 +13231,7 @@
       "usage_slot_name": "publication type",
       "range": "string",
       "required": true,
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13229,7 +13245,6 @@
       "is_a": "pages",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/biolink/vocab/pages",
-      "multivalued": true,
       "alias": "pages",
       "owner": "Publication",
       "domain_of": [
@@ -13238,6 +13253,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "pages",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13283,7 +13299,6 @@
       "is_a": "type",
       "domain": "Book",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "multivalued": true,
       "alias": "type",
       "owner": "Book",
       "domain_of": [
@@ -13292,6 +13307,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "type",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13364,7 +13380,6 @@
       "is_a": "type",
       "domain": "Serial",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "multivalued": true,
       "alias": "type",
       "owner": "Serial",
       "domain_of": [
@@ -13373,6 +13388,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "type",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13529,7 +13545,6 @@
       "is_a": "has_input",
       "domain": "MolecularActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_input",
-      "multivalued": true,
       "inherited": true,
       "alias": "has input",
       "owner": "MolecularActivity",
@@ -13539,6 +13554,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has input",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13580,7 +13596,6 @@
       "is_a": "has_output",
       "domain": "MolecularActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_output",
-      "multivalued": true,
       "inherited": true,
       "alias": "has output",
       "owner": "MolecularActivity",
@@ -13590,6 +13605,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has output",
       "range": "MolecularEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13614,7 +13630,6 @@
       "is_a": "enabled_by",
       "domain": "MolecularActivity",
       "slot_uri": "https://w3id.org/biolink/vocab/enabled_by",
-      "multivalued": true,
       "inherited": true,
       "alias": "enabled by",
       "owner": "MolecularActivity",
@@ -13624,6 +13639,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "enabled by",
       "range": "MacromolecularMachineMixin",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -13720,7 +13736,6 @@
       "is_a": "has_attribute",
       "domain": "OrganismalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_attribute",
-      "multivalued": true,
       "alias": "has attribute",
       "owner": "OrganismalEntity",
       "domain_of": [
@@ -13729,6 +13744,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has attribute",
       "range": "Attribute",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13777,7 +13793,6 @@
       "is_a": "has_gene",
       "domain": "SequenceVariant",
       "slot_uri": "https://w3id.org/biolink/vocab/has_gene",
-      "multivalued": true,
       "alias": "has gene",
       "owner": "SequenceVariant",
       "domain_of": [
@@ -13786,6 +13801,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has gene",
       "range": "Gene",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13969,7 +13985,6 @@
       "is_a": "has_attribute",
       "domain": "ClinicalFinding",
       "slot_uri": "https://w3id.org/biolink/vocab/has_attribute",
-      "multivalued": true,
       "alias": "has attribute",
       "owner": "ClinicalFinding",
       "domain_of": [
@@ -13978,6 +13993,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has attribute",
       "range": "ClinicalAttribute",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14073,7 +14089,6 @@
       "is_a": "has_attribute",
       "domain": "SocioeconomicExposure",
       "slot_uri": "https://w3id.org/biolink/vocab/has_attribute",
-      "multivalued": true,
       "alias": "has attribute",
       "owner": "SocioeconomicExposure",
       "domain_of": [
@@ -14083,6 +14098,7 @@
       "usage_slot_name": "has attribute",
       "range": "SocioeconomicAttribute",
       "required": true,
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14100,7 +14116,6 @@
       "is_a": "type",
       "domain": "Association",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "multivalued": true,
       "alias": "type",
       "owner": "Association",
       "domain_of": [
@@ -14109,6 +14124,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "type",
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14122,7 +14138,6 @@
       "is_a": "category",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/category",
-      "multivalued": true,
       "designates_type": true,
       "alias": "category",
       "owner": "Association",
@@ -14133,6 +14148,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "category",
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14374,7 +14390,6 @@
       "is_a": "qualifiers",
       "domain": "ContributorAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/qualifiers",
-      "multivalued": true,
       "alias": "qualifiers",
       "owner": "ContributorAssociation",
       "domain_of": [
@@ -14383,6 +14398,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "qualifiers",
       "range": "OntologyClass",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -15731,7 +15747,6 @@
       "is_a": "catalyst_qualifier",
       "domain": "ChemicalToChemicalDerivationAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
-      "multivalued": true,
       "alias": "catalyst qualifier",
       "owner": "ChemicalToChemicalDerivationAssociation",
       "domain_of": [
@@ -15740,6 +15755,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "catalyst qualifier",
       "range": "MacromolecularMachineMixin",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -19754,7 +19770,6 @@
       "is_a": "has_evidence",
       "domain": "DruggableGeneToDiseaseAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/has_evidence",
-      "multivalued": true,
       "alias": "has evidence",
       "owner": "DruggableGeneToDiseaseAssociation",
       "domain_of": [
@@ -19763,6 +19778,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has evidence",
       "range": "DruggableGeneCategoryEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -35593,9 +35609,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-09-23T23:41:18",
-  "source_file_size": 399792,
-  "generation_date": "2024-09-23T23:41:23",
+  "source_file_date": "2024-09-23T16:44:52",
+  "source_file_size": 400333,
+  "generation_date": "2024-09-23T16:44:58",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
