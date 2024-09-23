@@ -160,8 +160,10 @@ Instead of these predicates, please use:
 ```bash
 subject: x
 predicate: regulates
+qualified predicate: causes
 object: y
 object direction qualifier: values from: direction_qualifier_enum 
+object aspect qualifier: values from: gene_or_gene_product_or_chemical_entity_aspect_enum
 ```
 
  * approved to treat
