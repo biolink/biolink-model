@@ -1,3 +1,5 @@
+# metamodel_version: 1.7.0
+# version: 4.2.2
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -1166,8 +1168,8 @@ type ChemicalMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -1714,8 +1716,8 @@ type ComplexMolecularMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -2246,8 +2248,8 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -2899,8 +2901,8 @@ type Food
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -3235,6 +3237,52 @@ interface GeneProductMixin
     name: SymbolType
     synonym: [LabelType]
     xref: [Uriorcurie]
+  }
+
+type GeneRegulatesGeneAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    type: [String]
+    category: [Uriorcurie]
+    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum!
+    objectDirectionQualifier: DirectionQualifierEnum!
+    qualifiedPredicate: String!
+    speciesContextQualifier: OrganismTaxon
+    subject: GeneOrGeneProduct!
+    predicate: PredicateType!
+    object: GeneOrGeneProduct!
   }
 
 type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
@@ -4977,8 +5025,8 @@ type MolecularMixture
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -5833,6 +5881,59 @@ type PhenotypicFeatureToEntityAssociationMixin implements FrequencyQuantifier
     hasPercentage: Double
   }
 
+type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatureToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    type: [String]
+    category: [Uriorcurie]
+    frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+  }
+
 type PhenotypicQuality
   {
     id: String!
@@ -6113,6 +6214,48 @@ type Procedure implements ActivityAndBehavior
     category: [Uriorcurie]!
   }
 
+type ProcessRegulatesProcessAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: BiologicalProcess!
+    predicate: PredicateType!
+    object: BiologicalProcess!
+  }
+
 type ProcessedMaterial
   {
     id: String!
@@ -6133,8 +6276,8 @@ type ProcessedMaterial
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isSupplement: String
-    highestFDAApprovalStatus: String
-    drugRegulatoryStatusWorldWide: String
+    highestFDAApprovalStatus: ApprovalStatusEnum
+    drugRegulatoryStatusWorldWide: ApprovalStatusEnum
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
@@ -6678,6 +6821,7 @@ type SiRNA
 
 type SmallMolecule
   {
+    id: String!
     iri: IriType
     type: [String]
     name: LabelType
@@ -6695,7 +6839,6 @@ type SmallMolecule
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    id: String!
   }
 
 type Snv

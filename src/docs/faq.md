@@ -84,11 +84,11 @@ variants of RHOBTB2? The investigators noted that RHOBTB2 variants cause an accu
 accumulation is believed to be the cause of the neurological disorder. 
 
 To answer the PMI investigator’s question, Translator team members structured the following query: 
-> NCBIGene:23221 (CURIE for RHOBTB2) -> [biolink:entity_regulates_entity, biolink:genetically_interacts_with] -> biolink:Protein, 
+> NCBIGene:23221 (CURIE for RHOBTB2) -> [biolink:regulates, biolink:genetically_interacts_with] -> biolink:Protein, 
 biolink:Gene -> [biolink:related_to] -> biolink:SmallMolecule
 
 (see Figure 2 below). Because of the hierarchical structure of the Biolink model,
-the use of biolink:related_to also will return more specific predicates such as biolink:negatively_regulates and biolink:positively_regulates. 
+the use of biolink:related_to also will return more specific predicates such as biolink:regulates and biolink:affects. 
 The objective was to identify drugs or chemicals that might regulate RHOBTB2 in some manner and thereby reduce the variant-induced 
 accumulation of RHOBTB2 and associated neurological symptoms. As all nodes and edges within the Translator KG ecosystem are 
 annotated to Biolink Model classes and attributes, a Translator query can be constructed from a natural-language user question 

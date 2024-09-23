@@ -249,3 +249,31 @@ where an analog of a specified chemical is the effector of a heavily qualified S
   "causal_mechanism_qualifier": "agonism"
 }
 ```
+
+
+"AVP downregulates ACE"
+
+```json
+{
+  "subject": "NCBIGene:551",
+  "predicate": "biolink:regulates",
+  "object": "NCBIGene:1636",
+  "qualified_predicate": "biolink:causes",
+  "object_direction": "downregulated",
+  "object_aspect": "activity_or_abundance"
+}
+```
+
+PUBCHEM.COMPOUND:44093 causes decreased abundance of NCBIGene:1636"
+
+```json
+{
+  "subject": "PUBCHEM.COMPOUND:44093",
+  "predicate": "biolink:affects",
+  "object": "NCBIGene:1636",
+  "qualified_predicate": "biolink:causes",
+  "object_direction": "decreased",
+  "object_aspect": "activity_or_abundance"
+}
+```
+
