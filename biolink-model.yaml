@@ -1165,15 +1165,22 @@ slots:
     description: >-
       a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain 
       an association.
-    is_a: qualifier
+    is_a: context qualifier
     range: ResponseEnum
+
+  response target context qualifier:
+    description: >-
+      a biological response target (a patient, a cohort, a model system, a cell line, a sample of biological material, 
+      etc.)
+    is_a: context qualifier
+    range: ResponseTargetEnum
 
   population context qualifier:
     description: >-
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: qualifier
-    range: population of individual organisms
+    range: population of individual organisms # TODO: harmonize with 'response target context qualifier'
 
   temporal context qualifier:
     description: >-
@@ -9396,6 +9403,30 @@ classes:
       - owl:Axiom
 
 
+  disease associated with response to chemical entity association:
+    description: >-
+      A statistical association between a disease and a chemical entity where the
+      chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes
+      in a patient, cell line, or any model system.
+    is_a: association
+    slots:
+      - response context qualifier
+      - response target context qualifier
+    defining_slots:
+      - subject
+      - predicate
+      - object
+      - response context qualifier
+      - response target context qualifier
+    slot_usage:
+      subject:
+        range: disease
+      object:
+        range: chemical entity
+      predicate:
+        subproperty_of: associated with response to
+
+
   chemical entity assesses named thing association:
     is_a: association
     slot_usage:
@@ -11535,6 +11566,23 @@ enums:
       negative:
         description: >-
           A negative response to a treatment or intervention
+
+  ResponseTargetEnum:
+    description: >-
+      The target of a treatment or intervention
+    permissible_values:
+      cohort:
+        description: >-
+          A group of individuals that are the target of a treatment or intervention
+      cell line:
+        description: >-
+          A cell line that is the target of a treatment or intervention
+      individual:
+        description: >-
+          An individual that is the target of a treatment or intervention
+      sample:
+        description: >-
+          A biological materialsample that is the target of a treatment or intervention
 
   ApprovalStatusEnum:
     description: >-
