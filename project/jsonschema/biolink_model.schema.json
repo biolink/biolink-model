@@ -29850,6 +29850,15 @@
             "title": "ResourceRoleEnum",
             "type": "string"
         },
+        "ResponseEnum": {
+            "description": "A response to a treatment or intervention",
+            "enum": [
+                "therapeutic_response",
+                "negative"
+            ],
+            "title": "ResponseEnum",
+            "type": "string"
+        },
         "RetrievalSource": {
             "additionalProperties": false,
             "description": "Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.",

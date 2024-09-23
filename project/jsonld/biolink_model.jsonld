@@ -1011,6 +1011,22 @@
   ],
   "enums": [
     {
+      "name": "ResponseEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ResponseEnum",
+      "description": "A response to a treatment or intervention",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "therapeutic_response",
+          "description": "A positive response to a treatment or intervention"
+        },
+        {
+          "text": "negative",
+          "description": "A negative response to a treatment or intervention"
+        }
+      ]
+    },
+    {
       "name": "ApprovalStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ApprovalStatusEnum",
       "description": "",
@@ -3623,6 +3639,18 @@
       "slot_uri": "https://w3id.org/biolink/vocab/has_route",
       "owner": "has_route",
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "response_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/response_context_qualifier",
+      "description": "a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain  an association.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/response_context_qualifier",
+      "owner": "response_context_qualifier",
+      "range": "ResponseEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -6321,6 +6349,45 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "associated_with_response_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/associated_with_response_to",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "A statistical association used to indicate that the object of a statement using this predicate induces a response of some kind in the subject entity.  Intentionally broad in definition, this predicate should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic,  phenotypic, detrimental, resistant, etc. is captured in context, direction, and  aspect qualifiers).",
+      "comments": [
+        "subject: NCBIGene:2064 # HER2 subject_aspect: Amplification predicate: associated with response to object: CHEBI:10035 # Trastuzumab response_type_qualifier: therapeutic_sensitivity response_direction_qualifer: increased response_target_qualifier: human patient disease_context_qualifier: MONDO:0007254  # breast cancer\nsubject: MONDO:0007254 predicate: associated with response to qualified_predicate: associated with object: CHEBI:10035 # Trastuzumab response_context_qualifier: therapeutic_sensitivity"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "associated_with",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/associated_with_response_to",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "associated_with_response_to",
+      "inverse": "response_associated_with",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "response_associated_with",
+      "definition_uri": "https://w3id.org/biolink/vocab/response_associated_with",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "associated_with",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/response_associated_with",
+      "multivalued": true,
+      "inherited": true,
+      "owner": "response_associated_with",
+      "inverse": "associated_with_response_to",
+      "range": "NamedThing",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "associated_with_sensitivity_to",
       "definition_uri": "https://w3id.org/biolink/vocab/associated_with_sensitivity_to",
       "annotations": [
@@ -6338,7 +6405,7 @@
       "broad_mappings": [
         "http://purl.obolibrary.org/obo/PATO_0000085"
       ],
-      "is_a": "associated_with",
+      "is_a": "associated_with_response_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_sensitivity_to",
       "multivalued": true,
@@ -6374,7 +6441,7 @@
       ],
       "description": "A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "associated_with",
+      "is_a": "associated_with_response_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_resistance_to",
       "multivalued": true,
@@ -35166,9 +35233,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-08-06T22:04:29",
-  "source_file_size": 398312,
-  "generation_date": "2024-08-06T22:04:34",
+  "source_file_date": "2024-09-23T15:28:32",
+  "source_file_size": 400182,
+  "generation_date": "2024-09-23T15:28:38",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

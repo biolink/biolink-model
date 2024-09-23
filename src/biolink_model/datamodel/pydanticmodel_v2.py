@@ -46,6 +46,16 @@ class ConfiguredBaseModel(BaseModel):
     pass
 
 
+class ResponseEnum(str, Enum):
+    """
+    A response to a treatment or intervention
+    """
+    # A positive response to a treatment or intervention
+    therapeutic_response = "therapeutic_response"
+    # A negative response to a treatment or intervention
+    negative = "negative"
+
+
 class ApprovalStatusEnum(str, Enum):
     # Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.
     discovery_and_development_phase = "discovery_and_development_phase"

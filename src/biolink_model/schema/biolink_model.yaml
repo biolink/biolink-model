@@ -1161,6 +1161,13 @@ slots:
       - SNOMED:has_route_of_administration
 
 
+  response context qualifier:
+    description: >-
+      a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain 
+      an association.
+    is_a: qualifier
+    range: ResponseEnum
+
   population context qualifier:
     description: >-
       a biological population (general, study, cohort, etc.) with a specific
@@ -2577,8 +2584,38 @@ slots:
       another existing entity.
     inverse: affects
 
-  associated with sensitivity to:
+  associated with response to:
     is_a: associated with
+    description: >-
+      A statistical association used to indicate that the object of a statement using this predicate
+      induces a response of some kind in the subject entity.  Intentionally broad in definition, this predicate
+      should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic, 
+      phenotypic, detrimental, resistant, etc. is captured in context, direction, and 
+      aspect qualifiers).
+    annotations:
+      canonical_predicate: true
+    comments: >-
+        subject: NCBIGene:2064 # HER2
+        subject_aspect: Amplification
+        predicate: associated with response to
+        object: CHEBI:10035 # Trastuzumab
+        response_type_qualifier: therapeutic_sensitivity
+        response_direction_qualifer: increased
+        response_target_qualifier: human patient
+        disease_context_qualifier: MONDO:0007254  # breast cancer
+      
+        subject: MONDO:0007254
+        predicate: associated with response to
+        qualified_predicate: associated with
+        object: CHEBI:10035 # Trastuzumab
+        response_context_qualifier: therapeutic_sensitivity
+
+  response associated with:
+    is_a: associated with
+    inverse: associated with response to
+
+  associated with sensitivity to:
+    is_a: associated with response to
     description: >-
       A relation that holds between a named thing and a chemical
       that specifies that the change in the named
@@ -2599,7 +2636,7 @@ slots:
     domain: chemical entity
 
   associated with resistance to:
-    is_a: associated with
+    is_a: associated with response to
     description: >-
       A relation that holds between a named thing and a chemical
       that specifies that the change in the named
@@ -11487,6 +11524,17 @@ classes:
 
 
 enums:
+
+  ResponseEnum:
+    description: >-
+      A response to a treatment or intervention
+    permissible_values:
+      therapeutic_response:
+        description: >-
+          A positive response to a treatment or intervention
+      negative:
+        description: >-
+          A negative response to a treatment or intervention
 
   ApprovalStatusEnum:
     description: >-

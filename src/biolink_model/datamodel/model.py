@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-08-06T22:04:47
+# Generation date: 2024-09-23T15:28:50
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -12909,6 +12909,22 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class ResponseEnum(EnumDefinitionImpl):
+    """
+    A response to a treatment or intervention
+    """
+    therapeutic_response = PermissibleValue(
+        text="therapeutic_response",
+        description="A positive response to a treatment or intervention")
+    negative = PermissibleValue(
+        text="negative",
+        description="A negative response to a treatment or intervention")
+
+    _defn = EnumDefinition(
+        name="ResponseEnum",
+        description="A response to a treatment or intervention",
+    )
+
 class ApprovalStatusEnum(EnumDefinitionImpl):
 
     discovery_and_development_phase = PermissibleValue(
@@ -13675,6 +13691,9 @@ slots.has_stressor = Slot(uri=BIOLINK.has_stressor, name="has stressor", curie=B
 slots.has_route = Slot(uri=BIOLINK.has_route, name="has route", curie=BIOLINK.curie('has_route'),
                    model_uri=BIOLINK.has_route, domain=None, range=Optional[str])
 
+slots.response_context_qualifier = Slot(uri=BIOLINK.response_context_qualifier, name="response context qualifier", curie=BIOLINK.curie('response_context_qualifier'),
+                   model_uri=BIOLINK.response_context_qualifier, domain=Association, range=Optional[Union[str, "ResponseEnum"]])
+
 slots.population_context_qualifier = Slot(uri=BIOLINK.population_context_qualifier, name="population context qualifier", curie=BIOLINK.curie('population_context_qualifier'),
                    model_uri=BIOLINK.population_context_qualifier, domain=Association, range=Optional[Union[str, PopulationOfIndividualOrganismsId]])
 
@@ -14016,6 +14035,12 @@ slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('a
 
 slots.affected_by = Slot(uri=BIOLINK.affected_by, name="affected by", curie=BIOLINK.curie('affected_by'),
                    model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.associated_with_response_to = Slot(uri=BIOLINK.associated_with_response_to, name="associated with response to", curie=BIOLINK.curie('associated_with_response_to'),
+                   model_uri=BIOLINK.associated_with_response_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.response_associated_with = Slot(uri=BIOLINK.response_associated_with, name="response associated with", curie=BIOLINK.curie('response_associated_with'),
+                   model_uri=BIOLINK.response_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.associated_with_sensitivity_to = Slot(uri=BIOLINK.associated_with_sensitivity_to, name="associated with sensitivity to", curie=BIOLINK.curie('associated_with_sensitivity_to'),
                    model_uri=BIOLINK.associated_with_sensitivity_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
