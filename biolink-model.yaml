@@ -5568,7 +5568,6 @@ slots:
 
   has confidence level:
     is_a: association slot
-    range: confidence level
     description: >-
       connects an association to a qualitative term denoting the level of confidence
 
@@ -5590,7 +5589,7 @@ slots:
     is_a: association slot
     description: >-
       The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the
-      odds of event Y occurring in a non-exposed group.
+      odds of event Y occurring in a non-exposed group.has 
     range: float
 
   log odds ratio 95 ci:
@@ -6054,13 +6053,25 @@ slots:
 
   max research phase:
     is_a: association slot
-    range: MaxResearchPhaseEnum
+    range: ResearchPhaseEnum
+
+  has supporting studies:
+    is_a: association slot
+    range: Study
+    description: A study that produced information used as evidence to generate the knowledge expressed in an Association.
+    multivalued: true
 
   supporting study metadata:
     is_a: association slot
     description: >-
       Information about a study used to generate information used as evidence to support the knowledge expressed in an
       Association. In practice, data creators should use one of the more specific subtypes of this property.
+    comments:
+      - This is an abstract slot that groups a set of concrete slots used to directly attach to an association information
+        about a study that produced evidence used to generate the knowledge expressed in the edge. 
+      - Note that these concrete 'supporting study metadata' slots are used only when a more normalized model that leverages
+        the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred, 
+        such that this study metadata must be captured directly on the edge.       
     abstract: true
 
   supporting study method type:
@@ -11658,7 +11669,7 @@ enums:
         is_a: not_approved_for_condition
       not_provided:
 
-  MaxResearchPhaseEnum:
+  ResearchPhaseEnum:
     permissible_values:
       pre_clinical_research_phase:
         description: >-
