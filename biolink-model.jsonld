@@ -592,7 +592,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -613,7 +613,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -4304,6 +4304,7 @@
       "domain_of": [
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "GeneRegulatesGeneAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
@@ -4436,6 +4437,7 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneRegulatesGeneAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
@@ -4460,6 +4462,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "GeneRegulatesGeneAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
@@ -4564,6 +4567,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneRegulatesGeneAssociation",
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -7767,7 +7771,7 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "related_to_at_instance_level",
+      "is_a": "affects_likelihood_of",
       "mixin": true,
       "domain": "ChemicalOrDrugOrTreatment",
       "slot_uri": "https://w3id.org/biolink/vocab/promotes_condition",
@@ -7783,6 +7787,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "likelihood_affected_by",
+      "mixin": true,
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/condition_promoted_by",
       "multivalued": true,
@@ -7910,7 +7915,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting in the first place. \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. the intervention is approved for the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise established  treatment in the medical community (e.g. a widely-accepted or formally recommended  off-label use). In the absence of such evidence, weaker predicates should be used in  asserted edges (e.g. \u2018in clinical trials for\u2019 or \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence can however be created as predictions  (knowledge_level: prediction) and should point to the more foundational asserted edges that  support them.",
+      "description": "Holds between an intervention (substance, procedure, or activity) and a medical condition (disease or phenotypic feature), and states that the intervention is, in some population(s),  able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk  of it manifesting in the first place. \u2018Treats\u2019 edges should be asserted (knowledge_level: assertion) only in cases where there is strong supporting evidence - i.e. in some population(s) the intervention is approved for the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise  established treatment in the medical community (e.g. a widely-accepted or formally recommended  off-label use). In the absence of such evidence, weaker predicates should be used in  asserted edges (e.g. \u2018in clinical trials for\u2019 or \u2018beneficial in models of\u2019). \u2018Treats\u2019 edges based on weaker or indirect forms of evidence can however be created as predictions  (knowledge_level: prediction) and should point to the more foundational asserted edges that  support them.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -8058,6 +8063,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_in_studies_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/tested_by_clinical_trials_of",
       "multivalued": true,
@@ -8073,6 +8081,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treated_in_studies_by",
       "multivalued": true,
@@ -8088,6 +8099,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "treated_in_studies_by",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/tested_by_preclinical_trials_of",
       "multivalued": true,
@@ -8136,7 +8150,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
+      "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).",
       "notes": [
         "This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease. (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation phenotype of zebrafish used to model the human disease Kabuki Syndrome) ."
       ],
@@ -8162,6 +8176,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "tested_by_preclinical_trials_of",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/models_demonstrating_benefits_for",
       "multivalued": true,
@@ -8213,6 +8230,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
+      "mixins": [
+        "subject_of_treatment_application_or_study_for_treatment_by"
+      ],
       "domain": "DiseaseOrPhenotypicFeature",
       "slot_uri": "https://w3id.org/biolink/vocab/treatment_applications_from",
       "multivalued": true,
@@ -16610,6 +16630,319 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_regulates_gene_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneRegulatesGeneAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "GeneRegulatesGeneAssociation",
+      "domain_of": [
+        "GeneRegulatesGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_regulates_gene_association_predicate",
+      "id_prefixes": [
+        "regulates"
+      ],
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "GeneRegulatesGeneAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "GeneRegulatesGeneAssociation",
+      "domain_of": [
+        "GeneRegulatesGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_regulates_gene_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneRegulatesGeneAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "GeneRegulatesGeneAssociation",
+      "domain_of": [
+        "GeneRegulatesGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_regulates_gene_association_object_aspect_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "the aspect of the object gene or gene product that is being regulated, must be a descendant of  \"activity_or_abundance\"\"",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "object_aspect_qualifier",
+      "domain": "GeneRegulatesGeneAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "alias": "object aspect qualifier",
+      "owner": "GeneRegulatesGeneAssociation",
+      "domain_of": [
+        "GeneRegulatesGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_regulates_gene_association_object_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "object_direction_qualifier",
+      "domain": "GeneRegulatesGeneAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "alias": "object direction qualifier",
+      "owner": "GeneRegulatesGeneAssociation",
+      "domain_of": [
+        "GeneRegulatesGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_regulates_gene_association_qualified_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+      "notes": [
+        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "qualified_predicate",
+      "domain": "GeneRegulatesGeneAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
+      "alias": "qualified predicate",
+      "owner": "GeneRegulatesGeneAssociation",
+      "domain_of": [
+        "GeneRegulatesGeneAssociation"
+      ],
+      "subproperty_of": "causes",
+      "is_usage_slot": true,
+      "usage_slot_name": "qualified predicate",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process_regulates_process_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ProcessRegulatesProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ProcessRegulatesProcessAssociation",
+      "domain_of": [
+        "ProcessRegulatesProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "BiologicalProcess",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process_regulates_process_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "ProcessRegulatesProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "ProcessRegulatesProcessAssociation",
+      "domain_of": [
+        "ProcessRegulatesProcessAssociation"
+      ],
+      "subproperty_of": "regulates",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process_regulates_process_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ProcessRegulatesProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ProcessRegulatesProcessAssociation",
+      "domain_of": [
+        "ProcessRegulatesProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "BiologicalProcess",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -31006,6 +31339,116 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "GeneRegulatesGeneAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneRegulatesGeneAssociation",
+      "description": "Describes a regulatory relationship between two genes or gene products.",
+      "examples": [
+        {
+          "value": "JsonObj(subject='NCBIGene:551', predicate='regulates', qualified_predicte='causes', object='NCBIGene:1636', object_aspect_qualifier='activity_or_abundance', object_direction_qualifier='downregulated')",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "association_type",
+        "association_category",
+        "gene_regulates_gene_association_object_aspect_qualifier",
+        "gene_regulates_gene_association_object_direction_qualifier",
+        "gene_regulates_gene_association_qualified_predicate",
+        "species_context_qualifier",
+        "gene_regulates_gene_association_subject",
+        "gene_regulates_gene_association_predicate",
+        "gene_regulates_gene_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/GeneRegulatesGeneAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProcessRegulatesProcessAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ProcessRegulatesProcessAssociation",
+      "description": "Describes a regulatory relationship between two genes or gene products.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "association_type",
+        "association_category",
+        "process_regulates_process_association_subject",
+        "process_regulates_process_association_predicate",
+        "process_regulates_process_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ProcessRegulatesProcessAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ChemicalAffectsGeneAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
       "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
@@ -35166,9 +35609,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-07-26T14:52:20",
-  "source_file_size": 398264,
-  "generation_date": "2024-07-26T14:52:26",
+  "source_file_date": "2024-09-23T23:51:02",
+  "source_file_size": 400333,
+  "generation_date": "2024-09-23T23:51:07",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

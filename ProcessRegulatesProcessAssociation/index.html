@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/OrganismTaxonToOrganismTaxonInteraction/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/ProcessRegulatesProcessAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.17" name="generator"/>
-<title>Class: OrganismTaxonToOrganismTaxonInteraction - Biolink Model Documentation</title>
+<title>Class: ProcessRegulatesProcessAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.bcfcd587.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-organismtaxontoorganismtaxoninteraction">
+<a class="md-skip" href="#class-processregulatesprocessassociation">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-<strong>  Class: OrganismTaxonToOrganismTaxonInteraction </strong>
+<strong>  Class: ProcessRegulatesProcessAssociation </strong>
 </span>
 </div>
 </div>
@@ -275,117 +275,115 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-organismtaxontoorganismtaxoninteraction"><strong>  Class: OrganismTaxonToOrganismTaxonInteraction </strong></h1>
+<h1 id="class-processregulatesprocessassociation"><strong>  Class: ProcessRegulatesProcessAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens</i><br/>
+<strong>Description:</strong><i> Describes a regulatory relationship between two genes or gene products.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class OrganismTaxonToOrganismTaxonInteraction
-      OrganismTaxonToOrganismTaxonAssociation &lt;|-- OrganismTaxonToOrganismTaxonInteraction
+    class ProcessRegulatesProcessAssociation
+      Association &lt;|-- ProcessRegulatesProcessAssociation
 
-      OrganismTaxonToOrganismTaxonInteraction : adjusted_p_value
+      ProcessRegulatesProcessAssociation : adjusted_p_value
 
-      OrganismTaxonToOrganismTaxonInteraction : agent_type
+      ProcessRegulatesProcessAssociation : agent_type
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; AgentTypeEnum : agent_type
+          ProcessRegulatesProcessAssociation --|&gt; AgentTypeEnum : agent_type
 
-      OrganismTaxonToOrganismTaxonInteraction : aggregator_knowledge_source
+      ProcessRegulatesProcessAssociation : aggregator_knowledge_source
 
-      OrganismTaxonToOrganismTaxonInteraction : associated_environmental_context
+      ProcessRegulatesProcessAssociation : category
 
-      OrganismTaxonToOrganismTaxonInteraction : category
+      ProcessRegulatesProcessAssociation : deprecated
 
-      OrganismTaxonToOrganismTaxonInteraction : deprecated
+      ProcessRegulatesProcessAssociation : description
 
-      OrganismTaxonToOrganismTaxonInteraction : description
+      ProcessRegulatesProcessAssociation : has_attribute
 
-      OrganismTaxonToOrganismTaxonInteraction : has_attribute
+          ProcessRegulatesProcessAssociation --|&gt; Attribute : has_attribute
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; Attribute : has_attribute
+      ProcessRegulatesProcessAssociation : has_evidence
 
-      OrganismTaxonToOrganismTaxonInteraction : has_evidence
+          ProcessRegulatesProcessAssociation --|&gt; EvidenceType : has_evidence
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; EvidenceType : has_evidence
+      ProcessRegulatesProcessAssociation : id
 
-      OrganismTaxonToOrganismTaxonInteraction : id
+      ProcessRegulatesProcessAssociation : iri
 
-      OrganismTaxonToOrganismTaxonInteraction : iri
+      ProcessRegulatesProcessAssociation : knowledge_level
 
-      OrganismTaxonToOrganismTaxonInteraction : knowledge_level
+          ProcessRegulatesProcessAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; KnowledgeLevelEnum : knowledge_level
+      ProcessRegulatesProcessAssociation : knowledge_source
 
-      OrganismTaxonToOrganismTaxonInteraction : knowledge_source
+      ProcessRegulatesProcessAssociation : name
 
-      OrganismTaxonToOrganismTaxonInteraction : name
+      ProcessRegulatesProcessAssociation : negated
 
-      OrganismTaxonToOrganismTaxonInteraction : negated
+      ProcessRegulatesProcessAssociation : object
 
-      OrganismTaxonToOrganismTaxonInteraction : object
+          ProcessRegulatesProcessAssociation --|&gt; BiologicalProcess : object
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OrganismTaxon : object
+      ProcessRegulatesProcessAssociation : object_category
 
-      OrganismTaxonToOrganismTaxonInteraction : object_category
+          ProcessRegulatesProcessAssociation --|&gt; OntologyClass : object_category
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OntologyClass : object_category
+      ProcessRegulatesProcessAssociation : object_category_closure
 
-      OrganismTaxonToOrganismTaxonInteraction : object_category_closure
+          ProcessRegulatesProcessAssociation --|&gt; OntologyClass : object_category_closure
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OntologyClass : object_category_closure
+      ProcessRegulatesProcessAssociation : object_closure
 
-      OrganismTaxonToOrganismTaxonInteraction : object_closure
+      ProcessRegulatesProcessAssociation : object_label_closure
 
-      OrganismTaxonToOrganismTaxonInteraction : object_label_closure
+      ProcessRegulatesProcessAssociation : object_namespace
 
-      OrganismTaxonToOrganismTaxonInteraction : object_namespace
+      ProcessRegulatesProcessAssociation : original_object
 
-      OrganismTaxonToOrganismTaxonInteraction : original_object
+      ProcessRegulatesProcessAssociation : original_predicate
 
-      OrganismTaxonToOrganismTaxonInteraction : original_predicate
+      ProcessRegulatesProcessAssociation : original_subject
 
-      OrganismTaxonToOrganismTaxonInteraction : original_subject
+      ProcessRegulatesProcessAssociation : p_value
 
-      OrganismTaxonToOrganismTaxonInteraction : p_value
+      ProcessRegulatesProcessAssociation : predicate
 
-      OrganismTaxonToOrganismTaxonInteraction : predicate
+      ProcessRegulatesProcessAssociation : primary_knowledge_source
 
-      OrganismTaxonToOrganismTaxonInteraction : primary_knowledge_source
+      ProcessRegulatesProcessAssociation : publications
 
-      OrganismTaxonToOrganismTaxonInteraction : publications
+          ProcessRegulatesProcessAssociation --|&gt; Publication : publications
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; Publication : publications
+      ProcessRegulatesProcessAssociation : qualifier
 
-      OrganismTaxonToOrganismTaxonInteraction : qualifier
+      ProcessRegulatesProcessAssociation : qualifiers
 
-      OrganismTaxonToOrganismTaxonInteraction : qualifiers
+          ProcessRegulatesProcessAssociation --|&gt; OntologyClass : qualifiers
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OntologyClass : qualifiers
+      ProcessRegulatesProcessAssociation : retrieval_source_ids
 
-      OrganismTaxonToOrganismTaxonInteraction : retrieval_source_ids
+          ProcessRegulatesProcessAssociation --|&gt; RetrievalSource : retrieval_source_ids
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; RetrievalSource : retrieval_source_ids
+      ProcessRegulatesProcessAssociation : subject
 
-      OrganismTaxonToOrganismTaxonInteraction : subject
+          ProcessRegulatesProcessAssociation --|&gt; BiologicalProcess : subject
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OrganismTaxon : subject
+      ProcessRegulatesProcessAssociation : subject_category
 
-      OrganismTaxonToOrganismTaxonInteraction : subject_category
+          ProcessRegulatesProcessAssociation --|&gt; OntologyClass : subject_category
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OntologyClass : subject_category
+      ProcessRegulatesProcessAssociation : subject_category_closure
 
-      OrganismTaxonToOrganismTaxonInteraction : subject_category_closure
+          ProcessRegulatesProcessAssociation --|&gt; OntologyClass : subject_category_closure
 
-          OrganismTaxonToOrganismTaxonInteraction --|&gt; OntologyClass : subject_category_closure
+      ProcessRegulatesProcessAssociation : subject_closure
 
-      OrganismTaxonToOrganismTaxonInteraction : subject_closure
+      ProcessRegulatesProcessAssociation : subject_label_closure
 
-      OrganismTaxonToOrganismTaxonInteraction : subject_label_closure
+      ProcessRegulatesProcessAssociation : subject_namespace
 
-      OrganismTaxonToOrganismTaxonInteraction : subject_namespace
+      ProcessRegulatesProcessAssociation : timepoint
 
-      OrganismTaxonToOrganismTaxonInteraction : timepoint
-
-      OrganismTaxonToOrganismTaxonInteraction : type
+      ProcessRegulatesProcessAssociation : type
 
 
 </div>
@@ -393,10 +391,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a> [ <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>]<ul>
-<li><strong>OrganismTaxonToOrganismTaxonInteraction</strong></li>
-</ul>
-</li>
+<li><strong>ProcessRegulatesProcessAssociation</strong></li>
 </ul>
 </li>
 </ul>
@@ -414,27 +409,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../associated_environmental_context/">associated_environmental_context</a>: <br> <i> the environment in which the two taxa interact </i></br></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>direct</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../subject/">subject</a>: <br/> <i> the taxon that is the subject of the association </i></td>
-<td>1..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../Association/">Association</a>, <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
+<td>1..1 <br/> <a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../object/">object</a>: <br/> <i> the taxon that is the subject of the association </i></td>
-<td>1..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../Association/">Association</a>, <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
+<td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td>1..1 <br/> <a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -651,19 +640,13 @@
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: organism taxon to organism taxon interaction
-description: 'An interaction relationship between two taxa. This may be a symbiotic
-  relationship (encompassing mutualism and parasitism), or it may be non-symbiotic.
-  Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague
-  infects Homo sapiens'
+<pre><code class="language-yaml">name: process regulates process association
+description: Describes a regulatory relationship between two genes or gene products.
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: organism taxon to organism taxon association
-slots:
-- associated environmental context
+is_a: association
 slot_usage:
   subject:
     name: subject
-    description: the taxon that is the subject of the association
     domain_of:
     - association
     - cell line to entity association mixin
@@ -688,37 +671,7 @@ slot_usage:
     - model to disease association mixin
     - macromolecular machine to entity association mixin
     - organism taxon to entity association
-    role: interactor taxon
-    range: organism taxon
-  object:
-    name: object
-    description: the taxon that is the subject of the association
-    domain_of:
-    - association
-    - cell line to entity association mixin
-    - chemical entity to entity association mixin
-    - drug to entity association mixin
-    - chemical to entity association mixin
-    - case to entity association mixin
-    - chemical to chemical association
-    - named thing associated with likelihood of named thing association
-    - material sample to entity association mixin
-    - material sample derivation association
-    - disease to entity association mixin
-    - entity to exposure event association mixin
-    - entity to outcome association mixin
-    - frequency qualifier mixin
-    - entity to phenotypic feature association mixin
-    - disease or phenotypic feature to entity association mixin
-    - entity to disease or phenotypic feature association mixin
-    - genotype to entity association mixin
-    - gene to entity association mixin
-    - variant to entity association mixin
-    - model to disease association mixin
-    - macromolecular machine to entity association mixin
-    - organism taxon to entity association
-    role: interactee taxon
-    range: organism taxon
+    range: biological process
   predicate:
     name: predicate
     domain_of:
@@ -746,14 +699,34 @@ slot_usage:
     - model to disease association mixin
     - macromolecular machine to entity association mixin
     - organism taxon to entity association
-    subproperty_of: interacts with
-  associated environmental context:
-    name: associated environmental context
-    description: the environment in which the two taxa interact
+    subproperty_of: regulates
+  object:
+    name: object
     domain_of:
-    - organism taxon to organism taxon interaction
-defining_slots:
-- predicate
+    - association
+    - cell line to entity association mixin
+    - chemical entity to entity association mixin
+    - drug to entity association mixin
+    - chemical to entity association mixin
+    - case to entity association mixin
+    - chemical to chemical association
+    - named thing associated with likelihood of named thing association
+    - material sample to entity association mixin
+    - material sample derivation association
+    - disease to entity association mixin
+    - entity to exposure event association mixin
+    - entity to outcome association mixin
+    - frequency qualifier mixin
+    - entity to phenotypic feature association mixin
+    - disease or phenotypic feature to entity association mixin
+    - entity to disease or phenotypic feature association mixin
+    - genotype to entity association mixin
+    - gene to entity association mixin
+    - variant to entity association mixin
+    - model to disease association mixin
+    - macromolecular machine to entity association mixin
+    - organism taxon to entity association
+    range: biological process
 
 </code></pre>
 </details>

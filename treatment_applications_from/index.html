@@ -627,7 +627,7 @@
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><strong>treatment_applications_from</strong></li>
+<li><strong>treatment_applications_from</strong> [ <a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a>]</li>
 </ul>
 </li>
 </ul>
@@ -639,6 +639,8 @@
 <pre><code class="language-yaml">name: treatment applications from
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: related to at instance level
+mixins:
+- subject of treatment application or study for treatment by
 domain: disease or phenotypic feature
 multivalued: true
 inherited: true

@@ -213,27 +213,32 @@ types:
       - Should be implemented as a stronger type
 
   iri type:
+    uri: xsd:string
     typeof: uriorcurie
     description: >-
       An IRI
 
   label type:
+    uri: xsd:string
     typeof: string
     description: >-
       A string that provides a human-readable name for an entity
 
   predicate type:
+    uri: xsd:string
     typeof: uriorcurie
     description: >-
       A CURIE from the biolink related_to hierarchy.
       For example, biolink:related_to, biolink:causes, biolink:treats.
 
   narrative text:
+    uri: xsd:string
     typeof: string
     description: >-
       A string that provides a human-readable description of something
 
   symbol type:
+    uri: xsd:string
     typeof: string
 
   frequency value:
@@ -258,9 +263,11 @@ types:
       - qud:Unit
 
   time type:
+    uri: xsd:time
     typeof: time
 
   biological sequence:
+    uri: xsd:string
     typeof: string
 
 ## ------------
@@ -3405,7 +3412,7 @@ slots:
 
   promotes condition:
     mixin: true
-    is_a: related to at instance level
+    is_a: affects likelihood of
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),
       and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.
@@ -3418,6 +3425,7 @@ slots:
       - translator_minimal
 
   condition promoted by:
+    mixin: true
     is_a: likelihood affected by
     inverse: promotes condition
     domain: disease or phenotypic feature
@@ -3478,13 +3486,13 @@ slots:
     aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
       Holds between an intervention (substance, procedure, or activity) and a medical condition
-      (disease or phenotypic feature), and states that the intervention is able to ameliorate,
-      stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting
-      in the first place.
+      (disease or phenotypic feature), and states that the intervention is, in some population(s), 
+      able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk 
+      of it manifesting in the first place.
       ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there
-      is strong supporting evidence - i.e. the intervention is approved for the condition, passed
-      phase 3 or in phase 4 trials for the condition, or is an otherwise established 
-      treatment in the medical community (e.g. a widely-accepted or formally recommended 
+      is strong supporting evidence - i.e. in some population(s) the intervention is approved for
+      the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise 
+      established treatment in the medical community (e.g. a widely-accepted or formally recommended 
       off-label use). In the absence of such evidence, weaker predicates should be used in 
       asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges
       based on weaker or indirect forms of evidence can however be created as predictions 
@@ -3593,18 +3601,24 @@ slots:
 
   tested by clinical trials of:
     is_a: treated in studies by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: in clinical trials for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
   treated in studies by:
     is_a: treated by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: studied to treat
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
   tested by preclinical trials of:
     is_a: treated in studies by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: in preclinical trials for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3629,7 +3643,7 @@ slots:
   beneficial in models for:
     is_a: in preclinical trials for
     description: >-
-      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance,
       procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/
       phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
     notes: >-
@@ -3649,6 +3663,8 @@ slots:
 
   models demonstrating benefits for:
     is_a: tested by preclinical trials of
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: beneficial in models for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3678,6 +3694,8 @@ slots:
 
   treatment applications from:
     is_a: related to at instance level
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: applied to treat
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -9944,6 +9962,54 @@ classes:
         range: anatomical entity
       anatomical context qualifier:
         range: anatomical entity
+
+  gene regulates gene association:
+    is_a: association
+    description: >-
+      Describes a regulatory relationship between two genes or gene products.
+    slots:
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+      - species context qualifier
+    slot_usage:
+      subject:
+        range: gene or gene product
+      predicate: regulates
+      object:
+        range: gene or gene product
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+        required: true
+        description: >-
+          the aspect of the object gene or gene product that is being regulated, must be a descendant of 
+          "activity_or_abundance""
+      object direction qualifier:
+        range: DirectionQualifierEnum
+        required: true
+      qualified predicate:
+        subproperty_of: causes
+        required: true
+    examples:
+      value:
+        subject: "NCBIGene:551"
+        predicate: regulates
+        qualified_predicte: causes
+        object: "NCBIGene:1636"
+        object_aspect_qualifier: activity_or_abundance
+        object_direction_qualifier: downregulated
+
+  process regulates process association:
+    is_a: association
+    description: >-
+      Describes a regulatory relationship between two genes or gene products.
+    slot_usage:
+      subject:
+        range: biological process
+      predicate:
+        subproperty_of: regulates
+      object:
+        range: biological process
 
   chemical affects gene association:
     description: >-

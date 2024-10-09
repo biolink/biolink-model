@@ -1295,13 +1295,6 @@ would for "is_a".  </p>
 to the molecular entity class.  The other way to do this would be to duplicate the 'in taxon' attribute in every class
 manually (duplicative), or have hierarchy/parent that had the <code>in taxon</code> slot (but this parent would be a sister-class to 
 'named thing' as not all named-things are taxon based).  Mixins simplify modeling and should be used where appropriate.</p>
-<pre><code class="language-yaml">  regulates:
-    is_a: affects
-    comments:
-      - This is a grouping for process-process and entity-entity relations
-    mixin: true
-</code></pre>
-<p>Here we define the slot <code>regulates</code> as a mixin slot. This slot can be used as a <code>mixin</code> by other slots. </p>
 <p>Mixins can also be hierarchical.  For example:</p>
 <pre><code class="language-yaml">  frequency qualifier mixin:
     mixin: true
@@ -1318,28 +1311,70 @@ intentions (favoring consistency in modeling similar domains), though its reuse 
 <p>Mixins enable the reuse of semantics, generally by the inclusion of specific property slots or 
 other semantic constraint, in different classes or slots, without the need to tie slots to the 
 hierarchy of the class itself.</p>
-<pre><code class="language-yaml">positively regulates:
-    comments:
-      - This is a grouping for positive process-process and entity-entity regulation.
-    is_a: regulates
-    inverse: positively regulated by
+<pre><code class="language-yaml">  treats:
+    is_a: treats or applied or studied to treat
     mixin: true
-    close_mappings:
-      # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - RO:0002336
+    aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
+    description: &gt;-
+      Holds between an intervention (substance, procedure, or activity) and a medical condition
+      (disease or phenotypic feature), and states that the intervention is able to ameliorate,
+      stabilize, or cure the condition or delay, prevent, or reduce the risk of it manifesting
+      in the first place.
+      ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there
+      is strong supporting evidence - i.e. the intervention is approved for the condition, passed
+      phase 3 or in phase 4 trials for the condition, or is an otherwise established 
+      treatment in the medical community (e.g. a widely-accepted or formally recommended 
+      off-label use). In the absence of such evidence, weaker predicates should be used in 
+      asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges
+      based on weaker or indirect forms of evidence can however be created as predictions 
+      (knowledge_level: prediction) and should point to the more foundational asserted edges that 
+      support them.
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    related_mappings:
+      - MONDO:disease_responds_to
     exact_mappings:
-      - RO:0002213
+      - DRUGBANK:treats
+      - WIKIDATA_PROPERTY:P2175
     narrow_mappings:
-      - CHEMBL.MECHANISM:activator
-      - DGIdb:activator
-      - RO:0004032
-      - RO:0004034
-      - RO:0002629
-      - SEMMEDDB:augments
+       # &quot;is substance that treats&quot; constrains statements to
+       # a subset of the universe of all possible treatments
+      - RO:0002606
+      - NCIT:regimen_has_accepted_use_for_disease
+       # RTX mapped REPODB terms
+      - REPODB:clinically_tested_approved_unknown_phase
+      - REPODB:clinically_tested_suspended_phase_0
+      - REPODB:clinically_tested_suspended_phase_1
+      - REPODB:clinically_tested_suspended_phase_1_or_phase_2
+      - REPODB:clinically_tested_suspended_phase_2
+      - REPODB:clinically_tested_suspended_phase_2_or_phase_3
+      - REPODB:clinically_tested_suspended_phase_3
+      - REPODB:clinically_tested_terminated_phase_0
+      - REPODB:clinically_tested_terminated_phase_1
+      - REPODB:clinically_tested_terminated_phase_1_or_phase_2
+      - REPODB:clinically_tested_terminated_phase_2
+      - REPODB:clinically_tested_terminated_phase_2_or_phase_3
+      - REPODB:clinically_tested_terminated_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_0
+      - REPODB:clinically_tested_withdrawn_phase_1
+      - REPODB:clinically_tested_withdrawn_phase_1_or_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_3
+      - SNOMED:plays_role
+    broad_mappings:
+      - DRUGBANK:treats
+      - SEMMEDDB:TREATS
+      - WIKIDATA_PROPERTY:P2175
+      - MONDO:disease_responds_to
 </code></pre>
-<p><code>positively regulates</code> is another example of a mixin.  In this case, a mixin is used to store metadata about a 
+<p><code>treats</code> is another example of a mixin.  In this case, a mixin is used to store metadata about a 
 predicate or relationship between two entities at a general level.  Its subsequent children inherit these definitions
-and attributes, whether or not the parent mixin class has any slots.</p>
+and attributes, whether the parent mixin class has any slots.</p>
 <h3 id="mixins">mixins</h3>
 <p>The <code>mixins</code> slot can be used to specify a list of mixins that a class (or slot) can use to 
 include the added semantics of the mixins.</p>

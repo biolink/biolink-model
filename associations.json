@@ -156,6 +156,10 @@
                 "parent": "Association"
             },
             {
+                "name": "gene_regulates_gene_association",
+                "parent": "Association"
+            },
+            {
                 "name": "gene_to_disease_or_phenotypic_feature_association",
                 "parent": "Association",
                 "children": [
@@ -313,6 +317,10 @@
             },
             {
                 "name": "population_to_population_association",
+                "parent": "Association"
+            },
+            {
+                "name": "process_regulates_process_association",
                 "parent": "Association"
             },
             {

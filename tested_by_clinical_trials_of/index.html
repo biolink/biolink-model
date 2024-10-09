@@ -629,8 +629,8 @@
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
 <li><a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a><ul>
 <li><a href="../treated_by/">treated_by</a><ul>
-<li><a href="../treated_in_studies_by/">treated_in_studies_by</a><ul>
-<li><strong>tested_by_clinical_trials_of</strong></li>
+<li><a href="../treated_in_studies_by/">treated_in_studies_by</a> [ <a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a>]<ul>
+<li><strong>tested_by_clinical_trials_of</strong> [ <a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a>]</li>
 </ul>
 </li>
 </ul>
@@ -648,6 +648,8 @@
 <pre><code class="language-yaml">name: tested by clinical trials of
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: treated in studies by
+mixins:
+- subject of treatment application or study for treatment by
 domain: disease or phenotypic feature
 multivalued: true
 inherited: true

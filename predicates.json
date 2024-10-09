@@ -207,6 +207,20 @@
                             {
                                 "name": "preventative_for_condition",
                                 "parent": "affects_likelihood_of"
+                            },
+                            {
+                                "name": "promotes_condition",
+                                "parent": "affects_likelihood_of",
+                                "children": [
+                                    {
+                                        "name": "exacerbates_condition",
+                                        "parent": "promotes_condition"
+                                    },
+                                    {
+                                        "name": "predisposes_to_condition",
+                                        "parent": "promotes_condition"
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -917,20 +931,6 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
-                        "name": "promotes_condition",
-                        "parent": "related_to_at_instance_level",
-                        "children": [
-                            {
-                                "name": "exacerbates_condition",
-                                "parent": "promotes_condition"
-                            },
-                            {
-                                "name": "predisposes_to_condition",
-                                "parent": "promotes_condition"
-                            }
-                        ]
-                    },
-                    {
                         "name": "related_condition",
                         "parent": "related_to_at_instance_level"
                     },
@@ -991,6 +991,24 @@
                         "parent": "related_to_at_instance_level",
                         "children": [
                             {
+                                "name": "models_demonstrating_benefits_for",
+                                "parent": "subject_of_treatment_application_or_study_for_treatment_by"
+                            },
+                            {
+                                "name": "tested_by_clinical_trials_of",
+                                "parent": "subject_of_treatment_application_or_study_for_treatment_by"
+                            },
+                            {
+                                "name": "tested_by_preclinical_trials_of",
+                                "parent": "subject_of_treatment_application_or_study_for_treatment_by",
+                                "children": [
+                                    {
+                                        "name": "models_demonstrating_benefits_for",
+                                        "parent": "tested_by_preclinical_trials_of"
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "treated_by",
                                 "parent": "subject_of_treatment_application_or_study_for_treatment_by",
                                 "children": [
@@ -1015,6 +1033,30 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "name": "treated_in_studies_by",
+                                "parent": "subject_of_treatment_application_or_study_for_treatment_by",
+                                "children": [
+                                    {
+                                        "name": "tested_by_clinical_trials_of",
+                                        "parent": "treated_in_studies_by"
+                                    },
+                                    {
+                                        "name": "tested_by_preclinical_trials_of",
+                                        "parent": "treated_in_studies_by",
+                                        "children": [
+                                            {
+                                                "name": "models_demonstrating_benefits_for",
+                                                "parent": "tested_by_preclinical_trials_of"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "treatment_applications_from",
+                                "parent": "subject_of_treatment_application_or_study_for_treatment_by"
                             }
                         ]
                     },

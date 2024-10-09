@@ -629,9 +629,9 @@
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
 <li><a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a><ul>
 <li><a href="../treated_by/">treated_by</a><ul>
-<li><a href="../treated_in_studies_by/">treated_in_studies_by</a><ul>
-<li><a href="../tested_by_preclinical_trials_of/">tested_by_preclinical_trials_of</a><ul>
-<li><strong>models_demonstrating_benefits_for</strong></li>
+<li><a href="../treated_in_studies_by/">treated_in_studies_by</a> [ <a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a>]<ul>
+<li><a href="../tested_by_preclinical_trials_of/">tested_by_preclinical_trials_of</a> [ <a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a>]<ul>
+<li><strong>models_demonstrating_benefits_for</strong> [ <a href="../subject_of_treatment_application_or_study_for_treatment_by/">subject_of_treatment_application_or_study_for_treatment_by</a>]</li>
 </ul>
 </li>
 </ul>
@@ -651,6 +651,8 @@
 <pre><code class="language-yaml">name: models demonstrating benefits for
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: tested by preclinical trials of
+mixins:
+- subject of treatment application or study for treatment by
 domain: disease or phenotypic feature
 multivalued: true
 inherited: true
