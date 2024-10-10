@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-23T23:51:59
+# Generation date: 2024-10-10T08:30:34
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -11,7 +11,7 @@ import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, time
 from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 
 from linkml_runtime.utils.slot import Slot
@@ -50,7 +50,7 @@ DEFAULT_ = BIOLINK
 
 
 
-@dataclass
+@dataclass(repr=False)
 class BiolinkClassPrefixMap(YAMLRoot):
     """
     preferred order identifier prefixes per class in Biolink Model
@@ -76,7 +76,7 @@ class BiolinkClassPrefixMap(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BiolinkClassPrefixesCollection(YAMLRoot):
     """
     collection of BiolinkClassPrefixes objects
@@ -98,7 +98,7 @@ class BiolinkClassPrefixesCollection(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Prefix(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 

@@ -207,6 +207,20 @@
                             {
                                 "name": "preventative_for_condition",
                                 "parent": "affects_likelihood_of"
+                            },
+                            {
+                                "name": "promotes_condition",
+                                "parent": "affects_likelihood_of",
+                                "children": [
+                                    {
+                                        "name": "exacerbates_condition",
+                                        "parent": "promotes_condition"
+                                    },
+                                    {
+                                        "name": "predisposes_to_condition",
+                                        "parent": "promotes_condition"
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -336,10 +350,6 @@
                     },
                     {
                         "name": "completed_by",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
-                        "name": "condition_promoted_by",
                         "parent": "related_to_at_instance_level"
                     },
                     {
@@ -723,6 +733,10 @@
                             {
                                 "name": "condition_predisposed_by",
                                 "parent": "likelihood_affected_by"
+                            },
+                            {
+                                "name": "condition_promoted_by",
+                                "parent": "likelihood_affected_by"
                             }
                         ]
                     },
@@ -915,20 +929,6 @@
                     {
                         "name": "produces",
                         "parent": "related_to_at_instance_level"
-                    },
-                    {
-                        "name": "promotes_condition",
-                        "parent": "related_to_at_instance_level",
-                        "children": [
-                            {
-                                "name": "exacerbates_condition",
-                                "parent": "promotes_condition"
-                            },
-                            {
-                                "name": "predisposes_to_condition",
-                                "parent": "promotes_condition"
-                            }
-                        ]
                     },
                     {
                         "name": "related_condition",
