@@ -1,3 +1,5 @@
+# metamodel_version: 1.7.0
+# version: 4.2.4
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -28,7 +30,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 
 <Unit> UO:0000000
 
-<TimeType> xsd:time
+<TimeType> xsd:string
 
 <BiologicalSequence> xsd:string
 
@@ -255,9 +257,10 @@ linkml:Sparqlpath xsd:string
     @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalGeneInteractionAssociation> OR
     @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation> OR
     @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR
-    @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
-    @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
-    @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
+    @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
+    @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
+    @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
+    @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneAffectsChemicalAssociation> OR
     @<GeneRegulatesGeneAssociation> OR @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR
     @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
@@ -1307,6 +1310,23 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <DiseaseOrPhenotypicFeature> ] ?
        ) ;
        rdf:type [ <Disease> ]
+    )
+}
+
+<DiseaseAssociatedWithResponseToChemicalEntityAssociation> CLOSED {
+    (  $<DiseaseAssociatedWithResponseToChemicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <response_context_qualifier> [ <https://w3id.org/biolink/vocab/ResponseEnum#therapeutic_response>
+             <https://w3id.org/biolink/vocab/ResponseEnum#negative> ] ? ;
+          <response_target_context_qualifier> [ <https://w3id.org/biolink/vocab/ResponseTargetEnum#cohort>
+             <https://w3id.org/biolink/vocab/ResponseTargetEnum#cell%20line>
+             <https://w3id.org/biolink/vocab/ResponseTargetEnum#individual>
+             <https://w3id.org/biolink/vocab/ResponseTargetEnum#sample> ] ? ;
+          rdf:subject @<Disease> ;
+          rdf:object @<ChemicalEntity> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <DiseaseAssociatedWithResponseToChemicalEntityAssociation> ]
     )
 }
 
@@ -4328,5 +4348,4 @@ linkml:Sparqlpath xsd:string
        rdf:type [ <Zygosity> ]
     )
 }
-
 
