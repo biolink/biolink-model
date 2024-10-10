@@ -919,13 +919,13 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "linkml"
-version = "1.7.8"
+version = "1.8.4"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = "<4.0.0,>=3.8.1"
 files = [
-    {file = "linkml-1.7.8-py3-none-any.whl", hash = "sha256:4b8ebe33b422517b08ca01802dc2899ac133c502a71d811c58fa6f4263130709"},
-    {file = "linkml-1.7.8.tar.gz", hash = "sha256:af48ee1ad6751c8d20de2832dbeefe225da9be5f39a7f8ea7821a691cf7c0148"},
+    {file = "linkml-1.8.4-py3-none-any.whl", hash = "sha256:9fa26d7e522dd98568d0313e363abd67c2b17a671f31595c9e53beaec27b7214"},
+    {file = "linkml-1.8.4.tar.gz", hash = "sha256:a1918d226ab5c268e260ddc7cfa6edb53d7faab3fb0144efef5fad572b052c36"},
 ]
 
 [package.dependencies]
@@ -938,7 +938,7 @@ jinja2 = ">=3.1.0"
 jsonasobj2 = ">=1.0.3,<2.0.0"
 jsonschema = {version = ">=4.0.0", extras = ["format"]}
 linkml-dataops = "*"
-linkml-runtime = ">=1.7.4"
+linkml-runtime = ">=1.8.1,<2.0.0"
 openpyxl = "*"
 parse = "*"
 prefixcommons = ">=0.1.7"
@@ -956,8 +956,9 @@ watchdog = ">=0.9.0"
 
 [package.extras]
 black = ["black (>=24.0.0)"]
+numpydantic = ["numpydantic (>=1.6.1)"]
 shacl = ["pyshacl (>=0.25.0,<0.26.0)"]
-tests = ["black (>=24.0.0)", "pyshacl (>=0.25.0,<0.26.0)"]
+tests = ["black (>=24.0.0)", "numpydantic (>=1.6.1)", "pyshacl (>=0.25.0,<0.26.0)"]
 
 [[package]]
 name = "linkml-dataops"
@@ -979,13 +980,13 @@ linkml-runtime = ">=1.1.6"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.7.5"
+version = "1.8.3"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "linkml_runtime-1.7.5-py3-none-any.whl", hash = "sha256:c58000c7c68fa97b7d76c50421a85a64e25f07eec5bcac464bc00c4cd79007a6"},
-    {file = "linkml_runtime-1.7.5.tar.gz", hash = "sha256:b31197a5398359441ae1ed43470c54377a1d08db961366dda670300dddcd71d7"},
+    {file = "linkml_runtime-1.8.3-py3-none-any.whl", hash = "sha256:0750920f1348fffa903d99e7b5834ce425a2a538285aff9068dbd96d05caabd1"},
+    {file = "linkml_runtime-1.8.3.tar.gz", hash = "sha256:5b7f682eef54aaf0a59c50eeacdb11463b43b124a044caf496cde59936ac05c8"},
 ]
 
 [package.dependencies]
