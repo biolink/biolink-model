@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-10T17:39:00
+# Generation date: 2024-10-10T16:30:08
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -11,7 +11,7 @@ import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, time
 from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 
 from linkml_runtime.utils.slot import Slot
@@ -1383,7 +1383,7 @@ class OrganismTaxonToEnvironmentAssociationId(AssociationId):
     pass
 
 
-@dataclass
+@dataclass(repr=False)
 class MappingCollection(YAMLRoot):
     """
     A collection of deprecated mappings.
@@ -1405,7 +1405,7 @@ class MappingCollection(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PredicateMapping(YAMLRoot):
     """
     A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
@@ -1512,7 +1512,7 @@ class PredicateMapping(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class OntologyClass(YAMLRoot):
     """
     a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be
@@ -1550,7 +1550,7 @@ class Annotation(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Annotation
 
 
-@dataclass
+@dataclass(repr=False)
 class QuantityValue(Annotation):
     """
     A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric
@@ -1616,7 +1616,7 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathognomonicityQuantifier
 
 
-@dataclass
+@dataclass(repr=False)
 class FrequencyQuantifier(RelationshipQuantifier):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1655,7 +1655,7 @@ class ChemicalOrDrugOrTreatment(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
 
 
-@dataclass
+@dataclass(repr=False)
 class Entity(YAMLRoot):
     """
     Root Biolink Model class for all things and informational relationships, real or imagined.
@@ -1734,7 +1734,7 @@ class Entity(YAMLRoot):
 
 
 
-@dataclass
+@dataclass(repr=False)
 class NamedThing(Entity):
     """
     a databased entity or concept/class
@@ -1813,7 +1813,7 @@ class NamedThing(Entity):
 
 
 
-@dataclass
+@dataclass(repr=False)
 class Attribute(NamedThing):
     """
     A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age,
@@ -1866,7 +1866,7 @@ class Attribute(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalRole(Attribute):
     """
     A role played by the molecular entity or part thereof within a chemical context.
@@ -1896,7 +1896,7 @@ class ChemicalRole(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BiologicalSex(Attribute):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1923,7 +1923,7 @@ class BiologicalSex(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PhenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
@@ -1953,7 +1953,7 @@ class PhenotypicSex(BiologicalSex):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
@@ -1984,7 +1984,7 @@ class GenotypicSex(BiologicalSex):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
@@ -2014,7 +2014,7 @@ class SeverityValue(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class RelationshipType(OntologyClass):
     """
     An OWL property used as an edge label
@@ -2037,7 +2037,7 @@ class RelationshipType(OntologyClass):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class TaxonomicRank(OntologyClass):
     """
     A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
@@ -2060,7 +2060,7 @@ class TaxonomicRank(OntologyClass):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismTaxon(NamedThing):
     """
     A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
@@ -2094,7 +2094,7 @@ class OrganismTaxon(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Event(NamedThing):
     """
     Something that happens at a given place and time.
@@ -2123,7 +2123,7 @@ class Event(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class AdministrativeEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2145,7 +2145,7 @@ class AdministrativeEntity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Agent(AdministrativeEntity):
     """
     person, group, organization or project that provides a piece of information (i.e. a knowledge association)
@@ -2187,7 +2187,7 @@ class Agent(AdministrativeEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class InformationContentEntity(NamedThing):
     """
     a piece of information that typically describes some topic of discourse or is used as support.
@@ -2227,7 +2227,7 @@ class InformationContentEntity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyResult(InformationContentEntity):
     """
     A collection of data items from a study that are about a particular study subject or experimental unit (the
@@ -2254,7 +2254,7 @@ class StudyResult(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyVariable(InformationContentEntity):
     """
     a variable that is used as a measure in the investigation of a study
@@ -2283,7 +2283,7 @@ class StudyVariable(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CommonDataElement(InformationContentEntity):
     """
     A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable
@@ -2314,7 +2314,7 @@ class CommonDataElement(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ConceptCountAnalysisResult(StudyResult):
     """
     A result of a concept count analysis.
@@ -2343,7 +2343,7 @@ class ConceptCountAnalysisResult(StudyResult):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     """
     A result of a observed expected frequency analysis.
@@ -2372,7 +2372,7 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class RelativeFrequencyAnalysisResult(StudyResult):
     """
     A result of a relative frequency analysis.
@@ -2401,7 +2401,7 @@ class RelativeFrequencyAnalysisResult(StudyResult):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class TextMiningResult(StudyResult):
     """
     A result of text mining.
@@ -2430,7 +2430,7 @@ class TextMiningResult(StudyResult):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChiSquaredAnalysisResult(StudyResult):
     """
     A result of a chi squared analysis.
@@ -2459,7 +2459,7 @@ class ChiSquaredAnalysisResult(StudyResult):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class LogOddsAnalysisResult(StudyResult):
     """
     A result of a log odds ratio analysis.
@@ -2488,7 +2488,7 @@ class LogOddsAnalysisResult(StudyResult):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Dataset(InformationContentEntity):
     """
     an item that refers to a collection of data from a data source.
@@ -2517,7 +2517,7 @@ class Dataset(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DatasetDistribution(InformationContentEntity):
     """
     an item that holds distribution level information about a dataset.
@@ -2550,7 +2550,7 @@ class DatasetDistribution(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DatasetVersion(InformationContentEntity):
     """
     an item that holds version level information about a dataset.
@@ -2591,7 +2591,7 @@ class DatasetVersion(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DatasetSummary(InformationContentEntity):
     """
     an item that holds summary level information about a dataset.
@@ -2628,7 +2628,7 @@ class DatasetSummary(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ConfidenceLevel(InformationContentEntity):
     """
     Level of confidence in a statement
@@ -2657,7 +2657,7 @@ class ConfidenceLevel(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EvidenceType(InformationContentEntity):
     """
     Class of evidence that supports an association
@@ -2686,7 +2686,7 @@ class EvidenceType(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Publication(InformationContentEntity):
     """
     Any ‘published’ piece of information. Publications are considered broadly to include any document or document part
@@ -2759,7 +2759,7 @@ class Publication(InformationContentEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Book(Publication):
     """
     This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
@@ -2794,7 +2794,7 @@ class Book(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BookChapter(Publication):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2835,7 +2835,7 @@ class BookChapter(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Serial(Publication):
     """
     This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
@@ -2882,7 +2882,7 @@ class Serial(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Article(Publication):
     """
     a piece of writing on a particular topic presented as a stand-alone section of a larger publication
@@ -2930,7 +2930,7 @@ class Article(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class JournalArticle(Article):
     """
     an article, typically presenting results of research, that is published in an issue of a scientific journal.
@@ -2961,7 +2961,7 @@ class JournalArticle(Article):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Patent(Publication):
     """
     a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use
@@ -2992,7 +2992,7 @@ class Patent(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class WebPage(Publication):
     """
     a document that is published according to World Wide Web standards, which may incorporate text, graphics, sound,
@@ -3023,7 +3023,7 @@ class WebPage(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PreprintPublication(Publication):
     """
     a document reresenting an early version of an author's original scholarly work, such as a research paper or a
@@ -3054,7 +3054,7 @@ class PreprintPublication(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DrugLabel(Publication):
     """
     a document accompanying a drug or its container that provides written, printed or graphic information about the
@@ -3086,7 +3086,7 @@ class DrugLabel(Publication):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class RetrievalSource(InformationContentEntity):
     """
     Provides information about how a particular InformationResource served as a source from which knowledge expressed
@@ -3161,7 +3161,7 @@ class PhysicalEssence(PhysicalEssenceOrOccurrent):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssence
 
 
-@dataclass
+@dataclass(repr=False)
 class PhysicalEntity(NamedThing):
     """
     An entity that has material reality (a.k.a. physical essence).
@@ -3214,7 +3214,7 @@ class ActivityAndBehavior(Occurrent):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ActivityAndBehavior
 
 
-@dataclass
+@dataclass(repr=False)
 class Activity(NamedThing):
     """
     An activity is something that occurs over a period of time and acts upon or with entities; it may include
@@ -3244,7 +3244,7 @@ class Activity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Study(Activity):
     """
     a detailed investigation and/or analysis
@@ -3273,7 +3273,7 @@ class Study(Activity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Procedure(NamedThing):
     """
     A series of actions conducted in a certain order or manner
@@ -3302,7 +3302,7 @@ class Procedure(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Phenomenon(NamedThing):
     """
     a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -3331,7 +3331,7 @@ class Phenomenon(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Device(NamedThing):
     """
     A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
@@ -3360,7 +3360,7 @@ class Device(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DiagnosticAid(NamedThing):
     """
     A device or substance used to help diagnose disease or injury
@@ -3401,7 +3401,7 @@ class SubjectOfInvestigation(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SubjectOfInvestigation
 
 
-@dataclass
+@dataclass(repr=False)
 class MaterialSample(PhysicalEntity):
     """
     A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a
@@ -3432,7 +3432,7 @@ class MaterialSample(PhysicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PlanetaryEntity(NamedThing):
     """
     Any entity or process that exists at the level of the whole planet
@@ -3461,7 +3461,7 @@ class PlanetaryEntity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EnvironmentalProcess(PlanetaryEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3487,7 +3487,7 @@ class EnvironmentalProcess(PlanetaryEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EnvironmentalFeature(PlanetaryEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3513,7 +3513,7 @@ class EnvironmentalFeature(PlanetaryEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeographicLocation(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates
@@ -3550,7 +3550,7 @@ class GeographicLocation(PlanetaryEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeographicLocationAtTime(GeographicLocation):
     """
     a location that can be described in lat/long coordinates, for a particular time
@@ -3583,7 +3583,7 @@ class GeographicLocationAtTime(GeographicLocation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ThingWithTaxon(YAMLRoot):
     """
     A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms;
@@ -3610,7 +3610,7 @@ class ThingWithTaxon(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BiologicalEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -3640,7 +3640,7 @@ class BiologicalEntity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenomicEntity(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3658,7 +3658,7 @@ class GenomicEntity(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class EpigenomicEntity(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3676,7 +3676,7 @@ class EpigenomicEntity(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalEntity(NamedThing):
     """
     A chemical entity is a physical entity that pertains to chemistry or biochemistry.
@@ -3727,7 +3727,7 @@ class ChemicalEntity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MolecularEntity(ChemicalEntity):
     """
     A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
@@ -3760,7 +3760,7 @@ class MolecularEntity(ChemicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SmallMolecule(MolecularEntity):
     """
     A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES,
@@ -3792,7 +3792,7 @@ class SmallMolecule(MolecularEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalMixture(ChemicalEntity):
     """
     A chemical mixture is a chemical entity composed of two or more molecular entities.
@@ -3838,7 +3838,7 @@ class ChemicalMixture(ChemicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class NucleicAcidEntity(MolecularEntity):
     """
     A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based
@@ -3882,7 +3882,7 @@ class NucleicAcidEntity(MolecularEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class RegulatoryRegion(BiologicalEntity):
     """
     A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans-
@@ -3916,7 +3916,7 @@ class RegulatoryRegion(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class AccessibleDnaRegion(RegulatoryRegion):
     """
     A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as
@@ -3950,7 +3950,7 @@ class AccessibleDnaRegion(RegulatoryRegion):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class TranscriptionFactorBindingSite(RegulatoryRegion):
     """
     A region (or regions) of the genome that contains a region of DNA known or predicted to bind a protein that
@@ -3984,7 +3984,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MolecularMixture(ChemicalMixture):
     """
     A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and
@@ -4014,7 +4014,7 @@ class MolecularMixture(ChemicalMixture):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ComplexMolecularMixture(ChemicalMixture):
     """
     A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown
@@ -4044,7 +4044,7 @@ class ComplexMolecularMixture(ChemicalMixture):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BiologicalProcessOrActivity(BiologicalEntity):
     """
     Either an individual molecular activity, or a collection of causally connected molecular activities in a
@@ -4089,7 +4089,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MolecularActivity(BiologicalProcessOrActivity):
     """
     An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -4133,7 +4133,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
@@ -4162,7 +4162,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Pathway(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
@@ -4188,7 +4188,7 @@ class Pathway(BiologicalProcess):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PhysiologicalProcess(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
@@ -4214,7 +4214,7 @@ class PhysiologicalProcess(BiologicalProcess):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Behavior(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
@@ -4240,7 +4240,7 @@ class Behavior(BiologicalProcess):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ProcessedMaterial(ChemicalMixture):
     """
     A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a
@@ -4270,7 +4270,7 @@ class ProcessedMaterial(ChemicalMixture):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Drug(MolecularMixture):
     """
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -4299,7 +4299,7 @@ class Drug(MolecularMixture):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EnvironmentalFoodContaminant(ChemicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
@@ -4325,7 +4325,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class FoodAdditive(ChemicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
 
@@ -4351,7 +4351,7 @@ class FoodAdditive(ChemicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Food(ChemicalMixture):
     """
     A substance consumed by a living organism as a source of nutrition
@@ -4380,7 +4380,7 @@ class Food(ChemicalMixture):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismAttribute(Attribute):
     """
     describes a characteristic of an organismal entity.
@@ -4410,7 +4410,7 @@ class OrganismAttribute(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PhenotypicQuality(OrganismAttribute):
     """
     A property of a phenotype
@@ -4440,7 +4440,7 @@ class PhenotypicQuality(OrganismAttribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneticInheritance(BiologicalEntity):
     """
     The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
@@ -4470,7 +4470,7 @@ class GeneticInheritance(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismalEntity(BiologicalEntity):
     """
     A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
@@ -4500,7 +4500,7 @@ class OrganismalEntity(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Bacterium(OrganismalEntity):
     """
     A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and
@@ -4530,7 +4530,7 @@ class Bacterium(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Virus(OrganismalEntity):
     """
     A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
@@ -4559,7 +4559,7 @@ class Virus(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CellularOrganism(OrganismalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -4585,7 +4585,7 @@ class CellularOrganism(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Mammal(CellularOrganism):
     """
     A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the
@@ -4615,7 +4615,7 @@ class Mammal(CellularOrganism):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Human(Mammal):
     """
     A member of the the species Homo sapiens.
@@ -4644,7 +4644,7 @@ class Human(Mammal):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Plant(CellularOrganism):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -4670,7 +4670,7 @@ class Plant(CellularOrganism):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Invertebrate(CellularOrganism):
     """
     An animal lacking a vertebral column. This group consists of 98% of all animal species.
@@ -4699,7 +4699,7 @@ class Invertebrate(CellularOrganism):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Vertebrate(CellularOrganism):
     """
     A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
@@ -4728,7 +4728,7 @@ class Vertebrate(CellularOrganism):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Fungus(CellularOrganism):
     """
     A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts,
@@ -4759,7 +4759,7 @@ class Fungus(CellularOrganism):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
@@ -4788,7 +4788,7 @@ class LifeStage(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class IndividualOrganism(OrganismalEntity):
     """
     An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID:
@@ -4818,7 +4818,7 @@ class IndividualOrganism(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PopulationOfIndividualOrganisms(OrganismalEntity):
     """
     A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
@@ -4848,7 +4848,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class StudyPopulation(PopulationOfIndividualOrganisms):
     """
     A group of people banded together or treated as a group as participants in a research study.
@@ -4877,7 +4877,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
     Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these
@@ -4909,7 +4909,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Disease(DiseaseOrPhenotypicFeature):
     """
     A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that
@@ -4940,7 +4940,7 @@ class Disease(DiseaseOrPhenotypicFeature):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an
@@ -4970,7 +4970,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BehavioralFeature(PhenotypicFeature):
     """
     A phenotypic feature which is behavioral in nature.
@@ -4999,7 +4999,7 @@ class BehavioralFeature(PhenotypicFeature):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class AnatomicalEntity(OrganismalEntity):
     """
     A subcellular location, cell type or gross anatomical part
@@ -5028,7 +5028,7 @@ class AnatomicalEntity(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CellularComponent(AnatomicalEntity):
     """
     A location in or around a cell
@@ -5057,7 +5057,7 @@ class CellularComponent(AnatomicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Cell(AnatomicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5083,7 +5083,7 @@ class Cell(AnatomicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CellLine(OrganismalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5109,7 +5109,7 @@ class CellLine(OrganismalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GrossAnatomicalStructure(AnatomicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5161,7 +5161,7 @@ class ChemicalEntityOrProteinOrPolypeptide(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrProteinOrPolypeptide
 
 
-@dataclass
+@dataclass(repr=False)
 class MacromolecularMachineMixin(YAMLRoot):
     """
     A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell.
@@ -5195,7 +5195,7 @@ class GeneOrGeneProduct(MacromolecularMachineMixin):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOrGeneProduct
 
 
-@dataclass
+@dataclass(repr=False)
 class Gene(BiologicalEntity):
     """
     A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A
@@ -5242,7 +5242,7 @@ class Gene(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneProductMixin(GeneOrGeneProduct):
     """
     The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA
@@ -5284,7 +5284,7 @@ class GeneProductIsoformMixin(GeneProductMixin):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneProductIsoformMixin
 
 
-@dataclass
+@dataclass(repr=False)
 class MacromolecularComplex(BiologicalEntity):
     """
     A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which
@@ -5318,7 +5318,7 @@ class MacromolecularComplex(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class NucleosomeModification(BiologicalEntity):
     """
     A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a
@@ -5366,7 +5366,7 @@ class NucleosomeModification(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Genome(BiologicalEntity):
     """
     A genome is the sum of genetic material within a cell or virion.
@@ -5399,7 +5399,7 @@ class Genome(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Exon(BiologicalEntity):
     """
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA
@@ -5429,7 +5429,7 @@ class Exon(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Transcript(BiologicalEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase.
@@ -5458,7 +5458,7 @@ class Transcript(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CodingSequence(BiologicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5488,7 +5488,7 @@ class CodingSequence(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Polypeptide(BiologicalEntity):
     """
     A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based
@@ -5519,7 +5519,7 @@ class Polypeptide(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Protein(Polypeptide):
     """
     A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated
@@ -5563,7 +5563,7 @@ class Protein(Polypeptide):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ProteinIsoform(Protein):
     """
     Represents a protein that is a specific isoform of the canonical or reference protein. See
@@ -5607,7 +5607,7 @@ class ProteinIsoform(Protein):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ProteinDomain(BiologicalEntity):
     """
     A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently
@@ -5643,7 +5643,7 @@ class ProteinDomain(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PosttranslationalModification(BiologicalEntity):
     """
     A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to
@@ -5687,7 +5687,7 @@ class PosttranslationalModification(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ProteinFamily(BiologicalEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5718,7 +5718,7 @@ class ProteinFamily(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class NucleicAcidSequenceMotif(BiologicalEntity):
     """
     A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological
@@ -5748,7 +5748,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class RNAProduct(Transcript):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5788,7 +5788,7 @@ class RNAProduct(Transcript):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class RNAProductIsoform(RNAProduct):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -5831,7 +5831,7 @@ class RNAProductIsoform(RNAProduct):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class NoncodingRNAProduct(RNAProduct):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5857,7 +5857,7 @@ class NoncodingRNAProduct(RNAProduct):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MicroRNA(NoncodingRNAProduct):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -5883,7 +5883,7 @@ class MicroRNA(NoncodingRNAProduct):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SiRNA(NoncodingRNAProduct):
     """
     A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular
@@ -5914,7 +5914,7 @@ class SiRNA(NoncodingRNAProduct):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneGroupingMixin(YAMLRoot):
     """
     any grouping of multiple genes or gene products
@@ -5936,7 +5936,7 @@ class GeneGroupingMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneFamily(BiologicalEntity):
     """
     any grouping of multiple genes or gene products related by common descent
@@ -5970,7 +5970,7 @@ class GeneFamily(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Zygosity(Attribute):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -5997,7 +5997,7 @@ class Zygosity(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Genotype(BiologicalEntity):
     """
     An information content entity that describes a genome by specifying the total variation in genomic sequence and/or
@@ -6035,7 +6035,7 @@ class Genotype(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Haplotype(BiologicalEntity):
     """
     A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -6068,7 +6068,7 @@ class Haplotype(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SequenceVariant(BiologicalEntity):
     """
     A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
@@ -6106,7 +6106,7 @@ class SequenceVariant(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Snv(SequenceVariant):
     """
     SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
@@ -6135,7 +6135,7 @@ class Snv(SequenceVariant):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ReagentTargetedGene(BiologicalEntity):
     """
     A gene altered in its expression level in the context of some experiment as a result of being targeted by
@@ -6169,7 +6169,7 @@ class ReagentTargetedGene(BiologicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalAttribute(Attribute):
     """
     Attributes relating to a clinical manifestation
@@ -6199,7 +6199,7 @@ class ClinicalAttribute(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalMeasurement(ClinicalAttribute):
     """
     A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject
@@ -6235,7 +6235,7 @@ class ClinicalMeasurement(ClinicalAttribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalModifier(ClinicalAttribute):
     """
     Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
@@ -6266,7 +6266,7 @@ class ClinicalModifier(ClinicalAttribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalCourse(ClinicalAttribute):
     """
     The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
@@ -6297,7 +6297,7 @@ class ClinicalCourse(ClinicalAttribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Onset(ClinicalCourse):
     """
     The age group in which (disease) symptom manifestations appear.
@@ -6327,7 +6327,7 @@ class Onset(ClinicalCourse):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalEntity(NamedThing):
     """
     Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
@@ -6357,7 +6357,7 @@ class ClinicalEntity(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalTrial(ClinicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -6383,7 +6383,7 @@ class ClinicalTrial(ClinicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalIntervention(ClinicalEntity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -6409,7 +6409,7 @@ class ClinicalIntervention(ClinicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ClinicalFinding(PhenotypicFeature):
     """
     this category is currently considered broad enough to tag clinical lab measurements and other biological
@@ -6444,7 +6444,7 @@ class ClinicalFinding(PhenotypicFeature):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Hospitalization(ClinicalIntervention):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -6470,7 +6470,7 @@ class Hospitalization(ClinicalIntervention):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SocioeconomicAttribute(Attribute):
     """
     Attributes relating to a socioeconomic manifestation
@@ -6500,7 +6500,7 @@ class SocioeconomicAttribute(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Case(IndividualOrganism):
     """
     An individual (human) organism that has a patient role in some clinical context.
@@ -6529,7 +6529,7 @@ class Case(IndividualOrganism):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Cohort(StudyPopulation):
     """
     A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a
@@ -6559,7 +6559,7 @@ class Cohort(StudyPopulation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ExposureEvent(OntologyClass):
     """
     A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more
@@ -6582,7 +6582,7 @@ class ExposureEvent(OntologyClass):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GenomicBackgroundExposure(Attribute):
     """
     A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or
@@ -6648,7 +6648,7 @@ class PathologicalEntityMixin(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalEntityMixin
 
 
-@dataclass
+@dataclass(repr=False)
 class PathologicalProcess(BiologicalProcess):
     """
     A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular,
@@ -6678,7 +6678,7 @@ class PathologicalProcess(BiologicalProcess):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PathologicalProcessExposure(Attribute):
     """
     A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an
@@ -6713,7 +6713,7 @@ class PathologicalProcessExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PathologicalAnatomicalStructure(AnatomicalEntity):
     """
     An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular,
@@ -6743,7 +6743,7 @@ class PathologicalAnatomicalStructure(AnatomicalEntity):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PathologicalAnatomicalExposure(Attribute):
     """
     An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or
@@ -6778,7 +6778,7 @@ class PathologicalAnatomicalExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseOrPhenotypicFeatureExposure(Attribute):
     """
     A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or
@@ -6814,7 +6814,7 @@ class DiseaseOrPhenotypicFeatureExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalExposure(Attribute):
     """
     A chemical exposure is an intake of a particular chemical entity.
@@ -6853,7 +6853,7 @@ class ChemicalExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ComplexChemicalExposure(Attribute):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
@@ -6883,7 +6883,7 @@ class ComplexChemicalExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DrugExposure(ChemicalExposure):
     """
     A drug exposure is an intake of a particular drug.
@@ -6917,7 +6917,7 @@ class DrugExposure(ChemicalExposure):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DrugToGeneInteractionExposure(DrugExposure):
     """
     drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are
@@ -6953,7 +6953,7 @@ class DrugToGeneInteractionExposure(DrugExposure):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class Treatment(NamedThing):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices
@@ -7002,7 +7002,7 @@ class Treatment(NamedThing):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BioticExposure(Attribute):
     """
     An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
@@ -7036,7 +7036,7 @@ class BioticExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EnvironmentalExposure(Attribute):
     """
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B),
@@ -7071,7 +7071,7 @@ class EnvironmentalExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeographicExposure(EnvironmentalExposure):
     """
     A geographic exposure is a factor relating to geographic proximity to some impactful entity.
@@ -7105,7 +7105,7 @@ class GeographicExposure(EnvironmentalExposure):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BehavioralExposure(Attribute):
     """
     A behavioral exposure is a factor relating to behavior impacting an individual.
@@ -7139,7 +7139,7 @@ class BehavioralExposure(Attribute):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SocioeconomicExposure(Attribute):
     """
     A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g.
@@ -7293,7 +7293,7 @@ class SocioeconomicOutcome(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicOutcome
 
 
-@dataclass
+@dataclass(repr=False)
 class Association(Entity):
     """
     A typed association between two entities, supported by evidence
@@ -7309,8 +7309,8 @@ class Association(Entity):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     negated: Optional[Union[bool, Bool]] = None
     qualifier: Optional[str] = None
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
@@ -7500,7 +7500,7 @@ class Association(Entity):
 
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalEntityAssessesNamedThingAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -7510,11 +7510,11 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityAssessesNamedThingAssociation
 
     id: Union[str, ChemicalEntityAssessesNamedThingAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7543,7 +7543,7 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ContributorAssociation(Association):
     """
     Any association between an entity (such as a publication) and various agents that contribute to its realisation
@@ -7556,11 +7556,11 @@ class ContributorAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ContributorAssociation
 
     id: Union[str, ContributorAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, InformationContentEntityId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, AgentId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -7594,7 +7594,7 @@ class ContributorAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
@@ -7607,11 +7607,11 @@ class GenotypeToGenotypePartAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGenotypePartAssociation
 
     id: Union[str, GenotypeToGenotypePartAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     object: Union[str, GenotypeId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7640,7 +7640,7 @@ class GenotypeToGenotypePartAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeToGeneAssociation(Association):
     """
     Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single
@@ -7654,11 +7654,11 @@ class GenotypeToGeneAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGeneAssociation
 
     id: Union[str, GenotypeToGeneAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     object: Union[str, GeneId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7687,7 +7687,7 @@ class GenotypeToGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
@@ -7700,11 +7700,11 @@ class GenotypeToVariantAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToVariantAssociation
 
     id: Union[str, GenotypeToVariantAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     object: Union[str, SequenceVariantId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7733,7 +7733,7 @@ class GenotypeToVariantAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToGeneAssociation(Association):
     """
     abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
@@ -7748,10 +7748,10 @@ class GeneToGeneAssociation(Association):
 
     id: Union[str, GeneToGeneAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.subject):
@@ -7770,7 +7770,7 @@ class GeneToGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
     A homology association between two genes. May be orthology (in which case the species of subject and object should
@@ -7784,11 +7784,11 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneHomologyAssociation
 
     id: Union[str, GeneToGeneHomologyAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7817,7 +7817,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToGeneFamilyAssociation(Association):
     """
     Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence
@@ -7832,11 +7832,11 @@ class GeneToGeneFamilyAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneFamilyAssociation
 
     id: Union[str, GeneToGeneFamilyAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, GeneId] = None
     object: Union[str, GeneFamilyId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7865,7 +7865,7 @@ class GeneToGeneFamilyAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneExpressionMixin(YAMLRoot):
     """
     Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the
@@ -7899,7 +7899,7 @@ class GeneExpressionMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     """
     Indicates that two genes are co-expressed, generally under the same conditions.
@@ -7912,11 +7912,11 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneCoexpressionAssociation
 
     id: Union[str, GeneToGeneCoexpressionAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     expression_site: Optional[Union[str, AnatomicalEntityId]] = None
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
@@ -7951,7 +7951,7 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
@@ -7965,11 +7965,11 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseGeneToGeneInteraction
 
     id: Union[str, PairwiseGeneToGeneInteractionId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7988,7 +7988,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     """
     An interaction at the molecular level between two physical entities
@@ -8001,11 +8001,11 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseMolecularInteraction
 
     id: Union[str, PairwiseMolecularInteractionId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, MolecularEntityId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, MolecularEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     interacting_molecules_category: Optional[Union[str, OntologyClassId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -8038,7 +8038,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CellLineToEntityAssociationMixin(YAMLRoot):
     """
     An relationship between a cell line and another entity
@@ -8073,7 +8073,7 @@ class CellLineToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
@@ -8089,9 +8089,9 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: Union[str, CellLineToDiseaseOrPhenotypicFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8120,7 +8120,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalEntityToEntityAssociationMixin(YAMLRoot):
     """
     An interaction between a chemical entity and another entity
@@ -8155,7 +8155,7 @@ class ChemicalEntityToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a drug and another entity
@@ -8195,7 +8195,7 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a chemical entity and another entity
@@ -8235,7 +8235,7 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class CaseToEntityAssociationMixin(YAMLRoot):
     """
     An abstract association for use where the case is the subject
@@ -8270,7 +8270,7 @@ class CaseToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalToChemicalAssociation(Association):
     """
     A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal
@@ -8284,11 +8284,11 @@ class ChemicalToChemicalAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalAssociation
 
     id: Union[str, ChemicalToChemicalAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, ChemicalEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8317,7 +8317,7 @@ class ChemicalToChemicalAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -8327,11 +8327,11 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ReactionToParticipantAssociation
 
     id: Union[str, ReactionToParticipantAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, ChemicalEntityId] = None
     subject: Union[str, MolecularEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     stoichiometry: Optional[int] = None
     reaction_direction: Optional[Union[str, "ReactionDirectionEnum"]] = None
     reaction_side: Optional[Union[str, "ReactionSideEnum"]] = None
@@ -8362,7 +8362,7 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -8372,11 +8372,11 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ReactionToCatalystAssociation
 
     id: Union[str, ReactionToCatalystAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, MolecularEntityId] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8395,7 +8395,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
@@ -8410,11 +8410,11 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalDerivationAssociation
 
     id: Union[str, ChemicalToChemicalDerivationAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
     object: Union[str, ChemicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     catalyst_qualifier: Optional[Union[Union[dict, MacromolecularMachineMixin], List[Union[dict, MacromolecularMachineMixin]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -8448,7 +8448,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
@@ -8464,9 +8464,9 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: Union[str, ChemicalToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8495,7 +8495,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
@@ -8511,9 +8511,9 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     id: Union[str, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     FDA_adverse_event_level: Optional[Union[str, "FDAIDAAdverseEventEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -8546,7 +8546,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
@@ -8562,9 +8562,9 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     id: Union[str, ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8593,7 +8593,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToPathwayAssociation(Association):
     """
     An interaction between a gene or gene product and a biological process or pathway.
@@ -8607,10 +8607,10 @@ class GeneToPathwayAssociation(Association):
 
     id: Union[str, GeneToPathwayAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, PathwayId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8639,7 +8639,7 @@ class GeneToPathwayAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MolecularActivityToPathwayAssociation(Association):
     """
     Association that holds the relationship between a reaction and the pathway it participates in.
@@ -8652,11 +8652,11 @@ class MolecularActivityToPathwayAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToPathwayAssociation
 
     id: Union[str, MolecularActivityToPathwayAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, MolecularActivityId] = None
     object: Union[str, PathwayId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8685,7 +8685,7 @@ class MolecularActivityToPathwayAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway.
@@ -8699,10 +8699,10 @@ class ChemicalToPathwayAssociation(Association):
 
     id: Union[str, ChemicalToPathwayAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
     object: Union[str, PathwayId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8731,7 +8731,7 @@ class ChemicalToPathwayAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -8741,11 +8741,11 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
 
     id: Union[str, NamedThingAssociatedWithLikelihoodOfNamedThingAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     subject_aspect_qualifier: Optional[str] = None
     subject_context_qualifier: Optional[Union[str, OntologyClassId]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -8794,7 +8794,7 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalGeneInteractionAssociation(Association):
     """
     describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
@@ -8809,11 +8809,11 @@ class ChemicalGeneInteractionAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalGeneInteractionAssociation
 
     id: Union[str, ChemicalGeneInteractionAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
@@ -8874,7 +8874,7 @@ class ChemicalGeneInteractionAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneRegulatesGeneAssociation(Association):
     """
     Describes a regulatory relationship between two genes or gene products.
@@ -8887,14 +8887,14 @@ class GeneRegulatesGeneAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneRegulatesGeneAssociation
 
     id: Union[str, GeneRegulatesGeneAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object_aspect_qualifier: Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"] = None
     object_direction_qualifier: Union[str, "DirectionQualifierEnum"] = None
     qualified_predicate: str = None
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -8942,7 +8942,7 @@ class GeneRegulatesGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ProcessRegulatesProcessAssociation(Association):
     """
     Describes a regulatory relationship between two genes or gene products.
@@ -8955,11 +8955,11 @@ class ProcessRegulatesProcessAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProcessRegulatesProcessAssociation
 
     id: Union[str, ProcessRegulatesProcessAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, BiologicalProcessId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, BiologicalProcessId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8988,7 +8988,7 @@ class ProcessRegulatesProcessAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalAffectsGeneAssociation(Association):
     """
     Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance,
@@ -9002,11 +9002,11 @@ class ChemicalAffectsGeneAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalAffectsGeneAssociation
 
     id: Union[str, ChemicalAffectsGeneAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
@@ -9095,7 +9095,7 @@ class ChemicalAffectsGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneAffectsChemicalAssociation(Association):
     """
     Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance,
@@ -9109,11 +9109,11 @@ class GeneAffectsChemicalAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneAffectsChemicalAssociation
 
     id: Union[str, GeneAffectsChemicalAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, ChemicalEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[str] = None
@@ -9206,7 +9206,7 @@ class GeneAffectsChemicalAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DrugToGeneAssociation(Association):
     """
     An interaction between a drug and a gene or gene product.
@@ -9221,9 +9221,9 @@ class DrugToGeneAssociation(Association):
     id: Union[str, DrugToGeneAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -9252,7 +9252,7 @@ class DrugToGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MaterialSampleToEntityAssociationMixin(YAMLRoot):
     """
     An association between a material sample and something.
@@ -9287,7 +9287,7 @@ class MaterialSampleToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class MaterialSampleDerivationAssociation(Association):
     """
     An association between a material sample and the material entity from which it is derived.
@@ -9300,11 +9300,11 @@ class MaterialSampleDerivationAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleDerivationAssociation
 
     id: Union[str, MaterialSampleDerivationAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, MaterialSampleId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -9333,7 +9333,7 @@ class MaterialSampleDerivationAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An association between a material sample and a disease or phenotype.
@@ -9349,8 +9349,8 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -9379,7 +9379,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -9411,7 +9411,7 @@ class DiseaseToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToExposureEventAssociationMixin(YAMLRoot):
     """
     An association between some entity and an exposure event.
@@ -9446,7 +9446,7 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseToExposureEventAssociation(Association):
     """
     An association between an exposure event and a disease.
@@ -9462,8 +9462,8 @@ class DiseaseToExposureEventAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -9492,7 +9492,7 @@ class DiseaseToExposureEventAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToOutcomeAssociationMixin(YAMLRoot):
     """
     An association between some entity and an outcome
@@ -9527,7 +9527,7 @@ class EntityToOutcomeAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ExposureEventToOutcomeAssociation(Association):
     """
     An association between an exposure event and an outcome.
@@ -9543,8 +9543,8 @@ class ExposureEventToOutcomeAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     population_context_qualifier: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
     temporal_context_qualifier: Optional[Union[str, TimeType]] = None
 
@@ -9581,7 +9581,7 @@ class ExposureEventToOutcomeAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class FrequencyQualifierMixin(YAMLRoot):
     """
     Qualifier for frequency type associations
@@ -9620,7 +9620,7 @@ class FrequencyQualifierMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     """
     Qualifiers for entity to disease or phenotype associations.
@@ -9660,7 +9660,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     """
     Qualifiers for disease or phenotype to entity associations.
@@ -9700,7 +9700,7 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -9752,7 +9752,7 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -9794,7 +9794,7 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
     """
     Association between two concept nodes of phenotypic character, qualified by the predicate used. This association
@@ -9811,8 +9811,8 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -9869,7 +9869,7 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class InformationContentEntityToNamedThingAssociation(Association):
     """
     association between a named thing and a information content entity where the specific context of the relationship
@@ -9887,11 +9887,11 @@ class InformationContentEntityToNamedThingAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntityToNamedThingAssociation
 
     id: Union[str, InformationContentEntityToNamedThingAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -9920,7 +9920,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     """
     mixin class for any association whose object (target node) is a disease
@@ -9945,7 +9945,7 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -9977,7 +9977,7 @@ class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     """
     An association between either a disease or a phenotypic feature and an anatomical entity, where the
@@ -9993,9 +9993,9 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     id: Union[str, DiseaseOrPhenotypicFeatureToLocationAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, AnatomicalEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10024,7 +10024,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
     """
     An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
@@ -10038,10 +10038,10 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
 
     id: Union[str, DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId] = None
     subject: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, GeneticInheritanceId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10070,7 +10070,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10102,7 +10102,7 @@ class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10134,7 +10134,7 @@ class GenotypeToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeToPhenotypicFeatureAssociation(Association):
     """
     Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
@@ -10149,10 +10149,10 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
 
     id: Union[str, GenotypeToPhenotypicFeatureAssociationId] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -10209,7 +10209,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ExposureEventToPhenotypicFeatureAssociation(Association):
     """
     Any association between an environment and a phenotypic feature, where being in the environment influences the
@@ -10225,9 +10225,9 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     id: Union[str, ExposureEventToPhenotypicFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ExposureEventId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -10284,7 +10284,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DiseaseToPhenotypicFeatureAssociation(Association):
     """
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
@@ -10299,10 +10299,10 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
 
     id: Union[str, DiseaseToPhenotypicFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, DiseaseId] = None
     object: Union[str, PhenotypicFeatureId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     onset_qualifier: Optional[Union[str, OnsetId]] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
@@ -10379,7 +10379,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CaseToPhenotypicFeatureAssociation(Association):
     """
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
@@ -10396,8 +10396,8 @@ class CaseToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -10454,7 +10454,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class BehaviorToBehavioralFeatureAssociation(Association):
     """
     An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has
@@ -10469,10 +10469,10 @@ class BehaviorToBehavioralFeatureAssociation(Association):
 
     id: Union[str, BehaviorToBehavioralFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, BehaviorId] = None
     object: Union[str, BehavioralFeatureId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -10529,7 +10529,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10561,7 +10561,7 @@ class GeneToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantToEntityAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10593,7 +10593,7 @@ class VariantToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10603,11 +10603,11 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseOrPhenotypicFeatureAssociation
 
     id: Union[str, GeneToDiseaseOrPhenotypicFeatureAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
@@ -10664,7 +10664,7 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10674,11 +10674,11 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
 
     id: Union[str, GeneToPhenotypicFeatureAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, PhenotypicFeatureId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -10722,7 +10722,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10732,11 +10732,11 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
 
     id: Union[str, GeneToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -10776,7 +10776,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10786,11 +10786,11 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CausalGeneToDiseaseAssociation
 
     id: Union[str, CausalGeneToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -10830,7 +10830,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10840,11 +10840,11 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CorrelatedGeneToDiseaseAssociation
 
     id: Union[str, CorrelatedGeneToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -10884,7 +10884,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10894,11 +10894,11 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
 
     id: Union[str, DruggableGeneToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, DiseaseId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -10943,7 +10943,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PhenotypicFeatureToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10955,9 +10955,9 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
     id: Union[str, PhenotypicFeatureToDiseaseAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11014,7 +11014,7 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantToGeneAssociation(Association):
     """
     An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in
@@ -11029,10 +11029,10 @@ class VariantToGeneAssociation(Association):
 
     id: Union[str, VariantToGeneAssociationId] = None
     subject: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, GeneId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11061,7 +11061,7 @@ class VariantToGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     """
     An association between a variant and expression of a gene (i.e. e-QTL)
@@ -11075,10 +11075,10 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
 
     id: Union[str, VariantToGeneExpressionAssociationId] = None
     subject: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, GeneId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     expression_site: Optional[Union[str, AnatomicalEntityId]] = None
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
@@ -11113,7 +11113,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantToPopulationAssociation(Association):
     """
     An association between a variant and a population, where the variant has particular frequency in the population
@@ -11127,10 +11127,10 @@ class VariantToPopulationAssociation(Association):
 
     id: Union[str, VariantToPopulationAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, SequenceVariantId] = None
     object: Union[str, PopulationOfIndividualOrganismsId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     has_quotient: Optional[float] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
@@ -11179,7 +11179,7 @@ class VariantToPopulationAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class PopulationToPopulationAssociation(Association):
     """
     An association between a two populations
@@ -11192,11 +11192,11 @@ class PopulationToPopulationAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationToPopulationAssociation
 
     id: Union[str, PopulationToPopulationAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, PopulationOfIndividualOrganismsId] = None
     object: Union[str, PopulationOfIndividualOrganismsId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11225,7 +11225,7 @@ class PopulationToPopulationAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantToPhenotypicFeatureAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11237,9 +11237,9 @@ class VariantToPhenotypicFeatureAssociation(Association):
     id: Union[str, VariantToPhenotypicFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, SequenceVariantId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11296,7 +11296,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11306,11 +11306,11 @@ class VariantToDiseaseAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToDiseaseAssociation
 
     id: Union[str, VariantToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11363,7 +11363,7 @@ class VariantToDiseaseAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11373,11 +11373,11 @@ class GenotypeToDiseaseAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToDiseaseAssociation
 
     id: Union[str, GenotypeToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11430,7 +11430,7 @@ class GenotypeToDiseaseAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ModelToDiseaseAssociationMixin(YAMLRoot):
     """
     This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in
@@ -11467,7 +11467,7 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11477,11 +11477,11 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneAsAModelOfDiseaseAssociation
 
     id: Union[str, GeneAsAModelOfDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, DiseaseId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -11516,7 +11516,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11526,11 +11526,11 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantAsAModelOfDiseaseAssociation
 
     id: Union[str, VariantAsAModelOfDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     subject: Union[str, SequenceVariantId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11573,7 +11573,7 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11583,11 +11583,11 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeAsAModelOfDiseaseAssociation
 
     id: Union[str, GenotypeAsAModelOfDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     subject: Union[str, GenotypeId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11630,7 +11630,7 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11642,9 +11642,9 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
     id: Union[str, CellLineAsAModelOfDiseaseAssociationId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, CellLineId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11697,7 +11697,7 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11709,9 +11709,9 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     id: Union[str, OrganismalEntityAsAModelOfDiseaseAssociationId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismalEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -11764,7 +11764,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismToOrganismAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11775,10 +11775,10 @@ class OrganismToOrganismAssociation(Association):
 
     id: Union[str, OrganismToOrganismAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, IndividualOrganismId] = None
     object: Union[str, IndividualOrganismId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11802,7 +11802,7 @@ class OrganismToOrganismAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class TaxonToTaxonAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11813,10 +11813,10 @@ class TaxonToTaxonAssociation(Association):
 
     id: Union[str, TaxonToTaxonAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11840,7 +11840,7 @@ class TaxonToTaxonAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -11850,11 +11850,11 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneHasVariantThatContributesToDiseaseAssociation
 
     id: Union[str, GeneHasVariantThatContributesToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     subject_form_or_variant_qualifier: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -11887,7 +11887,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and a gene expression site, possibly qualified by stage/timing info.
@@ -11900,11 +11900,11 @@ class GeneToExpressionSiteAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToExpressionSiteAssociation
 
     id: Union[str, GeneToExpressionSiteAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
 
@@ -11941,7 +11941,7 @@ class GeneToExpressionSiteAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SequenceVariantModulatesTreatmentAssociation(Association):
     """
     An association between a sequence variant and a treatment or health intervention. The treatment object itself
@@ -11956,10 +11956,10 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
 
     id: Union[str, SequenceVariantModulatesTreatmentAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, SequenceVariantId] = None
     object: Union[str, TreatmentId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.subject):
@@ -11978,7 +11978,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class FunctionalAssociation(Association):
     """
     An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either
@@ -11993,10 +11993,10 @@ class FunctionalAssociation(Association):
 
     id: Union[str, FunctionalAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, OntologyClassId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12020,7 +12020,7 @@ class FunctionalAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MacromolecularMachineToEntityAssociationMixin(YAMLRoot):
     """
     an association which has a macromolecular machine mixin as a subject
@@ -12055,7 +12055,7 @@ class MacromolecularMachineToEntityAssociationMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation):
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity
@@ -12071,10 +12071,10 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
 
     id: Union[str, MacromolecularMachineToMolecularActivityAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, MolecularActivityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12098,7 +12098,7 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation):
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a biological process
@@ -12114,10 +12114,10 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
 
     id: Union[str, MacromolecularMachineToBiologicalProcessAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, BiologicalProcessId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12141,7 +12141,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation):
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component
@@ -12157,10 +12157,10 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
 
     id: Union[str, MacromolecularMachineToCellularComponentAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, CellularComponentId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12184,7 +12184,7 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MolecularActivityToChemicalEntityAssociation(Association):
     """
     Added in response to capturing relationship between microbiome activities as measured via measurements of blood
@@ -12199,10 +12199,10 @@ class MolecularActivityToChemicalEntityAssociation(Association):
 
     id: Union[str, MolecularActivityToChemicalEntityAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, MolecularActivityId] = None
     object: Union[str, ChemicalEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12226,7 +12226,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class MolecularActivityToMolecularActivityAssociation(Association):
     """
     Added in response to capturing relationship between microbiome activities as measured via measurements of blood
@@ -12241,10 +12241,10 @@ class MolecularActivityToMolecularActivityAssociation(Association):
 
     id: Union[str, MolecularActivityToMolecularActivityAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, MolecularActivityId] = None
     object: Union[str, MolecularActivityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12268,7 +12268,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToGoTermAssociation(FunctionalAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -12279,10 +12279,10 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 
     id: Union[str, GeneToGoTermAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, GeneId] = None
     object: Union[str, OntologyClassId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12306,7 +12306,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -12319,8 +12319,8 @@ class EntityToDiseaseAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
     max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
 
@@ -12342,7 +12342,7 @@ class EntityToDiseaseAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class EntityToPhenotypicFeatureAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -12355,8 +12355,8 @@ class EntityToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
     max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
 
@@ -12378,7 +12378,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SequenceAssociation(Association):
     """
     An association between a sequence feature and a nucleic acid entity it is localized to.
@@ -12394,8 +12394,8 @@ class SequenceAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12409,7 +12409,7 @@ class SequenceAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GenomicSequenceLocalization(SequenceAssociation):
     """
     A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may
@@ -12423,11 +12423,11 @@ class GenomicSequenceLocalization(SequenceAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicSequenceLocalization
 
     id: Union[str, GenomicSequenceLocalizationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NucleicAcidEntityId] = None
     object: Union[str, NucleicAcidEntityId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     start_interbase_coordinate: Optional[int] = None
     end_interbase_coordinate: Optional[int] = None
     genome_build: Optional[Union[str, "StrandEnum"]] = None
@@ -12476,7 +12476,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
@@ -12490,10 +12490,10 @@ class SequenceFeatureRelationship(Association):
 
     id: Union[str, SequenceFeatureRelationshipId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NucleicAcidEntityId] = None
     object: Union[str, NucleicAcidEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12517,7 +12517,7 @@ class SequenceFeatureRelationship(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     A gene is a collection of transcripts
@@ -12531,10 +12531,10 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
 
     id: Union[str, TranscriptToGeneRelationshipId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, TranscriptId] = None
     object: Union[str, GeneId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12558,7 +12558,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
@@ -12571,11 +12571,11 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneProductRelationship
 
     id: Union[str, GeneToGeneProductRelationshipId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, GeneId] = None
     object: Union[dict, GeneProductMixin] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12604,7 +12604,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
@@ -12618,10 +12618,10 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
 
     id: Union[str, ExonToTranscriptRelationshipId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ExonId] = None
     object: Union[str, TranscriptId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12645,7 +12645,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
     A regulatory relationship between two genes
@@ -12658,11 +12658,11 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
 
     id: Union[str, ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[dict, ChemicalEntityOrGeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -12695,7 +12695,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -12706,10 +12706,10 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
 
     id: Union[str, AnatomicalEntityToAnatomicalEntityAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.subject):
@@ -12728,7 +12728,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
     A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are
@@ -12743,11 +12743,11 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityPartOfAssociation
 
     id: Union[str, AnatomicalEntityToAnatomicalEntityPartOfAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12776,7 +12776,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
     A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are
@@ -12791,11 +12791,11 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityOntogenicAssociation
 
     id: Union[str, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12824,7 +12824,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismTaxonToEntityAssociation(YAMLRoot):
     """
     An association between an organism taxon and another entity
@@ -12859,7 +12859,7 @@ class OrganismTaxonToEntityAssociation(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismTaxonToOrganismTaxonAssociation(Association):
     """
     A relationship between two organism taxon nodes
@@ -12873,10 +12873,10 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
 
     id: Union[str, OrganismTaxonToOrganismTaxonAssociationId] = None
     predicate: Union[str, PredicateType] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.predicate):
@@ -12900,7 +12900,7 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAssociation):
     """
     A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
@@ -12913,11 +12913,11 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonSpecialization
 
     id: Union[str, OrganismTaxonToOrganismTaxonSpecializationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12946,7 +12946,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssociation):
     """
     An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and
@@ -12961,11 +12961,11 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToOrganismTaxonInteraction
 
     id: Union[str, OrganismTaxonToOrganismTaxonInteractionId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
     associated_environmental_context: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -12998,7 +12998,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
 
 
-@dataclass
+@dataclass(repr=False)
 class OrganismTaxonToEnvironmentAssociation(Association):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -13008,11 +13008,11 @@ class OrganismTaxonToEnvironmentAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEnvironmentAssociation
 
     id: Union[str, OrganismTaxonToEnvironmentAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = "not_provided"
-    agent_type: Union[str, "AgentTypeEnum"] = "not_provided"
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.subject):
