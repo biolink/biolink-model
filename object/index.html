@@ -650,14 +650,24 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EntityToOutcomeAssociationMixin/">EntityToOutcomeAssociationMixin</a></td>
+<td>An association between some entity and an outcome</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a></td>
-<td>An interaction between a chemical entity and another entity</td>
+<td><a href="../Association/">Association</a></td>
+<td>A typed association between two entities, supported by evidence</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td>None</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
@@ -670,38 +680,13 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
-<td>An association between a material sample and the material entity from which it is derived.</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
-<td>An association between an organism taxon and another entity</td>
+<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
+<td>an association which has a macromolecular machine mixin as a subject</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
-<td>This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
-<td>Qualifier for frequency type associations</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
 <td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DrugToEntityAssociationMixin/">DrugToEntityAssociationMixin</a></td>
-<td>An interaction between a drug and another entity</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Association/">Association</a></td>
-<td>A typed association between two entities, supported by evidence</td>
 <td>no</td>
 </tr>
 <tr>
@@ -710,14 +695,29 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>None</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
+<td>An association between an organism taxon and another entity</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td>Qualifier for frequency type associations</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../DrugToEntityAssociationMixin/">DrugToEntityAssociationMixin</a></td>
+<td>An interaction between a drug and another entity</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../EntityToExposureEventAssociationMixin/">EntityToExposureEventAssociationMixin</a></td>
@@ -725,9 +725,9 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../EntityToOutcomeAssociationMixin/">EntityToOutcomeAssociationMixin</a></td>
-<td>An association between some entity and an outcome</td>
-<td>yes</td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
@@ -740,28 +740,28 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
-<td>an association which has a macromolecular machine mixin as a subject</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
-<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td>An association between a material sample and the material entity from which it is derived.</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
 <td>None</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
 <td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td>This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a></td>
+<td>An interaction between a chemical entity and another entity</td>
 <td>no</td>
 </tr>
 </tbody>
