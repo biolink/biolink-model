@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-23T16:40:10
+# Generation date: 2024-10-10T10:40:11
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.2.2"
+version = "4.2.4"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -7340,6 +7340,7 @@ class Association(Entity):
     retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], List[Union[str, RetrievalSourceId]]]] = empty_list()
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
+    has_supporting_studies: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     type: Optional[Union[str, List[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7459,6 +7460,10 @@ class Association(Entity):
 
         if self.adjusted_p_value is not None and not isinstance(self.adjusted_p_value, float):
             self.adjusted_p_value = float(self.adjusted_p_value)
+
+        if not isinstance(self.has_supporting_studies, list):
+            self.has_supporting_studies = [self.has_supporting_studies] if self.has_supporting_studies is not None else []
+        self.has_supporting_studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.has_supporting_studies]
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -12376,7 +12381,7 @@ class EntityToDiseaseAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = KnowledgeLevelEnum.not_provided
     agent_type: Union[str, "AgentTypeEnum"] = AgentTypeEnum.not_provided
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
-    max_research_phase: Optional[Union[str, "MaxResearchPhaseEnum"]] = None
+    max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12387,8 +12392,8 @@ class EntityToDiseaseAssociation(Association):
         if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
             self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
 
-        if self.max_research_phase is not None and not isinstance(self.max_research_phase, MaxResearchPhaseEnum):
-            self.max_research_phase = MaxResearchPhaseEnum(self.max_research_phase)
+        if self.max_research_phase is not None and not isinstance(self.max_research_phase, ResearchPhaseEnum):
+            self.max_research_phase = ResearchPhaseEnum(self.max_research_phase)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12412,7 +12417,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = KnowledgeLevelEnum.not_provided
     agent_type: Union[str, "AgentTypeEnum"] = AgentTypeEnum.not_provided
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
-    max_research_phase: Optional[Union[str, "MaxResearchPhaseEnum"]] = None
+    max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -12423,8 +12428,8 @@ class EntityToPhenotypicFeatureAssociation(Association):
         if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
             self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
 
-        if self.max_research_phase is not None and not isinstance(self.max_research_phase, MaxResearchPhaseEnum):
-            self.max_research_phase = MaxResearchPhaseEnum(self.max_research_phase)
+        if self.max_research_phase is not None and not isinstance(self.max_research_phase, ResearchPhaseEnum):
+            self.max_research_phase = ResearchPhaseEnum(self.max_research_phase)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -13196,7 +13201,7 @@ class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
         name="ClinicalApprovalStatusEnum",
     )
 
-class MaxResearchPhaseEnum(EnumDefinitionImpl):
+class ResearchPhaseEnum(EnumDefinitionImpl):
 
     pre_clinical_research_phase = PermissibleValue(
         text="pre_clinical_research_phase",
@@ -13219,7 +13224,7 @@ class MaxResearchPhaseEnum(EnumDefinitionImpl):
     not_provided = PermissibleValue(text="not_provided")
 
     _defn = EnumDefinition(
-        name="MaxResearchPhaseEnum",
+        name="ResearchPhaseEnum",
     )
 
 class DirectionQualifierEnum(EnumDefinitionImpl):
@@ -14869,7 +14874,7 @@ slots.negated = Slot(uri=BIOLINK.negated, name="negated", curie=BIOLINK.curie('n
                    model_uri=BIOLINK.negated, domain=Association, range=Optional[Union[bool, Bool]])
 
 slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has confidence level", curie=BIOLINK.curie('has_confidence_level'),
-                   model_uri=BIOLINK.has_confidence_level, domain=Association, range=Optional[Union[str, ConfidenceLevelId]])
+                   model_uri=BIOLINK.has_confidence_level, domain=Association, range=Optional[str])
 
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]])
@@ -15025,7 +15030,10 @@ slots.clinical_approval_status = Slot(uri=BIOLINK.clinical_approval_status, name
                    model_uri=BIOLINK.clinical_approval_status, domain=Association, range=Optional[Union[str, "ClinicalApprovalStatusEnum"]])
 
 slots.max_research_phase = Slot(uri=BIOLINK.max_research_phase, name="max research phase", curie=BIOLINK.curie('max_research_phase'),
-                   model_uri=BIOLINK.max_research_phase, domain=Association, range=Optional[Union[str, "MaxResearchPhaseEnum"]])
+                   model_uri=BIOLINK.max_research_phase, domain=Association, range=Optional[Union[str, "ResearchPhaseEnum"]])
+
+slots.has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="has supporting studies", curie=BIOLINK.curie('has_supporting_studies'),
+                   model_uri=BIOLINK.has_supporting_studies, domain=Association, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
 
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])

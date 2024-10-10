@@ -122,9 +122,9 @@ gen-project: $(PYMODEL)
 		--include python \
 		--include rdf \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
-	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink_model_prefix_map.json
+	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink-model-prefix-map.json
 	mv $(PYMODEL)/biolink*.py $(PYMODEL)/model.py
-	$(RUN) gen-pydantic --version 2 src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	$(RUN) gen-pydantic src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions src/biolink_model/schema/biolink_model.yaml > $(DEST)/owl/biolink_model.owl.ttl
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	$(MAKE) id-prefixes

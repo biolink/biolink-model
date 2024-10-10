@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.2
+version: 4.2.4
 
 ## ------------
 ##
@@ -3456,7 +3456,7 @@ slots:
 
   promotes condition:
     mixin: true
-    is_a: related to at instance level
+    is_a: affects likelihood of
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),
       and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.
@@ -3469,6 +3469,7 @@ slots:
       - translator_minimal
 
   condition promoted by:
+    mixin: true
     is_a: likelihood affected by
     inverse: promotes condition
     domain: disease or phenotypic feature
@@ -3644,18 +3645,24 @@ slots:
 
   tested by clinical trials of:
     is_a: treated in studies by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: in clinical trials for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
   treated in studies by:
     is_a: treated by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: studied to treat
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
   tested by preclinical trials of:
     is_a: treated in studies by
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: in preclinical trials for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3680,7 +3687,7 @@ slots:
   beneficial in models for:
     is_a: in preclinical trials for
     description: >-
-      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance,
       procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/
       phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
     notes: >-
@@ -3700,6 +3707,8 @@ slots:
 
   models demonstrating benefits for:
     is_a: tested by preclinical trials of
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: beneficial in models for
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3729,6 +3738,8 @@ slots:
 
   treatment applications from:
     is_a: related to at instance level
+    mixins:
+      - subject of treatment application or study for treatment by
     inverse: applied to treat
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -5601,7 +5612,6 @@ slots:
 
   has confidence level:
     is_a: association slot
-    range: confidence level
     description: >-
       connects an association to a qualitative term denoting the level of confidence
 
@@ -5623,7 +5633,7 @@ slots:
     is_a: association slot
     description: >-
       The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the
-      odds of event Y occurring in a non-exposed group.
+      odds of event Y occurring in a non-exposed group has 
     range: float
 
   log odds ratio 95 ci:
@@ -6087,13 +6097,25 @@ slots:
 
   max research phase:
     is_a: association slot
-    range: MaxResearchPhaseEnum
+    range: ResearchPhaseEnum
+
+  has supporting studies:
+    is_a: association slot
+    range: study
+    description: A study that produced information used as evidence to generate the knowledge expressed in an Association.
+    multivalued: true
 
   supporting study metadata:
     is_a: association slot
     description: >-
       Information about a study used to generate information used as evidence to support the knowledge expressed in an
       Association. In practice, data creators should use one of the more specific subtypes of this property.
+    comments:
+      - This is an abstract slot that groups a set of concrete slots used to directly attach to an association information
+        about a study that produced evidence used to generate the knowledge expressed in the edge. 
+      - Note that these concrete 'supporting study metadata' slots are used only when a more normalized model that leverages
+        the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred, 
+        such that this study metadata must be captured directly on the edge.       
     abstract: true
 
   supporting study method type:
@@ -9398,6 +9420,7 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - has supporting studies
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -11743,7 +11766,7 @@ enums:
         is_a: not_approved_for_condition
       not_provided:
 
-  MaxResearchPhaseEnum:
+  ResearchPhaseEnum:
     permissible_values:
       pre_clinical_research_phase:
         description: >-
