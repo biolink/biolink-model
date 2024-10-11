@@ -362,13 +362,13 @@
 <tbody>
 <tr>
 <td><a href="../authors/">authors</a>: <br> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></br></td>
-<td>0..* <br/> <a href="../Agent/">Agent</a></td>
+<td>* <br/> <a href="../Agent/">Agent</a></td>
 <td><a href="../Publication/">Publication</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../pages/">pages</a>: <br/> <i> When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book. </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Publication/">Publication</a></td>
 <td></td>
 </tr>
@@ -380,20 +380,20 @@
 </tr>
 <tr>
 <td><a href="../keywords/">keywords</a>: <br/> <i> keywords tagging a publication </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Publication/">Publication</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../mesh_terms/">mesh_terms</a>: <br/> <i> mesh terms tagging a publication </i></td>
-<td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../Publication/">Publication</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
-<td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../Publication/">Publication</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../Publication/">Publication</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -428,7 +428,7 @@
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -440,13 +440,13 @@
 </tr>
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
-<td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN. </i></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -464,7 +464,7 @@
 </tr>
 <tr>
 <td><a href="../type/">type</a>: <br/> <i> None </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -482,7 +482,7 @@
 </tr>
 <tr>
 <td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
-<td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
+<td>* <br/> <a href="../Attribute/">Attribute</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>

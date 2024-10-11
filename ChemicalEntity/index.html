@@ -385,7 +385,7 @@
 </tr>
 <tr>
 <td><a href="../available_from/">available_from</a>: <br/> <i> </i></td>
-<td>0..* <br/> <a href="../DrugAvailabilityEnum/">DrugAvailabilityEnum</a></td>
+<td>* <br/> <a href="../DrugAvailabilityEnum/">DrugAvailabilityEnum</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -403,19 +403,19 @@
 </tr>
 <tr>
 <td><a href="../has_chemical_role/">has_chemical_role</a>: <br/> <i> A role is particular behaviour which a chemical entity may exhibit. </i></td>
-<td>0..* <br/> <a href="../ChemicalRole/">ChemicalRole</a></td>
+<td>* <br/> <a href="../ChemicalRole/">ChemicalRole</a></td>
 <td>direct</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
-<td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -427,13 +427,13 @@
 </tr>
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
-<td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -451,7 +451,7 @@
 </tr>
 <tr>
 <td><a href="../type/">type</a>: <br/> <i> None </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -469,7 +469,7 @@
 </tr>
 <tr>
 <td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
-<td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
+<td>* <br/> <a href="../Attribute/">Attribute</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>

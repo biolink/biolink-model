@@ -375,31 +375,31 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../has_input/">has_input</a>: <br/> <i> A chemical entity that is the input for the reaction </i></td>
-<td>0..* <br/> <a href="../MolecularEntity/">MolecularEntity</a></td>
+<td>* <br/> <a href="../MolecularEntity/">MolecularEntity</a></td>
 <td><a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../has_output/">has_output</a>: <br/> <i> A chemical entity that is the output for the reaction </i></td>
-<td>0..* <br/> <a href="../MolecularEntity/">MolecularEntity</a></td>
+<td>* <br/> <a href="../MolecularEntity/">MolecularEntity</a></td>
 <td><a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../enabled_by/">enabled_by</a>: <br/> <i> The gene product, gene, or complex that catalyzes the reaction </i></td>
-<td>0..* <br/> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
+<td>* <br/> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 <td><a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../in_taxon/">in_taxon</a>: <br/> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></td>
-<td>0..* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
 <td></td>
 </tr>
@@ -411,13 +411,13 @@
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
-<td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -429,7 +429,7 @@
 </tr>
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
-<td>0..* <br/> <a href="../LabelType/">LabelType</a></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -447,7 +447,7 @@
 </tr>
 <tr>
 <td><a href="../type/">type</a>: <br/> <i> None </i></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -465,7 +465,7 @@
 </tr>
 <tr>
 <td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
-<td>0..* <br/> <a href="../Attribute/">Attribute</a></td>
+<td>* <br/> <a href="../Attribute/">Attribute</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -621,20 +621,14 @@ slot_usage:
   has input:
     name: has input
     description: A chemical entity that is the input for the reaction
-    domain_of:
-    - biological process or activity
     range: molecular entity
   has output:
     name: has output
     description: A chemical entity that is the output for the reaction
-    domain_of:
-    - biological process or activity
     range: molecular entity
   enabled by:
     name: enabled by
     description: The gene product, gene, or complex that catalyzes the reaction
-    domain_of:
-    - biological process or activity
     range: macromolecular machine mixin
 
 </code></pre>

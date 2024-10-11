@@ -311,19 +311,19 @@
 <tbody>
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
-<td>1..1 <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
 <td>direct</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
-<td>1..1 <br/> <a href="../PredicateType/">PredicateType</a></td>
+<td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
 <td>direct</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
-<td>1..1 <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -366,30 +366,6 @@ slot_usage:
   subject:
     name: subject
     domain: macromolecular machine mixin
-    domain_of:
-    - association
-    - cell line to entity association mixin
-    - chemical entity to entity association mixin
-    - drug to entity association mixin
-    - chemical to entity association mixin
-    - case to entity association mixin
-    - chemical to chemical association
-    - named thing associated with likelihood of named thing association
-    - material sample to entity association mixin
-    - material sample derivation association
-    - disease to entity association mixin
-    - entity to exposure event association mixin
-    - entity to outcome association mixin
-    - frequency qualifier mixin
-    - entity to phenotypic feature association mixin
-    - disease or phenotypic feature to entity association mixin
-    - entity to disease or phenotypic feature association mixin
-    - genotype to entity association mixin
-    - gene to entity association mixin
-    - variant to entity association mixin
-    - model to disease association mixin
-    - macromolecular machine to entity association mixin
-    - organism taxon to entity association
 
 </code></pre>
 </details>

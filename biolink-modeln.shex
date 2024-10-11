@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.2.4
+# version: 4.2.5-rc1
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -245,6 +245,7 @@ linkml:Sparqlpath xsd:string
              <retrieval_source_ids> @<RetrievalSource> * ;
              <p_value> @linkml:Float ? ;
              <adjusted_p_value> @linkml:Float ? ;
+             <has_supporting_studies> @<Study> * ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
@@ -1536,13 +1537,13 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#post_approval_withdrawal>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#off_label_use>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_provided> ] ? ;
-          <max_research_phase> [ <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#pre_clinical_research_phase>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_1>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_2>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_3>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_4>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#not_provided> ] ?
+          <max_research_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ?
        ) ;
        rdf:type [ <EntityToDiseaseAssociation> ]
     )
@@ -1616,13 +1617,13 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#post_approval_withdrawal>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#off_label_use>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_provided> ] ? ;
-          <max_research_phase> [ <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#pre_clinical_research_phase>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_1>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_2>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_3>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#clinical_trial_phase_4>
-             <https://w3id.org/biolink/vocab/MaxResearchPhaseEnum#not_provided> ] ?
+          <max_research_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ?
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociation> ]
     )
