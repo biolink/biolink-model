@@ -1630,10 +1630,10 @@ slots:
         A context qualifier representing a disease or condition in which a relationship expressed in an association took place.
     range: disease
     examples:
-      - value: MONDO:0004979 # Asthma
-      - value: MONDO:0005148 # type 2 diabetes mellitus
+      - value: MONDO:0004979  # Asthma
+      - value: MONDO:0005148  # type 2 diabetes mellitus
     in_subset:
-        - translator_minimal
+      - translator_minimal
 
   qualifiers:
     deprecated: true
