@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.2.5-rc1",
+  "version": "4.2.5-rc2",
   "imports": [
     "linkml:types"
   ],
@@ -4572,6 +4572,34 @@
         "GeneAffectsChemicalAssociation"
       ],
       "range": "OrganismTaxon",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/disease_context_qualifier",
+      "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+      "examples": [
+        {
+          "value": "MONDO:0004979",
+          "@type": "Example"
+        },
+        {
+          "value": "MONDO:0005148",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "context_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/disease_context_qualifier",
+      "owner": "EntityToPhenotypicFeatureAssociationMixin",
+      "domain_of": [
+        "EntityToPhenotypicFeatureAssociationMixin"
+      ],
+      "range": "Disease",
       "@type": "SlotDefinition"
     },
     {
@@ -32077,6 +32105,7 @@
         "predicate",
         "entity_to_phenotypic_feature_association_mixin_object",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32181,7 +32210,8 @@
         "has_count",
         "has_total",
         "has_quotient",
-        "has_percentage"
+        "has_percentage",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToPhenotypicFeatureAssociation",
@@ -32491,6 +32521,7 @@
         "object_direction_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32560,6 +32591,7 @@
         "object_direction_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32638,7 +32670,8 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
-        "sex_qualifier"
+        "sex_qualifier",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation",
@@ -32705,6 +32738,7 @@
         "object_direction_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32774,6 +32808,7 @@
         "object_direction_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32894,6 +32929,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32960,6 +32996,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33038,6 +33075,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33107,6 +33145,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33176,6 +33215,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33243,6 +33283,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33629,6 +33670,7 @@
         "object_direction_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33845,6 +33887,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -34280,6 +34323,7 @@
         "object_aspect_qualifier",
         "qualified_predicate",
         "sex_qualifier",
+        "disease_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -35717,9 +35761,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-10-10T23:59:47",
-  "source_file_size": 401060,
-  "generation_date": "2024-10-10T23:59:53",
+  "source_file_date": "2024-10-14T23:06:36",
+  "source_file_size": 401471,
+  "generation_date": "2024-10-14T23:06:41",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

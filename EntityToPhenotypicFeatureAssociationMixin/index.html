@@ -300,6 +300,10 @@
       EntityToPhenotypicFeatureAssociationMixin &lt;|-- VariantToPhenotypicFeatureAssociation
 
 
+      EntityToPhenotypicFeatureAssociationMixin : disease_context_qualifier
+
+          EntityToPhenotypicFeatureAssociationMixin --|&gt; Disease : disease_context_qualifier
+
       EntityToPhenotypicFeatureAssociationMixin : frequency_qualifier
 
       EntityToPhenotypicFeatureAssociationMixin : has_count
@@ -384,6 +388,12 @@
 <td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
 <td>direct</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td>direct</td>
+<td>MONDO:0004979, MONDO:0005148</td>
 </tr>
 <tr>
 <td><a href="../has_count/">has_count</a>: <br/> <i> number of things with a particular property </i></td>
@@ -507,6 +517,7 @@ slots:
 - predicate
 - object
 - sex qualifier
+- disease context qualifier
 slot_usage:
   object:
     name: object

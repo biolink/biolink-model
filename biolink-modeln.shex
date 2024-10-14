@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.2.5-rc1
+# version: 4.2.5-rc2
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -335,6 +335,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -501,6 +502,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1424,7 +1426,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
     )
@@ -1636,6 +1639,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <FrequencyQuantifier> ] ? ;
           rdf:object @<PhenotypicFeature> ;
           <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1772,6 +1776,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -2320,6 +2325,7 @@ linkml:Sparqlpath xsd:string
              <object_aspect_qualifier> @linkml:String ? ;
              <qualified_predicate> @linkml:String ? ;
              <sex_qualifier> @<BiologicalSex> ? ;
+             <disease_context_qualifier> @<Disease> ? ;
              <has_count> @linkml:Integer ? ;
              <has_total> @linkml:Integer ? ;
              <has_quotient> @linkml:Double ? ;
@@ -2634,6 +2640,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -3484,7 +3491,8 @@ linkml:Sparqlpath xsd:string
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
-          <has_percentage> @linkml:Double ?
+          <has_percentage> @linkml:Double ? ;
+          <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <PhenotypicFeatureToPhenotypicFeatureAssociation> ]
     )
@@ -4267,6 +4275,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
+          <disease_context_qualifier> @<Disease> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;

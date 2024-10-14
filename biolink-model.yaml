@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.5-rc1
+version: 4.2.5-rc2
 
 ## ------------
 ##
@@ -1621,6 +1621,17 @@ slots:
       - value: human  # NCBITaxon:9606
     notes:
       - Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs.
+    in_subset:
+      - translator_minimal
+
+  disease context qualifier:
+    is_a: context qualifier
+    description: >-
+        A context qualifier representing a disease or condition in which a relationship expressed in an association took place.
+    range: disease
+    examples:
+      - value: MONDO:0004979  # Asthma
+      - value: MONDO:0005148  # type 2 diabetes mellitus
     in_subset:
       - translator_minimal
 
@@ -10332,6 +10343,7 @@ classes:
       - predicate
       - object
       - sex qualifier
+      - disease context qualifier
     defining_slots:
       - object
     slot_usage:

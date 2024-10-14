@@ -299,6 +299,10 @@
 
       CaseToPhenotypicFeatureAssociation : description
 
+      CaseToPhenotypicFeatureAssociation : disease_context_qualifier
+
+          CaseToPhenotypicFeatureAssociation --|&gt; Disease : disease_context_qualifier
+
       CaseToPhenotypicFeatureAssociation : frequency_qualifier
 
       CaseToPhenotypicFeatureAssociation : has_attribute
@@ -445,19 +449,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> the case (e.g. patient) that has the property </i></br></td>
 <td>1 <br/> <a href="../Case/">Case</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td>HP:0002487, WBPhenotype:0000180, MP:0001569</td>
 </tr>
 <tr>
@@ -465,6 +469,12 @@
 <td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
 <td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td>MONDO:0004979, MONDO:0005148</td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
