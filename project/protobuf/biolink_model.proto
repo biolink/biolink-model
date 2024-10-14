@@ -338,6 +338,7 @@ message BehaviorToBehavioralFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -582,6 +583,7 @@ message CaseToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -633,6 +635,7 @@ message CausalGeneToDiseaseAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -1730,6 +1733,7 @@ message CorrelatedGeneToDiseaseAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2094,6 +2098,7 @@ message DiseaseToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -2274,6 +2279,7 @@ message DruggableGeneToDiseaseAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2632,6 +2638,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2868,6 +2875,7 @@ message GeneAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2939,6 +2947,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3041,6 +3050,7 @@ message GeneToDiseaseAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3096,6 +3106,7 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3453,6 +3464,7 @@ message GeneToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3820,6 +3832,7 @@ message GenotypeToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -5387,6 +5400,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   integer hasTotal = 0
   double hasQuotient = 0
   double hasPercentage = 0
+  disease diseaseContextQualifier = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -6751,6 +6765,7 @@ message VariantToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0

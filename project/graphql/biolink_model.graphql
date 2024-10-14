@@ -403,6 +403,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -678,6 +679,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -730,6 +732,7 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -1869,6 +1872,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2251,6 +2255,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
   }
 
 type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
@@ -2439,6 +2444,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2610,6 +2616,7 @@ type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
     predicate: PredicateType!
     object: PhenotypicFeature!
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2894,6 +2901,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3161,6 +3169,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3246,6 +3255,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3368,6 +3378,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3424,6 +3435,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3833,6 +3845,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     objectAspectQualifier: String
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -4214,6 +4227,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -6007,6 +6021,7 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     hasTotal: Integer
     hasQuotient: Double
     hasPercentage: Double
+    diseaseContextQualifier: Disease
   }
 
 type PhenotypicQuality
@@ -7485,6 +7500,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
+    diseaseContextQualifier: Disease
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
