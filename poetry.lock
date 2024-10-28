@@ -1296,6 +1296,21 @@ files = [
 ]
 
 [[package]]
+name = "path"
+version = "17.0.0"
+description = "A module wrapper for os.path"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "path-17.0.0-py3-none-any.whl", hash = "sha256:b7309739c569e30110a34c6c812e582c09ff504c43e1232817410181838918ed"},
+    {file = "path-17.0.0.tar.gz", hash = "sha256:e1540261d22df1416fb1b498b3b1ed5353a371a48fe197d66611bb01e7fab2d5"},
+]
+
+[package.extras]
+doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+test = ["appdirs", "more-itertools", "packaging", "pygments", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy", "pytest-ruff (>=0.2.1)", "pywin32"]
+
+[[package]]
 name = "pathspec"
 version = "0.11.2"
 description = "Utility library for gitignore style pattern matching of file paths."
@@ -2755,4 +2770,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "b13a7bbdefea80ebd1de3de9c404cdd53ae99a345ba53da2c4049f8dfd5724e2"
+content-hash = "035f08ed85c26cf309eb9f627519ba54236112e6749be89ac37860faa307af8c"

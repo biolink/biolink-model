@@ -2842,7 +2842,6 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-    inverse: has gene product
     in_subset:
       - translator_minimal
 
@@ -2883,7 +2882,6 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-    inverse: transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -2896,7 +2894,6 @@ slots:
     range: protein
     annotations:
       canonical_predicate: true
-    inverse: translation of
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
@@ -4525,7 +4522,6 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-    inverse: enabled by
     exact_mappings:
       - RO:0002327
 
@@ -4572,7 +4568,6 @@ slots:
     in_subset:
       - translator_minimal
       - samples
-    inverse: derives into
     exact_mappings:
       - RO:0001000
       - FMA:derives_from
@@ -4684,7 +4679,6 @@ slots:
       opposite_of: is excipient of
     in_subset:
       - translator_minimal
-    inverse: is active ingredient of
     mappings:
       - RO:0002248
 
@@ -4838,7 +4832,6 @@ slots:
     range: occurrent
     annotations:
       canonical_predicate: true
-    inverse: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
