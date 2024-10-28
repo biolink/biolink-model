@@ -141,7 +141,7 @@ test-schema: gen-project
 
 test-python:
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
-	$(RUN) python -m unittest discover -p 'test_*.py'
+	$(RUN) pytest
 
 lint:
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
