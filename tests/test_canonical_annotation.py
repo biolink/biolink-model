@@ -29,3 +29,6 @@ def test_predicates_have_canonical_or_inverse(load_biolink_model):
                     if slot_details.inverse:
                         raise AssertionError(f"Slot '{slot_details}' has both 'canonical_predicate: true' "
                                             f"and 'inverse' annotations")
+            elif not slot_details.inverse:
+                raise AssertionError(f"Slot '{slot_details}' has neither 'canonical_predicate: true' "
+                                    f"nor 'inverse' annotations")
