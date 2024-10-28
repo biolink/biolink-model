@@ -2703,7 +2703,6 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: response affected by
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -2719,6 +2718,7 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
+    inverse: affects response to
 
   increases response to:
     description: >-
