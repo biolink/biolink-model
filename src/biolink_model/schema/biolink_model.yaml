@@ -1316,6 +1316,26 @@ slots:
     in_subset:
       - translator_minimal
 
+  specialization qualifier:
+    is_a: qualifier
+    abstract: true
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a more specific version of the 
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
+      subject identifier.
+    examples:
+        - value: CHEBI:24431
+          description: >-
+            In a MAXO annotation this would be a specialization in treatment of a disease. For example, 
+            fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent 
+            therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term
+            'congenital myasthenic syndrome '4A.'
+        - value: CL:0000123
+          description: >-
+            In an expression annotation this would be a specialization in location of an anatomical entity. For example,
+            "expression in the nucleas of hepatic cells" would be a specialization of "expression in hepatic cells"
+
   aspect qualifier:
     is_a: qualifier
     abstract: true
@@ -1439,6 +1459,14 @@ slots:
     is_a: aspect qualifier
     in_subset:
       - translator_minimal
+
+  subject specialization qualifier:
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a more specific version of the 
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
+      subject identifier.
+    
 
   subject form or variant qualifier:
     description: >-

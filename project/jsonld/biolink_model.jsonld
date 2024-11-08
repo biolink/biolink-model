@@ -3906,6 +3906,31 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "specialization_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/specialization_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "examples": [
+        {
+          "value": "CHEBI:24431",
+          "description": "In a MAXO annotation this would be a specialization in treatment of a disease. For example,  fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent  therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term 'congenital myasthenic syndrome '4A.'",
+          "@type": "Example"
+        },
+        {
+          "value": "CL:0000123",
+          "description": "In an expression annotation this would be a specialization in location of an anatomical entity. For example, \"expression in the nucleas of hepatic cells\" would be a specialization of \"expression in hepatic cells\"",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "qualifier",
+      "abstract": true,
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/specialization_qualifier",
+      "owner": "specialization_qualifier",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/aspect_qualifier",
       "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.",
@@ -4133,6 +4158,15 @@
         "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToDiseaseOrPhenotypicFeatureAssociation"
       ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subject_specialization_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -35761,9 +35795,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-10-28T20:58:52",
-  "source_file_size": 401272,
-  "generation_date": "2024-10-28T20:58:57",
+  "source_file_date": "2024-11-07T15:54:25",
+  "source_file_size": 402910,
+  "generation_date": "2024-11-07T15:54:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

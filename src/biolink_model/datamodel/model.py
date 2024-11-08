@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-28T20:59:10
+# Generation date: 2024-11-07T15:54:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -13888,6 +13888,9 @@ slots.routes_of_delivery = Slot(uri=BIOLINK.routes_of_delivery, name="routes of 
 slots.form_or_variant_qualifier = Slot(uri=BIOLINK.form_or_variant_qualifier, name="form or variant qualifier", curie=BIOLINK.curie('form_or_variant_qualifier'),
                    model_uri=BIOLINK.form_or_variant_qualifier, domain=Association, range=Optional[str])
 
+slots.specialization_qualifier = Slot(uri=BIOLINK.specialization_qualifier, name="specialization qualifier", curie=BIOLINK.curie('specialization_qualifier'),
+                   model_uri=BIOLINK.specialization_qualifier, domain=Association, range=Optional[str])
+
 slots.aspect_qualifier = Slot(uri=BIOLINK.aspect_qualifier, name="aspect qualifier", curie=BIOLINK.curie('aspect_qualifier'),
                    model_uri=BIOLINK.aspect_qualifier, domain=Association, range=Optional[str])
 
@@ -13920,6 +13923,9 @@ slots.broad_matches = Slot(uri=BIOLINK.broad_matches, name="broad matches", curi
 
 slots.subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
                    model_uri=BIOLINK.subject_aspect_qualifier, domain=Association, range=Optional[str])
+
+slots.subject_specialization_qualifier = Slot(uri=BIOLINK.subject_specialization_qualifier, name="subject specialization qualifier", curie=BIOLINK.curie('subject_specialization_qualifier'),
+                   model_uri=BIOLINK.subject_specialization_qualifier, domain=None, range=Optional[str])
 
 slots.subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
                    model_uri=BIOLINK.subject_form_or_variant_qualifier, domain=Association, range=Optional[str])
