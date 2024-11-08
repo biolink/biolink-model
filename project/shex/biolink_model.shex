@@ -336,6 +336,9 @@ linkml:Sparqlpath xsd:string
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -503,6 +506,9 @@ linkml:Sparqlpath xsd:string
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1427,7 +1433,10 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <disease_context_qualifier> @<Disease> ?
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
     )
@@ -1640,6 +1649,9 @@ linkml:Sparqlpath xsd:string
           rdf:object @<PhenotypicFeature> ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1777,6 +1789,9 @@ linkml:Sparqlpath xsd:string
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -2326,6 +2341,9 @@ linkml:Sparqlpath xsd:string
              <qualified_predicate> @linkml:String ? ;
              <sex_qualifier> @<BiologicalSex> ? ;
              <disease_context_qualifier> @<Disease> ? ;
+             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <anatomical_context_qualifier> @linkml:String ? ;
              <has_count> @linkml:Integer ? ;
              <has_total> @linkml:Integer ? ;
              <has_quotient> @linkml:Double ? ;
@@ -2641,6 +2659,9 @@ linkml:Sparqlpath xsd:string
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -3492,7 +3513,10 @@ linkml:Sparqlpath xsd:string
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
           <has_percentage> @linkml:Double ? ;
-          <disease_context_qualifier> @<Disease> ?
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ?
        ) ;
        rdf:type [ <PhenotypicFeatureToPhenotypicFeatureAssociation> ]
     )
@@ -4276,6 +4300,9 @@ linkml:Sparqlpath xsd:string
           <qualified_predicate> @linkml:String ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;

@@ -404,6 +404,9 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -680,6 +683,9 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -733,6 +739,9 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -1873,6 +1882,9 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2256,6 +2268,9 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
   }
 
 type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
@@ -2445,6 +2460,9 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2617,6 +2635,9 @@ type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
     object: PhenotypicFeature!
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2902,6 +2923,9 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3170,6 +3194,9 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3256,6 +3283,9 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3379,6 +3409,9 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3436,6 +3469,9 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3846,6 +3882,9 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -4228,6 +4267,9 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -6022,6 +6064,9 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     hasQuotient: Double
     hasPercentage: Double
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
   }
 
 type PhenotypicQuality
@@ -7501,6 +7546,9 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     qualifiedPredicate: String
     sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double

@@ -3911,13 +3911,13 @@
       "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
       "examples": [
         {
-          "value": "CHEBI:24431",
+          "value": "CHEBI:5118",
           "description": "In a MAXO annotation this would be a specialization in treatment of a disease. For example,  fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent  therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term 'congenital myasthenic syndrome '4A.'",
           "@type": "Example"
         },
         {
-          "value": "CL:0000123",
-          "description": "In an expression annotation this would be a specialization in location of an anatomical entity. For example, \"expression in the nucleas of hepatic cells\" would be a specialization of \"expression in hepatic cells\"",
+          "value": "GO:0005634",
+          "description": "In an expression annotation this would be a specialization in location of an anatomical entity. For example, \"expression in the nucleus of hepatic cells\" would be a specialization of \"expression in hepatic cells\"",
           "@type": "Example"
         }
       ],
@@ -4165,9 +4165,18 @@
       "name": "subject_specialization_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "in_subset": [
+        "translator_minimal"
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "specialization_qualifier",
+      "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
-      "range": "string",
+      "owner": "EntityToPhenotypicFeatureAssociationMixin",
+      "domain_of": [
+        "EntityToPhenotypicFeatureAssociationMixin"
+      ],
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -4345,6 +4354,24 @@
         "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "object_specialization_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_specialization_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "specialization_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_specialization_qualifier",
+      "owner": "EntityToPhenotypicFeatureAssociationMixin",
+      "domain_of": [
+        "EntityToPhenotypicFeatureAssociationMixin"
+      ],
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -4564,12 +4591,13 @@
       "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "EntityToPhenotypicFeatureAssociationMixin",
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -31023,7 +31051,7 @@
     {
       "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
-      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.",
+      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "mixins": [
@@ -32140,6 +32168,9 @@
         "entity_to_phenotypic_feature_association_mixin_object",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32245,7 +32276,10 @@
         "has_total",
         "has_quotient",
         "has_percentage",
-        "disease_context_qualifier"
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToPhenotypicFeatureAssociation",
@@ -32556,6 +32590,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32626,6 +32663,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32705,7 +32745,10 @@
         "object_direction_qualifier",
         "qualified_predicate",
         "sex_qualifier",
-        "disease_context_qualifier"
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation",
@@ -32773,6 +32816,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32843,6 +32889,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -32964,6 +33013,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33031,6 +33083,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33110,6 +33165,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33180,6 +33238,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33250,6 +33311,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33318,6 +33382,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33705,6 +33772,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -33922,6 +33992,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -34358,6 +34431,9 @@
         "qualified_predicate",
         "sex_qualifier",
         "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -35795,9 +35871,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-11-07T15:54:25",
-  "source_file_size": 402910,
-  "generation_date": "2024-11-07T15:54:33",
+  "source_file_date": "2024-11-07T16:11:20",
+  "source_file_size": 403672,
+  "generation_date": "2024-11-07T16:11:27",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
