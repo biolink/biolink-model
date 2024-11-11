@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-28T20:59:10
+# Generation date: 2024-11-11T18:36:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8515,6 +8515,13 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, PredicateType] = None
     FDA_adverse_event_level: Optional[Union[str, "FDAIDAAdverseEventEnum"]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_aspect_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8539,6 +8546,27 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
 
         if self.FDA_adverse_event_level is not None and not isinstance(self.FDA_adverse_event_level, FDAIDAAdverseEventEnum):
             self.FDA_adverse_event_level = FDAIDAAdverseEventEnum(self.FDA_adverse_event_level)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
+            self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9640,6 +9668,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
@@ -9656,6 +9685,9 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -9713,7 +9745,6 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
     predicate: Union[str, PredicateType] = None
     object: Union[str, PhenotypicFeatureId] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_quotient: Optional[float] = None
@@ -9737,9 +9768,6 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         if self.has_count is not None and not isinstance(self.has_count, int):
             self.has_count = int(self.has_count)
@@ -10167,8 +10195,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10209,11 +10237,11 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10246,8 +10274,8 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10288,11 +10316,11 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10330,8 +10358,8 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10387,11 +10415,11 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10424,8 +10452,8 @@ class CaseToPhenotypicFeatureAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10466,11 +10494,11 @@ class CaseToPhenotypicFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10503,8 +10531,8 @@ class BehaviorToBehavioralFeatureAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10545,11 +10573,11 @@ class BehaviorToBehavioralFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10642,8 +10670,8 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10684,11 +10712,11 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10715,8 +10743,8 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10746,11 +10774,11 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10777,6 +10805,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10806,6 +10835,9 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -10831,6 +10863,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10860,6 +10893,9 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -10885,6 +10921,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -10914,6 +10951,9 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -10939,6 +10979,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     has_evidence: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -10968,6 +11009,9 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         if not isinstance(self.has_evidence, list):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
@@ -11000,6 +11044,7 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -11040,6 +11085,9 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
@@ -11282,8 +11330,8 @@ class VariantToPhenotypicFeatureAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11324,11 +11372,11 @@ class VariantToPhenotypicFeatureAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11357,6 +11405,7 @@ class VariantToDiseaseAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11397,6 +11446,9 @@ class VariantToDiseaseAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -11424,6 +11476,7 @@ class GenotypeToDiseaseAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11463,6 +11516,9 @@ class GenotypeToDiseaseAssociation(Association):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11526,6 +11582,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11549,6 +11606,9 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11577,6 +11637,7 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11607,6 +11668,9 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -11634,6 +11698,7 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11664,6 +11729,9 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -11691,6 +11759,7 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11731,6 +11800,9 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
 
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -11758,6 +11830,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -11797,6 +11870,9 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
