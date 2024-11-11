@@ -733,6 +733,7 @@ message CellLineAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -1115,6 +1116,13 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
+  frequencyValue frequencyQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   predicateType predicate = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
@@ -1160,6 +1168,13 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
+  frequencyValue frequencyQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
@@ -3683,6 +3698,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   genotype subject = 0
  }
 message GenotypeToDiseaseAssociation
@@ -3732,6 +3748,7 @@ message GenotypeToDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
@@ -5086,6 +5103,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
@@ -5380,6 +5398,7 @@ message PhenotypicFeatureToDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -6619,6 +6638,7 @@ message VariantAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   sequenceVariant subject = 0
  }
 message VariantToDiseaseAssociation
@@ -6668,6 +6688,7 @@ message VariantToDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 message VariantToGeneAssociation

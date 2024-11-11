@@ -4659,6 +4659,7 @@
       "slot_uri": "https://w3id.org/biolink/vocab/disease_context_qualifier",
       "owner": "EntityToPhenotypicFeatureAssociationMixin",
       "domain_of": [
+        "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "range": "Disease",
@@ -31056,7 +31057,8 @@
       "is_a": "Association",
       "mixins": [
         "ChemicalToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "EntityToFeatureOrDiseaseQualifiersMixin"
       ],
       "slots": [
         "id",
@@ -31098,7 +31100,14 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
-        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate"
+        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
+        "frequency_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
@@ -31159,6 +31168,13 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
+        "frequency_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
+        "disease_context_qualifier",
         "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate"
       ],
       "slot_usage": {},
@@ -32119,7 +32135,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin",
@@ -32179,6 +32196,8 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin",
       "defining_slots": [
+        "subject",
+        "predicate",
         "object"
       ],
       "@type": "ClassDefinition"
@@ -32364,6 +32383,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "entity_to_disease_association_mixin_object"
       ],
       "slot_usage": {},
@@ -33458,6 +33478,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33845,7 +33866,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToDiseaseAssociation",
@@ -33912,7 +33934,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
@@ -34065,6 +34088,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "variant_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -34130,6 +34154,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "genotype_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -34195,7 +34220,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation",
@@ -34260,7 +34286,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -35871,9 +35898,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-11-07T16:11:20",
-  "source_file_size": 403672,
-  "generation_date": "2024-11-07T16:11:27",
+  "source_file_date": "2024-11-11T12:07:16",
+  "source_file_size": 403774,
+  "generation_date": "2024-11-11T12:07:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

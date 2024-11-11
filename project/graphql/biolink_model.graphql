@@ -833,6 +833,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
   }
 
 type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
@@ -1243,10 +1244,17 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
+    frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    diseaseContextQualifier: Disease
     predicate: PredicateType!
   }
 
-type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
   {
     id: String!
     iri: IriType
@@ -1288,6 +1296,13 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
     predicate: PredicateType!
+    frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+    diseaseContextQualifier: Disease
   }
 
 type ChemicalRole
@@ -2540,6 +2555,7 @@ interface EntityToDiseaseAssociationMixin
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
     object: Disease!
   }
 
@@ -2568,6 +2584,7 @@ interface EntityToFeatureOrDiseaseQualifiersMixin
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
   }
 
 interface EntityToOutcomeAssociationMixin
@@ -4073,6 +4090,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
     subject: Genotype!
   }
 
@@ -4123,6 +4141,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
   }
 
 interface GenotypeToEntityAssociationMixin
@@ -5670,6 +5689,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
   }
 
 interface Outcome
@@ -5986,6 +6006,7 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
     sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
@@ -7348,6 +7369,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
     subject: SequenceVariant!
   }
 
@@ -7398,6 +7420,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
   }
 
 interface VariantToEntityAssociationMixin
