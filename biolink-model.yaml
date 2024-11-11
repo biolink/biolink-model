@@ -9830,6 +9830,7 @@ classes:
     mixins:
       - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
     slots:
       - FDA adverse event level
     slot_usage:
@@ -10313,6 +10314,7 @@ classes:
       - object aspect qualifier
       - object direction qualifier
       - qualified predicate
+      - disease context qualifier
 
   feature or disease qualifiers to entity mixin:
     description: >-
@@ -10336,7 +10338,6 @@ classes:
       - predicate
       - object
       - sex qualifier
-      - disease context qualifier
     defining_slots:
       - object
     slot_usage:
