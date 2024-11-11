@@ -291,6 +291,10 @@
 
       MacromolecularMachineToEntityAssociationMixin : predicate
 
+      MacromolecularMachineToEntityAssociationMixin : species_context_qualifier
+
+          MacromolecularMachineToEntityAssociationMixin --|&gt; OrganismTaxon : species_context_qualifier
+
       MacromolecularMachineToEntityAssociationMixin : subject
 
           MacromolecularMachineToEntityAssociationMixin --|&gt; NamedThing : subject
@@ -327,6 +331,12 @@
 <td>direct</td>
 <td></td>
 </tr>
+<tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>direct</td>
+<td>zebrafish, human</td>
+</tr>
 </tbody>
 </table>
 <h2 id="mixin-usage">Mixin Usage</h2>
@@ -362,6 +372,7 @@ slots:
 - subject
 - predicate
 - object
+- species context qualifier
 slot_usage:
   subject:
     name: subject

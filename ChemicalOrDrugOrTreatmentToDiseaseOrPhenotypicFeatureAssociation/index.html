@@ -277,12 +277,13 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-chemicalordrugortreatmenttodiseaseorphenotypicfeatureassociation"><strong>  Class: ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.</i><br/>
+<strong>Description:</strong><i> This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
       ChemicalToEntityAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+      EntityToFeatureOrDiseaseQualifiersMixin &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
       Association &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
 
 
@@ -303,9 +304,15 @@
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : description
 
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : disease_context_qualifier
+
+          ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; Disease : disease_context_qualifier
+
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : FDA_adverse_event_level
 
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; FDAIDAAdverseEventEnum : FDA_adverse_event_level
+
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : frequency_qualifier
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : has_attribute
 
@@ -337,6 +344,8 @@
 
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; DiseaseOrPhenotypicFeature : object
 
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : object_aspect_qualifier
+
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : object_category
 
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category
@@ -346,6 +355,10 @@
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category_closure
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : object_closure
+
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : object_direction_qualifier
+
+          ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; DirectionQualifierEnum : object_direction_qualifier
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : object_label_closure
 
@@ -367,6 +380,8 @@
 
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; Publication : publications
 
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : qualified_predicate
+
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : qualifier
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : qualifiers
@@ -381,6 +396,8 @@
 
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; ChemicalEntityOrGeneOrGeneProduct : subject
 
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : subject_aspect_qualifier
+
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : subject_category
 
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category
@@ -390,6 +407,10 @@
           ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category_closure
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : subject_closure
+
+      ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : subject_direction_qualifier
+
+          ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation --|&gt; DirectionQualifierEnum : subject_direction_qualifier
 
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation : subject_label_closure
 
@@ -405,7 +426,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><strong>ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</strong> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]<ul>
+<li><strong>ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</strong> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]<ul>
 <li><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
 </ul>
 </li>
@@ -434,20 +455,56 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> the chemical entity or entity that is an interactor </i></td>
 <td>1 <br/> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease or phenotype </i></td>
 <td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td>MONDO:0017314, MP:0013229</td>
+</tr>
+<tr>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>stability, abundance, expression, exposure</td>
+</tr>
+<tr>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>stability, abundance, expression, exposure</td>
+</tr>
+<tr>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>MONDO:0004979, MONDO:0005148</td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
@@ -665,19 +722,26 @@
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>
+<td>0..1 <br/> <a href="../FrequencyValue/">FrequencyValue</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: chemical or drug or treatment to disease or phenotypic feature association
 description: This association defines a relationship between a chemical or treatment
-  (or procedure) and a disease or phenotypic feature where the disesae or phenotypic
+  (or procedure) and a disease or phenotypic feature where the disease or phenotypic
   feature is a secondary undesirable effect.
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: association
 mixins:
 - chemical to entity association mixin
 - entity to disease or phenotypic feature association mixin
+- entity to feature or disease qualifiers mixin
 slots:
 - FDA adverse event level
 slot_usage:

@@ -291,9 +291,14 @@
       FrequencyQualifierMixin &lt;|-- EntityToFeatureOrDiseaseQualifiersMixin
 
 
+      EntityToFeatureOrDiseaseQualifiersMixin &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
       EntityToFeatureOrDiseaseQualifiersMixin &lt;|-- EntityToPhenotypicFeatureAssociationMixin
       EntityToFeatureOrDiseaseQualifiersMixin &lt;|-- EntityToDiseaseAssociationMixin
 
+
+      EntityToFeatureOrDiseaseQualifiersMixin : disease_context_qualifier
+
+          EntityToFeatureOrDiseaseQualifiersMixin --|&gt; Disease : disease_context_qualifier
 
       EntityToFeatureOrDiseaseQualifiersMixin : frequency_qualifier
 
@@ -376,6 +381,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td>direct</td>
+<td>MONDO:0004979, MONDO:0005148</td>
+</tr>
+<tr>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>
 <td>0..1 <br/> <a href="../FrequencyValue/">FrequencyValue</a></td>
 <td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
@@ -411,8 +422,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.</td>
 </tr>
 </tbody>
 </table>
@@ -429,6 +440,7 @@ slots:
 - object aspect qualifier
 - object direction qualifier
 - qualified predicate
+- disease context qualifier
 
 </code></pre>
 </details>

@@ -296,6 +296,10 @@
 
       CellLineAsAModelOfDiseaseAssociation : description
 
+      CellLineAsAModelOfDiseaseAssociation : disease_context_qualifier
+
+          CellLineAsAModelOfDiseaseAssociation --|&gt; Disease : disease_context_qualifier
+
       CellLineAsAModelOfDiseaseAssociation : frequency_qualifier
 
       CellLineAsAModelOfDiseaseAssociation : has_attribute
@@ -433,19 +437,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> A cell line derived from an organismal entity with a disease state that is used as a model of that disease. </i></td>
 <td>1 <br/> <a href="../CellLine/">CellLine</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> The relationship to the disease </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
 <td>MONDO:0020066</td>
 </tr>
 <tr>
@@ -693,6 +697,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>MONDO:0004979, MONDO:0005148</td>
 </tr>
 <tr>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>

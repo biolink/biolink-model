@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/xref/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/subject_specialization_qualifier/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: xref (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: subject_specialization_qualifier - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-xref-multivalued" class="md-skip">
+        <a href="#slot-subject_specialization_qualifier" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              <strong> Slot: xref </strong>  (multivalued)
+              <strong> Slot: subject_specialization_qualifier </strong>
             
           </span>
         </div>
@@ -578,6 +578,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     <span class="md-ellipsis">
       Applicable Classes
@@ -613,18 +622,29 @@
   
 
 
-<h1 id="slot-xref-multivalued"><strong> Slot: xref </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</i><br>
-   <strong>Aliases:</strong> dbxref, Dbxref, DbXref, record_url, source_record_urls<br>
+<h1 id="slot-subject_specialization_qualifier"><strong> Slot: subject_specialization_qualifier </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.</i><br>
+
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
+<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
 <strong>Range:</strong>   <a href="../Uriorcurie/">Uriorcurie</a> <br></p>
-<!-- no inheritance hierarchy -->
-
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../association_slot/">association_slot</a><ul>
+<li><a href="../qualifier/">qualifier</a><ul>
+<li><a href="../specialization_qualifier/">specialization_qualifier</a><ul>
+<li><strong>subject_specialization_qualifier</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
 <thead>
@@ -636,28 +656,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneProductMixin/">GeneProductMixin</a></td>
-<td>The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RetrievalSource/">RetrievalSource</a></td>
-<td>Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Publication/">Publication</a></td>
-<td>Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP).</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Gene/">Gene</a></td>
-<td>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NamedThing/">NamedThing</a></td>
-<td>a databased entity or concept/class</td>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td>None</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -665,34 +665,21 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: xref
-description: A database cross reference or alternative identifier for a NamedThing
-  or edge between two NamedThings.  This property should point to a database record
-  or webpage that supports the existence of the edge, or gives more detail about the
-  edge. This property can be used on a node or edge to provide multiple URIs or CURIE
-  cross references.
+<pre><code class="language-yaml">name: subject specialization qualifier
+description: A qualifier that composes with a core subject/object concept to define
+  a more specific version of the  subject concept, specifically using an ontology
+  term that is not a subclass or descendant of the core concept  and in the vast majority
+  of cases, is of a different ontological namespace than the category or namespace
+  of the subject identifier.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
-aliases:
-- dbxref
-- Dbxref
-- DbXref
-- record_url
-- source_record_urls
-narrow_mappings:
-- gff3:Dbxref
-- gpi:DB_Xrefs
-domain: named thing
-alias: xref
+is_a: specialization qualifier
+domain: association
+alias: subject_specialization_qualifier
 domain_of:
-- named thing
-- publication
-- retrieval source
-- gene
-- gene product mixin
+- entity to phenotypic feature association mixin
 range: uriorcurie
-multivalued: true
 
 </code></pre>
 

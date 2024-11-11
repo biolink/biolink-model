@@ -473,7 +473,7 @@
 <li><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
 <li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]</li>
 <li><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
-<li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
+<li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]</li>
 <li><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a> [ <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>]</li>
 <li><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></li>
 <li><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]</li>
@@ -4230,6 +4230,42 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -4381,6 +4417,12 @@
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4410,6 +4452,42 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -4561,6 +4639,12 @@
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7428,6 +7512,12 @@
 </tr>
 <tr>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -7536,6 +7626,24 @@
 </tr>
 <tr>
 <td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -7657,6 +7765,24 @@
 <tr>
 <td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8047,6 +8173,12 @@
 <tr>
 <td><a href="../EntityToDiseaseAssociationMixin/">EntityToDiseaseAssociationMixin</a></td>
 <td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociationMixin/">EntityToDiseaseAssociationMixin</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8508,6 +8640,24 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -8725,6 +8875,24 @@
 <tr>
 <td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8958,6 +9126,24 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9180,6 +9366,24 @@
 </tr>
 <tr>
 <td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9397,6 +9601,24 @@
 <tr>
 <td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9672,6 +9894,24 @@
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9882,6 +10122,24 @@
 </tr>
 <tr>
 <td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10116,6 +10374,24 @@
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10338,6 +10614,24 @@
 </tr>
 <tr>
 <td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10560,6 +10854,24 @@
 </tr>
 <tr>
 <td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10782,6 +11094,24 @@
 </tr>
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -11173,6 +11503,12 @@
 <tr>
 <td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11934,6 +12270,24 @@
 </tr>
 <tr>
 <td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -12330,6 +12684,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -12535,6 +12895,12 @@
 <tr>
 <td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
 <td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12606,6 +12972,24 @@
 </tr>
 <tr>
 <td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -12990,6 +13374,12 @@
 </tr>
 <tr>
 <td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -13200,6 +13590,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -13410,6 +13806,12 @@
 </tr>
 <tr>
 <td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -13615,6 +14017,12 @@
 <tr>
 <td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14017,6 +14425,24 @@
 <tr>
 <td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14747,6 +15173,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
 <td><a href="../predicate/">predicate</a></td>
 <td>domain</td>
@@ -14755,6 +15187,12 @@
 <tr>
 <td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
 <td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14928,6 +15366,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -15091,6 +15535,12 @@
 <tr>
 <td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
 <td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>

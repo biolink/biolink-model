@@ -111,6 +111,20 @@
                 "parent": "qualifier"
             },
             {
+                "name": "specialization_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_specialization_qualifier",
+                        "parent": "specialization_qualifier"
+                    },
+                    {
+                        "name": "subject_specialization_qualifier",
+                        "parent": "specialization_qualifier"
+                    }
+                ]
+            },
+            {
                 "name": "statement_qualifier",
                 "parent": "qualifier",
                 "children": [

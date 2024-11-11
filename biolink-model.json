@@ -2153,6 +2153,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -2346,6 +2353,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -2490,6 +2504,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -3938,6 +3959,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -4131,6 +4159,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -4280,6 +4315,13 @@
                         "null"
                     ]
                 },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "timepoint": {
                     "description": "a point in time",
                     "format": "time",
@@ -4332,6 +4374,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -4528,6 +4577,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -4669,6 +4725,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -5030,6 +5093,13 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
                     "type": [
                         "string",
                         "null"
@@ -7840,6 +7910,20 @@
                         "null"
                     ]
                 },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7910,6 +7994,13 @@
                     "description": "disease or phenotype",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -7936,6 +8027,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8003,6 +8098,13 @@
                         "null"
                     ]
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": [
@@ -8034,6 +8136,13 @@
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
                     "description": "the chemical entity or entity that is an interactor"
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -8060,6 +8169,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8110,7 +8223,7 @@
         },
         "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation": {
             "additionalProperties": false,
-            "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.",
+            "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.",
             "properties": {
                 "FDA_adverse_event_level": {
                     "$ref": "#/$defs/FDAIDAAdverseEventEnum",
@@ -8164,6 +8277,20 @@
                         "null"
                     ]
                 },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -8234,6 +8361,13 @@
                     "description": "disease or phenotype",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -8260,6 +8394,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8327,6 +8465,13 @@
                         "null"
                     ]
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": [
@@ -8358,6 +8503,13 @@
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
                     "description": "the chemical entity or entity that is an interactor"
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -8384,6 +8536,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -12324,6 +12480,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -12517,6 +12680,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -12658,6 +12828,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -14889,6 +15066,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -15082,6 +15266,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "onset_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.",
                     "type": [
@@ -15233,6 +15424,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -16301,6 +16499,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -16494,6 +16699,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -16635,6 +16847,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -18894,6 +19113,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -19087,6 +19313,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -19231,6 +19464,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -20617,6 +20857,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -20810,6 +21057,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -20951,6 +21205,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -21148,6 +21409,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -21341,6 +21609,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -21489,6 +21764,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -21966,6 +22248,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -22159,6 +22448,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -22305,6 +22601,13 @@
                         "null"
                     ]
                 },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "timepoint": {
                     "description": "a point in time",
                     "format": "time",
@@ -22357,6 +22660,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -22553,6 +22863,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -22694,6 +23011,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -25036,6 +25360,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -25229,6 +25560,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -25370,6 +25708,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -26378,6 +26723,13 @@
                         "null"
                     ]
                 },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": [
@@ -26729,6 +27081,13 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
                     "type": [
                         "string",
                         "null"
@@ -27703,6 +28062,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -27896,6 +28262,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -28040,6 +28413,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -30873,6 +31253,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term"
@@ -31193,6 +31580,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term"
@@ -31510,6 +31904,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -36620,6 +37021,13 @@
                         "null"
                     ]
                 },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": [
@@ -38793,6 +39201,13 @@
                         "null"
                     ]
                 },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": [
@@ -39156,6 +39571,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -39349,6 +39771,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -39493,6 +39922,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -47707,6 +48143,13 @@
                         "null"
                     ]
                 },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": [
@@ -48058,6 +48501,13 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "disease_context_qualifier": {
+                    "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
                     "type": [
                         "string",
                         "null"
@@ -49060,6 +49510,13 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -49253,6 +49710,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [
@@ -49397,6 +49861,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
                     "type": [
                         "string",
                         "null"
@@ -50371,5 +50842,5 @@
     "metamodel_version": "1.7.0",
     "title": "Biolink-Model",
     "type": "object",
-    "version": "4.2.5-rc2"
+    "version": "4.2.5"
 }
