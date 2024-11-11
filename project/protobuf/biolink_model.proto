@@ -337,8 +337,11 @@ message BehaviorToBehavioralFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -582,8 +585,11 @@ message CaseToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -634,8 +640,11 @@ message CausalGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -1116,7 +1125,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   disease diseaseContextQualifier = 0
   predicateType predicate = 0
  }
-// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
 message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  {
   string id = 0
@@ -1747,8 +1756,11 @@ message CorrelatedGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2112,8 +2124,11 @@ message DiseaseToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -2293,8 +2308,11 @@ message DruggableGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2652,8 +2670,11 @@ message ExposureEventToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2889,8 +2910,11 @@ message GeneAsAModelOfDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2961,8 +2985,11 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3064,8 +3091,11 @@ message GeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3120,8 +3150,11 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3478,8 +3511,11 @@ message GeneToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3848,8 +3884,11 @@ message GenotypeToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -5420,6 +5459,9 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -6785,8 +6827,11 @@ message VariantToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
