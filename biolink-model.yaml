@@ -10380,10 +10380,6 @@ classes:
       - predicate
       - object
       - sex qualifier
-      - disease context qualifier
-      - subject specialization qualifier
-      - object specialization qualifier
-      - anatomical context qualifier
     defining_slots:
       - subject
       - predicate
@@ -10531,7 +10527,13 @@ classes:
       - subject
       - predicate
       - object
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
     defining_slots:
+      - subject
+      - predicate
       - object
     slot_usage:
       object:
