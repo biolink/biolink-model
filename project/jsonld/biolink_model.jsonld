@@ -4626,12 +4626,13 @@
       "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "MacromolecularMachineToEntityAssociationMixin",
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "MacromolecularMachineToEntityAssociationMixin"
       ],
       "range": "OrganismTaxon",
       "@type": "SlotDefinition"
@@ -34662,7 +34663,8 @@
       "slots": [
         "macromolecular_machine_to_entity_association_mixin_subject",
         "predicate",
-        "object"
+        "object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToEntityAssociationMixin",
@@ -34716,7 +34718,8 @@
         "association_type",
         "association_category",
         "functional_association_subject",
-        "macromolecular_machine_to_molecular_activity_association_object"
+        "macromolecular_machine_to_molecular_activity_association_object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation",
@@ -34770,7 +34773,8 @@
         "association_type",
         "association_category",
         "functional_association_subject",
-        "macromolecular_machine_to_biological_process_association_object"
+        "macromolecular_machine_to_biological_process_association_object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation",
@@ -34824,7 +34828,8 @@
         "association_type",
         "association_category",
         "functional_association_subject",
-        "macromolecular_machine_to_cellular_component_association_object"
+        "macromolecular_machine_to_cellular_component_association_object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation",
@@ -35898,9 +35903,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2024-11-11T20:15:47",
-  "source_file_size": 403774,
-  "generation_date": "2024-11-11T20:15:53",
+  "source_file_date": "2024-11-11T20:23:31",
+  "source_file_size": 403808,
+  "generation_date": "2024-11-11T20:23:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

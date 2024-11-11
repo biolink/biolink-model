@@ -31253,6 +31253,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term"
@@ -31573,6 +31580,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term"
@@ -31890,6 +31904,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },

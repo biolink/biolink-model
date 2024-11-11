@@ -4720,6 +4720,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
     object: BiologicalProcess!
+    speciesContextQualifier: OrganismTaxon
   }
 
 type MacromolecularMachineToCellularComponentAssociation implements MacromolecularMachineToEntityAssociationMixin
@@ -4763,6 +4764,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
     object: CellularComponent!
+    speciesContextQualifier: OrganismTaxon
   }
 
 interface MacromolecularMachineToEntityAssociationMixin
@@ -4770,6 +4772,7 @@ interface MacromolecularMachineToEntityAssociationMixin
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
+    speciesContextQualifier: OrganismTaxon
   }
 
 type MacromolecularMachineToMolecularActivityAssociation implements MacromolecularMachineToEntityAssociationMixin
@@ -4813,6 +4816,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
     object: MolecularActivity!
+    speciesContextQualifier: OrganismTaxon
   }
 
 type Mammal implements SubjectOfInvestigation

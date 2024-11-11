@@ -4289,6 +4289,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   biologicalProcess object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
 message MacromolecularMachineToCellularComponentAssociation
@@ -4332,6 +4333,7 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   cellularComponent object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 message MacromolecularMachineToMolecularActivityAssociation
@@ -4375,6 +4377,7 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
 message Mammal

@@ -7531,6 +7531,7 @@ class MacromolecularMachineToEntityAssociationMixin(ConfiguredBaseModel):
     subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
 
 
 class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineToEntityAssociationMixin, FunctionalAssociation):
@@ -7540,6 +7541,7 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     subject: str = Field(..., description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""class describing the activity, process or localization of the gene product""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -7585,6 +7587,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     subject: str = Field(..., description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""class describing the activity, process or localization of the gene product""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
@@ -7630,6 +7633,7 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     subject: str = Field(..., description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(..., description="""class describing the activity, process or localization of the gene product""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[List[str]] = Field(None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
