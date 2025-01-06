@@ -214,11 +214,19 @@
     },
     {
       "prefix_prefix": "ICD10",
-      "prefix_reference": "https://icd.codes/icd9cm/"
+      "prefix_reference": "https://icd.who.int/browse10/2016/en#/"
     },
     {
       "prefix_prefix": "ICD9",
       "prefix_reference": "http://translator.ncats.nih.gov/ICD9_"
+    },
+    {
+      "prefix_prefix": "icd11",
+      "prefix_reference": "http://id.who.int/icd/entity/"
+    },
+    {
+      "prefix_prefix": "icd11.foundation",
+      "prefix_reference": "http://id.who.int/icd/entity/"
     },
     {
       "prefix_prefix": "interpro",
@@ -27223,6 +27231,8 @@
         "NCIT",
         "SNOMEDCT",
         "medgen",
+        "ICD11",
+        "icd11.foundation",
         "ICD10",
         "ICD9",
         "KEGG.DISEASE",
@@ -35890,9 +35900,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-01-06T18:56:37",
-  "source_file_size": 403978,
-  "generation_date": "2025-01-06T18:56:43",
+  "source_file_date": "2025-01-06T20:02:53",
+  "source_file_size": 404123,
+  "generation_date": "2025-01-06T20:02:58",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
