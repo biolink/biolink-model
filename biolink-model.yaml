@@ -75,8 +75,9 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD10: 'https://icd.codes/icd9cm/'
+  ICD10: 'https://icd.who.int/browse10/2016/en#/'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  icd11: 'http://id.who.int/icd/entity/'
   icd11.foundation: 'http://id.who.int/icd/entity/'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   INO: 'http://purl.obolibrary.org/obo/INO_'
@@ -2499,7 +2500,6 @@ slots:
       - interacts with
 
   directly physically interacts with:
-    aliases: ['molecularly interacts with']
     is_a: physically interacts with
     description: >-
       A causal mechanism mediated by a direct contact between the effector and target entities (this contact may
@@ -2889,11 +2889,11 @@ slots:
     in_subset:
       - translator_minimal
 
-  has gene product:  # isoform relation too
+  has gene product:
     is_a: related to at instance level
     description: >-
       holds between a gene and a transcribed and/or
-      translated product generated from it.
+      translated product generated from it
     domain: gene
     range: gene product mixin
     inverse: gene product of
@@ -4233,7 +4233,7 @@ slots:
       - RO:0002180
       - RO:0002351
       - RO:0002473
-      - RO:0002524 # has subsequence
+      - RO:0002524
       - RO:0002551
       - RXNORM:has_ingredient
       - SNOMED:has_component
