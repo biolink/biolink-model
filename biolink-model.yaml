@@ -75,8 +75,10 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD10: 'https://icd.codes/icd9cm/'
+  ICD10: 'https://icd.who.int/browse10/2016/en#/'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  icd11: 'http://id.who.int/icd/entity/'
+  icd11.foundation: 'http://id.who.int/icd/entity/'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   INO: 'http://purl.obolibrary.org/obo/INO_'
   isbn: 'https://www.isbn-international.org/identifier/'  # note: a resolvable base URI not available from isbn-international
@@ -7676,6 +7678,7 @@ classes:
       - metacyc.reaction
       - KEGG.MODULE  ## M number
       - KEGG
+      - UMLS
 
   pathway:
     is_a: biological process
@@ -8210,6 +8213,8 @@ classes:
       - NCIT
       - SNOMEDCT
       - medgen
+      - ICD11
+      - icd11.foundation
       - ICD10
       - ICD9
       - KEGG.DISEASE  ## H number
@@ -10380,10 +10385,6 @@ classes:
       - predicate
       - object
       - sex qualifier
-      - disease context qualifier
-      - subject specialization qualifier
-      - object specialization qualifier
-      - anatomical context qualifier
     defining_slots:
       - subject
       - predicate
@@ -10531,7 +10532,13 @@ classes:
       - subject
       - predicate
       - object
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
     defining_slots:
+      - subject
+      - predicate
       - object
     slot_usage:
       object:
@@ -11859,6 +11866,10 @@ enums:
         is_a: transport
       splicing:
       molecular_interaction:
+      guanyl_nucleotide_exchange:
+        is_a: molecular_interaction
+      adenyl_nucleotide_exchange:
+        is_a: molecular_interaction
       molecular_modification:
       acetylation:
         is_a: molecular_modification

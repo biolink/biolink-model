@@ -67,7 +67,17 @@
             },
             {
                 "name": "molecular_interaction",
-                "parent": "[root]"
+                "parent": "[root]",
+                "children": [
+                    {
+                        "name": "adenyl_nucleotide_exchange",
+                        "parent": "molecular_interaction"
+                    },
+                    {
+                        "name": "guanyl_nucleotide_exchange",
+                        "parent": "molecular_interaction"
+                    }
+                ]
             },
             {
                 "name": "molecular_modification",

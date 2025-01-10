@@ -457,6 +457,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>range</td>
@@ -464,6 +476,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>range</td>
 <td><a href="./">Disease</a></td>
@@ -507,6 +525,12 @@
 <tr>
 <td><a href="../EntityToDiseaseAssociationMixin/">EntityToDiseaseAssociationMixin</a></td>
 <td><a href="../object/">object</a></td>
+<td>range</td>
+<td><a href="./">Disease</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>range</td>
 <td><a href="./">Disease</a></td>
 </tr>
@@ -758,7 +782,7 @@
 </tr>
 <tr>
 <td>UMLS</td>
-<td><a href="../OntologyClass/">OntologyClass</a><br/><a href="../OrganismTaxon/">OrganismTaxon</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="./">Disease</a><br/><a href="../PhenotypicFeature/">PhenotypicFeature</a><br/><a href="../AnatomicalEntity/">AnatomicalEntity</a><br/><a href="../CellularComponent/">CellularComponent</a><br/><a href="../Cell/">Cell</a><br/><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a><br/><a href="../Gene/">Gene</a><br/><a href="../Polypeptide/">Polypeptide</a><br/><a href="../Protein/">Protein</a><br/></td>
+<td><a href="../OntologyClass/">OntologyClass</a><br/><a href="../OrganismTaxon/">OrganismTaxon</a><br/><a href="../MolecularEntity/">MolecularEntity</a><br/><a href="../ChemicalEntity/">ChemicalEntity</a><br/><a href="../SmallMolecule/">SmallMolecule</a><br/><a href="../ChemicalMixture/">ChemicalMixture</a><br/><a href="../NucleicAcidEntity/">NucleicAcidEntity</a><br/><a href="../MolecularMixture/">MolecularMixture</a><br/><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a><br/><a href="../MolecularActivity/">MolecularActivity</a><br/><a href="../BiologicalProcess/">BiologicalProcess</a><br/><a href="../ProcessedMaterial/">ProcessedMaterial</a><br/><a href="../Drug/">Drug</a><br/><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a><br/><a href="../FoodAdditive/">FoodAdditive</a><br/><a href="../Food/">Food</a><br/><a href="./">Disease</a><br/><a href="../PhenotypicFeature/">PhenotypicFeature</a><br/><a href="../AnatomicalEntity/">AnatomicalEntity</a><br/><a href="../CellularComponent/">CellularComponent</a><br/><a href="../Cell/">Cell</a><br/><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a><br/><a href="../Gene/">Gene</a><br/><a href="../Polypeptide/">Polypeptide</a><br/><a href="../Protein/">Protein</a><br/></td>
 </tr>
 <tr>
 <td>MESH</td>
@@ -778,6 +802,14 @@
 </tr>
 <tr>
 <td>medgen</td>
+<td><a href="./">Disease</a><br/></td>
+</tr>
+<tr>
+<td>ICD11</td>
+<td><a href="./">Disease</a><br/></td>
+</tr>
+<tr>
+<td>icd11.foundation</td>
 <td><a href="./">Disease</a><br/></td>
 </tr>
 <tr>
@@ -822,6 +854,8 @@ id_prefixes:
 - NCIT
 - SNOMEDCT
 - medgen
+- ICD11
+- icd11.foundation
 - ICD10
 - ICD9
 - KEGG.DISEASE

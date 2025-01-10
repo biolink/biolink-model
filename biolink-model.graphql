@@ -402,11 +402,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -681,11 +678,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -737,11 +731,8 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -826,6 +817,10 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     hasSupportingStudies: [Study]
     type: [String]
     category: [Uriorcurie]
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     subject: CellLine!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
@@ -833,7 +828,6 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    diseaseContextQualifier: Disease
   }
 
 type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
@@ -877,6 +871,10 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     type: [String]
     category: [Uriorcurie]
     subject: DiseaseOrPhenotypicFeature!
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
   }
 
 interface CellLineToEntityAssociationMixin
@@ -1244,13 +1242,16 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    diseaseContextQualifier: Disease
     predicate: PredicateType!
   }
 
@@ -1296,13 +1297,16 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
     predicate: PredicateType!
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    diseaseContextQualifier: Disease
   }
 
 type ChemicalRole
@@ -1452,6 +1456,10 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     type: [String]
     category: [Uriorcurie]
     object: DiseaseOrPhenotypicFeature!
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
   }
 
 interface ChemicalToEntityAssociationMixin
@@ -1895,11 +1903,8 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2281,11 +2286,8 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
   }
 
 type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
@@ -2473,11 +2475,8 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2564,6 +2563,10 @@ interface EntityToDiseaseOrPhenotypicFeatureAssociationMixin
     subject: NamedThing!
     predicate: PredicateType!
     object: DiseaseOrPhenotypicFeature!
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
   }
 
 interface EntityToExposureEventAssociationMixin
@@ -2647,14 +2650,11 @@ type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
+    diseaseContextQualifier: Disease
     subject: NamedThing!
     predicate: PredicateType!
     object: PhenotypicFeature!
     sexQualifier: BiologicalSex
-    diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -2938,11 +2938,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3209,11 +3206,8 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3298,11 +3292,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3424,11 +3415,8 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3484,11 +3472,8 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -3897,11 +3882,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -4284,11 +4266,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -4942,6 +4921,10 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     hasSupportingStudies: [Study]
     type: [String]
     category: [Uriorcurie]
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: String
   }
 
 interface MaterialSampleToEntityAssociationMixin
@@ -6089,9 +6072,6 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     hasQuotient: Double
     hasPercentage: Double
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
   }
 
 type PhenotypicQuality
@@ -7571,11 +7551,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    sexQualifier: BiologicalSex
     diseaseContextQualifier: Disease
-    subjectSpecializationQualifier: Uriorcurie
-    objectSpecializationQualifier: Uriorcurie
-    anatomicalContextQualifier: String
+    sexQualifier: BiologicalSex
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double

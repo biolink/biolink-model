@@ -284,15 +284,25 @@
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
 
+      EntityToDiseaseOrPhenotypicFeatureAssociationMixin : anatomical_context_qualifier
+
+      EntityToDiseaseOrPhenotypicFeatureAssociationMixin : disease_context_qualifier
+
+          EntityToDiseaseOrPhenotypicFeatureAssociationMixin --|&gt; Disease : disease_context_qualifier
+
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin : object
 
           EntityToDiseaseOrPhenotypicFeatureAssociationMixin --|&gt; DiseaseOrPhenotypicFeature : object
+
+      EntityToDiseaseOrPhenotypicFeatureAssociationMixin : object_specialization_qualifier
 
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin : predicate
 
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin : subject
 
           EntityToDiseaseOrPhenotypicFeatureAssociationMixin --|&gt; NamedThing : subject
+
+      EntityToDiseaseOrPhenotypicFeatureAssociationMixin : subject_specialization_qualifier
 
 
 </div>
@@ -325,6 +335,30 @@
 <td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
 <td>direct</td>
 <td>MONDO:0017314, MP:0013229</td>
+</tr>
+<tr>
+<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td>direct</td>
+<td>MONDO:0004979, MONDO:0005148</td>
+</tr>
+<tr>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td>blood, cerebral cortext</td>
 </tr>
 </tbody>
 </table>
@@ -368,6 +402,10 @@ slots:
 - subject
 - predicate
 - object
+- disease context qualifier
+- subject specialization qualifier
+- object specialization qualifier
+- anatomical context qualifier
 slot_usage:
   object:
     name: object
@@ -379,6 +417,8 @@ slot_usage:
       description: abnormal brain ventricle size
     range: disease or phenotypic feature
 defining_slots:
+- subject
+- predicate
 - object
 
 </code></pre>
