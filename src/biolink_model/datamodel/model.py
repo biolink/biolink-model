@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-11-11T12:31:54
+# Generation date: 2025-01-06T11:29:55
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -114,7 +114,7 @@ HMDB = CurieNamespace('HMDB', 'http://identifiers.org/hmdb/')
 HP = CurieNamespace('HP', 'http://purl.obolibrary.org/obo/HP_')
 HSAPDV = CurieNamespace('HsapDv', 'http://purl.obolibrary.org/obo/HsapDv_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
-ICD10 = CurieNamespace('ICD10', 'https://icd.codes/icd9cm/')
+ICD10 = CurieNamespace('ICD10', 'https://icd.who.int/browse10/2016/en#/')
 ICD9 = CurieNamespace('ICD9', 'http://translator.ncats.nih.gov/ICD9_')
 IDO = CurieNamespace('IDO', 'http://purl.obolibrary.org/obo/IDO_')
 INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
@@ -268,6 +268,8 @@ FOODB_FOOD = CurieNamespace('foodb_food', 'http://foodb.ca/foods/')
 GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#')
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
+ICD11 = CurieNamespace('icd11', 'http://id.who.int/icd/entity/')
+ICD11_FOUNDATION = CurieNamespace('icd11_foundation', 'http://id.who.int/icd/entity/')
 INTERPRO = CurieNamespace('interpro', 'https://www.ebi.ac.uk/interpro/entry/')
 ISBN = CurieNamespace('isbn', 'https://www.isbn-international.org/identifier/')
 ISNI = CurieNamespace('isni', 'https://isni.org/isni/')

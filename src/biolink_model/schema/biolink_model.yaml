@@ -75,8 +75,10 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD10: 'https://icd.codes/icd9cm/'
+  ICD10: 'https://icd.who.int/browse10/2016/en#/'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  icd11: 'http://id.who.int/icd/entity/'
+  icd11.foundation: 'http://id.who.int/icd/entity/'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   INO: 'http://purl.obolibrary.org/obo/INO_'
   isbn: 'https://www.isbn-international.org/identifier/'  # note: a resolvable base URI not available from isbn-international
@@ -8210,6 +8212,8 @@ classes:
       - NCIT
       - SNOMEDCT
       - medgen
+      - icd11
+      - icd11.foundation
       - ICD10
       - ICD9
       - KEGG.DISEASE  ## H number

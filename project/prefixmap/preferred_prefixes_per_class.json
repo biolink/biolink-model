@@ -2059,34 +2059,44 @@
           "order": 12
         },
         {
-          "prefix": "ICD10",
-          "base_uri": "https://icd.codes/icd9cm/",
+          "prefix": "icd11",
+          "base_uri": "http://id.who.int/icd/entity/",
           "order": 13
+        },
+        {
+          "prefix": "icd11.foundation",
+          "base_uri": "http://id.who.int/icd/entity/",
+          "order": 14
+        },
+        {
+          "prefix": "ICD10",
+          "base_uri": "https://icd.who.int/browse10/2016/en#/",
+          "order": 15
         },
         {
           "prefix": "ICD9",
           "base_uri": "http://translator.ncats.nih.gov/ICD9_",
-          "order": 14
+          "order": 16
         },
         {
           "prefix": "KEGG.DISEASE",
           "base_uri": "http://identifiers.org/kegg.disease/",
-          "order": 15
+          "order": 17
         },
         {
           "prefix": "HP",
           "base_uri": "http://purl.obolibrary.org/obo/HP_",
-          "order": 16
+          "order": 18
         },
         {
           "prefix": "MP",
           "base_uri": "http://purl.obolibrary.org/obo/MP_",
-          "order": 17
+          "order": 19
         },
         {
           "prefix": "PHARMGKB.DISEASE",
           "base_uri": "https://www.pharmgkb.org/disease/",
-          "order": 18
+          "order": 20
         }
       ]
     },
