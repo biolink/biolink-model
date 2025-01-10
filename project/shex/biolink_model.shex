@@ -334,11 +334,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -504,11 +501,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -569,8 +563,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @linkml:String ? ;
-          <disease_context_qualifier> @<Disease> ?
+          <qualified_predicate> @linkml:String ?
        ) ;
        rdf:type [ <CellLineAsAModelOfDiseaseAssociation> ]
     )
@@ -584,7 +577,11 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <CellLineToEntityAssociationMixin> ] ? ;
              &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
              rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-             rdf:subject @<DiseaseOrPhenotypicFeature>
+             rdf:subject @<DiseaseOrPhenotypicFeature> ;
+             <disease_context_qualifier> @<Disease> ? ;
+             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <anatomical_context_qualifier> @linkml:String ?
           ) ;
           rdf:type [ <CellLineToDiseaseOrPhenotypicFeatureAssociation> ]
        )
@@ -662,6 +659,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
@@ -737,6 +736,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
@@ -1019,6 +1020,10 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction>
                 <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> ] ? ;
              rdf:predicate @<PredicateType> ;
+             <disease_context_qualifier> @<Disease> ? ;
+             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <anatomical_context_qualifier> @linkml:String ? ;
              <frequency_qualifier> @<FrequencyValue> ? ;
              <subject_aspect_qualifier> @linkml:String ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
@@ -1030,8 +1035,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <qualified_predicate> @linkml:String ? ;
-             <disease_context_qualifier> @<Disease> ?
+             <qualified_predicate> @linkml:String ?
           ) ;
           rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ]
        )
@@ -1078,7 +1082,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-          rdf:object @<DiseaseOrPhenotypicFeature>
+          rdf:object @<DiseaseOrPhenotypicFeature> ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ?
        ) ;
        rdf:type [ <ChemicalToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -1448,11 +1456,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
     )
@@ -1589,7 +1594,11 @@ linkml:Sparqlpath xsd:string
 <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> {
     (  $<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
           rdf:predicate @<PredicateType> ;
-          rdf:object @<DiseaseOrPhenotypicFeature>
+          rdf:object @<DiseaseOrPhenotypicFeature> ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ?
        ) ;
        rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ?
     )
@@ -1665,9 +1674,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <FrequencyQuantifier> ] ? ;
           rdf:object @<PhenotypicFeature> ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1803,11 +1809,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -1963,6 +1966,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
@@ -2038,6 +2043,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
@@ -2215,6 +2222,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
@@ -2309,6 +2318,8 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
@@ -2355,11 +2366,8 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
              <object_aspect_qualifier> @linkml:String ? ;
              <qualified_predicate> @linkml:String ? ;
-             <sex_qualifier> @<BiologicalSex> ? ;
              <disease_context_qualifier> @<Disease> ? ;
-             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-             <anatomical_context_qualifier> @linkml:String ? ;
+             <sex_qualifier> @<BiologicalSex> ? ;
              <has_count> @linkml:Integer ? ;
              <has_total> @linkml:Integer ? ;
              <has_quotient> @linkml:Double ? ;
@@ -2674,11 +2682,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
@@ -2968,7 +2973,11 @@ linkml:Sparqlpath xsd:string
           &<MaterialSampleToEntityAssociationMixin_tes> ;
           rdf:type [ <MaterialSampleToEntityAssociationMixin> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
-          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ?
+          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String ?
        ) ;
        rdf:type [ <MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -3536,10 +3545,7 @@ linkml:Sparqlpath xsd:string
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;
           <has_percentage> @linkml:Double ? ;
-          <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ?
+          <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <PhenotypicFeatureToPhenotypicFeatureAssociation> ]
     )
@@ -4322,11 +4328,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:String ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @linkml:Integer ? ;
           <has_total> @linkml:Integer ? ;
           <has_quotient> @linkml:Double ? ;

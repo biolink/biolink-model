@@ -337,11 +337,8 @@ message BehaviorToBehavioralFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -585,11 +582,8 @@ message CaseToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -640,11 +634,8 @@ message CausalGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -726,6 +717,10 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
@@ -733,7 +728,6 @@ message CellLineAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -777,6 +771,10 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 // A location in or around a cell
 message CellularComponent
@@ -1116,13 +1114,16 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
   predicateType predicate = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
@@ -1168,13 +1169,16 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
  }
 // A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
@@ -1324,6 +1328,10 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature object = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 // An interaction between a chemical entity and a biological process or pathway.
 message ChemicalToPathwayAssociation
@@ -1756,11 +1764,8 @@ message CorrelatedGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2124,11 +2129,8 @@ message DiseaseToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -2308,11 +2310,8 @@ message DruggableGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2670,11 +2669,8 @@ message ExposureEventToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2910,11 +2906,8 @@ message GeneAsAModelOfDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -2985,11 +2978,8 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3091,11 +3081,8 @@ message GeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3150,11 +3137,8 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3511,11 +3495,8 @@ message GeneToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -3884,11 +3865,8 @@ message GenotypeToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
@@ -4498,6 +4476,10 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 message MicroRNA
  {
@@ -5462,9 +5444,6 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -6830,11 +6809,8 @@ message VariantToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
-  biologicalSex sexQualifier = 0
   disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
