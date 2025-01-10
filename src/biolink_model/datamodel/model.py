@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-09T18:18:29
+# Generation date: 2025-01-10T08:43:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -115,7 +115,6 @@ HP = CurieNamespace('HP', 'http://purl.obolibrary.org/obo/HP_')
 HSAPDV = CurieNamespace('HsapDv', 'http://purl.obolibrary.org/obo/HsapDv_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 ICD10 = CurieNamespace('ICD10', 'https://icd.who.int/browse10/2016/en#/')
-ICD11 = CurieNamespace('ICD11', 'http://id.who.int/icd/entity/')
 ICD9 = CurieNamespace('ICD9', 'http://translator.ncats.nih.gov/ICD9_')
 IDO = CurieNamespace('IDO', 'http://purl.obolibrary.org/obo/IDO_')
 INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
