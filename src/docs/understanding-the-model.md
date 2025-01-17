@@ -144,7 +144,7 @@ qualifiers, this metadata does not contribute to the meaning of the core Stateme
 Using these qualifier and metadata elements together, we can build Associations with many possible ‘layers’ of complexity.
 
 Sometimes, seeing several examples of a modeling pattern is most helpful in applying the pattern to your own data.
-To peruse our examples, please visit: [Association Examples With Qualifiers](association-examples-with_qualifiers.md)
+To peruse our examples, please visit: [Association Examples With Qualifiers](association-examples-with-qualifiers.md)
 
 Please refer to [Curating the Model](curating-the-model.md) for more information about making new Associations or 
 making changes to existing Associations.
