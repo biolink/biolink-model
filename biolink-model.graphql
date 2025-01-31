@@ -3527,6 +3527,7 @@ type GeneToExpressionSiteAssociation
     category: [Uriorcurie]
     stageQualifier: LifeStage
     quantifierQualifier: OntologyClass
+    objectSpecializationQualifier: Uriorcurie
     subject: GeneOrGeneProduct!
     object: AnatomicalEntity!
     predicate: PredicateType!

@@ -4383,9 +4383,10 @@
       "is_a": "specialization_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_specialization_qualifier",
-      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+      "owner": "GeneToExpressionSiteAssociation",
       "domain_of": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "GeneToExpressionSiteAssociation"
       ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
@@ -34529,6 +34530,7 @@
         "association_category",
         "gene_to_expression_site_association_stage_qualifier",
         "gene_to_expression_site_association_quantifier_qualifier",
+        "object_specialization_qualifier",
         "gene_to_expression_site_association_subject",
         "gene_to_expression_site_association_object",
         "gene_to_expression_site_association_predicate"
@@ -35901,9 +35903,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-01-10T16:53:47",
-  "source_file_size": 404136,
-  "generation_date": "2025-01-10T16:53:53",
+  "source_file_date": "2025-01-31T19:01:51",
+  "source_file_size": 404176,
+  "generation_date": "2025-01-31T19:01:57",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

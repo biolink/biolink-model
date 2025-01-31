@@ -342,6 +342,8 @@
 
       GeneToExpressionSiteAssociation : object_namespace
 
+      GeneToExpressionSiteAssociation : object_specialization_qualifier
+
       GeneToExpressionSiteAssociation : original_object
 
       GeneToExpressionSiteAssociation : original_predicate
@@ -430,6 +432,12 @@
 <tr>
 <td><a href="../quantifier_qualifier/">quantifier_qualifier</a>: <br/> <i> can be used to indicate magnitude, or also ranking </i></td>
 <td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -683,6 +691,7 @@ is_a: association
 slots:
 - stage qualifier
 - quantifier qualifier
+- object specialization qualifier
 slot_usage:
   subject:
     name: subject
