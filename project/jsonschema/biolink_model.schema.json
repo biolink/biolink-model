@@ -23109,6 +23109,13 @@
                         "null"
                     ]
                 },
+                "object_specialization_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": [

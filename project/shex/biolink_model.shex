@@ -2392,6 +2392,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           <stage_qualifier> @<LifeStage> ? ;
           <quantifier_qualifier> @<OntologyClass> ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<AnatomicalEntity> ;
           rdf:predicate @<PredicateType>

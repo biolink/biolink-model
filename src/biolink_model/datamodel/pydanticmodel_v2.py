@@ -7372,6 +7372,7 @@ class GeneToExpressionSiteAssociation(Association):
     """
     stage_qualifier: Optional[str] = Field(None, description="""stage at which the gene is expressed in the site""")
     quantifier_qualifier: Optional[str] = Field(None, description="""can be used to indicate magnitude, or also ranking""")
+    object_specialization_qualifier: Optional[str] = Field(None, description="""A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.""")
     subject: str = Field(..., description="""Gene or gene product positively within the specified anatomical entity (or subclass, i.e. cellular component) location.""")
     predicate: str = Field(..., description="""expression relationship""")
     object: str = Field(..., description="""location in which the gene is expressed""")

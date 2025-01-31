@@ -3185,6 +3185,7 @@ message GeneToExpressionSiteAssociation
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
   ontologyClass quantifierQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
   geneOrGeneProduct subject = 0
   anatomicalEntity object = 0
   predicateType predicate = 0
