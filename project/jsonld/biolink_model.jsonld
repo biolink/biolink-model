@@ -149,6 +149,10 @@
       "prefix_reference": "http://purl.org/spar/fabio/"
     },
     {
+      "prefix_prefix": "FMA",
+      "prefix_reference": "http://purl.obolibrary.org/obo/FMA_"
+    },
+    {
       "prefix_prefix": "foaf",
       "prefix_reference": "http://xmlns.com/foaf/0.1/"
     },
@@ -27423,7 +27427,8 @@
         "EMAPA",
         "ZFA",
         "FBbt",
-        "WBbt"
+        "WBbt",
+        "FMA"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntity",
       "description": "A subcellular location, cell type or gross anatomical part",
@@ -35903,9 +35908,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-02-28T23:51:52",
-  "source_file_size": 404176,
-  "generation_date": "2025-02-28T23:51:58",
+  "source_file_date": "2025-03-06T16:51:13",
+  "source_file_size": 404233,
+  "generation_date": "2025-03-06T16:51:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
