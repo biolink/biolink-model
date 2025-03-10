@@ -919,13 +919,13 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "linkml"
-version = "1.8.4"
+version = "1.8.7"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = "<4.0.0,>=3.8.1"
 files = [
-    {file = "linkml-1.8.4-py3-none-any.whl", hash = "sha256:9fa26d7e522dd98568d0313e363abd67c2b17a671f31595c9e53beaec27b7214"},
-    {file = "linkml-1.8.4.tar.gz", hash = "sha256:a1918d226ab5c268e260ddc7cfa6edb53d7faab3fb0144efef5fad572b052c36"},
+    {file = "linkml-1.8.7-py3-none-any.whl", hash = "sha256:5b06a279a3cdff0e652cb66c1f58d8e05059c7647b1718c2acc4339aa61fff90"},
+    {file = "linkml-1.8.7.tar.gz", hash = "sha256:e5fb3e1019d416851e420ab155e4a4dedc9f16d3b336a27c988265067e1778fb"},
 ]
 
 [package.dependencies]
@@ -952,6 +952,7 @@ pyyaml = "*"
 rdflib = ">=6.0.0"
 requests = ">=2.22"
 sqlalchemy = ">=1.4.31"
+typing-extensions = {version = ">=4.6.0", markers = "python_version < \"3.12\""}
 watchdog = ">=0.9.0"
 
 [package.extras]
@@ -2003,13 +2004,13 @@ files = [
 
 [[package]]
 name = "requests"
-version = "2.32.0"
+version = "2.32.3"
 description = "Python HTTP for Humans."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "requests-2.32.0-py3-none-any.whl", hash = "sha256:f2c3881dddb70d056c5bd7600a4fae312b2a300e39be6a118d30b90bd27262b5"},
-    {file = "requests-2.32.0.tar.gz", hash = "sha256:fa5490319474c82ef1d2c9bc459d3652e3ae4ef4c4ebdd18a21145a47ca4b6b8"},
+    {file = "requests-2.32.3-py3-none-any.whl", hash = "sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6"},
+    {file = "requests-2.32.3.tar.gz", hash = "sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"},
 ]
 
 [package.dependencies]
@@ -2770,4 +2771,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "035f08ed85c26cf309eb9f627519ba54236112e6749be89ac37860faa307af8c"
+content-hash = "a687ba62f8065516a71975e361559eef1366dbe5db0fafc03d01e40ae77e7bd3"
