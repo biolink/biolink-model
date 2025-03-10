@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-06T16:51:32
+# Generation date: 2025-03-10T21:05:52
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
