@@ -6220,10 +6220,10 @@ slots:
       - value: computational_model
       - value: text_mining_agent
 
-  has_biological_sex:
+  has biological sex:
     description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
     required: false
-    range: Biological Sex
+    range: biological sex
 
 classes:
 
@@ -9079,7 +9079,7 @@ classes:
     mixins:
       - subject of investigation
     slots:
-      - sex
+      - has biological sex
 
   cohort:
     is_a: study population
@@ -10492,6 +10492,21 @@ classes:
     in_subset:
       - model_organism_database
 
+  entity to disease association mixin:
+    description: >-
+      mixin class for any association whose object (target node) is a disease
+    mixin: true
+    is_a: entity to feature or disease qualifiers mixin
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
+
   disease or phenotypic feature to entity association mixin:
     mixin: true
     slots:
@@ -10817,7 +10832,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
@@ -10834,7 +10848,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
