@@ -6220,9 +6220,10 @@ slots:
       - value: computational_model
       - value: text_mining_agent
 
-  sex:
+  has_biological_sex:
     description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
     required: false
+    range: Biological Sex
 
 classes:
 
@@ -10491,45 +10492,6 @@ classes:
     in_subset:
       - model_organism_database
 
-  entity to disease association mixin:
-    description: >-
-      mixin class for any association whose object (target node) is a disease
-    mixin: true
-    is_a: entity to feature or disease qualifiers mixin
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: disease
-        description: "disease"
-        examples:
-          - value: MONDO:0020066
-            description: "Ehlers-Danlos syndrome"
-
-  entity to variant association mixin:
-    description: >-
-      mixin class for any association whose object (target node) is a variant
-    mixin: true
-    is_a: entity to feature or variant qualifiers mixin
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: sequence variant
-        description: "sequence variant"
-
-  entity to gene association mixin:
-    description: >-
-      mixin class for any association whose object (target node) is a gene
-    mixin: true
-    is_a: entity to feature or gene qualifiers mixin
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: gene
-        description: "gene"
-
   disease or phenotypic feature to entity association mixin:
     mixin: true
     slots:
@@ -10694,7 +10656,6 @@ classes:
   case to disease association:
     is_a: association
     mixins:
-      - entity to disease association mixin
       - case to entity association mixin
     description: "An association between a Case (patient) and a Disease"
     slot_usage:
@@ -10709,7 +10670,6 @@ classes:
   case to variant association:
     is_a: association
     mixins:
-      - entity to variant association mixin
       - case to entity association mixin
     description: "Association between a Case and a Genetic Variant"
     slot_usage:
@@ -10726,7 +10686,6 @@ classes:
   case to gene association:
     is_a: association
     mixins:
-      - entity to gene association mixin
       - case to entity association mixin
     description: "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)"
     slot_usage:
