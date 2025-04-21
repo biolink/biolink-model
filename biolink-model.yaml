@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.6-rc5
+version: 4.2.5
 
 ## ------------
 ##
@@ -58,7 +58,6 @@ prefixes:
   EFO: 'http://www.ebi.ac.uk/efo/EFO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
-  FMA: 'http://purl.obolibrary.org/obo/FMA_'
   foaf: 'http://xmlns.com/foaf/0.1/'
   foodb.compound: 'http://foodb.ca/compounds/'
   foodb.food: 'http://foodb.ca/foods/'
@@ -193,6 +192,10 @@ subsets:
   samples:
     description: >-
       Sample/biosample datamodel
+
+  ecolink:
+    description: >-
+      Subset for describing ecological knowledge.
 
   testing:
     description: >-
@@ -6220,6 +6223,31 @@ slots:
       - value: computational_model
       - value: text_mining_agent
 
+  process context qualifier:
+    is_a: qualifier
+    description: >-
+        A context qualifier representing the process in which an association takes place. The core association should form a part of the process, or describe how a process affects a state variable (in which case this field becomes redundant and can be omitted).
+    examples:
+      - value: ENVO:02500031 #Hydrological process
+      - value: ENVO:01001824 #Ecological succession
+    in_subset:
+      - ecolink
+
+  conditioned by qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier that describes a state variable or process which conditions (e.g. upregulates or downregulates) an association. There should be 0, 1 or 2 values. 
+    multivalued: true
+    minimum_cardinality: 0
+    maximum_cardinality: 2
+    in_subset:
+      - ecolink
+
+  ecosystem context qualifier:
+    is_a: qualifier
+    description: >-
+      A qualifier that describes the ecosystem type in which the association was studied.
+      
 classes:
 
   mapping collection:
@@ -8329,7 +8357,6 @@ classes:
       - ZFA
       - FBbt
       - WBbt
-      - FMA
     in_subset:
       - model_organism_database
 
@@ -9685,6 +9712,59 @@ classes:
             description: the subject molecular phosphorylates the object molecule
       object:
         range: molecular entity
+
+  eenvironmental process association:
+    is_a: association
+    description: >-
+      An association between two environmental variables, or a process and an environmental variable, or two processes that describes some component
+      of an ecosystem process.
+    slots:
+      - subject direction qualifier
+      - subject derivative qualifier
+      - subject part qualifier
+      - object direction qualifier
+      - object derivative qualifier
+      - object part qualifier
+      - process context qualifier
+      - conditioned by qualifier
+      - ecosystem context qualifier
+    slot_usage:
+      subject: 
+        description: Either a state variable or a process (e.g. subclass of 'environmental process' in ENVO).
+      subject direction qualifier:
+        description: Either increased or decreased.
+        range: DirectionQualifierEnum
+      object direction qualifier:
+        description: Either increased or decreased.
+        range: DirectionQualifierEnum 
+      predicate:
+        description: The only acceptable value is "associated_with" currently.
+        ifabsent: associated with
+      object: 
+        description: A state variable that is affected by either another state variable or process.
+      subject derivative qualifier: 
+        description: A property (p) which composes with the subject such that it becomes "p of subject." For instance, "abundance of phragmites australis" would have the subject "phragmites australis" and subject derivative qualifier "abundance"
+      object derivative qualifier: 
+        description: A property (p) which composes with the object such that it becomes "p of object." For instance, "abundance of phragmites australis" would have the subject "phragmites australis" and object derivative qualifier "abundance"
+      subject part qualifier:
+        description: >-
+          This property is primarily used to provide ingredients for a relational state variable (i.e. a variable whose definition depends on the other elements to which it refers). For instance, "phylogenetic distance" can be said to be a state variable of interest, but it only has meaning when applied to two or more taxa. In that case, one could supply two values as part qualifiers: "phragmites australis" and "typha latifolia". This would result in the subject being interpreted as "phylogenetic distance between phragmites australis and typha latifolia." Note that there are no directional constraints on this - it could also be read as "phylogenetic distance between typha latifolia and phragmites australis." This must have 0 or at least 2 entries.
+        multivalued: true
+        minimum_cardinality: 2
+      object part qualifier:
+        description: >-
+          This property is primarily used to provide ingredients for a relational state variable (i.e. a variable whose definition depends on the other elements to which it refers). For instance, "phylogenetic distance" can be said to be a state variable of interest, but it only has meaning when applied to two or more taxa. In that case, one could supply two values as part qualifiers: "phragmites australis" and "typha latifolia". This would result in the subject being interpreted as "phylogenetic distance between phragmites australis and typha latifolia." Note that there are no directional constraints on this - it could also be read as "phylogenetic distance between typha latifolia and phragmites australis." This must have 0 or at least 2 entries.
+        multivalued: true
+        minimum_cardinality: 2
+      conditioned by qualifier:
+        description: >-
+          This property applies to the qualified association and either upregulates or downregulates it. It can accept any combination of 0 to 2 state variables and processes.
+        multivalued: true
+        maximum_cardinality: 2
+      ecosystem context qualifier:
+        description: >-
+          This qualifier describes the ecosystem in which the association was studied.
+    in_subset: ecolink
 
   cell line to entity association mixin:
     description: >-
@@ -11165,7 +11245,6 @@ classes:
     slots:
       - stage qualifier
       - quantifier qualifier
-      - object specialization qualifier
     slot_usage:
       subject:
         range: gene or gene product
