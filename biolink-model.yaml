@@ -815,7 +815,7 @@ slots:
 
   creation date:
     is_a: node property
-    aliases: ['publication date']
+    aliases: ['publication date', 'date started']
     range: date
     description: >-
       date on which an entity was created. This can be applied to nodes or edges
@@ -1063,6 +1063,18 @@ slots:
     multivalued: true
     exact_mappings:
       - dcid:MeSHTerm
+
+   ## Clinical Trials
+  clinical trial phase:
+    is_a: node property
+    description: >-
+      The phase that a clinical trials study represents
+    range: ResearchPhaseEnum
+  
+  primary purpose:
+    is_a: node property
+    description: >-
+      The primary purpose of a clinical trial
 
    ## Biology
 
@@ -6103,6 +6115,8 @@ slots:
   max research phase:
     is_a: association slot
     range: ResearchPhaseEnum
+  
+  research phase:
 
   has supporting studies:
     is_a: association slot
@@ -9034,7 +9048,18 @@ classes:
       biological realm. Diseases are placed under biological entities
 
   clinical trial:
-    is_a: clinical entity
+    is_a: study
+    description: >-
+      A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or
+      more health-related interventions to evaluate the effects on health outcomes.
+    exact_mappings:
+      - NCIT:C71104
+      - SIO:001000
+    slots:
+      - clinical trial phase
+      - primary purpose
+      - creation date # maybe? 
+
 
   clinical intervention:
     is_a: clinical entity
