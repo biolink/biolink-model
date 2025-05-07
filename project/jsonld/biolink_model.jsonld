@@ -25426,6 +25426,9 @@
         "bioschemas:MolecularEntity"
       ],
       "is_a": "ChemicalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -25648,6 +25651,9 @@
         "SNOMEDCT:49616005"
       ],
       "is_a": "ChemicalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -27075,6 +27081,9 @@
         "HsapDv:0000000"
       ],
       "is_a": "OrganismalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -27198,6 +27207,9 @@
         "STY:T033"
       ],
       "is_a": "BiologicalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -27463,7 +27475,8 @@
       ],
       "is_a": "OrganismalEntity",
       "mixins": [
-        "PhysicalEssence"
+        "PhysicalEssence",
+        "OntologyClass"
       ],
       "slots": [
         "id",
@@ -35908,9 +35921,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-03-10T22:05:46",
-  "source_file_size": 404237,
-  "generation_date": "2025-03-10T22:05:52",
+  "source_file_date": "2025-05-07T18:29:00",
+  "source_file_size": 404400,
+  "generation_date": "2025-05-07T18:29:06",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
