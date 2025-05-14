@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-07T18:30:02
+# Generation date: 2025-05-14T02:08:18
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -33,7 +33,6 @@ from linkml_runtime.linkml_model.meta import (
     PvFormulaOptions
 )
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from linkml_runtime.utils.formatutils import (
     camelcase,
@@ -63,9 +62,6 @@ from linkml_runtime.utils.metamodelcore import URI, URIorCURIE
 metamodel_version = "1.7.0"
 version = "4.2.6-rc5"
 
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
-
 # Namespaces
 BIOGRID = CurieNamespace('BIOGRID', 'http://identifiers.org/biogrid/')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
@@ -90,17 +86,17 @@ class BiolinkClassPrefixMap(YAMLRoot):
     """
     preferred order identifier prefixes per class in Biolink Model
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiolinkClassPrefixMap"]
     class_class_curie: ClassVar[str] = "biolink:BiolinkClassPrefixMap"
     class_name: ClassVar[str] = "BiolinkClassPrefixMap"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiolinkClassPrefixMap
 
-    prefix_map: Optional[Union[Union[dict, "Prefix"], List[Union[dict, "Prefix"]]]] = empty_list()
+    prefix_map: Optional[Union[Union[dict, "Prefix"], list[Union[dict, "Prefix"]]]] = empty_list()
     class_name: Optional[Union[str, URIorCURIE]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.prefix_map, list):
             self.prefix_map = [self.prefix_map] if self.prefix_map is not None else []
         self.prefix_map = [v if isinstance(v, Prefix) else Prefix(**as_dict(v)) for v in self.prefix_map]
@@ -116,16 +112,16 @@ class BiolinkClassPrefixesCollection(YAMLRoot):
     """
     collection of BiolinkClassPrefixes objects
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiolinkClassPrefixesCollection"]
     class_class_curie: ClassVar[str] = "biolink:BiolinkClassPrefixesCollection"
     class_name: ClassVar[str] = "BiolinkClassPrefixesCollection"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiolinkClassPrefixesCollection
 
-    biolink_class_prefixes: Optional[Union[Union[dict, BiolinkClassPrefixMap], List[Union[dict, BiolinkClassPrefixMap]]]] = empty_list()
+    biolink_class_prefixes: Optional[Union[Union[dict, BiolinkClassPrefixMap], list[Union[dict, BiolinkClassPrefixMap]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.biolink_class_prefixes, list):
             self.biolink_class_prefixes = [self.biolink_class_prefixes] if self.biolink_class_prefixes is not None else []
         self.biolink_class_prefixes = [v if isinstance(v, BiolinkClassPrefixMap) else BiolinkClassPrefixMap(**as_dict(v)) for v in self.biolink_class_prefixes]
@@ -135,7 +131,7 @@ class BiolinkClassPrefixesCollection(YAMLRoot):
 
 @dataclass(repr=False)
 class Prefix(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Prefix"]
     class_class_curie: ClassVar[str] = "biolink:Prefix"
@@ -146,7 +142,7 @@ class Prefix(YAMLRoot):
     base_uri: Optional[Union[str, URI]] = None
     order: Optional[int] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.prefix is not None and not isinstance(self.prefix, str):
             self.prefix = str(self.prefix)
 
@@ -167,10 +163,10 @@ class slots:
     pass
 
 slots.biolink_class_prefixes = Slot(uri=BIOLINK.biolink_class_prefixes, name="biolink_class_prefixes", curie=BIOLINK.curie('biolink_class_prefixes'),
-                   model_uri=BIOLINK.biolink_class_prefixes, domain=None, range=Optional[Union[Union[dict, BiolinkClassPrefixMap], List[Union[dict, BiolinkClassPrefixMap]]]])
+                   model_uri=BIOLINK.biolink_class_prefixes, domain=None, range=Optional[Union[Union[dict, BiolinkClassPrefixMap], list[Union[dict, BiolinkClassPrefixMap]]]])
 
 slots.prefix_map = Slot(uri=BIOLINK.prefix_map, name="prefix_map", curie=BIOLINK.curie('prefix_map'),
-                   model_uri=BIOLINK.prefix_map, domain=None, range=Optional[Union[Union[dict, Prefix], List[Union[dict, Prefix]]]])
+                   model_uri=BIOLINK.prefix_map, domain=None, range=Optional[Union[Union[dict, Prefix], list[Union[dict, Prefix]]]])
 
 slots.class_name = Slot(uri=BIOLINK.class_name, name="class_name", curie=BIOLINK.curie('class_name'),
                    model_uri=BIOLINK.class_name, domain=None, range=Optional[Union[str, URIorCURIE]])

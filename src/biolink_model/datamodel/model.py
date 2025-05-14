@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-07T18:29:18
+# Generation date: 2025-05-14T02:07:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -33,7 +33,6 @@ from linkml_runtime.linkml_model.meta import (
     PvFormulaOptions
 )
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from linkml_runtime.utils.formatutils import (
     camelcase,
@@ -62,9 +61,6 @@ from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTim
 
 metamodel_version = "1.7.0"
 version = "4.2.6-rc5"
-
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 AGRKB = CurieNamespace('AGRKB', 'https://www.alliancegenome.org/')
@@ -1425,16 +1421,16 @@ class MappingCollection(YAMLRoot):
     """
     A collection of deprecated mappings.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MappingCollection"]
     class_class_curie: ClassVar[str] = "biolink:MappingCollection"
     class_name: ClassVar[str] = "mapping collection"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MappingCollection
 
-    predicate_mappings: Optional[Union[Union[dict, "PredicateMapping"], List[Union[dict, "PredicateMapping"]]]] = empty_list()
+    predicate_mappings: Optional[Union[Union[dict, "PredicateMapping"], list[Union[dict, "PredicateMapping"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.predicate_mappings, list):
             self.predicate_mappings = [self.predicate_mappings] if self.predicate_mappings is not None else []
         self.predicate_mappings = [v if isinstance(v, PredicateMapping) else PredicateMapping(**as_dict(v)) for v in self.predicate_mappings]
@@ -1448,7 +1444,7 @@ class PredicateMapping(YAMLRoot):
     A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
     be done to use a qualified statement in its place.
     """
-    _inherited_slots: ClassVar[List[str]] = ["exact_match", "narrow_match", "broad_match"]
+    _inherited_slots: ClassVar[list[str]] = ["exact_match", "narrow_match", "broad_match"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PredicateMapping"]
     class_class_curie: ClassVar[str] = "biolink:PredicateMapping"
@@ -1473,11 +1469,11 @@ class PredicateMapping(YAMLRoot):
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
     anatomical_context_qualifier: Optional[str] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
-    exact_match: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
-    narrow_match: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
-    broad_match: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
+    exact_match: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
+    narrow_match: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
+    broad_match: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, PredicateType):
@@ -1557,7 +1553,7 @@ class OntologyClass(YAMLRoot):
     to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of
     endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OntologyClass"]
     class_class_curie: ClassVar[str] = "biolink:OntologyClass"
@@ -1566,7 +1562,7 @@ class OntologyClass(YAMLRoot):
 
     id: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OntologyClassId):
@@ -1579,7 +1575,7 @@ class Annotation(YAMLRoot):
     """
     Biolink Model root class for entity annotations.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Annotation"]
     class_class_curie: ClassVar[str] = "biolink:Annotation"
@@ -1593,7 +1589,7 @@ class QuantityValue(Annotation):
     A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric
     value
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["QuantityValue"]
     class_class_curie: ClassVar[str] = "biolink:QuantityValue"
@@ -1603,7 +1599,7 @@ class QuantityValue(Annotation):
     has_unit: Optional[Union[str, Unit]] = None
     has_numeric_value: Optional[float] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.has_unit is not None and not isinstance(self.has_unit, Unit):
             self.has_unit = Unit(self.has_unit)
 
@@ -1614,7 +1610,7 @@ class QuantityValue(Annotation):
 
 
 class RelationshipQuantifier(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RelationshipQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:RelationshipQuantifier"
@@ -1623,7 +1619,7 @@ class RelationshipQuantifier(YAMLRoot):
 
 
 class SensitivityQuantifier(RelationshipQuantifier):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SensitivityQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:SensitivityQuantifier"
@@ -1632,7 +1628,7 @@ class SensitivityQuantifier(RelationshipQuantifier):
 
 
 class SpecificityQuantifier(RelationshipQuantifier):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SpecificityQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:SpecificityQuantifier"
@@ -1645,7 +1641,7 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
     A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the
     feature implies the existence of the disease
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathognomonicityQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:PathognomonicityQuantifier"
@@ -1655,7 +1651,7 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
 
 @dataclass(repr=False)
 class FrequencyQuantifier(RelationshipQuantifier):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FrequencyQuantifier"]
     class_class_curie: ClassVar[str] = "biolink:FrequencyQuantifier"
@@ -1667,7 +1663,7 @@ class FrequencyQuantifier(RelationshipQuantifier):
     has_quotient: Optional[float] = None
     has_percentage: Optional[float] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.has_count is not None and not isinstance(self.has_count, int):
             self.has_count = int(self.has_count)
 
@@ -1684,7 +1680,7 @@ class FrequencyQuantifier(RelationshipQuantifier):
 
 
 class ChemicalOrDrugOrTreatment(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatment"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatment"
@@ -1697,7 +1693,7 @@ class Entity(YAMLRoot):
     """
     Root Biolink Model class for all things and informational relationships, real or imagined.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Entity"]
     class_class_curie: ClassVar[str] = "biolink:Entity"
@@ -1706,14 +1702,14 @@ class Entity(YAMLRoot):
 
     id: Union[str, EntityId] = None
     iri: Optional[Union[str, IriType]] = None
-    category: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    type: Optional[Union[str, List[str]]] = empty_list()
+    category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    type: Optional[Union[str, list[str]]] = empty_list()
     name: Optional[Union[str, LabelType]] = None
     description: Optional[Union[str, NarrativeText]] = None
-    has_attribute: Optional[Union[Union[str, AttributeId], List[Union[str, AttributeId]]]] = empty_list()
+    has_attribute: Optional[Union[Union[str, AttributeId], list[Union[str, AttributeId]]]] = empty_list()
     deprecated: Optional[Union[bool, Bool]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EntityId):
@@ -1776,7 +1772,7 @@ class NamedThing(Entity):
     """
     a databased entity or concept/class
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NamedThing"]
     class_class_curie: ClassVar[str] = "biolink:NamedThing"
@@ -1784,13 +1780,13 @@ class NamedThing(Entity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.NamedThing
 
     id: Union[str, NamedThingId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    provided_by: Optional[Union[str, List[str]]] = empty_list()
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    provided_by: Optional[Union[str, list[str]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     full_name: Optional[Union[str, LabelType]] = None
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingId):
@@ -1856,7 +1852,7 @@ class Attribute(NamedThing):
     A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age,
     crispiness. An environmental sample may have attributes such as depth, lat, long, material.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Attribute"]
     class_class_curie: ClassVar[str] = "biolink:Attribute"
@@ -1864,14 +1860,14 @@ class Attribute(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Attribute
 
     id: Union[str, AttributeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     name: Optional[Union[str, LabelType]] = None
-    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
+    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], list[Union[dict, QuantityValue]]]] = empty_list()
     has_qualitative_value: Optional[Union[str, NamedThingId]] = None
     iri: Optional[Union[str, IriType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AttributeId):
@@ -1908,7 +1904,7 @@ class ChemicalRole(Attribute):
     """
     A role played by the molecular entity or part thereof within a chemical context.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalRole"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalRole"
@@ -1916,10 +1912,10 @@ class ChemicalRole(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
 
     id: Union[str, ChemicalRoleId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalRoleId):
@@ -1935,7 +1931,7 @@ class ChemicalRole(Attribute):
 
 @dataclass(repr=False)
 class BiologicalSex(Attribute):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalSex"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalSex"
@@ -1943,10 +1939,10 @@ class BiologicalSex(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
 
     id: Union[str, BiologicalSexId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BiologicalSexId):
@@ -1965,7 +1961,7 @@ class PhenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicSex"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicSex"
@@ -1973,10 +1969,10 @@ class PhenotypicSex(BiologicalSex):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
 
     id: Union[str, PhenotypicSexId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhenotypicSexId):
@@ -1996,7 +1992,7 @@ class GenotypicSex(BiologicalSex):
     An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
     chromosomes.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypicSex"]
     class_class_curie: ClassVar[str] = "biolink:GenotypicSex"
@@ -2004,10 +2000,10 @@ class GenotypicSex(BiologicalSex):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
 
     id: Union[str, GenotypicSexId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypicSexId):
@@ -2026,7 +2022,7 @@ class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SeverityValue"]
     class_class_curie: ClassVar[str] = "biolink:SeverityValue"
@@ -2034,10 +2030,10 @@ class SeverityValue(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
 
     id: Union[str, SeverityValueId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SeverityValueId):
@@ -2056,7 +2052,7 @@ class RelationshipType(OntologyClass):
     """
     An OWL property used as an edge label
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RelationshipType"]
     class_class_curie: ClassVar[str] = "biolink:RelationshipType"
@@ -2065,7 +2061,7 @@ class RelationshipType(OntologyClass):
 
     id: Union[str, RelationshipTypeId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RelationshipTypeId):
@@ -2079,7 +2075,7 @@ class TaxonomicRank(OntologyClass):
     """
     A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["TaxonomicRank"]
     class_class_curie: ClassVar[str] = "biolink:TaxonomicRank"
@@ -2088,7 +2084,7 @@ class TaxonomicRank(OntologyClass):
 
     id: Union[str, TaxonomicRankId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TaxonomicRankId):
@@ -2103,7 +2099,7 @@ class OrganismTaxon(NamedThing):
     A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
     Can also be used to represent strains or subspecies.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxon"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
@@ -2111,10 +2107,10 @@ class OrganismTaxon(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
 
     id: Union[str, OrganismTaxonId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_taxonomic_rank: Optional[Union[str, TaxonomicRankId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismTaxonId):
@@ -2136,7 +2132,7 @@ class Event(NamedThing):
     """
     Something that happens at a given place and time.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Event"]
     class_class_curie: ClassVar[str] = "biolink:Event"
@@ -2144,9 +2140,9 @@ class Event(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Event
 
     id: Union[str, EventId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EventId):
@@ -2162,7 +2158,7 @@ class Event(NamedThing):
 
 @dataclass(repr=False)
 class AdministrativeEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AdministrativeEntity"]
     class_class_curie: ClassVar[str] = "biolink:AdministrativeEntity"
@@ -2170,9 +2166,9 @@ class AdministrativeEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
 
     id: Union[str, AdministrativeEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -2187,7 +2183,7 @@ class Agent(AdministrativeEntity):
     """
     person, group, organization or project that provides a piece of information (i.e. a knowledge association)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Agent"]
     class_class_curie: ClassVar[str] = "biolink:Agent"
@@ -2195,12 +2191,12 @@ class Agent(AdministrativeEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Agent
 
     id: Union[str, AgentId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    affiliation: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    affiliation: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     address: Optional[str] = None
     name: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AgentId):
@@ -2229,7 +2225,7 @@ class InformationContentEntity(NamedThing):
     """
     a piece of information that typically describes some topic of discourse or is used as support.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["InformationContentEntity"]
     class_class_curie: ClassVar[str] = "biolink:InformationContentEntity"
@@ -2237,13 +2233,13 @@ class InformationContentEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntity
 
     id: Union[str, InformationContentEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     license: Optional[str] = None
     rights: Optional[str] = None
     format: Optional[str] = None
     creation_date: Optional[Union[str, XSDDate]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.license is not None and not isinstance(self.license, str):
             self.license = str(self.license)
 
@@ -2271,7 +2267,7 @@ class StudyResult(InformationContentEntity):
     'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of
     this data as evidence.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["StudyResult"]
     class_class_curie: ClassVar[str] = "biolink:StudyResult"
@@ -2279,9 +2275,9 @@ class StudyResult(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.StudyResult
 
     id: Union[str, StudyResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -2296,7 +2292,7 @@ class StudyVariable(InformationContentEntity):
     """
     a variable that is used as a measure in the investigation of a study
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["StudyVariable"]
     class_class_curie: ClassVar[str] = "biolink:StudyVariable"
@@ -2304,9 +2300,9 @@ class StudyVariable(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
 
     id: Union[str, StudyVariableId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyVariableId):
@@ -2327,7 +2323,7 @@ class CommonDataElement(InformationContentEntity):
     responses, used systematically across different sites, studies, or clinical trials to ensure consistent data
     collection. Multiple CDEs (from one or more Collections) can be curated into Forms. (https://cde.nlm.nih.gov/home)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CommonDataElement"]
     class_class_curie: ClassVar[str] = "biolink:CommonDataElement"
@@ -2335,9 +2331,9 @@ class CommonDataElement(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
 
     id: Union[str, CommonDataElementId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CommonDataElementId):
@@ -2356,7 +2352,7 @@ class ConceptCountAnalysisResult(StudyResult):
     """
     A result of a concept count analysis.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ConceptCountAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:ConceptCountAnalysisResult"
@@ -2364,9 +2360,9 @@ class ConceptCountAnalysisResult(StudyResult):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ConceptCountAnalysisResult
 
     id: Union[str, ConceptCountAnalysisResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ConceptCountAnalysisResultId):
@@ -2385,7 +2381,7 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     """
     A result of a observed expected frequency analysis.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ObservedExpectedFrequencyAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:ObservedExpectedFrequencyAnalysisResult"
@@ -2393,9 +2389,9 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ObservedExpectedFrequencyAnalysisResult
 
     id: Union[str, ObservedExpectedFrequencyAnalysisResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ObservedExpectedFrequencyAnalysisResultId):
@@ -2414,7 +2410,7 @@ class RelativeFrequencyAnalysisResult(StudyResult):
     """
     A result of a relative frequency analysis.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RelativeFrequencyAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:RelativeFrequencyAnalysisResult"
@@ -2422,9 +2418,9 @@ class RelativeFrequencyAnalysisResult(StudyResult):
     class_model_uri: ClassVar[URIRef] = BIOLINK.RelativeFrequencyAnalysisResult
 
     id: Union[str, RelativeFrequencyAnalysisResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RelativeFrequencyAnalysisResultId):
@@ -2443,7 +2439,7 @@ class TextMiningResult(StudyResult):
     """
     A result of text mining.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningResult"]
     class_class_curie: ClassVar[str] = "biolink:TextMiningResult"
@@ -2451,9 +2447,9 @@ class TextMiningResult(StudyResult):
     class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
 
     id: Union[str, TextMiningResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TextMiningResultId):
@@ -2472,7 +2468,7 @@ class ChiSquaredAnalysisResult(StudyResult):
     """
     A result of a chi squared analysis.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChiSquaredAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:ChiSquaredAnalysisResult"
@@ -2480,9 +2476,9 @@ class ChiSquaredAnalysisResult(StudyResult):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChiSquaredAnalysisResult
 
     id: Union[str, ChiSquaredAnalysisResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChiSquaredAnalysisResultId):
@@ -2501,7 +2497,7 @@ class LogOddsAnalysisResult(StudyResult):
     """
     A result of a log odds ratio analysis.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["LogOddsAnalysisResult"]
     class_class_curie: ClassVar[str] = "biolink:LogOddsAnalysisResult"
@@ -2509,9 +2505,9 @@ class LogOddsAnalysisResult(StudyResult):
     class_model_uri: ClassVar[URIRef] = BIOLINK.LogOddsAnalysisResult
 
     id: Union[str, LogOddsAnalysisResultId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, LogOddsAnalysisResultId):
@@ -2530,7 +2526,7 @@ class Dataset(InformationContentEntity):
     """
     an item that refers to a collection of data from a data source.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Dataset"]
     class_class_curie: ClassVar[str] = "biolink:Dataset"
@@ -2538,9 +2534,9 @@ class Dataset(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Dataset
 
     id: Union[str, DatasetId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DatasetId):
@@ -2559,7 +2555,7 @@ class DatasetDistribution(InformationContentEntity):
     """
     an item that holds distribution level information about a dataset.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DatasetDistribution"]
     class_class_curie: ClassVar[str] = "biolink:DatasetDistribution"
@@ -2567,10 +2563,10 @@ class DatasetDistribution(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DatasetDistribution
 
     id: Union[str, DatasetDistributionId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     distribution_download_url: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DatasetDistributionId):
@@ -2592,7 +2588,7 @@ class DatasetVersion(InformationContentEntity):
     """
     an item that holds version level information about a dataset.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DatasetVersion"]
     class_class_curie: ClassVar[str] = "biolink:DatasetVersion"
@@ -2600,12 +2596,12 @@ class DatasetVersion(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DatasetVersion
 
     id: Union[str, DatasetVersionId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_dataset: Optional[Union[str, DatasetId]] = None
     ingest_date: Optional[str] = None
     has_distribution: Optional[Union[str, DatasetDistributionId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DatasetVersionId):
@@ -2633,7 +2629,7 @@ class DatasetSummary(InformationContentEntity):
     """
     an item that holds summary level information about a dataset.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DatasetSummary"]
     class_class_curie: ClassVar[str] = "biolink:DatasetSummary"
@@ -2641,11 +2637,11 @@ class DatasetSummary(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DatasetSummary
 
     id: Union[str, DatasetSummaryId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     source_web_page: Optional[str] = None
     source_logo: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DatasetSummaryId):
@@ -2670,7 +2666,7 @@ class ConfidenceLevel(InformationContentEntity):
     """
     Level of confidence in a statement
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ConfidenceLevel"]
     class_class_curie: ClassVar[str] = "biolink:ConfidenceLevel"
@@ -2678,9 +2674,9 @@ class ConfidenceLevel(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
 
     id: Union[str, ConfidenceLevelId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ConfidenceLevelId):
@@ -2699,7 +2695,7 @@ class EvidenceType(InformationContentEntity):
     """
     Class of evidence that supports an association
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EvidenceType"]
     class_class_curie: ClassVar[str] = "biolink:EvidenceType"
@@ -2707,9 +2703,9 @@ class EvidenceType(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
 
     id: Union[str, EvidenceTypeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EvidenceTypeId):
@@ -2732,7 +2728,7 @@ class Publication(InformationContentEntity):
     even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section
     highlighted by NLP).
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Publication"]
     class_class_curie: ClassVar[str] = "biolink:Publication"
@@ -2740,17 +2736,17 @@ class Publication(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Publication
 
     id: Union[str, PublicationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
-    authors: Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]] = empty_list()
-    pages: Optional[Union[str, List[str]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
+    authors: Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]] = empty_list()
+    pages: Optional[Union[str, list[str]]] = empty_list()
     summary: Optional[str] = None
-    keywords: Optional[Union[str, List[str]]] = empty_list()
-    mesh_terms: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    keywords: Optional[Union[str, list[str]]] = empty_list()
+    mesh_terms: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     name: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PublicationId):
@@ -2801,7 +2797,7 @@ class Book(Publication):
     """
     This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Book"]
     class_class_curie: ClassVar[str] = "biolink:Book"
@@ -2809,11 +2805,11 @@ class Book(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Book
 
     id: Union[str, BookId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
-    type: Optional[Union[str, List[str]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
+    type: Optional[Union[str, list[str]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BookId):
@@ -2833,7 +2829,7 @@ class Book(Publication):
 
 @dataclass(repr=False)
 class BookChapter(Publication):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BookChapter"]
     class_class_curie: ClassVar[str] = "biolink:BookChapter"
@@ -2841,13 +2837,13 @@ class BookChapter(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BookChapter
 
     id: Union[str, BookChapterId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
     published_in: Union[str, URIorCURIE] = None
     volume: Optional[str] = None
     chapter: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BookChapterId):
@@ -2877,7 +2873,7 @@ class Serial(Publication):
     """
     This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Serial"]
     class_class_curie: ClassVar[str] = "biolink:Serial"
@@ -2885,14 +2881,14 @@ class Serial(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Serial
 
     id: Union[str, SerialId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
     iso_abbreviation: Optional[str] = None
     volume: Optional[str] = None
     issue: Optional[str] = None
-    type: Optional[Union[str, List[str]]] = empty_list()
+    type: Optional[Union[str, list[str]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SerialId):
@@ -2924,7 +2920,7 @@ class Article(Publication):
     """
     a piece of writing on a particular topic presented as a stand-alone section of a larger publication
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Article"]
     class_class_curie: ClassVar[str] = "biolink:Article"
@@ -2932,14 +2928,14 @@ class Article(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Article
 
     id: Union[str, ArticleId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
     published_in: Union[str, URIorCURIE] = None
     iso_abbreviation: Optional[str] = None
     volume: Optional[str] = None
     issue: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ArticleId):
@@ -2972,7 +2968,7 @@ class JournalArticle(Article):
     """
     an article, typically presenting results of research, that is published in an issue of a scientific journal.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["JournalArticle"]
     class_class_curie: ClassVar[str] = "biolink:JournalArticle"
@@ -2980,11 +2976,11 @@ class JournalArticle(Article):
     class_model_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
 
     id: Union[str, JournalArticleId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
     published_in: Union[str, URIorCURIE] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, JournalArticleId):
@@ -3004,7 +3000,7 @@ class Patent(Publication):
     a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use
     and sell an invention for a set period of time.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Patent"]
     class_class_curie: ClassVar[str] = "biolink:Patent"
@@ -3012,10 +3008,10 @@ class Patent(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Patent
 
     id: Union[str, PatentId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PatentId):
@@ -3035,7 +3031,7 @@ class WebPage(Publication):
     a document that is published according to World Wide Web standards, which may incorporate text, graphics, sound,
     and/or other features.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["WebPage"]
     class_class_curie: ClassVar[str] = "biolink:WebPage"
@@ -3043,10 +3039,10 @@ class WebPage(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.WebPage
 
     id: Union[str, WebPageId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, WebPageId):
@@ -3066,7 +3062,7 @@ class PreprintPublication(Publication):
     a document reresenting an early version of an author's original scholarly work, such as a research paper or a
     review, prior to formal peer review and publication in a peer-reviewed scholarly or scientific journal.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PreprintPublication"]
     class_class_curie: ClassVar[str] = "biolink:PreprintPublication"
@@ -3074,10 +3070,10 @@ class PreprintPublication(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
 
     id: Union[str, PreprintPublicationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PreprintPublicationId):
@@ -3098,7 +3094,7 @@ class DrugLabel(Publication):
     drug, including drug contents, specific instructions or warnings for administration, storage and disposal
     instructions, etc.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DrugLabel"]
     class_class_curie: ClassVar[str] = "biolink:DrugLabel"
@@ -3106,10 +3102,10 @@ class DrugLabel(Publication):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
 
     id: Union[str, DrugLabelId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    publication_type: Union[str, List[str]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    publication_type: Union[str, list[str]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DrugLabelId):
@@ -3129,7 +3125,7 @@ class RetrievalSource(InformationContentEntity):
     Provides information about how a particular InformationResource served as a source from which knowledge expressed
     in an Edge, or data used to generate this knowledge, was retrieved.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RetrievalSource"]
     class_class_curie: ClassVar[str] = "biolink:RetrievalSource"
@@ -3137,13 +3133,13 @@ class RetrievalSource(InformationContentEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.RetrievalSource
 
     id: Union[str, RetrievalSourceId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     resource_id: Union[str, URIorCURIE] = None
     resource_role: Union[str, "ResourceRoleEnum"] = None
     upstream_resource_ids: Optional[Union[str, URIorCURIE]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RetrievalSourceId):
@@ -3178,7 +3174,7 @@ class PhysicalEssenceOrOccurrent(YAMLRoot):
     """
     Either a physical or processual entity.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhysicalEssenceOrOccurrent"]
     class_class_curie: ClassVar[str] = "biolink:PhysicalEssenceOrOccurrent"
@@ -3190,7 +3186,7 @@ class PhysicalEssence(PhysicalEssenceOrOccurrent):
     """
     Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhysicalEssence"]
     class_class_curie: ClassVar[str] = "biolink:PhysicalEssence"
@@ -3203,7 +3199,7 @@ class PhysicalEntity(NamedThing):
     """
     An entity that has material reality (a.k.a. physical essence).
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhysicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:PhysicalEntity"
@@ -3211,9 +3207,9 @@ class PhysicalEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
 
     id: Union[str, PhysicalEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhysicalEntityId):
@@ -3231,7 +3227,7 @@ class Occurrent(PhysicalEssenceOrOccurrent):
     """
     A processual entity.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Occurrent"]
     class_class_curie: ClassVar[str] = "biolink:Occurrent"
@@ -3243,7 +3239,7 @@ class ActivityAndBehavior(Occurrent):
     """
     Activity or behavior of any independent integral living, organization or mechanical actor in the world
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ActivityAndBehavior"]
     class_class_curie: ClassVar[str] = "biolink:ActivityAndBehavior"
@@ -3257,7 +3253,7 @@ class Activity(NamedThing):
     An activity is something that occurs over a period of time and acts upon or with entities; it may include
     consuming, processing, transforming, modifying, relocating, using, or generating entities.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Activity"]
     class_class_curie: ClassVar[str] = "biolink:Activity"
@@ -3265,9 +3261,9 @@ class Activity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Activity
 
     id: Union[str, ActivityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ActivityId):
@@ -3286,7 +3282,7 @@ class Study(Activity):
     """
     a detailed investigation and/or analysis
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Study"]
     class_class_curie: ClassVar[str] = "biolink:Study"
@@ -3294,9 +3290,9 @@ class Study(Activity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Study
 
     id: Union[str, StudyId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyId):
@@ -3315,7 +3311,7 @@ class Procedure(NamedThing):
     """
     A series of actions conducted in a certain order or manner
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Procedure"]
     class_class_curie: ClassVar[str] = "biolink:Procedure"
@@ -3323,9 +3319,9 @@ class Procedure(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Procedure
 
     id: Union[str, ProcedureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProcedureId):
@@ -3344,7 +3340,7 @@ class Phenomenon(NamedThing):
     """
     a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Phenomenon"]
     class_class_curie: ClassVar[str] = "biolink:Phenomenon"
@@ -3352,9 +3348,9 @@ class Phenomenon(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
 
     id: Union[str, PhenomenonId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhenomenonId):
@@ -3373,7 +3369,7 @@ class Device(NamedThing):
     """
     A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Device"]
     class_class_curie: ClassVar[str] = "biolink:Device"
@@ -3381,9 +3377,9 @@ class Device(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Device
 
     id: Union[str, DeviceId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DeviceId):
@@ -3402,7 +3398,7 @@ class DiagnosticAid(NamedThing):
     """
     A device or substance used to help diagnose disease or injury
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiagnosticAid"]
     class_class_curie: ClassVar[str] = "biolink:DiagnosticAid"
@@ -3410,9 +3406,9 @@ class DiagnosticAid(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiagnosticAid
 
     id: Union[str, DiagnosticAidId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiagnosticAidId):
@@ -3430,7 +3426,7 @@ class SubjectOfInvestigation(YAMLRoot):
     """
     An entity that has the role of being studied in an investigation, study, or experiment
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SubjectOfInvestigation"]
     class_class_curie: ClassVar[str] = "biolink:SubjectOfInvestigation"
@@ -3445,7 +3441,7 @@ class MaterialSample(PhysicalEntity):
     portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use.
     [SIO]
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSample"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSample"
@@ -3453,9 +3449,9 @@ class MaterialSample(PhysicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
 
     id: Union[str, MaterialSampleId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MaterialSampleId):
@@ -3474,7 +3470,7 @@ class PlanetaryEntity(NamedThing):
     """
     Any entity or process that exists at the level of the whole planet
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PlanetaryEntity"]
     class_class_curie: ClassVar[str] = "biolink:PlanetaryEntity"
@@ -3482,9 +3478,9 @@ class PlanetaryEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
 
     id: Union[str, PlanetaryEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PlanetaryEntityId):
@@ -3500,7 +3496,7 @@ class PlanetaryEntity(NamedThing):
 
 @dataclass(repr=False)
 class EnvironmentalProcess(PlanetaryEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalProcess"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalProcess"
@@ -3508,9 +3504,9 @@ class EnvironmentalProcess(PlanetaryEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
 
     id: Union[str, EnvironmentalProcessId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EnvironmentalProcessId):
@@ -3526,7 +3522,7 @@ class EnvironmentalProcess(PlanetaryEntity):
 
 @dataclass(repr=False)
 class EnvironmentalFeature(PlanetaryEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalFeature"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalFeature"
@@ -3534,9 +3530,9 @@ class EnvironmentalFeature(PlanetaryEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
 
     id: Union[str, EnvironmentalFeatureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EnvironmentalFeatureId):
@@ -3555,7 +3551,7 @@ class GeographicLocation(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeographicLocation"]
     class_class_curie: ClassVar[str] = "biolink:GeographicLocation"
@@ -3563,11 +3559,11 @@ class GeographicLocation(PlanetaryEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
 
     id: Union[str, GeographicLocationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     latitude: Optional[float] = None
     longitude: Optional[float] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeographicLocationId):
@@ -3592,7 +3588,7 @@ class GeographicLocationAtTime(GeographicLocation):
     """
     a location that can be described in lat/long coordinates, for a particular time
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeographicLocationAtTime"]
     class_class_curie: ClassVar[str] = "biolink:GeographicLocationAtTime"
@@ -3600,10 +3596,10 @@ class GeographicLocationAtTime(GeographicLocation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
 
     id: Union[str, GeographicLocationAtTimeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeographicLocationAtTimeId):
@@ -3626,17 +3622,17 @@ class ThingWithTaxon(YAMLRoot):
     A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms;
     genes, their products and other molecular entities; body parts; biological processes
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ThingWithTaxon"]
     class_class_curie: ClassVar[str] = "biolink:ThingWithTaxon"
     class_name: ClassVar[str] = "thing with taxon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ThingWithTaxon
 
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]] = empty_list()
     in_taxon_label: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
@@ -3649,7 +3645,7 @@ class ThingWithTaxon(YAMLRoot):
 
 @dataclass(repr=False)
 class BiologicalEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalEntity"
@@ -3657,11 +3653,11 @@ class BiologicalEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
 
     id: Union[str, BiologicalEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]] = empty_list()
     in_taxon_label: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
@@ -3679,7 +3675,7 @@ class BiologicalEntity(NamedThing):
 
 @dataclass(repr=False)
 class GenomicEntity(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicEntity"]
     class_class_curie: ClassVar[str] = "biolink:GenomicEntity"
@@ -3688,7 +3684,7 @@ class GenomicEntity(YAMLRoot):
 
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
@@ -3697,7 +3693,7 @@ class GenomicEntity(YAMLRoot):
 
 @dataclass(repr=False)
 class EpigenomicEntity(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EpigenomicEntity"]
     class_class_curie: ClassVar[str] = "biolink:EpigenomicEntity"
@@ -3706,7 +3702,7 @@ class EpigenomicEntity(YAMLRoot):
 
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
@@ -3718,7 +3714,7 @@ class ChemicalEntity(NamedThing):
     """
     A chemical entity is a physical entity that pertains to chemistry or biochemistry.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntity"
@@ -3726,14 +3722,14 @@ class ChemicalEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntity
 
     id: Union[str, ChemicalEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     trade_name: Optional[str] = None
-    available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
+    available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], list[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
-    has_chemical_role: Optional[Union[Union[str, ChemicalRoleId], List[Union[str, ChemicalRoleId]]]] = empty_list()
+    has_chemical_role: Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalEntityId):
@@ -3769,7 +3765,7 @@ class MolecularEntity(ChemicalEntity):
     """
     A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularEntity"]
     class_class_curie: ClassVar[str] = "biolink:MolecularEntity"
@@ -3777,10 +3773,10 @@ class MolecularEntity(ChemicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularEntity
 
     id: Union[str, MolecularEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     is_metabolite: Optional[Union[bool, Bool]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularEntityId):
@@ -3805,7 +3801,7 @@ class SmallMolecule(MolecularEntity):
     representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium
     ion).
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SmallMolecule"]
     class_class_curie: ClassVar[str] = "biolink:SmallMolecule"
@@ -3813,9 +3809,9 @@ class SmallMolecule(MolecularEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SmallMolecule
 
     id: Union[str, SmallMoleculeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SmallMoleculeId):
@@ -3834,7 +3830,7 @@ class ChemicalMixture(ChemicalEntity):
     """
     A chemical mixture is a chemical entity composed of two or more molecular entities.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalMixture"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalMixture"
@@ -3842,13 +3838,13 @@ class ChemicalMixture(ChemicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalMixture
 
     id: Union[str, ChemicalMixtureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     is_supplement: Optional[str] = None
     highest_FDA_approval_status: Optional[Union[str, "ApprovalStatusEnum"]] = None
     drug_regulatory_status_world_wide: Optional[Union[str, "ApprovalStatusEnum"]] = None
-    routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
+    routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], list[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalMixtureId):
@@ -3882,7 +3878,7 @@ class NucleicAcidEntity(MolecularEntity):
     sequence representations of its precise sequence; for convenience of representation, partial sequences of various
     kinds are included.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role", "in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NucleicAcidEntity"]
     class_class_curie: ClassVar[str] = "biolink:NucleicAcidEntity"
@@ -3890,12 +3886,12 @@ class NucleicAcidEntity(MolecularEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidEntity
 
     id: Union[str, NucleicAcidEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]] = empty_list()
     in_taxon_label: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NucleicAcidEntityId):
@@ -3925,7 +3921,7 @@ class RegulatoryRegion(BiologicalEntity):
     A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans-
     to affect the transcription of gene
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RegulatoryRegion"]
     class_class_curie: ClassVar[str] = "biolink:RegulatoryRegion"
@@ -3933,10 +3929,10 @@ class RegulatoryRegion(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.RegulatoryRegion
 
     id: Union[str, RegulatoryRegionId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RegulatoryRegionId):
@@ -3959,7 +3955,7 @@ class AccessibleDnaRegion(RegulatoryRegion):
     A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as
     DNase-I or Tn5 Transpose
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AccessibleDnaRegion"]
     class_class_curie: ClassVar[str] = "biolink:AccessibleDnaRegion"
@@ -3967,10 +3963,10 @@ class AccessibleDnaRegion(RegulatoryRegion):
     class_model_uri: ClassVar[URIRef] = BIOLINK.AccessibleDnaRegion
 
     id: Union[str, AccessibleDnaRegionId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AccessibleDnaRegionId):
@@ -3993,7 +3989,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion):
     A region (or regions) of the genome that contains a region of DNA known or predicted to bind a protein that
     modulates gene transcription
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["TranscriptionFactorBindingSite"]
     class_class_curie: ClassVar[str] = "biolink:TranscriptionFactorBindingSite"
@@ -4001,10 +3997,10 @@ class TranscriptionFactorBindingSite(RegulatoryRegion):
     class_model_uri: ClassVar[URIRef] = BIOLINK.TranscriptionFactorBindingSite
 
     id: Union[str, TranscriptionFactorBindingSiteId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TranscriptionFactorBindingSiteId):
@@ -4027,7 +4023,7 @@ class MolecularMixture(ChemicalMixture):
     A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and
     stoichiometry.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularMixture"]
     class_class_curie: ClassVar[str] = "biolink:MolecularMixture"
@@ -4035,9 +4031,9 @@ class MolecularMixture(ChemicalMixture):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularMixture
 
     id: Union[str, MolecularMixtureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularMixtureId):
@@ -4057,7 +4053,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown
     concentration and stoichiometry.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ComplexMolecularMixture"]
     class_class_curie: ClassVar[str] = "biolink:ComplexMolecularMixture"
@@ -4065,9 +4061,9 @@ class ComplexMolecularMixture(ChemicalMixture):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ComplexMolecularMixture
 
     id: Union[str, ComplexMolecularMixtureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ComplexMolecularMixtureId):
@@ -4087,7 +4083,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
     Either an individual molecular activity, or a collection of causally connected molecular activities in a
     biological system.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalProcessOrActivity"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalProcessOrActivity"
@@ -4095,12 +4091,12 @@ class BiologicalProcessOrActivity(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
 
     id: Union[str, BiologicalProcessOrActivityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_input: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
-    has_output: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
-    enabled_by: Optional[Union[Union[str, PhysicalEntityId], List[Union[str, PhysicalEntityId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_input: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
+    has_output: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
+    enabled_by: Optional[Union[Union[str, PhysicalEntityId], list[Union[str, PhysicalEntityId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BiologicalProcessOrActivityId):
@@ -4131,7 +4127,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
     """
     An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivity"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivity"
@@ -4139,12 +4135,12 @@ class MolecularActivity(BiologicalProcessOrActivity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
 
     id: Union[str, MolecularActivityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_input: Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]] = empty_list()
-    has_output: Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]] = empty_list()
-    enabled_by: Optional[Union[Union[dict, "MacromolecularMachineMixin"], List[Union[dict, "MacromolecularMachineMixin"]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_input: Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]] = empty_list()
+    has_output: Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]] = empty_list()
+    enabled_by: Optional[Union[Union[dict, "MacromolecularMachineMixin"], list[Union[dict, "MacromolecularMachineMixin"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularActivityId):
@@ -4175,7 +4171,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalProcess"]
     class_class_curie: ClassVar[str] = "biolink:BiologicalProcess"
@@ -4183,9 +4179,9 @@ class BiologicalProcess(BiologicalProcessOrActivity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
 
     id: Union[str, BiologicalProcessId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BiologicalProcessId):
@@ -4201,7 +4197,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
 @dataclass(repr=False)
 class Pathway(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Pathway"]
     class_class_curie: ClassVar[str] = "biolink:Pathway"
@@ -4209,9 +4205,9 @@ class Pathway(BiologicalProcess):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Pathway
 
     id: Union[str, PathwayId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PathwayId):
@@ -4227,7 +4223,7 @@ class Pathway(BiologicalProcess):
 
 @dataclass(repr=False)
 class PhysiologicalProcess(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhysiologicalProcess"]
     class_class_curie: ClassVar[str] = "biolink:PhysiologicalProcess"
@@ -4235,9 +4231,9 @@ class PhysiologicalProcess(BiologicalProcess):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
 
     id: Union[str, PhysiologicalProcessId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhysiologicalProcessId):
@@ -4253,7 +4249,7 @@ class PhysiologicalProcess(BiologicalProcess):
 
 @dataclass(repr=False)
 class Behavior(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Behavior"]
     class_class_curie: ClassVar[str] = "biolink:Behavior"
@@ -4261,9 +4257,9 @@ class Behavior(BiologicalProcess):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Behavior
 
     id: Union[str, BehaviorId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BehaviorId):
@@ -4283,7 +4279,7 @@ class ProcessedMaterial(ChemicalMixture):
     A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a
     material entity that is created or changed during material processing.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ProcessedMaterial"]
     class_class_curie: ClassVar[str] = "biolink:ProcessedMaterial"
@@ -4291,9 +4287,9 @@ class ProcessedMaterial(ChemicalMixture):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProcessedMaterial
 
     id: Union[str, ProcessedMaterialId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProcessedMaterialId):
@@ -4312,7 +4308,7 @@ class Drug(MolecularMixture):
     """
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Drug"]
     class_class_curie: ClassVar[str] = "biolink:Drug"
@@ -4320,9 +4316,9 @@ class Drug(MolecularMixture):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Drug
 
     id: Union[str, DrugId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DrugId):
@@ -4338,7 +4334,7 @@ class Drug(MolecularMixture):
 
 @dataclass(repr=False)
 class EnvironmentalFoodContaminant(ChemicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalFoodContaminant"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalFoodContaminant"
@@ -4346,9 +4342,9 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFoodContaminant
 
     id: Union[str, EnvironmentalFoodContaminantId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EnvironmentalFoodContaminantId):
@@ -4364,7 +4360,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
 
 @dataclass(repr=False)
 class FoodAdditive(ChemicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FoodAdditive"]
     class_class_curie: ClassVar[str] = "biolink:FoodAdditive"
@@ -4372,9 +4368,9 @@ class FoodAdditive(ChemicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.FoodAdditive
 
     id: Union[str, FoodAdditiveId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, FoodAdditiveId):
@@ -4393,7 +4389,7 @@ class Food(ChemicalMixture):
     """
     A substance consumed by a living organism as a source of nutrition
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role"]
+    _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Food"]
     class_class_curie: ClassVar[str] = "biolink:Food"
@@ -4401,9 +4397,9 @@ class Food(ChemicalMixture):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Food
 
     id: Union[str, FoodId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, FoodId):
@@ -4422,7 +4418,7 @@ class OrganismAttribute(Attribute):
     """
     describes a characteristic of an organismal entity.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismAttribute"]
     class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
@@ -4430,10 +4426,10 @@ class OrganismAttribute(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
 
     id: Union[str, OrganismAttributeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismAttributeId):
@@ -4452,7 +4448,7 @@ class PhenotypicQuality(OrganismAttribute):
     """
     A property of a phenotype
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicQuality"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicQuality"
@@ -4460,10 +4456,10 @@ class PhenotypicQuality(OrganismAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicQuality
 
     id: Union[str, PhenotypicQualityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhenotypicQualityId):
@@ -4483,7 +4479,7 @@ class GeneticInheritance(BiologicalEntity):
     The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
     e.g. autosomal dominant, autosomal recessive, etc.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneticInheritance"]
     class_class_curie: ClassVar[str] = "biolink:GeneticInheritance"
@@ -4491,9 +4487,9 @@ class GeneticInheritance(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneticInheritance
 
     id: Union[str, GeneticInheritanceId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneticInheritanceId):
@@ -4513,7 +4509,7 @@ class OrganismalEntity(BiologicalEntity):
     A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
     chemical entities
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismalEntity"]
     class_class_curie: ClassVar[str] = "biolink:OrganismalEntity"
@@ -4521,10 +4517,10 @@ class OrganismalEntity(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
 
     id: Union[str, OrganismalEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_attribute: Optional[Union[Union[str, AttributeId], List[Union[str, AttributeId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_attribute: Optional[Union[Union[str, AttributeId], list[Union[str, AttributeId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.has_attribute, list):
             self.has_attribute = [self.has_attribute] if self.has_attribute is not None else []
         self.has_attribute = [v if isinstance(v, AttributeId) else AttributeId(v) for v in self.has_attribute]
@@ -4543,7 +4539,7 @@ class Bacterium(OrganismalEntity):
     A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and
     are often motile.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Bacterium"]
     class_class_curie: ClassVar[str] = "biolink:Bacterium"
@@ -4551,9 +4547,9 @@ class Bacterium(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Bacterium
 
     id: Union[str, BacteriumId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BacteriumId):
@@ -4572,7 +4568,7 @@ class Virus(OrganismalEntity):
     """
     A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Virus"]
     class_class_curie: ClassVar[str] = "biolink:Virus"
@@ -4580,9 +4576,9 @@ class Virus(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Virus
 
     id: Union[str, VirusId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VirusId):
@@ -4598,7 +4594,7 @@ class Virus(OrganismalEntity):
 
 @dataclass(repr=False)
 class CellularOrganism(OrganismalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellularOrganism"]
     class_class_curie: ClassVar[str] = "biolink:CellularOrganism"
@@ -4606,9 +4602,9 @@ class CellularOrganism(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellularOrganism
 
     id: Union[str, CellularOrganismId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellularOrganismId):
@@ -4628,7 +4624,7 @@ class Mammal(CellularOrganism):
     A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the
     possession of hair, three middle ear bones, mammary glands, and a neocortex
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Mammal"]
     class_class_curie: ClassVar[str] = "biolink:Mammal"
@@ -4636,9 +4632,9 @@ class Mammal(CellularOrganism):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Mammal
 
     id: Union[str, MammalId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MammalId):
@@ -4657,7 +4653,7 @@ class Human(Mammal):
     """
     A member of the the species Homo sapiens.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Human"]
     class_class_curie: ClassVar[str] = "biolink:Human"
@@ -4665,9 +4661,9 @@ class Human(Mammal):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Human
 
     id: Union[str, HumanId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, HumanId):
@@ -4683,7 +4679,7 @@ class Human(Mammal):
 
 @dataclass(repr=False)
 class Plant(CellularOrganism):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Plant"]
     class_class_curie: ClassVar[str] = "biolink:Plant"
@@ -4691,9 +4687,9 @@ class Plant(CellularOrganism):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Plant
 
     id: Union[str, PlantId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PlantId):
@@ -4712,7 +4708,7 @@ class Invertebrate(CellularOrganism):
     """
     An animal lacking a vertebral column. This group consists of 98% of all animal species.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Invertebrate"]
     class_class_curie: ClassVar[str] = "biolink:Invertebrate"
@@ -4720,9 +4716,9 @@ class Invertebrate(CellularOrganism):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
 
     id: Union[str, InvertebrateId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InvertebrateId):
@@ -4741,7 +4737,7 @@ class Vertebrate(CellularOrganism):
     """
     A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Vertebrate"]
     class_class_curie: ClassVar[str] = "biolink:Vertebrate"
@@ -4749,9 +4745,9 @@ class Vertebrate(CellularOrganism):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
 
     id: Union[str, VertebrateId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VertebrateId):
@@ -4772,7 +4768,7 @@ class Fungus(CellularOrganism):
     smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to
     complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Fungus"]
     class_class_curie: ClassVar[str] = "biolink:Fungus"
@@ -4780,9 +4776,9 @@ class Fungus(CellularOrganism):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Fungus
 
     id: Union[str, FungusId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, FungusId):
@@ -4801,7 +4797,7 @@ class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["LifeStage"]
     class_class_curie: ClassVar[str] = "biolink:LifeStage"
@@ -4809,9 +4805,9 @@ class LifeStage(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.LifeStage
 
     id: Union[str, LifeStageId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, LifeStageId):
@@ -4831,7 +4827,7 @@ class IndividualOrganism(OrganismalEntity):
     An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID:
     ORCID:0000-0002-5355-2576
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["IndividualOrganism"]
     class_class_curie: ClassVar[str] = "biolink:IndividualOrganism"
@@ -4839,9 +4835,9 @@ class IndividualOrganism(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
 
     id: Union[str, IndividualOrganismId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, IndividualOrganismId):
@@ -4861,7 +4857,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
     A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
     Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PopulationOfIndividualOrganisms"]
     class_class_curie: ClassVar[str] = "biolink:PopulationOfIndividualOrganisms"
@@ -4869,9 +4865,9 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
 
     id: Union[str, PopulationOfIndividualOrganismsId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PopulationOfIndividualOrganismsId):
@@ -4890,7 +4886,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
     """
     A group of people banded together or treated as a group as participants in a research study.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["StudyPopulation"]
     class_class_curie: ClassVar[str] = "biolink:StudyPopulation"
@@ -4898,9 +4894,9 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
     class_model_uri: ClassVar[URIRef] = BIOLINK.StudyPopulation
 
     id: Union[str, StudyPopulationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyPopulationId):
@@ -4922,7 +4918,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     for their independent descriptions. This class is helpful to enforce domains and ranges that may involve either a
     disease or a phenotypic feature.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeature"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeature"
@@ -4930,9 +4926,9 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
 
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureId):
@@ -4953,7 +4949,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     affects a specific location and is not simply a direct result of physical injury. A disposition to undergo
     pathological processes that exists in an organism because of one or more disorders in that organism.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Disease"]
     class_class_curie: ClassVar[str] = "biolink:Disease"
@@ -4961,9 +4957,9 @@ class Disease(DiseaseOrPhenotypicFeature):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Disease
 
     id: Union[str, DiseaseId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseId):
@@ -4983,7 +4979,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an
     individual resulting from the interaction of its genotype with its molecular and physical environment.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeature"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicFeature"
@@ -4991,9 +4987,9 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
 
     id: Union[str, PhenotypicFeatureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhenotypicFeatureId):
@@ -5012,7 +5008,7 @@ class BehavioralFeature(PhenotypicFeature):
     """
     A phenotypic feature which is behavioral in nature.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BehavioralFeature"]
     class_class_curie: ClassVar[str] = "biolink:BehavioralFeature"
@@ -5020,9 +5016,9 @@ class BehavioralFeature(PhenotypicFeature):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralFeature
 
     id: Union[str, BehavioralFeatureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BehavioralFeatureId):
@@ -5041,7 +5037,7 @@ class AnatomicalEntity(OrganismalEntity):
     """
     A subcellular location, cell type or gross anatomical part
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntity"
@@ -5049,9 +5045,9 @@ class AnatomicalEntity(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
 
     id: Union[str, AnatomicalEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnatomicalEntityId):
@@ -5070,7 +5066,7 @@ class CellularComponent(AnatomicalEntity):
     """
     A location in or around a cell
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellularComponent"]
     class_class_curie: ClassVar[str] = "biolink:CellularComponent"
@@ -5078,9 +5074,9 @@ class CellularComponent(AnatomicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
 
     id: Union[str, CellularComponentId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellularComponentId):
@@ -5096,7 +5092,7 @@ class CellularComponent(AnatomicalEntity):
 
 @dataclass(repr=False)
 class Cell(AnatomicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Cell"]
     class_class_curie: ClassVar[str] = "biolink:Cell"
@@ -5104,9 +5100,9 @@ class Cell(AnatomicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Cell
 
     id: Union[str, CellId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellId):
@@ -5122,7 +5118,7 @@ class Cell(AnatomicalEntity):
 
 @dataclass(repr=False)
 class CellLine(OrganismalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellLine"]
     class_class_curie: ClassVar[str] = "biolink:CellLine"
@@ -5130,9 +5126,9 @@ class CellLine(OrganismalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLine
 
     id: Union[str, CellLineId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellLineId):
@@ -5148,7 +5144,7 @@ class CellLine(OrganismalEntity):
 
 @dataclass(repr=False)
 class GrossAnatomicalStructure(AnatomicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GrossAnatomicalStructure"]
     class_class_curie: ClassVar[str] = "biolink:GrossAnatomicalStructure"
@@ -5156,9 +5152,9 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
 
     id: Union[str, GrossAnatomicalStructureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GrossAnatomicalStructureId):
@@ -5177,7 +5173,7 @@ class ChemicalEntityOrGeneOrGeneProduct(YAMLRoot):
     A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching
     across chemical entities that must include genes and their children as chemical entities.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrGeneOrGeneProduct"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrGeneOrGeneProduct"
@@ -5190,7 +5186,7 @@ class ChemicalEntityOrProteinOrPolypeptide(YAMLRoot):
     A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when
     searching across chemical entities that must include genes and their children as chemical entities.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrProteinOrPolypeptide"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrProteinOrPolypeptide"
@@ -5204,7 +5200,7 @@ class MacromolecularMachineMixin(YAMLRoot):
     A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell.
     They either carry out individual biological activities, or they encode molecules which do this.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineMixin"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineMixin"
@@ -5213,7 +5209,7 @@ class MacromolecularMachineMixin(YAMLRoot):
 
     name: Optional[Union[str, SymbolType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.name is not None and not isinstance(self.name, SymbolType):
             self.name = SymbolType(self.name)
 
@@ -5224,7 +5220,7 @@ class GeneOrGeneProduct(MacromolecularMachineMixin):
     """
     A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneOrGeneProduct"]
     class_class_curie: ClassVar[str] = "biolink:GeneOrGeneProduct"
@@ -5238,7 +5234,7 @@ class Gene(BiologicalEntity):
     A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A
     gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Gene"]
     class_class_curie: ClassVar[str] = "biolink:Gene"
@@ -5246,13 +5242,13 @@ class Gene(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Gene
 
     id: Union[str, GeneId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
     symbol: Optional[str] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneId):
@@ -5285,17 +5281,17 @@ class GeneProductMixin(GeneOrGeneProduct):
     The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA
     molecules.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneProductMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneProductMixin"
     class_name: ClassVar[str] = "gene product mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneProductMixin
 
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.synonym, list):
             self.synonym = [self.synonym] if self.synonym is not None else []
         self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
@@ -5313,7 +5309,7 @@ class GeneProductIsoformMixin(GeneProductMixin):
     product is intended to represent a specific isoform rather than a canonical or reference or generic product. The
     designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneProductIsoformMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneProductIsoformMixin"
@@ -5327,7 +5323,7 @@ class MacromolecularComplex(BiologicalEntity):
     A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which
     at least one component is a protein and the constituent parts function together.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularComplex"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularComplex"
@@ -5335,10 +5331,10 @@ class MacromolecularComplex(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplex
 
     id: Union[str, MacromolecularComplexId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MacromolecularComplexId):
@@ -5361,7 +5357,7 @@ class NucleosomeModification(BiologicalEntity):
     A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a
     variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NucleosomeModification"]
     class_class_curie: ClassVar[str] = "biolink:NucleosomeModification"
@@ -5369,13 +5365,13 @@ class NucleosomeModification(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.NucleosomeModification
 
     id: Union[str, NucleosomeModificationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NucleosomeModificationId):
@@ -5408,7 +5404,7 @@ class Genome(BiologicalEntity):
     """
     A genome is the sum of genetic material within a cell or virion.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Genome"]
     class_class_curie: ClassVar[str] = "biolink:Genome"
@@ -5416,10 +5412,10 @@ class Genome(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Genome
 
     id: Union[str, GenomeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenomeId):
@@ -5442,7 +5438,7 @@ class Exon(BiologicalEntity):
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA
     splicing.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Exon"]
     class_class_curie: ClassVar[str] = "biolink:Exon"
@@ -5450,9 +5446,9 @@ class Exon(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Exon
 
     id: Union[str, ExonId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ExonId):
@@ -5471,7 +5467,7 @@ class Transcript(BiologicalEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Transcript"]
     class_class_curie: ClassVar[str] = "biolink:Transcript"
@@ -5479,9 +5475,9 @@ class Transcript(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Transcript
 
     id: Union[str, TranscriptId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TranscriptId):
@@ -5497,7 +5493,7 @@ class Transcript(BiologicalEntity):
 
 @dataclass(repr=False)
 class CodingSequence(BiologicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CodingSequence"]
     class_class_curie: ClassVar[str] = "biolink:CodingSequence"
@@ -5505,10 +5501,10 @@ class CodingSequence(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CodingSequence
 
     id: Union[str, CodingSequenceId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CodingSequenceId):
@@ -5532,7 +5528,7 @@ class Polypeptide(BiologicalEntity):
     sequence representations of its precise primary structure; for convenience of representation, partial sequences of
     various kinds are included, even if they do not represent a physical molecule.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Polypeptide"]
     class_class_curie: ClassVar[str] = "biolink:Polypeptide"
@@ -5540,9 +5536,9 @@ class Polypeptide(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Polypeptide
 
     id: Union[str, PolypeptideId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PolypeptideId):
@@ -5562,7 +5558,7 @@ class Protein(Polypeptide):
     A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated
     translation of mRNA
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Protein"]
     class_class_curie: ClassVar[str] = "biolink:Protein"
@@ -5570,12 +5566,12 @@ class Protein(Polypeptide):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Protein
 
     id: Union[str, ProteinId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProteinId):
@@ -5606,7 +5602,7 @@ class ProteinIsoform(Protein):
     Represents a protein that is a specific isoform of the canonical or reference protein. See
     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinIsoform"]
     class_class_curie: ClassVar[str] = "biolink:ProteinIsoform"
@@ -5614,12 +5610,12 @@ class ProteinIsoform(Protein):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinIsoform
 
     id: Union[str, ProteinIsoformId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProteinIsoformId):
@@ -5651,7 +5647,7 @@ class ProteinDomain(BiologicalEntity):
     of the rest of the protein chain. Protein domains maintain their structure and function independently of the
     proteins in which they are found. e.g. an SH3 domain.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinDomain"]
     class_class_curie: ClassVar[str] = "biolink:ProteinDomain"
@@ -5659,10 +5655,10 @@ class ProteinDomain(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinDomain
 
     id: Union[str, ProteinDomainId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProteinDomainId):
@@ -5686,7 +5682,7 @@ class PosttranslationalModification(BiologicalEntity):
     A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to
     form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PosttranslationalModification"]
     class_class_curie: ClassVar[str] = "biolink:PosttranslationalModification"
@@ -5694,12 +5690,12 @@ class PosttranslationalModification(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PosttranslationalModification
 
     id: Union[str, PosttranslationalModificationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PosttranslationalModificationId):
@@ -5726,7 +5722,7 @@ class PosttranslationalModification(BiologicalEntity):
 
 @dataclass(repr=False)
 class ProteinFamily(BiologicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinFamily"]
     class_class_curie: ClassVar[str] = "biolink:ProteinFamily"
@@ -5734,10 +5730,10 @@ class ProteinFamily(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinFamily
 
     id: Union[str, ProteinFamilyId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProteinFamilyId):
@@ -5761,7 +5757,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological
     significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NucleicAcidSequenceMotif"]
     class_class_curie: ClassVar[str] = "biolink:NucleicAcidSequenceMotif"
@@ -5769,9 +5765,9 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidSequenceMotif
 
     id: Union[str, NucleicAcidSequenceMotifId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NucleicAcidSequenceMotifId):
@@ -5787,7 +5783,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
 
 @dataclass(repr=False)
 class RNAProduct(Transcript):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RNAProduct"]
     class_class_curie: ClassVar[str] = "biolink:RNAProduct"
@@ -5795,12 +5791,12 @@ class RNAProduct(Transcript):
     class_model_uri: ClassVar[URIRef] = BIOLINK.RNAProduct
 
     id: Union[str, RNAProductId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RNAProductId):
@@ -5830,7 +5826,7 @@ class RNAProductIsoform(RNAProduct):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RNAProductIsoform"]
     class_class_curie: ClassVar[str] = "biolink:RNAProductIsoform"
@@ -5838,12 +5834,12 @@ class RNAProductIsoform(RNAProduct):
     class_model_uri: ClassVar[URIRef] = BIOLINK.RNAProductIsoform
 
     id: Union[str, RNAProductIsoformId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     name: Optional[Union[str, LabelType]] = None
-    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RNAProductIsoformId):
@@ -5870,7 +5866,7 @@ class RNAProductIsoform(RNAProduct):
 
 @dataclass(repr=False)
 class NoncodingRNAProduct(RNAProduct):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NoncodingRNAProduct"]
     class_class_curie: ClassVar[str] = "biolink:NoncodingRNAProduct"
@@ -5878,9 +5874,9 @@ class NoncodingRNAProduct(RNAProduct):
     class_model_uri: ClassVar[URIRef] = BIOLINK.NoncodingRNAProduct
 
     id: Union[str, NoncodingRNAProductId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NoncodingRNAProductId):
@@ -5896,7 +5892,7 @@ class NoncodingRNAProduct(RNAProduct):
 
 @dataclass(repr=False)
 class MicroRNA(NoncodingRNAProduct):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MicroRNA"]
     class_class_curie: ClassVar[str] = "biolink:MicroRNA"
@@ -5904,9 +5900,9 @@ class MicroRNA(NoncodingRNAProduct):
     class_model_uri: ClassVar[URIRef] = BIOLINK.MicroRNA
 
     id: Union[str, MicroRNAId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MicroRNAId):
@@ -5927,7 +5923,7 @@ class SiRNA(NoncodingRNAProduct):
     duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both
     strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SiRNA"]
     class_class_curie: ClassVar[str] = "biolink:SiRNA"
@@ -5935,9 +5931,9 @@ class SiRNA(NoncodingRNAProduct):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SiRNA
 
     id: Union[str, SiRNAId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SiRNAId):
@@ -5956,16 +5952,16 @@ class GeneGroupingMixin(YAMLRoot):
     """
     any grouping of multiple genes or gene products
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneGroupingMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneGroupingMixin"
     class_name: ClassVar[str] = "gene grouping mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneGroupingMixin
 
-    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.has_gene_or_gene_product, list):
             self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
         self.has_gene_or_gene_product = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene_or_gene_product]
@@ -5978,7 +5974,7 @@ class GeneFamily(BiologicalEntity):
     """
     any grouping of multiple genes or gene products related by common descent
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneFamily"]
     class_class_curie: ClassVar[str] = "biolink:GeneFamily"
@@ -5986,10 +5982,10 @@ class GeneFamily(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneFamily
 
     id: Union[str, GeneFamilyId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneFamilyId):
@@ -6009,7 +6005,7 @@ class GeneFamily(BiologicalEntity):
 
 @dataclass(repr=False)
 class Zygosity(Attribute):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Zygosity"]
     class_class_curie: ClassVar[str] = "biolink:Zygosity"
@@ -6017,10 +6013,10 @@ class Zygosity(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Zygosity
 
     id: Union[str, ZygosityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ZygosityId):
@@ -6040,7 +6036,7 @@ class Genotype(BiologicalEntity):
     An information content entity that describes a genome by specifying the total variation in genomic sequence and/or
     gene expression, relative to some established background
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Genotype"]
     class_class_curie: ClassVar[str] = "biolink:Genotype"
@@ -6048,11 +6044,11 @@ class Genotype(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Genotype
 
     id: Union[str, GenotypeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_zygosity: Optional[Union[str, ZygosityId]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeId):
@@ -6077,7 +6073,7 @@ class Haplotype(BiologicalEntity):
     """
     A set of zero or more Alleles on a single instance of a Sequence[VMC]
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Haplotype"]
     class_class_curie: ClassVar[str] = "biolink:Haplotype"
@@ -6085,10 +6081,10 @@ class Haplotype(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Haplotype
 
     id: Union[str, HaplotypeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, HaplotypeId):
@@ -6110,7 +6106,7 @@ class SequenceVariant(BiologicalEntity):
     """
     A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceVariant"]
     class_class_curie: ClassVar[str] = "biolink:SequenceVariant"
@@ -6118,11 +6114,11 @@ class SequenceVariant(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceVariant
 
     id: Union[str, SequenceVariantId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_gene: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_gene: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SequenceVariantId):
@@ -6148,7 +6144,7 @@ class Snv(SequenceVariant):
     """
     SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Snv"]
     class_class_curie: ClassVar[str] = "biolink:Snv"
@@ -6156,9 +6152,9 @@ class Snv(SequenceVariant):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Snv
 
     id: Union[str, SnvId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SnvId):
@@ -6178,7 +6174,7 @@ class ReagentTargetedGene(BiologicalEntity):
     A gene altered in its expression level in the context of some experiment as a result of being targeted by
     gene-knockdown reagent(s) such as a morpholino or RNAi.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ReagentTargetedGene"]
     class_class_curie: ClassVar[str] = "biolink:ReagentTargetedGene"
@@ -6186,10 +6182,10 @@ class ReagentTargetedGene(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ReagentTargetedGene
 
     id: Union[str, ReagentTargetedGeneId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ReagentTargetedGeneId):
@@ -6211,7 +6207,7 @@ class ClinicalAttribute(Attribute):
     """
     Attributes relating to a clinical manifestation
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalAttribute"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
@@ -6219,10 +6215,10 @@ class ClinicalAttribute(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
 
     id: Union[str, ClinicalAttributeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalAttributeId):
@@ -6242,7 +6238,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject
     individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalMeasurement"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalMeasurement"
@@ -6250,10 +6246,10 @@ class ClinicalMeasurement(ClinicalAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalMeasurement
 
     id: Union[str, ClinicalMeasurementId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalMeasurementId):
@@ -6278,7 +6274,7 @@ class ClinicalModifier(ClinicalAttribute):
     Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
     with respect to severity, laterality, and other aspects
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalModifier"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
@@ -6286,10 +6282,10 @@ class ClinicalModifier(ClinicalAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
 
     id: Union[str, ClinicalModifierId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalModifierId):
@@ -6309,7 +6305,7 @@ class ClinicalCourse(ClinicalAttribute):
     The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
     affected individual
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalCourse"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalCourse"
@@ -6317,10 +6313,10 @@ class ClinicalCourse(ClinicalAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
 
     id: Union[str, ClinicalCourseId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalCourseId):
@@ -6339,7 +6335,7 @@ class Onset(ClinicalCourse):
     """
     The age group in which (disease) symptom manifestations appear.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Onset"]
     class_class_curie: ClassVar[str] = "biolink:Onset"
@@ -6347,10 +6343,10 @@ class Onset(ClinicalCourse):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
 
     id: Union[str, OnsetId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OnsetId):
@@ -6370,7 +6366,7 @@ class ClinicalEntity(NamedThing):
     Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
     under biological entities
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalEntity"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalEntity"
@@ -6378,9 +6374,9 @@ class ClinicalEntity(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
 
     id: Union[str, ClinicalEntityId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalEntityId):
@@ -6396,7 +6392,7 @@ class ClinicalEntity(NamedThing):
 
 @dataclass(repr=False)
 class ClinicalTrial(ClinicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalTrial"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalTrial"
@@ -6404,9 +6400,9 @@ class ClinicalTrial(ClinicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
 
     id: Union[str, ClinicalTrialId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalTrialId):
@@ -6422,7 +6418,7 @@ class ClinicalTrial(ClinicalEntity):
 
 @dataclass(repr=False)
 class ClinicalIntervention(ClinicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalIntervention"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalIntervention"
@@ -6430,9 +6426,9 @@ class ClinicalIntervention(ClinicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
 
     id: Union[str, ClinicalInterventionId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalInterventionId):
@@ -6452,7 +6448,7 @@ class ClinicalFinding(PhenotypicFeature):
     this category is currently considered broad enough to tag clinical lab measurements and other biological
     attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalFinding"]
     class_class_curie: ClassVar[str] = "biolink:ClinicalFinding"
@@ -6460,10 +6456,10 @@ class ClinicalFinding(PhenotypicFeature):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalFinding
 
     id: Union[str, ClinicalFindingId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_attribute: Optional[Union[Union[str, ClinicalAttributeId], List[Union[str, ClinicalAttributeId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_attribute: Optional[Union[Union[str, ClinicalAttributeId], list[Union[str, ClinicalAttributeId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalFindingId):
@@ -6483,7 +6479,7 @@ class ClinicalFinding(PhenotypicFeature):
 
 @dataclass(repr=False)
 class Hospitalization(ClinicalIntervention):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Hospitalization"]
     class_class_curie: ClassVar[str] = "biolink:Hospitalization"
@@ -6491,9 +6487,9 @@ class Hospitalization(ClinicalIntervention):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Hospitalization
 
     id: Union[str, HospitalizationId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, HospitalizationId):
@@ -6512,7 +6508,7 @@ class SocioeconomicAttribute(Attribute):
     """
     Attributes relating to a socioeconomic manifestation
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SocioeconomicAttribute"]
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicAttribute"
@@ -6520,10 +6516,10 @@ class SocioeconomicAttribute(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicAttribute
 
     id: Union[str, SocioeconomicAttributeId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SocioeconomicAttributeId):
@@ -6542,7 +6538,7 @@ class Case(IndividualOrganism):
     """
     An individual (human) organism that has a patient role in some clinical context.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Case"]
     class_class_curie: ClassVar[str] = "biolink:Case"
@@ -6550,9 +6546,9 @@ class Case(IndividualOrganism):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Case
 
     id: Union[str, CaseId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CaseId):
@@ -6572,7 +6568,7 @@ class Cohort(StudyPopulation):
     A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a
     particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Cohort"]
     class_class_curie: ClassVar[str] = "biolink:Cohort"
@@ -6580,9 +6576,9 @@ class Cohort(StudyPopulation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Cohort
 
     id: Union[str, CohortId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CohortId):
@@ -6602,7 +6598,7 @@ class ExposureEvent(OntologyClass):
     A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more
     phenotypic features of that organism, potentially mediated by genes
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ExposureEvent"]
     class_class_curie: ClassVar[str] = "biolink:ExposureEvent"
@@ -6612,7 +6608,7 @@ class ExposureEvent(OntologyClass):
     id: Union[str, ExposureEventId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -6626,7 +6622,7 @@ class GenomicBackgroundExposure(Attribute):
     other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing
     an outcome.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicBackgroundExposure"]
     class_class_curie: ClassVar[str] = "biolink:GenomicBackgroundExposure"
@@ -6634,15 +6630,15 @@ class GenomicBackgroundExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicBackgroundExposure
 
     id: Union[str, GenomicBackgroundExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
-    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]] = empty_list()
     in_taxon_label: Optional[Union[str, LabelType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenomicBackgroundExposureId):
@@ -6677,7 +6673,7 @@ class PathologicalEntityMixin(YAMLRoot):
     """
     A pathological (abnormal) structure or process.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalEntityMixin"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalEntityMixin"
@@ -6691,7 +6687,7 @@ class PathologicalProcess(BiologicalProcess):
     A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular,
     multicellular, or organismal level.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalProcess"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcess"
@@ -6699,9 +6695,9 @@ class PathologicalProcess(BiologicalProcess):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
 
     id: Union[str, PathologicalProcessId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PathologicalProcessId):
@@ -6721,7 +6717,7 @@ class PathologicalProcessExposure(Attribute):
     A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an
     outcome, e.g. autoimmunity leading to disease.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalProcessExposure"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcessExposure"
@@ -6729,11 +6725,11 @@ class PathologicalProcessExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessExposure
 
     id: Union[str, PathologicalProcessExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PathologicalProcessExposureId):
@@ -6756,7 +6752,7 @@ class PathologicalAnatomicalStructure(AnatomicalEntity):
     An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular,
     multicellular, or organismal level.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalAnatomicalStructure"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalStructure"
@@ -6764,9 +6760,9 @@ class PathologicalAnatomicalStructure(AnatomicalEntity):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalStructure
 
     id: Union[str, PathologicalAnatomicalStructureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PathologicalAnatomicalStructureId):
@@ -6786,7 +6782,7 @@ class PathologicalAnatomicalExposure(Attribute):
     An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or
     influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalAnatomicalExposure"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalExposure"
@@ -6794,11 +6790,11 @@ class PathologicalAnatomicalExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalExposure
 
     id: Union[str, PathologicalAnatomicalExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PathologicalAnatomicalExposureId):
@@ -6822,7 +6818,7 @@ class DiseaseOrPhenotypicFeatureExposure(Attribute):
     influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin
     pigmentation predisposing an individual to skin cancer.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureExposure"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureExposure"
@@ -6830,11 +6826,11 @@ class DiseaseOrPhenotypicFeatureExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureExposure
 
     id: Union[str, DiseaseOrPhenotypicFeatureExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureExposureId):
@@ -6856,7 +6852,7 @@ class ChemicalExposure(Attribute):
     """
     A chemical exposure is an intake of a particular chemical entity.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalExposure"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalExposure"
@@ -6864,12 +6860,12 @@ class ChemicalExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
 
     id: Union[str, ChemicalExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
-    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
+    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], list[Union[dict, QuantityValue]]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalExposureId):
@@ -6895,7 +6891,7 @@ class ComplexChemicalExposure(Attribute):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ComplexChemicalExposure"]
     class_class_curie: ClassVar[str] = "biolink:ComplexChemicalExposure"
@@ -6903,10 +6899,10 @@ class ComplexChemicalExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ComplexChemicalExposure
 
     id: Union[str, ComplexChemicalExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ComplexChemicalExposureId):
@@ -6925,7 +6921,7 @@ class DrugExposure(ChemicalExposure):
     """
     A drug exposure is an intake of a particular drug.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DrugExposure"]
     class_class_curie: ClassVar[str] = "biolink:DrugExposure"
@@ -6933,11 +6929,11 @@ class DrugExposure(ChemicalExposure):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugExposure
 
     id: Union[str, DrugExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DrugExposureId):
@@ -6960,7 +6956,7 @@ class DrugToGeneInteractionExposure(DrugExposure):
     drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are
     known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DrugToGeneInteractionExposure"]
     class_class_curie: ClassVar[str] = "biolink:DrugToGeneInteractionExposure"
@@ -6968,11 +6964,11 @@ class DrugToGeneInteractionExposure(DrugExposure):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneInteractionExposure
 
     id: Union[str, DrugToGeneInteractionExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
-    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DrugToGeneInteractionExposureId):
@@ -6996,7 +6992,7 @@ class Treatment(NamedThing):
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices
     and/or procedures
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Treatment"]
     class_class_curie: ClassVar[str] = "biolink:Treatment"
@@ -7004,13 +7000,13 @@ class Treatment(NamedThing):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Treatment
 
     id: Union[str, TreatmentId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
-    has_drug: Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]] = empty_list()
-    has_device: Optional[Union[Union[str, DeviceId], List[Union[str, DeviceId]]]] = empty_list()
-    has_procedure: Optional[Union[Union[str, ProcedureId], List[Union[str, ProcedureId]]]] = empty_list()
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_drug: Optional[Union[Union[str, DrugId], list[Union[str, DrugId]]]] = empty_list()
+    has_device: Optional[Union[Union[str, DeviceId], list[Union[str, DeviceId]]]] = empty_list()
+    has_procedure: Optional[Union[Union[str, ProcedureId], list[Union[str, ProcedureId]]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TreatmentId):
@@ -7044,7 +7040,7 @@ class BioticExposure(Attribute):
     """
     An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BioticExposure"]
     class_class_curie: ClassVar[str] = "biolink:BioticExposure"
@@ -7052,11 +7048,11 @@ class BioticExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
 
     id: Union[str, BioticExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BioticExposureId):
@@ -7079,7 +7075,7 @@ class EnvironmentalExposure(Attribute):
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B),
     atmospheric (heat, cold, general pollution) and water-born contaminants.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalExposure"]
     class_class_curie: ClassVar[str] = "biolink:EnvironmentalExposure"
@@ -7087,11 +7083,11 @@ class EnvironmentalExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalExposure
 
     id: Union[str, EnvironmentalExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EnvironmentalExposureId):
@@ -7113,7 +7109,7 @@ class GeographicExposure(EnvironmentalExposure):
     """
     A geographic exposure is a factor relating to geographic proximity to some impactful entity.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeographicExposure"]
     class_class_curie: ClassVar[str] = "biolink:GeographicExposure"
@@ -7121,11 +7117,11 @@ class GeographicExposure(EnvironmentalExposure):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
 
     id: Union[str, GeographicExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeographicExposureId):
@@ -7147,7 +7143,7 @@ class BehavioralExposure(Attribute):
     """
     A behavioral exposure is a factor relating to behavior impacting an individual.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BehavioralExposure"]
     class_class_curie: ClassVar[str] = "biolink:BehavioralExposure"
@@ -7155,11 +7151,11 @@ class BehavioralExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralExposure
 
     id: Union[str, BehavioralExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BehavioralExposureId):
@@ -7182,7 +7178,7 @@ class SocioeconomicExposure(Attribute):
     A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g.
     poverty).
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SocioeconomicExposure"]
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicExposure"
@@ -7190,12 +7186,12 @@ class SocioeconomicExposure(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicExposure
 
     id: Union[str, SocioeconomicExposureId] = None
-    category: Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
-    has_attribute: Union[Union[str, SocioeconomicAttributeId], List[Union[str, SocioeconomicAttributeId]]] = None
+    has_attribute: Union[Union[str, SocioeconomicAttributeId], list[Union[str, SocioeconomicAttributeId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SocioeconomicExposureId):
@@ -7223,7 +7219,7 @@ class Outcome(YAMLRoot):
     An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of
     various categories of possible biological or non-biological (e.g. clinical) outcomes.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Outcome"]
     class_class_curie: ClassVar[str] = "biolink:Outcome"
@@ -7235,7 +7231,7 @@ class PathologicalProcessOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the manifestation of a pathological process.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalProcessOutcome"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcessOutcome"
@@ -7247,7 +7243,7 @@ class PathologicalAnatomicalOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PathologicalAnatomicalOutcome"]
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalOutcome"
@@ -7260,7 +7256,7 @@ class DiseaseOrPhenotypicFeatureOutcome(YAMLRoot):
     Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other
     characteristic phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureOutcome"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureOutcome"
@@ -7272,7 +7268,7 @@ class BehavioralOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the manifestation of human behavior.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BehavioralOutcome"]
     class_class_curie: ClassVar[str] = "biolink:BehavioralOutcome"
@@ -7285,7 +7281,7 @@ class HospitalizationOutcome(YAMLRoot):
     An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room
     visit) or chronic (inpatient) hospitalization.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["HospitalizationOutcome"]
     class_class_curie: ClassVar[str] = "biolink:HospitalizationOutcome"
@@ -7297,7 +7293,7 @@ class MortalityOutcome(YAMLRoot):
     """
     An outcome of death from resulting from an exposure event.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MortalityOutcome"]
     class_class_curie: ClassVar[str] = "biolink:MortalityOutcome"
@@ -7309,7 +7305,7 @@ class EpidemiologicalOutcome(YAMLRoot):
     """
     An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EpidemiologicalOutcome"]
     class_class_curie: ClassVar[str] = "biolink:EpidemiologicalOutcome"
@@ -7322,7 +7318,7 @@ class SocioeconomicOutcome(YAMLRoot):
     An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure
     event
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SocioeconomicOutcome"]
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicOutcome"
@@ -7335,7 +7331,7 @@ class Association(Entity):
     """
     A typed association between two entities, supported by evidence
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Association"]
     class_class_curie: ClassVar[str] = "biolink:Association"
@@ -7350,34 +7346,34 @@ class Association(Entity):
     agent_type: Union[str, "AgentTypeEnum"] = None
     negated: Optional[Union[bool, Bool]] = None
     qualifier: Optional[str] = None
-    qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
-    publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
-    has_evidence: Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]] = empty_list()
+    qualifiers: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
+    publications: Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]] = empty_list()
+    has_evidence: Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]] = empty_list()
     knowledge_source: Optional[str] = None
     primary_knowledge_source: Optional[str] = None
-    aggregator_knowledge_source: Optional[Union[str, List[str]]] = empty_list()
+    aggregator_knowledge_source: Optional[Union[str, list[str]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
     original_subject: Optional[str] = None
     original_predicate: Optional[Union[str, URIorCURIE]] = None
     original_object: Optional[str] = None
     subject_category: Optional[Union[str, OntologyClassId]] = None
     object_category: Optional[Union[str, OntologyClassId]] = None
-    subject_closure: Optional[Union[str, List[str]]] = empty_list()
-    object_closure: Optional[Union[str, List[str]]] = empty_list()
-    subject_category_closure: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
-    object_category_closure: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
+    subject_closure: Optional[Union[str, list[str]]] = empty_list()
+    object_closure: Optional[Union[str, list[str]]] = empty_list()
+    subject_category_closure: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
+    object_category_closure: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
     subject_namespace: Optional[str] = None
     object_namespace: Optional[str] = None
-    subject_label_closure: Optional[Union[str, List[str]]] = empty_list()
-    object_label_closure: Optional[Union[str, List[str]]] = empty_list()
-    retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], List[Union[str, RetrievalSourceId]]]] = empty_list()
+    subject_label_closure: Optional[Union[str, list[str]]] = empty_list()
+    object_label_closure: Optional[Union[str, list[str]]] = empty_list()
+    retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]] = empty_list()
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
-    has_supporting_studies: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
-    type: Optional[Union[str, List[str]]] = empty_list()
-    category: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    has_supporting_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
+    type: Optional[Union[str, list[str]]] = empty_list()
+    category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AssociationId):
@@ -7539,7 +7535,7 @@ class Association(Entity):
 
 @dataclass(repr=False)
 class ChemicalEntityAssessesNamedThingAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityAssessesNamedThingAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityAssessesNamedThingAssociation"
@@ -7553,7 +7549,7 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalEntityAssessesNamedThingAssociationId):
@@ -7585,7 +7581,7 @@ class ContributorAssociation(Association):
     """
     Any association between an entity (such as a publication) and various agents that contribute to its realisation
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ContributorAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ContributorAssociation"
@@ -7598,9 +7594,9 @@ class ContributorAssociation(Association):
     subject: Union[str, InformationContentEntityId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, AgentId] = None
-    qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
+    qualifiers: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ContributorAssociationId):
@@ -7636,7 +7632,7 @@ class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToGenotypePartAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToGenotypePartAssociation"
@@ -7650,7 +7646,7 @@ class GenotypeToGenotypePartAssociation(Association):
     subject: Union[str, GenotypeId] = None
     object: Union[str, GenotypeId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeToGenotypePartAssociationId):
@@ -7683,7 +7679,7 @@ class GenotypeToGeneAssociation(Association):
     Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single
     one. There is no assumption of cardinality
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToGeneAssociation"
@@ -7697,7 +7693,7 @@ class GenotypeToGeneAssociation(Association):
     subject: Union[str, GenotypeId] = None
     object: Union[str, GeneId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeToGeneAssociationId):
@@ -7729,7 +7725,7 @@ class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToVariantAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToVariantAssociation"
@@ -7743,7 +7739,7 @@ class GenotypeToVariantAssociation(Association):
     subject: Union[str, GenotypeId] = None
     object: Union[str, SequenceVariantId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeToVariantAssociationId):
@@ -7776,7 +7772,7 @@ class GeneToGeneAssociation(Association):
     abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
     homology and interaction.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneAssociation"
@@ -7790,7 +7786,7 @@ class GeneToGeneAssociation(Association):
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
@@ -7813,7 +7809,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     A homology association between two genes. May be orthology (in which case the species of subject and object should
     differ) or paralogy (in which case the species may be the same)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneHomologyAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneHomologyAssociation"
@@ -7827,7 +7823,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     predicate: Union[str, PredicateType] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToGeneHomologyAssociationId):
@@ -7861,7 +7857,7 @@ class GeneToGeneFamilyAssociation(Association):
     comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared
     gene product structure-function relationships.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneFamilyAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneFamilyAssociation"
@@ -7875,7 +7871,7 @@ class GeneToGeneFamilyAssociation(Association):
     object: Union[str, GeneFamilyId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToGeneFamilyAssociationId):
@@ -7908,7 +7904,7 @@ class GeneExpressionMixin(YAMLRoot):
     Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the
     expression occurs.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneExpressionMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneExpressionMixin"
@@ -7920,7 +7916,7 @@ class GeneExpressionMixin(YAMLRoot):
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
     phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
             self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
 
@@ -7941,7 +7937,7 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     """
     Indicates that two genes are co-expressed, generally under the same conditions.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneCoexpressionAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneCoexpressionAssociation"
@@ -7959,7 +7955,7 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
     phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToGeneCoexpressionAssociationId):
@@ -7994,7 +7990,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PairwiseGeneToGeneInteraction"]
     class_class_curie: ClassVar[str] = "biolink:PairwiseGeneToGeneInteraction"
@@ -8008,7 +8004,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PairwiseGeneToGeneInteractionId):
@@ -8030,7 +8026,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     """
     An interaction at the molecular level between two physical entities
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PairwiseMolecularInteraction"]
     class_class_curie: ClassVar[str] = "biolink:PairwiseMolecularInteraction"
@@ -8045,7 +8041,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     object: Union[str, MolecularEntityId] = None
     interacting_molecules_category: Optional[Union[str, OntologyClassId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PairwiseMolecularInteractionId):
@@ -8080,7 +8076,7 @@ class CellLineToEntityAssociationMixin(YAMLRoot):
     """
     An relationship between a cell line and another entity
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:CellLineToEntityAssociationMixin"
@@ -8091,7 +8087,7 @@ class CellLineToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, CellLineId):
@@ -8116,7 +8112,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
     individual with that disease or phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation"
@@ -8134,7 +8130,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellLineToDiseaseOrPhenotypicFeatureAssociationId):
@@ -8178,7 +8174,7 @@ class ChemicalEntityToEntityAssociationMixin(YAMLRoot):
     """
     An interaction between a chemical entity and another entity
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToEntityAssociationMixin"
@@ -8189,7 +8185,7 @@ class ChemicalEntityToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, ChemicalEntityOrGeneOrGeneProduct):
@@ -8213,7 +8209,7 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a drug and another entity
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DrugToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:DrugToEntityAssociationMixin"
@@ -8224,7 +8220,7 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -8253,7 +8249,7 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     """
     An interaction between a chemical entity and another entity
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToEntityAssociationMixin"
@@ -8264,7 +8260,7 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -8293,7 +8289,7 @@ class CaseToEntityAssociationMixin(YAMLRoot):
     """
     An abstract association for use where the case is the subject
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CaseToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:CaseToEntityAssociationMixin"
@@ -8304,7 +8300,7 @@ class CaseToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, CaseId):
@@ -8329,7 +8325,7 @@ class ChemicalToChemicalAssociation(Association):
     A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal
     edges, e.g. one chemical converted to another.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToChemicalAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToChemicalAssociation"
@@ -8343,7 +8339,7 @@ class ChemicalToChemicalAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, ChemicalEntityId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalToChemicalAssociationId):
@@ -8372,7 +8368,7 @@ class ChemicalToChemicalAssociation(Association):
 
 @dataclass(repr=False)
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToParticipantAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ReactionToParticipantAssociation"
@@ -8389,7 +8385,7 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     reaction_direction: Optional[Union[str, "ReactionDirectionEnum"]] = None
     reaction_side: Optional[Union[str, "ReactionSideEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ReactionToParticipantAssociationId):
@@ -8417,7 +8413,7 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
 
 @dataclass(repr=False)
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToCatalystAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ReactionToCatalystAssociation"
@@ -8431,7 +8427,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     subject: Union[str, MolecularEntityId] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ReactionToCatalystAssociationId):
@@ -8455,7 +8451,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R
     has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToChemicalDerivationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToChemicalDerivationAssociation"
@@ -8468,9 +8464,9 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     subject: Union[str, ChemicalEntityId] = None
     object: Union[str, ChemicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    catalyst_qualifier: Optional[Union[Union[dict, MacromolecularMachineMixin], List[Union[dict, MacromolecularMachineMixin]]]] = empty_list()
+    catalyst_qualifier: Optional[Union[Union[dict, MacromolecularMachineMixin], list[Union[dict, MacromolecularMachineMixin]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalToChemicalDerivationAssociationId):
@@ -8507,7 +8503,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
     to or exacerbates the phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"
@@ -8525,7 +8521,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalToDiseaseOrPhenotypicFeatureAssociationId):
@@ -8570,7 +8566,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
     feature where the disease or phenotypic feature is a secondary undesirable effect.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
@@ -8595,7 +8591,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
@@ -8661,7 +8657,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
     feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
@@ -8679,7 +8675,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId):
@@ -8723,7 +8719,7 @@ class GeneToPathwayAssociation(Association):
     """
     An interaction between a gene or gene product and a biological process or pathway.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPathwayAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToPathwayAssociation"
@@ -8737,7 +8733,7 @@ class GeneToPathwayAssociation(Association):
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, PathwayId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToPathwayAssociationId):
@@ -8769,7 +8765,7 @@ class MolecularActivityToPathwayAssociation(Association):
     """
     Association that holds the relationship between a reaction and the pathway it participates in.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivityToPathwayAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivityToPathwayAssociation"
@@ -8783,7 +8779,7 @@ class MolecularActivityToPathwayAssociation(Association):
     object: Union[str, PathwayId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularActivityToPathwayAssociationId):
@@ -8815,7 +8811,7 @@ class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToPathwayAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalToPathwayAssociation"
@@ -8829,7 +8825,7 @@ class ChemicalToPathwayAssociation(Association):
     subject: Union[str, ChemicalEntityId] = None
     object: Union[str, PathwayId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalToPathwayAssociationId):
@@ -8858,7 +8854,7 @@ class ChemicalToPathwayAssociation(Association):
 
 @dataclass(repr=False)
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"]
     class_class_curie: ClassVar[str] = "biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
@@ -8877,7 +8873,7 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     object_context_qualifier: Optional[Union[str, OntologyClassId]] = None
     population_context_qualifier: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingAssociatedWithLikelihoodOfNamedThingAssociationId):
@@ -8926,7 +8922,7 @@ class ChemicalGeneInteractionAssociation(Association):
     effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
     (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalGeneInteractionAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalGeneInteractionAssociation"
@@ -8948,7 +8944,7 @@ class ChemicalGeneInteractionAssociation(Association):
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalGeneInteractionAssociationId):
@@ -9004,7 +9000,7 @@ class GeneRegulatesGeneAssociation(Association):
     """
     Describes a regulatory relationship between two genes or gene products.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneRegulatesGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneRegulatesGeneAssociation"
@@ -9022,7 +9018,7 @@ class GeneRegulatesGeneAssociation(Association):
     object: Union[dict, GeneOrGeneProduct] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneRegulatesGeneAssociationId):
@@ -9072,7 +9068,7 @@ class ProcessRegulatesProcessAssociation(Association):
     """
     Describes a regulatory relationship between two genes or gene products.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ProcessRegulatesProcessAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ProcessRegulatesProcessAssociation"
@@ -9086,7 +9082,7 @@ class ProcessRegulatesProcessAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, BiologicalProcessId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProcessRegulatesProcessAssociationId):
@@ -9119,7 +9115,7 @@ class ChemicalAffectsGeneAssociation(Association):
     Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance,
     activity,localization, processing, expression, etc.)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalAffectsGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalAffectsGeneAssociation"
@@ -9148,7 +9144,7 @@ class ChemicalAffectsGeneAssociation(Association):
     qualified_predicate: Optional[str] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalAffectsGeneAssociationId):
@@ -9226,7 +9222,7 @@ class GeneAffectsChemicalAssociation(Association):
     Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance,
     activity, localization, processing, transport, etc.)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneAffectsChemicalAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneAffectsChemicalAssociation"
@@ -9256,7 +9252,7 @@ class GeneAffectsChemicalAssociation(Association):
     qualified_predicate: Optional[str] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneAffectsChemicalAssociationId):
@@ -9336,7 +9332,7 @@ class DrugToGeneAssociation(Association):
     """
     An interaction between a drug and a gene or gene product.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DrugToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DrugToGeneAssociation"
@@ -9350,7 +9346,7 @@ class DrugToGeneAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DrugToGeneAssociationId):
@@ -9382,7 +9378,7 @@ class MaterialSampleToEntityAssociationMixin(YAMLRoot):
     """
     An association between a material sample and something.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSampleToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSampleToEntityAssociationMixin"
@@ -9393,7 +9389,7 @@ class MaterialSampleToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, MaterialSampleId):
@@ -9417,7 +9413,7 @@ class MaterialSampleDerivationAssociation(Association):
     """
     An association between a material sample and the material entity from which it is derived.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSampleDerivationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSampleDerivationAssociation"
@@ -9431,7 +9427,7 @@ class MaterialSampleDerivationAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MaterialSampleDerivationAssociationId):
@@ -9463,7 +9459,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An association between a material sample and a disease or phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
@@ -9481,7 +9477,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId):
@@ -9522,7 +9518,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class DiseaseToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseToEntityAssociationMixin"
@@ -9533,7 +9529,7 @@ class DiseaseToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, DiseaseId):
@@ -9557,7 +9553,7 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
     """
     An association between some entity and an exposure event.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToExposureEventAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToExposureEventAssociationMixin"
@@ -9568,7 +9564,7 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, ExposureEventId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -9592,7 +9588,7 @@ class DiseaseToExposureEventAssociation(Association):
     """
     An association between an exposure event and a disease.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToExposureEventAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseToExposureEventAssociation"
@@ -9606,7 +9602,7 @@ class DiseaseToExposureEventAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseToExposureEventAssociationId):
@@ -9638,7 +9634,7 @@ class EntityToOutcomeAssociationMixin(YAMLRoot):
     """
     An association between some entity and an outcome
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToOutcomeAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToOutcomeAssociationMixin"
@@ -9649,7 +9645,7 @@ class EntityToOutcomeAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[dict, Outcome] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -9673,7 +9669,7 @@ class ExposureEventToOutcomeAssociation(Association):
     """
     An association between an exposure event and an outcome.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ExposureEventToOutcomeAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ExposureEventToOutcomeAssociation"
@@ -9689,7 +9685,7 @@ class ExposureEventToOutcomeAssociation(Association):
     population_context_qualifier: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
     temporal_context_qualifier: Optional[Union[str, TimeType]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ExposureEventToOutcomeAssociationId):
@@ -9727,7 +9723,7 @@ class FrequencyQualifierMixin(YAMLRoot):
     """
     Qualifier for frequency type associations
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FrequencyQualifierMixin"]
     class_class_curie: ClassVar[str] = "biolink:FrequencyQualifierMixin"
@@ -9739,7 +9735,7 @@ class FrequencyQualifierMixin(YAMLRoot):
     object: Union[str, NamedThingId] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -9766,7 +9762,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     """
     Qualifiers for entity to disease or phenotype associations.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToFeatureOrDiseaseQualifiersMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToFeatureOrDiseaseQualifiersMixin"
@@ -9783,7 +9779,7 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
 
@@ -9810,7 +9806,7 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     """
     Qualifiers for disease or phenotype to entity associations.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FeatureOrDiseaseQualifiersToEntityMixin"]
     class_class_curie: ClassVar[str] = "biolink:FeatureOrDiseaseQualifiersToEntityMixin"
@@ -9826,7 +9822,7 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
 
@@ -9847,7 +9843,7 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
 
 @dataclass(repr=False)
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToPhenotypicFeatureAssociationMixin"
@@ -9863,7 +9859,7 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
     has_quotient: Optional[float] = None
     has_percentage: Optional[float] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -9899,7 +9895,7 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
 @dataclass(repr=False)
 class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicFeatureToEntityAssociationMixin"
@@ -9915,7 +9911,7 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
     has_quotient: Optional[float] = None
     has_percentage: Optional[float] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, PhenotypicFeatureId):
@@ -9945,7 +9941,7 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
     Association between two concept nodes of phenotypic character, qualified by the predicate used. This association
     may typically be used to specify 'similar_to' or 'member_of' relationships.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicFeatureToPhenotypicFeatureAssociation"
@@ -9967,7 +9963,7 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhenotypicFeatureToPhenotypicFeatureAssociationId):
@@ -10028,7 +10024,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
     used. Conversely, for more specific associations (like 'gene to disease association', the publication should be
     captured as an edge property).
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["InformationContentEntityToNamedThingAssociation"]
     class_class_curie: ClassVar[str] = "biolink:InformationContentEntityToNamedThingAssociation"
@@ -10042,7 +10038,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InformationContentEntityToNamedThingAssociationId):
@@ -10074,7 +10070,7 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     """
     mixin class for any association whose object (target node) is a disease
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociationMixin"
@@ -10085,7 +10081,7 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
     predicate: Union[str, PredicateType] = None
     object: Union[str, DiseaseId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, DiseaseId):
@@ -10096,7 +10092,7 @@ class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
 
 @dataclass(repr=False)
 class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
@@ -10107,7 +10103,7 @@ class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, DiseaseOrPhenotypicFeatureId):
@@ -10132,7 +10128,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     An association between either a disease or a phenotypic feature and an anatomical entity, where the
     disease/feature manifests in that site.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToLocationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToLocationAssociation"
@@ -10146,7 +10142,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, AnatomicalEntityId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureToLocationAssociationId):
@@ -10178,7 +10174,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
     """
     An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
@@ -10192,7 +10188,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, GeneticInheritanceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId):
@@ -10221,7 +10217,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
 
 @dataclass(repr=False)
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseOrPhenotypicFeatureAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
@@ -10236,7 +10232,7 @@ class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -10269,7 +10265,7 @@ class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
 
 @dataclass(repr=False)
 class GenotypeToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToEntityAssociationMixin"
@@ -10280,7 +10276,7 @@ class GenotypeToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GenotypeId):
@@ -10305,7 +10301,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
     either in isolation or through environment
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToPhenotypicFeatureAssociation"
@@ -10327,7 +10323,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeToPhenotypicFeatureAssociationId):
@@ -10384,7 +10380,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     Any association between an environment and a phenotypic feature, where being in the environment influences the
     phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ExposureEventToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ExposureEventToPhenotypicFeatureAssociation"
@@ -10406,7 +10402,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ExposureEventToPhenotypicFeatureAssociationId):
@@ -10463,7 +10459,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
     disease in some way.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DiseaseToPhenotypicFeatureAssociation"
@@ -10490,7 +10486,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseToPhenotypicFeatureAssociationId):
@@ -10562,7 +10558,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
     has had the phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CaseToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CaseToPhenotypicFeatureAssociation"
@@ -10584,7 +10580,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CaseToPhenotypicFeatureAssociationId):
@@ -10641,7 +10637,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
     An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has
     exhibited the behavior.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BehaviorToBehavioralFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:BehaviorToBehavioralFeatureAssociation"
@@ -10663,7 +10659,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BehaviorToBehavioralFeatureAssociationId):
@@ -10716,7 +10712,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class GeneToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:GeneToEntityAssociationMixin"
@@ -10727,7 +10723,7 @@ class GeneToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
@@ -10748,7 +10744,7 @@ class GeneToEntityAssociationMixin(YAMLRoot):
 
 @dataclass(repr=False)
 class VariantToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:VariantToEntityAssociationMixin"
@@ -10759,7 +10755,7 @@ class VariantToEntityAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, SequenceVariantId):
@@ -10780,7 +10776,7 @@ class VariantToEntityAssociationMixin(YAMLRoot):
 
 @dataclass(repr=False)
 class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseOrPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseOrPhenotypicFeatureAssociation"
@@ -10802,7 +10798,7 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToDiseaseOrPhenotypicFeatureAssociationId):
@@ -10855,7 +10851,7 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToPhenotypicFeatureAssociation"
@@ -10875,7 +10871,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToPhenotypicFeatureAssociationId):
@@ -10917,7 +10913,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
 
 @dataclass(repr=False)
 class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseAssociation"
@@ -10936,7 +10932,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToDiseaseAssociationId):
@@ -10975,7 +10971,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
 
 @dataclass(repr=False)
 class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CausalGeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CausalGeneToDiseaseAssociation"
@@ -10994,7 +10990,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CausalGeneToDiseaseAssociationId):
@@ -11033,7 +11029,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass(repr=False)
 class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CorrelatedGeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CorrelatedGeneToDiseaseAssociation"
@@ -11052,7 +11048,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CorrelatedGeneToDiseaseAssociationId):
@@ -11091,7 +11087,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass(repr=False)
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DruggableGeneToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:DruggableGeneToDiseaseAssociation"
@@ -11109,9 +11105,9 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    has_evidence: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
+    has_evidence: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DruggableGeneToDiseaseAssociationId):
@@ -11154,7 +11150,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass(repr=False)
 class PhenotypicFeatureToDiseaseAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:PhenotypicFeatureToDiseaseAssociation"
@@ -11176,7 +11172,7 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhenotypicFeatureToDiseaseAssociationId):
@@ -11233,7 +11229,7 @@ class VariantToGeneAssociation(Association):
     An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in
     linkage disequilibrium)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToGeneAssociation"
@@ -11247,7 +11243,7 @@ class VariantToGeneAssociation(Association):
     object: Union[str, GeneId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantToGeneAssociationId):
@@ -11279,7 +11275,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     """
     An association between a variant and expression of a gene (i.e. e-QTL)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToGeneExpressionAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToGeneExpressionAssociation"
@@ -11297,7 +11293,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
     phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantToGeneExpressionAssociationId):
@@ -11331,7 +11327,7 @@ class VariantToPopulationAssociation(Association):
     """
     An association between a variant and a population, where the variant has particular frequency in the population
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToPopulationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToPopulationAssociation"
@@ -11350,7 +11346,7 @@ class VariantToPopulationAssociation(Association):
     has_percentage: Optional[float] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantToPopulationAssociationId):
@@ -11397,7 +11393,7 @@ class PopulationToPopulationAssociation(Association):
     """
     An association between a two populations
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PopulationToPopulationAssociation"]
     class_class_curie: ClassVar[str] = "biolink:PopulationToPopulationAssociation"
@@ -11411,7 +11407,7 @@ class PopulationToPopulationAssociation(Association):
     object: Union[str, PopulationOfIndividualOrganismsId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PopulationToPopulationAssociationId):
@@ -11440,7 +11436,7 @@ class PopulationToPopulationAssociation(Association):
 
 @dataclass(repr=False)
 class VariantToPhenotypicFeatureAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToPhenotypicFeatureAssociation"
@@ -11462,7 +11458,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantToPhenotypicFeatureAssociationId):
@@ -11515,7 +11511,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class VariantToDiseaseAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantToDiseaseAssociation"
@@ -11536,7 +11532,7 @@ class VariantToDiseaseAssociation(Association):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantToDiseaseAssociationId):
@@ -11586,7 +11582,7 @@ class VariantToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class GenotypeToDiseaseAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeToDiseaseAssociation"
@@ -11607,7 +11603,7 @@ class GenotypeToDiseaseAssociation(Association):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeToDiseaseAssociationId):
@@ -11662,7 +11658,7 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
     that it recapitulates some features of the disease in a way that is useful for studying the disease outside a
     patient carrying the disease
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ModelToDiseaseAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:ModelToDiseaseAssociationMixin"
@@ -11673,7 +11669,7 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -11694,7 +11690,7 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
 
 @dataclass(repr=False)
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneAsAModelOfDiseaseAssociation"
@@ -11713,7 +11709,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneAsAModelOfDiseaseAssociationId):
@@ -11747,7 +11743,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass(repr=False)
 class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:VariantAsAModelOfDiseaseAssociation"
@@ -11768,7 +11764,7 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantAsAModelOfDiseaseAssociationId):
@@ -11808,7 +11804,7 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
 
 @dataclass(repr=False)
 class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GenotypeAsAModelOfDiseaseAssociation"
@@ -11829,7 +11825,7 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenotypeAsAModelOfDiseaseAssociationId):
@@ -11869,7 +11865,7 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
 
 @dataclass(repr=False)
 class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:CellLineAsAModelOfDiseaseAssociation"
@@ -11890,7 +11886,7 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellLineAsAModelOfDiseaseAssociationId):
@@ -11940,7 +11936,7 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
 
 @dataclass(repr=False)
 class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismalEntityAsAModelOfDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismalEntityAsAModelOfDiseaseAssociation"
@@ -11961,7 +11957,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismalEntityAsAModelOfDiseaseAssociationId):
@@ -12011,7 +12007,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class OrganismToOrganismAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismToOrganismAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismToOrganismAssociation"
@@ -12025,7 +12021,7 @@ class OrganismToOrganismAssociation(Association):
     subject: Union[str, IndividualOrganismId] = None
     object: Union[str, IndividualOrganismId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismToOrganismAssociationId):
@@ -12049,7 +12045,7 @@ class OrganismToOrganismAssociation(Association):
 
 @dataclass(repr=False)
 class TaxonToTaxonAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["TaxonToTaxonAssociation"]
     class_class_curie: ClassVar[str] = "biolink:TaxonToTaxonAssociation"
@@ -12063,7 +12059,7 @@ class TaxonToTaxonAssociation(Association):
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TaxonToTaxonAssociationId):
@@ -12087,7 +12083,7 @@ class TaxonToTaxonAssociation(Association):
 
 @dataclass(repr=False)
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneHasVariantThatContributesToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneHasVariantThatContributesToDiseaseAssociation"
@@ -12102,7 +12098,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     predicate: Union[str, PredicateType] = None
     subject_form_or_variant_qualifier: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneHasVariantThatContributesToDiseaseAssociationId):
@@ -12137,7 +12133,7 @@ class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and a gene expression site, possibly qualified by stage/timing info.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToExpressionSiteAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToExpressionSiteAssociation"
@@ -12154,7 +12150,7 @@ class GeneToExpressionSiteAssociation(Association):
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToExpressionSiteAssociationId):
@@ -12196,7 +12192,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     An association between a sequence variant and a treatment or health intervention. The treatment object itself
     encompasses both the disease and the drug used.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceVariantModulatesTreatmentAssociation"]
     class_class_curie: ClassVar[str] = "biolink:SequenceVariantModulatesTreatmentAssociation"
@@ -12210,7 +12206,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     subject: Union[str, SequenceVariantId] = None
     object: Union[str, TreatmentId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, SequenceVariantId):
@@ -12233,7 +12229,7 @@ class FunctionalAssociation(Association):
     An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either
     a molecular activity, a biological process or a cellular location in which a function is executed.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FunctionalAssociation"]
     class_class_curie: ClassVar[str] = "biolink:FunctionalAssociation"
@@ -12247,7 +12243,7 @@ class FunctionalAssociation(Association):
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, FunctionalAssociationId):
@@ -12274,7 +12270,7 @@ class MacromolecularMachineToEntityAssociationMixin(YAMLRoot):
     """
     an association which has a macromolecular machine mixin as a subject
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToEntityAssociationMixin"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToEntityAssociationMixin"
@@ -12286,7 +12282,7 @@ class MacromolecularMachineToEntityAssociationMixin(YAMLRoot):
     object: Union[str, NamedThingId] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
@@ -12315,7 +12311,7 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to
     its execution.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToMolecularActivityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToMolecularActivityAssociation"
@@ -12330,7 +12326,7 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     object: Union[str, MolecularActivityId] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MacromolecularMachineToMolecularActivityAssociationId):
@@ -12362,7 +12358,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     or pathway (as represented in the GO biological process branch), where the entity carries out some part of the
     process, regulates it, or acts upstream of it.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToBiologicalProcessAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToBiologicalProcessAssociation"
@@ -12377,7 +12373,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     object: Union[str, BiologicalProcessId] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MacromolecularMachineToBiologicalProcessAssociationId):
@@ -12409,7 +12405,7 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     (as represented in the GO cellular component branch), where the entity carries out its function in the cellular
     component.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineToCellularComponentAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineToCellularComponentAssociation"
@@ -12424,7 +12420,7 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     object: Union[str, CellularComponentId] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MacromolecularMachineToCellularComponentAssociationId):
@@ -12455,7 +12451,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     Added in response to capturing relationship between microbiome activities as measured via measurements of blood
     analytes as collected via blood and stool samples
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivityToChemicalEntityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivityToChemicalEntityAssociation"
@@ -12469,7 +12465,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     subject: Union[str, MolecularActivityId] = None
     object: Union[str, ChemicalEntityId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularActivityToChemicalEntityAssociationId):
@@ -12497,7 +12493,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     Added in response to capturing relationship between microbiome activities as measured via measurements of blood
     analytes as collected via blood and stool samples
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MolecularActivityToMolecularActivityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:MolecularActivityToMolecularActivityAssociation"
@@ -12511,7 +12507,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     subject: Union[str, MolecularActivityId] = None
     object: Union[str, MolecularActivityId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularActivityToMolecularActivityAssociationId):
@@ -12535,7 +12531,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
 
 @dataclass(repr=False)
 class GeneToGoTermAssociation(FunctionalAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGoTermAssociation"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGoTermAssociation"
@@ -12549,7 +12545,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     subject: Union[str, GeneId] = None
     object: Union[str, OntologyClassId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToGoTermAssociationId):
@@ -12573,7 +12569,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 
 @dataclass(repr=False)
 class EntityToDiseaseAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseAssociation"]
     class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociation"
@@ -12589,7 +12585,7 @@ class EntityToDiseaseAssociation(Association):
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
     max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EntityToDiseaseAssociationId):
@@ -12609,7 +12605,7 @@ class EntityToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class EntityToPhenotypicFeatureAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociation"]
     class_class_curie: ClassVar[str] = "biolink:EntityToPhenotypicFeatureAssociation"
@@ -12625,7 +12621,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
     max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EntityToPhenotypicFeatureAssociationId):
@@ -12648,7 +12644,7 @@ class SequenceAssociation(Association):
     """
     An association between a sequence feature and a nucleic acid entity it is localized to.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceAssociation"]
     class_class_curie: ClassVar[str] = "biolink:SequenceAssociation"
@@ -12662,7 +12658,7 @@ class SequenceAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SequenceAssociationId):
@@ -12680,7 +12676,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
     A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may
     be a chromosome, chromosome region or information entity such as a contig.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicSequenceLocalization"]
     class_class_curie: ClassVar[str] = "biolink:GenomicSequenceLocalization"
@@ -12699,7 +12695,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
     strand: Optional[Union[str, "StrandEnum"]] = None
     phase: Optional[Union[str, "PhaseEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenomicSequenceLocalizationId):
@@ -12746,7 +12742,7 @@ class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SequenceFeatureRelationship"]
     class_class_curie: ClassVar[str] = "biolink:SequenceFeatureRelationship"
@@ -12760,7 +12756,7 @@ class SequenceFeatureRelationship(Association):
     subject: Union[str, NucleicAcidEntityId] = None
     object: Union[str, NucleicAcidEntityId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SequenceFeatureRelationshipId):
@@ -12787,7 +12783,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     A gene is a collection of transcripts
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["TranscriptToGeneRelationship"]
     class_class_curie: ClassVar[str] = "biolink:TranscriptToGeneRelationship"
@@ -12801,7 +12797,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     subject: Union[str, TranscriptId] = None
     object: Union[str, GeneId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TranscriptToGeneRelationshipId):
@@ -12828,7 +12824,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGeneProductRelationship"]
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneProductRelationship"
@@ -12842,7 +12838,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     object: Union[dict, GeneProductMixin] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToGeneProductRelationshipId):
@@ -12874,7 +12870,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ExonToTranscriptRelationship"]
     class_class_curie: ClassVar[str] = "biolink:ExonToTranscriptRelationship"
@@ -12888,7 +12884,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     subject: Union[str, ExonId] = None
     object: Union[str, TranscriptId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ExonToTranscriptRelationshipId):
@@ -12915,7 +12911,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     """
     A regulatory relationship between two genes
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"]
     class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
@@ -12930,7 +12926,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     object: Union[dict, GeneOrGeneProduct] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociationId):
@@ -12962,7 +12958,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
 
 @dataclass(repr=False)
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityAssociation"
@@ -12976,7 +12972,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, AnatomicalEntityId):
@@ -13000,7 +12996,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     related by parthood. This includes relationships between cellular components and cells, between cells and tissues,
     tissues and whole organisms
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityPartOfAssociation"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation"
@@ -13014,7 +13010,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityPartOfAssociationId):
@@ -13048,7 +13044,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     related by development. A number of different relationship types can be used to specify the precise nature of the
     relationship.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityOntogenicAssociation"]
     class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation"
@@ -13062,7 +13058,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId):
@@ -13094,7 +13090,7 @@ class OrganismTaxonToEntityAssociation(YAMLRoot):
     """
     An association between an organism taxon and another entity
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToEntityAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToEntityAssociation"
@@ -13105,7 +13101,7 @@ class OrganismTaxonToEntityAssociation(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, OrganismTaxonId):
@@ -13129,7 +13125,7 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
     """
     A relationship between two organism taxon nodes
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToOrganismTaxonAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToOrganismTaxonAssociation"
@@ -13143,7 +13139,7 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, PredicateType):
@@ -13170,7 +13166,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     """
     A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToOrganismTaxonSpecialization"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToOrganismTaxonSpecialization"
@@ -13184,7 +13180,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismTaxonToOrganismTaxonSpecializationId):
@@ -13218,7 +13214,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens;
     plague infects Homo sapiens
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToOrganismTaxonInteraction"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToOrganismTaxonInteraction"
@@ -13233,7 +13229,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     predicate: Union[str, PredicateType] = None
     associated_environmental_context: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismTaxonToOrganismTaxonInteractionId):
@@ -13265,7 +13261,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
 @dataclass(repr=False)
 class OrganismTaxonToEnvironmentAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToEnvironmentAssociation"]
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToEnvironmentAssociation"
@@ -13279,7 +13275,7 @@ class OrganismTaxonToEnvironmentAssociation(Association):
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, OrganismTaxonId):
@@ -13807,7 +13803,7 @@ class slots:
     pass
 
 slots.has_attribute = Slot(uri=BIOLINK.has_attribute, name="has attribute", curie=BIOLINK.curie('has_attribute'),
-                   model_uri=BIOLINK.has_attribute, domain=Entity, range=Optional[Union[Union[str, AttributeId], List[Union[str, AttributeId]]]])
+                   model_uri=BIOLINK.has_attribute, domain=Entity, range=Optional[Union[Union[str, AttributeId], list[Union[str, AttributeId]]]])
 
 slots.has_attribute_type = Slot(uri=BIOLINK.has_attribute_type, name="has attribute type", curie=BIOLINK.curie('has_attribute_type'),
                    model_uri=BIOLINK.has_attribute_type, domain=Attribute, range=Union[str, OntologyClassId])
@@ -13816,7 +13812,7 @@ slots.has_qualitative_value = Slot(uri=BIOLINK.has_qualitative_value, name="has 
                    model_uri=BIOLINK.has_qualitative_value, domain=Attribute, range=Optional[Union[str, NamedThingId]])
 
 slots.has_quantitative_value = Slot(uri=BIOLINK.has_quantitative_value, name="has quantitative value", curie=BIOLINK.curie('has_quantitative_value'),
-                   model_uri=BIOLINK.has_quantitative_value, domain=Attribute, range=Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]])
+                   model_uri=BIOLINK.has_quantitative_value, domain=Attribute, range=Optional[Union[Union[dict, QuantityValue], list[Union[dict, QuantityValue]]]])
 
 slots.has_numeric_value = Slot(uri=BIOLINK.has_numeric_value, name="has numeric value", curie=BIOLINK.curie('has_numeric_value'),
                    model_uri=BIOLINK.has_numeric_value, domain=QuantityValue, range=Optional[float])
@@ -13837,13 +13833,13 @@ slots.iri = Slot(uri=BIOLINK.iri, name="iri", curie=BIOLINK.curie('iri'),
                    model_uri=BIOLINK.iri, domain=None, range=Optional[Union[str, IriType]])
 
 slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.type, domain=Entity, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.type, domain=Entity, range=Optional[Union[str, list[str]]])
 
 slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie('category'),
-                   model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+                   model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.publication_type = Slot(uri=DCT.type, name="publication type", curie=DCT.curie('type'),
-                   model_uri=BIOLINK.publication_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.publication_type, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=Entity, range=Optional[Union[str, LabelType]])
@@ -13864,19 +13860,19 @@ slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symb
                    model_uri=BIOLINK.symbol, domain=NamedThing, range=Optional[str])
 
 slots.synonym = Slot(uri=BIOLINK.synonym, name="synonym", curie=BIOLINK.curie('synonym'),
-                   model_uri=BIOLINK.synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+                   model_uri=BIOLINK.synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]])
 
 slots.exact_synonym = Slot(uri=BIOLINK.exact_synonym, name="exact synonym", curie=BIOLINK.curie('exact_synonym'),
-                   model_uri=BIOLINK.exact_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+                   model_uri=BIOLINK.exact_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]])
 
 slots.broad_synonym = Slot(uri=BIOLINK.broad_synonym, name="broad synonym", curie=BIOLINK.curie('broad_synonym'),
-                   model_uri=BIOLINK.broad_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+                   model_uri=BIOLINK.broad_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]])
 
 slots.narrow_synonym = Slot(uri=BIOLINK.narrow_synonym, name="narrow synonym", curie=BIOLINK.curie('narrow_synonym'),
-                   model_uri=BIOLINK.narrow_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+                   model_uri=BIOLINK.narrow_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]])
 
 slots.related_synonym = Slot(uri=BIOLINK.related_synonym, name="related synonym", curie=BIOLINK.curie('related_synonym'),
-                   model_uri=BIOLINK.related_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+                   model_uri=BIOLINK.related_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]])
 
 slots.deprecated = Slot(uri=BIOLINK.deprecated, name="deprecated", curie=BIOLINK.curie('deprecated'),
                    model_uri=BIOLINK.deprecated, domain=None, range=Optional[Union[bool, Bool]])
@@ -13885,7 +13881,7 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
                    model_uri=BIOLINK.has_topic, domain=NamedThing, range=Optional[Union[str, OntologyClassId]])
 
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
-                   model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+                   model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.url = Slot(uri=BIOLINK.url, name="url", curie=BIOLINK.curie('url'),
                    model_uri=BIOLINK.url, domain=Entity, range=Optional[str])
@@ -13894,7 +13890,7 @@ slots.semmed_agreement_count = Slot(uri=BIOLINK.semmed_agreement_count, name="se
                    model_uri=BIOLINK.semmed_agreement_count, domain=Association, range=Optional[int])
 
 slots.support_graphs = Slot(uri=BIOLINK.support_graphs, name="support graphs", curie=BIOLINK.curie('support_graphs'),
-                   model_uri=BIOLINK.support_graphs, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.support_graphs, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.resource_id = Slot(uri=BIOLINK.resource_id, name="resource id", curie=BIOLINK.curie('resource_id'),
                    model_uri=BIOLINK.resource_id, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
@@ -13903,7 +13899,7 @@ slots.resource_role = Slot(uri=BIOLINK.resource_role, name="resource role", curi
                    model_uri=BIOLINK.resource_role, domain=RetrievalSource, range=Optional[Union[str, "ResourceRoleEnum"]])
 
 slots.retrieval_source_ids = Slot(uri=BIOLINK.retrieval_source_ids, name="retrieval source ids", curie=BIOLINK.curie('retrieval_source_ids'),
-                   model_uri=BIOLINK.retrieval_source_ids, domain=None, range=Optional[Union[Union[str, RetrievalSourceId], List[Union[str, RetrievalSourceId]]]])
+                   model_uri=BIOLINK.retrieval_source_ids, domain=None, range=Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]])
 
 slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.curie('full_name'),
                    model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
@@ -13915,10 +13911,10 @@ slots.description = Slot(uri=DCT.description, name="description", curie=DCT.curi
                    model_uri=BIOLINK.description, domain=None, range=Optional[Union[str, NarrativeText]])
 
 slots.systematic_synonym = Slot(uri=GOP.systematic_synonym, name="systematic synonym", curie=GOP.curie('systematic_synonym'),
-                   model_uri=BIOLINK.systematic_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+                   model_uri=BIOLINK.systematic_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]])
 
 slots.affiliation = Slot(uri=BIOLINK.affiliation, name="affiliation", curie=BIOLINK.curie('affiliation'),
-                   model_uri=BIOLINK.affiliation, domain=Agent, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+                   model_uri=BIOLINK.affiliation, domain=Agent, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.address = Slot(uri=BIOLINK.address, name="address", curie=BIOLINK.curie('address'),
                    model_uri=BIOLINK.address, domain=NamedThing, range=Optional[str])
@@ -14008,7 +14004,7 @@ slots.iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="iso abbreviati
                    model_uri=BIOLINK.iso_abbreviation, domain=Publication, range=Optional[str])
 
 slots.authors = Slot(uri=BIOLINK.authors, name="authors", curie=BIOLINK.curie('authors'),
-                   model_uri=BIOLINK.authors, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.authors, domain=Publication, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
 slots.volume = Slot(uri=BIOLINK.volume, name="volume", curie=BIOLINK.curie('volume'),
                    model_uri=BIOLINK.volume, domain=Publication, range=Optional[str])
@@ -14020,25 +14016,25 @@ slots.issue = Slot(uri=BIOLINK.issue, name="issue", curie=BIOLINK.curie('issue')
                    model_uri=BIOLINK.issue, domain=Publication, range=Optional[str])
 
 slots.pages = Slot(uri=BIOLINK.pages, name="pages", curie=BIOLINK.curie('pages'),
-                   model_uri=BIOLINK.pages, domain=Publication, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.pages, domain=Publication, range=Optional[Union[str, list[str]]])
 
 slots.summary = Slot(uri=BIOLINK.summary, name="summary", curie=BIOLINK.curie('summary'),
                    model_uri=BIOLINK.summary, domain=Publication, range=Optional[str])
 
 slots.keywords = Slot(uri=BIOLINK.keywords, name="keywords", curie=BIOLINK.curie('keywords'),
-                   model_uri=BIOLINK.keywords, domain=Publication, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.keywords, domain=Publication, range=Optional[Union[str, list[str]]])
 
 slots.mesh_terms = Slot(uri=BIOLINK.mesh_terms, name="mesh terms", curie=BIOLINK.curie('mesh_terms'),
-                   model_uri=BIOLINK.mesh_terms, domain=Publication, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+                   model_uri=BIOLINK.mesh_terms, domain=Publication, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.has_biological_sequence = Slot(uri=BIOLINK.has_biological_sequence, name="has biological sequence", curie=BIOLINK.curie('has_biological_sequence'),
                    model_uri=BIOLINK.has_biological_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
 
 slots.has_gene_or_gene_product = Slot(uri=BIOLINK.has_gene_or_gene_product, name="has gene or gene product", curie=BIOLINK.curie('has_gene_or_gene_product'),
-                   model_uri=BIOLINK.has_gene_or_gene_product, domain=NamedThing, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.has_gene_or_gene_product, domain=NamedThing, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.has_gene = Slot(uri=BIOLINK.has_gene, name="has gene", curie=BIOLINK.curie('has_gene'),
-                   model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="has zygosity", curie=BIOLINK.curie('has_zygosity'),
                    model_uri=BIOLINK.has_zygosity, domain=NucleicAcidEntity, range=Optional[Union[str, ZygosityId]])
@@ -14050,16 +14046,16 @@ slots.is_metabolite = Slot(uri=BIOLINK.is_metabolite, name="is metabolite", curi
                    model_uri=BIOLINK.is_metabolite, domain=MolecularEntity, range=Optional[Union[bool, Bool]])
 
 slots.has_constituent = Slot(uri=BIOLINK.has_constituent, name="has constituent", curie=BIOLINK.curie('has_constituent'),
-                   model_uri=BIOLINK.has_constituent, domain=NamedThing, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
+                   model_uri=BIOLINK.has_constituent, domain=NamedThing, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]])
 
 slots.has_drug = Slot(uri=BIOLINK.has_drug, name="has drug", curie=BIOLINK.curie('has_drug'),
-                   model_uri=BIOLINK.has_drug, domain=NamedThing, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]])
+                   model_uri=BIOLINK.has_drug, domain=NamedThing, range=Optional[Union[Union[str, DrugId], list[Union[str, DrugId]]]])
 
 slots.has_device = Slot(uri=BIOLINK.has_device, name="has device", curie=BIOLINK.curie('has_device'),
-                   model_uri=BIOLINK.has_device, domain=NamedThing, range=Optional[Union[Union[str, DeviceId], List[Union[str, DeviceId]]]])
+                   model_uri=BIOLINK.has_device, domain=NamedThing, range=Optional[Union[Union[str, DeviceId], list[Union[str, DeviceId]]]])
 
 slots.has_procedure = Slot(uri=BIOLINK.has_procedure, name="has procedure", curie=BIOLINK.curie('has_procedure'),
-                   model_uri=BIOLINK.has_procedure, domain=NamedThing, range=Optional[Union[Union[str, ProcedureId], List[Union[str, ProcedureId]]]])
+                   model_uri=BIOLINK.has_procedure, domain=NamedThing, range=Optional[Union[Union[str, ProcedureId], list[Union[str, ProcedureId]]]])
 
 slots.has_receptor = Slot(uri=BIOLINK.has_receptor, name="has receptor", curie=BIOLINK.curie('has_receptor'),
                    model_uri=BIOLINK.has_receptor, domain=None, range=Optional[Union[str, OrganismalEntityId]])
@@ -14086,19 +14082,19 @@ slots.trade_name = Slot(uri=BIOLINK.trade_name, name="trade name", curie=BIOLINK
                    model_uri=BIOLINK.trade_name, domain=ChemicalEntity, range=Optional[str])
 
 slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", curie=BIOLINK.curie('available_from'),
-                   model_uri=BIOLINK.available_from, domain=NamedThing, range=Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]])
+                   model_uri=BIOLINK.available_from, domain=NamedThing, range=Optional[Union[Union[str, "DrugAvailabilityEnum"], list[Union[str, "DrugAvailabilityEnum"]]]])
 
 slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie('is_toxic'),
                    model_uri=BIOLINK.is_toxic, domain=NamedThing, range=Optional[Union[bool, Bool]])
 
 slots.has_chemical_role = Slot(uri=BIOLINK.has_chemical_role, name="has chemical role", curie=BIOLINK.curie('has_chemical_role'),
-                   model_uri=BIOLINK.has_chemical_role, domain=NamedThing, range=Optional[Union[Union[str, ChemicalRoleId], List[Union[str, ChemicalRoleId]]]])
+                   model_uri=BIOLINK.has_chemical_role, domain=NamedThing, range=Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]])
 
 slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
 
 slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from, name="animal model available from", curie=BIOLINK.curie('animal_model_available_from'),
-                   model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.FDA_adverse_event_level = Slot(uri=BIOLINK.FDA_adverse_event_level, name="FDA adverse event level", curie=BIOLINK.curie('FDA_adverse_event_level'),
                    model_uri=BIOLINK.FDA_adverse_event_level, domain=Association, range=Optional[Union[str, "FDAIDAAdverseEventEnum"]])
@@ -14110,7 +14106,7 @@ slots.drug_regulatory_status_world_wide = Slot(uri=BIOLINK.drug_regulatory_statu
                    model_uri=BIOLINK.drug_regulatory_status_world_wide, domain=None, range=Optional[Union[str, "ApprovalStatusEnum"]])
 
 slots.routes_of_delivery = Slot(uri=BIOLINK.routes_of_delivery, name="routes of delivery", curie=BIOLINK.curie('routes_of_delivery'),
-                   model_uri=BIOLINK.routes_of_delivery, domain=None, range=Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]])
+                   model_uri=BIOLINK.routes_of_delivery, domain=None, range=Optional[Union[Union[str, "DrugDeliveryEnum"], list[Union[str, "DrugDeliveryEnum"]]]])
 
 slots.form_or_variant_qualifier = Slot(uri=BIOLINK.form_or_variant_qualifier, name="form or variant qualifier", curie=BIOLINK.curie('form_or_variant_qualifier'),
                    model_uri=BIOLINK.form_or_variant_qualifier, domain=Association, range=Optional[str])
@@ -14137,16 +14133,16 @@ slots.mapped_predicate = Slot(uri=BIOLINK.mapped_predicate, name="mapped predica
                    model_uri=BIOLINK.mapped_predicate, domain=None, range=Optional[str])
 
 slots.predicate_mappings = Slot(uri=BIOLINK.predicate_mappings, name="predicate mappings", curie=BIOLINK.curie('predicate_mappings'),
-                   model_uri=BIOLINK.predicate_mappings, domain=None, range=Optional[Union[Union[dict, PredicateMapping], List[Union[dict, PredicateMapping]]]])
+                   model_uri=BIOLINK.predicate_mappings, domain=None, range=Optional[Union[Union[dict, PredicateMapping], list[Union[dict, PredicateMapping]]]])
 
 slots.exact_matches = Slot(uri=BIOLINK.exact_matches, name="exact matches", curie=BIOLINK.curie('exact_matches'),
-                   model_uri=BIOLINK.exact_matches, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.exact_matches, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.narrow_matches = Slot(uri=BIOLINK.narrow_matches, name="narrow matches", curie=BIOLINK.curie('narrow_matches'),
-                   model_uri=BIOLINK.narrow_matches, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.narrow_matches, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.broad_matches = Slot(uri=BIOLINK.broad_matches, name="broad matches", curie=BIOLINK.curie('broad_matches'),
-                   model_uri=BIOLINK.broad_matches, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.broad_matches, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
                    model_uri=BIOLINK.subject_aspect_qualifier, domain=Association, range=Optional[str])
@@ -14209,7 +14205,7 @@ slots.disease_context_qualifier = Slot(uri=BIOLINK.disease_context_qualifier, na
                    model_uri=BIOLINK.disease_context_qualifier, domain=Association, range=Optional[Union[str, DiseaseId]])
 
 slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK.curie('qualifiers'),
-                   model_uri=BIOLINK.qualifiers, domain=Association, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.qualifiers, domain=Association, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.frequency_qualifier = Slot(uri=BIOLINK.frequency_qualifier, name="frequency qualifier", curie=BIOLINK.curie('frequency_qualifier'),
                    model_uri=BIOLINK.frequency_qualifier, domain=Association, range=Optional[Union[str, FrequencyValue]])
@@ -14233,226 +14229,226 @@ slots.quantifier_qualifier = Slot(uri=BIOLINK.quantifier_qualifier, name="quanti
                    model_uri=BIOLINK.quantifier_qualifier, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
 slots.catalyst_qualifier = Slot(uri=BIOLINK.catalyst_qualifier, name="catalyst qualifier", curie=BIOLINK.curie('catalyst_qualifier'),
-                   model_uri=BIOLINK.catalyst_qualifier, domain=Association, range=Optional[Union[Union[dict, MacromolecularMachineMixin], List[Union[dict, MacromolecularMachineMixin]]]])
+                   model_uri=BIOLINK.catalyst_qualifier, domain=Association, range=Optional[Union[Union[dict, MacromolecularMachineMixin], list[Union[dict, MacromolecularMachineMixin]]]])
 
 slots.stage_qualifier = Slot(uri=BIOLINK.stage_qualifier, name="stage qualifier", curie=BIOLINK.curie('stage_qualifier'),
                    model_uri=BIOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifeStageId]])
 
 slots.related_to = Slot(uri=BIOLINK.related_to, name="related to", curie=BIOLINK.curie('related_to'),
-                   model_uri=BIOLINK.related_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.related_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.related_to_at_concept_level = Slot(uri=BIOLINK.related_to_at_concept_level, name="related to at concept level", curie=BIOLINK.curie('related_to_at_concept_level'),
-                   model_uri=BIOLINK.related_to_at_concept_level, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.related_to_at_concept_level, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.related_to_at_instance_level = Slot(uri=BIOLINK.related_to_at_instance_level, name="related to at instance level", curie=BIOLINK.curie('related_to_at_instance_level'),
-                   model_uri=BIOLINK.related_to_at_instance_level, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.related_to_at_instance_level, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with = Slot(uri=BIOLINK.associated_with, name="associated with", curie=BIOLINK.curie('associated_with'),
-                   model_uri=BIOLINK.associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.superclass_of = Slot(uri=BIOLINK.superclass_of, name="superclass of", curie=BIOLINK.curie('superclass_of'),
-                   model_uri=BIOLINK.superclass_of, domain=None, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.superclass_of, domain=None, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.subclass_of = Slot(uri=BIOLINK.subclass_of, name="subclass of", curie=BIOLINK.curie('subclass_of'),
-                   model_uri=BIOLINK.subclass_of, domain=None, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.subclass_of, domain=None, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.same_as = Slot(uri=BIOLINK.same_as, name="same as", curie=BIOLINK.curie('same_as'),
-                   model_uri=BIOLINK.same_as, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.same_as, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.close_match = Slot(uri=BIOLINK.close_match, name="close match", curie=BIOLINK.curie('close_match'),
-                   model_uri=BIOLINK.close_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.close_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.exact_match = Slot(uri=BIOLINK.exact_match, name="exact match", curie=BIOLINK.curie('exact_match'),
-                   model_uri=BIOLINK.exact_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.exact_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.broad_match = Slot(uri=BIOLINK.broad_match, name="broad match", curie=BIOLINK.curie('broad_match'),
-                   model_uri=BIOLINK.broad_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.broad_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.narrow_match = Slot(uri=BIOLINK.narrow_match, name="narrow match", curie=BIOLINK.curie('narrow_match'),
-                   model_uri=BIOLINK.narrow_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.narrow_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.member_of = Slot(uri=BIOLINK.member_of, name="member of", curie=BIOLINK.curie('member_of'),
-                   model_uri=BIOLINK.member_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.member_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_member = Slot(uri=BIOLINK.has_member, name="has member", curie=BIOLINK.curie('has_member'),
-                   model_uri=BIOLINK.has_member, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_member, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.opposite_of = Slot(uri=BIOLINK.opposite_of, name="opposite of", curie=BIOLINK.curie('opposite_of'),
-                   model_uri=BIOLINK.opposite_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.opposite_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.affects_likelihood_of = Slot(uri=BIOLINK.affects_likelihood_of, name="affects likelihood of", curie=BIOLINK.curie('affects_likelihood_of'),
-                   model_uri=BIOLINK.affects_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.affects_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.likelihood_affected_by = Slot(uri=BIOLINK.likelihood_affected_by, name="likelihood affected by", curie=BIOLINK.curie('likelihood_affected_by'),
-                   model_uri=BIOLINK.likelihood_affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.likelihood_affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with_likelihood_of = Slot(uri=BIOLINK.associated_with_likelihood_of, name="associated with likelihood of", curie=BIOLINK.curie('associated_with_likelihood_of'),
-                   model_uri=BIOLINK.associated_with_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.associated_with_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.likelihood_associated_with = Slot(uri=BIOLINK.likelihood_associated_with, name="likelihood associated with", curie=BIOLINK.curie('likelihood_associated_with'),
-                   model_uri=BIOLINK.likelihood_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.likelihood_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with_increased_likelihood_of = Slot(uri=BIOLINK.associated_with_increased_likelihood_of, name="associated with increased likelihood of", curie=BIOLINK.curie('associated_with_increased_likelihood_of'),
-                   model_uri=BIOLINK.associated_with_increased_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.associated_with_increased_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.increased_likelihood_associated_with = Slot(uri=BIOLINK.increased_likelihood_associated_with, name="increased likelihood associated with", curie=BIOLINK.curie('increased_likelihood_associated_with'),
-                   model_uri=BIOLINK.increased_likelihood_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.increased_likelihood_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with_decreased_likelihood_of = Slot(uri=BIOLINK.associated_with_decreased_likelihood_of, name="associated with decreased likelihood of", curie=BIOLINK.curie('associated_with_decreased_likelihood_of'),
-                   model_uri=BIOLINK.associated_with_decreased_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.associated_with_decreased_likelihood_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.decreased_likelihood_associated_with = Slot(uri=BIOLINK.decreased_likelihood_associated_with, name="decreased likelihood associated with", curie=BIOLINK.curie('decreased_likelihood_associated_with'),
-                   model_uri=BIOLINK.decreased_likelihood_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.decreased_likelihood_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.target_for = Slot(uri=BIOLINK.target_for, name="target for", curie=BIOLINK.curie('target_for'),
-                   model_uri=BIOLINK.target_for, domain=Gene, range=Optional[Union[Union[str, DiseaseId], List[Union[str, DiseaseId]]]])
+                   model_uri=BIOLINK.target_for, domain=Gene, range=Optional[Union[Union[str, DiseaseId], list[Union[str, DiseaseId]]]])
 
 slots.has_target = Slot(uri=BIOLINK.has_target, name="has target", curie=BIOLINK.curie('has_target'),
-                   model_uri=BIOLINK.has_target, domain=Disease, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.has_target, domain=Disease, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.curie('active_in'),
-                   model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], List[Union[str, CellularComponentId]]]])
+                   model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], list[Union[str, CellularComponentId]]]])
 
 slots.has_active_component = Slot(uri=BIOLINK.has_active_component, name="has active component", curie=BIOLINK.curie('has_active_component'),
-                   model_uri=BIOLINK.has_active_component, domain=CellularComponent, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_active_component, domain=CellularComponent, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.acts_upstream_of = Slot(uri=BIOLINK.acts_upstream_of, name="acts upstream of", curie=BIOLINK.curie('acts_upstream_of'),
-                   model_uri=BIOLINK.acts_upstream_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
+                   model_uri=BIOLINK.acts_upstream_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_upstream_actor = Slot(uri=BIOLINK.has_upstream_actor, name="has upstream actor", curie=BIOLINK.curie('has_upstream_actor'),
-                   model_uri=BIOLINK.has_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.acts_upstream_of_positive_effect = Slot(uri=BIOLINK.acts_upstream_of_positive_effect, name="acts upstream of positive effect", curie=BIOLINK.curie('acts_upstream_of_positive_effect'),
-                   model_uri=BIOLINK.acts_upstream_of_positive_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
+                   model_uri=BIOLINK.acts_upstream_of_positive_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_positive_upstream_actor = Slot(uri=BIOLINK.has_positive_upstream_actor, name="has positive upstream actor", curie=BIOLINK.curie('has_positive_upstream_actor'),
-                   model_uri=BIOLINK.has_positive_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_positive_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.acts_upstream_of_negative_effect = Slot(uri=BIOLINK.acts_upstream_of_negative_effect, name="acts upstream of negative effect", curie=BIOLINK.curie('acts_upstream_of_negative_effect'),
-                   model_uri=BIOLINK.acts_upstream_of_negative_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
+                   model_uri=BIOLINK.acts_upstream_of_negative_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_negative_upstream_actor = Slot(uri=BIOLINK.has_negative_upstream_actor, name="has negative upstream actor", curie=BIOLINK.curie('has_negative_upstream_actor'),
-                   model_uri=BIOLINK.has_negative_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_negative_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.acts_upstream_of_or_within = Slot(uri=BIOLINK.acts_upstream_of_or_within, name="acts upstream of or within", curie=BIOLINK.curie('acts_upstream_of_or_within'),
-                   model_uri=BIOLINK.acts_upstream_of_or_within, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
+                   model_uri=BIOLINK.acts_upstream_of_or_within, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_upstream_or_within_actor = Slot(uri=BIOLINK.has_upstream_or_within_actor, name="has upstream or within actor", curie=BIOLINK.curie('has_upstream_or_within_actor'),
-                   model_uri=BIOLINK.has_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.acts_upstream_of_or_within_positive_effect = Slot(uri=BIOLINK.acts_upstream_of_or_within_positive_effect, name="acts upstream of or within positive effect", curie=BIOLINK.curie('acts_upstream_of_or_within_positive_effect'),
-                   model_uri=BIOLINK.acts_upstream_of_or_within_positive_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
+                   model_uri=BIOLINK.acts_upstream_of_or_within_positive_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_positive_upstream_or_within_actor = Slot(uri=BIOLINK.has_positive_upstream_or_within_actor, name="has positive upstream or within actor", curie=BIOLINK.curie('has_positive_upstream_or_within_actor'),
-                   model_uri=BIOLINK.has_positive_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_positive_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.acts_upstream_of_or_within_negative_effect = Slot(uri=BIOLINK.acts_upstream_of_or_within_negative_effect, name="acts upstream of or within negative effect", curie=BIOLINK.curie('acts_upstream_of_or_within_negative_effect'),
-                   model_uri=BIOLINK.acts_upstream_of_or_within_negative_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
+                   model_uri=BIOLINK.acts_upstream_of_or_within_negative_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_negative_upstream_or_within_actor = Slot(uri=BIOLINK.has_negative_upstream_or_within_actor, name="has negative upstream or within actor", curie=BIOLINK.curie('has_negative_upstream_or_within_actor'),
-                   model_uri=BIOLINK.has_negative_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_negative_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.mentions = Slot(uri=BIOLINK.mentions, name="mentions", curie=BIOLINK.curie('mentions'),
-                   model_uri=BIOLINK.mentions, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.mentions, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.mentioned_by = Slot(uri=BIOLINK.mentioned_by, name="mentioned by", curie=BIOLINK.curie('mentioned_by'),
-                   model_uri=BIOLINK.mentioned_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.mentioned_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.contributor = Slot(uri=BIOLINK.contributor, name="contributor", curie=BIOLINK.curie('contributor'),
-                   model_uri=BIOLINK.contributor, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
+                   model_uri=BIOLINK.contributor, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], list[Union[str, InformationContentEntityId]]]])
 
 slots.has_contributor = Slot(uri=BIOLINK.has_contributor, name="has contributor", curie=BIOLINK.curie('has_contributor'),
-                   model_uri=BIOLINK.has_contributor, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.has_contributor, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
 slots.provider = Slot(uri=BIOLINK.provider, name="provider", curie=BIOLINK.curie('provider'),
-                   model_uri=BIOLINK.provider, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
+                   model_uri=BIOLINK.provider, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], list[Union[str, InformationContentEntityId]]]])
 
 slots.has_provider = Slot(uri=BIOLINK.has_provider, name="has provider", curie=BIOLINK.curie('has_provider'),
-                   model_uri=BIOLINK.has_provider, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.has_provider, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
 slots.publisher = Slot(uri=BIOLINK.publisher, name="publisher", curie=BIOLINK.curie('publisher'),
-                   model_uri=BIOLINK.publisher, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
+                   model_uri=BIOLINK.publisher, domain=Agent, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])
 
 slots.has_publisher = Slot(uri=BIOLINK.has_publisher, name="has publisher", curie=BIOLINK.curie('has_publisher'),
-                   model_uri=BIOLINK.has_publisher, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.has_publisher, domain=Publication, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
 slots.editor = Slot(uri=BIOLINK.editor, name="editor", curie=BIOLINK.curie('editor'),
-                   model_uri=BIOLINK.editor, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
+                   model_uri=BIOLINK.editor, domain=Agent, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])
 
 slots.has_editor = Slot(uri=BIOLINK.has_editor, name="has editor", curie=BIOLINK.curie('has_editor'),
-                   model_uri=BIOLINK.has_editor, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.has_editor, domain=Publication, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
 slots.author = Slot(uri=BIOLINK.author, name="author", curie=BIOLINK.curie('author'),
-                   model_uri=BIOLINK.author, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
+                   model_uri=BIOLINK.author, domain=Agent, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])
 
 slots.has_author = Slot(uri=BIOLINK.has_author, name="has author", curie=BIOLINK.curie('has_author'),
-                   model_uri=BIOLINK.has_author, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.has_author, domain=Publication, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
 slots.assesses = Slot(uri=BIOLINK.assesses, name="assesses", curie=BIOLINK.curie('assesses'),
-                   model_uri=BIOLINK.assesses, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.assesses, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.is_assessed_by = Slot(uri=BIOLINK.is_assessed_by, name="is assessed by", curie=BIOLINK.curie('is_assessed_by'),
-                   model_uri=BIOLINK.is_assessed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.is_assessed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.interacts_with = Slot(uri=BIOLINK.interacts_with, name="interacts with", curie=BIOLINK.curie('interacts_with'),
-                   model_uri=BIOLINK.interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.physically_interacts_with = Slot(uri=BIOLINK.physically_interacts_with, name="physically interacts with", curie=BIOLINK.curie('physically_interacts_with'),
-                   model_uri=BIOLINK.physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.directly_physically_interacts_with = Slot(uri=BIOLINK.directly_physically_interacts_with, name="directly physically interacts with", curie=BIOLINK.curie('directly_physically_interacts_with'),
-                   model_uri=BIOLINK.directly_physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.directly_physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.binds = Slot(uri=BIOLINK.binds, name="binds", curie=BIOLINK.curie('binds'),
-                   model_uri=BIOLINK.binds, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.binds, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.indirectly_physically_interacts_with = Slot(uri=BIOLINK.indirectly_physically_interacts_with, name="indirectly physically interacts with", curie=BIOLINK.curie('indirectly_physically_interacts_with'),
-                   model_uri=BIOLINK.indirectly_physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.indirectly_physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.genetically_interacts_with = Slot(uri=BIOLINK.genetically_interacts_with, name="genetically interacts with", curie=BIOLINK.curie('genetically_interacts_with'),
-                   model_uri=BIOLINK.genetically_interacts_with, domain=Gene, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.genetically_interacts_with, domain=Gene, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.gene_fusion_with = Slot(uri=BIOLINK.gene_fusion_with, name="gene_fusion_with", curie=BIOLINK.curie('gene_fusion_with'),
-                   model_uri=BIOLINK.gene_fusion_with, domain=Gene, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.gene_fusion_with, domain=Gene, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.genetic_neighborhood_of = Slot(uri=BIOLINK.genetic_neighborhood_of, name="genetic_neighborhood_of", curie=BIOLINK.curie('genetic_neighborhood_of'),
-                   model_uri=BIOLINK.genetic_neighborhood_of, domain=Gene, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.genetic_neighborhood_of, domain=Gene, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('affects'),
-                   model_uri=BIOLINK.affects, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.affects, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.affected_by = Slot(uri=BIOLINK.affected_by, name="affected by", curie=BIOLINK.curie('affected_by'),
-                   model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with_sensitivity_to = Slot(uri=BIOLINK.associated_with_sensitivity_to, name="associated with sensitivity to", curie=BIOLINK.curie('associated_with_sensitivity_to'),
-                   model_uri=BIOLINK.associated_with_sensitivity_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+                   model_uri=BIOLINK.associated_with_sensitivity_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.sensitivity_associated_with = Slot(uri=BIOLINK.sensitivity_associated_with, name="sensitivity associated with", curie=BIOLINK.curie('sensitivity_associated_with'),
-                   model_uri=BIOLINK.sensitivity_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.sensitivity_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with_resistance_to = Slot(uri=BIOLINK.associated_with_resistance_to, name="associated with resistance to", curie=BIOLINK.curie('associated_with_resistance_to'),
-                   model_uri=BIOLINK.associated_with_resistance_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+                   model_uri=BIOLINK.associated_with_resistance_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.resistance_associated_with = Slot(uri=BIOLINK.resistance_associated_with, name="resistance associated with", curie=BIOLINK.curie('resistance_associated_with'),
-                   model_uri=BIOLINK.resistance_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.resistance_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.diagnoses = Slot(uri=BIOLINK.diagnoses, name="diagnoses", curie=BIOLINK.curie('diagnoses'),
-                   model_uri=BIOLINK.diagnoses, domain=DiagnosticAid, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.diagnoses, domain=DiagnosticAid, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.is_diagnosed_by = Slot(uri=BIOLINK.is_diagnosed_by, name="is diagnosed by", curie=BIOLINK.curie('is_diagnosed_by'),
-                   model_uri=BIOLINK.is_diagnosed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, DiagnosticAidId], List[Union[str, DiagnosticAidId]]]])
+                   model_uri=BIOLINK.is_diagnosed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, DiagnosticAidId], list[Union[str, DiagnosticAidId]]]])
 
 slots.increases_amount_or_activity_of = Slot(uri=BIOLINK.increases_amount_or_activity_of, name="increases amount or activity of", curie=BIOLINK.curie('increases_amount_or_activity_of'),
-                   model_uri=BIOLINK.increases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.increases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.amount_or_activity_increased_by = Slot(uri=BIOLINK.amount_or_activity_increased_by, name="amount or activity increased by", curie=BIOLINK.curie('amount_or_activity_increased_by'),
-                   model_uri=BIOLINK.amount_or_activity_increased_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.amount_or_activity_increased_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.decreases_amount_or_activity_of = Slot(uri=BIOLINK.decreases_amount_or_activity_of, name="decreases amount or activity of", curie=BIOLINK.curie('decreases_amount_or_activity_of'),
-                   model_uri=BIOLINK.decreases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.decreases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.amount_or_activity_decreased_by = Slot(uri=BIOLINK.amount_or_activity_decreased_by, name="amount or activity decreased by", curie=BIOLINK.curie('amount_or_activity_decreased_by'),
-                   model_uri=BIOLINK.amount_or_activity_decreased_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.amount_or_activity_decreased_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.chemical_role_mixin = Slot(uri=BIOLINK.chemical_role_mixin, name="chemical role mixin", curie=BIOLINK.curie('chemical_role_mixin'),
                    model_uri=BIOLINK.chemical_role_mixin, domain=None, range=Optional[str])
@@ -14461,520 +14457,520 @@ slots.biological_role_mixin = Slot(uri=BIOLINK.biological_role_mixin, name="biol
                    model_uri=BIOLINK.biological_role_mixin, domain=None, range=Optional[str])
 
 slots.affects_response_to = Slot(uri=BIOLINK.affects_response_to, name="affects response to", curie=BIOLINK.curie('affects_response_to'),
-                   model_uri=BIOLINK.affects_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.affects_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.response_affected_by = Slot(uri=BIOLINK.response_affected_by, name="response affected by", curie=BIOLINK.curie('response_affected_by'),
-                   model_uri=BIOLINK.response_affected_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.response_affected_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.increases_response_to = Slot(uri=BIOLINK.increases_response_to, name="increases response to", curie=BIOLINK.curie('increases_response_to'),
-                   model_uri=BIOLINK.increases_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.increases_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.response_increased_by = Slot(uri=BIOLINK.response_increased_by, name="response increased by", curie=BIOLINK.curie('response_increased_by'),
-                   model_uri=BIOLINK.response_increased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.response_increased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.decreases_response_to = Slot(uri=BIOLINK.decreases_response_to, name="decreases response to", curie=BIOLINK.curie('decreases_response_to'),
-                   model_uri=BIOLINK.decreases_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.decreases_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.response_decreased_by = Slot(uri=BIOLINK.response_decreased_by, name="response decreased by", curie=BIOLINK.curie('response_decreased_by'),
-                   model_uri=BIOLINK.response_decreased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.response_decreased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.regulates = Slot(uri=BIOLINK.regulates, name="regulates", curie=BIOLINK.curie('regulates'),
-                   model_uri=BIOLINK.regulates, domain=None, range=Optional[Union[Union[dict, "PhysicalEssenceOrOccurrent"], List[Union[dict, "PhysicalEssenceOrOccurrent"]]]])
+                   model_uri=BIOLINK.regulates, domain=None, range=Optional[Union[Union[dict, "PhysicalEssenceOrOccurrent"], list[Union[dict, "PhysicalEssenceOrOccurrent"]]]])
 
 slots.regulated_by = Slot(uri=BIOLINK.regulated_by, name="regulated by", curie=BIOLINK.curie('regulated_by'),
-                   model_uri=BIOLINK.regulated_by, domain=None, range=Optional[Union[Union[dict, "PhysicalEssenceOrOccurrent"], List[Union[dict, "PhysicalEssenceOrOccurrent"]]]])
+                   model_uri=BIOLINK.regulated_by, domain=None, range=Optional[Union[Union[dict, "PhysicalEssenceOrOccurrent"], list[Union[dict, "PhysicalEssenceOrOccurrent"]]]])
 
 slots.disrupts = Slot(uri=BIOLINK.disrupts, name="disrupts", curie=BIOLINK.curie('disrupts'),
-                   model_uri=BIOLINK.disrupts, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.disrupts, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.disrupted_by = Slot(uri=BIOLINK.disrupted_by, name="disrupted by", curie=BIOLINK.curie('disrupted_by'),
-                   model_uri=BIOLINK.disrupted_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.disrupted_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.gene_product_of = Slot(uri=BIOLINK.gene_product_of, name="gene product of", curie=BIOLINK.curie('gene_product_of'),
-                   model_uri=BIOLINK.gene_product_of, domain=None, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.gene_product_of, domain=None, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.has_gene_product = Slot(uri=BIOLINK.has_gene_product, name="has gene product", curie=BIOLINK.curie('has_gene_product'),
-                   model_uri=BIOLINK.has_gene_product, domain=Gene, range=Optional[Union[Union[dict, "GeneProductMixin"], List[Union[dict, "GeneProductMixin"]]]])
+                   model_uri=BIOLINK.has_gene_product, domain=Gene, range=Optional[Union[Union[dict, "GeneProductMixin"], list[Union[dict, "GeneProductMixin"]]]])
 
 slots.transcribed_to = Slot(uri=BIOLINK.transcribed_to, name="transcribed to", curie=BIOLINK.curie('transcribed_to'),
-                   model_uri=BIOLINK.transcribed_to, domain=Gene, range=Optional[Union[Union[str, TranscriptId], List[Union[str, TranscriptId]]]])
+                   model_uri=BIOLINK.transcribed_to, domain=Gene, range=Optional[Union[Union[str, TranscriptId], list[Union[str, TranscriptId]]]])
 
 slots.transcribed_from = Slot(uri=BIOLINK.transcribed_from, name="transcribed from", curie=BIOLINK.curie('transcribed_from'),
-                   model_uri=BIOLINK.transcribed_from, domain=Transcript, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.transcribed_from, domain=Transcript, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.translates_to = Slot(uri=BIOLINK.translates_to, name="translates to", curie=BIOLINK.curie('translates_to'),
-                   model_uri=BIOLINK.translates_to, domain=Transcript, range=Optional[Union[Union[str, ProteinId], List[Union[str, ProteinId]]]])
+                   model_uri=BIOLINK.translates_to, domain=Transcript, range=Optional[Union[Union[str, ProteinId], list[Union[str, ProteinId]]]])
 
 slots.translation_of = Slot(uri=BIOLINK.translation_of, name="translation of", curie=BIOLINK.curie('translation_of'),
-                   model_uri=BIOLINK.translation_of, domain=Protein, range=Optional[Union[Union[str, TranscriptId], List[Union[str, TranscriptId]]]])
+                   model_uri=BIOLINK.translation_of, domain=Protein, range=Optional[Union[Union[str, TranscriptId], list[Union[str, TranscriptId]]]])
 
 slots.homologous_to = Slot(uri=BIOLINK.homologous_to, name="homologous to", curie=BIOLINK.curie('homologous_to'),
-                   model_uri=BIOLINK.homologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.homologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.paralogous_to = Slot(uri=BIOLINK.paralogous_to, name="paralogous to", curie=BIOLINK.curie('paralogous_to'),
-                   model_uri=BIOLINK.paralogous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.paralogous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.orthologous_to = Slot(uri=BIOLINK.orthologous_to, name="orthologous to", curie=BIOLINK.curie('orthologous_to'),
-                   model_uri=BIOLINK.orthologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.orthologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.xenologous_to = Slot(uri=BIOLINK.xenologous_to, name="xenologous to", curie=BIOLINK.curie('xenologous_to'),
-                   model_uri=BIOLINK.xenologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.xenologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.coexists_with = Slot(uri=BIOLINK.coexists_with, name="coexists with", curie=BIOLINK.curie('coexists_with'),
-                   model_uri=BIOLINK.coexists_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.coexists_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.in_pathway_with = Slot(uri=BIOLINK.in_pathway_with, name="in pathway with", curie=BIOLINK.curie('in_pathway_with'),
-                   model_uri=BIOLINK.in_pathway_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.in_pathway_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.in_complex_with = Slot(uri=BIOLINK.in_complex_with, name="in complex with", curie=BIOLINK.curie('in_complex_with'),
-                   model_uri=BIOLINK.in_complex_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.in_complex_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.in_cell_population_with = Slot(uri=BIOLINK.in_cell_population_with, name="in cell population with", curie=BIOLINK.curie('in_cell_population_with'),
-                   model_uri=BIOLINK.in_cell_population_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.in_cell_population_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.colocalizes_with = Slot(uri=BIOLINK.colocalizes_with, name="colocalizes with", curie=BIOLINK.curie('colocalizes_with'),
-                   model_uri=BIOLINK.colocalizes_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.colocalizes_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.genetic_association = Slot(uri=BIOLINK.genetic_association, name="genetic association", curie=BIOLINK.curie('genetic_association'),
-                   model_uri=BIOLINK.genetic_association, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.genetic_association, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.genetically_associated_with = Slot(uri=BIOLINK.genetically_associated_with, name="genetically associated with", curie=BIOLINK.curie('genetically_associated_with'),
-                   model_uri=BIOLINK.genetically_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.genetically_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.gene_associated_with_condition = Slot(uri=BIOLINK.gene_associated_with_condition, name="gene associated with condition", curie=BIOLINK.curie('gene_associated_with_condition'),
-                   model_uri=BIOLINK.gene_associated_with_condition, domain=Gene, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.gene_associated_with_condition, domain=Gene, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_associated_with_gene = Slot(uri=BIOLINK.condition_associated_with_gene, name="condition associated with gene", curie=BIOLINK.curie('condition_associated_with_gene'),
-                   model_uri=BIOLINK.condition_associated_with_gene, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.condition_associated_with_gene, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.contributes_to = Slot(uri=BIOLINK.contributes_to, name="contributes to", curie=BIOLINK.curie('contributes_to'),
-                   model_uri=BIOLINK.contributes_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.contributes_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.contribution_from = Slot(uri=BIOLINK.contribution_from, name="contribution from", curie=BIOLINK.curie('contribution_from'),
-                   model_uri=BIOLINK.contribution_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.contribution_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.causes = Slot(uri=BIOLINK.causes, name="causes", curie=BIOLINK.curie('causes'),
-                   model_uri=BIOLINK.causes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.causes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.caused_by = Slot(uri=BIOLINK.caused_by, name="caused by", curie=BIOLINK.curie('caused_by'),
-                   model_uri=BIOLINK.caused_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.caused_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.ameliorates_condition = Slot(uri=BIOLINK.ameliorates_condition, name="ameliorates condition", curie=BIOLINK.curie('ameliorates_condition'),
-                   model_uri=BIOLINK.ameliorates_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.ameliorates_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_ameliorated_by = Slot(uri=BIOLINK.condition_ameliorated_by, name="condition ameliorated by", curie=BIOLINK.curie('condition_ameliorated_by'),
-                   model_uri=BIOLINK.condition_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.condition_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.preventative_for_condition = Slot(uri=BIOLINK.preventative_for_condition, name="preventative for condition", curie=BIOLINK.curie('preventative_for_condition'),
-                   model_uri=BIOLINK.preventative_for_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.preventative_for_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_prevented_by = Slot(uri=BIOLINK.condition_prevented_by, name="condition prevented by", curie=BIOLINK.curie('condition_prevented_by'),
-                   model_uri=BIOLINK.condition_prevented_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.condition_prevented_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.promotes_condition = Slot(uri=BIOLINK.promotes_condition, name="promotes condition", curie=BIOLINK.curie('promotes_condition'),
-                   model_uri=BIOLINK.promotes_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.promotes_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_promoted_by = Slot(uri=BIOLINK.condition_promoted_by, name="condition promoted by", curie=BIOLINK.curie('condition_promoted_by'),
-                   model_uri=BIOLINK.condition_promoted_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.condition_promoted_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.predisposes_to_condition = Slot(uri=BIOLINK.predisposes_to_condition, name="predisposes to condition", curie=BIOLINK.curie('predisposes_to_condition'),
-                   model_uri=BIOLINK.predisposes_to_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.predisposes_to_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_predisposed_by = Slot(uri=BIOLINK.condition_predisposed_by, name="condition predisposed by", curie=BIOLINK.curie('condition_predisposed_by'),
-                   model_uri=BIOLINK.condition_predisposed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.condition_predisposed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.exacerbates_condition = Slot(uri=BIOLINK.exacerbates_condition, name="exacerbates condition", curie=BIOLINK.curie('exacerbates_condition'),
-                   model_uri=BIOLINK.exacerbates_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.exacerbates_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_exacerbated_by = Slot(uri=BIOLINK.condition_exacerbated_by, name="condition exacerbated by", curie=BIOLINK.curie('condition_exacerbated_by'),
-                   model_uri=BIOLINK.condition_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.condition_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
-                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
-                   model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.studied_to_treat = Slot(uri=BIOLINK.studied_to_treat, name="studied to treat", curie=BIOLINK.curie('studied_to_treat'),
-                   model_uri=BIOLINK.studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.in_clinical_trials_for = Slot(uri=BIOLINK.in_clinical_trials_for, name="in clinical trials for", curie=BIOLINK.curie('in_clinical_trials_for'),
-                   model_uri=BIOLINK.in_clinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.in_clinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.tested_by_clinical_trials_of = Slot(uri=BIOLINK.tested_by_clinical_trials_of, name="tested by clinical trials of", curie=BIOLINK.curie('tested_by_clinical_trials_of'),
-                   model_uri=BIOLINK.tested_by_clinical_trials_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.tested_by_clinical_trials_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treated_in_studies_by = Slot(uri=BIOLINK.treated_in_studies_by, name="treated in studies by", curie=BIOLINK.curie('treated_in_studies_by'),
-                   model_uri=BIOLINK.treated_in_studies_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.treated_in_studies_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.tested_by_preclinical_trials_of = Slot(uri=BIOLINK.tested_by_preclinical_trials_of, name="tested by preclinical trials of", curie=BIOLINK.curie('tested_by_preclinical_trials_of'),
-                   model_uri=BIOLINK.tested_by_preclinical_trials_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.tested_by_preclinical_trials_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.in_preclinical_trials_for = Slot(uri=BIOLINK.in_preclinical_trials_for, name="in preclinical trials for", curie=BIOLINK.curie('in_preclinical_trials_for'),
-                   model_uri=BIOLINK.in_preclinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.in_preclinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.beneficial_in_models_for = Slot(uri=BIOLINK.beneficial_in_models_for, name="beneficial in models for", curie=BIOLINK.curie('beneficial_in_models_for'),
-                   model_uri=BIOLINK.beneficial_in_models_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.beneficial_in_models_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.models_demonstrating_benefits_for = Slot(uri=BIOLINK.models_demonstrating_benefits_for, name="models demonstrating benefits for", curie=BIOLINK.curie('models_demonstrating_benefits_for'),
-                   model_uri=BIOLINK.models_demonstrating_benefits_for, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.models_demonstrating_benefits_for, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.applied_to_treat = Slot(uri=BIOLINK.applied_to_treat, name="applied to treat", curie=BIOLINK.curie('applied_to_treat'),
-                   model_uri=BIOLINK.applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.applied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treatment_applications_from = Slot(uri=BIOLINK.treatment_applications_from, name="treatment applications from", curie=BIOLINK.curie('treatment_applications_from'),
-                   model_uri=BIOLINK.treatment_applications_from, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.treatment_applications_from, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.treats_or_applied_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_applied_or_studied_to_treat, name="treats or applied or studied to treat", curie=BIOLINK.curie('treats_or_applied_or_studied_to_treat'),
-                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.treats_or_applied_or_studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.subject_of_treatment_application_or_study_for_treatment_by = Slot(uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, name="subject of treatment application or study for treatment by", curie=BIOLINK.curie('subject_of_treatment_application_or_study_for_treatment_by'),
-                   model_uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.subject_of_treatment_application_or_study_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
-                   model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.positively_correlated_with = Slot(uri=BIOLINK.positively_correlated_with, name="positively correlated with", curie=BIOLINK.curie('positively_correlated_with'),
-                   model_uri=BIOLINK.positively_correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.positively_correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.negatively_correlated_with = Slot(uri=BIOLINK.negatively_correlated_with, name="negatively correlated with", curie=BIOLINK.curie('negatively_correlated_with'),
-                   model_uri=BIOLINK.negatively_correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.negatively_correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.occurs_together_in_literature_with = Slot(uri=BIOLINK.occurs_together_in_literature_with, name="occurs together in literature with", curie=BIOLINK.curie('occurs_together_in_literature_with'),
-                   model_uri=BIOLINK.occurs_together_in_literature_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.occurs_together_in_literature_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.coexpressed_with = Slot(uri=BIOLINK.coexpressed_with, name="coexpressed with", curie=BIOLINK.curie('coexpressed_with'),
-                   model_uri=BIOLINK.coexpressed_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.coexpressed_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.has_biomarker = Slot(uri=BIOLINK.has_biomarker, name="has biomarker", curie=BIOLINK.curie('has_biomarker'),
-                   model_uri=BIOLINK.has_biomarker, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_biomarker, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.biomarker_for = Slot(uri=BIOLINK.biomarker_for, name="biomarker for", curie=BIOLINK.curie('biomarker_for'),
-                   model_uri=BIOLINK.biomarker_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.biomarker_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.expressed_in = Slot(uri=BIOLINK.expressed_in, name="expressed in", curie=BIOLINK.curie('expressed_in'),
-                   model_uri=BIOLINK.expressed_in, domain=None, range=Optional[Union[Union[str, AnatomicalEntityId], List[Union[str, AnatomicalEntityId]]]])
+                   model_uri=BIOLINK.expressed_in, domain=None, range=Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]])
 
 slots.expresses = Slot(uri=BIOLINK.expresses, name="expresses", curie=BIOLINK.curie('expresses'),
-                   model_uri=BIOLINK.expresses, domain=AnatomicalEntity, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], List[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.expresses, domain=AnatomicalEntity, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
 
 slots.has_phenotype = Slot(uri=BIOLINK.has_phenotype, name="has phenotype", curie=BIOLINK.curie('has_phenotype'),
-                   model_uri=BIOLINK.has_phenotype, domain=BiologicalEntity, range=Optional[Union[Union[str, PhenotypicFeatureId], List[Union[str, PhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.has_phenotype, domain=BiologicalEntity, range=Optional[Union[Union[str, PhenotypicFeatureId], list[Union[str, PhenotypicFeatureId]]]])
 
 slots.phenotype_of = Slot(uri=BIOLINK.phenotype_of, name="phenotype of", curie=BIOLINK.curie('phenotype_of'),
-                   model_uri=BIOLINK.phenotype_of, domain=PhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
+                   model_uri=BIOLINK.phenotype_of, domain=PhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], list[Union[str, BiologicalEntityId]]]])
 
 slots.occurs_in = Slot(uri=BIOLINK.occurs_in, name="occurs in", curie=BIOLINK.curie('occurs_in'),
-                   model_uri=BIOLINK.occurs_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.occurs_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.contains_process = Slot(uri=BIOLINK.contains_process, name="contains process", curie=BIOLINK.curie('contains_process'),
-                   model_uri=BIOLINK.contains_process, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.contains_process, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.located_in = Slot(uri=BIOLINK.located_in, name="located in", curie=BIOLINK.curie('located_in'),
-                   model_uri=BIOLINK.located_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.located_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.location_of = Slot(uri=BIOLINK.location_of, name="location of", curie=BIOLINK.curie('location_of'),
-                   model_uri=BIOLINK.location_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.location_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.disease_has_location = Slot(uri=BIOLINK.disease_has_location, name="disease has location", curie=BIOLINK.curie('disease_has_location'),
-                   model_uri=BIOLINK.disease_has_location, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.disease_has_location, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.location_of_disease = Slot(uri=BIOLINK.location_of_disease, name="location of disease", curie=BIOLINK.curie('location_of_disease'),
-                   model_uri=BIOLINK.location_of_disease, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.location_of_disease, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.similar_to = Slot(uri=BIOLINK.similar_to, name="similar to", curie=BIOLINK.curie('similar_to'),
-                   model_uri=BIOLINK.similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.chemically_similar_to = Slot(uri=BIOLINK.chemically_similar_to, name="chemically similar to", curie=BIOLINK.curie('chemically_similar_to'),
-                   model_uri=BIOLINK.chemically_similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.chemically_similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_sequence_location = Slot(uri=BIOLINK.has_sequence_location, name="has sequence location", curie=BIOLINK.curie('has_sequence_location'),
-                   model_uri=BIOLINK.has_sequence_location, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.has_sequence_location, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NucleicAcidEntityId], list[Union[str, NucleicAcidEntityId]]]])
 
 slots.sequence_location_of = Slot(uri=BIOLINK.sequence_location_of, name="sequence location of", curie=BIOLINK.curie('sequence_location_of'),
-                   model_uri=BIOLINK.sequence_location_of, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.sequence_location_of, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NucleicAcidEntityId], list[Union[str, NucleicAcidEntityId]]]])
 
 slots.model_of = Slot(uri=BIOLINK.model_of, name="model of", curie=BIOLINK.curie('model_of'),
-                   model_uri=BIOLINK.model_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.model_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.models = Slot(uri=BIOLINK.models, name="models", curie=BIOLINK.curie('models'),
-                   model_uri=BIOLINK.models, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.models, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.overlaps = Slot(uri=BIOLINK.overlaps, name="overlaps", curie=BIOLINK.curie('overlaps'),
-                   model_uri=BIOLINK.overlaps, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.overlaps, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_part = Slot(uri=BIOLINK.has_part, name="has part", curie=BIOLINK.curie('has_part'),
-                   model_uri=BIOLINK.has_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_plasma_membrane_part = Slot(uri=BIOLINK.has_plasma_membrane_part, name="has plasma membrane part", curie=BIOLINK.curie('has_plasma_membrane_part'),
-                   model_uri=BIOLINK.has_plasma_membrane_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_plasma_membrane_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.composed_primarily_of = Slot(uri=BIOLINK.composed_primarily_of, name="composed primarily of", curie=BIOLINK.curie('composed_primarily_of'),
-                   model_uri=BIOLINK.composed_primarily_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.composed_primarily_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.primarily_composed_of = Slot(uri=BIOLINK.primarily_composed_of, name="primarily composed of", curie=BIOLINK.curie('primarily_composed_of'),
-                   model_uri=BIOLINK.primarily_composed_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.primarily_composed_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.plasma_membrane_part_of = Slot(uri=BIOLINK.plasma_membrane_part_of, name="plasma membrane part of", curie=BIOLINK.curie('plasma_membrane_part_of'),
-                   model_uri=BIOLINK.plasma_membrane_part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.plasma_membrane_part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.part_of = Slot(uri=BIOLINK.part_of, name="part of", curie=BIOLINK.curie('part_of'),
-                   model_uri=BIOLINK.part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_input = Slot(uri=BIOLINK.has_input, name="has input", curie=BIOLINK.curie('has_input'),
-                   model_uri=BIOLINK.has_input, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_input, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.is_input_of = Slot(uri=BIOLINK.is_input_of, name="is input of", curie=BIOLINK.curie('is_input_of'),
-                   model_uri=BIOLINK.is_input_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.is_input_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_output = Slot(uri=BIOLINK.has_output, name="has output", curie=BIOLINK.curie('has_output'),
-                   model_uri=BIOLINK.has_output, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_output, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.is_output_of = Slot(uri=BIOLINK.is_output_of, name="is output of", curie=BIOLINK.curie('is_output_of'),
-                   model_uri=BIOLINK.is_output_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.is_output_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant", curie=BIOLINK.curie('has_participant'),
-                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], list[Union[dict, Occurrent]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
-                   model_uri=BIOLINK.catalyzes, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.catalyzes, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_catalyst = Slot(uri=BIOLINK.has_catalyst, name="has catalyst", curie=BIOLINK.curie('has_catalyst'),
-                   model_uri=BIOLINK.has_catalyst, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.has_catalyst, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], list[Union[dict, Occurrent]]]])
 
 slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
-                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.is_substrate_of = Slot(uri=BIOLINK.is_substrate_of, name="is substrate of", curie=BIOLINK.curie('is_substrate_of'),
-                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in", curie=BIOLINK.curie('participates_in'),
-                   model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involved_in = Slot(uri=BIOLINK.actively_involved_in, name="actively involved in", curie=BIOLINK.curie('actively_involved_in'),
-                   model_uri=BIOLINK.actively_involved_in, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.actively_involved_in, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively involves", curie=BIOLINK.curie('actively_involves'),
-                   model_uri=BIOLINK.actively_involves, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.actively_involves, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
-                   model_uri=BIOLINK.capable_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.capable_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], list[Union[dict, "Occurrent"]]]])
 
 slots.can_be_carried_out_by = Slot(uri=BIOLINK.can_be_carried_out_by, name="can be carried out by", curie=BIOLINK.curie('can_be_carried_out_by'),
-                   model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.enables = Slot(uri=BIOLINK.enables, name="enables", curie=BIOLINK.curie('enables'),
-                   model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.enabled_by = Slot(uri=BIOLINK.enabled_by, name="enabled by", curie=BIOLINK.curie('enabled_by'),
-                   model_uri=BIOLINK.enabled_by, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, PhysicalEntityId], List[Union[str, PhysicalEntityId]]]])
+                   model_uri=BIOLINK.enabled_by, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, PhysicalEntityId], list[Union[str, PhysicalEntityId]]]])
 
 slots.derives_into = Slot(uri=BIOLINK.derives_into, name="derives into", curie=BIOLINK.curie('derives_into'),
-                   model_uri=BIOLINK.derives_into, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.derives_into, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.derives_from = Slot(uri=BIOLINK.derives_from, name="derives from", curie=BIOLINK.curie('derives_from'),
-                   model_uri=BIOLINK.derives_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.derives_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.is_metabolite_of = Slot(uri=BIOLINK.is_metabolite_of, name="is metabolite of", curie=BIOLINK.curie('is_metabolite_of'),
-                   model_uri=BIOLINK.is_metabolite_of, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
+                   model_uri=BIOLINK.is_metabolite_of, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]])
 
 slots.has_metabolite = Slot(uri=BIOLINK.has_metabolite, name="has metabolite", curie=BIOLINK.curie('has_metabolite'),
-                   model_uri=BIOLINK.has_metabolite, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
+                   model_uri=BIOLINK.has_metabolite, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]])
 
 slots.food_component_of = Slot(uri=BIOLINK.food_component_of, name="food component of", curie=BIOLINK.curie('food_component_of'),
-                   model_uri=BIOLINK.food_component_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+                   model_uri=BIOLINK.food_component_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.has_food_component = Slot(uri=BIOLINK.has_food_component, name="has food component", curie=BIOLINK.curie('has_food_component'),
-                   model_uri=BIOLINK.has_food_component, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+                   model_uri=BIOLINK.has_food_component, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.nutrient_of = Slot(uri=BIOLINK.nutrient_of, name="nutrient of", curie=BIOLINK.curie('nutrient_of'),
-                   model_uri=BIOLINK.nutrient_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+                   model_uri=BIOLINK.nutrient_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=BIOLINK.curie('has_nutrient'),
-                   model_uri=BIOLINK.has_nutrient, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+                   model_uri=BIOLINK.has_nutrient, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.is_active_ingredient_of = Slot(uri=BIOLINK.is_active_ingredient_of, name="is active ingredient of", curie=BIOLINK.curie('is_active_ingredient_of'),
-                   model_uri=BIOLINK.is_active_ingredient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [RO["0002249"]])
+                   model_uri=BIOLINK.is_active_ingredient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], list[Union[str, DrugId]]]], mappings = [RO["0002249"]])
 
 slots.has_active_ingredient = Slot(uri=BIOLINK.has_active_ingredient, name="has active ingredient", curie=BIOLINK.curie('has_active_ingredient'),
-                   model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [RO["0002248"]])
+                   model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]], mappings = [RO["0002248"]])
 
 slots.is_excipient_of = Slot(uri=BIOLINK.is_excipient_of, name="is excipient of", curie=BIOLINK.curie('is_excipient_of'),
-                   model_uri=BIOLINK.is_excipient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [WIKIDATA["Q902638"]])
+                   model_uri=BIOLINK.is_excipient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], list[Union[str, DrugId]]]], mappings = [WIKIDATA["Q902638"]])
 
 slots.has_excipient = Slot(uri=BIOLINK.has_excipient, name="has excipient", curie=BIOLINK.curie('has_excipient'),
-                   model_uri=BIOLINK.has_excipient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [WIKIDATA["Q902638"]])
+                   model_uri=BIOLINK.has_excipient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]], mappings = [WIKIDATA["Q902638"]])
 
 slots.manifestation_of = Slot(uri=BIOLINK.manifestation_of, name="manifestation of", curie=BIOLINK.curie('manifestation_of'),
-                   model_uri=BIOLINK.manifestation_of, domain=NamedThing, range=Optional[Union[Union[str, DiseaseId], List[Union[str, DiseaseId]]]])
+                   model_uri=BIOLINK.manifestation_of, domain=NamedThing, range=Optional[Union[Union[str, DiseaseId], list[Union[str, DiseaseId]]]])
 
 slots.has_manifestation = Slot(uri=BIOLINK.has_manifestation, name="has manifestation", curie=BIOLINK.curie('has_manifestation'),
-                   model_uri=BIOLINK.has_manifestation, domain=Disease, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_manifestation, domain=Disease, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.mode_of_inheritance_of = Slot(uri=BIOLINK.mode_of_inheritance_of, name="mode of inheritance of", curie=BIOLINK.curie('mode_of_inheritance_of'),
-                   model_uri=BIOLINK.mode_of_inheritance_of, domain=GeneticInheritance, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.mode_of_inheritance_of, domain=GeneticInheritance, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.has_mode_of_inheritance = Slot(uri=BIOLINK.has_mode_of_inheritance, name="has mode of inheritance", curie=BIOLINK.curie('has_mode_of_inheritance'),
-                   model_uri=BIOLINK.has_mode_of_inheritance, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneticInheritanceId], List[Union[str, GeneticInheritanceId]]]])
+                   model_uri=BIOLINK.has_mode_of_inheritance, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneticInheritanceId], list[Union[str, GeneticInheritanceId]]]])
 
 slots.produces = Slot(uri=BIOLINK.produces, name="produces", curie=BIOLINK.curie('produces'),
-                   model_uri=BIOLINK.produces, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.produces, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.produced_by = Slot(uri=BIOLINK.produced_by, name="produced by", curie=BIOLINK.curie('produced_by'),
-                   model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie('consumes'),
-                   model_uri=BIOLINK.consumes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.consumes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
-                   model_uri=BIOLINK.consumed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.consumed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.temporally_related_to = Slot(uri=BIOLINK.temporally_related_to, name="temporally related to", curie=BIOLINK.curie('temporally_related_to'),
-                   model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], list[Union[dict, "Occurrent"]]]])
 
 slots.precedes = Slot(uri=BIOLINK.precedes, name="precedes", curie=BIOLINK.curie('precedes'),
-                   model_uri=BIOLINK.precedes, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.precedes, domain=None, range=Optional[Union[Union[dict, "Occurrent"], list[Union[dict, "Occurrent"]]]])
 
 slots.preceded_by = Slot(uri=BIOLINK.preceded_by, name="preceded by", curie=BIOLINK.curie('preceded_by'),
-                   model_uri=BIOLINK.preceded_by, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.preceded_by, domain=None, range=Optional[Union[Union[dict, "Occurrent"], list[Union[dict, "Occurrent"]]]])
 
 slots.has_variant_part = Slot(uri=BIOLINK.has_variant_part, name="has variant part", curie=BIOLINK.curie('has_variant_part'),
-                   model_uri=BIOLINK.has_variant_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_variant_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.variant_part_of = Slot(uri=BIOLINK.variant_part_of, name="variant part of", curie=BIOLINK.curie('variant_part_of'),
-                   model_uri=BIOLINK.variant_part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.variant_part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.related_condition = Slot(uri=BIOLINK.related_condition, name="related condition", curie=BIOLINK.curie('related_condition'),
-                   model_uri=BIOLINK.related_condition, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.related_condition, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.is_sequence_variant_of = Slot(uri=BIOLINK.is_sequence_variant_of, name="is sequence variant of", curie=BIOLINK.curie('is_sequence_variant_of'),
-                   model_uri=BIOLINK.is_sequence_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_sequence_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_sequence_variant = Slot(uri=BIOLINK.has_sequence_variant, name="has sequence variant", curie=BIOLINK.curie('has_sequence_variant'),
-                   model_uri=BIOLINK.has_sequence_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_sequence_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_missense_variant_of = Slot(uri=BIOLINK.is_missense_variant_of, name="is missense variant of", curie=BIOLINK.curie('is_missense_variant_of'),
-                   model_uri=BIOLINK.is_missense_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_missense_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_missense_variant = Slot(uri=BIOLINK.has_missense_variant, name="has missense variant", curie=BIOLINK.curie('has_missense_variant'),
-                   model_uri=BIOLINK.has_missense_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_missense_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_synonymous_variant_of = Slot(uri=BIOLINK.is_synonymous_variant_of, name="is synonymous variant of", curie=BIOLINK.curie('is_synonymous_variant_of'),
-                   model_uri=BIOLINK.is_synonymous_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_synonymous_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_synonymous_variant = Slot(uri=BIOLINK.has_synonymous_variant, name="has synonymous variant", curie=BIOLINK.curie('has_synonymous_variant'),
-                   model_uri=BIOLINK.has_synonymous_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_synonymous_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_nonsense_variant_of = Slot(uri=BIOLINK.is_nonsense_variant_of, name="is nonsense variant of", curie=BIOLINK.curie('is_nonsense_variant_of'),
-                   model_uri=BIOLINK.is_nonsense_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_nonsense_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_nonsense_variant = Slot(uri=BIOLINK.has_nonsense_variant, name="has nonsense variant", curie=BIOLINK.curie('has_nonsense_variant'),
-                   model_uri=BIOLINK.has_nonsense_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_nonsense_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_frameshift_variant_of = Slot(uri=BIOLINK.is_frameshift_variant_of, name="is frameshift variant of", curie=BIOLINK.curie('is_frameshift_variant_of'),
-                   model_uri=BIOLINK.is_frameshift_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_frameshift_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_frameshift_variant = Slot(uri=BIOLINK.has_frameshift_variant, name="has frameshift variant", curie=BIOLINK.curie('has_frameshift_variant'),
-                   model_uri=BIOLINK.has_frameshift_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_frameshift_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_splice_site_variant_of = Slot(uri=BIOLINK.is_splice_site_variant_of, name="is splice site variant of", curie=BIOLINK.curie('is_splice_site_variant_of'),
-                   model_uri=BIOLINK.is_splice_site_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_splice_site_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_splice_site_variant = Slot(uri=BIOLINK.has_splice_site_variant, name="has splice site variant", curie=BIOLINK.curie('has_splice_site_variant'),
-                   model_uri=BIOLINK.has_splice_site_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_splice_site_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_nearby_variant_of = Slot(uri=BIOLINK.is_nearby_variant_of, name="is nearby variant of", curie=BIOLINK.curie('is_nearby_variant_of'),
-                   model_uri=BIOLINK.is_nearby_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_nearby_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_nearby_variant = Slot(uri=BIOLINK.has_nearby_variant, name="has nearby variant", curie=BIOLINK.curie('has_nearby_variant'),
-                   model_uri=BIOLINK.has_nearby_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_nearby_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.is_non_coding_variant_of = Slot(uri=BIOLINK.is_non_coding_variant_of, name="is non coding variant of", curie=BIOLINK.curie('is_non_coding_variant_of'),
-                   model_uri=BIOLINK.is_non_coding_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], List[Union[dict, GenomicEntity]]]])
+                   model_uri=BIOLINK.is_non_coding_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, GenomicEntity], list[Union[dict, GenomicEntity]]]])
 
 slots.has_non_coding_variant = Slot(uri=BIOLINK.has_non_coding_variant, name="has non coding variant", curie=BIOLINK.curie('has_non_coding_variant'),
-                   model_uri=BIOLINK.has_non_coding_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], List[Union[str, SequenceVariantId]]]])
+                   model_uri=BIOLINK.has_non_coding_variant, domain=None, range=Optional[Union[Union[str, SequenceVariantId], list[Union[str, SequenceVariantId]]]])
 
 slots.disease_has_basis_in = Slot(uri=BIOLINK.disease_has_basis_in, name="disease has basis in", curie=BIOLINK.curie('disease_has_basis_in'),
-                   model_uri=BIOLINK.disease_has_basis_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.disease_has_basis_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.occurs_in_disease = Slot(uri=BIOLINK.occurs_in_disease, name="occurs in disease", curie=BIOLINK.curie('occurs_in_disease'),
-                   model_uri=BIOLINK.occurs_in_disease, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.occurs_in_disease, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_adverse_event = Slot(uri=BIOLINK.has_adverse_event, name="has adverse event", curie=BIOLINK.curie('has_adverse_event'),
-                   model_uri=BIOLINK.has_adverse_event, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.has_adverse_event, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.adverse_event_of = Slot(uri=BIOLINK.adverse_event_of, name="adverse event of", curie=BIOLINK.curie('adverse_event_of'),
-                   model_uri=BIOLINK.adverse_event_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.adverse_event_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.has_side_effect = Slot(uri=BIOLINK.has_side_effect, name="has side effect", curie=BIOLINK.curie('has_side_effect'),
-                   model_uri=BIOLINK.has_side_effect, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.has_side_effect, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.is_side_effect_of = Slot(uri=BIOLINK.is_side_effect_of, name="is side effect of", curie=BIOLINK.curie('is_side_effect_of'),
-                   model_uri=BIOLINK.is_side_effect_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.is_side_effect_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.contraindicated_in = Slot(uri=BIOLINK.contraindicated_in, name="contraindicated in", curie=BIOLINK.curie('contraindicated_in'),
-                   model_uri=BIOLINK.contraindicated_in, domain=None, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
+                   model_uri=BIOLINK.contraindicated_in, domain=None, range=Optional[Union[Union[str, BiologicalEntityId], list[Union[str, BiologicalEntityId]]]])
 
 slots.chemical_entity_or_drug_or_treatment = Slot(uri=BIOLINK.chemical_entity_or_drug_or_treatment, name="chemical entity or drug or treatment", curie=BIOLINK.curie('chemical_entity_or_drug_or_treatment'),
                    model_uri=BIOLINK.chemical_entity_or_drug_or_treatment, domain=None, range=Optional[str])
 
 slots.has_contraindication = Slot(uri=BIOLINK.has_contraindication, name="has contraindication", curie=BIOLINK.curie('has_contraindication'),
-                   model_uri=BIOLINK.has_contraindication, domain=BiologicalEntity, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.has_contraindication, domain=BiologicalEntity, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.has_not_completed = Slot(uri=BIOLINK.has_not_completed, name="has not completed", curie=BIOLINK.curie('has_not_completed'),
-                   model_uri=BIOLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.not_completed_by = Slot(uri=BIOLINK.not_completed_by, name="not completed by", curie=BIOLINK.curie('not_completed_by'),
-                   model_uri=BIOLINK.not_completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.not_completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_completed = Slot(uri=BIOLINK.has_completed, name="has completed", curie=BIOLINK.curie('has_completed'),
-                   model_uri=BIOLINK.has_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.completed_by = Slot(uri=BIOLINK.completed_by, name="completed by", curie=BIOLINK.curie('completed_by'),
-                   model_uri=BIOLINK.completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.in_linkage_disequilibrium_with = Slot(uri=BIOLINK.in_linkage_disequilibrium_with, name="in linkage disequilibrium with", curie=BIOLINK.curie('in_linkage_disequilibrium_with'),
-                   model_uri=BIOLINK.in_linkage_disequilibrium_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.in_linkage_disequilibrium_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_increased_amount = Slot(uri=BIOLINK.has_increased_amount, name="has increased amount", curie=BIOLINK.curie('has_increased_amount'),
-                   model_uri=BIOLINK.has_increased_amount, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_increased_amount, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.increased_amount_of = Slot(uri=BIOLINK.increased_amount_of, name="increased amount of", curie=BIOLINK.curie('increased_amount_of'),
-                   model_uri=BIOLINK.increased_amount_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.increased_amount_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_decreased_amount = Slot(uri=BIOLINK.has_decreased_amount, name="has decreased amount", curie=BIOLINK.curie('has_decreased_amount'),
-                   model_uri=BIOLINK.has_decreased_amount, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_decreased_amount, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.decreased_amount_in = Slot(uri=BIOLINK.decreased_amount_in, name="decreased amount in", curie=BIOLINK.curie('decreased_amount_in'),
-                   model_uri=BIOLINK.decreased_amount_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.decreased_amount_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.lacks_part = Slot(uri=BIOLINK.lacks_part, name="lacks part", curie=BIOLINK.curie('lacks_part'),
-                   model_uri=BIOLINK.lacks_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.lacks_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.missing_from = Slot(uri=BIOLINK.missing_from, name="missing from", curie=BIOLINK.curie('missing_from'),
-                   model_uri=BIOLINK.missing_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.missing_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.develops_from = Slot(uri=BIOLINK.develops_from, name="develops from", curie=BIOLINK.curie('develops_from'),
-                   model_uri=BIOLINK.develops_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.develops_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curie=BIOLINK.curie('develops_into'),
-                   model_uri=BIOLINK.develops_into, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.develops_into, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
-                   model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
+                   model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]])
 
 slots.in_taxon_label = Slot(uri=BIOLINK.in_taxon_label, name="in taxon label", curie=BIOLINK.curie('in_taxon_label'),
                    model_uri=BIOLINK.in_taxon_label, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),
-                   model_uri=BIOLINK.taxon_of, domain=OrganismTaxon, range=Optional[Union[Union[dict, "ThingWithTaxon"], List[Union[dict, "ThingWithTaxon"]]]])
+                   model_uri=BIOLINK.taxon_of, domain=OrganismTaxon, range=Optional[Union[Union[dict, "ThingWithTaxon"], list[Union[dict, "ThingWithTaxon"]]]])
 
 slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
-                   model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.is_molecular_consequence_of = Slot(uri=BIOLINK.is_molecular_consequence_of, name="is molecular consequence of", curie=BIOLINK.curie('is_molecular_consequence_of'),
-                   model_uri=BIOLINK.is_molecular_consequence_of, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.is_molecular_consequence_of, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.association_slot = Slot(uri=BIOLINK.association_slot, name="association slot", curie=BIOLINK.curie('association_slot'),
                    model_uri=BIOLINK.association_slot, domain=Association, range=Optional[str])
@@ -14992,10 +14988,10 @@ slots.original_predicate = Slot(uri=BIOLINK.original_predicate, name="original p
                    model_uri=BIOLINK.original_predicate, domain=Association, range=Optional[Union[str, URIorCURIE]])
 
 slots.subject_closure = Slot(uri=BIOLINK.subject_closure, name="subject closure", curie=BIOLINK.curie('subject_closure'),
-                   model_uri=BIOLINK.subject_closure, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.subject_closure, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.object_closure = Slot(uri=BIOLINK.object_closure, name="object closure", curie=BIOLINK.curie('object_closure'),
-                   model_uri=BIOLINK.object_closure, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.object_closure, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.subject_category = Slot(uri=BIOLINK.subject_category, name="subject category", curie=BIOLINK.curie('subject_category'),
                    model_uri=BIOLINK.subject_category, domain=Association, range=Optional[Union[str, OntologyClassId]])
@@ -15004,16 +15000,16 @@ slots.object_category = Slot(uri=BIOLINK.object_category, name="object category"
                    model_uri=BIOLINK.object_category, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
 slots.subject_category_closure = Slot(uri=BIOLINK.subject_category_closure, name="subject category closure", curie=BIOLINK.curie('subject_category_closure'),
-                   model_uri=BIOLINK.subject_category_closure, domain=Association, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.subject_category_closure, domain=Association, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.object_category_closure = Slot(uri=BIOLINK.object_category_closure, name="object category closure", curie=BIOLINK.curie('object_category_closure'),
-                   model_uri=BIOLINK.object_category_closure, domain=Association, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.object_category_closure, domain=Association, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.subject_label_closure = Slot(uri=BIOLINK.subject_label_closure, name="subject label closure", curie=BIOLINK.curie('subject_label_closure'),
-                   model_uri=BIOLINK.subject_label_closure, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.subject_label_closure, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.object_label_closure = Slot(uri=BIOLINK.object_label_closure, name="object label closure", curie=BIOLINK.curie('object_label_closure'),
-                   model_uri=BIOLINK.object_label_closure, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.object_label_closure, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.subject_namespace = Slot(uri=BIOLINK.subject_namespace, name="subject namespace", curie=BIOLINK.curie('subject_namespace'),
                    model_uri=BIOLINK.subject_namespace, domain=Association, range=Optional[str])
@@ -15043,7 +15039,7 @@ slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has co
                    model_uri=BIOLINK.has_confidence_level, domain=Association, range=Optional[str])
 
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
-                   model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]])
+                   model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
 
 slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result, name="has supporting study result", curie=BIOLINK.curie('has_supporting_study_result'),
                    model_uri=BIOLINK.has_supporting_study_result, domain=Association, range=Optional[str])
@@ -15064,19 +15060,19 @@ slots.knowledge_source = Slot(uri=BIOLINK.knowledge_source, name="knowledge sour
                    model_uri=BIOLINK.knowledge_source, domain=Association, range=Optional[str])
 
 slots.provided_by = Slot(uri=BIOLINK.provided_by, name="provided by", curie=BIOLINK.curie('provided_by'),
-                   model_uri=BIOLINK.provided_by, domain=NamedThing, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.provided_by, domain=NamedThing, range=Optional[Union[str, list[str]]])
 
 slots.primary_knowledge_source = Slot(uri=BIOLINK.primary_knowledge_source, name="primary knowledge source", curie=BIOLINK.curie('primary_knowledge_source'),
                    model_uri=BIOLINK.primary_knowledge_source, domain=Association, range=Optional[str])
 
 slots.aggregator_knowledge_source = Slot(uri=BIOLINK.aggregator_knowledge_source, name="aggregator knowledge source", curie=BIOLINK.curie('aggregator_knowledge_source'),
-                   model_uri=BIOLINK.aggregator_knowledge_source, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.aggregator_knowledge_source, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.supporting_data_source = Slot(uri=BIOLINK.supporting_data_source, name="supporting data source", curie=BIOLINK.curie('supporting_data_source'),
-                   model_uri=BIOLINK.supporting_data_source, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.supporting_data_source, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.supporting_data_set = Slot(uri=BIOLINK.supporting_data_set, name="supporting data set", curie=BIOLINK.curie('supporting_data_set'),
-                   model_uri=BIOLINK.supporting_data_set, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.supporting_data_set, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
                    model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
@@ -15121,16 +15117,16 @@ slots.bonferonni_adjusted_p_value = Slot(uri=BIOLINK.bonferonni_adjusted_p_value
                    model_uri=BIOLINK.bonferonni_adjusted_p_value, domain=Association, range=Optional[float])
 
 slots.supporting_text = Slot(uri=BIOLINK.supporting_text, name="supporting text", curie=BIOLINK.curie('supporting_text'),
-                   model_uri=BIOLINK.supporting_text, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.supporting_text, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.supporting_documents = Slot(uri=BIOLINK.supporting_documents, name="supporting documents", curie=BIOLINK.curie('supporting_documents'),
-                   model_uri=BIOLINK.supporting_documents, domain=Association, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+                   model_uri=BIOLINK.supporting_documents, domain=Association, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.subject_location_in_text = Slot(uri=BIOLINK.subject_location_in_text, name="subject location in text", curie=BIOLINK.curie('subject_location_in_text'),
-                   model_uri=BIOLINK.subject_location_in_text, domain=Association, range=Optional[Union[int, List[int]]])
+                   model_uri=BIOLINK.subject_location_in_text, domain=Association, range=Optional[Union[int, list[int]]])
 
 slots.object_location_in_text = Slot(uri=BIOLINK.object_location_in_text, name="object location in text", curie=BIOLINK.curie('object_location_in_text'),
-                   model_uri=BIOLINK.object_location_in_text, domain=Association, range=Optional[Union[int, List[int]]])
+                   model_uri=BIOLINK.object_location_in_text, domain=Association, range=Optional[Union[int, list[int]]])
 
 slots.extraction_confidence_score = Slot(uri=BIOLINK.extraction_confidence_score, name="extraction confidence score", curie=BIOLINK.curie('extraction_confidence_score'),
                    model_uri=BIOLINK.extraction_confidence_score, domain=Association, range=Optional[int])
@@ -15160,7 +15156,7 @@ slots.phenotypic_state = Slot(uri=BIOLINK.phenotypic_state, name="phenotypic sta
                    model_uri=BIOLINK.phenotypic_state, domain=Association, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
 
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
-                   model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
+                   model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])
 
 slots.associated_environmental_context = Slot(uri=BIOLINK.associated_environmental_context, name="associated environmental context", curie=BIOLINK.curie('associated_environmental_context'),
                    model_uri=BIOLINK.associated_environmental_context, domain=Association, range=Optional[str])
@@ -15199,7 +15195,7 @@ slots.max_research_phase = Slot(uri=BIOLINK.max_research_phase, name="max resear
                    model_uri=BIOLINK.max_research_phase, domain=Association, range=Optional[Union[str, "ResearchPhaseEnum"]])
 
 slots.has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="has supporting studies", curie=BIOLINK.curie('has_supporting_studies'),
-                   model_uri=BIOLINK.has_supporting_studies, domain=Association, range=Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]])
+                   model_uri=BIOLINK.has_supporting_studies, domain=Association, range=Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]])
 
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
@@ -15232,7 +15228,7 @@ slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.cu
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
 
 slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_category", curie=BIOLINK.curie('category'),
-                   model_uri=BIOLINK.named_thing_category, domain=NamedThing, range=Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]])
+                   model_uri=BIOLINK.named_thing_category, domain=NamedThing, range=Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]])
 
 slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA["P105"]])
@@ -15250,16 +15246,16 @@ slots.publication_name = Slot(uri=RDFS.label, name="publication_name", curie=RDF
                    model_uri=BIOLINK.publication_name, domain=Publication, range=Optional[Union[str, LabelType]])
 
 slots.publication_publication_type = Slot(uri=DCT.type, name="publication_publication type", curie=DCT.curie('type'),
-                   model_uri=BIOLINK.publication_publication_type, domain=Publication, range=Union[str, List[str]])
+                   model_uri=BIOLINK.publication_publication_type, domain=Publication, range=Union[str, list[str]])
 
 slots.publication_pages = Slot(uri=BIOLINK.pages, name="publication_pages", curie=BIOLINK.curie('pages'),
-                   model_uri=BIOLINK.publication_pages, domain=Publication, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.publication_pages, domain=Publication, range=Optional[Union[str, list[str]]])
 
 slots.book_id = Slot(uri=BIOLINK.id, name="book_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.book_id, domain=Book, range=Union[str, BookId])
 
 slots.book_type = Slot(uri=RDF.type, name="book_type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.book_type, domain=Book, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.book_type, domain=Book, range=Optional[Union[str, list[str]]])
 
 slots.book_chapter_published_in = Slot(uri=BIOLINK.published_in, name="book chapter_published in", curie=BIOLINK.curie('published_in'),
                    model_uri=BIOLINK.book_chapter_published_in, domain=BookChapter, range=Union[str, URIorCURIE])
@@ -15268,7 +15264,7 @@ slots.serial_id = Slot(uri=BIOLINK.id, name="serial_id", curie=BIOLINK.curie('id
                    model_uri=BIOLINK.serial_id, domain=Serial, range=Union[str, SerialId])
 
 slots.serial_type = Slot(uri=RDF.type, name="serial_type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.serial_type, domain=Serial, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.serial_type, domain=Serial, range=Optional[Union[str, list[str]]])
 
 slots.article_published_in = Slot(uri=BIOLINK.published_in, name="article_published in", curie=BIOLINK.curie('published_in'),
                    model_uri=BIOLINK.article_published_in, domain=Article, range=Union[str, URIorCURIE])
@@ -15286,22 +15282,22 @@ slots.retrieval_source_upstream_resource_ids = Slot(uri=BIOLINK.upstream_resourc
                    model_uri=BIOLINK.retrieval_source_upstream_resource_ids, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
 
 slots.molecular_activity_has_input = Slot(uri=BIOLINK.has_input, name="molecular activity_has input", curie=BIOLINK.curie('has_input'),
-                   model_uri=BIOLINK.molecular_activity_has_input, domain=MolecularActivity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
+                   model_uri=BIOLINK.molecular_activity_has_input, domain=MolecularActivity, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]])
 
 slots.molecular_activity_has_output = Slot(uri=BIOLINK.has_output, name="molecular activity_has output", curie=BIOLINK.curie('has_output'),
-                   model_uri=BIOLINK.molecular_activity_has_output, domain=MolecularActivity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
+                   model_uri=BIOLINK.molecular_activity_has_output, domain=MolecularActivity, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]])
 
 slots.molecular_activity_enabled_by = Slot(uri=BIOLINK.enabled_by, name="molecular activity_enabled by", curie=BIOLINK.curie('enabled_by'),
-                   model_uri=BIOLINK.molecular_activity_enabled_by, domain=MolecularActivity, range=Optional[Union[Union[dict, "MacromolecularMachineMixin"], List[Union[dict, "MacromolecularMachineMixin"]]]])
+                   model_uri=BIOLINK.molecular_activity_enabled_by, domain=MolecularActivity, range=Optional[Union[Union[dict, "MacromolecularMachineMixin"], list[Union[dict, "MacromolecularMachineMixin"]]]])
 
 slots.organismal_entity_has_attribute = Slot(uri=BIOLINK.has_attribute, name="organismal entity_has attribute", curie=BIOLINK.curie('has_attribute'),
-                   model_uri=BIOLINK.organismal_entity_has_attribute, domain=OrganismalEntity, range=Optional[Union[Union[str, AttributeId], List[Union[str, AttributeId]]]])
+                   model_uri=BIOLINK.organismal_entity_has_attribute, domain=OrganismalEntity, range=Optional[Union[Union[str, AttributeId], list[Union[str, AttributeId]]]])
 
 slots.macromolecular_machine_mixin_name = Slot(uri=RDFS.label, name="macromolecular machine mixin_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.macromolecular_machine_mixin_name, domain=None, range=Optional[Union[str, SymbolType]])
 
 slots.sequence_variant_has_gene = Slot(uri=BIOLINK.has_gene, name="sequence variant_has gene", curie=BIOLINK.curie('has_gene'),
-                   model_uri=BIOLINK.sequence_variant_has_gene, domain=SequenceVariant, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.sequence_variant_has_gene, domain=SequenceVariant, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
 slots.sequence_variant_has_biological_sequence = Slot(uri=BIOLINK.has_biological_sequence, name="sequence variant_has biological sequence", curie=BIOLINK.curie('has_biological_sequence'),
                    model_uri=BIOLINK.sequence_variant_has_biological_sequence, domain=SequenceVariant, range=Optional[Union[str, BiologicalSequence]])
@@ -15313,16 +15309,16 @@ slots.clinical_measurement_has_attribute_type = Slot(uri=BIOLINK.has_attribute_t
                    model_uri=BIOLINK.clinical_measurement_has_attribute_type, domain=ClinicalMeasurement, range=Union[str, OntologyClassId])
 
 slots.clinical_finding_has_attribute = Slot(uri=BIOLINK.has_attribute, name="clinical finding_has attribute", curie=BIOLINK.curie('has_attribute'),
-                   model_uri=BIOLINK.clinical_finding_has_attribute, domain=ClinicalFinding, range=Optional[Union[Union[str, ClinicalAttributeId], List[Union[str, ClinicalAttributeId]]]])
+                   model_uri=BIOLINK.clinical_finding_has_attribute, domain=ClinicalFinding, range=Optional[Union[Union[str, ClinicalAttributeId], list[Union[str, ClinicalAttributeId]]]])
 
 slots.socioeconomic_exposure_has_attribute = Slot(uri=BIOLINK.has_attribute, name="socioeconomic exposure_has attribute", curie=BIOLINK.curie('has_attribute'),
-                   model_uri=BIOLINK.socioeconomic_exposure_has_attribute, domain=SocioeconomicExposure, range=Union[Union[str, SocioeconomicAttributeId], List[Union[str, SocioeconomicAttributeId]]])
+                   model_uri=BIOLINK.socioeconomic_exposure_has_attribute, domain=SocioeconomicExposure, range=Union[Union[str, SocioeconomicAttributeId], list[Union[str, SocioeconomicAttributeId]]])
 
 slots.association_type = Slot(uri=RDF.type, name="association_type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.association_type, domain=Association, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.association_type, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.association_category = Slot(uri=BIOLINK.category, name="association_category", curie=BIOLINK.curie('category'),
-                   model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+                   model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.chemical_entity_assesses_named_thing_association_subject = Slot(uri=RDF.subject, name="chemical entity assesses named thing association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_entity_assesses_named_thing_association_subject, domain=ChemicalEntityAssessesNamedThingAssociation, range=Union[str, ChemicalEntityId])
@@ -15343,7 +15339,7 @@ slots.contributor_association_object = Slot(uri=RDF.object, name="contributor as
                    model_uri=BIOLINK.contributor_association_object, domain=ContributorAssociation, range=Union[str, AgentId])
 
 slots.contributor_association_qualifiers = Slot(uri=BIOLINK.qualifiers, name="contributor association_qualifiers", curie=BIOLINK.curie('qualifiers'),
-                   model_uri=BIOLINK.contributor_association_qualifiers, domain=ContributorAssociation, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+                   model_uri=BIOLINK.contributor_association_qualifiers, domain=ContributorAssociation, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
 slots.genotype_to_genotype_part_association_predicate = Slot(uri=RDF.predicate, name="genotype to genotype part association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.genotype_to_genotype_part_association_predicate, domain=GenotypeToGenotypePartAssociation, range=Union[str, PredicateType])
@@ -15454,7 +15450,7 @@ slots.chemical_to_chemical_derivation_association_predicate = Slot(uri=RDF.predi
                    model_uri=BIOLINK.chemical_to_chemical_derivation_association_predicate, domain=ChemicalToChemicalDerivationAssociation, range=Union[str, PredicateType])
 
 slots.chemical_to_chemical_derivation_association_catalyst_qualifier = Slot(uri=BIOLINK.catalyst_qualifier, name="chemical to chemical derivation association_catalyst qualifier", curie=BIOLINK.curie('catalyst_qualifier'),
-                   model_uri=BIOLINK.chemical_to_chemical_derivation_association_catalyst_qualifier, domain=ChemicalToChemicalDerivationAssociation, range=Optional[Union[Union[dict, MacromolecularMachineMixin], List[Union[dict, MacromolecularMachineMixin]]]])
+                   model_uri=BIOLINK.chemical_to_chemical_derivation_association_catalyst_qualifier, domain=ChemicalToChemicalDerivationAssociation, range=Optional[Union[Union[dict, MacromolecularMachineMixin], list[Union[dict, MacromolecularMachineMixin]]]])
 
 slots.chemical_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="chemical to disease or phenotypic feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.chemical_to_disease_or_phenotypic_feature_association_object, domain=ChemicalToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
@@ -15802,7 +15798,7 @@ slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, 
                    model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, PredicateType])
 
 slots.druggable_gene_to_disease_association_has_evidence = Slot(uri=BIOLINK.has_evidence, name="druggable gene to disease association_has evidence", curie=BIOLINK.curie('has_evidence'),
-                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]])
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]])
 
 slots.phenotypic_feature_to_disease_association_predicate = Slot(uri=RDF.predicate, name="phenotypic feature to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.phenotypic_feature_to_disease_association_predicate, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, PredicateType])
