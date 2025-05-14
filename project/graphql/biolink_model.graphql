@@ -331,7 +331,7 @@ type Agent
     name: LabelType
   }
 
-type AnatomicalEntity implements PhysicalEssence
+type AnatomicalEntity implements PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -1430,7 +1430,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     predicate: PredicateType!
   }
 
-type ChemicalMixture
+type ChemicalMixture implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -2307,7 +2307,7 @@ type Disease
     inTaxonLabel: LabelType
   }
 
-type DiseaseOrPhenotypicFeature
+type DiseaseOrPhenotypicFeature implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -4856,7 +4856,7 @@ type JournalArticle
     issue: String
   }
 
-type LifeStage
+type LifeStage implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -5368,7 +5368,7 @@ type MolecularActivityToPathwayAssociation
     predicate: PredicateType!
   }
 
-type MolecularEntity
+type MolecularEntity implements OntologyClass
   {
     id: String!
     iri: IriType

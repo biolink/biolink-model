@@ -134,7 +134,9 @@ linkml:Sparqlpath xsd:string
        (  $<AnatomicalEntity_tes> (  &<OrganismalEntity_tes> ;
              rdf:type [ <OrganismalEntity> ] ? ;
              &<PhysicalEssence_tes> ;
-             rdf:type [ <PhysicalEssence> ] ?
+             rdf:type [ <PhysicalEssence> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ?
           ) ;
           rdf:type [ <AnatomicalEntity> ]
        )
@@ -943,6 +945,8 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalMixture_tes> (  &<ChemicalEntity_tes> ;
              rdf:type [ <ChemicalEntity> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <is_supplement> @linkml:String ? ;
              <highest_FDA_approval_status> [ <https://w3id.org/biolink/vocab/ApprovalStatusEnum#discovery_and_development_phase>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#preclinical_research_phase>
@@ -1347,7 +1351,9 @@ linkml:Sparqlpath xsd:string
 <DiseaseOrPhenotypicFeature>  (
     CLOSED {
        (  $<DiseaseOrPhenotypicFeature_tes> (  &<BiologicalEntity_tes> ;
-             rdf:type [ <BiologicalEntity> ] ?
+             rdf:type [ <BiologicalEntity> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ?
           ) ;
           rdf:type [ <DiseaseOrPhenotypicFeature> ]
        )
@@ -2851,7 +2857,9 @@ linkml:Sparqlpath xsd:string
 
 <LifeStage> CLOSED {
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
-          rdf:type [ <OrganismalEntity> ] ?
+          rdf:type [ <OrganismalEntity> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <LifeStage> ]
     )
@@ -3060,6 +3068,8 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<MolecularEntity_tes> (  &<ChemicalEntity_tes> ;
              rdf:type [ <ChemicalEntity> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <is_metabolite> @linkml:Boolean ?
           ) ;
           rdf:type [ <MolecularEntity> ]
