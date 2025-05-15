@@ -10637,9 +10637,49 @@ classes:
     is_a: association
     defining_slots:
       - subject
+      - predicate
       - object
     mixins:
       - entity to phenotypic feature association mixin
+      - case to entity association mixin
+
+  case to disease association:
+    description: >-
+      An association between a case (e.g. individual patient) and a disease
+      in which the individual has been diagnosed
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to disease association mixin
+      - case to entity association mixin
+
+  case to variant association:
+    description: >-
+      An association between a case (e.g. individual patient) and a variant
+      in which the individual has been found to have the variant
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to variant association mixin
+      - case to entity association mixin
+
+  case to gene association:
+    description: >-
+      An association between a case (e.g. individual patient) and a gene
+      in which the individual has a variant in the gene.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to gene association mixin
       - case to entity association mixin
 
   behavior to behavioral feature association:
