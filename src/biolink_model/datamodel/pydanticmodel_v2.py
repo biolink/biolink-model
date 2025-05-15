@@ -3469,6 +3469,7 @@ class Case(IndividualOrganism, SubjectOfInvestigation):
     """
     An individual (human) organism that has a patient role in some clinical context.
     """
+    has_biological_sex: Optional[str] = Field(default=None, description="""The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -5362,6 +5363,36 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
 
 
+class EntityToFeatureOrVariantQualifiersMixin(FrequencyQualifierMixin):
+    """
+    Qualifiers for entity to variant associations.
+    """
+    subject_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(default=None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
+    frequency_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+
+
+class EntityToFeatureOrGeneQualifiersMixin(FrequencyQualifierMixin):
+    """
+    Qualifiers for entity to gene associations.
+    """
+    subject_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
+    object_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    qualified_predicate: Optional[str] = Field(default=None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
+    frequency_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+    subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+
+
 class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     """
     Qualifiers for disease or phenotype to entity associations.
@@ -6077,11 +6108,12 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     """
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
     """
+    negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
+    onset_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.""")
     subject: str = Field(default=..., description="""the case (e.g. patient) that has the property""")
     predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
-    negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
@@ -6128,6 +6160,143 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     qualified_predicate: Optional[str] = Field(default=None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     disease_context_qualifier: Optional[str] = Field(default=None, description="""A context qualifier representing a disease or condition in which a relationship expressed in an association took place.""")
     frequency_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
+
+
+class CaseToDiseaseAssociation(CaseToEntityAssociationMixin, Association):
+    """
+    An association between a Case (patient) and a Disease
+    """
+    subject: str = Field(default=..., description="""the case (e.g. patient) that has the property""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    onset_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.""")
+    negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
+    qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
+    aggregator_knowledge_source: Optional[list[str]] = Field(default=None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    knowledge_level: KnowledgeLevelEnum = Field(default=..., description="""Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true.""")
+    agent_type: AgentTypeEnum = Field(default=..., description="""Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information.""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    original_subject: Optional[str] = Field(default=None, description="""used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_predicate: Optional[str] = Field(default=None, description="""used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_object: Optional[str] = Field(default=None, description="""used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    subject_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_namespace: Optional[str] = Field(default=None, description="""Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_namespace: Optional[str] = Field(default=None, description="""Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    retrieval_source_ids: Optional[list[str]] = Field(default=None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
+    p_value: Optional[float] = Field(default=None, description="""A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.""")
+    adjusted_p_value: Optional[float] = Field(default=None, description="""The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.""")
+    has_supporting_studies: Optional[list[str]] = Field(default=None, description="""A study that produced information used as evidence to generate the knowledge expressed in an Association.""")
+    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: list[Literal["https://w3id.org/biolink/vocab/CaseToDiseaseAssociation","biolink:CaseToDiseaseAssociation"]] = Field(default=["biolink:CaseToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[list[str]] = Field(default=None, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+
+
+class CaseToVariantAssociation(CaseToEntityAssociationMixin, Association):
+    """
+    Association between a Case and a Genetic Variant
+    """
+    subject: str = Field(default=..., description="""the case (e.g. patient) that has the property""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    has_zygosity: Optional[str] = Field(default=None)
+    negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
+    qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
+    aggregator_knowledge_source: Optional[list[str]] = Field(default=None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    knowledge_level: KnowledgeLevelEnum = Field(default=..., description="""Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true.""")
+    agent_type: AgentTypeEnum = Field(default=..., description="""Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information.""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    original_subject: Optional[str] = Field(default=None, description="""used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_predicate: Optional[str] = Field(default=None, description="""used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_object: Optional[str] = Field(default=None, description="""used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    subject_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_namespace: Optional[str] = Field(default=None, description="""Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_namespace: Optional[str] = Field(default=None, description="""Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    retrieval_source_ids: Optional[list[str]] = Field(default=None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
+    p_value: Optional[float] = Field(default=None, description="""A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.""")
+    adjusted_p_value: Optional[float] = Field(default=None, description="""The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.""")
+    has_supporting_studies: Optional[list[str]] = Field(default=None, description="""A study that produced information used as evidence to generate the knowledge expressed in an Association.""")
+    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: list[Literal["https://w3id.org/biolink/vocab/CaseToVariantAssociation","biolink:CaseToVariantAssociation"]] = Field(default=["biolink:CaseToVariantAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[list[str]] = Field(default=None, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+
+
+class CaseToGeneAssociation(CaseToEntityAssociationMixin, Association):
+    """
+    Association between a Case and a Gene (e.g., indicating a gene of interest for the case)
+    """
+    subject: str = Field(default=..., description="""the case (e.g. patient) that has the property""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
+    qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
+    aggregator_knowledge_source: Optional[list[str]] = Field(default=None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    knowledge_level: KnowledgeLevelEnum = Field(default=..., description="""Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true.""")
+    agent_type: AgentTypeEnum = Field(default=..., description="""Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information.""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    original_subject: Optional[str] = Field(default=None, description="""used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_predicate: Optional[str] = Field(default=None, description="""used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_object: Optional[str] = Field(default=None, description="""used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    subject_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_namespace: Optional[str] = Field(default=None, description="""Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_namespace: Optional[str] = Field(default=None, description="""Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    retrieval_source_ids: Optional[list[str]] = Field(default=None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
+    p_value: Optional[float] = Field(default=None, description="""A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.""")
+    adjusted_p_value: Optional[float] = Field(default=None, description="""The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.""")
+    has_supporting_studies: Optional[list[str]] = Field(default=None, description="""A study that produced information used as evidence to generate the knowledge expressed in an Association.""")
+    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: list[Literal["https://w3id.org/biolink/vocab/CaseToGeneAssociation","biolink:CaseToGeneAssociation"]] = Field(default=["biolink:CaseToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[list[str]] = Field(default=None, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
 class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociationMixin, Association):
@@ -6352,10 +6521,10 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     frequency_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
 
 
-class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, GeneToEntityAssociationMixin):
     subject: str = Field(default=..., description="""gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model""")
     predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(default=..., description="""disease""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
@@ -6406,10 +6575,10 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, Gene
     frequency_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
 
 
-class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin):
     subject: str = Field(default=..., description="""gene in which variation is shown to cause the disease.""")
     predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(default=..., description="""disease""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
@@ -7313,7 +7482,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     subject_form_or_variant_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject: str = Field(default=..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(default=..., description="""disease""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
@@ -8746,6 +8915,8 @@ EntityToOutcomeAssociationMixin.model_rebuild()
 ExposureEventToOutcomeAssociation.model_rebuild()
 FrequencyQualifierMixin.model_rebuild()
 EntityToFeatureOrDiseaseQualifiersMixin.model_rebuild()
+EntityToFeatureOrVariantQualifiersMixin.model_rebuild()
+EntityToFeatureOrGeneQualifiersMixin.model_rebuild()
 FeatureOrDiseaseQualifiersToEntityMixin.model_rebuild()
 EntityToPhenotypicFeatureAssociationMixin.model_rebuild()
 PhenotypicFeatureToEntityAssociationMixin.model_rebuild()
@@ -8766,6 +8937,9 @@ GenotypeToPhenotypicFeatureAssociation.model_rebuild()
 ExposureEventToPhenotypicFeatureAssociation.model_rebuild()
 DiseaseToPhenotypicFeatureAssociation.model_rebuild()
 CaseToPhenotypicFeatureAssociation.model_rebuild()
+CaseToDiseaseAssociation.model_rebuild()
+CaseToVariantAssociation.model_rebuild()
+CaseToGeneAssociation.model_rebuild()
 BehaviorToBehavioralFeatureAssociation.model_rebuild()
 GeneToEntityAssociationMixin.model_rebuild()
 GeneToPathwayAssociation.model_rebuild()

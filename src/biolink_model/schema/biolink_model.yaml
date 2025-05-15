@@ -6220,6 +6220,11 @@ slots:
       - value: computational_model
       - value: text_mining_agent
 
+  has biological sex:
+    description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
+    required: false
+    range: biological sex
+
 classes:
 
   mapping collection:
@@ -9082,6 +9087,8 @@ classes:
       An individual (human) organism that has a patient role in some clinical context.
     mixins:
       - subject of investigation
+    slots:
+      - has biological sex
 
   cohort:
     is_a: study population
@@ -10374,6 +10381,30 @@ classes:
       - qualified predicate
       - disease context qualifier
 
+  entity to feature or variant qualifiers mixin:
+    description: >-
+      Qualifiers for entity to variant associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+
+  entity to feature or gene qualifiers mixin:
+    description: >-
+      Qualifiers for entity to gene associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+
   feature or disease qualifiers to entity mixin:
     description: >-
       Qualifiers for disease or phenotype to entity associations.
@@ -10642,45 +10673,53 @@ classes:
     mixins:
       - entity to phenotypic feature association mixin
       - case to entity association mixin
+    slots:
+      - negated
+      - onset qualifier
 
   case to disease association:
-    description: >-
-      An association between a case (e.g. individual patient) and a disease
-      in which the individual has been diagnosed
     is_a: association
-    defining_slots:
+    mixins:
+      - case to entity association mixin
+    description: "An association between a Case (patient) and a Disease"
+    slot_usage:
+      object:
+        range: disease
+    slots:
       - subject
       - predicate
       - object
-    mixins:
-      - entity to disease association mixin
-      - case to entity association mixin
+      - onset qualifier
 
   case to variant association:
-    description: >-
-      An association between a case (e.g. individual patient) and a variant
-      in which the individual has been found to have the variant
     is_a: association
-    defining_slots:
+    mixins:
+      - case to entity association mixin
+    description: "Association between a Case and a Genetic Variant"
+    slot_usage:
+      object:
+        range: sequence variant
+      has zygosity:
+        range: zygosity
+    slots:
       - subject
       - predicate
       - object
-    mixins:
-      - entity to variant association mixin
-      - case to entity association mixin
+      - has zygosity
 
   case to gene association:
-    description: >-
-      An association between a case (e.g. individual patient) and a gene
-      in which the individual has a variant in the gene.
     is_a: association
-    defining_slots:
+    mixins:
+      - case to entity association mixin
+    description: "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)"
+    slot_usage:
+      object:
+        range: gene or gene product
+    slots:
       - subject
       - predicate
       - object
-    mixins:
-      - entity to gene association mixin
-      - case to entity association mixin
+
 
   behavior to behavioral feature association:
     description: >-
@@ -10802,7 +10841,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
@@ -10819,7 +10857,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
