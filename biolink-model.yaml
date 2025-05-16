@@ -1241,6 +1241,18 @@ slots:
     multivalued: true
     range: disease or phenotypic feature
 
+  affinity:
+    description: >-
+      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.
+    is_a: association slot
+    range: float
+
+  affinity parameter:
+    description: >-
+      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50.  Unsed in conjunction with the affinity slot.
+    is_a: association slot
+    range: AffinityParameterEnum
+
   FDA adverse event level:
     description: >-
     is_a: association slot
@@ -12262,6 +12274,20 @@ enums:
     in_subset:
       - translator_minimal
 
+  AffinityParameterEnum:
+    description: >- 
+      The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.
+    permissible_values:
+      "pIC50":
+        description: >-
+          Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function
+      "pEC50":
+        description: >-
+          Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function
+      "pAC50":
+      "pXC50":
+      "pKi":
+      "pKd":
 
   FDAIDAAdverseEventEnum:
     description: >-
