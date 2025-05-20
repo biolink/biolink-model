@@ -6220,6 +6220,11 @@ slots:
       - value: computational_model
       - value: text_mining_agent
 
+  has biological sex:
+    description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
+    required: false
+    range: biological sex
+
 classes:
 
   mapping collection:
@@ -7256,6 +7261,8 @@ classes:
 
   molecular entity:
     is_a: chemical entity
+    mixins:
+      - ontology class
     description: >-
       A molecular entity is a chemical entity composed of individual or
       covalently bonded atoms.
@@ -7405,6 +7412,8 @@ classes:
 
   chemical mixture:
     is_a: chemical entity
+    mixins:
+      - ontology class
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
@@ -8097,6 +8106,8 @@ classes:
 
   life stage:
     is_a: organismal entity
+    mixins:
+      - ontology class
     description: >-
       A stage of development or growth of an organism,
       including post-natal adult stages
@@ -8159,6 +8170,8 @@ classes:
   disease or phenotypic feature:
     aliases: ['phenome']
     is_a: biological entity
+    mixins:
+      - ontology class
     description: >-
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
@@ -8292,6 +8305,7 @@ classes:
     is_a: organismal entity
     mixins:
       - physical essence
+      - ontology class
     description: >-
       A subcellular location, cell type or gross anatomical part
     exact_mappings:
@@ -9073,6 +9087,8 @@ classes:
       An individual (human) organism that has a patient role in some clinical context.
     mixins:
       - subject of investigation
+    slots:
+      - has biological sex
 
   cohort:
     is_a: study population
@@ -10365,6 +10381,30 @@ classes:
       - qualified predicate
       - disease context qualifier
 
+  entity to feature or variant qualifiers mixin:
+    description: >-
+      Qualifiers for entity to variant associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+
+  entity to feature or gene qualifiers mixin:
+    description: >-
+      Qualifiers for entity to gene associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+
   feature or disease qualifiers to entity mixin:
     description: >-
       Qualifiers for disease or phenotype to entity associations.
@@ -10628,10 +10668,58 @@ classes:
     is_a: association
     defining_slots:
       - subject
+      - predicate
       - object
     mixins:
       - entity to phenotypic feature association mixin
       - case to entity association mixin
+    slots:
+      - negated
+      - onset qualifier
+
+  case to disease association:
+    is_a: association
+    mixins:
+      - case to entity association mixin
+    description: "An association between a Case (patient) and a Disease"
+    slot_usage:
+      object:
+        range: disease
+    slots:
+      - subject
+      - predicate
+      - object
+      - onset qualifier
+
+  case to variant association:
+    is_a: association
+    mixins:
+      - case to entity association mixin
+    description: "Association between a Case and a Genetic Variant"
+    slot_usage:
+      object:
+        range: sequence variant
+      has zygosity:
+        range: zygosity
+    slots:
+      - subject
+      - predicate
+      - object
+      - has zygosity
+
+  case to gene association:
+    is_a: association
+    mixins:
+      - case to entity association mixin
+    description: "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)"
+    slot_usage:
+      object:
+        range: gene or gene product
+    slots:
+      - subject
+      - predicate
+      - object
+
 
   behavior to behavioral feature association:
     description: >-
@@ -10753,7 +10841,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
@@ -10770,7 +10857,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:

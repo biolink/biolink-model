@@ -533,9 +533,10 @@ message Case
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+  biologicalSex hasBiologicalSex = 0
  }
-// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
-message CaseToPhenotypicFeatureAssociation
+// An association between a Case (patient) and a Disease
+message CaseToDiseaseAssociation
  {
   string id = 0
   iriType iri = 0
@@ -543,9 +544,6 @@ message CaseToPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  namedThing subject = 0
-  predicateType predicate = 0
-  namedThing object = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -576,6 +574,97 @@ message CaseToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  disease object = 0
+  onset onsetQualifier = 0
+ }
+// Association between a Case and a Gene (e.g., indicating a gene of interest for the case)
+message CaseToGeneAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  geneOrGeneProduct object = 0
+ }
+// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
+message CaseToPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  namedThing object = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  boolean negated = 0
+  onset onsetQualifier = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -588,6 +677,50 @@ message CaseToPhenotypicFeatureAssociation
   integer hasTotal = 0
   double hasQuotient = 0
   double hasPercentage = 0
+ }
+// Association between a Case and a Genetic Variant
+message CaseToVariantAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  sequenceVariant object = 0
+  zygosity hasZygosity = 0
  }
 message CausalGeneToDiseaseAssociation
  {
