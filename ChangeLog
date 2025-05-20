@@ -1,10 +1,10 @@
 CHANGES
 =======
-4.2.6-rc4
+4.2.6-rc5
 ----
-* Copy prefixmaps json to src to access from importlib by @kevinschaper in https://github.com/biolink/biolink-model/pull/1551
-
-**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.2.6-rc3...v4.2.6-rc4
+* Add FMA by @cbizon in https://github.com/biolink/biolink-model/pull/1554
+* Bump jinja2 from 3.1.4 to 3.1.6 by @dependabot in https://github.com/biolink/biolink-model/pull/1553
+* Release candidate v4.2.6 rc5 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1556
 
 4.2.5
 ----
@@ -16,9 +16,6 @@ CHANGES
 * Move disease_context_qualifier up to a higher level mixin by @kevinschaper in https://github.com/biolink/biolink-model/pull/1533
 * add subject/object specialization qualifier to help represent extensions in MAXO and GO-CAM by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1534
 * Add species context qualifier to macromolecular machine association mixin by @kevinschaper in https://github.com/biolink/biolink-model/pull/1535
-
-
-**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.2.4...v4.2.5
 
 4.2.5-rc2
 ----

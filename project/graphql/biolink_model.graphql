@@ -1,5 +1,263 @@
 # metamodel_version: 1.7.0
-# version: 4.2.5
+# version: 4.2.6-rc5
+enum AgentTypeEnum
+  {
+    manual_agent
+    automated_agent
+    data_analysis_pipeline
+    computational_model
+    text_mining_agent
+    image_processing_agent
+    manual_validation_of_automated_agent
+    not_provided
+  }
+
+enum ApprovalStatusEnum
+  {
+    discovery_and_development_phase
+    preclinical_research_phase
+    fda_clinical_research_phase
+    fda_review_phase_4
+    fda_post_market_safety_review
+    fda_clinical_research_phase_1
+    fda_clinical_research_phase_2
+    fda_clinical_research_phase_3
+    fda_clinical_research_phase_4
+    fda_fast_track
+    fda_breakthrough_therapy
+    fda_accelerated_approval
+    fda_priority_review
+    regular_fda_approval
+    post_approval_withdrawal
+  }
+
+enum CausalMechanismQualifierEnum
+  {
+    binding
+    inhibition
+    antibody_inhibition
+    antagonism
+    molecular_channel_blockage
+    inverse_agonism
+    negative_allosteric_modulation
+    agonism
+    molecular_channel_opening
+    positive_allosteric_modulation
+    potentiation
+    activation
+    inducer
+    transcriptional_regulation
+    signaling_mediated_control
+    stabilization
+    stimulation
+    releasing_activity
+  }
+
+enum ChemicalEntityDerivativeEnum
+  {
+    metabolite
+  }
+
+enum ChemicalOrGeneOrGeneProductFormOrVariantEnum
+  {
+    genetic_variant_form
+    modified_form
+    loss_of_function_variant_form
+    gain_of_function_variant_form
+    polymorphic_form
+    snp_form
+    analog_form
+  }
+
+enum ClinicalApprovalStatusEnum
+  {
+    approved_for_condition
+    fda_approved_for_condition
+    not_approved_for_condition
+    post_approval_withdrawal
+    off_label_use
+    not_provided
+  }
+
+enum DirectionQualifierEnum
+  {
+    increased
+    upregulated
+    decreased
+    downregulated
+  }
+
+enum DrugAvailabilityEnum
+  {
+    over_the_counter
+    prescription
+  }
+
+enum DrugDeliveryEnum
+  {
+    inhalation
+    oral
+    absorption_through_the_skin
+    intravenous_injection
+  }
+
+enum DruggableGeneCategoryEnum
+  {
+    tclin
+    tbio
+    tchem
+    tdark
+  }
+
+enum FDAIDAAdverseEventEnum
+  {
+    life_threatening_adverse_event
+    serious_adverse_event
+    suspected_adverse_reaction
+    unexpected_adverse_event
+  }
+
+enum GeneOrGeneProductOrChemicalEntityAspectEnum
+  {
+    activity_or_abundance
+    abundance
+    activity
+    expression
+    synthesis
+    degradation
+    cleavage
+    hydrolysis
+    metabolic_processing
+    mutation_rate
+    stability
+    folding
+    localization
+    transport
+    absorption
+    aggregation
+    interaction
+    release
+    secretion
+    uptake
+    splicing
+    molecular_interaction
+    guanyl_nucleotide_exchange
+    adenyl_nucleotide_exchange
+    molecular_modification
+    acetylation
+    acylation
+    alkylation
+    amination
+    carbamoylation
+    ethylation
+    glutathionylation
+    glycation
+    glycosylation
+    glucuronidation
+    n_linked_glycosylation
+    o_linked_glycosylation
+    hydroxylation
+    lipidation
+    farnesylation
+    geranoylation
+    myristoylation
+    palmitoylation
+    prenylation
+    methylation
+    nitrosation
+    nucleotidylation
+    phosphorylation
+    ribosylation
+    ADP__HYPHEN_MINUS__ribosylation
+    sulfation
+    sumoylation
+    ubiquitination
+    oxidation
+    reduction
+    carboxylation
+  }
+
+enum GeneOrGeneProductOrChemicalPartQualifierEnum
+  {
+    __3_prime_utr
+    __5_prime_utr
+    polya_tail
+    promoter
+    enhancer
+    exon
+    intron
+  }
+
+enum KnowledgeLevelEnum
+  {
+    knowledge_assertion
+    logical_entailment
+    prediction
+    statistical_association
+    observation
+    not_provided
+  }
+
+enum LogicalInterpretationEnum
+  {
+    some_some
+    all_some
+    inverse_all_some
+  }
+
+enum PhaseEnum
+  {
+    __0
+    __1
+    __2
+  }
+
+enum ReactionDirectionEnum
+  {
+    left_to_right
+    right_to_left
+    bidirectional
+    neutral
+  }
+
+enum ReactionSideEnum
+  {
+    left
+    right
+  }
+
+enum ResearchPhaseEnum
+  {
+    pre_clinical_research_phase
+    clinical_trial_phase
+    clinical_trial_phase_1
+    clinical_trial_phase_2
+    clinical_trial_phase_3
+    clinical_trial_phase_4
+    not_provided
+  }
+
+enum ResourceRoleEnum
+  {
+    primary_knowledge_source
+    aggregator_knowledge_source
+    supporting_data_source
+  }
+
+enum SequenceEnum
+  {
+    na
+    aa
+  }
+
+enum StrandEnum
+  {
+    __PLUS_SIGN__
+    __HYPHEN_MINUS__
+    __FULL_STOP__
+    __QUESTION_MARK__
+  }
+
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -73,7 +331,7 @@ type Agent
     name: LabelType
   }
 
-type AnatomicalEntity implements PhysicalEssence
+type AnatomicalEntity implements PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -622,16 +880,10 @@ type Case implements SubjectOfInvestigation
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasAttribute: [Attribute]
+    hasBiologicalSex: BiologicalSex
   }
 
-interface CaseToEntityAssociationMixin
-  {
-    subject: Case!
-    predicate: PredicateType!
-    object: NamedThing!
-  }
-
-type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin
+type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -639,9 +891,6 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    subject: NamedThing!
-    predicate: PredicateType!
-    object: NamedThing!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -672,6 +921,104 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasSupportingStudies: [Study]
     type: [String]
     category: [Uriorcurie]
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: Disease!
+    onsetQualifier: Onset
+  }
+
+interface CaseToEntityAssociationMixin
+  {
+    subject: Case!
+    predicate: PredicateType!
+    object: NamedThing!
+  }
+
+type CaseToGeneAssociation implements CaseToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    type: [String]
+    category: [Uriorcurie]
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: GeneOrGeneProduct!
+  }
+
+type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    type: [String]
+    category: [Uriorcurie]
+    negated: Boolean
+    onsetQualifier: Onset
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -686,7 +1033,51 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasPercentage: Double
   }
 
-type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+type CaseToVariantAssociation implements CaseToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    type: [String]
+    category: [Uriorcurie]
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: SequenceVariant!
+    hasZygosity: Zygosity
+  }
+
+type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1172,7 +1563,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     predicate: PredicateType!
   }
 
-type ChemicalMixture
+type ChemicalMixture implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -2049,7 +2440,7 @@ type Disease
     inTaxonLabel: LabelType
   }
 
-type DiseaseOrPhenotypicFeature
+type DiseaseOrPhenotypicFeature implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -2588,6 +2979,32 @@ interface EntityToFeatureOrDiseaseQualifiersMixin
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
     diseaseContextQualifier: Disease
+  }
+
+interface EntityToFeatureOrGeneQualifiersMixin
+  {
+    frequencyQualifier: FrequencyValue
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+  }
+
+interface EntityToFeatureOrVariantQualifiersMixin
+  {
+    frequencyQualifier: FrequencyValue
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
   }
 
 interface EntityToOutcomeAssociationMixin
@@ -3370,7 +3787,7 @@ type GeneRegulatesGeneAssociation
     object: GeneOrGeneProduct!
   }
 
-type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -4598,7 +5015,7 @@ type JournalArticle
     issue: String
   }
 
-type LifeStage
+type LifeStage implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -5110,7 +5527,7 @@ type MolecularActivityToPathwayAssociation
     predicate: PredicateType!
   }
 
-type MolecularEntity
+type MolecularEntity implements OntologyClass
   {
     id: String!
     iri: IriType
