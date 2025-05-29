@@ -6016,6 +6016,25 @@ slots:
     multivalued: true
     range: publication
 
+  sources:
+    aliases: ['source retrieval provenance']
+    description: >-
+      A set of RetrievalSources, which traces where the statement expressed in an
+      Association came from. For example, the provenance of a Gene-Chemical Edge
+      might be traced through the Translator Resource that provided it (e.g. MolePro)
+      to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to
+      the resource that originally created/curated it (e.g. ClinicalTrials.org).
+    comments: >-
+      Note that source retrieval provenance concerns the mechanical retrieval and
+      transformation of data between web accessible information systems. It does not
+      trace the source of knowledge back to specific publications or data sets. And
+      it is not concerned with the reasoning, inference or analysis activities that
+      generate knowledge in the first place (this is instead covered by 'knowledge
+      level' and 'agent type' properties).
+    is_a: association slot
+    multivalued: true
+    range: retrieval source
+
   associated environmental context:
     is_a: association slot
     description: >-
