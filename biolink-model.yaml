@@ -745,6 +745,7 @@ slots:
       an Edge provided by the ARAGORN ARA can expressing knowledge it
       retrieved from both the automat-mychem-info and molepro KPs,
       which both provided it with records of this single fact.
+    multivalued: true
     domain: retrieval source
     range: uriorcurie
 
@@ -7021,13 +7022,13 @@ classes:
       resource role:
         required: true
         description: >-
-            The role of the InformationResource in the retrieval of the
-            knowledge expressed in an Edge, or data used to generate this knowledge.
+          The role of the InformationResource in the retrieval of the
+          knowledge expressed in an Edge, or data used to generate this knowledge.
       upstream resource ids:
         description: >-
-          The InformationResources that served as a source for the
-          InformationResource that served as a source for the knowledge
-          expressed in an Edge, or data used to generate this knowledge.
+          A list of upstream InformationResources from which the resource
+          being described directly retrieved a record of the knowledge
+          expressed in the Edge, or data used to generate this knowledge.
 
    ## Top Level Abstractions of Material & Process Entities
 
