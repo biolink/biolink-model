@@ -5632,6 +5632,18 @@ slots:
     description: >-
       connects an association to a qualitative term denoting the level of confidence
 
+  has confidence score:
+    is_a: association slot
+    description: >-
+      connects an association to a quantitative (numeric) value that can be interpreted
+      as an indicator of the degree of confidence that a piece of information is true,
+      and accurately reflects the aspect of reality it is about.
+    exact_mappings:
+      - SEPIO:0000168
+    close_mappings:
+      - SEPIO:0000187
+      - SEPIO:0000167
+
   has evidence:
     is_a: association slot
     range: evidence type
