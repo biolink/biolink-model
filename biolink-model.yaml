@@ -749,6 +749,17 @@ slots:
     domain: retrieval source
     range: uriorcurie
 
+  source record urls:
+    is_a: node property
+    description: >-
+      A URL linking to a specific web page or document provided by the
+      source, that contains a record of the knowledge expressed in the
+      Edge. If the knowledge is contained in more than one web page on
+      an Information Resource's site, urls MAY be provided for each.
+    multivalued: true
+    domain: retrieval source
+    range: uriorcurie
+
   description:
     aliases: ['definition']
     range: narrative text
@@ -7012,6 +7023,7 @@ classes:
       - resource id
       - resource role
       - upstream resource ids
+      - source record urls
       - xref
     slot_usage:
       resource id:
@@ -7029,6 +7041,11 @@ classes:
           A list of upstream InformationResources from which the resource
           being described directly retrieved a record of the knowledge
           expressed in the Edge, or data used to generate this knowledge.
+      source record urls:
+        description: >-
+          One or more URLs that link to a specific web page or document provided by
+          the InformationResource, that contains a record of the knowledge expressed
+          in the Edge.
 
    ## Top Level Abstractions of Material & Process Entities
 
