@@ -5995,6 +5995,13 @@ slots:
     is_a: association slot
     range: disease or phenotypic feature
 
+  allelic requirement:
+    description: >-
+      the gene variant's inheritance pattern that is associated with the disease or
+      phenotype. This edge property may be used for associations between Genes or
+      SequenceVariants and DiseaseOrPhenotypicFeatures.
+    is_a: association slot
+    range: genetic inheritance
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
