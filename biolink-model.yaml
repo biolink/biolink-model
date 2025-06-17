@@ -499,6 +499,11 @@ slots:
       - gpi:DB_Object_Type
     multivalued: true
 
+  curie extension:
+    description: >-
+       A string extension to a CURIE that provides additional context or specificity
+    range: string
+
   category:
     is_a: type
     domain: entity
@@ -9101,6 +9106,7 @@ classes:
       - subject of investigation
     slots:
       - has biological sex
+      - curie extension
 
   cohort:
     is_a: study population
