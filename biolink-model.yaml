@@ -557,6 +557,11 @@ slots:
       - dct:title
       - WIKIDATA_PROPERTY:P1476
 
+  curie extension:
+    description: >-
+      A url extension to a CURIE that provides additional context or specificity
+    range: string
+
   stoichiometry:
     description: >-
       the relationship between the relative quantities of substances taking part in a reaction or
@@ -9073,6 +9078,8 @@ classes:
       An individual (human) organism that has a patient role in some clinical context.
     mixins:
       - subject of investigation
+    slots:
+      - curie extension
 
   cohort:
     is_a: study population
