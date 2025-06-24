@@ -1255,13 +1255,15 @@ slots:
 
   affinity:
     description: >-
-      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.
+      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity is 8.6. Used in conjunction with the affinity parameter slot.
     is_a: association slot
     range: float
 
   affinity parameter:
     description: >-
-      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
+      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
     is_a: association slot
     range: AffinityParameterEnum
 
