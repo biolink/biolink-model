@@ -5780,6 +5780,19 @@ slots:
     exact_mappings:
       - STATO:0000030
 
+  z score:
+    aliases: ['z-score', 'z-value', 'standard score', 'normal score']
+    is_a: association slot
+    range: float
+    description: >-
+      A measure of the divergence of an individual experimental result from
+      the most probable result, the mean. Z is expressed in terms of the number
+      of standard deviations from the mean value.
+    exact_mappings:
+      - STATO:0000104
+      - NCIT:C68741
+      - EDAM-DATA:1668
+
   p value:
     aliases: ['unadjusted p value']
     is_a: association slot
@@ -11959,8 +11972,12 @@ enums:
       modified_form:
       loss_of_function_variant_form:
         is_a: genetic_variant_form
-      gain_of_function_variant_form:
+      non_loss_of_function_variant_form:
         is_a: genetic_variant_form
+      gain_of_function_variant_form:
+        is_a: non_loss_of_function_variant_form
+      dominant_negative_variant_form:
+        is_a: non_loss_of_function_variant_form
       polymorphic_form:
         is_a: genetic_variant_form
       snp_form:
