@@ -11979,8 +11979,12 @@ enums:
       modified_form:
       loss_of_function_variant_form:
         is_a: genetic_variant_form
-      gain_of_function_variant_form:
+      non_loss_of_function_variant_form:
         is_a: genetic_variant_form
+      gain_of_function_variant_form:
+        is_a: non_loss_of_function_variant_form
+      dominant_negative_variant_form:
+        is_a: non_loss_of_function_variant_form
       polymorphic_form:
         is_a: genetic_variant_form
       snp_form:
