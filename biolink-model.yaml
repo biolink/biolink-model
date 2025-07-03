@@ -5648,6 +5648,7 @@ slots:
 
   has confidence score:
     is_a: association slot
+    range: float
     description: >-
       connects an association to a quantitative (numeric) value that can be interpreted
       as an indicator of the degree of confidence that a piece of information is true,
