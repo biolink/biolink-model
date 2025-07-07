@@ -634,6 +634,12 @@ slots:
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
 
+  hgvs expression:
+    is_a: synonym
+    domain: sequence variant
+    description: >-
+      Text containing variants expressed using the HGVS nomenclature
+
   deprecated:
     range: boolean
     exact_mappings:
