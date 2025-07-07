@@ -745,6 +745,18 @@ slots:
       an Edge provided by the ARAGORN ARA can expressing knowledge it
       retrieved from both the automat-mychem-info and molepro KPs,
       which both provided it with records of this single fact.
+    multivalued: true
+    domain: retrieval source
+    range: uriorcurie
+
+  source record urls:
+    is_a: node property
+    description: >-
+      A URL linking to a specific web page or document provided by the
+      source, that contains a record of the knowledge expressed in the
+      Edge. If the knowledge is contained in more than one web page on
+      an Information Resource's site, urls MAY be provided for each.
+    multivalued: true
     domain: retrieval source
     range: uriorcurie
 
@@ -1243,13 +1255,15 @@ slots:
 
   affinity:
     description: >-
-      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.
+      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity is 8.6. Used in conjunction with the affinity parameter slot.
     is_a: association slot
     range: float
 
   affinity parameter:
     description: >-
-      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
+      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
     is_a: association slot
     range: AffinityParameterEnum
 
@@ -5761,6 +5775,19 @@ slots:
     exact_mappings:
       - STATO:0000030
 
+  z score:
+    aliases: ['z-score', 'z-value', 'standard score', 'normal score']
+    is_a: association slot
+    range: float
+    description: >-
+      A measure of the divergence of an individual experimental result from
+      the most probable result, the mean. Z is expressed in terms of the number
+      of standard deviations from the mean value.
+    exact_mappings:
+      - STATO:0000104
+      - NCIT:C68741
+      - EDAM-DATA:1668
+
   p value:
     aliases: ['unadjusted p value']
     is_a: association slot
@@ -6009,6 +6036,25 @@ slots:
     is_a: association slot
     multivalued: true
     range: publication
+
+  sources:
+    aliases: ['source retrieval provenance']
+    description: >-
+      A set of RetrievalSources, which traces where the statement expressed in an
+      Association came from. For example, the provenance of a Gene-Chemical Edge
+      might be traced through the Translator Resource that provided it (e.g. MolePro)
+      to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to
+      the resource that originally created/curated it (e.g. ClinicalTrials.org).
+    comments: >-
+      Note that source retrieval provenance concerns the mechanical retrieval and
+      transformation of data between web accessible information systems. It does not
+      trace the source of knowledge back to specific publications or data sets. And
+      it is not concerned with the reasoning, inference or analysis activities that
+      generate knowledge in the first place (this is instead covered by 'knowledge
+      level' and 'agent type' properties).
+    is_a: association slot
+    multivalued: true
+    range: retrieval source
 
   associated environmental context:
     is_a: association slot
@@ -6992,6 +7038,7 @@ classes:
       - resource id
       - resource role
       - upstream resource ids
+      - source record urls
       - xref
     slot_usage:
       resource id:
@@ -7002,13 +7049,18 @@ classes:
       resource role:
         required: true
         description: >-
-            The role of the InformationResource in the retrieval of the
-            knowledge expressed in an Edge, or data used to generate this knowledge.
+          The role of the InformationResource in the retrieval of the
+          knowledge expressed in an Edge, or data used to generate this knowledge.
       upstream resource ids:
         description: >-
-          The InformationResources that served as a source for the
-          InformationResource that served as a source for the knowledge
-          expressed in an Edge, or data used to generate this knowledge.
+          A list of upstream InformationResources from which the resource
+          being described directly retrieved a record of the knowledge
+          expressed in the Edge, or data used to generate this knowledge.
+      source record urls:
+        description: >-
+          One or more URLs that link to a specific web page or document provided by
+          the InformationResource, that contains a record of the knowledge expressed
+          in the Edge.
 
    ## Top Level Abstractions of Material & Process Entities
 
@@ -9431,6 +9483,7 @@ classes:
       - qualifier
       - qualifiers  # deprecated
       - publications
+      - sources
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -11913,8 +11966,12 @@ enums:
       modified_form:
       loss_of_function_variant_form:
         is_a: genetic_variant_form
-      gain_of_function_variant_form:
+      non_loss_of_function_variant_form:
         is_a: genetic_variant_form
+      gain_of_function_variant_form:
+        is_a: non_loss_of_function_variant_form
+      dominant_negative_variant_form:
+        is_a: non_loss_of_function_variant_form
       polymorphic_form:
         is_a: genetic_variant_form
       snp_form:
