@@ -562,6 +562,19 @@ slots:
       - dct:title
       - WIKIDATA_PROPERTY:P1476
 
+  hgvs nomenclature:
+    is_a: node property
+    domain: sequence variant
+    multivalued: true
+    description: >-
+      HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee 
+      to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the 
+      different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript,
+      and protein HGVS expressions/nomenclatures and is thus multivalued.
+    comments: >-
+      For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples:
+      https://hgvs-nomenclature.org/stable/recommendations/summary/.  
+
   stoichiometry:
     description: >-
       the relationship between the relative quantities of substances taking part in a reaction or
@@ -9009,6 +9022,7 @@ classes:
         A contiguous change at a Location
     slots:
       - has gene
+      - hgvs nomenclature
     slot_usage:
       has gene:
         multivalued: true
