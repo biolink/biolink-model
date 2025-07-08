@@ -1096,12 +1096,55 @@ slots:
       The phase that a clinical trials study represents
     range: ResearchPhaseEnum
   
-  primary purpose:
+  clinical trial primary purpose:
+    aliases: ['primary purpose']
     is_a: node property
     description: >-
-      The primary purpose of a clinical trial
+      The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, 
+      DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, ECT, OTHER, and (null).
+    range: string
+    domain: clinical trial
 
-   ## Biology
+  clinical trial intervention model:
+    is_a: node property
+    description: >-
+      The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).
+    range: string
+    domain: clinical trial
+
+  clinical trial time perspective:
+    is_a: node property
+    description: >-
+      The time perspective of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      PROSPECTIVE, RETROSPECTIVE, CROSS_SECTIONAL, or OTHER (most common)..
+    range: string
+    domain: clinical trial
+
+  clinical trial overall status:
+    is_a: node property
+    description: >-
+      The overall status of a clinical trial as determined by clinicaltrials.gov
+    range: ClinicalTrialStatusEnum
+    domain: clinical trial
+
+  clinical trial intervention boxed warning:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial intervention has a boxed warning.
+      A boxed warning is the strongest warning that the FDA requires on a prescription drug label. This property should
+      be populated from DailyMed.
+    range: boolean
+    domain: association
+
+  clinical trial tested intervention:
+    is_a: node property
+    description: >-
+      Records whether the clinical trials are testing the intervention.
+    domain: association
+    range: string
+
 
   has biological sequence:
     is_a: node property
@@ -11831,6 +11874,38 @@ classes:
 
 
 enums:
+
+ClinicalTrialStatusEnum:
+  description: >
+    Enumeration of clinical trial statuses indicating the recruitment state,
+    availability, or regulatory status of a clinical study or intervention.
+  permissible_values:
+    ACTIVE_NOT_RECRUITING:
+      description: The study is ongoing but not currently recruiting participants.
+    APPROVED_FOR_MARKETING:
+      description: The intervention has received regulatory approval for marketing.
+    AVAILABLE:
+      description: The intervention or data is available for use or distribution.
+    COMPLETED:
+      description: The study has ended normally and participants are no longer being examined or treated.
+    ENROLLING_BY_INVITATION:
+      description: Participants are being enrolled by invitation only.
+    NO_LONGER_AVAILABLE:
+      description: The intervention or data is no longer available.
+    NOT_YET_RECRUITING:
+      description: The study has not yet started recruiting participants.
+    RECRUITING:
+      description: The study is currently recruiting participants.
+    SUSPENDED:
+      description: The study has been temporarily halted but may resume.
+    TEMPORARILY_NOT_AVAILABLE:
+      description: The intervention or data is not currently available but may become available later.
+    TERMINATED:
+      description: The study has stopped prematurely and will not start again.
+    UNKNOWN:
+      description: The recruitment or availability status is unknown.
+    WITHDRAWN:
+      description: The study was halted before enrolling its first participant.
 
   ApprovalStatusEnum:
     description: >-
