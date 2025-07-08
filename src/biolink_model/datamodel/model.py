@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-15T01:42:22
+# Generation date: 2025-07-08T16:50:53
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -87,6 +87,7 @@ CHEMBL_TARGET = CurieNamespace('CHEMBL_TARGET', 'http://identifiers.org/chembl.t
 CID = CurieNamespace('CID', 'http://pubchem.ncbi.nlm.nih.gov/compound/')
 CIO = CurieNamespace('CIO', 'http://purl.obolibrary.org/obo/CIO_')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
+CLINICALTRIALS = CurieNamespace('CLINICALTRIALS', 'http://identifiers.org/clinicaltrials/')
 CLINVAR = CurieNamespace('CLINVAR', 'http://identifiers.org/clinvar')
 CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
@@ -960,7 +961,7 @@ class ClinicalEntityId(NamedThingId):
     pass
 
 
-class ClinicalTrialId(ClinicalEntityId):
+class ClinicalTrialId(StudyId):
     pass
 
 
@@ -3148,7 +3149,8 @@ class RetrievalSource(InformationContentEntity):
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     resource_id: Union[str, URIorCURIE] = None
     resource_role: Union[str, "ResourceRoleEnum"] = None
-    upstream_resource_ids: Optional[Union[str, URIorCURIE]] = None
+    upstream_resource_ids: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    source_record_urls: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3167,8 +3169,13 @@ class RetrievalSource(InformationContentEntity):
         if not isinstance(self.resource_role, ResourceRoleEnum):
             self.resource_role = ResourceRoleEnum(self.resource_role)
 
-        if self.upstream_resource_ids is not None and not isinstance(self.upstream_resource_ids, URIorCURIE):
-            self.upstream_resource_ids = URIorCURIE(self.upstream_resource_ids)
+        if not isinstance(self.upstream_resource_ids, list):
+            self.upstream_resource_ids = [self.upstream_resource_ids] if self.upstream_resource_ids is not None else []
+        self.upstream_resource_ids = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.upstream_resource_ids]
+
+        if not isinstance(self.source_record_urls, list):
+            self.source_record_urls = [self.source_record_urls] if self.source_record_urls is not None else []
+        self.source_record_urls = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.source_record_urls]
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
@@ -6128,6 +6135,7 @@ class SequenceVariant(BiologicalEntity):
     id: Union[str, SequenceVariantId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_gene: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
+    hgvs_nomenclature: Optional[Union[str, list[str]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -6139,6 +6147,10 @@ class SequenceVariant(BiologicalEntity):
         if not isinstance(self.has_gene, list):
             self.has_gene = [self.has_gene] if self.has_gene is not None else []
         self.has_gene = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene]
+
+        if not isinstance(self.hgvs_nomenclature, list):
+            self.hgvs_nomenclature = [self.hgvs_nomenclature] if self.hgvs_nomenclature is not None else []
+        self.hgvs_nomenclature = [v if isinstance(v, str) else str(v) for v in self.hgvs_nomenclature]
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
@@ -6403,7 +6415,11 @@ class ClinicalEntity(NamedThing):
 
 
 @dataclass(repr=False)
-class ClinicalTrial(ClinicalEntity):
+class ClinicalTrial(Study):
+    """
+    A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or
+    more health-related interventions to evaluate the effects on health outcomes.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalTrial"]
@@ -6413,12 +6429,24 @@ class ClinicalTrial(ClinicalEntity):
 
     id: Union[str, ClinicalTrialId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    clinical_trial_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
+    clinical_trial_primary_purpose: Optional[str] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClinicalTrialId):
             self.id = ClinicalTrialId(self.id)
+
+        if self.clinical_trial_phase is not None and not isinstance(self.clinical_trial_phase, ResearchPhaseEnum):
+            self.clinical_trial_phase = ResearchPhaseEnum(self.clinical_trial_phase)
+
+        if self.clinical_trial_primary_purpose is not None and not isinstance(self.clinical_trial_primary_purpose, str):
+            self.clinical_trial_primary_purpose = str(self.clinical_trial_primary_purpose)
+
+        if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
+            self.creation_date = XSDDate(self.creation_date)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -7364,6 +7392,7 @@ class Association(Entity):
     qualifier: Optional[str] = None
     qualifiers: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]] = empty_list()
+    sources: Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]] = empty_list()
     has_evidence: Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]] = empty_list()
     knowledge_source: Optional[str] = None
     primary_knowledge_source: Optional[str] = None
@@ -7433,6 +7462,10 @@ class Association(Entity):
         if not isinstance(self.publications, list):
             self.publications = [self.publications] if self.publications is not None else []
         self.publications = [v if isinstance(v, PublicationId) else PublicationId(v) for v in self.publications]
+
+        if not isinstance(self.sources, list):
+            self.sources = [self.sources] if self.sources is not None else []
+        self.sources = [v if isinstance(v, RetrievalSourceId) else RetrievalSourceId(v) for v in self.sources]
 
         if not isinstance(self.has_evidence, list):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
@@ -13508,6 +13541,56 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class ClinicalTrialStatusEnum(EnumDefinitionImpl):
+    """
+    Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a
+    clinical study or intervention.
+    """
+    ACTIVE_NOT_RECRUITING = PermissibleValue(
+        text="ACTIVE_NOT_RECRUITING",
+        description="The study is ongoing but not currently recruiting participants.")
+    APPROVED_FOR_MARKETING = PermissibleValue(
+        text="APPROVED_FOR_MARKETING",
+        description="The intervention has received regulatory approval for marketing.")
+    AVAILABLE = PermissibleValue(
+        text="AVAILABLE",
+        description="The intervention or data is available for use or distribution.")
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        description="The study has ended normally and participants are no longer being examined or treated.")
+    ENROLLING_BY_INVITATION = PermissibleValue(
+        text="ENROLLING_BY_INVITATION",
+        description="Participants are being enrolled by invitation only.")
+    NO_LONGER_AVAILABLE = PermissibleValue(
+        text="NO_LONGER_AVAILABLE",
+        description="The intervention or data is no longer available.")
+    NOT_YET_RECRUITING = PermissibleValue(
+        text="NOT_YET_RECRUITING",
+        description="The study has not yet started recruiting participants.")
+    RECRUITING = PermissibleValue(
+        text="RECRUITING",
+        description="The study is currently recruiting participants.")
+    SUSPENDED = PermissibleValue(
+        text="SUSPENDED",
+        description="The study has been temporarily halted but may resume.")
+    TEMPORARILY_NOT_AVAILABLE = PermissibleValue(
+        text="TEMPORARILY_NOT_AVAILABLE",
+        description="The intervention or data is not currently available but may become available later.")
+    TERMINATED = PermissibleValue(
+        text="TERMINATED",
+        description="The study has stopped prematurely and will not start again.")
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="The recruitment or availability status is unknown.")
+    WITHDRAWN = PermissibleValue(
+        text="WITHDRAWN",
+        description="The study was halted before enrolling its first participant.")
+
+    _defn = EnumDefinition(
+        name="ClinicalTrialStatusEnum",
+        description="""Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.""",
+    )
+
 class ApprovalStatusEnum(EnumDefinitionImpl):
 
     discovery_and_development_phase = PermissibleValue(
@@ -13621,7 +13704,9 @@ class ChemicalOrGeneOrGeneProductFormOrVariantEnum(EnumDefinitionImpl):
     genetic_variant_form = PermissibleValue(text="genetic_variant_form")
     modified_form = PermissibleValue(text="modified_form")
     loss_of_function_variant_form = PermissibleValue(text="loss_of_function_variant_form")
+    non_loss_of_function_variant_form = PermissibleValue(text="non_loss_of_function_variant_form")
     gain_of_function_variant_form = PermissibleValue(text="gain_of_function_variant_form")
+    dominant_negative_variant_form = PermissibleValue(text="dominant_negative_variant_form")
     polymorphic_form = PermissibleValue(text="polymorphic_form")
     snp_form = PermissibleValue(text="snp_form")
     analog_form = PermissibleValue(text="analog_form")
@@ -13929,6 +14014,27 @@ class ResourceRoleEnum(EnumDefinitionImpl):
         description="""The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.""",
     )
 
+class AffinityParameterEnum(EnumDefinitionImpl):
+    """
+    The types of parameters that can be used to describe the affinity between two entities, characteristically
+    chemicals and proteins.
+    """
+    pIC50 = PermissibleValue(
+        text="pIC50",
+        description="""Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function""")
+    pEC50 = PermissibleValue(
+        text="pEC50",
+        description="""Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function""")
+    pAC50 = PermissibleValue(text="pAC50")
+    pXC50 = PermissibleValue(text="pXC50")
+    pKi = PermissibleValue(text="pKi")
+    pKd = PermissibleValue(text="pKd")
+
+    _defn = EnumDefinition(
+        name="AffinityParameterEnum",
+        description="""The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.""",
+    )
+
 class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
     """
     please consult with the FDA guidelines as proposed in this document:
@@ -14054,6 +14160,9 @@ slots.publication_type = Slot(uri=DCT.type, name="publication type", curie=DCT.c
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=Entity, range=Optional[Union[str, LabelType]])
 
+slots.hgvs_nomenclature = Slot(uri=BIOLINK.hgvs_nomenclature, name="hgvs nomenclature", curie=BIOLINK.curie('hgvs_nomenclature'),
+                   model_uri=BIOLINK.hgvs_nomenclature, domain=SequenceVariant, range=Optional[Union[str, list[str]]])
+
 slots.stoichiometry = Slot(uri=BIOLINK.stoichiometry, name="stoichiometry", curie=BIOLINK.curie('stoichiometry'),
                    model_uri=BIOLINK.stoichiometry, domain=Association, range=Optional[int])
 
@@ -14115,7 +14224,10 @@ slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.cu
                    model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
 
 slots.upstream_resource_ids = Slot(uri=BIOLINK.upstream_resource_ids, name="upstream resource ids", curie=BIOLINK.curie('upstream_resource_ids'),
-                   model_uri=BIOLINK.upstream_resource_ids, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
+                   model_uri=BIOLINK.upstream_resource_ids, domain=RetrievalSource, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+
+slots.source_record_urls = Slot(uri=BIOLINK.source_record_urls, name="source record urls", curie=BIOLINK.curie('source_record_urls'),
+                   model_uri=BIOLINK.source_record_urls, domain=RetrievalSource, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.description = Slot(uri=DCT.description, name="description", curie=DCT.curie('description'),
                    model_uri=BIOLINK.description, domain=None, range=Optional[Union[str, NarrativeText]])
@@ -14237,6 +14349,27 @@ slots.keywords = Slot(uri=BIOLINK.keywords, name="keywords", curie=BIOLINK.curie
 slots.mesh_terms = Slot(uri=BIOLINK.mesh_terms, name="mesh terms", curie=BIOLINK.curie('mesh_terms'),
                    model_uri=BIOLINK.mesh_terms, domain=Publication, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
+slots.clinical_trial_phase = Slot(uri=BIOLINK.clinical_trial_phase, name="clinical trial phase", curie=BIOLINK.curie('clinical_trial_phase'),
+                   model_uri=BIOLINK.clinical_trial_phase, domain=NamedThing, range=Optional[Union[str, "ResearchPhaseEnum"]])
+
+slots.clinical_trial_primary_purpose = Slot(uri=BIOLINK.clinical_trial_primary_purpose, name="clinical trial primary purpose", curie=BIOLINK.curie('clinical_trial_primary_purpose'),
+                   model_uri=BIOLINK.clinical_trial_primary_purpose, domain=ClinicalTrial, range=Optional[str])
+
+slots.clinical_trial_intervention_model = Slot(uri=BIOLINK.clinical_trial_intervention_model, name="clinical trial intervention model", curie=BIOLINK.curie('clinical_trial_intervention_model'),
+                   model_uri=BIOLINK.clinical_trial_intervention_model, domain=ClinicalTrial, range=Optional[str])
+
+slots.clinical_trial_time_perspective = Slot(uri=BIOLINK.clinical_trial_time_perspective, name="clinical trial time perspective", curie=BIOLINK.curie('clinical_trial_time_perspective'),
+                   model_uri=BIOLINK.clinical_trial_time_perspective, domain=ClinicalTrial, range=Optional[str])
+
+slots.clinical_trial_overall_status = Slot(uri=BIOLINK.clinical_trial_overall_status, name="clinical trial overall status", curie=BIOLINK.curie('clinical_trial_overall_status'),
+                   model_uri=BIOLINK.clinical_trial_overall_status, domain=ClinicalTrial, range=Optional[Union[str, "ClinicalTrialStatusEnum"]])
+
+slots.clinical_trial_intervention_boxed_warning = Slot(uri=BIOLINK.clinical_trial_intervention_boxed_warning, name="clinical trial intervention boxed warning", curie=BIOLINK.curie('clinical_trial_intervention_boxed_warning'),
+                   model_uri=BIOLINK.clinical_trial_intervention_boxed_warning, domain=Association, range=Optional[Union[bool, Bool]])
+
+slots.clinical_trial_tested_intervention = Slot(uri=BIOLINK.clinical_trial_tested_intervention, name="clinical trial tested intervention", curie=BIOLINK.curie('clinical_trial_tested_intervention'),
+                   model_uri=BIOLINK.clinical_trial_tested_intervention, domain=Association, range=Optional[str])
+
 slots.has_biological_sequence = Slot(uri=BIOLINK.has_biological_sequence, name="has biological sequence", curie=BIOLINK.curie('has_biological_sequence'),
                    model_uri=BIOLINK.has_biological_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
 
@@ -14305,6 +14438,12 @@ slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolera
 
 slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from, name="animal model available from", curie=BIOLINK.curie('animal_model_available_from'),
                    model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+
+slots.affinity = Slot(uri=BIOLINK.affinity, name="affinity", curie=BIOLINK.curie('affinity'),
+                   model_uri=BIOLINK.affinity, domain=Association, range=Optional[float])
+
+slots.affinity_parameter = Slot(uri=BIOLINK.affinity_parameter, name="affinity parameter", curie=BIOLINK.curie('affinity_parameter'),
+                   model_uri=BIOLINK.affinity_parameter, domain=Association, range=Optional[Union[str, "AffinityParameterEnum"]])
 
 slots.FDA_adverse_event_level = Slot(uri=BIOLINK.FDA_adverse_event_level, name="FDA adverse event level", curie=BIOLINK.curie('FDA_adverse_event_level'),
                    model_uri=BIOLINK.FDA_adverse_event_level, domain=Association, range=Optional[Union[str, "FDAIDAAdverseEventEnum"]])
@@ -15248,6 +15387,9 @@ slots.negated = Slot(uri=BIOLINK.negated, name="negated", curie=BIOLINK.curie('n
 slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has confidence level", curie=BIOLINK.curie('has_confidence_level'),
                    model_uri=BIOLINK.has_confidence_level, domain=Association, range=Optional[str])
 
+slots.has_confidence_score = Slot(uri=BIOLINK.has_confidence_score, name="has confidence score", curie=BIOLINK.curie('has_confidence_score'),
+                   model_uri=BIOLINK.has_confidence_score, domain=Association, range=Optional[float])
+
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
 
@@ -15286,6 +15428,9 @@ slots.supporting_data_set = Slot(uri=BIOLINK.supporting_data_set, name="supporti
 
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
                    model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
+
+slots.z_score = Slot(uri=BIOLINK.z_score, name="z score", curie=BIOLINK.curie('z_score'),
+                   model_uri=BIOLINK.z_score, domain=Association, range=Optional[float])
 
 slots.p_value = Slot(uri=BIOLINK.p_value, name="p value", curie=BIOLINK.curie('p_value'),
                    model_uri=BIOLINK.p_value, domain=Association, range=Optional[float])
@@ -15367,6 +15512,9 @@ slots.phenotypic_state = Slot(uri=BIOLINK.phenotypic_state, name="phenotypic sta
 
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
                    model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])
+
+slots.sources = Slot(uri=BIOLINK.sources, name="sources", curie=BIOLINK.curie('sources'),
+                   model_uri=BIOLINK.sources, domain=Association, range=Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]])
 
 slots.associated_environmental_context = Slot(uri=BIOLINK.associated_environmental_context, name="associated environmental context", curie=BIOLINK.curie('associated_environmental_context'),
                    model_uri=BIOLINK.associated_environmental_context, domain=Association, range=Optional[str])
@@ -15492,7 +15640,10 @@ slots.retrieval_source_resource_role = Slot(uri=BIOLINK.resource_role, name="ret
                    model_uri=BIOLINK.retrieval_source_resource_role, domain=RetrievalSource, range=Union[str, "ResourceRoleEnum"])
 
 slots.retrieval_source_upstream_resource_ids = Slot(uri=BIOLINK.upstream_resource_ids, name="retrieval source_upstream resource ids", curie=BIOLINK.curie('upstream_resource_ids'),
-                   model_uri=BIOLINK.retrieval_source_upstream_resource_ids, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
+                   model_uri=BIOLINK.retrieval_source_upstream_resource_ids, domain=RetrievalSource, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+
+slots.retrieval_source_source_record_urls = Slot(uri=BIOLINK.source_record_urls, name="retrieval source_source record urls", curie=BIOLINK.curie('source_record_urls'),
+                   model_uri=BIOLINK.retrieval_source_source_record_urls, domain=RetrievalSource, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.molecular_activity_has_input = Slot(uri=BIOLINK.has_input, name="molecular activity_has input", curie=BIOLINK.curie('has_input'),
                    model_uri=BIOLINK.molecular_activity_has_input, domain=MolecularActivity, range=Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]])

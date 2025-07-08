@@ -244,6 +244,19 @@
             "title": "Activity",
             "type": "object"
         },
+        "AffinityParameterEnum": {
+            "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.",
+            "enum": [
+                "pIC50",
+                "pEC50",
+                "pAC50",
+                "pXC50",
+                "pKi",
+                "pKd"
+            ],
+            "title": "AffinityParameterEnum",
+            "type": "string"
+        },
         "Agent": {
             "additionalProperties": false,
             "description": "person, group, organization or project that provides a piece of information (i.e. a knowledge association)",
@@ -755,6 +768,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the structure at a later time",
                     "type": "string"
@@ -1067,6 +1090,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -1626,6 +1659,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -2433,6 +2476,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -4169,6 +4222,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the case (e.g. patient) that has the property",
                     "type": "string"
@@ -4481,6 +4544,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -4882,6 +4955,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the case (e.g. patient) that has the property",
                     "type": "string"
@@ -5211,6 +5294,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -5602,6 +5695,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -6258,6 +6361,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "A cell line derived from an organismal entity with a disease state that is used as a model of that disease.",
                     "type": "string"
@@ -6609,6 +6722,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -7238,6 +7361,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
                     "type": [
@@ -7742,6 +7875,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -8066,6 +8209,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -8547,6 +8700,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -9119,6 +9282,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
                     "description": "the chemical entity or entity that is an interactor"
@@ -9507,6 +9680,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
                     "description": "the chemical entity or entity that is an interactor"
@@ -9609,7 +9792,9 @@
                 "genetic_variant_form",
                 "modified_form",
                 "loss_of_function_variant_form",
+                "non_loss_of_function_variant_form",
                 "gain_of_function_variant_form",
+                "dominant_negative_variant_form",
                 "polymorphic_form",
                 "snp_form",
                 "analog_form"
@@ -9991,6 +10176,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
                     "description": "the chemical entity or entity that is an interactor"
@@ -10313,6 +10508,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -10662,6 +10867,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
                     "description": "the chemical entity or entity that is an interactor"
@@ -10981,6 +11196,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -12093,7 +12318,7 @@
         },
         "ClinicalTrial": {
             "additionalProperties": false,
-            "description": "",
+            "description": "A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.",
             "properties": {
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -12104,6 +12329,25 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "clinical_trial_phase": {
+                    "$ref": "#/$defs/ResearchPhaseEnum",
+                    "description": "The phase that a clinical trials study represents"
+                },
+                "clinical_trial_primary_purpose": {
+                    "description": "The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are  TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE,  DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creation_date": {
+                    "description": "date on which an entity was created. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -12200,6 +12444,26 @@
             ],
             "title": "ClinicalTrial",
             "type": "object"
+        },
+        "ClinicalTrialStatusEnum": {
+            "description": "Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.",
+            "enum": [
+                "ACTIVE_NOT_RECRUITING",
+                "APPROVED_FOR_MARKETING",
+                "AVAILABLE",
+                "COMPLETED",
+                "ENROLLING_BY_INVITATION",
+                "NO_LONGER_AVAILABLE",
+                "NOT_YET_RECRUITING",
+                "RECRUITING",
+                "SUSPENDED",
+                "TEMPORARILY_NOT_AVAILABLE",
+                "TERMINATED",
+                "UNKNOWN",
+                "WITHDRAWN"
+            ],
+            "title": "ClinicalTrialStatusEnum",
+            "type": "string"
         },
         "CodingSequence": {
             "additionalProperties": false,
@@ -13420,6 +13684,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "information content entity which an agent has helped realise",
                     "type": "string"
@@ -13803,6 +14077,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -15345,6 +15629,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "disease or phenotype",
                     "type": "string"
@@ -15665,6 +15959,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "disease or phenotype",
                     "type": "string"
@@ -15977,6 +16281,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -16375,6 +16689,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -17236,6 +17560,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the drug that is an interactor",
                     "type": "string"
@@ -17783,6 +18117,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state."
@@ -18118,6 +18462,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -18437,6 +18791,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -19655,6 +20019,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -19974,6 +20348,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -20373,6 +20757,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -21045,6 +21439,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term"
@@ -21677,6 +22081,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
                     "type": [
@@ -22096,6 +22510,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -22630,6 +23054,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
@@ -23054,6 +23488,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
                     "type": [
@@ -23447,6 +23891,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -23844,6 +24298,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "gene in which variation is correlated with the phenotypic feature"
@@ -24178,6 +24642,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -24534,6 +25008,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "stage_qualifier": {
                     "description": "stage during which gene or protein expression of takes place.",
                     "type": [
@@ -24853,6 +25337,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -25181,6 +25675,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
@@ -25493,6 +25997,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -25821,6 +26335,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term",
                     "type": "string"
@@ -26133,6 +26657,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -26524,6 +27058,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -27305,6 +27849,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "start_interbase_coordinate": {
                     "description": "The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).",
                     "type": [
@@ -27808,6 +28362,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "A genotype that has a role in modeling the disease.",
                     "type": "string"
@@ -28171,6 +28735,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "a genotype that is associated in some way with a disease state",
                     "type": "string"
@@ -28502,6 +29076,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "parent genotype",
                     "type": "string"
@@ -28814,6 +29398,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -29208,6 +29802,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "genotype that is associated with the phenotypic feature",
                     "type": "string"
@@ -29531,6 +30135,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -31018,6 +31632,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -32095,6 +32719,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
                     "type": [
@@ -32422,6 +33056,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
                     "type": [
@@ -32741,6 +33385,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -33313,6 +33967,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the material sample being described",
                     "type": "string"
@@ -33646,6 +34310,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -34265,6 +34939,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -34585,6 +35269,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -34897,6 +35591,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -35687,6 +36391,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -37121,6 +37835,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the taxon that is the subject of the association",
                     "type": "string"
@@ -37441,6 +38165,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the more specific taxon",
                     "type": "string"
@@ -37753,6 +38487,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -38113,6 +38857,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.",
                     "type": "string"
@@ -38444,6 +39198,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
@@ -38762,6 +39526,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -40327,6 +41101,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -40721,6 +41505,16 @@
                     "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -42077,6 +42871,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the population that form the subject of the association",
                     "type": "string"
@@ -42970,6 +43774,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -44497,6 +45311,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "stoichiometry": {
                     "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
                     "type": [
@@ -44824,6 +45648,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -45467,6 +46301,16 @@
                         "null"
                     ]
                 },
+                "source_record_urls": {
+                    "description": "One or more URLs that link to a specific web page or document provided by the InformationResource, that contains a record of the knowledge expressed in the Edge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -45487,9 +46331,12 @@
                     ]
                 },
                 "upstream_resource_ids": {
-                    "description": "The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.",
+                    "description": "A list of upstream InformationResources from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -45747,6 +46594,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -46084,6 +46941,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -46216,6 +47083,16 @@
                 },
                 "has_gene": {
                     "description": "Each allele can be associated with any number of genes",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "hgvs_nomenclature": {
+                    "description": "HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.",
                     "items": {
                         "type": "string"
                     },
@@ -46990,6 +47867,16 @@
                 },
                 "has_gene": {
                     "description": "Each allele can be associated with any number of genes",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "hgvs_nomenclature": {
+                    "description": "HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.",
                     "items": {
                         "type": "string"
                     },
@@ -47982,6 +48869,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -48572,6 +49469,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -49214,6 +50121,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "A variant that has a role in modeling the disease.",
                     "type": "string"
@@ -49577,6 +50494,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated in some way with the disease state",
                     "type": "string"
@@ -49900,6 +50827,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -50241,6 +51178,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
@@ -50642,6 +51589,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
                     "type": "string"
@@ -51000,6 +51957,16 @@
                 },
                 "retrieval_source_ids": {
                     "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
                         "type": "string"
                     },
