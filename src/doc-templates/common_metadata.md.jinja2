@@ -1,0 +1,55 @@
+{% if element.id_prefixes %}
+## Valid ID Prefixes
+
+Instances of this class *should* have identifiers with one of the following prefixes, ordered with the most preferred first:
+
+| ID Prefix | Usage |
+| --- | --- |
+{% for p in element.id_prefixes -%}
+| {{ p }} | {% for item in schemaview.get_elements_applicable_by_prefix(p) %}{{ gen.link(schemaview.get_element(item)) }}<br>{% endfor %} |
+{% endfor %}
+{% endif %}
+
+{% if element.annotations %}
+## Annotations
+
+| property | value |
+| --- | --- |
+{% for a in element.annotations -%}
+    {%- if not a.startswith('_') -%}
+| {{ a }} | {{ element.annotations[a].value }} |
+    {%- endif -%}
+{% endfor %}
+{% endif %}
+
+{% if element.examples %}
+## Example values
+
+Slot Name | Value |
+| --- | --- |
+{% for x in element.examples -%}
+| {{ gen.name(element) }} | {{ x.value }} |
+{% endfor %}
+
+{% endif %}
+
+
+{% set mapping_items = schemaview.get_mappings(element.name).items() %}
+{% set valid_mappings = [] %}
+
+{% for m, mt in mapping_items %}
+    {% if mt and m != "self" and m != "native" %}
+        {% set valid_mappings = valid_mappings + [(m, mt)] %}
+    {% endif %}
+{% endfor %}
+
+{% if valid_mappings %}
+## Mappings
+
+| Mapping Type | Mapped Value |
+| --- | --- |
+{% for m, mt in valid_mappings %}
+| {{ m }} | {{ mt|join(', ') }} |
+{% endfor %}
+{% endif %}
+

@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "biolink-model"
+version = "0.0.0"
+description = "The Biolink Model is a high-level data model designed to standardize types and relationships in biological knowledgebases."
+authors = ["Chris Mungall <cjm@berkeleybop.org>", "Deepak Unni <deepak.unni3@gmail.com>","Sierra Moxon <smoxon@lbl.gov>", "Richard Bruskiewich <richard@starinformatics.com>"]
+license = "MIT"
+readme = "README.md"
+include = ["README.md", "src/biolink_model/schema", "project", "src/biolink_model/datamodel", "src/biolink_model/scripts"]
+
+[tool.poetry.scripts]
+generate_viz_json = "src.biolink_model.scripts.generate_json:generate_viz_json"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+curies = "^0.7.4"
+prefixmaps = "^0.2.3"
+pyyaml = "^6.0.1"
+stringcase = "^1.2.0"
+pytest = "^8.1.1"
+beautifulsoup4 = ">=4.0.0"
+yamllint = "^1.35.1"
+path = "^17.0.0"
+linkml-runtime = "^1.8.3"
+requests = ">=2.32.3"
+linkml = "^1.9.1"
+click = ">8.0.0,<8.2.0"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+
+[tool.poetry.dev-dependencies]
+linkml = ">=1.6.3"
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.5.17"
+mkdocs-mermaid2-plugin = "^1.1.1"
+schemasheets = "^0.2.1"
+codespell = "^2.2.6"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry.extras]
+docs = ["mkdocs-material"]
+
+[tool.codespell]
+skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'
+ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'

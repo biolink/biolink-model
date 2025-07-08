@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<h2>Visualizations of the Biolink Categories</h2>
+<div>
+    <button class="active"><a href="categories.html">Categories</a></button>
+    <button><a href="associations.html">Associations</a></button>
+    <button><a href="predicates.html">Predicates</a></button>
+    <button><a href="qualifiers.html">Qualifiers</a></button>
+    <button><a href="treats_dag.html">Treats (with mixins)</a></button>
+    <button><a href="aspects.html">Aspects</a></button>
+    <button><a href="https://biolink.github.io/biolink-model">Back to Documentation</a></button>
+</div>
+
+<div>
+    <!-- Thank you to https://bl.ocks.org/d3noob/8375092 for the tree visualization code -->
+    <!-- Adapted from Amy Glen’s visualizations of Biolink https://github.com/amykglen/tree-viz-biolink -->
+    <!-- load the d3.js library -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="d3_viz.js"></script>
+    <script src="d3_categories.js"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+[
+    {
+        "name": "qualifier",
+        "children": [
+            {
+                "name": "aspect_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_aspect_qualifier",
+                        "parent": "aspect_qualifier"
+                    },
+                    {
+                        "name": "subject_aspect_qualifier",
+                        "parent": "aspect_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "context_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_context_qualifier",
+                        "parent": "context_qualifier"
+                    },
+                    {
+                        "name": "subject_context_qualifier",
+                        "parent": "context_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "derivative_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_derivative_qualifier",
+                        "parent": "derivative_qualifier"
+                    },
+                    {
+                        "name": "subject_derivative_qualifier",
+                        "parent": "derivative_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "direction_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_direction_qualifier",
+                        "parent": "direction_qualifier"
+                    },
+                    {
+                        "name": "subject_direction_qualifier",
+                        "parent": "direction_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "form_or_variant_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_form_or_variant_qualifier",
+                        "parent": "form_or_variant_qualifier"
+                    },
+                    {
+                        "name": "subject_form_or_variant_qualifier",
+                        "parent": "form_or_variant_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "frequency_qualifier",
+                "parent": "qualifier"
+            },
+            {
+                "name": "onset_qualifier",
+                "parent": "qualifier"
+            },
+            {
+                "name": "part_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_part_qualifier",
+                        "parent": "part_qualifier"
+                    },
+                    {
+                        "name": "subject_part_qualifier",
+                        "parent": "part_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "population_context_qualifier",
+                "parent": "qualifier"
+            },
+            {
+                "name": "qualified_predicate",
+                "parent": "qualifier"
+            },
+            {
+                "name": "sex_qualifier",
+                "parent": "qualifier"
+            },
+            {
+                "name": "statement_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "anatomical_context_qualifier",
+                        "parent": "statement_qualifier"
+                    },
+                    {
+                        "name": "causal_mechanism_qualifier",
+                        "parent": "statement_qualifier"
+                    },
+                    {
+                        "name": "species_context_qualifier",
+                        "parent": "statement_qualifier"
+                    },
+                    {
+                        "name": "stage_qualifier",
+                        "parent": "statement_qualifier"
+                    }
+                ]
+            },
+            {
+                "name": "temporal_context_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "temporal_interval_qualifier",
+                        "parent": "temporal_context_qualifier"
+                    }
+                ]
+            }
+        ]
+    }
+]

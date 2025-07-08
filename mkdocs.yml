@@ -1,0 +1,39 @@
+---
+site_name: "Biolink Model Documentation"
+theme:
+  name: material
+  palette:
+    scheme: black
+    primary: black
+  logo: images/biolink-logo.png
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2
+nav:
+  # - Home: home.md
+  - Overview: index.md
+  - Using the LinkML Modeling Language: using-the-modeling-language.md
+  - Associations with Qualifiers: association-examples-with-qualifiers.md
+  - Interpreting a Fully Qualified Edge: reading-a-qualifier-based-statement.md
+  - Curating Biolink: curating-the-model.md
+  - Maintaining Biolink: maintaining-the-model.md
+  - Working with Biolink: working-with-the-model.md
+  - Infores Identifier Registry: https://biolink.github.io/information-resource-registry
+  - Visualizations:
+    - Classes (categories): categories.html
+    - Predicates: predicates.html
+    - Qualifiers: qualifiers.html
+    - Associations: associations.html
+    - Aspects: aspects.html
+  - FAQ: faq.md
+site_url: https://biolink.github.io/biolink-model
+repo_url: https://github.com/biolink/biolink-model
+extra_css:
+  - style.css
+extra:
+  analytics:
+    provider: google
+    property: G-J23SCD6JB8
+

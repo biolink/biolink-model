@@ -1,0 +1,91 @@
+# <strong>  Class: {{ gen.name(element) }} </strong> {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span>{% endif %}{% if element.abstract %}<span style="color: purple;"><strong><small> (Abstract) </small> </strong></span> {% endif %}
+{% if element.description or element.notes %}
+<div class="highlight-box">
+    {% if element.description %}
+      <strong>Description:</strong><i> {{ element.description }}</i><br>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if element.aliases %} Aliases: {{ element.aliases | join(', ') }}  {% endif %}
+{% if element.notes %} Notes: {{ element.notes|join(' ') }}   {% endif %}
+
+{% if diagram_type == "er_diagram" %}
+```{{ gen.mermaid_directive() }}
+{{ gen.mermaid_diagram([element.name]) }}
+```
+{% else %}
+{% include "class_diagram.md.jinja2" %}
+{% endif %}
+
+{% if schemaview.class_parents(element.name) or schemaview.class_children(element.name, mixins=False) %}
+
+
+## Inheritance
+{{ gen.inheritance_tree(element, mixins=True) }}
+{% else %}
+<!-- no inheritance hierarchy -->
+{% endif %}
+
+## Slots
+
+| Name | Cardinality and Range | Inheritance | Examples |
+| ---  | --- | --- | --- |
+{% if gen.get_direct_slots(element)|length > 0 %}
+{%- for slot in gen.get_direct_slots(element) -%}
+| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | direct | {% if slot.examples %}{{ slot.examples | map(attribute='value') | join(', ') }}{% endif %} |
+{% endfor -%}
+{% endif -%}
+{% if gen.get_indirect_slots(element)|length > 0 %}
+{%- for slot in gen.get_indirect_slots(element) -%}
+| {{ gen.link(slot) }}: <br/> <i> {{ slot.description }} </i> | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} | {% if slot.examples %}{{ slot.examples | map(attribute='value') | join(', ') }}{% endif %} |
+{% endfor -%}
+{% endif %}
+
+{% if schemaview.is_mixin(element.name) %}
+
+## Mixin Usage
+
+| mixed into | description |
+| --- | --- |
+{% for c in schemaview.class_children(element.name, is_a=False) -%}
+| {{ gen.link(c) }} | {{ schemaview.get_class(c).description }} |
+{% endfor %}
+{% endif %}
+
+{% if schemaview.usage_index().get(element.name) %}
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+{% for usage in schemaview.usage_index().get(element.name) -%}
+| {{gen.link(usage.used_by)}} | {{gen.link(usage.slot)}} | {{usage.metaslot}} | {{ gen.link(usage.used) }} |
+{% endfor %}
+{% endif %}
+
+{% include "common_metadata.md.jinja2" %}
+
+{% if gen.example_object_blobs(element.name) -%}
+## Examples:
+{% for name, blob in gen.example_object_blobs(element.name) -%}
+### Example: {{name}}
+
+```yaml
+{{ blob }}
+```
+{% endfor %}
+{% endif %}
+
+
+## LinkML Source
+
+<details open>
+```yaml
+{{gen.yaml(element)}}
+```
+</details>
+
+
+{%- if footer -%}
+{{footer}}
+{%- endif -%}

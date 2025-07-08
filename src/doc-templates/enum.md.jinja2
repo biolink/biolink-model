@@ -1,0 +1,42 @@
+# <strong> Enum: </strong> {{ gen.name(element) }}
+
+{% if element.description %}
+{% set element_description_lines = element.description.split('\n') %}
+{% for element_description_line in element_description_lines %}
+_{{ element_description_line }}_
+{% endfor %}
+{% endif %}
+
+{% if element.permissible_values -%}
+## Permissible Values
+
+| Value | Meaning | Description |
+| --- | --- | --- |
+{% for pv in element.permissible_values.values() -%}
+| {{pv.text}} | {{pv.meaning}} | {{pv.description}} |
+{% endfor %}
+{% else %}
+_This is a dynamic enum_
+{% endif %}
+
+{% set slots_for_enum = schemaview.get_slots_by_enum(element.name) %}
+{% if slots_for_enum is defined and slots_for_enum|length > 0 -%}
+## Slots constrained by this enum
+
+| Name |
+| ---  |
+{% for s in schemaview.get_slots_by_enum(element.name) -%}
+| {{gen.link(s)}} |
+{% endfor %}
+{% endif %}
+
+{% include "common_metadata.md.jinja2" %}
+
+## LinkML Source
+
+<details open>
+```yaml
+{{gen.yaml(element)}}
+```
+</details>
+

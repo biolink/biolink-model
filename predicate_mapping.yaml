@@ -1,0 +1,527 @@
+predicate mappings:
+  - mapped predicate: augments
+    object aspect qualifier: activity or abundance
+    object direction qualifier: increased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - SEMMEDDB:AUGMENTS
+  - mapped predicate: affects abundance of
+    object aspect qualifier: abundance
+    predicate: affects
+    exact matches:
+      - CTD:affects_abundance_of
+  - mapped predicate: increases abundance of
+    object aspect qualifier: abundance
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_abundance_of
+  - mapped predicate: decreases abundance of
+    object aspect qualifier: abundance
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_abundance_of
+  - mapped predicate: affects activity or abundance of
+    object aspect qualifier: activity or abundance
+    predicate: affects
+    qualified predicate: causes
+  - mapped predicate: increases activity or abundance of
+    object aspect qualifier: activity or abundance
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+  - mapped predicate: decreases activity or abundance of
+    object aspect qualifier: activity or abundance
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+  - mapped predicate: affects activity of
+    object aspect qualifier: activity
+    predicate: affects
+    exact matches:
+      - CTD:affects_activity_of
+      - DGIdb:modulator
+  - mapped predicate: increases activity of
+    object aspect qualifier: activity
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_activity_of
+      - CHEMBL.MECHANISM:opener
+      - CHEMBL.MECHANISM:positive_modulator
+      - CHEMBL.MECHANISM:releasing_agent
+      - DGIdb:activator
+      - DGIdb:agonist
+    narrow matches:
+      - DGIdb:partial_agonist
+      - SEMMEDDB:STIMULATES
+  - mapped predicate: decreases activity of
+    object aspect qualifier: activity
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_activity_of
+      - GAMMA:ic50
+      - GAMMA:ki
+      - DGIdb:vaccine
+      - DGIdb:antagonist
+      - DGIdb:blocker
+      - DGIdb:channel_blocker
+      - DGIdb:gating_inhibitor
+      - CHEMBL.MECHANISM:antisense_inhibitor
+      - CHEMBL.MECHANISM:blocker
+      - CHEMBL.MECHANISM:inhibitor
+      - CHEMBL.MECHANISM:negative_allosteric_modulator
+      - CHEMBL.MECHANISM:negative_modulator
+      - DGIdb:negative_modulator
+      - DGIdb:inverse_agonist
+      - SEMMEDDB:INHIBITS
+      - DGIdb:inhibitor
+  - mapped predicate: affects expression of
+    object aspect qualifier: expression
+    predicate: affects
+    exact matches:
+      - CTD:affects_expression_of
+      - GTEx:affects_expression_in
+  - mapped predicate: increases expression of
+    object aspect qualifier: expression
+    object direction qualifier: increased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - RO:0003003
+      - CTD:increases_expression_of
+  - mapped predicate: decreases expression of
+    object aspect qualifier: expression
+    object direction qualifier: decreased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - RO:0003002
+      - CTD:decreases_expression_of
+  - mapped predicate: affects folding of
+    object aspect qualifier: folding
+    predicate: affects
+    exact matches:
+      - CTD:affects_folding_of
+  - mapped predicate: increases folding of
+    object aspect qualifier: folding
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_folding_of
+  - mapped predicate: decreases folding of
+    object aspect qualifier: folding
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_folding_of
+  - mapped predicate: affects localization of
+    object aspect qualifier: localization
+    predicate: affects
+    exact matches:
+      - CTD:affects_localization_of
+      - GOREL:0002003
+  - mapped predicate: increases localization of
+    object aspect qualifier: localization
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_localization_of
+  - mapped predicate: decreases localization of
+    object aspect qualifier: localization
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_localization_of
+  - mapped predicate: affects molecular modification of
+    object aspect qualifier: molecular modification
+    predicate: affects
+    exact matches:
+      - CTD:affects_molecular_modification_of
+    narrow matches:
+      - CTD:affects_acetylation
+      - CTD:affects_acylation
+      - CTD:affects_alkylation
+      - CTD:affects_amination
+      - CTD:affects_carbamoylation
+      - CTD:affects_ethylation
+      - CTD:affects_glutathionylation
+      - CTD:affects_glycation
+      - CTD:affects_glycosylation
+      - CTD:affects_glucuronidation
+      - CTD:affects_N-linked_glycosylation
+      - CTD:affects_O-linked_glycosylation
+      - CTD:affects_hydroxylation
+      - CTD:affects_lipidation
+      - CTD:affects_farnesylation
+      - CTD:affects_geranoylation
+      - CTD:affects_myristoylation
+      - CTD:affects_palmitoylation
+      - CTD:affects_prenylation
+      - CTD:affects_methylation
+      - CTD:affects_nitrosation
+      - CTD:affects_nucleotidylation
+      - CTD:affects_phosphorylation
+      - CTD:affects_ribosylation
+      - CTD:affects_ADP-ribosylation
+      - CTD:affects_sulfation
+      - CTD:affects_sumoylation
+      - CTD:affects_ubiquitination
+      - CTD:affects_oxidation
+      - CTD:affects_reduction
+      - CTD:affects_carboxylation
+  - mapped predicate: increases molecular modification of
+    object aspect qualifier: molecular modification
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_molecular_modification_of
+    narrow matches:
+      - CTD:increases_acetylation
+      - CTD:increases_acylation
+      - CTD:increases_alkylation
+      - CTD:increases_amination
+      - CTD:increases_carbamoylation
+      - CTD:increases_ethylation
+      - CTD:increases_glutathionylation
+      - CTD:increases_glycation
+      - CTD:increases_glycosylation
+      - CTD:increases_glucuronidation
+      - CTD:increases_N-linked_glycosylation
+      - CTD:increases_O-linked_glycosylation
+      - CTD:increases_hydroxylation
+      - CTD:increases_lipidation
+      - CTD:increases_farnesylation
+      - CTD:increases_geranoylation
+      - CTD:increases_myristoylation
+      - CTD:increases_palmitoylation
+      - CTD:increases_prenylation
+      - CTD:increases_methylation
+      - CTD:increases_nitrosation
+      - CTD:increases_nucleotidylation
+      - CTD:increases_phosphorylation
+      - CTD:increases_ribosylation
+      - CTD:increases_ADP-ribosylation
+      - CTD:increases_sulfation
+      - CTD:increases_sumoylation
+      - CTD:increases_ubiquitination
+      - CTD:increases_oxidation
+      - CTD:increases_reduction
+      - CTD:increases_carboxylation
+      - GAMMA:acetylation
+      - GAMMA:oxidizer
+  - mapped predicate: decreases molecular modification of
+    object aspect qualifier: molecular modification
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_molecular_modification_of
+    narrow matches:
+      - CTD:decreases_acetylation
+      - CTD:decreases_acylation
+      - CTD:decreases_alkylation
+      - CTD:decreases_amination
+      - CTD:decreases_carbamoylation
+      - CTD:decreases_ethylation
+      - CTD:decreases_glutathionylation
+      - CTD:decreases_glycation
+      - CTD:decreases_glycosylation
+      - CTD:decreases_glucuronidation
+      - CTD:decreases_N-linked_glycosylation
+      - CTD:decreases_O-linked_glycosylation
+      - CTD:decreases_hydroxylation
+      - CTD:decreases_lipidation
+      - CTD:decreases_farnesylation
+      - CTD:decreases_geranoylation
+      - CTD:decreases_myristoylation
+      - CTD:decreases_palmitoylation
+      - CTD:decreases_prenylation
+      - CTD:decreases_methylation
+      - CTD:decreases_nitrosation
+      - CTD:decreases_nucleotidylation
+      - CTD:decreases_phosphorylation
+      - CTD:decreases_ribosylation
+      - CTD:decreases_ADP-ribosylation
+      - CTD:decreases_sulfation
+      - CTD:decreases_sumoylation
+      - CTD:decreases_ubiquitination
+      - CTD:decreases_oxidation
+      - CTD:decreases_reduction
+      - CTD:decreases_carboxylation
+      - GAMMA:deoxidizer
+  - mapped predicate: affects metabolic processing of
+    object aspect qualifier: metabolic processing
+    predicate: affects
+    exact matches:
+      - CTD:affects_metabolic_processing_of
+  - mapped predicate: increases metabolic processing of
+    object aspect qualifier: metabolic processing
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_metabolic_processing_of
+  - mapped predicate: decreases metabolic processing of
+    object aspect qualifier: metabolic processing
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_metabolic_processing_of
+  - mapped predicate: affects synthesis of
+    object aspect qualifier: synthesis
+    predicate: affects
+    exact matches:
+      - CTD:affects_synthesis_of
+  - mapped predicate: increases synthesis of
+    object aspect qualifier: synthesis
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_synthesis_of
+  - mapped predicate: decreases synthesis of
+    object aspect qualifier: synthesis
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_synthesis_of
+  - mapped predicate: affects transport of
+    object aspect qualifier: transport
+    predicate: affects
+    exact matches:
+      - CTD:affects_transport_of
+  - mapped predicate: increases transport of
+    object aspect qualifier: transport
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_transport_of
+    narrow matches:
+      - GAMMA:carrier
+      - GAMMA:transporter
+      - RO:0002313
+      - RO:0002340
+      - RO:0002345
+  - mapped predicate: decreases transport of
+    object aspect qualifier: transport
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_transport_of
+  - mapped predicate: affects degradation of
+    object aspect qualifier: degradation
+    predicate: affects
+    exact matches:
+      - CTD:affects_degradation_of
+  - mapped predicate: increases degradation of
+    object aspect qualifier: degradation
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_degradation_of
+      - CTD:increases_cleavage
+      - CTD:increases_hydrolysis
+      - GOREL:0002004
+  - mapped predicate: decreases degradation of
+    object aspect qualifier: degradation
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_degradation_of
+      - CTD:decreases_cleavage
+      - CTD:decreases_hydrolysis
+  - mapped predicate: affects secretion of
+    object aspect qualifier: secretion
+    predicate: affects
+    exact matches:
+      - CTD:affects_secretion_of
+    broad matches:
+      - CTD:affects_export
+  - mapped predicate: increases secretion of
+    object aspect qualifier: secretion
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_secretion_of
+  - mapped predicate: decreases secretion of
+    object aspect qualifier: secretion
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_secretion_of
+  - mapped predicate: affects mutation rate of
+    object aspect qualifier: mutation rate
+    predicate: affects
+    exact matches:
+      - CTD:affects_mutation_rate_of
+  - mapped predicate: increases mutation rate of
+    object aspect qualifier: mutation rate
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_mutation_rate_of
+      - CTD:increases_mutagenesis
+  - mapped predicate: decreases mutation rate of
+    object aspect qualifier: mutation rate
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_mutation_rate_of
+      - CTD:decreases_mutagenesis
+  - mapped predicate: affects splicing of
+    object aspect qualifier: splicing
+    predicate: affects
+    exact matches:
+      - CTD:affects_splicing_of
+  - mapped predicate: increases splicing of
+    object aspect qualifier: splicing
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_splicing_of
+      - CTD:increases_RNA_splicing
+  - mapped predicate: decreases splicing of
+    object aspect qualifier: splicing
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_splicing_of
+      - CTD:decreases_RNA_splicing
+  - mapped predicate: affects splicing of
+    object aspect qualifier: splicing
+    predicate: affects
+    exact matches:
+      - CTD:affects_splicing_of
+  - mapped predicate: increases splicing of
+    object aspect qualifier: splicing
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_splicing_of
+  - mapped predicate: decreases splicing of
+    object aspect qualifier: splicing
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_splicing_of
+  - mapped predicate: affects secretion of
+    object aspect qualifier: secretion
+    predicate: affects
+    exact matches:
+      - CTD:affects_secretion_of
+  - mapped predicate: increases secretion of
+    object aspect qualifier: secretion
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_secretion_of
+  - mapped predicate: decreases secretion of
+    object aspect qualifier: secretion
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_secretion_of
+  - mapped predicate: affects uptake of
+    object aspect qualifier: uptake
+    predicate: affects
+    exact matches:
+      - CTD:affects_uptake_of
+    broad matches:
+      - CTD:affects_import
+  - mapped predicate: increases uptake of
+    object aspect qualifier: uptake
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_uptake_of
+    broad matches:
+      - CTD:increases_import
+  - mapped predicate: decreases uptake of
+    object aspect qualifier: uptake
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_uptake_of
+    broad matches:
+      # 'import' more general than 'uptake'
+      - CTD:decreases_import
+  - mapped predicate: affects molecular interaction
+    object aspect qualifier: molecular interaction
+    predicate: affects
+    exact matches:
+      - CTD:affects_molecular_interaction
+  - mapped predicate: increases molecular interaction
+    object aspect qualifier: molecular interaction
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_molecular_interaction
+  - mapped predicate: decreases molecular interaction
+    object aspect qualifier: molecular interaction
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_molecular_interaction
+  - mapped predicate: entity negatively regulates entity
+    object aspect qualifier: activity or abundance
+    object direction qualifier: downregulated
+    predicate: regulates
+    qualified predicate: causes
+    exact matches:
+      - RO:0002212
+      - RO:0002449
+  - mapped predicate: entity positively regulates entity
+    object aspect qualifier: activity or abundance
+    object direction qualifier: upregulated
+    predicate: regulates
+    qualified predicate: causes
+    exact matches:
+      - RO:0002450
+  - mapped predicate: process positively regulates process
+    object aspect qualifier: activity or abundance
+    object direction qualifier: upregulated
+    predicate: regulates
+    qualified predicate: causes
+    exact matches:
+      - RO:0002213
+  - mapped predicate: process negatively regulates process
+    object aspect qualifier: activity or abundance
+    object direction qualifier: downregulated
+    predicate: regulates
+    qualified predicate: causes
+    exact matches:
+      - RO:0002212
+

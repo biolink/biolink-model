@@ -1,0 +1,83 @@
+id: biolink-model-class-prefixes
+name: BiolinkClassPrefixes
+description: preferred order identifier prefixes per class in Biolink Model
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+# Version should be kept in sync with primary Git repository release tag
+
+version: 4.2.6-rc5
+
+default_prefix: biolink
+default_range: string
+
+imports:
+  - linkml:types
+
+# 2. The following prefix maps are retrieved from the
+#    specified contexts defined at https://prefixcommons.org/
+default_curi_maps:
+  - obo_context
+  - idot_context
+  - monarch_context
+  - semweb_context
+
+# The following 'standard' prefixes are also used.
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+  - OIO
+  - BIOGRID
+  - SO
+
+prefixes:
+  linkml: 'https://w3id.org/linkml/'
+
+classes:
+  BiolinkClassPrefixMap:
+    description: preferred order identifier prefixes per class in Biolink Model
+    slots:
+      - prefix_map
+      - class_name
+
+  BiolinkClassPrefixesCollection:
+    description: collection of BiolinkClassPrefixes objects
+    tree_root: true
+    slots:
+      - biolink_class_prefixes
+
+  Prefix:
+    slots:
+        - prefix
+        - base_uri
+        - order
+
+slots:
+  biolink_class_prefixes:
+    multivalued: true
+    range: BiolinkClassPrefixMap
+    inlined: true
+    inlined_as_list: true
+    description: >-
+      A collectionm of GO domain/range constraint shapes where a GO domain/range constraint shape 
+      is defined as the domain, relationship, and range of a GO shape expression rule.
+
+  prefix_map:
+    description: a collection of Prefixes per class
+    range: Prefix
+    multivalued: true
+
+  class_name:
+    description: the name of a class in Biolink Model
+    range: uriorcurie
+
+  base_uri:
+    description: the URI of a prefix
+    range: uri
+
+  prefix:
+    range: string
+
+  order:
+    range: integer

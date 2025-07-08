@@ -1,0 +1,234 @@
+[
+    {
+        "name": "[root]",
+        "parent": null,
+        "children": [
+            {
+                "name": "absorption",
+                "parent": "[root]"
+            },
+            {
+                "name": "activity_or_abundance",
+                "parent": "[root]",
+                "children": [
+                    {
+                        "name": "abundance",
+                        "parent": "activity_or_abundance",
+                        "children": [
+                            {
+                                "name": "expression",
+                                "parent": "abundance"
+                            },
+                            {
+                                "name": "synthesis",
+                                "parent": "abundance"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "activity",
+                        "parent": "activity_or_abundance"
+                    }
+                ]
+            },
+            {
+                "name": "aggregation",
+                "parent": "[root]"
+            },
+            {
+                "name": "degradation",
+                "parent": "[root]",
+                "children": [
+                    {
+                        "name": "cleavage",
+                        "parent": "degradation"
+                    },
+                    {
+                        "name": "hydrolysis",
+                        "parent": "degradation"
+                    }
+                ]
+            },
+            {
+                "name": "folding",
+                "parent": "[root]"
+            },
+            {
+                "name": "interaction",
+                "parent": "[root]"
+            },
+            {
+                "name": "localization",
+                "parent": "[root]"
+            },
+            {
+                "name": "metabolic_processing",
+                "parent": "[root]"
+            },
+            {
+                "name": "molecular_interaction",
+                "parent": "[root]"
+            },
+            {
+                "name": "molecular_modification",
+                "parent": "[root]",
+                "children": [
+                    {
+                        "name": "ADP-ribosylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "acetylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "acylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "alkylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "amination",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "carbamoylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "carboxylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "ethylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "farnesylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "geranoylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "glucuronidation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "glutathionylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "glycation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "glycosylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "hydroxylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "lipidation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "methylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "myristoylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "n_linked_glycosylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "nitrosation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "nucleotidylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "o_linked_glycosylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "oxidation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "palmitoylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "phosphorylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "prenylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "reduction",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "ribosylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "sulfation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "sumoylation",
+                        "parent": "molecular_modification"
+                    },
+                    {
+                        "name": "ubiquitination",
+                        "parent": "molecular_modification"
+                    }
+                ]
+            },
+            {
+                "name": "mutation_rate",
+                "parent": "[root]"
+            },
+            {
+                "name": "release",
+                "parent": "[root]"
+            },
+            {
+                "name": "splicing",
+                "parent": "[root]"
+            },
+            {
+                "name": "stability",
+                "parent": "[root]"
+            },
+            {
+                "name": "transport",
+                "parent": "[root]",
+                "children": [
+                    {
+                        "name": "secretion",
+                        "parent": "transport"
+                    },
+                    {
+                        "name": "uptake",
+                        "parent": "transport"
+                    }
+                ]
+            }
+        ]
+    }
+]

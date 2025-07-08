@@ -1,0 +1,94 @@
+# {{ schema.name }}: a data model for life-sciences data.
+
+The Biolink Model is a high-level, open-source data model designed to standardize types and relationships in biological
+knowledge graphs, covering entities like genes, diseases, chemical substances, organisms, genomics, phenotypes, and
+more.  Biolink Model can be used to formalize the relationships between data structures in
+translational science. It incorporates object-oriented classification and graph-oriented features. The core of the
+model is a set of hierarchical, interconnected classes (or categories) and relationships between them (or predicates).
+The model provides class and edge attributes and associations that guide how entities should relate to one another.
+The goal of the Biolink Model is to provide a consistent framework for representing biological knowledge across various
+databases and formats.  For more information, see: [understanding the model](understanding-the-model.md)
+
+## Classes ([Visualization](categories.html))
+
+| Class | Description |
+{% for c in schemaview.all_classes(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'association' not in schemaview.class_ancestors(c.name) and not schemaview.is_mixin(c.name) -%}
+| --- | --- |
+| {{gen.link(c)}} | {{c.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Class Properties
+
+| Property | Description |
+{% for np in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'node property' in schemaview.slot_ancestors(np.name) -%}
+| --- | --- |
+| {{gen.link(np)}} | {{np.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Predicates ([Visualization](predicates.html))
+
+| Property | Description |
+{% for p in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'related to' in schemaview.slot_ancestors(p.name) -%}
+| --- | --- |
+| {{gen.link(p)}} | {{p.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Qualifiers ([Visualization](qualifiers.html))
+
+| Property | Description |
+{% for p in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'qualifier' in schemaview.slot_ancestors(p.name) -%}
+| --- | --- |
+| {{gen.link(p)}} | {{p.description}} |
+{%- endif -%}
+{% endfor %}
+
+
+## Associations
+
+| Association | Description |
+{% for a in schemaview.all_classes(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'association'  in schemaview.class_ancestors(a.name) and not schemaview.is_mixin(a.name) -%}
+| --- | --- |
+| {{gen.link(a)}} | {{a.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Association Properties
+
+| Property | Description |
+{% for ep in schemaview.all_slots(ordered_by="lexical").values()|sort(attribute='name') -%}
+{%- if 'association slot' in schemaview.slot_ancestors(ep.name) -%}
+| --- | --- |
+| {{gen.link(ep)}} | {{ep.description}} |
+{%- endif -%}
+{% endfor %}
+
+## Enumerations
+
+| Enumeration | Description |
+| --- | --- |
+{% for e in schemaview.all_enums().values()|sort(attribute='name') -%}
+| {{gen.link(e)}} | {{e.description}} |
+{% endfor %}
+
+## Subsets
+
+| Subset | Description |
+| --- | --- |
+{% for ss in schemaview.all_subsets().values()|sort(attribute='name') -%}
+| {{gen.link(ss)}} | {{ss.description}} |
+{% endfor %}
+
+#### Citing Biolink Model
+<small> Unni DR, Moxon SAT, Bada M, Brush M, Bruskiewich R, Caufield JH, Clemons PA, Dancik V, Dumontier M, Fecho K, Glusman G,
+Hadlock JJ, Harris NL, Joshi A, Putman T, Qin G, Ramsey SA, Shefchek KA, Solbrig H, Soman K, Thessen AE, Haendel MA,
+Bizon C, Mungall CJ, The Biomedical Data Translator Consortium (2022).
+Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, and translational science. Clin Transl Sci. Wiley; 2022 Jun 6; [https://onlinelibrary.wiley.com/doi/10.1111/cts.13302](https://onlinelibrary.wiley.com/doi/10.1111/cts.13302)
+</small>

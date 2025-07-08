@@ -1,0 +1,22 @@
+---
+name: Codespell
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    types: trigger-codespell
+
+jobs:
+  codespell:
+    name: Check for spelling errors
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Codespell
+        uses: codespell-project/actions-codespell@v1
+        with:
+          ignore_words_list: amination,ehr,mor,nin,brite,mirgate,BRITE
+          skip: SEMMEDDB*,semmed*,.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*
