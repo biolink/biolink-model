@@ -63,35 +63,122 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = None
 
+class ClinicalTrialStatusEnum(str, Enum):
+    """
+    Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.
+
+    """
+    ACTIVE_NOT_RECRUITING = "ACTIVE_NOT_RECRUITING"
+    """
+    The study is ongoing but not currently recruiting participants.
+    """
+    APPROVED_FOR_MARKETING = "APPROVED_FOR_MARKETING"
+    """
+    The intervention has received regulatory approval for marketing.
+    """
+    AVAILABLE = "AVAILABLE"
+    """
+    The intervention or data is available for use or distribution.
+    """
+    COMPLETED = "COMPLETED"
+    """
+    The study has ended normally and participants are no longer being examined or treated.
+    """
+    ENROLLING_BY_INVITATION = "ENROLLING_BY_INVITATION"
+    """
+    Participants are being enrolled by invitation only.
+    """
+    NO_LONGER_AVAILABLE = "NO_LONGER_AVAILABLE"
+    """
+    The intervention or data is no longer available.
+    """
+    NOT_YET_RECRUITING = "NOT_YET_RECRUITING"
+    """
+    The study has not yet started recruiting participants.
+    """
+    RECRUITING = "RECRUITING"
+    """
+    The study is currently recruiting participants.
+    """
+    SUSPENDED = "SUSPENDED"
+    """
+    The study has been temporarily halted but may resume.
+    """
+    TEMPORARILY_NOT_AVAILABLE = "TEMPORARILY_NOT_AVAILABLE"
+    """
+    The intervention or data is not currently available but may become available later.
+    """
+    TERMINATED = "TERMINATED"
+    """
+    The study has stopped prematurely and will not start again.
+    """
+    UNKNOWN = "UNKNOWN"
+    """
+    The recruitment or availability status is unknown.
+    """
+    WITHDRAWN = "WITHDRAWN"
+    """
+    The study was halted before enrolling its first participant.
+    """
+
+
 class ApprovalStatusEnum(str, Enum):
-    # Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.
     discovery_and_development_phase = "discovery_and_development_phase"
-    # Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
+    """
+    Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.
+    """
     preclinical_research_phase = "preclinical_research_phase"
-    # Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
+    """
+    Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
+    """
     fda_clinical_research_phase = "fda_clinical_research_phase"
-    # FDA Review
+    """
+    Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
+    """
     fda_review_phase_4 = "fda_review_phase_4"
-    # FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.
+    """
+    FDA Review
+    """
     fda_post_market_safety_review = "fda_post_market_safety_review"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.
+    """
+    FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.
+    """
     fda_clinical_research_phase_1 = "fda_clinical_research_phase_1"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.
+    """
+    In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.
+    """
     fda_clinical_research_phase_2 = "fda_clinical_research_phase_2"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.
+    """
+    In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.
+    """
     fda_clinical_research_phase_3 = "fda_clinical_research_phase_3"
-    # In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
+    """
+    In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.
+    """
     fda_clinical_research_phase_4 = "fda_clinical_research_phase_4"
-    # Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
+    """
+    In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
+    """
     fda_fast_track = "fda_fast_track"
-    # Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
+    """
+    Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
+    """
     fda_breakthrough_therapy = "fda_breakthrough_therapy"
-    # When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
+    """
+    Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
+    """
     fda_accelerated_approval = "fda_accelerated_approval"
-    # Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
+    """
+    When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
+    """
     fda_priority_review = "fda_priority_review"
-    # Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.
+    """
+    Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
+    """
     regular_fda_approval = "regular_fda_approval"
+    """
+    Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.
+    """
     post_approval_withdrawal = "post_approval_withdrawal"
 
 
@@ -105,18 +192,30 @@ class ClinicalApprovalStatusEnum(str, Enum):
 
 
 class ResearchPhaseEnum(str, Enum):
-    # Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
     pre_clinical_research_phase = "pre_clinical_research_phase"
-    # Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
+    """
+    Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
+    """
     clinical_trial_phase = "clinical_trial_phase"
-    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.
+    """
+    Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.
+    """
     clinical_trial_phase_1 = "clinical_trial_phase_1"
-    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.
+    """
+    In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.
+    """
     clinical_trial_phase_2 = "clinical_trial_phase_2"
-    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.
+    """
+    In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.
+    """
     clinical_trial_phase_3 = "clinical_trial_phase_3"
-    # In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
+    """
+    In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.
+    """
     clinical_trial_phase_4 = "clinical_trial_phase_4"
+    """
+    In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.
+    """
     not_provided = "not_provided"
 
 
@@ -135,7 +234,9 @@ class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
     genetic_variant_form = "genetic_variant_form"
     modified_form = "modified_form"
     loss_of_function_variant_form = "loss_of_function_variant_form"
+    non_loss_of_function_variant_form = "non_loss_of_function_variant_form"
     gain_of_function_variant_form = "gain_of_function_variant_form"
+    dominant_negative_variant_form = "dominant_negative_variant_form"
     polymorphic_form = "polymorphic_form"
     snp_form = "snp_form"
     analog_form = "analog_form"
@@ -152,8 +253,10 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
 
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
-    # Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used.
     activity_or_abundance = "activity_or_abundance"
+    """
+    Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used.
+    """
     abundance = "abundance"
     activity = "activity"
     expression = "expression"
@@ -212,46 +315,80 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
 
 
 class CausalMechanismQualifierEnum(str, Enum):
-    # A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.
     binding = "binding"
-    # A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.
+    """
+    A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.
+    """
     inhibition = "inhibition"
-    # A causal mechanism in which an antibody specifically binds to and interferes with the target.
+    """
+    A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.
+    """
     antibody_inhibition = "antibody_inhibition"
-    # A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.
+    """
+    A causal mechanism in which an antibody specifically binds to and interferes with the target.
+    """
     antagonism = "antagonism"
-    # A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.
+    """
+    A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.
+    """
     molecular_channel_blockage = "molecular_channel_blockage"
-    # A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
+    """
+    A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.
+    """
     inverse_agonism = "inverse_agonism"
-    # A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+    """
+    A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
+    """
     negative_allosteric_modulation = "negative_allosteric_modulation"
-    # A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.
+    """
+    A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+    """
     agonism = "agonism"
-    # A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.
+    """
+    A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.
+    """
     molecular_channel_opening = "molecular_channel_opening"
-    # A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+    """
+    A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.
+    """
     positive_allosteric_modulation = "positive_allosteric_modulation"
-    # A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.
+    """
+    A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+    """
     potentiation = "potentiation"
-    # A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+    """
+    A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.
+    """
     activation = "activation"
-    # A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.
+    """
+    A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+    """
     inducer = "inducer"
-    # A causal mechanism mediated by through the control of target gene transcription
+    """
+    A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.
+    """
     transcriptional_regulation = "transcriptional_regulation"
-    # A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)
+    """
+    A causal mechanism mediated by through the control of target gene transcription
+    """
     signaling_mediated_control = "signaling_mediated_control"
+    """
+    A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)
+    """
     stabilization = "stabilization"
     stimulation = "stimulation"
     releasing_activity = "releasing_activity"
 
 
 class LogicalInterpretationEnum(str, Enum):
-    # A modifier on a triple that causes the triple to be interpreted as a some-some statement
     some_some = "some_some"
-    # A modifier on a triple that causes the triple to be interpreted as an all-some statement.
+    """
+    A modifier on a triple that causes the triple to be interpreted as a some-some statement
+    """
     all_some = "all_some"
+    """
+    A modifier on a triple that causes the triple to be interpreted as an all-some statement.
+    """
     inverse_all_some = "inverse_all_some"
 
 
@@ -280,42 +417,66 @@ class StrandEnum(str, Enum):
     """
     strand
     """
-    # Positive
     PLUS_SIGN = "+"
-    # Negative
+    """
+    Positive
+    """
     _ = "-"
-    # Unstranded
+    """
+    Negative
+    """
     FULL_STOP = "."
-    # Unknown
+    """
+    Unstranded
+    """
     QUESTION_MARK = "?"
+    """
+    Unknown
+    """
 
 
 class SequenceEnum(str, Enum):
     """
     type of sequence
     """
-    # nucleic acid
     na = "na"
-    # amino acid
+    """
+    nucleic acid
+    """
     aa = "aa"
+    """
+    amino acid
+    """
 
 
 class DruggableGeneCategoryEnum(str, Enum):
-    # These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
     tclin = "tclin"
-    # These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.
+    """
+    These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
+    """
     tbio = "tbio"
-    # These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
+    """
+    These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.
+    """
     tchem = "tchem"
-    # These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.
+    """
+    These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
+    """
     tdark = "tdark"
+    """
+    These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.
+    """
 
 
 class DrugAvailabilityEnum(str, Enum):
-    # chemical entity is available over the counter without a prescription.
     over_the_counter = "over_the_counter"
-    # chemical entity is available by prescription.
+    """
+    chemical entity is available over the counter without a prescription.
+    """
     prescription = "prescription"
+    """
+    chemical entity is available by prescription.
+    """
 
 
 class DrugDeliveryEnum(str, Enum):
@@ -334,52 +495,106 @@ class ResourceRoleEnum(str, Enum):
     supporting_data_source = "supporting_data_source"
 
 
+class AffinityParameterEnum(str, Enum):
+    """
+    The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.
+    """
+    pIC50 = "pIC50"
+    """
+    Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function
+    """
+    pEC50 = "pEC50"
+    """
+    Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function
+    """
+    pAC50 = "pAC50"
+    pXC50 = "pXC50"
+    pKi = "pKi"
+    pKd = "pKd"
+
+
 class FDAIDAAdverseEventEnum(str, Enum):
     """
     please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
     """
-    # An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. It does not include an adverse event or suspected adverse reaction that, had it occurred in a more severe form, might have caused death.
     life_threatening_adverse_event = "life_threatening_adverse_event"
-    # An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or subject and may require medical or surgical intervention to prevent one of the outcomes listed in this definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient hospitalization, or the development of drug dependency or drug abuse.
+    """
+    An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. It does not include an adverse event or suspected adverse reaction that, had it occurred in a more severe form, might have caused death.
+    """
     serious_adverse_event = "serious_adverse_event"
-    # means any adverse event for which there is a reasonable possibility that the drug caused the adverse event. For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
+    """
+    An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or subject and may require medical or surgical intervention to prevent one of the outcomes listed in this definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient hospitalization, or the development of drug dependency or drug abuse.
+    """
     suspected_adverse_reaction = "suspected_adverse_reaction"
-    # An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the investigator brochure or is not listed at the specificity or severity that has been observed; or, if an investigator brochure is not required or available, is not consistent with the risk information described in the general investigational plan or elsewhere in the current application, as amended. For example, under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but are not specifically mentioned as occurring with the particular drug under investigation.
+    """
+    means any adverse event for which there is a reasonable possibility that the drug caused the adverse event. For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
+    """
     unexpected_adverse_event = "unexpected_adverse_event"
+    """
+    An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the investigator brochure or is not listed at the specificity or severity that has been observed; or, if an investigator brochure is not required or available, is not consistent with the risk information described in the general investigational plan or elsewhere in the current application, as amended. For example, under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but are not specifically mentioned as occurring with the particular drug under investigation.
+    """
 
 
 class AgentTypeEnum(str, Enum):
-    # A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge,  but the human is the one who ultimately interprets/reasons with  this evidence to produce a statement of knowledge.
     manual_agent = "manual_agent"
-    # An automated agent, typically a software program or tool, that is  responsible for generating a statement of knowledge. Human contribution  to the knowledge creation process ends with the definition and coding of algorithms or analysis pipelines that get executed by the automated agent.
+    """
+    A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge,  but the human is the one who ultimately interprets/reasons with  this evidence to produce a statement of knowledge.
+    """
     automated_agent = "automated_agent"
-    # An automated agent that executes an analysis workflow over data and  reports the direct results of the analysis. These typically report  statistical associations/correlations between variables in the input dataset, and do not interpret/infer broader conclusions from associations the analysis reveals in the data.
+    """
+    An automated agent, typically a software program or tool, that is  responsible for generating a statement of knowledge. Human contribution  to the knowledge creation process ends with the definition and coding of algorithms or analysis pipelines that get executed by the automated agent.
+    """
     data_analysis_pipeline = "data_analysis_pipeline"
-    # An automated agent that generates knowledge statements (typically predictions) based on rules/logic explicitly encoded in an algorithm (e.g. heuristic models, supervised classifiers), or learned from patterns  observed in data (e.g. ML models, unsupervised classifiers).
+    """
+    An automated agent that executes an analysis workflow over data and  reports the direct results of the analysis. These typically report  statistical associations/correlations between variables in the input dataset, and do not interpret/infer broader conclusions from associations the analysis reveals in the data.
+    """
     computational_model = "computational_model"
-    # An automated agent that uses Natural Language Processing to recognize concepts and/or relationships in text, and report them using formally encoded semantics (e.g. as an edge in a knowledge graph).
+    """
+    An automated agent that generates knowledge statements (typically predictions) based on rules/logic explicitly encoded in an algorithm (e.g. heuristic models, supervised classifiers), or learned from patterns  observed in data (e.g. ML models, unsupervised classifiers).
+    """
     text_mining_agent = "text_mining_agent"
-    # An automated agent that processes images to generate textual statements of  knowledge derived from the image and/or expressed in text the image  depicts (e.g. via OCR).
+    """
+    An automated agent that uses Natural Language Processing to recognize concepts and/or relationships in text, and report them using formally encoded semantics (e.g. as an edge in a knowledge graph).
+    """
     image_processing_agent = "image_processing_agent"
-    # A human agent reviews and validates/approves the veracity of knowledge  that is initially generated by an automated agent.
+    """
+    An automated agent that processes images to generate textual statements of  knowledge derived from the image and/or expressed in text the image  depicts (e.g. via OCR).
+    """
     manual_validation_of_automated_agent = "manual_validation_of_automated_agent"
-    # The agent type is not provided, typically because it cannot be determined from available information if the agent that generated the knowledge is  manual or automated.
+    """
+    A human agent reviews and validates/approves the veracity of knowledge  that is initially generated by an automated agent.
+    """
     not_provided = "not_provided"
+    """
+    The agent type is not provided, typically because it cannot be determined from available information if the agent that generated the knowledge is  manual or automated.
+    """
 
 
 class KnowledgeLevelEnum(str, Enum):
-    # A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not  definitively true.
     knowledge_assertion = "knowledge_assertion"
-    # A statement reporting a conclusion that follows logically from premises representing established facts or knowledge assertions (e.g. fingernail part of finger, finger part of hand --> fingernail part of hand).
+    """
+    A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not  definitively true.
+    """
     logical_entailment = "logical_entailment"
-    # A statement of a possible fact based on probabilistic forms of reasoning over more indirect forms of evidence, that lead to more speculative conclusions.
+    """
+    A statement reporting a conclusion that follows logically from premises representing established facts or knowledge assertions (e.g. fingernail part of finger, finger part of hand --> fingernail part of hand).
+    """
     prediction = "prediction"
-    # A statement that reports concepts representing variables in a dataset to be statistically associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1) is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').
+    """
+    A statement of a possible fact based on probabilistic forms of reasoning over more indirect forms of evidence, that lead to more speculative conclusions.
+    """
     statistical_association = "statistical_association"
-    # A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -  absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.
+    """
+    A statement that reports concepts representing variables in a dataset to be statistically associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1) is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').
+    """
     observation = "observation"
-    # The knowledge level is not provided, typically because it cannot be determined from available. information.
+    """
+    A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -  absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.
+    """
     not_provided = "not_provided"
+    """
+    The knowledge level is not provided, typically because it cannot be determined from available. information.
+    """
 
 
 
@@ -1365,7 +1580,8 @@ class RetrievalSource(InformationContentEntity):
     """
     resource_id: str = Field(default=..., description="""The InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.""")
     resource_role: ResourceRoleEnum = Field(default=..., description="""The role of the InformationResource in the retrieval of the knowledge expressed in an Edge, or data used to generate this knowledge.""")
-    upstream_resource_ids: Optional[str] = Field(default=None, description="""The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.""")
+    upstream_resource_ids: Optional[list[str]] = Field(default=None, description="""A list of upstream InformationResources from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge.""")
+    source_record_urls: Optional[list[str]] = Field(default=None, description="""One or more URLs that link to a specific web page or document provided by the InformationResource, that contains a record of the knowledge expressed in the Edge.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(default=None)
     rights: Optional[str] = Field(default=None)
@@ -3196,6 +3412,7 @@ class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, Ontology
     A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
     """
     has_gene: Optional[list[str]] = Field(default=None, description="""Each allele can be associated with any number of genes""")
+    hgvs_nomenclature: Optional[list[str]] = Field(default=None, description="""HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.""")
     has_biological_sequence: Optional[str] = Field(default=None, description="""The state of the sequence w.r.t a reference sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -3218,6 +3435,7 @@ class Snv(SequenceVariant):
     SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
     """
     has_gene: Optional[list[str]] = Field(default=None, description="""Each allele can be associated with any number of genes""")
+    hgvs_nomenclature: Optional[list[str]] = Field(default=None, description="""HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.""")
     has_biological_sequence: Optional[str] = Field(default=None, description="""The state of the sequence w.r.t a reference sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -3379,7 +3597,13 @@ class ClinicalEntity(NamedThing):
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class ClinicalTrial(ClinicalEntity):
+class ClinicalTrial(Study):
+    """
+    A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.
+    """
+    clinical_trial_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The phase that a clinical trials study represents""")
+    clinical_trial_primary_purpose: Optional[str] = Field(default=None, description="""The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are  TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE,  DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).""")
+    creation_date: Optional[date] = Field(default=None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -3950,6 +4174,7 @@ class Association(Entity):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -3992,6 +4217,7 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4037,6 +4263,7 @@ class ContributorAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4082,6 +4309,7 @@ class GenotypeToGenotypePartAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4127,6 +4355,7 @@ class GenotypeToGeneAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4172,6 +4401,7 @@ class GenotypeToVariantAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4217,6 +4447,7 @@ class GeneToGeneAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4262,6 +4493,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4307,6 +4539,7 @@ class GeneToGeneFamilyAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4366,6 +4599,7 @@ class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociati
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4411,6 +4645,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4457,6 +4692,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4547,6 +4783,7 @@ class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Associatio
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4592,6 +4829,7 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4637,6 +4875,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4683,6 +4922,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4728,6 +4968,7 @@ class MolecularActivityToPathwayAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4773,6 +5014,7 @@ class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4820,6 +5062,7 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4873,6 +5116,7 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4922,6 +5166,7 @@ class GeneRegulatesGeneAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -4967,6 +5212,7 @@ class ProcessRegulatesProcessAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5027,6 +5273,7 @@ class ChemicalAffectsGeneAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5088,6 +5335,7 @@ class GeneAffectsChemicalAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5133,6 +5381,7 @@ class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5187,6 +5436,7 @@ class MaterialSampleDerivationAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5247,6 +5497,7 @@ class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, D
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5303,6 +5554,7 @@ class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Associa
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5455,6 +5707,7 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(PhenotypicFeatureToEntityA
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5511,6 +5764,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5578,6 +5832,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeature
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5623,6 +5878,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenoty
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5682,6 +5938,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5731,6 +5988,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5786,6 +6044,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToD
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5842,6 +6101,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5892,6 +6152,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -5944,6 +6205,7 @@ class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, E
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6001,6 +6263,7 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6063,6 +6326,7 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6117,6 +6381,7 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6174,6 +6439,7 @@ class CaseToDiseaseAssociation(CaseToEntityAssociationMixin, Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6220,6 +6486,7 @@ class CaseToVariantAssociation(CaseToEntityAssociationMixin, Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6265,6 +6532,7 @@ class CaseToGeneAssociation(CaseToEntityAssociationMixin, Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6311,6 +6579,7 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6373,6 +6642,7 @@ class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6424,6 +6694,7 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, 
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6478,6 +6749,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssocia
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6532,6 +6804,7 @@ class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation, Gene
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6586,6 +6859,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssoc
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6640,6 +6914,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityA
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6694,6 +6969,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[DruggableGeneCategoryEnum]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6746,6 +7022,7 @@ class PhenotypicFeatureToDiseaseAssociation(EntityToDiseaseAssociationMixin, Phe
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6802,6 +7079,7 @@ class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6851,6 +7129,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressio
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6901,6 +7180,7 @@ class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQ
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6946,6 +7226,7 @@ class PopulationToPopulationAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -6989,6 +7270,7 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7042,6 +7324,7 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7091,6 +7374,7 @@ class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDis
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7152,6 +7436,7 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7203,6 +7488,7 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7252,6 +7538,7 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7305,6 +7592,7 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7353,6 +7641,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7402,6 +7691,7 @@ class OrganismToOrganismAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7444,6 +7734,7 @@ class TaxonToTaxonAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7490,6 +7781,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7547,6 +7839,7 @@ class GeneToExpressionSiteAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7592,6 +7885,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7637,6 +7931,7 @@ class FunctionalAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7693,6 +7988,7 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7739,6 +8035,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7785,6 +8082,7 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7830,6 +8128,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7875,6 +8174,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7917,6 +8217,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -7961,6 +8262,7 @@ class EntityToDiseaseAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8005,6 +8307,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8050,6 +8353,7 @@ class SequenceAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8100,6 +8404,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8145,6 +8450,7 @@ class SequenceFeatureRelationship(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8190,6 +8496,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8235,6 +8542,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8280,6 +8588,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8326,6 +8635,7 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8368,6 +8678,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8413,6 +8724,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8458,6 +8770,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8512,6 +8825,7 @@ class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, 
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8557,6 +8871,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8603,6 +8918,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
@@ -8645,6 +8961,7 @@ class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, As
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
     qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
     has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
     primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")

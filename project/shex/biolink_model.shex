@@ -212,6 +212,7 @@ linkml:Sparqlpath xsd:string
              <qualifier> @linkml:String ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
+             <sources> @<RetrievalSource> * ;
              <has_evidence> @<EvidenceType> * ;
              <knowledge_source> @linkml:String ? ;
              <primary_knowledge_source> @linkml:String ? ;
@@ -662,7 +663,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
@@ -740,7 +743,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
@@ -939,7 +944,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
@@ -956,7 +963,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
@@ -1188,7 +1197,7 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <ClinicalEntity> ]
        )
-    } OR @<ClinicalIntervention> OR @<ClinicalTrial>
+    } OR @<ClinicalIntervention>
 )
 
 <ClinicalFinding> CLOSED {
@@ -1228,8 +1237,17 @@ linkml:Sparqlpath xsd:string
 }
 
 <ClinicalTrial> CLOSED {
-    (  $<ClinicalTrial_tes> (  &<ClinicalEntity_tes> ;
-          rdf:type [ <ClinicalEntity> ] ?
+    (  $<ClinicalTrial_tes> (  &<Study_tes> ;
+          rdf:type [ <Study> ] ? ;
+          <clinical_trial_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
+          <clinical_trial_primary_purpose> @linkml:String ? ;
+          <creation_date> @linkml:Date ?
        ) ;
        rdf:type [ <ClinicalTrial> ]
     )
@@ -2012,7 +2030,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
@@ -2090,7 +2110,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
@@ -4012,7 +4034,8 @@ linkml:Sparqlpath xsd:string
           <resource_role> [ <https://w3id.org/biolink/vocab/ResourceRoleEnum#primary_knowledge_source>
              <https://w3id.org/biolink/vocab/ResourceRoleEnum#aggregator_knowledge_source>
              <https://w3id.org/biolink/vocab/ResourceRoleEnum#supporting_data_source> ] ;
-          <upstream_resource_ids> @linkml:Uriorcurie ?
+          <upstream_resource_ids> @linkml:Uriorcurie * ;
+          <source_record_urls> @linkml:Uriorcurie *
        ) ;
        rdf:type [ <RetrievalSource> ]
     )
@@ -4081,6 +4104,7 @@ linkml:Sparqlpath xsd:string
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <has_gene> @<Gene> * ;
+             <hgvs_nomenclature> @linkml:String * ;
              <has_biological_sequence> @<BiologicalSequence> ?
           ) ;
           rdf:type [ <SequenceVariant> ]
@@ -4180,13 +4204,15 @@ linkml:Sparqlpath xsd:string
     } OR @<PathognomonicityQuantifier>
 )
 
-<Study> CLOSED {
-    (  $<Study_tes> (  &<Activity_tes> ;
-          rdf:type [ <Activity> ] ?
-       ) ;
-       rdf:type [ <Study> ]
-    )
-}
+<Study>  (
+    CLOSED {
+       (  $<Study_tes> (  &<Activity_tes> ;
+             rdf:type [ <Activity> ] ?
+          ) ;
+          rdf:type [ <Study> ]
+       )
+    } OR @<ClinicalTrial>
+)
 
 <StudyPopulation>  (
     CLOSED {
