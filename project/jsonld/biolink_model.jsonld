@@ -1023,6 +1023,66 @@
   ],
   "enums": [
     {
+      "name": "ClinicalTrialStatusEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum",
+      "description": "Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.\n",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "ACTIVE_NOT_RECRUITING",
+          "description": "The study is ongoing but not currently recruiting participants."
+        },
+        {
+          "text": "APPROVED_FOR_MARKETING",
+          "description": "The intervention has received regulatory approval for marketing."
+        },
+        {
+          "text": "AVAILABLE",
+          "description": "The intervention or data is available for use or distribution."
+        },
+        {
+          "text": "COMPLETED",
+          "description": "The study has ended normally and participants are no longer being examined or treated."
+        },
+        {
+          "text": "ENROLLING_BY_INVITATION",
+          "description": "Participants are being enrolled by invitation only."
+        },
+        {
+          "text": "NO_LONGER_AVAILABLE",
+          "description": "The intervention or data is no longer available."
+        },
+        {
+          "text": "NOT_YET_RECRUITING",
+          "description": "The study has not yet started recruiting participants."
+        },
+        {
+          "text": "RECRUITING",
+          "description": "The study is currently recruiting participants."
+        },
+        {
+          "text": "SUSPENDED",
+          "description": "The study has been temporarily halted but may resume."
+        },
+        {
+          "text": "TEMPORARILY_NOT_AVAILABLE",
+          "description": "The intervention or data is not currently available but may become available later."
+        },
+        {
+          "text": "TERMINATED",
+          "description": "The study has stopped prematurely and will not start again."
+        },
+        {
+          "text": "UNKNOWN",
+          "description": "The recruitment or availability status is unknown."
+        },
+        {
+          "text": "WITHDRAWN",
+          "description": "The study was halted before enrolling its first participant."
+        }
+      ]
+    },
+    {
       "name": "ApprovalStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ApprovalStatusEnum",
       "description": "",
@@ -1227,8 +1287,16 @@
           "is_a": "genetic_variant_form"
         },
         {
-          "text": "gain_of_function_variant_form",
+          "text": "non_loss_of_function_variant_form",
           "is_a": "genetic_variant_form"
+        },
+        {
+          "text": "gain_of_function_variant_form",
+          "is_a": "non_loss_of_function_variant_form"
+        },
+        {
+          "text": "dominant_negative_variant_form",
+          "is_a": "non_loss_of_function_variant_form"
         },
         {
           "text": "polymorphic_form",
@@ -1839,6 +1907,34 @@
       ]
     },
     {
+      "name": "AffinityParameterEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/AffinityParameterEnum",
+      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "pIC50",
+          "description": "Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function"
+        },
+        {
+          "text": "pEC50",
+          "description": "Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function"
+        },
+        {
+          "text": "pAC50"
+        },
+        {
+          "text": "pXC50"
+        },
+        {
+          "text": "pKi"
+        },
+        {
+          "text": "pKd"
+        }
+      ]
+    },
+    {
       "name": "FDAIDAAdverseEventEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum",
       "description": "please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
@@ -2381,6 +2477,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "hgvs_nomenclature",
+      "definition_uri": "https://w3id.org/biolink/vocab/hgvs_nomenclature",
+      "description": "HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.",
+      "comments": [
+        "For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples: https://hgvs-nomenclature.org/stable/recommendations/summary/.  "
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "SequenceVariant",
+      "slot_uri": "https://w3id.org/biolink/vocab/hgvs_nomenclature",
+      "owner": "SequenceVariant",
+      "domain_of": [
+        "SequenceVariant"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "stoichiometry",
       "definition_uri": "https://w3id.org/biolink/vocab/stoichiometry",
       "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
@@ -2742,6 +2857,23 @@
         "RetrievalSource"
       ],
       "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source_record_urls",
+      "definition_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "description": "A URL linking to a specific web page or document provided by the source, that contains a record of the knowledge expressed in the Edge. If the knowledge is contained in more than one web page on an Information Resource's site, urls MAY be provided for each.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "RetrievalSource",
+      "slot_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "owner": "RetrievalSource",
+      "domain_of": [
+        "RetrievalSource"
+      ],
+      "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2880,7 +3012,8 @@
       "description": "date on which an entity was created. This can be applied to nodes or edges",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
-        "publication date"
+        "publication date",
+        "date started"
       ],
       "exact_mappings": [
         "http://purl.org/dc/terms/createdOn",
@@ -2889,9 +3022,10 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/creation_date",
-      "owner": "InformationContentEntity",
+      "owner": "ClinicalTrial",
       "domain_of": [
-        "InformationContentEntity"
+        "InformationContentEntity",
+        "ClinicalTrial"
       ],
       "range": "date",
       "@type": "SlotDefinition"
@@ -3437,6 +3571,99 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "clinical_trial_phase",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_phase",
+      "description": "The phase that a clinical trials study represents",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_phase",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "ResearchPhaseEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_primary_purpose",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_primary_purpose",
+      "description": "The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are  TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE,  DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, ECT, OTHER, and (null).",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "primary purpose"
+      ],
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_primary_purpose",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_intervention_model",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_model",
+      "description": "The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are  SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_model",
+      "owner": "clinical_trial_intervention_model",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_time_perspective",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_time_perspective",
+      "description": "The time perspective of a clinical trial as determined by clinicaltrials.gov.  The most common values are  PROSPECTIVE, RETROSPECTIVE, CROSS_SECTIONAL, or OTHER (most common)..",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_time_perspective",
+      "owner": "clinical_trial_time_perspective",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_overall_status",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_overall_status",
+      "description": "The overall status of a clinical trial as determined by clinicaltrials.gov",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_overall_status",
+      "owner": "clinical_trial_overall_status",
+      "range": "ClinicalTrialStatusEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_intervention_boxed_warning",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_boxed_warning",
+      "description": "A boolean flag indicating whether a clinical trial intervention has a boxed warning. A boxed warning is the strongest warning that the FDA requires on a prescription drug label. This property should be populated from DailyMed.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_boxed_warning",
+      "owner": "clinical_trial_intervention_boxed_warning",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_tested_intervention",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_tested_intervention",
+      "description": "Records whether the clinical trials are testing the intervention.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_tested_intervention",
+      "owner": "clinical_trial_tested_intervention",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "has_biological_sequence",
       "definition_uri": "https://w3id.org/biolink/vocab/has_biological_sequence",
       "description": "connects a genomic feature to its sequence",
@@ -3799,6 +4026,30 @@
       "owner": "animal_model_available_from",
       "range": "DiseaseOrPhenotypicFeature",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "affinity",
+      "definition_uri": "https://w3id.org/biolink/vocab/affinity",
+      "description": "The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/affinity",
+      "owner": "affinity",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "affinity_parameter",
+      "definition_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
+      "description": "The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50.  Used in conjunction with the affinity slot.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
+      "owner": "affinity_parameter",
+      "range": "AffinityParameterEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12066,6 +12317,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "has_confidence_score",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_confidence_score",
+      "description": "connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000168"
+      ],
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000187",
+        "http://purl.obolibrary.org/obo/SEPIO_0000167"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_confidence_score",
+      "owner": "has_confidence_score",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "has_evidence",
       "definition_uri": "https://w3id.org/biolink/vocab/has_evidence",
       "description": "connects an association to an instance of supporting evidence",
@@ -12261,6 +12531,29 @@
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_statistic",
       "owner": "chi_squared_statistic",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "z_score",
+      "definition_uri": "https://w3id.org/biolink/vocab/z_score",
+      "description": "A measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "z-score",
+        "z-value",
+        "standard score",
+        "normal score"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/STATO_0000104",
+        "http://purl.obolibrary.org/obo/NCIT_C68741",
+        "http://edamontology.org/data_1668"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/z_score",
+      "owner": "z_score",
       "range": "float",
       "@type": "SlotDefinition"
     },
@@ -12733,6 +13026,28 @@
         "Association"
       ],
       "range": "Publication",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sources",
+      "definition_uri": "https://w3id.org/biolink/vocab/sources",
+      "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+      "comments": [
+        "Note that source retrieval provenance concerns the mechanical retrieval and transformation of data between web accessible information systems. It does not trace the source of knowledge back to specific publications or data sets. And it is not concerned with the reasoning, inference or analysis activities that generate knowledge in the first place (this is instead covered by 'knowledge level' and 'agent type' properties)."
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "source retrieval provenance"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/sources",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
+      "range": "RetrievalSource",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -13653,7 +13968,7 @@
     {
       "name": "retrieval_source_upstream_resource_ids",
       "definition_uri": "https://w3id.org/biolink/vocab/upstream_resource_ids",
-      "description": "The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.",
+      "description": "A list of upstream InformationResources from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "upstream_resource_ids",
       "domain": "RetrievalSource",
@@ -13666,6 +13981,26 @@
       "is_usage_slot": true,
       "usage_slot_name": "upstream resource ids",
       "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "retrieval_source_source_record_urls",
+      "definition_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "description": "One or more URLs that link to a specific web page or document provided by the InformationResource, that contains a record of the knowledge expressed in the Edge.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "source_record_urls",
+      "domain": "RetrievalSource",
+      "slot_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "alias": "source record urls",
+      "owner": "RetrievalSource",
+      "domain_of": [
+        "RetrievalSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "source record urls",
+      "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24978,6 +25313,7 @@
         "retrieval_source_resource_id",
         "retrieval_source_resource_role",
         "retrieval_source_upstream_resource_ids",
+        "retrieval_source_source_record_urls",
         "xref"
       ],
       "slot_usage": {},
@@ -28941,6 +29277,7 @@
         "in_taxon",
         "in_taxon_label",
         "sequence_variant_has_gene",
+        "hgvs_nomenclature",
         "sequence_variant_has_biological_sequence",
         "sequence_variant_id"
       ],
@@ -28977,6 +29314,7 @@
         "in_taxon",
         "in_taxon_label",
         "sequence_variant_has_gene",
+        "hgvs_nomenclature",
         "sequence_variant_has_biological_sequence",
         "sequence_variant_id"
       ],
@@ -29201,9 +29539,17 @@
     },
     {
       "name": "ClinicalTrial",
+      "id_prefixes": [
+        "CLINICALTRIALS"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrial",
+      "description": "A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "ClinicalEntity",
+      "exact_mappings": [
+        "NCIT:C71104",
+        "SIO:001000"
+      ],
+      "is_a": "Study",
       "slots": [
         "id",
         "iri",
@@ -29216,7 +29562,10 @@
         "xref",
         "full_name",
         "synonym",
-        "named_thing_category"
+        "named_thing_category",
+        "clinical_trial_phase",
+        "clinical_trial_primary_purpose",
+        "creation_date"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ClinicalTrial",
@@ -30146,6 +30495,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30193,6 +30543,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30243,6 +30594,7 @@
         "negated",
         "qualifier",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30300,6 +30652,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30355,6 +30708,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30410,6 +30764,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30470,6 +30825,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30524,6 +30880,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30580,6 +30937,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30655,6 +31013,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30718,6 +31077,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30773,6 +31133,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30855,6 +31216,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30987,6 +31349,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31041,6 +31404,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31099,6 +31463,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31153,6 +31518,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31219,6 +31585,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31283,6 +31650,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31354,6 +31722,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31423,6 +31792,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31477,6 +31847,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31535,6 +31906,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31589,6 +31961,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31661,6 +32034,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31726,6 +32100,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31781,6 +32156,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31832,6 +32208,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31904,6 +32281,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31979,6 +32357,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32050,6 +32429,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32112,6 +32492,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32210,6 +32591,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32286,6 +32668,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32519,6 +32902,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32587,6 +32971,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32690,6 +33075,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32743,6 +33129,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32838,6 +33225,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32909,6 +33297,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32983,6 +33372,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33056,6 +33446,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33126,6 +33517,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33181,6 +33573,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33236,6 +33629,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33291,6 +33685,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33411,6 +33806,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33480,6 +33876,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33558,6 +33955,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33627,6 +34025,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33697,6 +34096,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33767,6 +34167,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "knowledge_source",
         "primary_knowledge_source",
         "aggregator_knowledge_source",
@@ -33840,6 +34241,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33910,6 +34312,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33969,6 +34372,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34034,6 +34438,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34093,6 +34498,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34153,6 +34559,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34224,6 +34631,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34292,6 +34700,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34372,6 +34781,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34443,6 +34853,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34509,6 +34920,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34577,6 +34989,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34646,6 +35059,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34707,6 +35121,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34762,6 +35177,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34816,6 +35232,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34891,6 +35308,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34955,6 +35373,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35010,6 +35429,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35080,6 +35500,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35135,6 +35556,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35190,6 +35612,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35242,6 +35665,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35293,6 +35717,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35349,6 +35774,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35405,6 +35831,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35461,6 +35888,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35518,6 +35946,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35572,6 +36001,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35632,6 +36062,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35687,6 +36118,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35741,6 +36173,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35797,6 +36230,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35851,6 +36285,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35904,6 +36339,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35958,6 +36394,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36012,6 +36449,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36089,6 +36527,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36143,6 +36582,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36197,6 +36637,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36255,6 +36696,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36292,9 +36734,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-05-15T01:42:03",
-  "source_file_size": 406321,
-  "generation_date": "2025-05-15T01:42:09",
+  "source_file_date": "2025-07-08T16:07:12",
+  "source_file_size": 415223,
+  "generation_date": "2025-07-08T16:07:23",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
