@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.2.4",
+  "version": "4.2.6-rc5",
   "imports": [
     "linkml:types"
   ],
@@ -149,6 +149,10 @@
       "prefix_reference": "http://purl.org/spar/fabio/"
     },
     {
+      "prefix_prefix": "FMA",
+      "prefix_reference": "http://purl.obolibrary.org/obo/FMA_"
+    },
+    {
       "prefix_prefix": "foaf",
       "prefix_reference": "http://xmlns.com/foaf/0.1/"
     },
@@ -214,11 +218,19 @@
     },
     {
       "prefix_prefix": "ICD10",
-      "prefix_reference": "https://icd.codes/icd9cm/"
+      "prefix_reference": "https://icd.who.int/browse10/2016/en#/"
     },
     {
       "prefix_prefix": "ICD9",
       "prefix_reference": "http://translator.ncats.nih.gov/ICD9_"
+    },
+    {
+      "prefix_prefix": "icd11",
+      "prefix_reference": "http://id.who.int/icd/entity/"
+    },
+    {
+      "prefix_prefix": "icd11.foundation",
+      "prefix_reference": "http://id.who.int/icd/entity/"
     },
     {
       "prefix_prefix": "interpro",
@@ -1011,6 +1023,7 @@
   ],
   "enums": [
     {
+<<<<<<< HEAD
       "name": "ResponseEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ResponseEnum",
       "description": "A response to a treatment or intervention",
@@ -1047,6 +1060,64 @@
         {
           "text": "sample",
           "description": "A biological materialsample that is the target of a treatment or intervention"
+=======
+      "name": "ClinicalTrialStatusEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum",
+      "description": "Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.\n",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "ACTIVE_NOT_RECRUITING",
+          "description": "The study is ongoing but not currently recruiting participants."
+        },
+        {
+          "text": "APPROVED_FOR_MARKETING",
+          "description": "The intervention has received regulatory approval for marketing."
+        },
+        {
+          "text": "AVAILABLE",
+          "description": "The intervention or data is available for use or distribution."
+        },
+        {
+          "text": "COMPLETED",
+          "description": "The study has ended normally and participants are no longer being examined or treated."
+        },
+        {
+          "text": "ENROLLING_BY_INVITATION",
+          "description": "Participants are being enrolled by invitation only."
+        },
+        {
+          "text": "NO_LONGER_AVAILABLE",
+          "description": "The intervention or data is no longer available."
+        },
+        {
+          "text": "NOT_YET_RECRUITING",
+          "description": "The study has not yet started recruiting participants."
+        },
+        {
+          "text": "RECRUITING",
+          "description": "The study is currently recruiting participants."
+        },
+        {
+          "text": "SUSPENDED",
+          "description": "The study has been temporarily halted but may resume."
+        },
+        {
+          "text": "TEMPORARILY_NOT_AVAILABLE",
+          "description": "The intervention or data is not currently available but may become available later."
+        },
+        {
+          "text": "TERMINATED",
+          "description": "The study has stopped prematurely and will not start again."
+        },
+        {
+          "text": "UNKNOWN",
+          "description": "The recruitment or availability status is unknown."
+        },
+        {
+          "text": "WITHDRAWN",
+          "description": "The study was halted before enrolling its first participant."
+>>>>>>> master
         }
       ]
     },
@@ -1255,8 +1326,16 @@
           "is_a": "genetic_variant_form"
         },
         {
-          "text": "gain_of_function_variant_form",
+          "text": "non_loss_of_function_variant_form",
           "is_a": "genetic_variant_form"
+        },
+        {
+          "text": "gain_of_function_variant_form",
+          "is_a": "non_loss_of_function_variant_form"
+        },
+        {
+          "text": "dominant_negative_variant_form",
+          "is_a": "non_loss_of_function_variant_form"
         },
         {
           "text": "polymorphic_form",
@@ -1379,6 +1458,14 @@
         },
         {
           "text": "molecular_interaction"
+        },
+        {
+          "text": "guanyl_nucleotide_exchange",
+          "is_a": "molecular_interaction"
+        },
+        {
+          "text": "adenyl_nucleotide_exchange",
+          "is_a": "molecular_interaction"
         },
         {
           "text": "molecular_modification"
@@ -1855,6 +1942,34 @@
         },
         {
           "text": "supporting_data_source"
+        }
+      ]
+    },
+    {
+      "name": "AffinityParameterEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/AffinityParameterEnum",
+      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "pIC50",
+          "description": "Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function"
+        },
+        {
+          "text": "pEC50",
+          "description": "Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function"
+        },
+        {
+          "text": "pAC50"
+        },
+        {
+          "text": "pXC50"
+        },
+        {
+          "text": "pKi"
+        },
+        {
+          "text": "pKd"
         }
       ]
     },
@@ -2401,6 +2516,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "hgvs_nomenclature",
+      "definition_uri": "https://w3id.org/biolink/vocab/hgvs_nomenclature",
+      "description": "HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.",
+      "comments": [
+        "For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples: https://hgvs-nomenclature.org/stable/recommendations/summary/.  "
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "SequenceVariant",
+      "slot_uri": "https://w3id.org/biolink/vocab/hgvs_nomenclature",
+      "owner": "SequenceVariant",
+      "domain_of": [
+        "SequenceVariant"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "stoichiometry",
       "definition_uri": "https://w3id.org/biolink/vocab/stoichiometry",
       "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
@@ -2762,6 +2896,23 @@
         "RetrievalSource"
       ],
       "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source_record_urls",
+      "definition_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "description": "A URL linking to a specific web page or document provided by the source, that contains a record of the knowledge expressed in the Edge. If the knowledge is contained in more than one web page on an Information Resource's site, urls MAY be provided for each.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "RetrievalSource",
+      "slot_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "owner": "RetrievalSource",
+      "domain_of": [
+        "RetrievalSource"
+      ],
+      "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2900,7 +3051,8 @@
       "description": "date on which an entity was created. This can be applied to nodes or edges",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
-        "publication date"
+        "publication date",
+        "date started"
       ],
       "exact_mappings": [
         "http://purl.org/dc/terms/createdOn",
@@ -2909,9 +3061,10 @@
       "is_a": "node_property",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/creation_date",
-      "owner": "InformationContentEntity",
+      "owner": "ClinicalTrial",
       "domain_of": [
-        "InformationContentEntity"
+        "InformationContentEntity",
+        "ClinicalTrial"
       ],
       "range": "date",
       "@type": "SlotDefinition"
@@ -3454,6 +3607,102 @@
       ],
       "range": "uriorcurie",
       "multivalued": true,
+<<<<<<< HEAD
+=======
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_phase",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_phase",
+      "description": "The phase that a clinical trials study represents",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_phase",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "ResearchPhaseEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_primary_purpose",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_primary_purpose",
+      "description": "The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are  TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE,  DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "primary purpose"
+      ],
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_primary_purpose",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_intervention_model",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_model",
+      "description": "The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are  SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_model",
+      "owner": "clinical_trial_intervention_model",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_time_perspective",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_time_perspective",
+      "description": "The time perspective of a clinical trial as determined by clinicaltrials.gov.  The most common values are  PROSPECTIVE, RETROSPECTIVE, CROSS_SECTIONAL, or OTHER (most common)..",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_time_perspective",
+      "owner": "clinical_trial_time_perspective",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_overall_status",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_overall_status",
+      "description": "The overall status of a clinical trial as determined by clinicaltrials.gov",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_overall_status",
+      "owner": "clinical_trial_overall_status",
+      "range": "ClinicalTrialStatusEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_intervention_boxed_warning",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_boxed_warning",
+      "description": "A boolean flag indicating whether a clinical trial intervention has a boxed warning. A boxed warning is the strongest warning that the FDA requires on a prescription drug label. This property should be populated from DailyMed.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_boxed_warning",
+      "owner": "clinical_trial_intervention_boxed_warning",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_tested_intervention",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_tested_intervention",
+      "description": "Records whether the clinical trials are testing the intervention.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "node_property",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_tested_intervention",
+      "owner": "clinical_trial_tested_intervention",
+      "range": "string",
+>>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -3513,7 +3762,8 @@
       "slot_uri": "https://w3id.org/biolink/vocab/has_zygosity",
       "owner": "has_zygosity",
       "domain_of": [
-        "Genotype"
+        "Genotype",
+        "CaseToVariantAssociation"
       ],
       "range": "Zygosity",
       "@type": "SlotDefinition"
@@ -3848,6 +4098,33 @@
       "owner": "animal_model_available_from",
       "range": "DiseaseOrPhenotypicFeature",
       "multivalued": true,
+<<<<<<< HEAD
+=======
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "affinity",
+      "definition_uri": "https://w3id.org/biolink/vocab/affinity",
+      "description": "The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/affinity",
+      "owner": "affinity",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "affinity_parameter",
+      "definition_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
+      "description": "The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50.  Used in conjunction with the affinity slot.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
+      "owner": "affinity_parameter",
+      "range": "AffinityParameterEnum",
+>>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -3972,6 +4249,31 @@
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/form_or_variant_qualifier",
       "owner": "form_or_variant_qualifier",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "specialization_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/specialization_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "examples": [
+        {
+          "value": "CHEBI:5118",
+          "description": "In a MAXO annotation this would be a specialization in treatment of a disease. For example,  fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent  therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term 'congenital myasthenic syndrome '4A.'",
+          "@type": "Example"
+        },
+        {
+          "value": "GO:0005634",
+          "description": "In an expression annotation this would be a specialization in location of an anatomical entity. For example, \"expression in the nucleus of hepatic cells\" would be a specialization of \"expression in hepatic cells\"",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "qualifier",
+      "abstract": true,
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/specialization_qualifier",
+      "owner": "specialization_qualifier",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -4200,10 +4502,30 @@
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
+        "EntityToFeatureOrVariantQualifiersMixin",
+        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subject_specialization_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "specialization_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
+      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+      "domain_of": [
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+      ],
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -4336,6 +4658,8 @@
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
+        "EntityToFeatureOrVariantQualifiersMixin",
+        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "DirectionQualifierEnum",
@@ -4378,9 +4702,30 @@
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
+        "EntityToFeatureOrVariantQualifiersMixin",
+        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "object_specialization_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_specialization_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "specialization_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_specialization_qualifier",
+      "owner": "GeneToExpressionSiteAssociation",
+      "domain_of": [
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "GeneToExpressionSiteAssociation"
+      ],
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -4511,6 +4856,8 @@
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
+        "EntityToFeatureOrVariantQualifiersMixin",
+        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToDiseaseOrPhenotypicFeatureAssociation",
         "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
@@ -4536,6 +4883,8 @@
         "ChemicalAffectsGeneAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
+        "EntityToFeatureOrVariantQualifiersMixin",
+        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
       "range": "string",
@@ -4600,12 +4949,13 @@
       "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4634,14 +4984,44 @@
       "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
-      "owner": "GeneAffectsChemicalAssociation",
+      "owner": "MacromolecularMachineToEntityAssociationMixin",
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsGeneAssociation",
-        "GeneAffectsChemicalAssociation"
+        "GeneAffectsChemicalAssociation",
+        "MacromolecularMachineToEntityAssociationMixin"
       ],
       "range": "OrganismTaxon",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/disease_context_qualifier",
+      "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
+      "examples": [
+        {
+          "value": "MONDO:0004979",
+          "@type": "Example"
+        },
+        {
+          "value": "MONDO:0005148",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "context_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/disease_context_qualifier",
+      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+      "domain_of": [
+        "EntityToFeatureOrDiseaseQualifiersMixin",
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+      ],
+      "range": "Disease",
       "@type": "SlotDefinition"
     },
     {
@@ -4735,9 +5115,11 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/onset_qualifier",
-      "owner": "DiseaseToPhenotypicFeatureAssociation",
+      "owner": "CaseToDiseaseAssociation",
       "domain_of": [
-        "DiseaseToPhenotypicFeatureAssociation"
+        "DiseaseToPhenotypicFeatureAssociation",
+        "CaseToPhenotypicFeatureAssociation",
+        "CaseToDiseaseAssociation"
       ],
       "range": "Onset",
       "@type": "SlotDefinition"
@@ -6392,6 +6774,7 @@
       "inverse": "affects",
       "range": "NamedThing",
       "multivalued": true,
+<<<<<<< HEAD
       "@type": "SlotDefinition"
     },
     {
@@ -6431,6 +6814,8 @@
       "inverse": "associated_with_response_to",
       "range": "NamedThing",
       "multivalued": true,
+=======
+>>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -11860,6 +12245,9 @@
         "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
         "GenotypeToEntityAssociationMixin",
+        "CaseToDiseaseAssociation",
+        "CaseToVariantAssociation",
+        "CaseToGeneAssociation",
         "GeneToEntityAssociationMixin",
         "VariantToEntityAssociationMixin",
         "ModelToDiseaseAssociationMixin",
@@ -11917,6 +12305,9 @@
         "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
         "GenotypeToEntityAssociationMixin",
+        "CaseToDiseaseAssociation",
+        "CaseToVariantAssociation",
+        "CaseToGeneAssociation",
         "GeneToEntityAssociationMixin",
         "VariantToEntityAssociationMixin",
         "ModelToDiseaseAssociationMixin",
@@ -11978,6 +12369,9 @@
         "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
         "GenotypeToEntityAssociationMixin",
+        "CaseToDiseaseAssociation",
+        "CaseToVariantAssociation",
+        "CaseToGeneAssociation",
         "GeneToEntityAssociationMixin",
         "VariantToEntityAssociationMixin",
         "ModelToDiseaseAssociationMixin",
@@ -12019,9 +12413,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/negated",
-      "owner": "Association",
+      "owner": "CaseToPhenotypicFeatureAssociation",
       "domain_of": [
-        "Association"
+        "Association",
+        "CaseToPhenotypicFeatureAssociation"
       ],
       "range": "boolean",
       "@type": "SlotDefinition"
@@ -12036,6 +12431,25 @@
       "slot_uri": "https://w3id.org/biolink/vocab/has_confidence_level",
       "owner": "has_confidence_level",
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_confidence_score",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_confidence_score",
+      "description": "connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000168"
+      ],
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000187",
+        "http://purl.obolibrary.org/obo/SEPIO_0000167"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_confidence_score",
+      "owner": "has_confidence_score",
+      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -12234,6 +12648,29 @@
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_statistic",
       "owner": "chi_squared_statistic",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "z_score",
+      "definition_uri": "https://w3id.org/biolink/vocab/z_score",
+      "description": "A measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "z-score",
+        "z-value",
+        "standard score",
+        "normal score"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/STATO_0000104",
+        "http://purl.obolibrary.org/obo/NCIT_C68741",
+        "http://edamontology.org/data_1668"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/z_score",
+      "owner": "z_score",
       "range": "float",
       "@type": "SlotDefinition"
     },
@@ -12707,6 +13144,31 @@
       ],
       "range": "Publication",
       "multivalued": true,
+<<<<<<< HEAD
+=======
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sources",
+      "definition_uri": "https://w3id.org/biolink/vocab/sources",
+      "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+      "comments": [
+        "Note that source retrieval provenance concerns the mechanical retrieval and transformation of data between web accessible information systems. It does not trace the source of knowledge back to specific publications or data sets. And it is not concerned with the reasoning, inference or analysis activities that generate knowledge in the first place (this is instead covered by 'knowledge level' and 'agent type' properties)."
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "aliases": [
+        "source retrieval provenance"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/sources",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
+      "range": "RetrievalSource",
+      "multivalued": true,
+>>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -13063,7 +13525,6 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/knowledge_level",
-      "ifabsent": "string(not_provided)",
       "owner": "Association",
       "domain_of": [
         "Association"
@@ -13101,13 +13562,25 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/agent_type",
-      "ifabsent": "string(not_provided)",
       "owner": "Association",
       "domain_of": [
         "Association"
       ],
       "range": "AgentTypeEnum",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_biological_sex",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_biological_sex",
+      "description": "The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_biological_sex",
+      "owner": "Case",
+      "domain_of": [
+        "Case"
+      ],
+      "range": "BiologicalSex",
       "@type": "SlotDefinition"
     },
     {
@@ -13615,7 +14088,7 @@
     {
       "name": "retrieval_source_upstream_resource_ids",
       "definition_uri": "https://w3id.org/biolink/vocab/upstream_resource_ids",
-      "description": "The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.",
+      "description": "A list of upstream InformationResources from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "upstream_resource_ids",
       "domain": "RetrievalSource",
@@ -13628,6 +14101,26 @@
       "is_usage_slot": true,
       "usage_slot_name": "upstream resource ids",
       "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "retrieval_source_source_record_urls",
+      "definition_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "description": "One or more URLs that link to a specific web page or document provided by the InformationResource, that contains a record of the knowledge expressed in the Edge.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "source_record_urls",
+      "domain": "RetrievalSource",
+      "slot_uri": "https://w3id.org/biolink/vocab/source_record_urls",
+      "alias": "source record urls",
+      "owner": "RetrievalSource",
+      "domain_of": [
+        "RetrievalSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "source record urls",
+      "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14278,6 +14771,7 @@
       "usage_slot_name": "category",
       "range": "uriorcurie",
       "multivalued": true,
+<<<<<<< HEAD
       "@type": "SlotDefinition"
     },
     {
@@ -14390,6 +14884,8 @@
       "usage_slot_name": "predicate",
       "range": "predicate_type",
       "required": true,
+=======
+>>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -19285,6 +19781,132 @@
       "usage_slot_name": "object",
       "range": "PhenotypicFeature",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "case_to_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "CaseToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "CaseToDiseaseAssociation",
+      "domain_of": [
+        "CaseToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "case_to_variant_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "CaseToVariantAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "CaseToVariantAssociation",
+      "domain_of": [
+        "CaseToVariantAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "SequenceVariant",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "case_to_variant_association_has_zygosity",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_zygosity",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "has_zygosity",
+      "domain": "CaseToVariantAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_zygosity",
+      "alias": "has zygosity",
+      "owner": "CaseToVariantAssociation",
+      "domain_of": [
+        "CaseToVariantAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has zygosity",
+      "range": "Zygosity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "case_to_gene_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "CaseToGeneAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "CaseToGeneAssociation",
+      "domain_of": [
+        "CaseToGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24926,6 +25548,7 @@
         "retrieval_source_resource_id",
         "retrieval_source_resource_role",
         "retrieval_source_upstream_resource_ids",
+        "retrieval_source_source_record_urls",
         "xref"
       ],
       "slot_usage": {},
@@ -25536,6 +26159,9 @@
         "bioschemas:MolecularEntity"
       ],
       "is_a": "ChemicalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -25758,6 +26384,9 @@
         "SNOMEDCT:49616005"
       ],
       "is_a": "ChemicalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -26208,7 +26837,8 @@
         "REACT",
         "metacyc.reaction",
         "KEGG.MODULE",
-        "KEGG"
+        "KEGG",
+        "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalProcess",
       "description": "One or more causally connected executions of molecular functions",
@@ -27184,6 +27814,9 @@
         "HsapDv:0000000"
       ],
       "is_a": "OrganismalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -27307,6 +27940,9 @@
         "STY:T033"
       ],
       "is_a": "BiologicalEntity",
+      "mixins": [
+        "OntologyClass"
+      ],
       "slots": [
         "id",
         "iri",
@@ -27346,6 +27982,8 @@
         "NCIT",
         "SNOMEDCT",
         "medgen",
+        "icd11",
+        "icd11.foundation",
         "ICD10",
         "ICD9",
         "KEGG.DISEASE",
@@ -27534,7 +28172,8 @@
         "EMAPA",
         "ZFA",
         "FBbt",
-        "WBbt"
+        "WBbt",
+        "FMA"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntity",
       "description": "A subcellular location, cell type or gross anatomical part",
@@ -27569,7 +28208,8 @@
       ],
       "is_a": "OrganismalEntity",
       "mixins": [
-        "PhysicalEssence"
+        "PhysicalEssence",
+        "OntologyClass"
       ],
       "slots": [
         "id",
@@ -28872,6 +29512,7 @@
         "in_taxon",
         "in_taxon_label",
         "sequence_variant_has_gene",
+        "hgvs_nomenclature",
         "sequence_variant_has_biological_sequence",
         "sequence_variant_id"
       ],
@@ -28908,6 +29549,7 @@
         "in_taxon",
         "in_taxon_label",
         "sequence_variant_has_gene",
+        "hgvs_nomenclature",
         "sequence_variant_has_biological_sequence",
         "sequence_variant_id"
       ],
@@ -29132,9 +29774,17 @@
     },
     {
       "name": "ClinicalTrial",
+      "id_prefixes": [
+        "CLINICALTRIALS"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrial",
+      "description": "A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "ClinicalEntity",
+      "exact_mappings": [
+        "NCIT:C71104",
+        "SIO:001000"
+      ],
+      "is_a": "Study",
       "slots": [
         "id",
         "iri",
@@ -29147,7 +29797,10 @@
         "xref",
         "full_name",
         "synonym",
-        "named_thing_category"
+        "named_thing_category",
+        "clinical_trial_phase",
+        "clinical_trial_primary_purpose",
+        "creation_date"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ClinicalTrial",
@@ -29288,7 +29941,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "has_biological_sex"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Case",
@@ -30076,6 +30730,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30183,6 +30838,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30233,6 +30889,7 @@
         "negated",
         "qualifier",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30290,6 +30947,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30345,6 +31003,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30400,6 +31059,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30460,6 +31120,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30514,6 +31175,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30570,6 +31232,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30645,6 +31308,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30708,6 +31372,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30763,6 +31428,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30845,6 +31511,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -30871,7 +31538,11 @@
         "has_supporting_studies",
         "association_type",
         "association_category",
-        "cell_line_to_disease_or_phenotypic_feature_association_subject"
+        "cell_line_to_disease_or_phenotypic_feature_association_subject",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -30973,6 +31644,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31027,6 +31699,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31085,6 +31758,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31139,6 +31813,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31205,6 +31880,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31231,7 +31907,11 @@
         "has_supporting_studies",
         "association_type",
         "association_category",
-        "chemical_to_disease_or_phenotypic_feature_association_object"
+        "chemical_to_disease_or_phenotypic_feature_association_object",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -31244,12 +31924,13 @@
     {
       "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
-      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.",
+      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "mixins": [
         "ChemicalToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "EntityToFeatureOrDiseaseQualifiersMixin"
       ],
       "slots": [
         "id",
@@ -31264,6 +31945,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31291,7 +31973,17 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
-        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate"
+        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
+        "frequency_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
@@ -31325,6 +32017,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31352,6 +32045,16 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
+        "frequency_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
         "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate"
       ],
       "slot_usage": {},
@@ -31384,6 +32087,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31438,6 +32142,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31496,6 +32201,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31550,6 +32256,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31622,6 +32329,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31687,6 +32395,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31742,6 +32451,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31793,6 +32503,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31865,6 +32576,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -31940,6 +32652,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32011,6 +32724,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32073,6 +32787,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32098,7 +32813,11 @@
         "adjusted_p_value",
         "has_supporting_studies",
         "association_type",
-        "association_category"
+        "association_category",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
@@ -32167,6 +32886,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32243,6 +32963,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32312,10 +33033,55 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EntityToFeatureOrVariantQualifiersMixin",
+      "definition_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrVariantQualifiersMixin",
+      "description": "Qualifiers for entity to variant associations.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "FrequencyQualifierMixin",
+      "mixin": true,
+      "slots": [
+        "frequency_qualifier",
+        "subject",
+        "predicate",
+        "object",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrVariantQualifiersMixin",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EntityToFeatureOrGeneQualifiersMixin",
+      "definition_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrGeneQualifiersMixin",
+      "description": "Qualifiers for entity to gene associations.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "FrequencyQualifierMixin",
+      "mixin": true,
+      "slots": [
+        "frequency_qualifier",
+        "subject",
+        "predicate",
+        "object",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrGeneQualifiersMixin",
       "@type": "ClassDefinition"
     },
     {
@@ -32356,6 +33122,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "subject",
         "predicate",
         "entity_to_phenotypic_feature_association_mixin_object",
@@ -32368,6 +33135,8 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin",
       "defining_slots": [
+        "subject",
+        "predicate",
         "object"
       ],
       "@type": "ClassDefinition"
@@ -32428,6 +33197,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32464,7 +33234,8 @@
         "has_count",
         "has_total",
         "has_quotient",
-        "has_percentage"
+        "has_percentage",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToPhenotypicFeatureAssociation",
@@ -32495,6 +33266,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32549,6 +33321,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "entity_to_disease_association_mixin_object"
       ],
       "slot_usage": {},
@@ -32597,6 +33370,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32650,6 +33424,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32691,11 +33466,17 @@
       "slots": [
         "subject",
         "predicate",
-        "entity_to_disease_or_phenotypic_feature_association_mixin_object"
+        "entity_to_disease_or_phenotypic_feature_association_mixin_object",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
       "defining_slots": [
+        "subject",
+        "predicate",
         "object"
       ],
       "@type": "ClassDefinition"
@@ -32739,6 +33520,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32773,6 +33555,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -32809,6 +33592,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32842,6 +33626,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -32882,6 +33667,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32921,6 +33707,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier"
       ],
       "slot_usage": {},
@@ -32951,10 +33738,10 @@
         "subject",
         "predicate",
         "object",
-        "negated",
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -32981,12 +33768,15 @@
         "has_supporting_studies",
         "association_type",
         "association_category",
+        "negated",
+        "onset_qualifier",
         "frequency_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -32997,8 +33787,176 @@
       "class_uri": "https://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation",
       "defining_slots": [
         "subject",
+        "predicate",
         "object"
       ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CaseToDiseaseAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/CaseToDiseaseAssociation",
+      "description": "An association between a Case (patient) and a Disease",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "mixins": [
+        "CaseToEntityAssociationMixin"
+      ],
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "association_type",
+        "association_category",
+        "subject",
+        "predicate",
+        "case_to_disease_association_object",
+        "onset_qualifier"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/CaseToDiseaseAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CaseToVariantAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/CaseToVariantAssociation",
+      "description": "Association between a Case and a Genetic Variant",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "mixins": [
+        "CaseToEntityAssociationMixin"
+      ],
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "association_type",
+        "association_category",
+        "subject",
+        "predicate",
+        "case_to_variant_association_object",
+        "case_to_variant_association_has_zygosity"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/CaseToVariantAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CaseToGeneAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/CaseToGeneAssociation",
+      "description": "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "mixins": [
+        "CaseToEntityAssociationMixin"
+      ],
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "association_type",
+        "association_category",
+        "subject",
+        "predicate",
+        "case_to_gene_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/CaseToGeneAssociation",
       "@type": "ClassDefinition"
     },
     {
@@ -33022,6 +33980,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33056,6 +34015,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33141,6 +34101,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33176,6 +34137,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33209,6 +34171,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33242,6 +34205,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33273,7 +34237,6 @@
       ],
       "is_a": "GeneToDiseaseOrPhenotypicFeatureAssociation",
       "mixins": [
-        "EntityToDiseaseAssociationMixin",
         "GeneToEntityAssociationMixin"
       ],
       "slots": [
@@ -33287,6 +34250,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33320,6 +34284,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33342,7 +34307,6 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "GeneToDiseaseAssociation",
       "mixins": [
-        "EntityToDiseaseAssociationMixin",
         "GeneToEntityAssociationMixin"
       ],
       "slots": [
@@ -33356,6 +34320,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33389,6 +34354,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33425,6 +34391,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33458,6 +34425,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33494,6 +34462,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "knowledge_source",
         "primary_knowledge_source",
         "aggregator_knowledge_source",
@@ -33525,6 +34494,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33566,6 +34536,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33599,6 +34570,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33635,6 +34607,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33694,6 +34667,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33759,6 +34733,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33818,6 +34793,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33878,6 +34854,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33911,6 +34888,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -33948,6 +34926,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -33982,7 +34961,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToDiseaseAssociation",
@@ -34015,6 +34995,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34049,7 +35030,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
@@ -34094,6 +35076,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34127,6 +35110,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -34164,6 +35148,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34198,6 +35183,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "variant_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -34229,6 +35215,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34263,6 +35250,7 @@
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "genotype_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -34296,6 +35284,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34322,6 +35311,10 @@
         "has_supporting_studies",
         "association_type",
         "association_category",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
         "cell_line_as_a_model_of_disease_association_subject",
         "frequency_qualifier",
         "subject_aspect_qualifier",
@@ -34361,6 +35354,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34393,7 +35387,8 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "qualified_predicate",
+        "disease_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -34421,6 +35416,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34476,6 +35472,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34530,6 +35527,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34562,6 +35560,7 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
+        "disease_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -34604,6 +35603,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34632,6 +35632,7 @@
         "association_category",
         "gene_to_expression_site_association_stage_qualifier",
         "gene_to_expression_site_association_quantifier_qualifier",
+        "object_specialization_qualifier",
         "gene_to_expression_site_association_subject",
         "gene_to_expression_site_association_object",
         "gene_to_expression_site_association_predicate"
@@ -34667,6 +35668,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34722,6 +35724,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34764,7 +35767,8 @@
       "slots": [
         "macromolecular_machine_to_entity_association_mixin_subject",
         "predicate",
-        "object"
+        "object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToEntityAssociationMixin",
@@ -34791,6 +35795,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34818,7 +35823,8 @@
         "association_type",
         "association_category",
         "functional_association_subject",
-        "macromolecular_machine_to_molecular_activity_association_object"
+        "macromolecular_machine_to_molecular_activity_association_object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation",
@@ -34845,6 +35851,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34872,7 +35879,8 @@
         "association_type",
         "association_category",
         "functional_association_subject",
-        "macromolecular_machine_to_biological_process_association_object"
+        "macromolecular_machine_to_biological_process_association_object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation",
@@ -34899,6 +35907,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -34926,7 +35935,8 @@
         "association_type",
         "association_category",
         "functional_association_subject",
-        "macromolecular_machine_to_cellular_component_association_object"
+        "macromolecular_machine_to_cellular_component_association_object",
+        "species_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation",
@@ -34950,6 +35960,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35001,6 +36012,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35057,6 +36069,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35113,6 +36126,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35169,6 +36183,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35226,6 +36241,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35280,6 +36296,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35340,6 +36357,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35395,6 +36413,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35449,6 +36468,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35505,6 +36525,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35559,6 +36580,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35612,6 +36634,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35666,6 +36689,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35720,6 +36744,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35797,6 +36822,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35851,6 +36877,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35905,6 +36932,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -35963,6 +36991,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -36000,9 +37029,15 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
+<<<<<<< HEAD
   "source_file_date": "2024-10-10T10:49:41",
   "source_file_size": 404659,
   "generation_date": "2024-10-10T10:49:49",
+=======
+  "source_file_date": "2025-07-08T16:50:20",
+  "source_file_size": 415218,
+  "generation_date": "2025-07-08T16:50:31",
+>>>>>>> master
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -1,7 +1,11 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
+<<<<<<< HEAD
 // version: 4.2.4
+=======
+// version: 4.2.6-rc5
+>>>>>>> master
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -86,6 +90,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -129,6 +134,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -205,6 +211,7 @@ message Association
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -303,6 +310,7 @@ message BehaviorToBehavioralFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -337,6 +345,7 @@ message BehaviorToBehavioralFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -532,9 +541,10 @@ message Case
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+  biologicalSex hasBiologicalSex = 0
  }
-// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
-message CaseToPhenotypicFeatureAssociation
+// An association between a Case (patient) and a Disease
+message CaseToDiseaseAssociation
  {
   string id = 0
   iriType iri = 0
@@ -542,13 +552,11 @@ message CaseToPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  namedThing subject = 0
-  predicateType predicate = 0
-  namedThing object = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -575,17 +583,156 @@ message CaseToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  disease object = 0
+  onset onsetQualifier = 0
+ }
+// Association between a Case and a Gene (e.g., indicating a gene of interest for the case)
+message CaseToGeneAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  geneOrGeneProduct object = 0
+ }
+// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
+message CaseToPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  namedThing object = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  boolean negated = 0
+  onset onsetQualifier = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
   double hasQuotient = 0
   double hasPercentage = 0
+ }
+// Association between a Case and a Genetic Variant
+message CaseToVariantAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  sequenceVariant object = 0
+  zygosity hasZygosity = 0
  }
 message CausalGeneToDiseaseAssociation
  {
@@ -599,6 +746,7 @@ message CausalGeneToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -632,6 +780,7 @@ message CausalGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -688,6 +837,7 @@ message CellLineAsAModelOfDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -714,6 +864,10 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
@@ -737,6 +891,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -764,6 +919,10 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 // A location in or around a cell
 message CellularComponent
@@ -813,6 +972,7 @@ message ChemicalAffectsGeneAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -891,6 +1051,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -934,6 +1095,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -998,6 +1160,7 @@ message ChemicalGeneInteractionAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1076,6 +1239,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1103,9 +1267,19 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
+  frequencyValue frequencyQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
   predicateType predicate = 0
  }
-// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
 message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  {
   string id = 0
@@ -1120,6 +1294,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1148,6 +1323,16 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
+  frequencyValue frequencyQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string qualifiedPredicate = 0
  }
 // A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
@@ -1181,6 +1366,7 @@ message ChemicalToChemicalAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1224,6 +1410,7 @@ message ChemicalToChemicalDerivationAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1270,6 +1457,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1297,6 +1485,10 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature object = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 // An interaction between a chemical entity and a biological process or pathway.
 message ChemicalToPathwayAssociation
@@ -1312,6 +1504,7 @@ message ChemicalToPathwayAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1486,6 +1679,7 @@ message ClinicalModifier
   namedThing hasQualitativeValue = 0
   iriType iri = 0
  }
+// A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.
 message ClinicalTrial
  {
   string id = 0
@@ -1500,6 +1694,9 @@ message ClinicalTrial
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  uriorcurie category = 0
+  researchPhaseEnum clinicalTrialPhase = 0
+  string clinicalTrialPrimaryPurpose = 0
+  date creationDate = 0
  }
 message CodingSequence
  {
@@ -1653,6 +1850,7 @@ message ContributorAssociation
   boolean negated = 0
   string qualifier = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1696,6 +1894,7 @@ message CorrelatedGeneToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -1729,6 +1928,7 @@ message CorrelatedGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -1970,6 +2170,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2014,6 +2215,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2058,6 +2260,7 @@ message DiseaseToExposureEventAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2099,6 +2302,7 @@ message DiseaseToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2138,6 +2342,7 @@ message DiseaseToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -2226,6 +2431,7 @@ message DrugToGeneAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2287,6 +2493,7 @@ message DruggableGeneToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
  repeated  string aggregatorKnowledgeSource = 0
@@ -2318,6 +2525,7 @@ message DruggableGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2343,6 +2551,7 @@ message EntityToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2387,6 +2596,7 @@ message EntityToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2554,6 +2764,7 @@ message ExonToTranscriptRelationship
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2599,6 +2810,7 @@ message ExposureEventToOutcomeAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2643,6 +2855,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2676,6 +2889,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2741,6 +2955,7 @@ message FunctionalAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2821,6 +3036,7 @@ message GeneAffectsChemicalAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2879,6 +3095,7 @@ message GeneAsAModelOfDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2912,6 +3129,7 @@ message GeneAsAModelOfDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -2951,6 +3169,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -2983,6 +3202,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3006,6 +3226,7 @@ message GeneRegulatesGeneAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3052,6 +3273,7 @@ message GeneToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3085,6 +3307,7 @@ message GeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3105,6 +3328,7 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3140,6 +3364,7 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3159,6 +3384,7 @@ message GeneToExpressionSiteAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3187,6 +3413,7 @@ message GeneToExpressionSiteAssociation
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
   ontologyClass quantifierQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
   geneOrGeneProduct subject = 0
   anatomicalEntity object = 0
   predicateType predicate = 0
@@ -3204,6 +3431,7 @@ message GeneToGeneCoexpressionAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3251,6 +3479,7 @@ message GeneToGeneFamilyAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3294,6 +3523,7 @@ message GeneToGeneHomologyAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3337,6 +3567,7 @@ message GeneToGeneProductRelationship
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3380,6 +3611,7 @@ message GeneToGoTermAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3423,6 +3655,7 @@ message GeneToPathwayAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3464,6 +3697,7 @@ message GeneToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3497,6 +3731,7 @@ message GeneToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3579,6 +3814,7 @@ message GenomicSequenceLocalization
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3646,6 +3882,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3680,6 +3917,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   genotype subject = 0
  }
 message GenotypeToDiseaseAssociation
@@ -3694,6 +3932,7 @@ message GenotypeToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3729,6 +3968,7 @@ message GenotypeToDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
@@ -3743,6 +3983,7 @@ message GenotypeToGeneAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3786,6 +4027,7 @@ message GenotypeToGenotypePartAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3830,6 +4072,7 @@ message GenotypeToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -3864,6 +4107,7 @@ message GenotypeToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -3883,6 +4127,7 @@ message GenotypeToVariantAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4089,6 +4334,7 @@ message InformationContentEntityToNamedThingAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4237,6 +4483,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4265,6 +4512,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   biologicalProcess object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
 message MacromolecularMachineToCellularComponentAssociation
@@ -4280,6 +4528,7 @@ message MacromolecularMachineToCellularComponentAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4308,6 +4557,7 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   cellularComponent object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 message MacromolecularMachineToMolecularActivityAssociation
@@ -4323,6 +4573,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4351,6 +4602,7 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
 message Mammal
@@ -4399,6 +4651,7 @@ message MaterialSampleDerivationAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4445,6 +4698,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4471,6 +4725,10 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+  string anatomicalContextQualifier = 0
  }
 message MicroRNA
  {
@@ -4524,6 +4782,7 @@ message MolecularActivityToChemicalEntityAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4567,6 +4826,7 @@ message MolecularActivityToMolecularActivityAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4609,6 +4869,7 @@ message MolecularActivityToPathwayAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4714,6 +4975,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4916,6 +5178,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -4960,6 +5223,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5003,6 +5267,7 @@ message OrganismToOrganismAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5046,6 +5311,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5079,6 +5345,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
@@ -5093,6 +5360,7 @@ message PairwiseGeneToGeneInteraction
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5135,6 +5403,7 @@ message PairwiseMolecularInteraction
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5340,6 +5609,7 @@ message PhenotypicFeatureToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5373,6 +5643,7 @@ message PhenotypicFeatureToDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -5395,6 +5666,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5432,6 +5704,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   integer hasTotal = 0
   double hasQuotient = 0
   double hasPercentage = 0
+  disease diseaseContextQualifier = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -5589,6 +5862,7 @@ message PopulationToPopulationAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5717,6 +5991,7 @@ message ProcessRegulatesProcessAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5889,6 +6164,7 @@ message ReactionToCatalystAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -5934,6 +6210,7 @@ message ReactionToParticipantAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6050,7 +6327,8 @@ message RetrievalSource
   date creationDate = 0
   uriorcurie resourceId = 0
   resourceRoleEnum resourceRole = 0
-  uriorcurie upstreamResourceIds = 0
+ repeated  uriorcurie upstreamResourceIds = 0
+ repeated  uriorcurie sourceRecordUrls = 0
  repeated  uriorcurie xref = 0
  }
 message RNAProduct
@@ -6104,6 +6382,7 @@ message SequenceAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6145,6 +6424,7 @@ message SequenceFeatureRelationship
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6191,6 +6471,7 @@ message SequenceVariant
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  gene hasGene = 0
+ repeated  string hgvsNomenclature = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
  }
@@ -6299,6 +6580,7 @@ message Snv
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  gene hasGene = 0
+ repeated  string hgvsNomenclature = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
  }
@@ -6408,6 +6690,7 @@ message TaxonToTaxonAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6494,6 +6777,7 @@ message TranscriptToGeneRelationship
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6574,6 +6858,7 @@ message VariantAsAModelOfDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6608,6 +6893,7 @@ message VariantAsAModelOfDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   sequenceVariant subject = 0
  }
 message VariantToDiseaseAssociation
@@ -6622,6 +6908,7 @@ message VariantToDiseaseAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6657,6 +6944,7 @@ message VariantToDiseaseAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 message VariantToGeneAssociation
@@ -6672,6 +6960,7 @@ message VariantToGeneAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6715,6 +7004,7 @@ message VariantToGeneExpressionAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6762,6 +7052,7 @@ message VariantToPhenotypicFeatureAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0
@@ -6795,6 +7086,7 @@ message VariantToPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -6815,6 +7107,7 @@ message VariantToPopulationAssociation
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
   string primaryKnowledgeSource = 0

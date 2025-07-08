@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.4
+version: 4.2.6-rc5
 
 ## ------------
 ##
@@ -58,6 +58,7 @@ prefixes:
   EFO: 'http://www.ebi.ac.uk/efo/EFO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
+  FMA: 'http://purl.obolibrary.org/obo/FMA_'
   foaf: 'http://xmlns.com/foaf/0.1/'
   foodb.compound: 'http://foodb.ca/compounds/'
   foodb.food: 'http://foodb.ca/foods/'
@@ -75,8 +76,10 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD10: 'https://icd.codes/icd9cm/'
+  ICD10: 'https://icd.who.int/browse10/2016/en#/'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  icd11: 'http://id.who.int/icd/entity/'
+  icd11.foundation: 'http://id.who.int/icd/entity/'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   INO: 'http://purl.obolibrary.org/obo/INO_'
   isbn: 'https://www.isbn-international.org/identifier/'  # note: a resolvable base URI not available from isbn-international
@@ -554,6 +557,19 @@ slots:
       - dct:title
       - WIKIDATA_PROPERTY:P1476
 
+  hgvs nomenclature:
+    is_a: node property
+    domain: sequence variant
+    multivalued: true
+    description: >-
+      HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee 
+      to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the 
+      different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript,
+      and protein HGVS expressions/nomenclatures and is thus multivalued.
+    comments: >-
+      For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples:
+      https://hgvs-nomenclature.org/stable/recommendations/summary/.  
+
   stoichiometry:
     description: >-
       the relationship between the relative quantities of substances taking part in a reaction or
@@ -742,6 +758,18 @@ slots:
       an Edge provided by the ARAGORN ARA can expressing knowledge it
       retrieved from both the automat-mychem-info and molepro KPs,
       which both provided it with records of this single fact.
+    multivalued: true
+    domain: retrieval source
+    range: uriorcurie
+
+  source record urls:
+    is_a: node property
+    description: >-
+      A URL linking to a specific web page or document provided by the
+      source, that contains a record of the knowledge expressed in the
+      Edge. If the knowledge is contained in more than one web page on
+      an Information Resource's site, urls MAY be provided for each.
+    multivalued: true
     domain: retrieval source
     range: uriorcurie
 
@@ -812,7 +840,7 @@ slots:
 
   creation date:
     is_a: node property
-    aliases: ['publication date']
+    aliases: ['publication date', 'date started']
     range: date
     description: >-
       date on which an entity was created. This can be applied to nodes or edges
@@ -1061,7 +1089,62 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Biology
+   ## Clinical Trials
+  clinical trial phase:
+    is_a: node property
+    description: >-
+      The phase that a clinical trials study represents
+    range: ResearchPhaseEnum
+  
+  clinical trial primary purpose:
+    aliases: ['primary purpose']
+    is_a: node property
+    description: >-
+      The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, 
+      DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).
+    range: string
+    domain: clinical trial
+
+  clinical trial intervention model:
+    is_a: node property
+    description: >-
+      The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).
+    range: string
+    domain: clinical trial
+
+  clinical trial time perspective:
+    is_a: node property
+    description: >-
+      The time perspective of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      PROSPECTIVE, RETROSPECTIVE, CROSS_SECTIONAL, or OTHER (most common)..
+    range: string
+    domain: clinical trial
+
+  clinical trial overall status:
+    is_a: node property
+    description: >-
+      The overall status of a clinical trial as determined by clinicaltrials.gov
+    range: ClinicalTrialStatusEnum
+    domain: clinical trial
+
+  clinical trial intervention boxed warning:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial intervention has a boxed warning.
+      A boxed warning is the strongest warning that the FDA requires on a prescription drug label. This property should
+      be populated from DailyMed.
+    range: boolean
+    domain: association
+
+  clinical trial tested intervention:
+    is_a: node property
+    description: >-
+      Records whether the clinical trials are testing the intervention.
+    domain: association
+    range: string
+
 
   has biological sequence:
     is_a: node property
@@ -1252,6 +1335,20 @@ slots:
     multivalued: true
     range: disease or phenotypic feature
 
+  affinity:
+    description: >-
+      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity is 8.6. Used in conjunction with the affinity parameter slot.
+    is_a: association slot
+    range: float
+
+  affinity parameter:
+    description: >-
+      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
+    is_a: association slot
+    range: AffinityParameterEnum
+
   FDA adverse event level:
     description: >-
     is_a: association slot
@@ -1329,6 +1426,26 @@ slots:
       the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
     in_subset:
       - translator_minimal
+
+  specialization qualifier:
+    is_a: qualifier
+    abstract: true
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a more specific version of the 
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
+      subject identifier.
+    examples:
+      - value: CHEBI:5118  # fluoxetine
+        description: >-
+          In a MAXO annotation this would be a specialization in treatment of a disease. For example, 
+          fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent 
+          therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term
+          'congenital myasthenic syndrome '4A.'
+      - value: GO:0005634  # nucleus
+        description: >-
+          In an expression annotation this would be a specialization in location of an anatomical entity. For example,
+          "expression in the nucleus of hepatic cells" would be a specialization of "expression in hepatic cells"
 
   aspect qualifier:
     is_a: qualifier
@@ -1454,6 +1571,17 @@ slots:
     in_subset:
       - translator_minimal
 
+  subject specialization qualifier:
+    is_a: specialization qualifier
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a more specific version of the 
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
+      subject identifier.
+    in_subset:
+      - translator_minimal
+    range: uriorcurie
+
   subject form or variant qualifier:
     description: >-
       A qualifier that composes with a core subject/object concept to define a specific type, variant,
@@ -1519,6 +1647,17 @@ slots:
     is_a: aspect qualifier
     in_subset:
       - translator_minimal
+
+  object specialization qualifier:
+    is_a: specialization qualifier
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a more specific version of the 
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
+      subject identifier.
+    in_subset:
+      - translator_minimal
+    range: uriorcurie
 
   object form or variant qualifier:
     description: >-
@@ -1635,6 +1774,17 @@ slots:
       - value: human  # NCBITaxon:9606
     notes:
       - Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs.
+    in_subset:
+      - translator_minimal
+
+  disease context qualifier:
+    is_a: context qualifier
+    description: >-
+        A context qualifier representing a disease or condition in which a relationship expressed in an association took place.
+    range: disease
+    examples:
+      - value: MONDO:0004979  # Asthma
+      - value: MONDO:0005148  # type 2 diabetes mellitus
     in_subset:
       - translator_minimal
 
@@ -2736,7 +2886,6 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: response affected by
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -2752,6 +2901,7 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
+    inverse: affects response to
 
   increases response to:
     description: >-
@@ -2875,7 +3025,6 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-    inverse: has gene product
     in_subset:
       - translator_minimal
 
@@ -2916,7 +3065,6 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-    inverse: transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -2929,7 +3077,6 @@ slots:
     range: protein
     annotations:
       canonical_predicate: true
-    inverse: translation of
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
@@ -4558,7 +4705,6 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-    inverse: enabled by
     exact_mappings:
       - RO:0002327
 
@@ -4605,7 +4751,6 @@ slots:
     in_subset:
       - translator_minimal
       - samples
-    inverse: derives into
     exact_mappings:
       - RO:0001000
       - FMA:derives_from
@@ -4717,7 +4862,6 @@ slots:
       opposite_of: is excipient of
     in_subset:
       - translator_minimal
-    inverse: is active ingredient of
     mappings:
       - RO:0002248
 
@@ -4871,7 +5015,6 @@ slots:
     range: occurrent
     annotations:
       canonical_predicate: true
-    inverse: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
@@ -5615,6 +5758,19 @@ slots:
     description: >-
       connects an association to a qualitative term denoting the level of confidence
 
+  has confidence score:
+    is_a: association slot
+    range: float
+    description: >-
+      connects an association to a quantitative (numeric) value that can be interpreted
+      as an indicator of the degree of confidence that a piece of information is true,
+      and accurately reflects the aspect of reality it is about.
+    exact_mappings:
+      - SEPIO:0000168
+    close_mappings:
+      - SEPIO:0000187
+      - SEPIO:0000167
+
   has evidence:
     is_a: association slot
     range: evidence type
@@ -5743,6 +5899,19 @@ slots:
       represents the chi-squared statistic computed from observations
     exact_mappings:
       - STATO:0000030
+
+  z score:
+    aliases: ['z-score', 'z-value', 'standard score', 'normal score']
+    is_a: association slot
+    range: float
+    description: >-
+      A measure of the divergence of an individual experimental result from
+      the most probable result, the mean. Z is expressed in terms of the number
+      of standard deviations from the mean value.
+    exact_mappings:
+      - STATO:0000104
+      - NCIT:C68741
+      - EDAM-DATA:1668
 
   p value:
     aliases: ['unadjusted p value']
@@ -5993,6 +6162,25 @@ slots:
     multivalued: true
     range: publication
 
+  sources:
+    aliases: ['source retrieval provenance']
+    description: >-
+      A set of RetrievalSources, which traces where the statement expressed in an
+      Association came from. For example, the provenance of a Gene-Chemical Edge
+      might be traced through the Translator Resource that provided it (e.g. MolePro)
+      to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to
+      the resource that originally created/curated it (e.g. ClinicalTrials.org).
+    comments: >-
+      Note that source retrieval provenance concerns the mechanical retrieval and
+      transformation of data between web accessible information systems. It does not
+      trace the source of knowledge back to specific publications or data sets. And
+      it is not concerned with the reasoning, inference or analysis activities that
+      generate knowledge in the first place (this is instead covered by 'knowledge
+      level' and 'agent type' properties).
+    is_a: association slot
+    multivalued: true
+    range: retrieval source
+
   associated environmental context:
     is_a: association slot
     description: >-
@@ -6182,7 +6370,6 @@ slots:
     range: KnowledgeLevelEnum
     multivalued: false
     required: true
-    ifabsent: string(not_provided)
     examples:
       - value: knowledge_assertion
       - value: prediction
@@ -6210,12 +6397,16 @@ slots:
     range: AgentTypeEnum
     multivalued: false
     required: true
-    ifabsent: string(not_provided)
     examples:
       - value: manual_agent
       - value: automated_agent
       - value: computational_model
       - value: text_mining_agent
+
+  has biological sex:
+    description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
+    required: false
+    range: biological sex
 
 classes:
 
@@ -6972,6 +7163,7 @@ classes:
       - resource id
       - resource role
       - upstream resource ids
+      - source record urls
       - xref
     slot_usage:
       resource id:
@@ -6982,13 +7174,18 @@ classes:
       resource role:
         required: true
         description: >-
-            The role of the InformationResource in the retrieval of the
-            knowledge expressed in an Edge, or data used to generate this knowledge.
+          The role of the InformationResource in the retrieval of the
+          knowledge expressed in an Edge, or data used to generate this knowledge.
       upstream resource ids:
         description: >-
-          The InformationResources that served as a source for the
-          InformationResource that served as a source for the knowledge
-          expressed in an Edge, or data used to generate this knowledge.
+          A list of upstream InformationResources from which the resource
+          being described directly retrieved a record of the knowledge
+          expressed in the Edge, or data used to generate this knowledge.
+      source record urls:
+        description: >-
+          One or more URLs that link to a specific web page or document provided by
+          the InformationResource, that contains a record of the knowledge expressed
+          in the Edge.
 
    ## Top Level Abstractions of Material & Process Entities
 
@@ -7253,6 +7450,8 @@ classes:
 
   molecular entity:
     is_a: chemical entity
+    mixins:
+      - ontology class
     description: >-
       A molecular entity is a chemical entity composed of individual or
       covalently bonded atoms.
@@ -7402,6 +7601,8 @@ classes:
 
   chemical mixture:
     is_a: chemical entity
+    mixins:
+      - ontology class
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
@@ -7676,6 +7877,7 @@ classes:
       - metacyc.reaction
       - KEGG.MODULE  ## M number
       - KEGG
+      - UMLS
 
   pathway:
     is_a: biological process
@@ -8093,6 +8295,8 @@ classes:
 
   life stage:
     is_a: organismal entity
+    mixins:
+      - ontology class
     description: >-
       A stage of development or growth of an organism,
       including post-natal adult stages
@@ -8155,6 +8359,8 @@ classes:
   disease or phenotypic feature:
     aliases: ['phenome']
     is_a: biological entity
+    mixins:
+      - ontology class
     description: >-
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
@@ -8210,6 +8416,8 @@ classes:
       - NCIT
       - SNOMEDCT
       - medgen
+      - icd11
+      - icd11.foundation
       - ICD10
       - ICD9
       - KEGG.DISEASE  ## H number
@@ -8286,6 +8494,7 @@ classes:
     is_a: organismal entity
     mixins:
       - physical essence
+      - ontology class
     description: >-
       A subcellular location, cell type or gross anatomical part
     exact_mappings:
@@ -8323,6 +8532,7 @@ classes:
       - ZFA
       - FBbt
       - WBbt
+      - FMA
     in_subset:
       - model_organism_database
 
@@ -8919,6 +9129,7 @@ classes:
         A contiguous change at a Location
     slots:
       - has gene
+      - hgvs nomenclature
     slot_usage:
       has gene:
         multivalued: true
@@ -9027,7 +9238,20 @@ classes:
       biological realm. Diseases are placed under biological entities
 
   clinical trial:
-    is_a: clinical entity
+    is_a: study
+    description: >-
+      A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or
+      more health-related interventions to evaluate the effects on health outcomes.
+    exact_mappings:
+      - NCIT:C71104
+      - SIO:001000
+    slots:
+      - clinical trial phase
+      - clinical trial primary purpose
+      - creation date # maybe? 
+    id_prefixes:
+      - CLINICALTRIALS
+
 
   clinical intervention:
     is_a: clinical entity
@@ -9066,6 +9290,8 @@ classes:
       An individual (human) organism that has a patient role in some clinical context.
     mixins:
       - subject of investigation
+    slots:
+      - has biological sex
 
   cohort:
     is_a: study population
@@ -9396,6 +9622,7 @@ classes:
       - qualifier
       - qualifiers  # deprecated
       - publications
+      - sources
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -9887,7 +10114,7 @@ classes:
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary undesirable effect.
+      where the disease or phenotypic feature is a secondary undesirable effect.
     is_a: association
     defining_slots:
       - subject
@@ -9896,6 +10123,7 @@ classes:
     mixins:
       - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
     slots:
       - FDA adverse event level
     slot_usage:
@@ -10379,6 +10607,31 @@ classes:
       - object aspect qualifier
       - object direction qualifier
       - qualified predicate
+      - disease context qualifier
+
+  entity to feature or variant qualifiers mixin:
+    description: >-
+      Qualifiers for entity to variant associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+
+  entity to feature or gene qualifiers mixin:
+    description: >-
+      Qualifiers for entity to gene associations.
+    mixin: true
+    is_a: frequency qualifier mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
 
   feature or disease qualifiers to entity mixin:
     description: >-
@@ -10403,6 +10656,8 @@ classes:
       - object
       - sex qualifier
     defining_slots:
+      - subject
+      - predicate
       - object
     slot_usage:
       object:
@@ -10547,7 +10802,13 @@ classes:
       - subject
       - predicate
       - object
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
     defining_slots:
+      - subject
+      - predicate
       - object
     slot_usage:
       object:
@@ -10635,10 +10896,58 @@ classes:
     is_a: association
     defining_slots:
       - subject
+      - predicate
       - object
     mixins:
       - entity to phenotypic feature association mixin
       - case to entity association mixin
+    slots:
+      - negated
+      - onset qualifier
+
+  case to disease association:
+    is_a: association
+    mixins:
+      - case to entity association mixin
+    description: "An association between a Case (patient) and a Disease"
+    slot_usage:
+      object:
+        range: disease
+    slots:
+      - subject
+      - predicate
+      - object
+      - onset qualifier
+
+  case to variant association:
+    is_a: association
+    mixins:
+      - case to entity association mixin
+    description: "Association between a Case and a Genetic Variant"
+    slot_usage:
+      object:
+        range: sequence variant
+      has zygosity:
+        range: zygosity
+    slots:
+      - subject
+      - predicate
+      - object
+      - has zygosity
+
+  case to gene association:
+    is_a: association
+    mixins:
+      - case to entity association mixin
+    description: "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)"
+    slot_usage:
+      object:
+        range: gene or gene product
+    slots:
+      - subject
+      - predicate
+      - object
+
 
   behavior to behavioral feature association:
     description: >-
@@ -10760,7 +11069,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
@@ -10777,7 +11085,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
@@ -11172,6 +11479,7 @@ classes:
     slots:
       - stage qualifier
       - quantifier qualifier
+      - object specialization qualifier
     slot_usage:
       subject:
         range: gene or gene product
@@ -11252,6 +11560,7 @@ classes:
       - subject
       - predicate
       - object
+      - species context qualifier
     slot_usage:
       subject:
         domain: macromolecular machine mixin
@@ -11633,6 +11942,7 @@ classes:
 
 
 enums:
+<<<<<<< HEAD
 
   ResponseEnum:
     description: >-
@@ -11662,6 +11972,39 @@ enums:
         description: >-
           A biological materialsample that is the target of a treatment or intervention
 
+=======
+  ClinicalTrialStatusEnum:
+    description: >
+      Enumeration of clinical trial statuses indicating the recruitment state,
+      availability, or regulatory status of a clinical study or intervention.
+    permissible_values:
+      ACTIVE_NOT_RECRUITING:
+        description: The study is ongoing but not currently recruiting participants.
+      APPROVED_FOR_MARKETING:
+        description: The intervention has received regulatory approval for marketing.
+      AVAILABLE:
+        description: The intervention or data is available for use or distribution.
+      COMPLETED:
+        description: The study has ended normally and participants are no longer being examined or treated.
+      ENROLLING_BY_INVITATION:
+        description: Participants are being enrolled by invitation only.
+      NO_LONGER_AVAILABLE:
+        description: The intervention or data is no longer available.
+      NOT_YET_RECRUITING:
+        description: The study has not yet started recruiting participants.
+      RECRUITING:
+        description: The study is currently recruiting participants.
+      SUSPENDED:
+        description: The study has been temporarily halted but may resume.
+      TEMPORARILY_NOT_AVAILABLE:
+        description: The intervention or data is not currently available but may become available later.
+      TERMINATED:
+        description: The study has stopped prematurely and will not start again.
+      UNKNOWN:
+        description: The recruitment or availability status is unknown.
+      WITHDRAWN:
+        description: The study was halted before enrolling its first participant.
+>>>>>>> master
   ApprovalStatusEnum:
     description: >-
     permissible_values:
@@ -11848,8 +12191,12 @@ enums:
       modified_form:
       loss_of_function_variant_form:
         is_a: genetic_variant_form
-      gain_of_function_variant_form:
+      non_loss_of_function_variant_form:
         is_a: genetic_variant_form
+      gain_of_function_variant_form:
+        is_a: non_loss_of_function_variant_form
+      dominant_negative_variant_form:
+        is_a: non_loss_of_function_variant_form
       polymorphic_form:
         is_a: genetic_variant_form
       snp_form:
@@ -11902,6 +12249,10 @@ enums:
         is_a: transport
       splicing:
       molecular_interaction:
+      guanyl_nucleotide_exchange:
+        is_a: molecular_interaction
+      adenyl_nucleotide_exchange:
+        is_a: molecular_interaction
       molecular_modification:
       acetylation:
         is_a: molecular_modification
@@ -12205,6 +12556,20 @@ enums:
     in_subset:
       - translator_minimal
 
+  AffinityParameterEnum:
+    description: >- 
+      The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.
+    permissible_values:
+      "pIC50":
+        description: >-
+          Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function
+      "pEC50":
+        description: >-
+          Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function
+      "pAC50":
+      "pXC50":
+      "pKi":
+      "pKd":
 
   FDAIDAAdverseEventEnum:
     description: >-

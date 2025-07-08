@@ -20,6 +20,11 @@ stringcase = "^1.2.0"
 pytest = "^8.1.1"
 beautifulsoup4 = ">=4.0.0"
 yamllint = "^1.35.1"
+path = "^17.0.0"
+linkml-runtime = "^1.8.3"
+requests = ">=2.32.3"
+linkml = "^1.9.1"
+click = ">8.0.0,<8.2.0"
 
 [tool.poetry-dynamic-versioning]
 enable = true
@@ -42,5 +47,5 @@ build-backend = "poetry_dynamic_versioning.backend"
 docs = ["mkdocs-material"]
 
 [tool.codespell]
-skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs'
+skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'
 ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
