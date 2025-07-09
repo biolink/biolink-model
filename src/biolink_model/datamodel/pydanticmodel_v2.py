@@ -63,6 +63,42 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = None
 
+class ResponseEnum(str, Enum):
+    """
+    A response to a treatment or intervention
+    """
+    therapeutic_response = "therapeutic_response"
+    """
+    A positive response to a treatment or intervention
+    """
+    negative = "negative"
+    """
+    A negative response to a treatment or intervention
+    """
+
+
+class ResponseTargetEnum(str, Enum):
+    """
+    The target of a treatment or intervention
+    """
+    cohort = "cohort"
+    """
+    A group of individuals that are the target of a treatment or intervention
+    """
+    cell_line = "cell line"
+    """
+    A cell line that is the target of a treatment or intervention
+    """
+    individual = "individual"
+    """
+    An individual that is the target of a treatment or intervention
+    """
+    sample = "sample"
+    """
+    A biological materialsample that is the target of a treatment or intervention
+    """
+
+
 class ClinicalTrialStatusEnum(str, Enum):
     """
     Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.
@@ -4202,6 +4238,54 @@ class Association(Entity):
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/Association","biolink:Association"]] = Field(default=["biolink:Association"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[list[str]] = Field(default=None, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+
+
+class DiseaseAssociatedWithResponseToChemicalEntityAssociation(Association):
+    """
+    A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.
+    """
+    response_context_qualifier: Optional[ResponseEnum] = Field(default=None, description="""a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain  an association.""")
+    response_target_context_qualifier: Optional[ResponseTargetEnum] = Field(default=None, description="""a biological response target (a patient, a cohort, a model system, a cell line, a sample of biological material,  etc.)""")
+    subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
+    qualifiers: Optional[list[str]] = Field(default=None, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[list[str]] = Field(default=None, description="""One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.""")
+    sources: Optional[list[str]] = Field(default=None, description="""A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).""")
+    has_evidence: Optional[list[str]] = Field(default=None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(default=None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(default=None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
+    aggregator_knowledge_source: Optional[list[str]] = Field(default=None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    knowledge_level: KnowledgeLevelEnum = Field(default=..., description="""Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true.""")
+    agent_type: AgentTypeEnum = Field(default=..., description="""Describes the high-level category of agent who originally generated a  statement of knowledge or other type of information.""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    original_subject: Optional[str] = Field(default=None, description="""used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_predicate: Optional[str] = Field(default=None, description="""used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_object: Optional[str] = Field(default=None, description="""used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    subject_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category: Optional[str] = Field(default=None, description="""Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_namespace: Optional[str] = Field(default=None, description="""Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_namespace: Optional[str] = Field(default=None, description="""Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_label_closure: Optional[list[str]] = Field(default=None, description="""Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    retrieval_source_ids: Optional[list[str]] = Field(default=None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
+    p_value: Optional[float] = Field(default=None, description="""A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.""")
+    adjusted_p_value: Optional[float] = Field(default=None, description="""The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.""")
+    has_supporting_studies: Optional[list[str]] = Field(default=None, description="""A study that produced information used as evidence to generate the knowledge expressed in an Association.""")
+    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: list[Literal["https://w3id.org/biolink/vocab/DiseaseAssociatedWithResponseToChemicalEntityAssociation","biolink:DiseaseAssociatedWithResponseToChemicalEntityAssociation"]] = Field(default=["biolink:DiseaseAssociatedWithResponseToChemicalEntityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
@@ -9193,6 +9277,7 @@ MortalityOutcome.model_rebuild()
 EpidemiologicalOutcome.model_rebuild()
 SocioeconomicOutcome.model_rebuild()
 Association.model_rebuild()
+DiseaseAssociatedWithResponseToChemicalEntityAssociation.model_rebuild()
 ChemicalEntityAssessesNamedThingAssociation.model_rebuild()
 ContributorAssociation.model_rebuild()
 GenotypeToGenotypePartAssociation.model_rebuild()
