@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-08T16:50:53
+# Generation date: 2025-07-08T17:15:52
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -407,8 +407,8 @@ class Unit(String):
 
 
 class TimeType(Time):
-    type_class_uri = XSD["time"]
-    type_class_curie = "xsd:time"
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
     type_name = "time type"
     type_model_uri = BIOLINK.TimeType
 
@@ -1058,6 +1058,10 @@ class SocioeconomicExposureId(AttributeId):
 
 
 class AssociationId(EntityId):
+    pass
+
+
+class DiseaseAssociatedWithResponseToChemicalEntityAssociationId(AssociationId):
     pass
 
 
@@ -7583,6 +7587,61 @@ class Association(Entity):
 
 
 @dataclass(repr=False)
+class DiseaseAssociatedWithResponseToChemicalEntityAssociation(Association):
+    """
+    A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or
+    adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseAssociatedWithResponseToChemicalEntityAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+    class_name: ClassVar[str] = "disease associated with response to chemical entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseAssociatedWithResponseToChemicalEntityAssociation
+
+    id: Union[str, DiseaseAssociatedWithResponseToChemicalEntityAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, DiseaseId] = None
+    object: Union[str, ChemicalEntityId] = None
+    predicate: Union[str, PredicateType] = None
+    response_context_qualifier: Optional[Union[str, "ResponseEnum"]] = None
+    response_target_context_qualifier: Optional[Union[str, "ResponseTargetEnum"]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DiseaseAssociatedWithResponseToChemicalEntityAssociationId):
+            self.id = DiseaseAssociatedWithResponseToChemicalEntityAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, DiseaseId):
+            self.subject = DiseaseId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, ChemicalEntityId):
+            self.object = ChemicalEntityId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.response_context_qualifier is not None and not isinstance(self.response_context_qualifier, ResponseEnum):
+            self.response_context_qualifier = ResponseEnum(self.response_context_qualifier)
+
+        if self.response_target_context_qualifier is not None and not isinstance(self.response_target_context_qualifier, ResponseTargetEnum):
+            self.response_target_context_qualifier = ResponseTargetEnum(self.response_target_context_qualifier)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
 class ChemicalEntityAssessesNamedThingAssociation(Association):
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -13541,6 +13600,48 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class ResponseEnum(EnumDefinitionImpl):
+    """
+    A response to a treatment or intervention
+    """
+    therapeutic_response = PermissibleValue(
+        text="therapeutic_response",
+        description="A positive response to a treatment or intervention")
+    negative = PermissibleValue(
+        text="negative",
+        description="A negative response to a treatment or intervention")
+
+    _defn = EnumDefinition(
+        name="ResponseEnum",
+        description="A response to a treatment or intervention",
+    )
+
+class ResponseTargetEnum(EnumDefinitionImpl):
+    """
+    The target of a treatment or intervention
+    """
+    cohort = PermissibleValue(
+        text="cohort",
+        description="A group of individuals that are the target of a treatment or intervention")
+    individual = PermissibleValue(
+        text="individual",
+        description="An individual that is the target of a treatment or intervention")
+    sample = PermissibleValue(
+        text="sample",
+        description="A biological materialsample that is the target of a treatment or intervention")
+
+    _defn = EnumDefinition(
+        name="ResponseTargetEnum",
+        description="The target of a treatment or intervention",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cell line",
+            PermissibleValue(
+                text="cell line",
+                description="A cell line that is the target of a treatment or intervention"))
+
 class ClinicalTrialStatusEnum(EnumDefinitionImpl):
     """
     Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a
@@ -14409,6 +14510,12 @@ slots.has_stressor = Slot(uri=BIOLINK.has_stressor, name="has stressor", curie=B
 slots.has_route = Slot(uri=BIOLINK.has_route, name="has route", curie=BIOLINK.curie('has_route'),
                    model_uri=BIOLINK.has_route, domain=None, range=Optional[str])
 
+slots.response_context_qualifier = Slot(uri=BIOLINK.response_context_qualifier, name="response context qualifier", curie=BIOLINK.curie('response_context_qualifier'),
+                   model_uri=BIOLINK.response_context_qualifier, domain=Association, range=Optional[Union[str, "ResponseEnum"]])
+
+slots.response_target_context_qualifier = Slot(uri=BIOLINK.response_target_context_qualifier, name="response target context qualifier", curie=BIOLINK.curie('response_target_context_qualifier'),
+                   model_uri=BIOLINK.response_target_context_qualifier, domain=Association, range=Optional[Union[str, "ResponseTargetEnum"]])
+
 slots.population_context_qualifier = Slot(uri=BIOLINK.population_context_qualifier, name="population context qualifier", curie=BIOLINK.curie('population_context_qualifier'),
                    model_uri=BIOLINK.population_context_qualifier, domain=Association, range=Optional[Union[str, PopulationOfIndividualOrganismsId]])
 
@@ -14768,6 +14875,12 @@ slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('a
 
 slots.affected_by = Slot(uri=BIOLINK.affected_by, name="affected by", curie=BIOLINK.curie('affected_by'),
                    model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
+
+slots.associated_with_response_to = Slot(uri=BIOLINK.associated_with_response_to, name="associated with response to", curie=BIOLINK.curie('associated_with_response_to'),
+                   model_uri=BIOLINK.associated_with_response_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
+
+slots.response_associated_with = Slot(uri=BIOLINK.response_associated_with, name="response associated with", curie=BIOLINK.curie('response_associated_with'),
+                   model_uri=BIOLINK.response_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.associated_with_sensitivity_to = Slot(uri=BIOLINK.associated_with_sensitivity_to, name="associated with sensitivity to", curie=BIOLINK.curie('associated_with_sensitivity_to'),
                    model_uri=BIOLINK.associated_with_sensitivity_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
@@ -15683,6 +15796,15 @@ slots.association_type = Slot(uri=RDF.type, name="association_type", curie=RDF.c
 
 slots.association_category = Slot(uri=BIOLINK.category, name="association_category", curie=BIOLINK.curie('category'),
                    model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+
+slots.disease_associated_with_response_to_chemical_entity_association_subject = Slot(uri=RDF.subject, name="disease associated with response to chemical entity association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.disease_associated_with_response_to_chemical_entity_association_subject, domain=DiseaseAssociatedWithResponseToChemicalEntityAssociation, range=Union[str, DiseaseId])
+
+slots.disease_associated_with_response_to_chemical_entity_association_object = Slot(uri=RDF.object, name="disease associated with response to chemical entity association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.disease_associated_with_response_to_chemical_entity_association_object, domain=DiseaseAssociatedWithResponseToChemicalEntityAssociation, range=Union[str, ChemicalEntityId])
+
+slots.disease_associated_with_response_to_chemical_entity_association_predicate = Slot(uri=RDF.predicate, name="disease associated with response to chemical entity association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.disease_associated_with_response_to_chemical_entity_association_predicate, domain=DiseaseAssociatedWithResponseToChemicalEntityAssociation, range=Union[str, PredicateType])
 
 slots.chemical_entity_assesses_named_thing_association_subject = Slot(uri=RDF.subject, name="chemical entity assesses named thing association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_entity_assesses_named_thing_association_subject, domain=ChemicalEntityAssessesNamedThingAssociation, range=Union[str, ChemicalEntityId])

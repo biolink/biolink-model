@@ -266,7 +266,7 @@ types:
       - qud:Unit
 
   time type:
-    uri: xsd:time
+    uri: xsd:string
     typeof: time
 
   biological sequence:
@@ -1251,12 +1251,26 @@ slots:
       - SNOMED:has_route_of_administration
 
 
+  response context qualifier:
+    description: >-
+      a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain 
+      an association.
+    is_a: context qualifier
+    range: ResponseEnum
+
+  response target context qualifier:
+    description: >-
+      a biological response target (a patient, a cohort, a model system, a cell line, a sample of biological material, 
+      etc.)
+    is_a: context qualifier
+    range: ResponseTargetEnum
+
   population context qualifier:
     description: >-
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: qualifier
-    range: population of individual organisms
+    range: population of individual organisms # TODO: harmonize with 'response target context qualifier'
 
   temporal context qualifier:
     description: >-
@@ -2734,8 +2748,38 @@ slots:
       another existing entity.
     inverse: affects
 
-  associated with sensitivity to:
+  associated with response to:
     is_a: associated with
+    description: >-
+      A statistical association used to indicate that the object of a statement using this predicate
+      induces a response of some kind in the subject entity.  Intentionally broad in definition, this predicate
+      should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic, 
+      phenotypic, detrimental, resistant, etc. is captured in context, direction, and 
+      aspect qualifiers).
+    annotations:
+      canonical_predicate: true
+    comments: >-
+        subject: NCBIGene:2064 # HER2
+        subject_aspect: Amplification
+        predicate: associated with response to
+        object: CHEBI:10035 # Trastuzumab
+        response_type_qualifier: therapeutic_sensitivity
+        response_direction_qualifer: increased
+        response_target_qualifier: human patient
+        disease_context_qualifier: MONDO:0007254  # breast cancer
+      
+        subject: MONDO:0007254
+        predicate: associated with response to
+        qualified_predicate: associated with
+        object: CHEBI:10035 # Trastuzumab
+        response_context_qualifier: therapeutic_sensitivity
+
+  response associated with:
+    is_a: associated with
+    inverse: associated with response to
+
+  associated with sensitivity to:
+    is_a: associated with response to
     description: >-
       A relation that holds between a named thing and a chemical
       that specifies that the change in the named
@@ -2756,7 +2800,7 @@ slots:
     domain: chemical entity
 
   associated with resistance to:
-    is_a: associated with
+    is_a: associated with response to
     description: >-
       A relation that holds between a named thing and a chemical
       that specifies that the change in the named
@@ -9642,6 +9686,30 @@ classes:
       - owl:Axiom
 
 
+  disease associated with response to chemical entity association:
+    description: >-
+      A statistical association between a disease and a chemical entity where the
+      chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes
+      in a patient, cell line, or any model system.
+    is_a: association
+    slots:
+      - response context qualifier
+      - response target context qualifier
+    defining_slots:
+      - subject
+      - predicate
+      - object
+      - response context qualifier
+      - response target context qualifier
+    slot_usage:
+      subject:
+        range: disease
+      object:
+        range: chemical entity
+      predicate:
+        subproperty_of: associated with response to
+
+
   chemical entity assesses named thing association:
     is_a: association
     slot_usage:
@@ -11900,6 +11968,35 @@ classes:
 
 
 enums:
+
+  ResponseEnum:
+    description: >-
+      A response to a treatment or intervention
+    permissible_values:
+      therapeutic_response:
+        description: >-
+          A positive response to a treatment or intervention
+      negative:
+        description: >-
+          A negative response to a treatment or intervention
+
+  ResponseTargetEnum:
+    description: >-
+      The target of a treatment or intervention
+    permissible_values:
+      cohort:
+        description: >-
+          A group of individuals that are the target of a treatment or intervention
+      cell line:
+        description: >-
+          A cell line that is the target of a treatment or intervention
+      individual:
+        description: >-
+          An individual that is the target of a treatment or intervention
+      sample:
+        description: >-
+          A biological materialsample that is the target of a treatment or intervention
+
   ClinicalTrialStatusEnum:
     description: >
       Enumeration of clinical trial statuses indicating the recruitment state,
@@ -11931,6 +12028,7 @@ enums:
         description: The recruitment or availability status is unknown.
       WITHDRAWN:
         description: The study was halted before enrolling its first participant.
+
   ApprovalStatusEnum:
     description: >-
     permissible_values:
