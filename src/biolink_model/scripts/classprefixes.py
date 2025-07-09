@@ -1,9 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-<<<<<<< HEAD
-# Generation date: 2024-10-10T10:50:55
-=======
-# Generation date: 2025-07-08T16:52:13
->>>>>>> master
+# Generation date: 2025-07-08T17:01:52
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -13,10 +9,6 @@
 import dataclasses
 import re
 from dataclasses import dataclass
-<<<<<<< HEAD
-from datetime import date, datetime, time
-from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
-=======
 from datetime import (
     date,
     datetime,
@@ -30,7 +22,6 @@ from typing import (
     Optional,
     Union
 )
->>>>>>> master
 
 from jsonasobj2 import (
     JsonObj,

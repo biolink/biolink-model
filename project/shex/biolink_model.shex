@@ -1,9 +1,5 @@
 # metamodel_version: 1.7.0
-<<<<<<< HEAD
-# version: 4.2.4
-=======
 # version: 4.2.6-rc5
->>>>>>> master
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -259,24 +255,15 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ]
        )
     } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
-<<<<<<< HEAD
-    @<CaseToPhenotypicFeatureAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<ChemicalAffectsGeneAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
-    @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalGeneInteractionAssociation> OR
-    @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation> OR
-    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR
-    @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
-=======
     @<CaseToDiseaseAssociation> OR @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation>
     OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsGeneAssociation> OR
     @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR
     @<ChemicalGeneInteractionAssociation> OR @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR
     @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR
-    @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
->>>>>>> master
-    @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
-    @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
-    @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
+    @<ContributorAssociation> OR @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR
+    @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
+    @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
+    @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneAffectsChemicalAssociation> OR
     @<GeneRegulatesGeneAssociation> OR @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR
     @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR

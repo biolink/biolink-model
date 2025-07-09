@@ -1,7 +1,4 @@
 # metamodel_version: 1.7.0
-<<<<<<< HEAD
-# version: 4.2.4
-=======
 # version: 4.2.6-rc5
 enum AffinityParameterEnum
   {
@@ -276,6 +273,20 @@ enum ResourceRoleEnum
     supporting_data_source
   }
 
+enum ResponseEnum
+  {
+    therapeutic_response
+    negative
+  }
+
+enum ResponseTargetEnum
+  {
+    cohort
+    cell_line
+    individual
+    sample
+  }
+
 enum SequenceEnum
   {
     na
@@ -290,7 +301,6 @@ enum StrandEnum
     __QUESTION_MARK__
   }
 
->>>>>>> master
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -2500,7 +2510,6 @@ type Disease
     inTaxonLabel: LabelType
   }
 
-<<<<<<< HEAD
 type DiseaseAssociatedWithResponseToChemicalEntityAssociation
   {
     id: String!
@@ -2513,6 +2522,7 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2546,10 +2556,7 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     predicate: PredicateType!
   }
 
-type DiseaseOrPhenotypicFeature
-=======
 type DiseaseOrPhenotypicFeature implements OntologyClass
->>>>>>> master
   {
     id: String!
     iri: IriType

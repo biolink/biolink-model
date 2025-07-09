@@ -1023,7 +1023,6 @@
   ],
   "enums": [
     {
-<<<<<<< HEAD
       "name": "ResponseEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ResponseEnum",
       "description": "A response to a treatment or intervention",
@@ -1060,7 +1059,10 @@
         {
           "text": "sample",
           "description": "A biological materialsample that is the target of a treatment or intervention"
-=======
+        }
+      ]
+    },
+    {
       "name": "ClinicalTrialStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum",
       "description": "Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.\n",
@@ -1117,7 +1119,6 @@
         {
           "text": "WITHDRAWN",
           "description": "The study was halted before enrolling its first participant."
->>>>>>> master
         }
       ]
     },
@@ -3607,8 +3608,6 @@
       ],
       "range": "uriorcurie",
       "multivalued": true,
-<<<<<<< HEAD
-=======
       "@type": "SlotDefinition"
     },
     {
@@ -3702,7 +3701,6 @@
       "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_tested_intervention",
       "owner": "clinical_trial_tested_intervention",
       "range": "string",
->>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -4098,8 +4096,6 @@
       "owner": "animal_model_available_from",
       "range": "DiseaseOrPhenotypicFeature",
       "multivalued": true,
-<<<<<<< HEAD
-=======
       "@type": "SlotDefinition"
     },
     {
@@ -4124,7 +4120,6 @@
       "slot_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
       "owner": "affinity_parameter",
       "range": "AffinityParameterEnum",
->>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -6774,7 +6769,6 @@
       "inverse": "affects",
       "range": "NamedThing",
       "multivalued": true,
-<<<<<<< HEAD
       "@type": "SlotDefinition"
     },
     {
@@ -6814,8 +6808,6 @@
       "inverse": "associated_with_response_to",
       "range": "NamedThing",
       "multivalued": true,
-=======
->>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -13144,8 +13136,6 @@
       ],
       "range": "Publication",
       "multivalued": true,
-<<<<<<< HEAD
-=======
       "@type": "SlotDefinition"
     },
     {
@@ -13168,7 +13158,6 @@
       ],
       "range": "RetrievalSource",
       "multivalued": true,
->>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -14771,7 +14760,6 @@
       "usage_slot_name": "category",
       "range": "uriorcurie",
       "multivalued": true,
-<<<<<<< HEAD
       "@type": "SlotDefinition"
     },
     {
@@ -14884,8 +14872,6 @@
       "usage_slot_name": "predicate",
       "range": "predicate_type",
       "required": true,
-=======
->>>>>>> master
       "@type": "SlotDefinition"
     },
     {
@@ -30779,6 +30765,7 @@
         "qualifier",
         "qualifiers",
         "publications",
+        "sources",
         "has_evidence",
         "knowledge_source",
         "primary_knowledge_source",
@@ -37029,15 +37016,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-<<<<<<< HEAD
-  "source_file_date": "2024-10-10T10:49:41",
-  "source_file_size": 404659,
-  "generation_date": "2024-10-10T10:49:49",
-=======
-  "source_file_date": "2025-07-08T16:50:20",
-  "source_file_size": 415218,
-  "generation_date": "2025-07-08T16:50:31",
->>>>>>> master
+  "source_file_date": "2025-07-08T16:59:56",
+  "source_file_size": 418753,
+  "generation_date": "2025-07-08T17:00:08",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

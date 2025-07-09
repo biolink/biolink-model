@@ -767,8 +767,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -779,7 +777,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the structure at a later time",
@@ -1100,8 +1097,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -1112,7 +1107,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the part",
@@ -1672,8 +1666,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -1684,7 +1676,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -2231,8 +2222,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -2240,7 +2229,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -2490,8 +2478,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -2502,7 +2488,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "behavior that is the subject of the association",
@@ -3898,8 +3883,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "has_biological_sex": {
                     "description": "The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket",
@@ -3907,7 +3890,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -4015,8 +3997,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -4684,7 +4664,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -4712,8 +4691,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -4721,7 +4698,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -4881,8 +4857,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "onset_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject.",
@@ -4890,7 +4864,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -4981,8 +4954,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -4993,7 +4964,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the case (e.g. patient) that has the property",
@@ -5108,8 +5078,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -5446,7 +5414,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -5474,8 +5441,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -5483,7 +5448,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -5733,8 +5697,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -5745,7 +5707,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -6136,8 +6097,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "anatomical_context_qualifier": {
                     "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
@@ -6145,7 +6104,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -6173,8 +6131,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -6182,7 +6138,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -6315,8 +6270,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -6324,7 +6277,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -6408,8 +6360,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -6420,7 +6370,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "A cell line derived from an organismal entity with a disease state that is used as a model of that disease.",
@@ -6480,8 +6429,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -6489,7 +6436,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -6545,8 +6491,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "anatomical_context_qualifier": {
                     "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
@@ -6554,7 +6498,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -6582,8 +6525,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -6591,7 +6532,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -6706,8 +6646,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -6715,7 +6653,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -6792,8 +6729,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -6804,7 +6739,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -6853,8 +6787,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -6862,7 +6794,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -7429,8 +7360,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -7441,7 +7370,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
@@ -7946,8 +7874,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -7958,7 +7884,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -8291,8 +8216,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -8303,7 +8226,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
@@ -8785,8 +8707,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -8797,7 +8717,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the chemical entity or entity that is an interactor",
@@ -9099,8 +9018,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "anatomical_context_qualifier": {
                     "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
@@ -9108,7 +9025,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -9136,8 +9052,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -9152,7 +9066,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -9257,13 +9170,10 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
->>>>>>> master
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -9281,8 +9191,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -9290,7 +9198,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -9340,8 +9247,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
@@ -9349,7 +9254,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
@@ -9377,8 +9281,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -9389,7 +9291,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
@@ -9428,13 +9329,10 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
->>>>>>> master
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -9452,8 +9350,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -9461,7 +9357,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -9521,8 +9416,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "anatomical_context_qualifier": {
                     "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
@@ -9530,7 +9423,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -9558,8 +9450,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -9574,7 +9464,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -9679,13 +9568,10 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
->>>>>>> master
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -9703,8 +9589,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -9712,7 +9596,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -9762,8 +9645,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
@@ -9771,7 +9652,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
@@ -9799,8 +9679,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -9811,7 +9689,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
@@ -9850,13 +9727,10 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
->>>>>>> master
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -9874,8 +9748,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -9883,7 +9755,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -10304,8 +10175,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -10316,7 +10185,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
@@ -10647,8 +10515,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -10659,7 +10525,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the upstream chemical entity",
@@ -10763,8 +10628,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "anatomical_context_qualifier": {
                     "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
@@ -10772,7 +10635,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -10800,8 +10662,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -10809,7 +10669,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -10924,8 +10783,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -10933,7 +10790,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -11010,8 +10866,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -11022,7 +10876,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
@@ -11071,8 +10924,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -11080,7 +10931,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -11353,8 +11203,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -11365,7 +11213,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the chemical entity that is affecting the pathway",
@@ -13836,8 +13683,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -13848,7 +13693,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "information content entity which an agent has helped realise",
@@ -13979,8 +13823,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -13988,7 +13830,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -14238,8 +14079,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -14250,7 +14089,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -15526,6 +15364,16 @@
                         "null"
                     ]
                 },
+                "sources": {
+                    "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -16118,8 +15966,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -16130,7 +15976,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "disease or phenotype",
@@ -16451,8 +16296,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -16463,7 +16306,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "disease or phenotype",
@@ -16784,8 +16626,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -16796,7 +16636,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "disease class",
@@ -16927,8 +16766,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -16936,7 +16773,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -17193,8 +17029,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -17205,7 +17039,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "disease class",
@@ -18064,8 +17897,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -18076,7 +17907,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the drug that is an interactor",
@@ -18368,8 +18198,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -18377,7 +18205,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -18627,8 +18454,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -18639,7 +18464,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -18975,8 +18799,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -18987,7 +18809,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -19315,8 +19136,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -19327,7 +19146,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -20538,8 +20356,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -20550,7 +20366,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -20878,8 +20693,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -20890,7 +20703,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -21029,8 +20841,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -21038,7 +20848,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -21288,8 +21097,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -21300,7 +21107,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -21970,8 +21776,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -21982,7 +21786,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
@@ -22615,8 +22418,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -22627,7 +22428,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
@@ -22794,8 +22594,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -22803,7 +22601,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -23053,8 +22850,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -23065,7 +22860,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -23341,8 +23135,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -23350,7 +23142,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -23600,8 +23391,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -23612,7 +23401,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -24037,8 +23825,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -24049,7 +23835,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "species_context_qualifier": {
                     "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
@@ -24190,8 +23975,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -24199,7 +23982,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -24449,8 +24231,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -24461,7 +24241,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -24600,8 +24379,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -24609,7 +24386,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -24859,8 +24635,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -24871,7 +24645,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -25124,8 +24897,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -25133,7 +24904,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -25217,8 +24987,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -25229,7 +24997,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "stage_qualifier": {
                     "description": "stage at which the gene is expressed in the site",
@@ -25578,8 +25345,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -25590,7 +25355,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "stage_qualifier": {
                     "description": "stage during which gene or protein expression of takes place.",
@@ -25918,8 +25682,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -25930,7 +25692,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -26251,8 +26012,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -26263,7 +26022,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -26584,8 +26342,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -26596,7 +26352,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -26917,8 +26672,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -26929,7 +26682,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "gene, product or macromolecular complex that has the function associated with the GO term",
@@ -27250,8 +27002,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -27262,7 +27012,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -27393,8 +27142,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -27402,7 +27149,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -27652,8 +27398,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -27664,7 +27408,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -28443,8 +28186,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -28455,7 +28196,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "start_interbase_coordinate": {
                     "description": "The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).",
@@ -28737,8 +28477,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -28746,7 +28484,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -28962,8 +28699,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -28974,7 +28709,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "A genotype that has a role in modeling the disease.",
@@ -29116,8 +28850,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -29125,7 +28857,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -29341,8 +29072,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -29353,7 +29082,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "a genotype that is associated in some way with a disease state",
@@ -29685,8 +29413,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -29697,7 +29423,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "parent genotype",
@@ -30018,8 +29743,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -30030,7 +29753,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "parent genotype",
@@ -30161,8 +29883,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -30170,7 +29890,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -30420,8 +30139,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -30432,7 +30149,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "genotype that is associated with the phenotypic feature",
@@ -30764,8 +30480,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -30776,7 +30490,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "parent genotype",
@@ -32256,8 +31969,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -32268,7 +31979,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -33346,8 +33056,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -33365,7 +33073,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
@@ -33686,8 +33393,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -33705,7 +33410,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
@@ -34026,8 +33730,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -34045,7 +33747,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
@@ -34603,8 +34304,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -34615,7 +34314,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the material sample being described",
@@ -34719,8 +34417,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "anatomical_context_qualifier": {
                     "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
@@ -34728,7 +34424,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -34756,8 +34451,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -34765,7 +34458,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -34880,8 +34572,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -34889,7 +34579,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
@@ -34966,8 +34655,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -34978,7 +34665,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the material sample being described",
@@ -35027,8 +34713,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "subject_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the  subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept  and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
@@ -35036,7 +34720,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "timepoint": {
                     "description": "a point in time",
@@ -35593,8 +35276,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -35605,7 +35286,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -35926,8 +35606,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -35938,7 +35616,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -36259,8 +35936,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -36271,7 +35946,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -37062,8 +36736,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -37074,7 +36746,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -38501,8 +38172,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -38513,7 +38182,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the taxon that is the subject of the association",
@@ -38834,8 +38502,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -38846,7 +38512,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the more specific taxon",
@@ -39167,8 +38832,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -39179,7 +38842,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -39310,8 +38972,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -39319,7 +38979,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -39535,8 +39194,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -39547,7 +39204,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.",
@@ -39879,8 +39535,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -39891,7 +39545,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -40218,8 +39871,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -40230,7 +39881,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
@@ -41532,8 +41182,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -41541,7 +41189,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -41791,8 +41438,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -41803,7 +41448,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -41945,8 +41589,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -41954,7 +41596,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -42204,8 +41845,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -42216,7 +41855,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -43570,8 +43208,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -43582,7 +43218,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "the population that form the subject of the association",
@@ -44484,8 +44119,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -44496,7 +44129,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -46016,8 +45648,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -46028,7 +45658,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "stoichiometry": {
                     "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
@@ -46364,8 +45993,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -46376,7 +46003,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "stoichiometry": {
                     "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
@@ -47032,8 +46658,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "source_record_urls": {
                     "description": "One or more URLs that link to a specific web page or document provided by the InformationResource, that contains a record of the knowledge expressed in the Edge.",
@@ -47044,7 +46668,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
@@ -47066,18 +46689,12 @@
                     ]
                 },
                 "upstream_resource_ids": {
-<<<<<<< HEAD
-                    "description": "The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.",
-                    "type": [
-                        "string",
-=======
                     "description": "A list of upstream InformationResources from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge.",
                     "items": {
                         "type": "string"
                     },
                     "type": [
                         "array",
->>>>>>> master
                         "null"
                     ]
                 },
@@ -47342,8 +46959,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -47354,7 +46969,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -47684,8 +47298,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -47696,7 +47308,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -47837,8 +47448,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "hgvs_nomenclature": {
                     "description": "HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.",
@@ -47849,7 +47458,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -48624,8 +48232,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "hgvs_nomenclature": {
                     "description": "HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee  to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the  different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.",
@@ -48636,7 +48242,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -49621,8 +49226,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -49633,7 +49236,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -50232,8 +49834,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -50244,7 +49844,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -50657,8 +50256,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -50666,7 +50263,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -50882,8 +50478,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -50894,7 +50488,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "A variant that has a role in modeling the disease.",
@@ -51036,8 +50629,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -51045,7 +50636,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -51261,8 +50851,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -51273,7 +50861,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated in some way with the disease state",
@@ -51605,8 +51192,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -51617,7 +51202,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated with some other entity",
@@ -51959,8 +51543,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -51971,7 +51553,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "stage_qualifier": {
                     "description": "stage during which gene or protein expression of takes place.",
@@ -52109,8 +51690,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "disease_context_qualifier": {
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
@@ -52118,7 +51697,6 @@
                         "string",
                         "null"
                     ]
->>>>>>> master
                 },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -52368,8 +51946,6 @@
                         "string",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -52380,7 +51956,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
@@ -52747,8 +52322,6 @@
                         "array",
                         "null"
                     ]
-<<<<<<< HEAD
-=======
                 },
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
@@ -52759,7 +52332,6 @@
                         "array",
                         "null"
                     ]
->>>>>>> master
                 },
                 "subject": {
                     "description": "an allele that has a certain frequency in a given population",
