@@ -699,7 +699,7 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "typeof": "time",
       "base": "XSDTime",
-      "uri": "http://www.w3.org/2001/XMLSchema#time",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -1022,6 +1022,46 @@
     }
   ],
   "enums": [
+    {
+      "name": "ResponseEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ResponseEnum",
+      "description": "A response to a treatment or intervention",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "therapeutic_response",
+          "description": "A positive response to a treatment or intervention"
+        },
+        {
+          "text": "negative",
+          "description": "A negative response to a treatment or intervention"
+        }
+      ]
+    },
+    {
+      "name": "ResponseTargetEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ResponseTargetEnum",
+      "description": "The target of a treatment or intervention",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "permissible_values": [
+        {
+          "text": "cohort",
+          "description": "A group of individuals that are the target of a treatment or intervention"
+        },
+        {
+          "text": "cell line",
+          "description": "A cell line that is the target of a treatment or intervention"
+        },
+        {
+          "text": "individual",
+          "description": "An individual that is the target of a treatment or intervention"
+        },
+        {
+          "text": "sample",
+          "description": "A biological materialsample that is the target of a treatment or intervention"
+        }
+      ]
+    },
     {
       "name": "ClinicalTrialStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum",
@@ -3874,6 +3914,36 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "response_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/response_context_qualifier",
+      "description": "a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain  an association.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "context_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/response_context_qualifier",
+      "owner": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "domain_of": [
+        "DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+      ],
+      "range": "ResponseEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "response_target_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/response_target_context_qualifier",
+      "description": "a biological response target (a patient, a cohort, a model system, a cell line, a sample of biological material,  etc.)",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "context_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/response_target_context_qualifier",
+      "owner": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "domain_of": [
+        "DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+      ],
+      "range": "ResponseTargetEnum",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "population_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/population_context_qualifier",
       "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
@@ -6702,6 +6772,45 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "associated_with_response_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/associated_with_response_to",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "A statistical association used to indicate that the object of a statement using this predicate induces a response of some kind in the subject entity.  Intentionally broad in definition, this predicate should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic,  phenotypic, detrimental, resistant, etc. is captured in context, direction, and  aspect qualifiers).",
+      "comments": [
+        "subject: NCBIGene:2064 # HER2 subject_aspect: Amplification predicate: associated with response to object: CHEBI:10035 # Trastuzumab response_type_qualifier: therapeutic_sensitivity response_direction_qualifer: increased response_target_qualifier: human patient disease_context_qualifier: MONDO:0007254  # breast cancer\nsubject: MONDO:0007254 predicate: associated with response to qualified_predicate: associated with object: CHEBI:10035 # Trastuzumab response_context_qualifier: therapeutic_sensitivity"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "associated_with",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/associated_with_response_to",
+      "inherited": true,
+      "owner": "associated_with_response_to",
+      "inverse": "response_associated_with",
+      "range": "NamedThing",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "response_associated_with",
+      "definition_uri": "https://w3id.org/biolink/vocab/response_associated_with",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "associated_with",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/response_associated_with",
+      "inherited": true,
+      "owner": "response_associated_with",
+      "inverse": "associated_with_response_to",
+      "range": "NamedThing",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "associated_with_sensitivity_to",
       "definition_uri": "https://w3id.org/biolink/vocab/associated_with_sensitivity_to",
       "annotations": [
@@ -6719,7 +6828,7 @@
       "broad_mappings": [
         "http://purl.obolibrary.org/obo/PATO_0000085"
       ],
-      "is_a": "associated_with",
+      "is_a": "associated_with_response_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_sensitivity_to",
       "inherited": true,
@@ -6755,7 +6864,7 @@
       ],
       "description": "A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "associated_with",
+      "is_a": "associated_with_response_to",
       "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/associated_with_resistance_to",
       "inherited": true,
@@ -14651,6 +14760,118 @@
       "usage_slot_name": "category",
       "range": "uriorcurie",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_associated_with_response_to_chemical_entity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "domain_of": [
+        "DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_associated_with_response_to_chemical_entity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "domain_of": [
+        "DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "ChemicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_associated_with_response_to_chemical_entity_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "domain_of": [
+        "DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+      ],
+      "subproperty_of": "associated_with_response_to",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -30528,6 +30749,67 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "description": "A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "association_type",
+        "association_category",
+        "response_context_qualifier",
+        "response_target_context_qualifier",
+        "disease_associated_with_response_to_chemical_entity_association_subject",
+        "disease_associated_with_response_to_chemical_entity_association_object",
+        "disease_associated_with_response_to_chemical_entity_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/DiseaseAssociatedWithResponseToChemicalEntityAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object",
+        "response_context_qualifier",
+        "response_target_context_qualifier"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ChemicalEntityAssessesNamedThingAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation",
       "from_schema": "https://w3id.org/biolink/biolink-model",
@@ -36734,9 +37016,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-07-08T16:50:20",
-  "source_file_size": 415218,
-  "generation_date": "2025-07-08T16:50:31",
+  "source_file_date": "2025-07-08T17:15:19",
+  "source_file_size": 418753,
+  "generation_date": "2025-07-08T17:15:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
