@@ -6149,7 +6149,11 @@ slots:
 
   allelic requirement:
     description: >-
-      the gene variant's inheritance pattern that is associated with the disease or
+      the allele configuration of a particular gene or variant required for the 
+      expression of a disease or phenotype in a specific patient or instance. This 
+      edge property may be used by associations between Genes or SequenceVariants 
+      and DiseaseOrPhenotypicFeatures to provide the inheritance pattern and 
+      genetic context of the relationship. 
       phenotype. This edge property may be used for associations between Genes or
       SequenceVariants and DiseaseOrPhenotypicFeatures.
     is_a: association slot
