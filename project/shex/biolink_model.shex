@@ -2402,7 +2402,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
     } OR @<CausalGeneToDiseaseAssociation> OR @<CorrelatedGeneToDiseaseAssociation> OR @<DruggableGeneToDiseaseAssociation> OR
-    @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
+    @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation> OR
+    @<GeneToDiseaseStatisticalAssociation>
 )
 
 <GeneToDiseaseOrPhenotypicFeatureAssociation>  (
@@ -2495,6 +2496,21 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<GeneToDiseaseAssociation> OR @<GeneToPhenotypicFeatureAssociation>
 )
+
+<GeneToDiseaseStatisticalAssociation> CLOSED {
+    (  $<GeneToDiseaseStatisticalAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+          &<EntityToDiseaseAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+          &<GeneToEntityAssociationMixin_tes> ;
+          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:object @<Disease> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <GeneToDiseaseStatisticalAssociation> ]
+    )
+}
 
 <GeneToEntityAssociationMixin> {
     (  $<GeneToEntityAssociationMixin_tes> (  rdf:subject @<GeneOrGeneProduct> ;
