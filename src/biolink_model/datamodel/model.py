@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-11T15:31:09
+# Generation date: 2025-07-11T15:34:16
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1266,6 +1266,10 @@ class CorrelatedGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
 
 
 class DruggableGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
+    pass
+
+
+class GeneToDiseaseStatisticalAssociationId(GeneToDiseaseAssociationId):
     pass
 
 
@@ -11451,6 +11455,75 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
 
 @dataclass(repr=False)
+class GeneToDiseaseStatisticalAssociation(GeneToDiseaseAssociation):
+    """
+    An association between a gene and a disease based on statistical evidence, where the relationship may be
+    correlational rather than causal. This association type is appropriate for cases where there is limited confidence
+    in a causal relationship, such as statistical associations derived from studies that show correlation but do not
+    establish causation.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseStatisticalAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseStatisticalAssociation"
+    class_name: ClassVar[str] = "gene to disease statistical association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseStatisticalAssociation
+
+    id: Union[str, GeneToDiseaseStatisticalAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, DiseaseId] = None
+    predicate: Union[str, PredicateType] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    qualified_predicate: Optional[str] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeneToDiseaseStatisticalAssociationId):
+            self.id = GeneToDiseaseStatisticalAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
+            self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
 class PhenotypicFeatureToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -16297,6 +16370,15 @@ slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, 
 
 slots.druggable_gene_to_disease_association_has_evidence = Slot(uri=BIOLINK.has_evidence, name="druggable gene to disease association_has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]])
+
+slots.gene_to_disease_statistical_association_subject = Slot(uri=RDF.subject, name="gene to disease statistical association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.gene_to_disease_statistical_association_subject, domain=GeneToDiseaseStatisticalAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.gene_to_disease_statistical_association_object = Slot(uri=RDF.object, name="gene to disease statistical association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.gene_to_disease_statistical_association_object, domain=GeneToDiseaseStatisticalAssociation, range=Union[str, DiseaseId])
+
+slots.gene_to_disease_statistical_association_predicate = Slot(uri=RDF.predicate, name="gene to disease statistical association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.gene_to_disease_statistical_association_predicate, domain=GeneToDiseaseStatisticalAssociation, range=Union[str, PredicateType])
 
 slots.phenotypic_feature_to_disease_association_predicate = Slot(uri=RDF.predicate, name="phenotypic feature to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.phenotypic_feature_to_disease_association_predicate, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, PredicateType])

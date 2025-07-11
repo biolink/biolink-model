@@ -11131,6 +11131,31 @@ classes:
       - entity to disease association mixin
       - gene to entity association mixin
 
+  gene to disease statistical association:
+    description: >-
+      An association between a gene and a disease based on statistical evidence, 
+      where the relationship may be correlational rather than causal. This association 
+      type is appropriate for cases where there is limited confidence in a causal 
+      relationship, such as statistical associations derived from studies that show 
+      correlation but do not establish causation.
+    is_a: gene to disease association
+    defining_slots:
+      - subject
+      - object
+      - predicate
+    mixins:
+      - entity to disease association mixin
+      - gene to entity association mixin
+    slot_usage:
+      subject:
+        range: gene or gene product
+        description: >-
+          gene statistically associated with the disease
+      object:
+        range: disease
+      predicate:
+        subproperty_of: associated with likelihood of
+
   phenotypic feature to disease association:
     is_a: association
     slot_usage:
