@@ -6155,7 +6155,9 @@ slots:
       and DiseaseOrPhenotypicFeatures to provide the inheritance pattern and 
       genetic context of the relationship.
     is_a: association slot
-    range: genetic inheritance
+    range: string
+    pattern: "^HP:\\d{7}$"
+    comments: >- Terms from the HP ontology inheritance sub-ontology should be used in the value of this slot. This slot differs from "mode_of_inheritance", the predicate in that mode_of_inheritance is context-independent. It describes how the disease or phenotype is typically transmitted from one generation to the next, regardless of the specific genetic variant that is present in an individual.
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
