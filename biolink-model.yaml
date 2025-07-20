@@ -6148,7 +6148,12 @@ slots:
     range: disease or phenotypic feature
 
   allelic requirement:
-    description: >-
+    the allele configuration of a particular gene or variant required for the 
+    expression of a disease or phenotype in a specific patient or instance. 
+  comments: >-
+    This edge property may be used by associations between Genes or 
+    SequenceVariants and DiseaseOrPhenotypicFeatures to provide the inheritance 
+    pattern and genetic context of the relationship.
       the allele configuration of a particular gene or variant required for the 
       expression of a disease or phenotype in a specific patient or instance. This 
       edge property may be used by associations between Genes or SequenceVariants 
