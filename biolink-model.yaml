@@ -9654,6 +9654,8 @@ classes:
       category:
         range: uriorcurie
         required: false
+      sources:
+        inlined_as_list: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
