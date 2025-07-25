@@ -771,7 +771,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -1101,7 +1101,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -1670,7 +1670,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -2482,7 +2482,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -4225,7 +4225,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -4555,7 +4555,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -4958,7 +4958,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -5305,7 +5305,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -5701,7 +5701,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -6364,7 +6364,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -6733,7 +6733,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -7364,7 +7364,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -7878,7 +7878,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -8220,7 +8220,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -8711,7 +8711,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -9285,7 +9285,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -9683,7 +9683,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -10179,7 +10179,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -10519,7 +10519,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -10870,7 +10870,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -11207,7 +11207,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -13687,7 +13687,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -14083,7 +14083,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -15367,7 +15367,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -15970,7 +15970,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -16300,7 +16300,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -16630,7 +16630,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -17033,7 +17033,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -17901,7 +17901,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -18458,7 +18458,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -18803,7 +18803,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -19140,7 +19140,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -20360,7 +20360,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -20697,7 +20697,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -21101,7 +21101,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -21780,7 +21780,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -22422,7 +22422,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -22854,7 +22854,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -23395,7 +23395,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -23829,7 +23829,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -24235,7 +24235,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -24639,7 +24639,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -24991,7 +24991,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -25349,7 +25349,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -25686,7 +25686,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -26016,7 +26016,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -26346,7 +26346,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -26676,7 +26676,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -27006,7 +27006,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -27402,7 +27402,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -28190,7 +28190,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -28703,7 +28703,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -29076,7 +29076,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -29417,7 +29417,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -29747,7 +29747,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -30143,7 +30143,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -30484,7 +30484,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -31973,7 +31973,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -33060,7 +33060,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -33397,7 +33397,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -33734,7 +33734,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -34308,7 +34308,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -34659,7 +34659,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -35280,7 +35280,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -35610,7 +35610,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -35940,7 +35940,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -36740,7 +36740,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -38176,7 +38176,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -38506,7 +38506,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -38836,7 +38836,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -39198,7 +39198,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -39539,7 +39539,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -39875,7 +39875,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -41442,7 +41442,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -41849,7 +41849,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -43212,7 +43212,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -44123,7 +44123,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -45652,7 +45652,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -45997,7 +45997,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -46963,7 +46963,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -47302,7 +47302,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -49230,7 +49230,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -49838,7 +49838,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -50482,7 +50482,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -50855,7 +50855,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -51196,7 +51196,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -51547,7 +51547,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -51950,7 +51950,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
@@ -52326,7 +52326,7 @@
                 "sources": {
                     "description": "A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org).",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RetrievalSource"
                     },
                     "type": [
                         "array",
