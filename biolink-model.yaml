@@ -9670,6 +9670,8 @@ classes:
       category:
         range: uriorcurie
         required: false
+      sources:
+        inlined_as_list: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
@@ -10318,7 +10320,7 @@ classes:
       value:
         subject: "NCBIGene:551"
         predicate: regulates
-        qualified_predicte: causes
+        qualified_predicate: causes
         object: "NCBIGene:1636"
         object_aspect_qualifier: activity_or_abundance
         object_direction_qualifier: downregulated
@@ -10402,7 +10404,7 @@ classes:
       value:
         subject: TRPC4
         predicate: affects
-        qualified_predicte: causes
+        qualified_predicate: causes
         object: Barium
         object_aspect_qualifier: transport
         object_direction_qualifier: increased
