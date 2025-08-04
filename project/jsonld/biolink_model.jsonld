@@ -13116,6 +13116,22 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "allelic_requirement",
+      "definition_uri": "https://w3id.org/biolink/vocab/allelic_requirement",
+      "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+      "comments": [
+        "This edge property may be used by associations between Genes or  SequenceVariants and DiseaseOrPhenotypicFeatures to provide the inheritance  pattern and genetic context of the relationship. Terms from the HP mode of inheritance sub-ontology (HP:0000005) should be used  in the value of this slot. This slot differs from the predicate \"has_mode_of_inheritance\",  in that the predicate is used to link a disease or phenotype with its general  inheritance pattern (how it is typically transmitted from one generation to the next,  regardless of the specific genetic variant that is present in an individual or instance)."
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/allelic_requirement",
+      "owner": "allelic_requirement",
+      "range": "string",
+      "pattern": "^HP:\\d{7}$",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "publications",
       "definition_uri": "https://w3id.org/biolink/vocab/publications",
       "description": "One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement.",
@@ -37043,9 +37059,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-07-25T22:57:10",
-  "source_file_size": 418800,
-  "generation_date": "2025-07-25T22:57:16",
+  "source_file_date": "2025-08-04T22:11:05",
+  "source_file_size": 419760,
+  "generation_date": "2025-08-04T22:11:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

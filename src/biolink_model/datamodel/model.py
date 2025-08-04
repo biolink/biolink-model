@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-25T22:57:28
+# Generation date: 2025-08-04T22:11:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -15620,6 +15620,10 @@ slots.expression_site = Slot(uri=BIOLINK.expression_site, name="expression site"
 
 slots.phenotypic_state = Slot(uri=BIOLINK.phenotypic_state, name="phenotypic state", curie=BIOLINK.curie('phenotypic_state'),
                    model_uri=BIOLINK.phenotypic_state, domain=Association, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
+
+slots.allelic_requirement = Slot(uri=BIOLINK.allelic_requirement, name="allelic requirement", curie=BIOLINK.curie('allelic_requirement'),
+                   model_uri=BIOLINK.allelic_requirement, domain=Association, range=Optional[str],
+                   pattern=re.compile(r'^HP:\d{7}$'))
 
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
                    model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])
