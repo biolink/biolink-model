@@ -6147,6 +6147,22 @@ slots:
     is_a: association slot
     range: disease or phenotypic feature
 
+  allelic requirement:
+    description: >-
+      The allele configuration of a particular gene or variant required for the 
+      expression of a disease or phenotype in a specific patient or instance. 
+    is_a: association slot
+    range: string
+    pattern: "^HP:\\d{7}$"
+    comments: >- 
+      This edge property may be used by associations between Genes or 
+      SequenceVariants and DiseaseOrPhenotypicFeatures to provide the inheritance 
+      pattern and genetic context of the relationship.
+      Terms from the HP mode of inheritance sub-ontology (HP:0000005) should be used 
+      in the value of this slot. This slot differs from the predicate "has_mode_of_inheritance", 
+      in that the predicate is used to link a disease or phenotype with its general 
+      inheritance pattern (how it is typically transmitted from one generation to the next, 
+      regardless of the specific genetic variant that is present in an individual or instance).
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
