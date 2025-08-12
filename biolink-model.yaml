@@ -1145,6 +1145,7 @@ slots:
     domain: association
     range: string
 
+   ## Biological Entity properties
 
   has biological sequence:
     is_a: node property
@@ -1165,6 +1166,13 @@ slots:
       connects an entity associated with one or more genes
     range: gene
     multivalued: true
+
+  has genetic inheritance:
+    is_a: node property
+    description: >-
+      Connects genetic inheritance to a disease or phenotypic feature, as a node property.
+    domain: disease or phenotypic feature
+    range: genetic inheritance
 
   has zygosity:
     is_a: node property
