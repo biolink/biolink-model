@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-04T22:11:24
+# Generation date: 2025-08-19T20:18:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -14477,6 +14477,9 @@ slots.has_gene_or_gene_product = Slot(uri=BIOLINK.has_gene_or_gene_product, name
 
 slots.has_gene = Slot(uri=BIOLINK.has_gene, name="has gene", curie=BIOLINK.curie('has_gene'),
                    model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
+
+slots.has_genetic_inheritance = Slot(uri=BIOLINK.has_genetic_inheritance, name="has genetic inheritance", curie=BIOLINK.curie('has_genetic_inheritance'),
+                   model_uri=BIOLINK.has_genetic_inheritance, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[str, GeneticInheritanceId]])
 
 slots.has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="has zygosity", curie=BIOLINK.curie('has_zygosity'),
                    model_uri=BIOLINK.has_zygosity, domain=NucleicAcidEntity, range=Optional[Union[str, ZygosityId]])
