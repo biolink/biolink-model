@@ -1278,7 +1278,7 @@ slots:
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: qualifier
-    range: population of individual organisms # TODO: harmonize with 'response target context qualifier'
+    range: population of individual organisms  # TODO: harmonize with 'response target context qualifier'
 
   temporal context qualifier:
     description: >-
@@ -9272,7 +9272,7 @@ classes:
     slots:
       - clinical trial phase
       - clinical trial primary purpose
-      - creation date # maybe? 
+      - creation date  # maybe?
     id_prefixes:
       - CLINICALTRIALS
 
