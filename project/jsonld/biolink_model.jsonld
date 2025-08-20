@@ -3751,8 +3751,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_genetic_inheritance",
-      "definition_uri": "https://w3id.org/biolink/vocab/has_genetic_inheritance",
+      "name": "inheritance",
+      "definition_uri": "https://w3id.org/biolink/vocab/inheritance",
       "description": "Connects genetic inheritance to a disease or phenotypic feature, as a node property.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
@@ -3760,7 +3760,7 @@
       ],
       "is_a": "node_property",
       "domain": "DiseaseOrPhenotypicFeature",
-      "slot_uri": "https://w3id.org/biolink/vocab/has_genetic_inheritance",
+      "slot_uri": "https://w3id.org/biolink/vocab/inheritance",
       "owner": "DiseaseOrPhenotypicFeature",
       "domain_of": [
         "DiseaseOrPhenotypicFeature"
@@ -28001,7 +28001,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_genetic_inheritance"
+        "inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
@@ -28081,7 +28081,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_genetic_inheritance"
+        "inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Disease",
@@ -28171,7 +28171,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_genetic_inheritance"
+        "inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeature",
@@ -28201,7 +28201,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_genetic_inheritance"
+        "inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BehavioralFeature",
@@ -29901,7 +29901,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_genetic_inheritance",
+        "inheritance",
         "clinical_finding_has_attribute"
       ],
       "slot_usage": {},
@@ -37078,9 +37078,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-08-20T15:39:13",
-  "source_file_size": 420095,
-  "generation_date": "2025-08-20T15:39:19",
+  "source_file_date": "2025-08-20T17:43:36",
+  "source_file_size": 420071,
+  "generation_date": "2025-08-20T17:43:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
