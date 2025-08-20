@@ -1166,7 +1166,7 @@ slots:
     range: gene
     multivalued: true
 
-  has genetic inheritance:
+  inheritance:
     is_a: node property
     description: >-
       Connects genetic inheritance to a disease or phenotypic feature, as a node property.
@@ -8387,7 +8387,7 @@ classes:
     mixins:
       - ontology class
     slots:
-      - has genetic inheritance
+      - inheritance
     description: >-
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
