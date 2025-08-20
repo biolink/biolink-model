@@ -385,6 +385,7 @@ message BehavioralFeature
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance hasGeneticInheritance = 0
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -1620,6 +1621,7 @@ message ClinicalFinding
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance hasGeneticInheritance = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
 message ClinicalIntervention
@@ -2068,6 +2070,7 @@ message Disease
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance hasGeneticInheritance = 0
  }
 // A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.
 message DiseaseAssociatedWithResponseToChemicalEntityAssociation
@@ -2132,6 +2135,7 @@ message DiseaseOrPhenotypicFeature
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance hasGeneticInheritance = 0
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
@@ -5591,6 +5595,7 @@ message PhenotypicFeature
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance hasGeneticInheritance = 0
  }
 message PhenotypicFeatureToDiseaseAssociation
  {

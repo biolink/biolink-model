@@ -1424,7 +1424,8 @@ linkml:Sparqlpath xsd:string
        (  $<DiseaseOrPhenotypicFeature_tes> (  &<BiologicalEntity_tes> ;
              rdf:type [ <BiologicalEntity> ] ? ;
              &<OntologyClass_tes> ;
-             rdf:type [ <OntologyClass> ] ?
+             rdf:type [ <OntologyClass> ] ? ;
+             <has_genetic_inheritance> @<GeneticInheritance> ?
           ) ;
           rdf:type [ <DiseaseOrPhenotypicFeature> ]
        )

@@ -752,6 +752,7 @@ type BehavioralFeature
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasGeneticInheritance: GeneticInheritance
   }
 
 type BehavioralOutcome implements Outcome
@@ -2057,6 +2058,7 @@ type ClinicalFinding
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasGeneticInheritance: GeneticInheritance
     hasAttribute: [ClinicalAttribute]
   }
 
@@ -2508,6 +2510,7 @@ type Disease
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasGeneticInheritance: GeneticInheritance
   }
 
 type DiseaseAssociatedWithResponseToChemicalEntityAssociation
@@ -2572,6 +2575,7 @@ type DiseaseOrPhenotypicFeature implements OntologyClass
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasGeneticInheritance: GeneticInheritance
   }
 
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
@@ -6530,6 +6534,7 @@ type PhenotypicFeature
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasGeneticInheritance: GeneticInheritance
   }
 
 type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociationMixin, PhenotypicFeatureToEntityAssociationMixin

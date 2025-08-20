@@ -2406,6 +2406,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity, OntologyClass):
     """
     Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.
     """
+    has_genetic_inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -2426,6 +2427,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     """
     A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
     """
+    has_genetic_inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -2446,6 +2448,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.
     """
+    has_genetic_inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -2466,6 +2469,7 @@ class BehavioralFeature(PhenotypicFeature):
     """
     A phenotypic feature which is behavioral in nature.
     """
+    has_genetic_inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -3673,6 +3677,7 @@ class ClinicalFinding(PhenotypicFeature):
     """
     this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
     """
+    has_genetic_inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
