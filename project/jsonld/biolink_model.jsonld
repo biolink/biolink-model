@@ -2172,7 +2172,6 @@
         "http://purl.obolibrary.org/obo/NCIT_role_has_range",
         "http://purl.obolibrary.org/obo/INO_0000154",
         "http://www.ebi.ac.uk/ancestro/ancestro_0308",
-        "http://purl.obolibrary.org/obo/OMIM_has_inheritance_type",
         "http://www.orpha.net/ORDO/Orphanet_C016",
         "http://www.orpha.net/ORDO/Orphanet_C017",
         "http://purl.obolibrary.org/obo/RO_0000053",
@@ -3749,6 +3748,24 @@
       ],
       "range": "Gene",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_genetic_inheritance",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_genetic_inheritance",
+      "description": "Connects genetic inheritance to a disease or phenotypic feature, as a node property.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/OMIM_has_inheritance_type"
+      ],
+      "is_a": "node_property",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_genetic_inheritance",
+      "owner": "DiseaseOrPhenotypicFeature",
+      "domain_of": [
+        "DiseaseOrPhenotypicFeature"
+      ],
+      "range": "GeneticInheritance",
       "@type": "SlotDefinition"
     },
     {
@@ -14320,7 +14337,6 @@
         "http://purl.obolibrary.org/obo/NCIT_role_has_range",
         "http://purl.obolibrary.org/obo/INO_0000154",
         "http://www.ebi.ac.uk/ancestro/ancestro_0308",
-        "http://purl.obolibrary.org/obo/OMIM_has_inheritance_type",
         "http://www.orpha.net/ORDO/Orphanet_C016",
         "http://www.orpha.net/ORDO/Orphanet_C017",
         "http://purl.obolibrary.org/obo/RO_0000053",
@@ -14569,7 +14585,6 @@
         "http://purl.obolibrary.org/obo/NCIT_role_has_range",
         "http://purl.obolibrary.org/obo/INO_0000154",
         "http://www.ebi.ac.uk/ancestro/ancestro_0308",
-        "http://purl.obolibrary.org/obo/OMIM_has_inheritance_type",
         "http://www.orpha.net/ORDO/Orphanet_C016",
         "http://www.orpha.net/ORDO/Orphanet_C017",
         "http://purl.obolibrary.org/obo/RO_0000053",
@@ -14673,7 +14688,6 @@
         "http://purl.obolibrary.org/obo/NCIT_role_has_range",
         "http://purl.obolibrary.org/obo/INO_0000154",
         "http://www.ebi.ac.uk/ancestro/ancestro_0308",
-        "http://purl.obolibrary.org/obo/OMIM_has_inheritance_type",
         "http://www.orpha.net/ORDO/Orphanet_C016",
         "http://www.orpha.net/ORDO/Orphanet_C017",
         "http://purl.obolibrary.org/obo/RO_0000053",
@@ -27986,7 +28000,8 @@
         "synonym",
         "named_thing_category",
         "in_taxon",
-        "in_taxon_label"
+        "in_taxon_label",
+        "has_genetic_inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
@@ -28065,7 +28080,8 @@
         "synonym",
         "named_thing_category",
         "in_taxon",
-        "in_taxon_label"
+        "in_taxon_label",
+        "has_genetic_inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Disease",
@@ -28154,7 +28170,8 @@
         "synonym",
         "named_thing_category",
         "in_taxon",
-        "in_taxon_label"
+        "in_taxon_label",
+        "has_genetic_inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeature",
@@ -28183,7 +28200,8 @@
         "synonym",
         "named_thing_category",
         "in_taxon",
-        "in_taxon_label"
+        "in_taxon_label",
+        "has_genetic_inheritance"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BehavioralFeature",
@@ -29883,6 +29901,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
+        "has_genetic_inheritance",
         "clinical_finding_has_attribute"
       ],
       "slot_usage": {},
@@ -37059,9 +37078,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-08-04T22:11:05",
-  "source_file_size": 419760,
-  "generation_date": "2025-08-04T22:11:11",
+  "source_file_date": "2025-08-19T17:09:53",
+  "source_file_size": 432912,
+  "generation_date": "2025-08-19T17:09:59",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

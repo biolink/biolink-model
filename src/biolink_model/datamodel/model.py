@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-04T22:11:24
+# Generation date: 2025-08-19T17:10:11
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -4950,12 +4950,16 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_genetic_inheritance: Optional[Union[str, GeneticInheritanceId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureId):
             self.id = DiseaseOrPhenotypicFeatureId(self.id)
+
+        if self.has_genetic_inheritance is not None and not isinstance(self.has_genetic_inheritance, GeneticInheritanceId):
+            self.has_genetic_inheritance = GeneticInheritanceId(self.has_genetic_inheritance)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -14477,6 +14481,9 @@ slots.has_gene_or_gene_product = Slot(uri=BIOLINK.has_gene_or_gene_product, name
 
 slots.has_gene = Slot(uri=BIOLINK.has_gene, name="has gene", curie=BIOLINK.curie('has_gene'),
                    model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
+
+slots.has_genetic_inheritance = Slot(uri=BIOLINK.has_genetic_inheritance, name="has genetic inheritance", curie=BIOLINK.curie('has_genetic_inheritance'),
+                   model_uri=BIOLINK.has_genetic_inheritance, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[str, GeneticInheritanceId]])
 
 slots.has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="has zygosity", curie=BIOLINK.curie('has_zygosity'),
                    model_uri=BIOLINK.has_zygosity, domain=NucleicAcidEntity, range=Optional[Union[str, ZygosityId]])
