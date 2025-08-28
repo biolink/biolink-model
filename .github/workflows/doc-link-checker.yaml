@@ -40,7 +40,7 @@ jobs:
         # Possible exit codes: https://github.com/lycheeverse/lychee?tab=readme-ov-file#exit-codes
         # Reference: https://github.com/lycheeverse/lychee-action
         id: lychee
-        uses: lycheeverse/lychee-action@v1.9.0
+        uses: lycheeverse/lychee-action@v2.0.2
         with:
           # Reference: https://github.com/lycheeverse/lychee#commandline-parameters
           args: --base docs --verbose --no-progress --format markdown --timeout 5 'docs/*.md' 'docs/**/*.md'
