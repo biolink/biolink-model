@@ -430,6 +430,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -473,6 +474,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -517,6 +519,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -598,6 +601,7 @@ type Association
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
   }
@@ -698,6 +702,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: Behavior!
@@ -969,6 +974,7 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1021,6 +1027,7 @@ type CaseToGeneAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1067,6 +1074,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     negated: Boolean
@@ -1122,6 +1130,7 @@ type CaseToVariantAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1167,10 +1176,13 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -1261,6 +1273,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     diseaseContextQualifier: Disease
@@ -1315,6 +1328,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: DiseaseOrPhenotypicFeature!
@@ -1404,6 +1418,7 @@ type ChemicalAffectsGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1484,6 +1499,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -1532,6 +1548,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     objectDirectionQualifier: DirectionQualifierEnum
@@ -1608,6 +1625,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1691,6 +1709,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -1746,6 +1765,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -1818,6 +1838,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1862,6 +1883,7 @@ type ChemicalToChemicalDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -1909,6 +1931,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     object: DiseaseOrPhenotypicFeature!
@@ -1963,6 +1986,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -2312,6 +2336,7 @@ type ContributorAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: InformationContentEntity!
@@ -2357,10 +2382,13 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -2550,6 +2578,7 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     responseContextQualifier: ResponseEnum
@@ -2647,6 +2676,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -2692,6 +2722,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     object: AnatomicalEntity!
@@ -2744,6 +2775,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
   }
@@ -2786,6 +2818,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     onsetQualifier: Onset
@@ -2922,6 +2955,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     object: GeneOrGeneProduct!
@@ -2984,10 +3018,13 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -3056,6 +3093,7 @@ type EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -3181,6 +3219,7 @@ type EntityToPhenotypicFeatureAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -3380,6 +3419,7 @@ type ExonToTranscriptRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: Exon!
@@ -3432,6 +3472,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -3477,6 +3518,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: ExposureEvent!
@@ -3607,6 +3649,7 @@ type FunctionalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -3688,6 +3731,7 @@ type GeneAffectsChemicalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -3748,10 +3792,13 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3836,10 +3883,12 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -3912,6 +3961,7 @@ type GeneRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum!
@@ -3960,10 +4010,13 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -4016,10 +4069,13 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     subject: GeneOrGeneProduct!
     object: DiseaseOrPhenotypicFeature!
     predicate: PredicateType!
@@ -4079,6 +4135,7 @@ type GeneToExpressionSiteAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     stageQualifier: LifeStage
@@ -4127,6 +4184,7 @@ interface GeneToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -4170,6 +4228,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -4218,6 +4277,7 @@ type GeneToGeneFamilyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -4262,6 +4322,7 @@ type GeneToGeneHomologyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -4306,6 +4367,7 @@ type GeneToGeneProductRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -4351,6 +4413,7 @@ type GeneToGoTermAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -4395,6 +4458,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -4438,10 +4502,13 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -4560,6 +4627,7 @@ type GenomicSequenceLocalization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     startInterbaseCoordinate: Integer
@@ -4629,6 +4697,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4680,6 +4749,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -4738,6 +4808,7 @@ type GenotypeToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4782,6 +4853,7 @@ type GenotypeToGenotypePartAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4827,6 +4899,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4882,6 +4955,7 @@ type GenotypeToVariantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -5115,6 +5189,7 @@ type InformationContentEntityToNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -5269,6 +5344,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -5314,6 +5390,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -5367,6 +5444,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -5450,6 +5528,7 @@ type MaterialSampleDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MaterialSample!
@@ -5497,6 +5576,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     diseaseContextQualifier: Disease
@@ -5596,6 +5676,7 @@ type MolecularActivityToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -5640,6 +5721,7 @@ type MolecularActivityToMolecularActivityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -5683,6 +5765,7 @@ type MolecularActivityToPathwayAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -5794,6 +5877,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -6014,6 +6098,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -6059,6 +6144,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -6102,6 +6188,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     associatedEnvironmentalContext: String
@@ -6147,6 +6234,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -6192,6 +6280,7 @@ type OrganismToOrganismAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: IndividualOrganism!
@@ -6255,6 +6344,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: OrganismalEntity!
@@ -6308,6 +6398,7 @@ type PairwiseGeneToGeneInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -6351,6 +6442,7 @@ type PairwiseMolecularInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     interactingMoleculesCategory: OntologyClass
@@ -6576,6 +6668,7 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -6651,6 +6744,7 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     frequencyQualifier: FrequencyValue
@@ -6857,6 +6951,7 @@ type PopulationToPopulationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: PopulationOfIndividualOrganisms!
@@ -6986,6 +7081,7 @@ type ProcessRegulatesProcessAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcess!
@@ -7161,6 +7257,7 @@ type ReactionToCatalystAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -7208,6 +7305,7 @@ type ReactionToParticipantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -7389,6 +7487,7 @@ type SequenceAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
   }
@@ -7431,6 +7530,7 @@ type SequenceFeatureRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NucleicAcidEntity!
@@ -7496,6 +7596,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -7774,6 +7875,7 @@ type TaxonToTaxonAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -7867,6 +7969,7 @@ type TranscriptToGeneRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: Transcript!
@@ -7949,6 +8052,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -8000,6 +8104,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -8059,6 +8164,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -8103,6 +8209,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -8152,6 +8259,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -8207,6 +8315,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
