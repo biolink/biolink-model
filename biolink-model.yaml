@@ -9675,6 +9675,7 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
+      - update date
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -11044,8 +11045,10 @@ classes:
       - dcid:DiseaseGeneAssociation
       - SIO:000983
     slots:
+      - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
+      - allelic requirement
     slot_usage:
       subject:
         range: gene or gene product
@@ -11053,6 +11056,8 @@ classes:
         examples:
           - value: HGNC:2197
             description: "COL1A1 (Human)"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
