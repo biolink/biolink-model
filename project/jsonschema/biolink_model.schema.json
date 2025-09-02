@@ -843,6 +843,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1171,6 +1179,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -1740,6 +1756,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -2563,6 +2587,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -4304,6 +4336,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -4632,6 +4672,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -5048,6 +5096,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -5384,6 +5440,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -5419,6 +5483,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -5754,6 +5826,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -5786,6 +5862,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -6461,6 +6545,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -6817,6 +6909,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -7476,6 +7576,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -7957,6 +8065,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -8297,6 +8413,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -8806,6 +8930,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -9382,6 +9514,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -9778,6 +9918,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -10258,6 +10406,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -10596,6 +10752,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -10956,6 +11120,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -11284,6 +11456,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -13773,6 +13953,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -13808,6 +13996,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -14143,6 +14339,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -14175,6 +14375,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -15460,6 +15668,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -16070,6 +16286,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -16400,6 +16624,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -16728,6 +16960,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -17142,6 +17382,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -18001,6 +18249,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -18197,6 +18453,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -18532,6 +18796,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -18564,6 +18832,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -18903,6 +19179,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -19238,6 +19522,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -20460,6 +20752,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -20803,6 +21103,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -21210,6 +21518,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -21878,6 +22194,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -22558,6 +22882,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -22593,6 +22925,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -22928,6 +23268,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -22960,6 +23304,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -23134,6 +23486,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -23470,11 +23830,8 @@
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
                 "subject_form_or_variant_qualifier": {
-                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -23508,6 +23865,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -23936,6 +24301,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -23974,6 +24347,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -24309,6 +24690,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -24341,6 +24726,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -24378,6 +24771,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -24713,6 +25114,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -24745,6 +25150,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -25096,6 +25509,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -25456,6 +25877,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -25784,6 +26213,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -26116,6 +26553,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -26444,6 +26889,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -26776,6 +27229,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -27106,6 +27567,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -27141,6 +27610,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "allelic_requirement": {
+                    "description": "The allele configuration of a particular gene or variant required for the  expression of a disease or phenotype in a specific patient or instance. ",
+                    "pattern": "^HP:\\d{7}$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -27476,6 +27953,10 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
                 },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement)."
+                },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -27508,6 +27989,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -28301,6 +28790,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -28814,6 +29311,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -29187,6 +29692,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -29517,6 +30030,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -29845,6 +30366,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -30254,6 +30783,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -30582,6 +31119,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -32073,6 +32618,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -33167,6 +33720,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -33504,6 +34065,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -33839,6 +34408,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -34408,6 +34985,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -34764,6 +35349,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -35380,6 +35973,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -35710,6 +36311,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -36038,6 +36647,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -36851,6 +37468,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -38276,6 +38901,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -38606,6 +39239,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -38934,6 +39575,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -39309,6 +39958,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -39637,6 +40294,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -39973,6 +40638,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -41560,6 +42233,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -41965,6 +42646,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -43319,6 +44008,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -44228,6 +44925,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -45766,6 +46471,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -46109,6 +46822,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -47070,6 +47791,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -47407,6 +48136,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -49337,6 +50074,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -49943,6 +50688,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -50600,6 +51353,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -50973,6 +51734,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -51301,6 +52070,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -51659,6 +52436,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -52068,6 +52853,14 @@
                         "array",
                         "null"
                     ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -52431,6 +53224,14 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "update_date": {
+                    "description": "date on which an entity was updated. This can be applied to nodes or edges",
+                    "format": "date",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
