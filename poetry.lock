@@ -1070,26 +1070,26 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "linkml"
-version = "1.9.2"
+version = "1.9.4rc2"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "linkml-1.9.2-py3-none-any.whl", hash = "sha256:4c9cf217948367df8a20cdf68e8f6da24ba23ab97a551f8ae32e9d4264e702cc"},
-    {file = "linkml-1.9.2.tar.gz", hash = "sha256:2f9141d2bc8a93bfe1d4b86a015ad0acbb94c2af099177f5687a50d3331d2b34"},
+    {file = "linkml-1.9.4rc2-py3-none-any.whl", hash = "sha256:8580a8a5329e9c4e083340d121632b241e1fcce9feffd5b5a2bdfde00fba1026"},
+    {file = "linkml-1.9.4rc2.tar.gz", hash = "sha256:cf858c2dde448c1d3002d0bd63c3dcbe568bd5cfd1679875d7b33fa375284589"},
 ]
 
 [package.dependencies]
 antlr4-python3-runtime = ">=4.9.0,<4.10"
-click = ">=7.0"
+click = ">=8.0,<8.2"
 graphviz = ">=0.10.1"
 hbreader = "*"
 isodate = ">=0.6.0"
 jinja2 = ">=3.1.0"
 jsonasobj2 = ">=1.0.3,<2.0.0"
 jsonschema = {version = ">=4.0.0", extras = ["format"]}
-linkml-runtime = ">=1.9.2,<2.0.0"
+linkml-runtime = ">=1.9.5,<2.0.0"
 openpyxl = "*"
 parse = "*"
 prefixcommons = ">=0.1.7"
@@ -1107,24 +1107,16 @@ sqlalchemy = ">=1.4.31"
 typing-extensions = {version = ">=4.6.0", markers = "python_version < \"3.12\""}
 watchdog = ">=0.9.0"
 
-[package.extras]
-black = ["black (>=24.0.0)"]
-numpydantic = ["numpydantic (>=1.6.1)"]
-pandera = ["pandera (>=0.19.0)"]
-polars-lts-cpu = ["polars-lts-cpu (>=1.0.0)"]
-shacl = ["pyshacl (>=0.25.0)"]
-tests = ["black (>=24.0.0)", "numpydantic (>=1.6.1)", "pyshacl (>=0.25.0)"]
-
 [[package]]
 name = "linkml-runtime"
-version = "1.9.3"
+version = "1.9.5"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "linkml_runtime-1.9.3-py3-none-any.whl", hash = "sha256:39a8aa51b40decd58fd04f4c02a213aad06b971df4c042aa7764f4b75cc09aa8"},
-    {file = "linkml_runtime-1.9.3.tar.gz", hash = "sha256:1b65358bf91868b7607675abb98c26597873bb45f73ab309b7d4c31a84e58e1b"},
+    {file = "linkml_runtime-1.9.5-py3-none-any.whl", hash = "sha256:fece3e8aa25a4246165c6528b6a7fe83a929b985d2ce1951cc8a0f4da1a30b90"},
+    {file = "linkml_runtime-1.9.5.tar.gz", hash = "sha256:78dc1383adf11ad5f20bb11b6adde56ed566fbd2429a292d57699ad4596c738a"},
 ]
 
 [package.dependencies]
@@ -3184,4 +3176,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "fd1cd680472fb2b7d670c6065b087f914ecd29e17d58185f62966e3a50c09288"
+content-hash = "c073c8921a12093fe095f7f2e5e63873026247c4ad448157f5105c15bc2e2476"
