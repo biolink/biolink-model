@@ -4256,7 +4256,8 @@ linkml:Sparqlpath xsd:string
 
 <StudyResult>  (
     @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<LogOddsAnalysisResult> OR
-    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult>
+    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult> OR
+    @<TextMiningStudyResult>
 )
 
 <StudyResult_struct> {
@@ -4304,6 +4305,21 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <StudyResult> ] ?
        ) ;
        rdf:type [ <TextMiningResult> ]
+    )
+}
+
+<TextMiningStudyResult> CLOSED {
+    (  $<TextMiningStudyResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ? ;
+          <supporting_text> @linkml:String * ;
+          <subject_location_in_text> @linkml:Integer * ;
+          <object_location_in_text> @linkml:Integer * ;
+          <extraction_confidence_score> @linkml:Integer ? ;
+          <supporting_document_type> @linkml:String ? ;
+          <supporting_document_year> @linkml:Integer ? ;
+          <supporting_text_section_type> @linkml:String ?
+       ) ;
+       rdf:type [ <TextMiningStudyResult> ]
     )
 }
 

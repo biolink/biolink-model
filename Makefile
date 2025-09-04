@@ -131,7 +131,7 @@ gen-project: $(PYMODEL)
 	$(MAKE) id-prefixes
 
 tests:
-	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yamlO
 	$(RUN) python -m unittest discover -p 'test_*.py'
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml

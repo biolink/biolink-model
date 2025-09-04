@@ -7907,6 +7907,33 @@ type TextMiningResult
     creationDate: Date
   }
 
+type TextMiningStudyResult
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    providedBy: [String]
+    xref: [Uriorcurie]
+    fullName: LabelType
+    synonym: [LabelType]
+    category: [Uriorcurie]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    supportingText: [String]
+    subjectLocationInText: [Integer]
+    objectLocationInText: [Integer]
+    extractionConfidenceScore: Integer
+    supportingDocumentType: String
+    supportingDocumentYear: Integer
+    supportingTextSectionType: String
+  }
+
 interface ThingWithTaxon
   {
     inTaxon: [OrganismTaxon]
