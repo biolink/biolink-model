@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-04T10:48:43
+# Generation date: 2025-09-04T10:56:22
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -486,6 +486,10 @@ class InformationContentEntityId(NamedThingId):
 
 
 class StudyResultId(InformationContentEntityId):
+    pass
+
+
+class TextMiningStudyResultId(StudyResultId):
     pass
 
 
@@ -2295,6 +2299,68 @@ class StudyResult(InformationContentEntity):
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class TextMiningStudyResult(StudyResult):
+    """
+    A study result that represents information extracted from text using natural language processing techniques. This
+    includes the extracted text, location offsets within the source document, confidence scores, and other metadata
+    related to the text mining process.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningStudyResult"]
+    class_class_curie: ClassVar[str] = "biolink:TextMiningStudyResult"
+    class_name: ClassVar[str] = "text mining study result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningStudyResult
+
+    id: Union[str, TextMiningStudyResultId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    supporting_text: Optional[Union[str, list[str]]] = empty_list()
+    subject_location_in_text: Optional[Union[int, list[int]]] = empty_list()
+    object_location_in_text: Optional[Union[int, list[int]]] = empty_list()
+    extraction_confidence_score: Optional[int] = None
+    supporting_document_type: Optional[str] = None
+    supporting_document_year: Optional[int] = None
+    supporting_text_section_type: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, TextMiningStudyResultId):
+            self.id = TextMiningStudyResultId(self.id)
+
+        if not isinstance(self.supporting_text, list):
+            self.supporting_text = [self.supporting_text] if self.supporting_text is not None else []
+        self.supporting_text = [v if isinstance(v, str) else str(v) for v in self.supporting_text]
+
+        if not isinstance(self.subject_location_in_text, list):
+            self.subject_location_in_text = [self.subject_location_in_text] if self.subject_location_in_text is not None else []
+        self.subject_location_in_text = [v if isinstance(v, int) else int(v) for v in self.subject_location_in_text]
+
+        if not isinstance(self.object_location_in_text, list):
+            self.object_location_in_text = [self.object_location_in_text] if self.object_location_in_text is not None else []
+        self.object_location_in_text = [v if isinstance(v, int) else int(v) for v in self.object_location_in_text]
+
+        if self.extraction_confidence_score is not None and not isinstance(self.extraction_confidence_score, int):
+            self.extraction_confidence_score = int(self.extraction_confidence_score)
+
+        if self.supporting_document_type is not None and not isinstance(self.supporting_document_type, str):
+            self.supporting_document_type = str(self.supporting_document_type)
+
+        if self.supporting_document_year is not None and not isinstance(self.supporting_document_year, int):
+            self.supporting_document_year = int(self.supporting_document_year)
+
+        if self.supporting_text_section_type is not None and not isinstance(self.supporting_text_section_type, str):
+            self.supporting_text_section_type = str(self.supporting_text_section_type)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
