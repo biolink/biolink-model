@@ -6747,21 +6747,6 @@ classes:
       analyses, or a larger scale clinical trial or experimental research investigation.
     is_a: information content entity
 
-  text mining study result:
-    description: >-
-      A study result that represents information extracted from text using natural language processing techniques.
-      This includes the extracted text, location offsets within the source document, confidence scores, and other
-      metadata related to the text mining process.
-    is_a: study result
-    slots:
-      - supporting text
-      - subject location in text
-      - object location in text
-      - extraction confidence score
-      - supporting document type
-      - supporting document year
-      - supporting text section type
-
   study:
     description: a detailed investigation and/or analysis
     is_a: activity
