@@ -249,6 +249,7 @@ linkml:Sparqlpath xsd:string
              <p_value> @linkml:Float ? ;
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
+             <update_date> @linkml:Date ? ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
@@ -1424,7 +1425,8 @@ linkml:Sparqlpath xsd:string
        (  $<DiseaseOrPhenotypicFeature_tes> (  &<BiologicalEntity_tes> ;
              rdf:type [ <BiologicalEntity> ] ? ;
              &<OntologyClass_tes> ;
-             rdf:type [ <OntologyClass> ] ?
+             rdf:type [ <OntologyClass> ] ? ;
+             <inheritance> @<GeneticInheritance> ?
           ) ;
           rdf:type [ <DiseaseOrPhenotypicFeature> ]
        )
@@ -2413,6 +2415,16 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
              &<GeneToEntityAssociationMixin_tes> ;
              rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+             <subject_form_or_variant_qualifier> [
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
              <subject_aspect_qualifier> [
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
@@ -2474,6 +2486,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+             <allelic_requirement> @linkml:String ? ;
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<DiseaseOrPhenotypicFeature> ;
              rdf:predicate @<PredicateType> ;

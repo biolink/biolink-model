@@ -332,7 +332,6 @@ slots:
       - NCIT:role_has_range
       - INO:0000154
       - HANCESTRO:0308
-      - OMIM:has_inheritance_type
       - orphanet:C016
       - orphanet:C017
       - RO:0000053
@@ -1145,6 +1144,7 @@ slots:
     domain: association
     range: string
 
+   ## Biological Entity properties
 
   has biological sequence:
     is_a: node property
@@ -1165,6 +1165,15 @@ slots:
       connects an entity associated with one or more genes
     range: gene
     multivalued: true
+
+  inheritance:
+    is_a: node property
+    description: >-
+      Connects genetic inheritance to a disease or phenotypic feature, as a node property.
+    domain: disease or phenotypic feature
+    range: genetic inheritance
+    exact_mappings:
+      - OMIM:has_inheritance_type
 
   has zygosity:
     is_a: node property
@@ -1270,7 +1279,7 @@ slots:
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: qualifier
-    range: population of individual organisms # TODO: harmonize with 'response target context qualifier'
+    range: population of individual organisms  # TODO: harmonize with 'response target context qualifier'
 
   temporal context qualifier:
     description: >-
@@ -8392,6 +8401,8 @@ classes:
     is_a: biological entity
     mixins:
       - ontology class
+    slots:
+      - inheritance
     description: >-
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
@@ -9279,7 +9290,7 @@ classes:
     slots:
       - clinical trial phase
       - clinical trial primary purpose
-      - creation date # maybe? 
+      - creation date  # maybe?
     id_prefixes:
       - CLINICALTRIALS
 
@@ -9679,6 +9690,7 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
+      - update date
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -11048,8 +11060,10 @@ classes:
       - dcid:DiseaseGeneAssociation
       - SIO:000983
     slots:
+      - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
+      - allelic requirement
     slot_usage:
       subject:
         range: gene or gene product
@@ -11057,6 +11071,8 @@ classes:
         examples:
           - value: HGNC:2197
             description: "COL1A1 (Human)"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:

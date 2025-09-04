@@ -111,6 +111,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -155,6 +156,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -232,6 +234,7 @@ message Association
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -331,6 +334,7 @@ message BehaviorToBehavioralFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   behavior subject = 0
@@ -385,6 +389,7 @@ message BehavioralFeature
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance inheritance = 0
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -577,6 +582,7 @@ message CaseToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -622,6 +628,7 @@ message CaseToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -668,6 +675,7 @@ message CaseToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   boolean negated = 0
@@ -723,6 +731,7 @@ message CaseToVariantAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -767,10 +776,13 @@ message CausalGeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -858,6 +870,7 @@ message CellLineAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease diseaseContextQualifier = 0
@@ -912,6 +925,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
@@ -993,6 +1007,7 @@ message ChemicalAffectsGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1072,6 +1087,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -1116,6 +1132,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -1181,6 +1198,7 @@ message ChemicalGeneInteractionAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1260,6 +1278,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -1315,6 +1334,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -1387,6 +1407,7 @@ message ChemicalToChemicalAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1431,6 +1452,7 @@ message ChemicalToChemicalDerivationAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
@@ -1478,6 +1500,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature object = 0
@@ -1525,6 +1548,7 @@ message ChemicalToPathwayAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -1620,6 +1644,7 @@ message ClinicalFinding
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance inheritance = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
 message ClinicalIntervention
@@ -1871,6 +1896,7 @@ message ContributorAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   informationContentEntity subject = 0
@@ -1915,10 +1941,13 @@ message CorrelatedGeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -2068,6 +2097,7 @@ message Disease
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance inheritance = 0
  }
 // A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.
 message DiseaseAssociatedWithResponseToChemicalEntityAssociation
@@ -2107,6 +2137,7 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   responseEnum responseContextQualifier = 0
@@ -2132,6 +2163,7 @@ message DiseaseOrPhenotypicFeature
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance inheritance = 0
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
@@ -2192,6 +2224,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -2237,6 +2270,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity object = 0
@@ -2282,6 +2316,7 @@ message DiseaseToExposureEventAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -2324,6 +2359,7 @@ message DiseaseToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   onset onsetQualifier = 0
@@ -2453,6 +2489,7 @@ message DrugToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct object = 0
@@ -2514,10 +2551,13 @@ message DruggableGeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
@@ -2573,6 +2613,7 @@ message EntityToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -2618,6 +2659,7 @@ message EntityToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -2786,6 +2828,7 @@ message ExonToTranscriptRelationship
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exon subject = 0
@@ -2832,6 +2875,7 @@ message ExposureEventToOutcomeAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -2877,6 +2921,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
@@ -2977,6 +3022,7 @@ message FunctionalAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -3058,6 +3104,7 @@ message GeneAffectsChemicalAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -3117,10 +3164,13 @@ message GeneAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -3191,10 +3241,12 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
@@ -3248,6 +3300,7 @@ message GeneRegulatesGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
@@ -3295,10 +3348,13 @@ message GeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -3350,10 +3406,13 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   geneOrGeneProduct subject = 0
   diseaseOrPhenotypicFeature object = 0
   predicateType predicate = 0
@@ -3406,6 +3465,7 @@ message GeneToExpressionSiteAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
@@ -3453,6 +3513,7 @@ message GeneToGeneCoexpressionAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -3501,6 +3562,7 @@ message GeneToGeneFamilyAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -3545,6 +3607,7 @@ message GeneToGeneHomologyAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -3589,6 +3652,7 @@ message GeneToGeneProductRelationship
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -3633,6 +3697,7 @@ message GeneToGoTermAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -3677,6 +3742,7 @@ message GeneToPathwayAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -3719,10 +3785,13 @@ message GeneToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
   predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -3836,6 +3905,7 @@ message GenomicSequenceLocalization
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   integer startInterbaseCoordinate = 0
@@ -3904,6 +3974,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -3954,6 +4025,7 @@ message GenotypeToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -4005,6 +4077,7 @@ message GenotypeToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -4049,6 +4122,7 @@ message GenotypeToGenotypePartAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -4094,6 +4168,7 @@ message GenotypeToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -4149,6 +4224,7 @@ message GenotypeToVariantAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -4356,6 +4432,7 @@ message InformationContentEntityToNamedThingAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -4505,6 +4582,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4550,6 +4628,7 @@ message MacromolecularMachineToCellularComponentAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4595,6 +4674,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4673,6 +4753,7 @@ message MaterialSampleDerivationAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   materialSample subject = 0
@@ -4720,6 +4801,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease diseaseContextQualifier = 0
@@ -4804,6 +4886,7 @@ message MolecularActivityToChemicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -4848,6 +4931,7 @@ message MolecularActivityToMolecularActivityAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -4891,6 +4975,7 @@ message MolecularActivityToPathwayAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -4997,6 +5082,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -5200,6 +5286,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string associatedEnvironmentalContext = 0
@@ -5245,6 +5332,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -5289,6 +5377,7 @@ message OrganismToOrganismAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   individualOrganism subject = 0
@@ -5333,6 +5422,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
@@ -5382,6 +5472,7 @@ message PairwiseGeneToGeneInteraction
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -5425,6 +5516,7 @@ message PairwiseMolecularInteraction
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   ontologyClass interactingMoleculesCategory = 0
@@ -5591,6 +5683,7 @@ message PhenotypicFeature
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  geneticInheritance inheritance = 0
  }
 message PhenotypicFeatureToDiseaseAssociation
  {
@@ -5631,6 +5724,7 @@ message PhenotypicFeatureToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -5688,6 +5782,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
@@ -5884,6 +5979,7 @@ message PopulationToPopulationAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms subject = 0
@@ -6013,6 +6109,7 @@ message ProcessRegulatesProcessAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcess subject = 0
@@ -6186,6 +6283,7 @@ message ReactionToCatalystAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -6232,6 +6330,7 @@ message ReactionToParticipantAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -6404,6 +6503,7 @@ message SequenceAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -6446,6 +6546,7 @@ message SequenceFeatureRelationship
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   nucleicAcidEntity subject = 0
@@ -6712,6 +6813,7 @@ message TaxonToTaxonAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -6826,6 +6928,7 @@ message TranscriptToGeneRelationship
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   transcript subject = 0
@@ -6907,6 +7010,7 @@ message VariantAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
@@ -6957,6 +7061,7 @@ message VariantToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -7009,6 +7114,7 @@ message VariantToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -7053,6 +7159,7 @@ message VariantToGeneExpressionAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -7101,6 +7208,7 @@ message VariantToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
@@ -7156,6 +7264,7 @@ message VariantToPopulationAssociation
   float pValue = 0
   float adjustedPValue = 0
  repeated  study hasSupportingStudies = 0
+  date updateDate = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0

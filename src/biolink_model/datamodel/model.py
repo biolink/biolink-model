@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-04T10:56:22
+# Generation date: 2025-09-04T11:02:02
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -5016,12 +5016,16 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    inheritance: Optional[Union[str, GeneticInheritanceId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureId):
             self.id = DiseaseOrPhenotypicFeatureId(self.id)
+
+        if self.inheritance is not None and not isinstance(self.inheritance, GeneticInheritanceId):
+            self.inheritance = GeneticInheritanceId(self.inheritance)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -7485,6 +7489,7 @@ class Association(Entity):
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
     has_supporting_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
+    update_date: Optional[Union[str, XSDDate]] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7610,6 +7615,9 @@ class Association(Entity):
         if not isinstance(self.has_supporting_studies, list):
             self.has_supporting_studies = [self.has_supporting_studies] if self.has_supporting_studies is not None else []
         self.has_supporting_studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.has_supporting_studies]
+
+        if self.update_date is not None and not isinstance(self.update_date, XSDDate):
+            self.update_date = XSDDate(self.update_date)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -11195,8 +11203,10 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     predicate: Union[str, PredicateType] = None
+    subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    allelic_requirement: Optional[str] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
@@ -11225,11 +11235,17 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
+        if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, ChemicalOrGeneOrGeneProductFormOrVariantEnum):
+            self.subject_form_or_variant_qualifier = ChemicalOrGeneOrGeneProductFormOrVariantEnum(self.subject_form_or_variant_qualifier)
+
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
             self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
 
         if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
             self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.allelic_requirement is not None and not isinstance(self.allelic_requirement, str):
+            self.allelic_requirement = str(self.allelic_requirement)
 
         if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
             self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
@@ -14544,6 +14560,9 @@ slots.has_gene_or_gene_product = Slot(uri=BIOLINK.has_gene_or_gene_product, name
 slots.has_gene = Slot(uri=BIOLINK.has_gene, name="has gene", curie=BIOLINK.curie('has_gene'),
                    model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
 
+slots.inheritance = Slot(uri=BIOLINK.inheritance, name="inheritance", curie=BIOLINK.curie('inheritance'),
+                   model_uri=BIOLINK.inheritance, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[str, GeneticInheritanceId]])
+
 slots.has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="has zygosity", curie=BIOLINK.curie('has_zygosity'),
                    model_uri=BIOLINK.has_zygosity, domain=NucleicAcidEntity, range=Optional[Union[str, ZygosityId]])
 
@@ -16323,6 +16342,9 @@ slots.variant_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="
 
 slots.gene_to_disease_or_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="gene to disease or phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene to disease or phenotypic feature association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
+                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
 
 slots.gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="gene to disease or phenotypic feature association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
                    model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
