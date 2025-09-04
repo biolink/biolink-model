@@ -6742,6 +6742,33 @@ message TextMiningResult
   string format = 0
   date creationDate = 0
  }
+// A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.
+message TextMiningStudyResult
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+  labelType fullName = 0
+ repeated  labelType synonym = 0
+ repeated  uriorcurie category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  string supportingText = 0
+ repeated  integer subjectLocationInText = 0
+ repeated  integer objectLocationInText = 0
+  integer extractionConfidenceScore = 0
+  string supportingDocumentType = 0
+  integer supportingDocumentYear = 0
+  string supportingTextSectionType = 0
+ }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript
  {

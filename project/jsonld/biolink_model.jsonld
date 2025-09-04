@@ -12880,7 +12880,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_text",
-      "owner": "supporting_text",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -12919,7 +12922,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_location_in_text",
-      "owner": "subject_location_in_text",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "integer",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -12938,7 +12944,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_location_in_text",
-      "owner": "object_location_in_text",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "integer",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -12957,7 +12966,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/extraction_confidence_score",
-      "owner": "extraction_confidence_score",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
@@ -12975,7 +12987,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_document_type",
-      "owner": "supporting_document_type",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -12993,7 +13008,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_document_year",
-      "owner": "supporting_document_year",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
@@ -13011,7 +13029,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_text_section_type",
-      "owner": "supporting_text_section_type",
+      "owner": "TextMiningStudyResult",
+      "domain_of": [
+        "TextMiningStudyResult"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -24552,6 +24573,41 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/StudyResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TextMiningStudyResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/TextMiningStudyResult",
+      "description": "A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date",
+        "supporting_text",
+        "subject_location_in_text",
+        "object_location_in_text",
+        "extraction_confidence_score",
+        "supporting_document_type",
+        "supporting_document_year",
+        "supporting_text_section_type"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/TextMiningStudyResult",
       "@type": "ClassDefinition"
     },
     {
@@ -37059,9 +37115,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-09-04T10:39:37",
-  "source_file_size": 419760,
-  "generation_date": "2025-09-04T10:39:50",
+  "source_file_date": "2025-09-04T10:55:48",
+  "source_file_size": 420351,
+  "generation_date": "2025-09-04T10:55:59",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
