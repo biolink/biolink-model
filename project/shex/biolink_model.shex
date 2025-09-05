@@ -250,6 +250,7 @@ linkml:Sparqlpath xsd:string
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
              <update_date> @linkml:Date ? ;
+             <has_confidence_score> @linkml:Float ? ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
@@ -1334,8 +1335,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <z_score> @linkml:Float ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:object @<Disease>
+          rdf:object @<Disease> ;
+          rdf:predicate @<PredicateType>
        ) ;
        rdf:type [ <CorrelatedGeneToDiseaseAssociation> ]
     )
