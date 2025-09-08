@@ -5802,6 +5802,8 @@ slots:
     multivalued: true
 
   has supporting study result:
+    range: supporting study result
+    multivalued: true
     is_a: association slot
     description: >-
       connects an association to an instance of supporting study result
