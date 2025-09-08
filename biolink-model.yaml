@@ -281,11 +281,13 @@ slots:
 
   nodes:
     multivalued: true
+    range: entity
     description: >-
       A list of entities that can be a subject or object of an association
 
   edges:
     multivalued: true
+    range: association
     description: >-
       A list of associations between two entities.
 
