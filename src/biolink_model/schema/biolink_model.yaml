@@ -291,7 +291,6 @@ slots:
     description: >-
       A list of associations between two entities.
 
-
   has attribute:
     description: >-
       connects any entity to an attribute
@@ -5803,6 +5802,8 @@ slots:
     multivalued: true
 
   has supporting study result:
+    range: study result
+    multivalued: true
     is_a: association slot
     description: >-
       connects an association to an instance of supporting study result
@@ -6447,6 +6448,19 @@ slots:
     range: biological sex
 
 classes:
+  # Add the KGX-specific classes without modifying biolink classes
+  KnowledgeGraph:
+    description: A knowledge graph represented in KGX format
+    slots:
+      - nodes
+      - edges
+
+  Node:
+    description: A node in a KGX graph, will be superclass for named thing
+
+  Edge:
+    description: An edge in a KGX graph, will be superclass for association
+
 
   knowledge graph:
     description: >-
@@ -6459,16 +6473,6 @@ classes:
       - edges
     tree_root: true
     abstract: true
-    comments:
-      - >-
-        This is an abstract class. In practice, a knowledge graph is a collection of nodes and edges.
-        The nodes and edges may be typed with Biolink classes and predicates, but this is not required.
-        A knowledge graph may also contain other elements such as attributes, annotations, and metadata.
-        In practice, a knowledge graph is often serialized in a specific format such as RDF, Neo4j, or JSON-LD.
-    examples:
-      - value: KG1
-        description: >-
-          A knowledge graph containing information about genes, diseases, and drugs.
 
   mapping collection:
     description: >-
@@ -9726,6 +9730,7 @@ classes:
       - adjusted p value
       - has supporting studies
       - update date
+      - has confidence score
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -11183,6 +11188,9 @@ classes:
     defining_slots:
       - subject
       - object
+      - predicate
+    slots:
+      - z score
     mixins:
       - entity to disease association mixin
       - gene to entity association mixin
@@ -11193,6 +11201,8 @@ classes:
           gene in which variation is shown to correlate with the disease.
       object:
         range: disease
+      predicate:
+        subproperty_of: correlated with
 
   druggable gene to disease association:
     is_a: gene to disease association

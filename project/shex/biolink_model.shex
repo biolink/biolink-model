@@ -250,6 +250,7 @@ linkml:Sparqlpath xsd:string
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
              <update_date> @linkml:Date ? ;
+             <has_confidence_score> @linkml:Float ? ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
@@ -1334,8 +1335,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <z_score> @linkml:Float ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:object @<Disease>
+          rdf:object @<Disease> ;
+          rdf:predicate @<PredicateType>
        ) ;
        rdf:type [ <CorrelatedGeneToDiseaseAssociation> ]
     )
@@ -1620,6 +1623,12 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] *
        ) ;
        rdf:type [ <DruggableGeneToDiseaseAssociation> ]
+    )
+}
+
+<Edge> CLOSED {
+    (  $<Edge_tes> rdf:type . * ;
+       rdf:type [ <Edge> ] ?
     )
 }
 
@@ -2988,6 +2997,14 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<KnowledgeGraph> CLOSED {
+    (  $<KnowledgeGraph_tes> (  <nodes> @<Entity> * ;
+          <edges> @<Association> *
+       ) ;
+       rdf:type [ <KnowledgeGraph> ] ?
+    )
+}
+
 <LifeStage> CLOSED {
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
           rdf:type [ <OrganismalEntity> ] ? ;
@@ -3256,6 +3273,12 @@ linkml:Sparqlpath xsd:string
           <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> ]
+    )
+}
+
+<Node> CLOSED {
+    (  $<Node_tes> rdf:type . * ;
+       rdf:type [ <Node> ] ?
     )
 }
 
