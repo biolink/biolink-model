@@ -2980,6 +2980,14 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<KnowledgeGraph> {
+    (  $<KnowledgeGraph_tes> (  <nodes> @<Entity> * ;
+          <edges> @<Association> *
+       ) ;
+       rdf:type [ <KnowledgeGraph> ] ?
+    )
+}
+
 <LifeStage> CLOSED {
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
           rdf:type [ <OrganismalEntity> ] ? ;

@@ -5245,6 +5245,12 @@ type JournalArticle
     issue: String
   }
 
+interface KnowledgeGraph
+  {
+    nodes: [Entity]
+    edges: [Association]
+  }
+
 type LifeStage implements OntologyClass
   {
     id: String!

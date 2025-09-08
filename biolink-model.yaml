@@ -291,7 +291,6 @@ slots:
     description: >-
       A list of associations between two entities.
 
-
   has attribute:
     description: >-
       connects any entity to an attribute
@@ -6447,6 +6446,19 @@ slots:
     range: biological sex
 
 classes:
+  # Add the KGX-specific classes without modifying biolink classes
+  KnowledgeGraph:
+    description: A knowledge graph represented in KGX format
+    slots:
+      - nodes
+      - edges
+
+  Node:
+    description: A node in a KGX graph, will be superclass for named thing
+
+  Edge:
+    description: An edge in a KGX graph, will be superclass for association
+
 
   knowledge graph:
     description: >-

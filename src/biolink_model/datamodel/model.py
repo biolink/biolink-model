@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-04T11:02:02
+# Generation date: 2025-09-08T15:41:27
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1435,6 +1435,36 @@ class OrganismTaxonToOrganismTaxonInteractionId(OrganismTaxonToOrganismTaxonAsso
 
 class OrganismTaxonToEnvironmentAssociationId(AssociationId):
     pass
+
+
+@dataclass(repr=False)
+class KnowledgeGraph(YAMLRoot):
+    """
+    A knowledge graph is a structured representation of knowledge in the form of a graph, where nodes represent
+    entities or concepts, and edges represent relationships between them. Knowledge graphs are used to organize and
+    connect information from various sources, enabling better understanding, analysis, and reasoning about complex
+    domains.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["KnowledgeGraph"]
+    class_class_curie: ClassVar[str] = "biolink:KnowledgeGraph"
+    class_name: ClassVar[str] = "knowledge graph"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.KnowledgeGraph
+
+    nodes: Optional[Union[Union[str, EntityId], list[Union[str, EntityId]]]] = empty_list()
+    edges: Optional[Union[Union[str, AssociationId], list[Union[str, AssociationId]]]] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if not isinstance(self.nodes, list):
+            self.nodes = [self.nodes] if self.nodes is not None else []
+        self.nodes = [v if isinstance(v, EntityId) else EntityId(v) for v in self.nodes]
+
+        if not isinstance(self.edges, list):
+            self.edges = [self.edges] if self.edges is not None else []
+        self.edges = [v if isinstance(v, AssociationId) else AssociationId(v) for v in self.edges]
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -14243,28 +14273,28 @@ class AgentTypeEnum(EnumDefinitionImpl):
 
     manual_agent = PermissibleValue(
         text="manual_agent",
-        description="""A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge,  but the human is the one who ultimately interprets/reasons with  this evidence to produce a statement of knowledge.""")
+        description="""A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge, but the human is the one who ultimately interprets/reasons with this evidence to produce a statement of knowledge.""")
     automated_agent = PermissibleValue(
         text="automated_agent",
-        description="""An automated agent, typically a software program or tool, that is  responsible for generating a statement of knowledge. Human contribution  to the knowledge creation process ends with the definition and coding of algorithms or analysis pipelines that get executed by the automated agent.""")
+        description="""An automated agent, typically a software program or tool, that is responsible for generating a statement of knowledge. Human contribution to the knowledge creation process ends with the definition and coding of algorithms or analysis pipelines that get executed by the automated agent.""")
     data_analysis_pipeline = PermissibleValue(
         text="data_analysis_pipeline",
-        description="""An automated agent that executes an analysis workflow over data and  reports the direct results of the analysis. These typically report  statistical associations/correlations between variables in the input dataset, and do not interpret/infer broader conclusions from associations the analysis reveals in the data.""")
+        description="""An automated agent that executes an analysis workflow over data and reports the direct results of the analysis. These typically report statistical associations/correlations between variables in the input dataset, and do not interpret/infer broader conclusions from associations the analysis reveals in the data.""")
     computational_model = PermissibleValue(
         text="computational_model",
-        description="""An automated agent that generates knowledge statements (typically predictions) based on rules/logic explicitly encoded in an algorithm (e.g. heuristic models, supervised classifiers), or learned from patterns  observed in data (e.g. ML models, unsupervised classifiers).""")
+        description="""An automated agent that generates knowledge statements (typically predictions) based on rules/logic explicitly encoded in an algorithm (e.g. heuristic models, supervised classifiers), or learned from patterns observed in data (e.g. ML models, unsupervised classifiers).""")
     text_mining_agent = PermissibleValue(
         text="text_mining_agent",
         description="""An automated agent that uses Natural Language Processing to recognize concepts and/or relationships in text, and report them using formally encoded semantics (e.g. as an edge in a knowledge graph).""")
     image_processing_agent = PermissibleValue(
         text="image_processing_agent",
-        description="""An automated agent that processes images to generate textual statements of  knowledge derived from the image and/or expressed in text the image  depicts (e.g. via OCR).""")
+        description="""An automated agent that processes images to generate textual statements of knowledge derived from the image and/or expressed in text the image depicts (e.g. via OCR).""")
     manual_validation_of_automated_agent = PermissibleValue(
         text="manual_validation_of_automated_agent",
-        description="""A human agent reviews and validates/approves the veracity of knowledge  that is initially generated by an automated agent.""")
+        description="""A human agent reviews and validates/approves the veracity of knowledge that is initially generated by an automated agent.""")
     not_provided = PermissibleValue(
         text="not_provided",
-        description="""The agent type is not provided, typically because it cannot be determined from available information if the agent that generated the knowledge is  manual or automated.""")
+        description="""The agent type is not provided, typically because it cannot be determined from available information if the agent that generated the knowledge is manual or automated.""")
 
     _defn = EnumDefinition(
         name="AgentTypeEnum",
@@ -14274,7 +14304,7 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
 
     knowledge_assertion = PermissibleValue(
         text="knowledge_assertion",
-        description="""A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not  definitively true.""")
+        description="""A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not definitively true.""")
     logical_entailment = PermissibleValue(
         text="logical_entailment",
         description="""A statement reporting a conclusion that follows logically from premises representing established facts or knowledge assertions (e.g. fingernail part of finger, finger part of hand --> fingernail part of hand).""")
@@ -14286,7 +14316,7 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
         description="""A statement that reports concepts representing variables in a dataset to be statistically associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1) is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').""")
     observation = PermissibleValue(
         text="observation",
-        description="""A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -  absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.""")
+        description="""A statement reporting (and possibly quantifying) a phenomenon that was observed to occur - absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.""")
     not_provided = PermissibleValue(
         text="not_provided",
         description="""The knowledge level is not provided, typically because it cannot be determined from available. information.""")
@@ -14298,6 +14328,12 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
 # Slots
 class slots:
     pass
+
+slots.nodes = Slot(uri=BIOLINK.nodes, name="nodes", curie=BIOLINK.curie('nodes'),
+                   model_uri=BIOLINK.nodes, domain=None, range=Optional[Union[Union[str, EntityId], list[Union[str, EntityId]]]])
+
+slots.edges = Slot(uri=BIOLINK.edges, name="edges", curie=BIOLINK.curie('edges'),
+                   model_uri=BIOLINK.edges, domain=None, range=Optional[Union[Union[str, AssociationId], list[Union[str, AssociationId]]]])
 
 slots.has_attribute = Slot(uri=BIOLINK.has_attribute, name="has attribute", curie=BIOLINK.curie('has_attribute'),
                    model_uri=BIOLINK.has_attribute, domain=Entity, range=Optional[Union[Union[str, AttributeId], list[Union[str, AttributeId]]]])
