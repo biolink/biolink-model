@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-04T18:43:21
+# Generation date: 2025-09-06T06:47:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7490,6 +7490,7 @@ class Association(Entity):
     adjusted_p_value: Optional[float] = None
     has_supporting_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
     update_date: Optional[Union[str, XSDDate]] = None
+    has_confidence_score: Optional[float] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7618,6 +7619,9 @@ class Association(Entity):
 
         if self.update_date is not None and not isinstance(self.update_date, XSDDate):
             self.update_date = XSDDate(self.update_date)
+
+        if self.has_confidence_score is not None and not isinstance(self.has_confidence_score, float):
+            self.has_confidence_score = float(self.has_confidence_score)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -11421,14 +11425,15 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     id: Union[str, CorrelatedGeneToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    predicate: Union[str, PredicateType] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
+    predicate: Union[str, PredicateType] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    z_score: Optional[float] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11446,6 +11451,11 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         if not isinstance(self.object, DiseaseId):
             self.object = DiseaseId(self.object)
 
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
         if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
             self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
@@ -11460,6 +11470,9 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.z_score is not None and not isinstance(self.z_score, float):
+            self.z_score = float(self.z_score)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -16381,6 +16394,9 @@ slots.correlated_gene_to_disease_association_subject = Slot(uri=RDF.subject, nam
 
 slots.correlated_gene_to_disease_association_object = Slot(uri=RDF.object, name="correlated gene to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.correlated_gene_to_disease_association_object, domain=CorrelatedGeneToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.correlated_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="correlated gene to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.correlated_gene_to_disease_association_predicate, domain=CorrelatedGeneToDiseaseAssociation, range=Union[str, PredicateType])
 
 slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="druggable gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_subject, domain=DruggableGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
