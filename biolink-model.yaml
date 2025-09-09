@@ -3933,11 +3933,13 @@ slots:
   correlated with:
     is_a: associated with
     description: >-
-      A relationship that holds between two concepts represented by variables for which a statistical dependence is
-      demonstrated using a correlation analysis method.
+      A relationship that holds between two concepts represented by variables for which a statistical correlation is
+      believed to exist, as demonstrated using a correlation analysis method.
     notes: >-
       These concepts may map exactly to the statistical variables, or represent related entities for which the
-      variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).
+      variables serve as proxies in an Association (e.g. diseases, chemical entities or processes). Note also that this
+      predicate can be used in the absence of a direct statistical analysis, if there is other evidence suggesting that
+      a correlation is likely to exist.
     domain: named thing
     range: named thing
     in_subset:
