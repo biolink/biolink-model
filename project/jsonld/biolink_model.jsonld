@@ -8808,9 +8808,9 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A relationship that holds between two concepts represented by variables for which a statistical dependence is demonstrated using a correlation analysis method.",
+      "description": "A relationship that holds between two concepts represented by variables for which a statistical correlation is believed to exist, as demonstrated using a correlation analysis method.",
       "notes": [
-        "These concepts may map exactly to the statistical variables, or represent related entities for which the variables serve as proxies in an Association (e.g. diseases, chemical entities or processes)."
+        "These concepts may map exactly to the statistical variables, or represent related entities for which the variables serve as proxies in an Association (e.g. diseases, chemical entities or processes). Note also that this predicate can be used in the absence of a direct statistical analysis, if there is other evidence suggesting that a correlation is likely to exist."
       ],
       "in_subset": [
         "translator_minimal"
@@ -37435,9 +37435,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-09-08T14:38:25",
-  "source_file_size": 420984,
-  "generation_date": "2025-09-08T14:38:31",
+  "source_file_date": "2025-09-10T00:10:40",
+  "source_file_size": 421187,
+  "generation_date": "2025-09-10T00:10:46",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
