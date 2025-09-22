@@ -24161,16 +24161,6 @@
       "name": "KnowledgeGraph",
       "definition_uri": "https://w3id.org/biolink/vocab/KnowledgeGraph",
       "description": "A knowledge graph is a structured representation of knowledge in the form of a graph, where nodes represent entities or concepts, and edges represent relationships between them. Knowledge graphs are used to organize and connect information from various sources, enabling better understanding, analysis, and reasoning about complex domains.",
-      "comments": [
-        "This is an abstract class. In practice, a knowledge graph is a collection of nodes and edges. The nodes and edges may be typed with Biolink classes and predicates, but this is not required. A knowledge graph may also contain other elements such as attributes, annotations, and metadata. In practice, a knowledge graph is often serialized in a specific format such as RDF, Neo4j, or JSON-LD."
-      ],
-      "examples": [
-        {
-          "value": "KG1",
-          "description": "A knowledge graph containing information about genes, diseases, and drugs.",
-          "@type": "Example"
-        }
-      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "abstract": true,
       "slots": [
@@ -37522,9 +37512,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-09-08T16:55:00",
-  "source_file_size": 422599,
-  "generation_date": "2025-09-08T16:55:11",
+  "source_file_date": "2025-09-10T14:05:36",
+  "source_file_size": 422009,
+  "generation_date": "2025-09-10T14:05:47",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
