@@ -1,0 +1,74 @@
+name: "Claude Issue summarize Action"
+description: "Automatically Summarize GitHub issues using Claude Code"
+
+inputs:
+  timeout_minutes:
+    description: "Timeout in minutes for execution"
+    required: false
+    default: "5"
+  anthropic_api_key:
+    description: "Anthropic API key"
+    required: true
+  cborg_api_key:
+    description: "CBORG API key"
+    required: true
+  github_token:
+    description: "GitHub token with repo and issues permissions"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Create prompt file
+      shell: bash
+      run: |
+        mkdir -p /tmp/claude-prompts
+        cat > /tmp/claude-prompts/claude-issue-summarize-prompt.txt << 'EOF'
+        You're an Summarization assistant for GitHub issues. Your task is to analyze the issue, look up related issues, and summarize the issue.
+
+        Remember that this repo is primarily a note-taking and memory device for Chris Mungall, so anything you can do to enhance and enrich that would be helpful.
+
+        IMPORTANT: Don't make any PRs. You should ONLY post a response, IN THE SAME ISSUE.
+
+        Issue Information:
+        - REPO: ${{ github.repository }}
+        - ISSUE_NUMBER: ${{ github.event.issue.number }}
+
+        TASK OVERVIEW:
+
+        1. First, use your judgement to determine the course of action.
+            - If the issue is an epic or has links to other issues, read those issues, and summarize them. Summarize their status etc. Given an overall summary.
+            - If the issue is an idea or a vague high level description, run with the idea, do deep research, give heloful suggestions with links to relevant papers etc.
+            - If there are links in the issue to websites, database entities, etc, then look these up.
+            - If there are links or references to papers, then looks these up and summarize (don't guess content - if you can't access the paper, then say "I can't access the paper")
+            - Try using artl-mcp to get paper fulltext.
+            - If you want a more powerful AI agent to take on this one and make a PR, use this magic phrase: `@dragon-ai-agent please <INSTRUCTIONS>`
+
+        2. Next, use the GitHub tools to get context about the issue:
+           - You have access to these github tools:
+             - mcp__github__get_issue: Use this to retrieve the current issue's details including title, description, and existing labels
+             - mcp__github__get_issue_comments: Use this to read any discussion or additional context provided in the comments
+             - mcp__github__update_issue: Use this to apply labels to the issue (do not use this for commenting)
+             - mcp__github__search_issues: Use this to find similar issues that might provide context for proper categorization and to identify potential duplicate issues
+             - mcp__github__list_issues: Use this to understand patterns in how other issues are labeled
+           - You can also use web searching and fetching.
+
+        - It's okay to not add any information if the issue is not clear.
+        EOF
+
+    - name: Run Claude Code
+      uses: ./.github/actions/claude-code-action
+      with:
+        prompt_file: /tmp/claude-prompts/claude-issue-summarize-prompt.txt
+        allowed_tools: "Bash(gh label list),WebFetch,Fetch,LS,mcp__github__get_issue,mcp__github__get_issue_comments,mcp__github__update_issue,mcp__github__add_issue_comment,mcp__github__search_issues,mcp__github__list_issues"
+        install_github_mcp: "true"
+        install_artl_mcp: "true"
+        timeout_minutes: ${{ inputs.timeout_minutes }}
+        anthropic_api_key: ${{ inputs.anthropic_api_key }}
+        cborg_api_key: ${{ inputs.cborg_api_key }}
+        github_token: ${{ inputs.github_token }}
