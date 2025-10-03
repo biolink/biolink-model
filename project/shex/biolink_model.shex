@@ -1626,6 +1626,12 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<Edge> CLOSED {
+    (  $<Edge_tes> rdf:type . * ;
+       rdf:type [ <Edge> ] ?
+    )
+}
+
 <Entity>  (
     @<Association> OR @<NamedThing>
 )
@@ -2983,6 +2989,22 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<KnowledgeGraph> {
+    (  $<KnowledgeGraph_tes> (  <nodes> @<Entity> * ;
+          <edges> @<Association> *
+       ) ;
+       rdf:type [ <KnowledgeGraph> ] ?
+    )
+}
+
+<KnowledgeGraph> CLOSED {
+    (  $<KnowledgeGraph_tes> (  <nodes> @<Entity> * ;
+          <edges> @<Association> *
+       ) ;
+       rdf:type [ <KnowledgeGraph> ] ?
+    )
+}
+
 <LifeStage> CLOSED {
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
           rdf:type [ <OrganismalEntity> ] ? ;
@@ -3251,6 +3273,12 @@ linkml:Sparqlpath xsd:string
           <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> ]
+    )
+}
+
+<Node> CLOSED {
+    (  $<Node_tes> rdf:type . * ;
+       rdf:type [ <Node> ] ?
     )
 }
 
@@ -4552,3 +4580,4 @@ linkml:Sparqlpath xsd:string
        rdf:type [ <Zygosity> ]
     )
 }
+

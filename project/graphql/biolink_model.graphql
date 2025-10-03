@@ -3073,6 +3073,10 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     hasEvidence: [DruggableGeneCategoryEnum]
   }
 
+type Edge
+  {
+  }
+
 interface Entity
   {
     id: String!
@@ -5306,6 +5310,18 @@ type JournalArticle
     issue: String
   }
 
+interface KnowledgeGraph
+  {
+    nodes: [Entity]
+    edges: [Association]
+  }
+
+type KnowledgeGraph
+  {
+    nodes: [Entity]
+    edges: [Association]
+  }
+
 type LifeStage implements OntologyClass
   {
     id: String!
@@ -5958,6 +5974,10 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     objectAspectQualifier: String
     objectContextQualifier: OntologyClass
     populationContextQualifier: PopulationOfIndividualOrganisms
+  }
+
+type Node
+  {
   }
 
 type NoncodingRNAProduct
@@ -8529,3 +8549,4 @@ type Zygosity
     hasQualitativeValue: NamedThing
     iri: IriType
   }
+

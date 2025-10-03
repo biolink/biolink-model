@@ -4546,6 +4546,12 @@ message JournalArticle
   string volume = 0
   string issue = 0
  }
+// A knowledge graph represented in KGX format
+message KnowledgeGraph
+ {
+ repeated  entity nodes = 0
+ repeated  association edges = 0
+ }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
  {
