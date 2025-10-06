@@ -1,9 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-<<<<<<< HEAD
-# Generation date: 2025-10-06T15:15:24
-=======
-# Generation date: 2025-10-06T22:07:27
->>>>>>> 7648e98f7d202a54e27a66d55fc459ed90b7a553
+# Generation date: 2025-10-06T15:29:36
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -64,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.3.1"
+version = "4.3.2"
 
 # Namespaces
 AGRKB = CurieNamespace('AGRKB', 'https://www.alliancegenome.org/')
