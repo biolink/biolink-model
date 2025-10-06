@@ -257,8 +257,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ]
        )
     } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
-    @<CaseToDiseaseAssociation> OR @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation>
-    OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsGeneAssociation> OR
+    @<BiologicalProcessOrActivityToAnatomicalEntityAssociation> OR
+    @<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> OR @<CaseToDiseaseAssociation> OR
+    @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation> OR
+    @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsGeneAssociation> OR
     @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR
     @<ChemicalGeneInteractionAssociation> OR @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR
     @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR
@@ -267,8 +269,10 @@ linkml:Sparqlpath xsd:string
     @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
     @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneAffectsChemicalAssociation> OR
-    @<GeneRegulatesGeneAssociation> OR @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR
-    @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
+    @<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> OR @<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> OR
+    @<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> OR @<GeneRegulatesGeneAssociation> OR
+    @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
+    @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
     @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
     @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation>
     OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
@@ -427,6 +431,27 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<BiologicalProcess> OR @<MolecularActivity>
 )
+
+<BiologicalProcessOrActivityToAnatomicalEntityAssociation> CLOSED {
+    (  $<BiologicalProcessOrActivityToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<BiologicalProcessOrActivity> ;
+          rdf:object @<AnatomicalEntity>
+       ) ;
+       rdf:type [ <BiologicalProcessOrActivityToAnatomicalEntityAssociation> ]
+    )
+}
+
+<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> CLOSED {
+    (  $<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<BiologicalProcessOrActivity> ;
+          rdf:object @<BiologicalProcessOrActivity> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> ]
+    )
+}
 
 <BiologicalSex>  (
     CLOSED {
@@ -2279,6 +2304,17 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> CLOSED {
+    (  $<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<Gene> ;
+          rdf:object @<GeneFamily> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> ]
+    )
+}
+
 <GeneGroupingMixin> {
     (  $<GeneGroupingMixin_tes> <has_gene_or_gene_product> @<Gene> * ;
        rdf:type [ <GeneGroupingMixin> ] ?
@@ -2306,6 +2342,33 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<GeneProductMixin>
 )
+
+<GeneOrGeneProductOrGeneFamily> {
+    (  $<GeneOrGeneProductOrGeneFamily_tes> rdf:type . * ;
+       rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ?
+    )
+}
+
+<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> CLOSED {
+    (  $<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:object @<AnatomicalEntity>
+       ) ;
+       rdf:type [ <GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> ]
+    )
+}
+
+<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> CLOSED {
+    (  $<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:object @<BiologicalProcessOrActivity> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> ]
+    )
+}
 
 <GeneProductIsoformMixin> {
     (  $<GeneProductIsoformMixin_tes> (  &<GeneProductMixin_tes> ;

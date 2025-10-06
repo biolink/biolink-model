@@ -8738,6 +8738,13 @@ classes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
 
+  gene or gene product or gene family:
+    description: >-
+      A union of gene family or gene loci or gene products, useful to define
+      the association between a gene or gene product or gene family and 
+      some other general class of entity (e.g. biological process or anatomical entity)
+    mixin: true
+
   gene:
     description: >-
       A region (or regions) that includes all of the sequence elements
@@ -9941,6 +9948,73 @@ classes:
         symmetric: false
         description: >-
           membership of the gene in the given gene family.
+
+  gene family to gene or gene product or gene family association:
+    description: >-
+      Relationship between a gene family and
+      a contained gene or gene product or gene family.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene
+      object:
+        range: gene family
+      predicate:
+        subproperty_of: has part
+        symmetric: false
+        description: >-
+          membership of a gene or gene product,
+          or strict subset relationship gene family,
+          in the given gene family.
+
+  gene or gene product or gene family to biological process or activity association:
+    description: >-
+      Relationship between a gene or gene product or gene family to a
+      specified biological process or activity (e.g. molecular activity,
+      biological process or pathway).
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene or gene product or gene family
+      object:
+        range: biological process or activity
+      predicate:
+        subproperty_of: participates in
+        symmetric: false
+        description: >-
+          participation of a gene or gene product or gene family in 
+          a given biological process or activity (e.g., gene product 
+          participates in biological process; gene catalyzes molecular
+          activity; gene family is actively involved in a pathway).
+
+  biological process or activity to biological process or activity association:
+    description: >-
+      Classification relationship between biological processes or activities
+      (e.g. coupling of two molecular activities;  assignment of molecular
+      activity to a pathway; implicating a pathway in a biological process; etc.)
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: biological process or activity
+      predicate:
+        subproperty_of: subclass of
+        symmetric: false
+        description: >-
+          One biological processes or activities is a subclass of another.
 
   gene expression mixin:
     description: >-
@@ -11886,7 +11960,8 @@ classes:
       object direction qualifier:
         range: DirectionQualifierEnum
 
-  anatomical entity to anatomical entity association:   # schema: gocam
+  anatomical entity to anatomical entity association:
+    # schema: gocam
     is_a: association
     abstract: true
     defining_slots:
@@ -11899,7 +11974,7 @@ classes:
         range: anatomical entity
 
   anatomical entity to anatomical entity part of association:
-     #      schema: gocam
+     # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
@@ -11940,6 +12015,32 @@ classes:
           the structure at an earlier time
       predicate:
         subproperty_of: develops from
+
+  gene or gene product or gene family to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a gene or gene product or gene family and an anatomical entity.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: gene or gene product or gene family
+      object:
+        range: anatomical entity
+
+  biological process or activity to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a biological process or activity and an anatomical entity.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: anatomical entity
 
   organism taxon to entity association:
     mixin: true
