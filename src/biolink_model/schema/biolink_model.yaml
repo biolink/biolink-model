@@ -284,12 +284,16 @@ slots:
     range: entity
     description: >-
       A list of entities that can be a subject or object of an association
+    inlined: true
+    inlined_as_list: true
 
   edges:
     multivalued: true
     range: association
     description: >-
       A list of associations between two entities.
+    inlined: true
+    inlined_as_list: true
 
   has attribute:
     description: >-

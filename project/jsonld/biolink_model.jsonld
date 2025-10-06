@@ -2135,6 +2135,8 @@
       ],
       "range": "Entity",
       "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2150,6 +2152,8 @@
       ],
       "range": "Association",
       "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -37512,9 +37516,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-06T15:01:37",
-  "source_file_size": 422208,
-  "generation_date": "2025-10-06T15:01:49",
+  "source_file_date": "2025-10-06T15:14:51",
+  "source_file_size": 422296,
+  "generation_date": "2025-10-06T15:15:02",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

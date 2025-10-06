@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-06T15:02:13
+# Generation date: 2025-10-06T15:15:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1449,17 +1449,13 @@ class KnowledgeGraph(YAMLRoot):
     class_name: ClassVar[str] = "KnowledgeGraph"
     class_model_uri: ClassVar[URIRef] = BIOLINK.KnowledgeGraph
 
-    nodes: Optional[Union[Union[str, EntityId], list[Union[str, EntityId]]]] = empty_list()
-    edges: Optional[Union[Union[str, AssociationId], list[Union[str, AssociationId]]]] = empty_list()
+    nodes: Optional[Union[dict[Union[str, EntityId], Union[dict, "Entity"]], list[Union[dict, "Entity"]]]] = empty_dict()
+    edges: Optional[Union[dict[Union[str, AssociationId], Union[dict, "Association"]], list[Union[dict, "Association"]]]] = empty_dict()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if not isinstance(self.nodes, list):
-            self.nodes = [self.nodes] if self.nodes is not None else []
-        self.nodes = [v if isinstance(v, EntityId) else EntityId(v) for v in self.nodes]
+        self._normalize_inlined_as_list(slot_name="nodes", slot_type=Entity, key_name="id", keyed=True)
 
-        if not isinstance(self.edges, list):
-            self.edges = [self.edges] if self.edges is not None else []
-        self.edges = [v if isinstance(v, AssociationId) else AssociationId(v) for v in self.edges]
+        self._normalize_inlined_as_list(slot_name="edges", slot_type=Association, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -1503,17 +1499,13 @@ class KnowledgeGraph(YAMLRoot):
     class_name: ClassVar[str] = "knowledge graph"
     class_model_uri: ClassVar[URIRef] = BIOLINK.KnowledgeGraph
 
-    nodes: Optional[Union[Union[str, EntityId], list[Union[str, EntityId]]]] = empty_list()
-    edges: Optional[Union[Union[str, AssociationId], list[Union[str, AssociationId]]]] = empty_list()
+    nodes: Optional[Union[dict[Union[str, EntityId], Union[dict, "Entity"]], list[Union[dict, "Entity"]]]] = empty_dict()
+    edges: Optional[Union[dict[Union[str, AssociationId], Union[dict, "Association"]], list[Union[dict, "Association"]]]] = empty_dict()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if not isinstance(self.nodes, list):
-            self.nodes = [self.nodes] if self.nodes is not None else []
-        self.nodes = [v if isinstance(v, EntityId) else EntityId(v) for v in self.nodes]
+        self._normalize_inlined_as_list(slot_name="nodes", slot_type=Entity, key_name="id", keyed=True)
 
-        if not isinstance(self.edges, list):
-            self.edges = [self.edges] if self.edges is not None else []
-        self.edges = [v if isinstance(v, AssociationId) else AssociationId(v) for v in self.edges]
+        self._normalize_inlined_as_list(slot_name="edges", slot_type=Association, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -14394,10 +14386,10 @@ class slots:
     pass
 
 slots.nodes = Slot(uri=BIOLINK.nodes, name="nodes", curie=BIOLINK.curie('nodes'),
-                   model_uri=BIOLINK.nodes, domain=None, range=Optional[Union[Union[str, EntityId], list[Union[str, EntityId]]]])
+                   model_uri=BIOLINK.nodes, domain=None, range=Optional[Union[dict[Union[str, EntityId], Union[dict, Entity]], list[Union[dict, Entity]]]])
 
 slots.edges = Slot(uri=BIOLINK.edges, name="edges", curie=BIOLINK.curie('edges'),
-                   model_uri=BIOLINK.edges, domain=None, range=Optional[Union[Union[str, AssociationId], list[Union[str, AssociationId]]]])
+                   model_uri=BIOLINK.edges, domain=None, range=Optional[Union[dict[Union[str, AssociationId], Union[dict, Association]], list[Union[dict, Association]]]])
 
 slots.has_attribute = Slot(uri=BIOLINK.has_attribute, name="has attribute", curie=BIOLINK.curie('has_attribute'),
                    model_uri=BIOLINK.has_attribute, domain=Entity, range=Optional[Union[Union[str, AttributeId], list[Union[str, AttributeId]]]])
