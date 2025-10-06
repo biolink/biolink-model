@@ -74,6 +74,14 @@
         },
         {
             "data": {
+                "id": "associated with response to",
+                "label": "associated with response to",
+                "mdFile": "associated_with_response_to",
+                "mixin": "false"
+            }
+        },
+        {
+            "data": {
                 "id": "associated with sensitivity to",
                 "label": "associated with sensitivity to",
                 "mdFile": "associated_with_sensitivity_to",
@@ -300,15 +308,22 @@
         },
         {
             "data": {
-                "id": "associated with-associated with sensitivity to",
+                "id": "associated with-associated with response to",
                 "source": "associated with",
+                "target": "associated with response to"
+            }
+        },
+        {
+            "data": {
+                "id": "associated with response to-associated with sensitivity to",
+                "source": "associated with response to",
                 "target": "associated with sensitivity to"
             }
         },
         {
             "data": {
-                "id": "associated with-associated with resistance to",
-                "source": "associated with",
+                "id": "associated with response to-associated with resistance to",
+                "source": "associated with response to",
                 "target": "associated with resistance to"
             }
         },

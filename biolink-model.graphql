@@ -1,5 +1,306 @@
 # metamodel_version: 1.7.0
-# version: 4.2.5
+# version: 4.2.6-rc5
+enum AffinityParameterEnum
+  {
+    pIC50
+    pEC50
+    pAC50
+    pXC50
+    pKi
+    pKd
+  }
+
+enum AgentTypeEnum
+  {
+    manual_agent
+    automated_agent
+    data_analysis_pipeline
+    computational_model
+    text_mining_agent
+    image_processing_agent
+    manual_validation_of_automated_agent
+    not_provided
+  }
+
+enum ApprovalStatusEnum
+  {
+    discovery_and_development_phase
+    preclinical_research_phase
+    fda_clinical_research_phase
+    fda_review_phase_4
+    fda_post_market_safety_review
+    fda_clinical_research_phase_1
+    fda_clinical_research_phase_2
+    fda_clinical_research_phase_3
+    fda_clinical_research_phase_4
+    fda_fast_track
+    fda_breakthrough_therapy
+    fda_accelerated_approval
+    fda_priority_review
+    regular_fda_approval
+    post_approval_withdrawal
+  }
+
+enum CausalMechanismQualifierEnum
+  {
+    binding
+    inhibition
+    antibody_inhibition
+    antagonism
+    molecular_channel_blockage
+    inverse_agonism
+    negative_allosteric_modulation
+    agonism
+    molecular_channel_opening
+    positive_allosteric_modulation
+    potentiation
+    activation
+    inducer
+    transcriptional_regulation
+    signaling_mediated_control
+    stabilization
+    stimulation
+    releasing_activity
+  }
+
+enum ChemicalEntityDerivativeEnum
+  {
+    metabolite
+  }
+
+enum ChemicalOrGeneOrGeneProductFormOrVariantEnum
+  {
+    genetic_variant_form
+    modified_form
+    loss_of_function_variant_form
+    non_loss_of_function_variant_form
+    gain_of_function_variant_form
+    dominant_negative_variant_form
+    polymorphic_form
+    snp_form
+    analog_form
+  }
+
+enum ClinicalApprovalStatusEnum
+  {
+    approved_for_condition
+    fda_approved_for_condition
+    not_approved_for_condition
+    post_approval_withdrawal
+    off_label_use
+    not_provided
+  }
+
+enum ClinicalTrialStatusEnum
+  {
+    ACTIVE_NOT_RECRUITING
+    APPROVED_FOR_MARKETING
+    AVAILABLE
+    COMPLETED
+    ENROLLING_BY_INVITATION
+    NO_LONGER_AVAILABLE
+    NOT_YET_RECRUITING
+    RECRUITING
+    SUSPENDED
+    TEMPORARILY_NOT_AVAILABLE
+    TERMINATED
+    UNKNOWN
+    WITHDRAWN
+  }
+
+enum DirectionQualifierEnum
+  {
+    increased
+    upregulated
+    decreased
+    downregulated
+  }
+
+enum DrugAvailabilityEnum
+  {
+    over_the_counter
+    prescription
+  }
+
+enum DrugDeliveryEnum
+  {
+    inhalation
+    oral
+    absorption_through_the_skin
+    intravenous_injection
+  }
+
+enum DruggableGeneCategoryEnum
+  {
+    tclin
+    tbio
+    tchem
+    tdark
+  }
+
+enum FDAIDAAdverseEventEnum
+  {
+    life_threatening_adverse_event
+    serious_adverse_event
+    suspected_adverse_reaction
+    unexpected_adverse_event
+  }
+
+enum GeneOrGeneProductOrChemicalEntityAspectEnum
+  {
+    activity_or_abundance
+    abundance
+    activity
+    expression
+    synthesis
+    degradation
+    cleavage
+    hydrolysis
+    metabolic_processing
+    mutation_rate
+    stability
+    folding
+    localization
+    transport
+    absorption
+    aggregation
+    interaction
+    release
+    secretion
+    uptake
+    splicing
+    molecular_interaction
+    guanyl_nucleotide_exchange
+    adenyl_nucleotide_exchange
+    molecular_modification
+    acetylation
+    acylation
+    alkylation
+    amination
+    carbamoylation
+    ethylation
+    glutathionylation
+    glycation
+    glycosylation
+    glucuronidation
+    n_linked_glycosylation
+    o_linked_glycosylation
+    hydroxylation
+    lipidation
+    farnesylation
+    geranoylation
+    myristoylation
+    palmitoylation
+    prenylation
+    methylation
+    nitrosation
+    nucleotidylation
+    phosphorylation
+    ribosylation
+    ADP__HYPHEN_MINUS__ribosylation
+    sulfation
+    sumoylation
+    ubiquitination
+    oxidation
+    reduction
+    carboxylation
+  }
+
+enum GeneOrGeneProductOrChemicalPartQualifierEnum
+  {
+    __3_prime_utr
+    __5_prime_utr
+    polya_tail
+    promoter
+    enhancer
+    exon
+    intron
+  }
+
+enum KnowledgeLevelEnum
+  {
+    knowledge_assertion
+    logical_entailment
+    prediction
+    statistical_association
+    observation
+    not_provided
+  }
+
+enum LogicalInterpretationEnum
+  {
+    some_some
+    all_some
+    inverse_all_some
+  }
+
+enum PhaseEnum
+  {
+    __0
+    __1
+    __2
+  }
+
+enum ReactionDirectionEnum
+  {
+    left_to_right
+    right_to_left
+    bidirectional
+    neutral
+  }
+
+enum ReactionSideEnum
+  {
+    left
+    right
+  }
+
+enum ResearchPhaseEnum
+  {
+    pre_clinical_research_phase
+    clinical_trial_phase
+    clinical_trial_phase_1
+    clinical_trial_phase_2
+    clinical_trial_phase_3
+    clinical_trial_phase_4
+    not_provided
+  }
+
+enum ResourceRoleEnum
+  {
+    primary_knowledge_source
+    aggregator_knowledge_source
+    supporting_data_source
+  }
+
+enum ResponseEnum
+  {
+    therapeutic_response
+    negative
+  }
+
+enum ResponseTargetEnum
+  {
+    cohort
+    cell_line
+    individual
+    sample
+  }
+
+enum SequenceEnum
+  {
+    na
+    aa
+  }
+
+enum StrandEnum
+  {
+    __PLUS_SIGN__
+    __HYPHEN_MINUS__
+    __FULL_STOP__
+    __QUESTION_MARK__
+  }
+
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -73,7 +374,7 @@ type Agent
     name: LabelType
   }
 
-type AnatomicalEntity implements PhysicalEssence
+type AnatomicalEntity implements PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -104,6 +405,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -128,6 +430,8 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -146,6 +450,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -170,6 +475,8 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -189,6 +496,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -213,6 +521,8 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -269,6 +579,7 @@ type Association
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -293,6 +604,8 @@ type Association
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -368,6 +681,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -392,6 +706,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: Behavior!
@@ -446,6 +762,7 @@ type BehavioralFeature
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    inheritance: GeneticInheritance
   }
 
 type BehavioralOutcome implements Outcome
@@ -622,16 +939,10 @@ type Case implements SubjectOfInvestigation
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasAttribute: [Attribute]
+    hasBiologicalSex: BiologicalSex
   }
 
-interface CaseToEntityAssociationMixin
-  {
-    subject: Case!
-    predicate: PredicateType!
-    object: NamedThing!
-  }
-
-type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin
+type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -639,13 +950,11 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    subject: NamedThing!
-    predicate: PredicateType!
-    object: NamedThing!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -670,8 +979,114 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: Disease!
+    onsetQualifier: Onset
+  }
+
+interface CaseToEntityAssociationMixin
+  {
+    subject: Case!
+    predicate: PredicateType!
+    object: NamedThing!
+  }
+
+type CaseToGeneAssociation implements CaseToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: GeneOrGeneProduct!
+  }
+
+type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    negated: Boolean
+    onsetQualifier: Onset
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -686,7 +1101,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasPercentage: Double
   }
 
-type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+type CaseToVariantAssociation implements CaseToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -698,6 +1113,7 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -722,10 +1138,61 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: SequenceVariant!
+    hasZygosity: Zygosity
+  }
+
+type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -791,6 +1258,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -815,6 +1283,8 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     diseaseContextQualifier: Disease
@@ -844,6 +1314,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -868,6 +1339,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: DiseaseOrPhenotypicFeature!
@@ -932,6 +1405,7 @@ type ChemicalAffectsGeneAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -956,6 +1430,8 @@ type ChemicalAffectsGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1011,6 +1487,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1035,6 +1512,8 @@ type ChemicalEntityAssessesNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -1058,6 +1537,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1082,6 +1562,8 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     objectDirectionQualifier: DirectionQualifierEnum
@@ -1133,6 +1615,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1157,6 +1640,8 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1172,7 +1657,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     predicate: PredicateType!
   }
 
-type ChemicalMixture
+type ChemicalMixture implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -1215,6 +1700,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1239,6 +1725,8 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -1269,6 +1757,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1293,6 +1782,8 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -1340,6 +1831,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1364,6 +1856,8 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1383,6 +1877,7 @@ type ChemicalToChemicalDerivationAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1407,6 +1902,8 @@ type ChemicalToChemicalDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -1429,6 +1926,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1453,6 +1951,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     object: DiseaseOrPhenotypicFeature!
@@ -1482,6 +1982,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1506,6 +2007,8 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -1601,6 +2104,7 @@ type ClinicalFinding
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    inheritance: GeneticInheritance
     hasAttribute: [ClinicalAttribute]
   }
 
@@ -1672,6 +2176,9 @@ type ClinicalTrial
     fullName: LabelType
     synonym: [LabelType]
     category: [Uriorcurie]!
+    clinicalTrialPhase: ResearchPhaseEnum
+    clinicalTrialPrimaryPurpose: String
+    creationDate: Date
   }
 
 type CodingSequence implements GenomicEntity
@@ -1826,6 +2333,7 @@ type ContributorAssociation
     negated: Boolean
     qualifier: String
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1850,6 +2358,8 @@ type ContributorAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: InformationContentEntity!
@@ -1870,6 +2380,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -1894,11 +2405,14 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
-    predicate: PredicateType!
+    allelicRequirement: String
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -1909,8 +2423,10 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     hasTotal: Integer
     hasQuotient: Double
     hasPercentage: Double
+    zScore: Float
     subject: GeneOrGeneProduct!
     object: Disease!
+    predicate: PredicateType!
   }
 
 type Dataset
@@ -2047,9 +2563,58 @@ type Disease
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    inheritance: GeneticInheritance
   }
 
-type DiseaseOrPhenotypicFeature
+type DiseaseAssociatedWithResponseToChemicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    responseContextQualifier: ResponseEnum
+    responseTargetContextQualifier: ResponseTargetEnum
+    subject: Disease!
+    object: ChemicalEntity!
+    predicate: PredicateType!
+  }
+
+type DiseaseOrPhenotypicFeature implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -2065,6 +2630,7 @@ type DiseaseOrPhenotypicFeature
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    inheritance: GeneticInheritance
   }
 
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
@@ -2111,6 +2677,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2135,6 +2702,8 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -2155,6 +2724,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2179,6 +2749,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     object: AnatomicalEntity!
@@ -2206,6 +2778,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2230,6 +2803,8 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -2247,6 +2822,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2271,6 +2847,8 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     onsetQualifier: Onset
@@ -2382,6 +2960,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2406,6 +2985,8 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     object: GeneOrGeneProduct!
@@ -2444,6 +3025,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     knowledgeSource: String
     primaryKnowledgeSource: String
     aggregatorKnowledgeSource: [String]
@@ -2467,10 +3049,14 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -2485,6 +3071,10 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     subject: GeneOrGeneProduct!
     predicate: PredicateType!
     hasEvidence: [DruggableGeneCategoryEnum]
+  }
+
+type Edge
+  {
   }
 
 interface Entity
@@ -2514,6 +3104,7 @@ type EntityToDiseaseAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2538,6 +3129,8 @@ type EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -2590,6 +3183,32 @@ interface EntityToFeatureOrDiseaseQualifiersMixin
     diseaseContextQualifier: Disease
   }
 
+interface EntityToFeatureOrGeneQualifiersMixin
+  {
+    frequencyQualifier: FrequencyValue
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+  }
+
+interface EntityToFeatureOrVariantQualifiersMixin
+  {
+    frequencyQualifier: FrequencyValue
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: String
+  }
+
 interface EntityToOutcomeAssociationMixin
   {
     subject: NamedThing!
@@ -2612,6 +3231,7 @@ type EntityToPhenotypicFeatureAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2636,6 +3256,8 @@ type EntityToPhenotypicFeatureAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -2810,6 +3432,7 @@ type ExonToTranscriptRelationship
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2834,6 +3457,8 @@ type ExonToTranscriptRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: Exon!
@@ -2861,6 +3486,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2885,6 +3511,8 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -2905,6 +3533,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -2929,6 +3558,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: ExposureEvent!
@@ -3034,6 +3665,7 @@ type FunctionalAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3058,6 +3690,8 @@ type FunctionalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -3114,6 +3748,7 @@ type GeneAffectsChemicalAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3138,6 +3773,8 @@ type GeneAffectsChemicalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -3173,6 +3810,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3197,10 +3835,14 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3260,6 +3902,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3284,10 +3927,13 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -3335,6 +3981,7 @@ type GeneRegulatesGeneAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3359,6 +4006,8 @@ type GeneRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum!
@@ -3370,7 +4019,7 @@ type GeneRegulatesGeneAssociation
     object: GeneOrGeneProduct!
   }
 
-type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -3382,6 +4031,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3406,10 +4056,14 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3437,6 +4091,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3461,10 +4116,14 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     subject: GeneOrGeneProduct!
     object: DiseaseOrPhenotypicFeature!
     predicate: PredicateType!
@@ -3499,6 +4158,7 @@ type GeneToExpressionSiteAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3523,6 +4183,8 @@ type GeneToExpressionSiteAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     stageQualifier: LifeStage
@@ -3546,6 +4208,7 @@ interface GeneToGeneAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3570,6 +4233,8 @@ interface GeneToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3588,6 +4253,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3612,6 +4278,8 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3635,6 +4303,7 @@ type GeneToGeneFamilyAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3659,6 +4328,8 @@ type GeneToGeneFamilyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -3678,6 +4349,7 @@ type GeneToGeneHomologyAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3702,6 +4374,8 @@ type GeneToGeneHomologyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3721,6 +4395,7 @@ type GeneToGeneProductRelationship
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3745,6 +4420,8 @@ type GeneToGeneProductRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -3765,6 +4442,7 @@ type GeneToGoTermAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3789,6 +4467,8 @@ type GeneToGoTermAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -3808,6 +4488,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3832,6 +4513,8 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -3850,6 +4533,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3874,10 +4558,14 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
     predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3971,6 +4659,7 @@ type GenomicSequenceLocalization
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -3995,6 +4684,8 @@ type GenomicSequenceLocalization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     startInterbaseCoordinate: Integer
@@ -4039,6 +4730,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4063,6 +4755,8 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4089,6 +4783,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4113,6 +4808,8 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -4146,6 +4843,7 @@ type GenotypeToGeneAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4170,6 +4868,8 @@ type GenotypeToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4189,6 +4889,7 @@ type GenotypeToGenotypePartAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4213,6 +4914,8 @@ type GenotypeToGenotypePartAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4233,6 +4936,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4257,6 +4961,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4287,6 +4993,7 @@ type GenotypeToVariantAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4311,6 +5018,8 @@ type GenotypeToVariantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -4519,6 +5228,7 @@ type InformationContentEntityToNamedThingAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4543,6 +5253,8 @@ type InformationContentEntityToNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -4598,7 +5310,19 @@ type JournalArticle
     issue: String
   }
 
-type LifeStage
+interface KnowledgeGraph
+  {
+    nodes: [Entity]
+    edges: [Association]
+  }
+
+type KnowledgeGraph
+  {
+    nodes: [Entity]
+    edges: [Association]
+  }
+
+type LifeStage implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -4672,6 +5396,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4696,6 +5421,8 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4716,6 +5443,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4740,6 +5468,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4768,6 +5498,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4792,6 +5523,8 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4850,6 +5583,7 @@ type MaterialSampleDerivationAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4874,6 +5608,8 @@ type MaterialSampleDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MaterialSample!
@@ -4896,6 +5632,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -4920,6 +5657,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     diseaseContextQualifier: Disease
@@ -4994,6 +5733,7 @@ type MolecularActivityToChemicalEntityAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5018,6 +5758,8 @@ type MolecularActivityToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -5037,6 +5779,7 @@ type MolecularActivityToMolecularActivityAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5061,6 +5804,8 @@ type MolecularActivityToMolecularActivityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -5079,6 +5824,7 @@ type MolecularActivityToPathwayAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5103,6 +5849,8 @@ type MolecularActivityToPathwayAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -5110,7 +5858,7 @@ type MolecularActivityToPathwayAssociation
     predicate: PredicateType!
   }
 
-type MolecularEntity
+type MolecularEntity implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -5189,6 +5937,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5213,6 +5962,8 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -5223,6 +5974,10 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     objectAspectQualifier: String
     objectContextQualifier: OntologyClass
     populationContextQualifier: PopulationOfIndividualOrganisms
+  }
+
+type Node
+  {
   }
 
 type NoncodingRNAProduct
@@ -5408,6 +6163,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5432,6 +6188,8 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -5452,6 +6210,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5476,6 +6235,8 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -5494,6 +6255,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5518,6 +6280,8 @@ type OrganismTaxonToOrganismTaxonInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     associatedEnvironmentalContext: String
@@ -5538,6 +6302,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5562,6 +6327,8 @@ type OrganismTaxonToOrganismTaxonSpecialization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -5582,6 +6349,7 @@ type OrganismToOrganismAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5606,6 +6374,8 @@ type OrganismToOrganismAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: IndividualOrganism!
@@ -5644,6 +6414,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5668,6 +6439,8 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismalEntity!
@@ -5696,6 +6469,7 @@ type PairwiseGeneToGeneInteraction
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5720,6 +6494,8 @@ type PairwiseGeneToGeneInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -5738,6 +6514,7 @@ type PairwiseMolecularInteraction
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5762,6 +6539,8 @@ type PairwiseMolecularInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     interactingMoleculesCategory: OntologyClass
@@ -5945,6 +6724,7 @@ type PhenotypicFeature
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    inheritance: GeneticInheritance
   }
 
 type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociationMixin, PhenotypicFeatureToEntityAssociationMixin
@@ -5961,6 +6741,7 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -5985,6 +6766,8 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -6035,6 +6818,7 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6059,6 +6843,8 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     frequencyQualifier: FrequencyValue
@@ -6240,6 +7026,7 @@ type PopulationToPopulationAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6264,6 +7051,8 @@ type PopulationToPopulationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: PopulationOfIndividualOrganisms!
@@ -6368,6 +7157,7 @@ type ProcessRegulatesProcessAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6392,6 +7182,8 @@ type ProcessRegulatesProcessAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcess!
@@ -6542,6 +7334,7 @@ type ReactionToCatalystAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6566,6 +7359,8 @@ type ReactionToCatalystAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -6588,6 +7383,7 @@ type ReactionToParticipantAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6612,6 +7408,8 @@ type ReactionToParticipantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -6708,7 +7506,8 @@ type RetrievalSource
     creationDate: Date
     resourceId: Uriorcurie!
     resourceRole: ResourceRoleEnum!
-    upstreamResourceIds: Uriorcurie
+    upstreamResourceIds: [Uriorcurie]
+    sourceRecordUrls: [Uriorcurie]
     xref: [Uriorcurie]
   }
 
@@ -6767,6 +7566,7 @@ type SequenceAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6791,6 +7591,8 @@ type SequenceAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
   }
@@ -6808,6 +7610,7 @@ type SequenceFeatureRelationship
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6832,6 +7635,8 @@ type SequenceFeatureRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: NucleicAcidEntity!
@@ -6854,6 +7659,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasGene: [Gene]
+    hgvsNomenclature: [String]
     hasBiologicalSequence: BiologicalSequence
     id: String!
   }
@@ -6871,6 +7677,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -6895,6 +7702,8 @@ interface SequenceVariantModulatesTreatmentAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -7005,6 +7814,7 @@ type Snv
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasGene: [Gene]
+    hgvsNomenclature: [String]
     hasBiologicalSequence: BiologicalSequence
     id: String!
   }
@@ -7147,6 +7957,7 @@ type TaxonToTaxonAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7171,6 +7982,8 @@ type TaxonToTaxonAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -7200,6 +8013,33 @@ type TextMiningResult
     rights: String
     format: String
     creationDate: Date
+  }
+
+type TextMiningStudyResult
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    providedBy: [String]
+    xref: [Uriorcurie]
+    fullName: LabelType
+    synonym: [LabelType]
+    category: [Uriorcurie]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    supportingText: [String]
+    subjectLocationInText: [Integer]
+    objectLocationInText: [Integer]
+    extractionConfidenceScore: Integer
+    supportingDocumentType: String
+    supportingDocumentYear: Integer
+    supportingTextSectionType: String
   }
 
 interface ThingWithTaxon
@@ -7239,6 +8079,7 @@ type TranscriptToGeneRelationship
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7263,6 +8104,8 @@ type TranscriptToGeneRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: Transcript!
@@ -7320,6 +8163,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7344,6 +8188,8 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
@@ -7370,6 +8216,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7394,6 +8241,8 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -7428,6 +8277,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7452,6 +8302,8 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -7471,6 +8323,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7495,6 +8348,8 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -7519,6 +8374,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7543,6 +8399,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -7573,6 +8431,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
+    sources: [RetrievalSource]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
     primaryKnowledgeSource: String
@@ -7597,6 +8456,8 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -7688,4 +8549,3 @@ type Zygosity
     hasQualitativeValue: NamedThing
     iri: IriType
   }
-

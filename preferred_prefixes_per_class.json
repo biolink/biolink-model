@@ -2242,6 +2242,11 @@
           "prefix": "WBbt",
           "base_uri": "http://purl.obolibrary.org/obo/WBbt_",
           "order": 10
+        },
+        {
+          "prefix": "FMA",
+          "base_uri": "http://purl.obolibrary.org/obo/FMA_",
+          "order": 11
         }
       ]
     },
@@ -2877,6 +2882,16 @@
           "prefix": "PHARMGKB.VARIANT",
           "base_uri": "https://www.pharmgkb.org/variant/",
           "order": 13
+        }
+      ]
+    },
+    {
+      "class_name": "biolink:ClinicalTrial",
+      "prefix_map": [
+        {
+          "prefix": "CLINICALTRIALS",
+          "base_uri": "http://identifiers.org/clinicaltrials/",
+          "order": 1
         }
       ]
     },

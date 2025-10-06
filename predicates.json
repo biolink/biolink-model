@@ -251,12 +251,18 @@
                                 ]
                             },
                             {
-                                "name": "associated_with_resistance_to",
-                                "parent": "associated_with"
-                            },
-                            {
-                                "name": "associated_with_sensitivity_to",
-                                "parent": "associated_with"
+                                "name": "associated_with_response_to",
+                                "parent": "associated_with",
+                                "children": [
+                                    {
+                                        "name": "associated_with_resistance_to",
+                                        "parent": "associated_with_response_to"
+                                    },
+                                    {
+                                        "name": "associated_with_sensitivity_to",
+                                        "parent": "associated_with_response_to"
+                                    }
+                                ]
                             },
                             {
                                 "name": "correlated_with",
@@ -318,6 +324,10 @@
                             },
                             {
                                 "name": "resistance_associated_with",
+                                "parent": "associated_with"
+                            },
+                            {
+                                "name": "response_associated_with",
                                 "parent": "associated_with"
                             },
                             {
