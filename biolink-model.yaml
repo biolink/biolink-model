@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.1
+version: 4.3.2
 
 ## ------------
 ##
@@ -284,12 +284,16 @@ slots:
     range: entity
     description: >-
       A list of entities that can be a subject or object of an association
+    inlined: true
+    inlined_as_list: true
 
   edges:
     multivalued: true
     range: association
     description: >-
       A list of associations between two entities.
+    inlined: true
+    inlined_as_list: true
 
   has attribute:
     description: >-

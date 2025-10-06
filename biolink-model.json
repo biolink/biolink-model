@@ -33409,7 +33409,275 @@
                 "edges": {
                     "description": "A list of associations between two entities.",
                     "items": {
-                        "type": "string"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Association"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalEntityAssessesNamedThingAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ContributorAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToGenotypePartAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToVariantAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneFamilyAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CellLineToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToChemicalAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToPathwayAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivityToPathwayAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToPathwayAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalGeneInteractionAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneRegulatesGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ProcessRegulatesProcessAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalAffectsGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneAffectsChemicalAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MaterialSampleDerivationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseToExposureEventAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ExposureEventToOutcomeAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicFeatureToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/InformationContentEntityToNamedThingAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureToLocationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ExposureEventToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToVariantAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/BehaviorToBehavioralFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicFeatureToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToPopulationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PopulationToPopulationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismalEntityAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismToOrganismAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/TaxonToTaxonAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToExpressionSiteAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/FunctionalAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivityToChemicalEntityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivityToMolecularActivityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/EntityToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/EntityToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/SequenceAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/SequenceFeatureRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismTaxonToOrganismTaxonSpecialization"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismTaxonToOrganismTaxonInteraction"
+                            },
+                            {
+                                "$ref": "#/$defs/AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/AnatomicalEntityToAnatomicalEntityOntogenicAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/TranscriptToGeneRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneProductRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/ExonToTranscriptRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/GenomicSequenceLocalization"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularMachineToMolecularActivityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularMachineToBiologicalProcessAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularMachineToCellularComponentAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGoTermAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToGeneExpressionAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CausalGeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CorrelatedGeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DruggableGeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneHasVariantThatContributesToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ReactionToParticipantAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToChemicalDerivationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ReactionToCatalystAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CellLineAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneHomologyAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneCoexpressionAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PairwiseGeneToGeneInteraction"
+                            },
+                            {
+                                "$ref": "#/$defs/PairwiseMolecularInteraction"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -33419,7 +33687,725 @@
                 "nodes": {
                     "description": "A list of entities that can be a subject or object of an association",
                     "items": {
-                        "type": "string"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/NamedThing"
+                            },
+                            {
+                                "$ref": "#/$defs/Association"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseAssociatedWithResponseToChemicalEntityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalEntityAssessesNamedThingAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ContributorAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToGenotypePartAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToVariantAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneFamilyAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CellLineToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToChemicalAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToPathwayAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivityToPathwayAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToPathwayAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalGeneInteractionAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneRegulatesGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ProcessRegulatesProcessAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalAffectsGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneAffectsChemicalAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MaterialSampleDerivationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseToExposureEventAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ExposureEventToOutcomeAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicFeatureToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/InformationContentEntityToNamedThingAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureToLocationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ExposureEventToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToVariantAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CaseToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/BehaviorToBehavioralFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicFeatureToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToPopulationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PopulationToPopulationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismalEntityAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismToOrganismAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/TaxonToTaxonAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToExpressionSiteAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/FunctionalAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivityToChemicalEntityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivityToMolecularActivityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/EntityToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/EntityToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/SequenceAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/SequenceFeatureRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismTaxonToOrganismTaxonSpecialization"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismTaxonToOrganismTaxonInteraction"
+                            },
+                            {
+                                "$ref": "#/$defs/AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/AnatomicalEntityToAnatomicalEntityOntogenicAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/TranscriptToGeneRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneProductRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/ExonToTranscriptRelationship"
+                            },
+                            {
+                                "$ref": "#/$defs/GenomicSequenceLocalization"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularMachineToMolecularActivityAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularMachineToBiologicalProcessAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularMachineToCellularComponentAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGoTermAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypeAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/VariantToGeneExpressionAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CausalGeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CorrelatedGeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/DruggableGeneToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneHasVariantThatContributesToDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ReactionToParticipantAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalToChemicalDerivationAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/ReactionToCatalystAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/CellLineAsAModelOfDiseaseAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneHomologyAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneToGeneCoexpressionAssociation"
+                            },
+                            {
+                                "$ref": "#/$defs/PairwiseGeneToGeneInteraction"
+                            },
+                            {
+                                "$ref": "#/$defs/PairwiseMolecularInteraction"
+                            },
+                            {
+                                "$ref": "#/$defs/Attribute"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismTaxon"
+                            },
+                            {
+                                "$ref": "#/$defs/Event"
+                            },
+                            {
+                                "$ref": "#/$defs/PhysicalEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Activity"
+                            },
+                            {
+                                "$ref": "#/$defs/Procedure"
+                            },
+                            {
+                                "$ref": "#/$defs/Phenomenon"
+                            },
+                            {
+                                "$ref": "#/$defs/Device"
+                            },
+                            {
+                                "$ref": "#/$defs/DiagnosticAid"
+                            },
+                            {
+                                "$ref": "#/$defs/PlanetaryEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Treatment"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalIntervention"
+                            },
+                            {
+                                "$ref": "#/$defs/Hospitalization"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalMixture"
+                            },
+                            {
+                                "$ref": "#/$defs/EnvironmentalFoodContaminant"
+                            },
+                            {
+                                "$ref": "#/$defs/FoodAdditive"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularMixture"
+                            },
+                            {
+                                "$ref": "#/$defs/ComplexMolecularMixture"
+                            },
+                            {
+                                "$ref": "#/$defs/ProcessedMaterial"
+                            },
+                            {
+                                "$ref": "#/$defs/Food"
+                            },
+                            {
+                                "$ref": "#/$defs/Drug"
+                            },
+                            {
+                                "$ref": "#/$defs/SmallMolecule"
+                            },
+                            {
+                                "$ref": "#/$defs/NucleicAcidEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/RegulatoryRegion"
+                            },
+                            {
+                                "$ref": "#/$defs/BiologicalProcessOrActivity"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneticInheritance"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeature"
+                            },
+                            {
+                                "$ref": "#/$defs/Gene"
+                            },
+                            {
+                                "$ref": "#/$defs/MacromolecularComplex"
+                            },
+                            {
+                                "$ref": "#/$defs/NucleosomeModification"
+                            },
+                            {
+                                "$ref": "#/$defs/Genome"
+                            },
+                            {
+                                "$ref": "#/$defs/Exon"
+                            },
+                            {
+                                "$ref": "#/$defs/Transcript"
+                            },
+                            {
+                                "$ref": "#/$defs/CodingSequence"
+                            },
+                            {
+                                "$ref": "#/$defs/Polypeptide"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinDomain"
+                            },
+                            {
+                                "$ref": "#/$defs/PosttranslationalModification"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinFamily"
+                            },
+                            {
+                                "$ref": "#/$defs/NucleicAcidSequenceMotif"
+                            },
+                            {
+                                "$ref": "#/$defs/GeneFamily"
+                            },
+                            {
+                                "$ref": "#/$defs/Genotype"
+                            },
+                            {
+                                "$ref": "#/$defs/Haplotype"
+                            },
+                            {
+                                "$ref": "#/$defs/SequenceVariant"
+                            },
+                            {
+                                "$ref": "#/$defs/ReagentTargetedGene"
+                            },
+                            {
+                                "$ref": "#/$defs/Snv"
+                            },
+                            {
+                                "$ref": "#/$defs/Protein"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinIsoform"
+                            },
+                            {
+                                "$ref": "#/$defs/RNAProduct"
+                            },
+                            {
+                                "$ref": "#/$defs/RNAProductIsoform"
+                            },
+                            {
+                                "$ref": "#/$defs/NoncodingRNAProduct"
+                            },
+                            {
+                                "$ref": "#/$defs/MicroRNA"
+                            },
+                            {
+                                "$ref": "#/$defs/SiRNA"
+                            },
+                            {
+                                "$ref": "#/$defs/Disease"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicFeature"
+                            },
+                            {
+                                "$ref": "#/$defs/BehavioralFeature"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalFinding"
+                            },
+                            {
+                                "$ref": "#/$defs/Bacterium"
+                            },
+                            {
+                                "$ref": "#/$defs/Virus"
+                            },
+                            {
+                                "$ref": "#/$defs/CellularOrganism"
+                            },
+                            {
+                                "$ref": "#/$defs/LifeStage"
+                            },
+                            {
+                                "$ref": "#/$defs/IndividualOrganism"
+                            },
+                            {
+                                "$ref": "#/$defs/PopulationOfIndividualOrganisms"
+                            },
+                            {
+                                "$ref": "#/$defs/AnatomicalEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/CellLine"
+                            },
+                            {
+                                "$ref": "#/$defs/CellularComponent"
+                            },
+                            {
+                                "$ref": "#/$defs/Cell"
+                            },
+                            {
+                                "$ref": "#/$defs/GrossAnatomicalStructure"
+                            },
+                            {
+                                "$ref": "#/$defs/PathologicalAnatomicalStructure"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyPopulation"
+                            },
+                            {
+                                "$ref": "#/$defs/Cohort"
+                            },
+                            {
+                                "$ref": "#/$defs/Case"
+                            },
+                            {
+                                "$ref": "#/$defs/Mammal"
+                            },
+                            {
+                                "$ref": "#/$defs/Plant"
+                            },
+                            {
+                                "$ref": "#/$defs/Invertebrate"
+                            },
+                            {
+                                "$ref": "#/$defs/Vertebrate"
+                            },
+                            {
+                                "$ref": "#/$defs/Fungus"
+                            },
+                            {
+                                "$ref": "#/$defs/Human"
+                            },
+                            {
+                                "$ref": "#/$defs/MolecularActivity"
+                            },
+                            {
+                                "$ref": "#/$defs/BiologicalProcess"
+                            },
+                            {
+                                "$ref": "#/$defs/Pathway"
+                            },
+                            {
+                                "$ref": "#/$defs/PhysiologicalProcess"
+                            },
+                            {
+                                "$ref": "#/$defs/Behavior"
+                            },
+                            {
+                                "$ref": "#/$defs/PathologicalProcess"
+                            },
+                            {
+                                "$ref": "#/$defs/AccessibleDnaRegion"
+                            },
+                            {
+                                "$ref": "#/$defs/TranscriptionFactorBindingSite"
+                            },
+                            {
+                                "$ref": "#/$defs/EnvironmentalProcess"
+                            },
+                            {
+                                "$ref": "#/$defs/EnvironmentalFeature"
+                            },
+                            {
+                                "$ref": "#/$defs/GeographicLocation"
+                            },
+                            {
+                                "$ref": "#/$defs/GeographicLocationAtTime"
+                            },
+                            {
+                                "$ref": "#/$defs/Study"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalTrial"
+                            },
+                            {
+                                "$ref": "#/$defs/MaterialSample"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyVariable"
+                            },
+                            {
+                                "$ref": "#/$defs/CommonDataElement"
+                            },
+                            {
+                                "$ref": "#/$defs/Dataset"
+                            },
+                            {
+                                "$ref": "#/$defs/DatasetDistribution"
+                            },
+                            {
+                                "$ref": "#/$defs/DatasetVersion"
+                            },
+                            {
+                                "$ref": "#/$defs/DatasetSummary"
+                            },
+                            {
+                                "$ref": "#/$defs/ConfidenceLevel"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceType"
+                            },
+                            {
+                                "$ref": "#/$defs/Publication"
+                            },
+                            {
+                                "$ref": "#/$defs/RetrievalSource"
+                            },
+                            {
+                                "$ref": "#/$defs/Book"
+                            },
+                            {
+                                "$ref": "#/$defs/BookChapter"
+                            },
+                            {
+                                "$ref": "#/$defs/Serial"
+                            },
+                            {
+                                "$ref": "#/$defs/Article"
+                            },
+                            {
+                                "$ref": "#/$defs/Patent"
+                            },
+                            {
+                                "$ref": "#/$defs/WebPage"
+                            },
+                            {
+                                "$ref": "#/$defs/PreprintPublication"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugLabel"
+                            },
+                            {
+                                "$ref": "#/$defs/JournalArticle"
+                            },
+                            {
+                                "$ref": "#/$defs/TextMiningStudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ConceptCountAnalysisResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ObservedExpectedFrequencyAnalysisResult"
+                            },
+                            {
+                                "$ref": "#/$defs/RelativeFrequencyAnalysisResult"
+                            },
+                            {
+                                "$ref": "#/$defs/TextMiningResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ChiSquaredAnalysisResult"
+                            },
+                            {
+                                "$ref": "#/$defs/LogOddsAnalysisResult"
+                            },
+                            {
+                                "$ref": "#/$defs/Agent"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalRole"
+                            },
+                            {
+                                "$ref": "#/$defs/BiologicalSex"
+                            },
+                            {
+                                "$ref": "#/$defs/SeverityValue"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganismAttribute"
+                            },
+                            {
+                                "$ref": "#/$defs/Zygosity"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalAttribute"
+                            },
+                            {
+                                "$ref": "#/$defs/SocioeconomicAttribute"
+                            },
+                            {
+                                "$ref": "#/$defs/GenomicBackgroundExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/PathologicalProcessExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/PathologicalAnatomicalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/ComplexChemicalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/BioticExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/EnvironmentalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/BehavioralExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/SocioeconomicExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/GeographicExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugToGeneInteractionExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalMeasurement"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalModifier"
+                            },
+                            {
+                                "$ref": "#/$defs/ClinicalCourse"
+                            },
+                            {
+                                "$ref": "#/$defs/Onset"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicQuality"
+                            },
+                            {
+                                "$ref": "#/$defs/PhenotypicSex"
+                            },
+                            {
+                                "$ref": "#/$defs/GenotypicSex"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -54695,5 +55681,5 @@
     "metamodel_version": "1.7.0",
     "title": "Biolink-Model",
     "type": "object",
-    "version": "4.3.1"
+    "version": "4.3.2"
 }
