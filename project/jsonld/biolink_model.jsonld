@@ -16111,6 +16111,119 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "BiologicalProcessOrActivity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "GeneOrGeneProductOrGeneFamily",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Relationship in which a biological process has the participation of a gene or gene product or gene family in  a  (e.g., pathway has participant gene product).",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "subproperty_of": "has_participant",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "biological_process_or_activity_to_biological_process_or_activity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -32185,6 +32298,65 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "description": "Relationship between a biological processor activity (e.g. molecular activity, biological process or pathway) to gene or gene product or gene family.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject",
+        "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object",
+        "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
       "description": "Classification relationship between biological processes or activities (e.g. coupling of two molecular activities;  assignment of molecular activity to a pathway; implicating a pathway in a biological process; etc.)",
@@ -38301,9 +38473,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-06T23:48:36",
-  "source_file_size": 425618,
-  "generation_date": "2025-10-06T23:48:42",
+  "source_file_date": "2025-10-07T15:20:17",
+  "source_file_size": 426420,
+  "generation_date": "2025-10-07T15:20:23",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

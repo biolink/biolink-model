@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-06T23:48:56
+# Generation date: 2025-10-07T15:20:37
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1106,6 +1106,10 @@ class GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociationId(AssociationId):
 
 
 class GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociationId(AssociationId):
+    pass
+
+
+class BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociationId(AssociationId):
     pass
 
 
@@ -8269,6 +8273,53 @@ class GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation(Asso
             self.MissingRequiredField("object")
         if not isinstance(self.object, BiologicalProcessOrActivityId):
             self.object = BiologicalProcessOrActivityId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation(Association):
+    """
+    Relationship between a biological processor activity (e.g. molecular activity, biological process or pathway) to
+    gene or gene product or gene family.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+    class_name: ClassVar[str] = "biological process or activity to gene or gene product or gene family association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
+
+    id: Union[str, BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, BiologicalProcessOrActivityId] = None
+    object: Union[dict, GeneOrGeneProductOrGeneFamily] = None
+    predicate: Union[str, PredicateType] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociationId):
+            self.id = BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, BiologicalProcessOrActivityId):
+            self.subject = BiologicalProcessOrActivityId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, GeneOrGeneProductOrGeneFamily):
+            self.object = GeneOrGeneProductOrGeneFamily()
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -16332,6 +16383,15 @@ slots.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_asso
 
 slots.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_predicate = Slot(uri=RDF.predicate, name="gene or gene product or gene family to biological process or activity association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_predicate, domain=GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation, range=Union[str, PredicateType])
+
+slots.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject = Slot(uri=RDF.subject, name="biological process or activity to gene or gene product or gene family association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, BiologicalProcessOrActivityId])
+
+slots.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object = Slot(uri=RDF.object, name="biological process or activity to gene or gene product or gene family association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[dict, GeneOrGeneProductOrGeneFamily])
+
+slots.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate = Slot(uri=RDF.predicate, name="biological process or activity to gene or gene product or gene family association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, PredicateType])
 
 slots.biological_process_or_activity_to_biological_process_or_activity_association_subject = Slot(uri=RDF.subject, name="biological process or activity to biological process or activity association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.biological_process_or_activity_to_biological_process_or_activity_association_subject, domain=BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation, range=Union[str, BiologicalProcessOrActivityId])

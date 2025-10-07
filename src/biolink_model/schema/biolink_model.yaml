@@ -9995,6 +9995,29 @@ classes:
           participates in biological process; gene catalyzes molecular
           activity; gene family is actively involved in a pathway).
 
+  biological process or activity to gene or gene product or gene family association:
+    description: >-
+      Relationship between a biological processor activity
+      (e.g. molecular activity, biological process or pathway)
+      to gene or gene product or gene family.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: gene or gene product or gene family
+      predicate:
+        subproperty_of: has participant
+        symmetric: false
+        description: >-
+          Relationship in which a biological process has the
+          participation of a gene or gene product or gene family in 
+          a  (e.g., pathway has participant gene product).
+
   biological process or activity to biological process or activity association:
     description: >-
       Classification relationship between biological processes or activities
