@@ -3155,7 +3155,7 @@ slots:
   orthologous to:
     is_a: homologous to
     description: >-
-      a homology relationship between entities (typically genes) that diverged after a speciation event.
+      An homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
       - translator_minimal
     symmetric: true
@@ -3164,6 +3164,20 @@ slots:
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA_PROPERTY:P684
+
+  least divergent orthologous to:
+    is_a: orthologous to
+    description: >-
+      An homology relationship between entities (typically genes)
+      that diverged after a speciation event. Relative to the parent 
+      predicate 'orthologous to', this predicate refers to an ortholog 
+      currently conjectured to be the least diverged from the
+      reference gene, thus considered most functionally similar.
+    in_subset:
+      - translator_minimal
+    symmetric: true
+    annotations:
+      canonical_predicate: true
 
   xenologous to:
     is_a: homologous to
