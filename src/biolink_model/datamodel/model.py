@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-10T14:09:15
+# Generation date: 2025-10-10T14:27:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -16219,6 +16219,12 @@ slots.agent_type = Slot(uri=BIOLINK.agent_type, name="agent type", curie=BIOLINK
 
 slots.has_biological_sex = Slot(uri=BIOLINK.has_biological_sex, name="has biological sex", curie=BIOLINK.curie('has_biological_sex'),
                    model_uri=BIOLINK.has_biological_sex, domain=None, range=Optional[Union[str, BiologicalSexId]])
+
+slots.information_content = Slot(uri=BIOLINK.information_content, name="information_content", curie=BIOLINK.curie('information_content'),
+                   model_uri=BIOLINK.information_content, domain=None, range=Optional[float])
+
+slots.equivalent_identifiers = Slot(uri=BIOLINK.equivalent_identifiers, name="equivalent_identifiers", curie=BIOLINK.curie('equivalent_identifiers'),
+                   model_uri=BIOLINK.equivalent_identifiers, domain=None, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])

@@ -4,7 +4,8 @@
   "id": "https://w3id.org/biolink/biolink-model",
   "version": "4.3.2",
   "imports": [
-    "linkml:types"
+    "linkml:types",
+    "attributes"
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "prefixes": [
@@ -13688,6 +13689,25 @@
         "Case"
       ],
       "range": "BiologicalSex",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "information_content",
+      "definition_uri": "https://w3id.org/biolink/vocab/information_content",
+      "description": "Information content (IC) value for a term, primarily from Automats.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/information_content",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "equivalent_identifiers",
+      "definition_uri": "https://w3id.org/biolink/vocab/equivalent_identifiers",
+      "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/equivalent_identifiers",
+      "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -38546,13 +38566,14 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-10T14:08:37",
-  "source_file_size": 427920,
-  "generation_date": "2025-10-10T14:08:49",
+  "source_file_date": "2025-10-10T14:26:57",
+  "source_file_size": 427935,
+  "generation_date": "2025-10-10T14:27:09",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
+    "attributes.context.jsonld",
     {
       "@base": "https://w3id.org/biolink/vocab/"
     }
