@@ -280,6 +280,12 @@ types:
 
 slots:
 
+  node property:
+    abstract: true
+    description: >-
+      A grouping for any property that holds between a node and a value
+    domain: named thing
+
   nodes:
     multivalued: true
     range: entity
@@ -477,11 +483,6 @@ slots:
    ## --------------------
    ## NODE PROPERTY SLOTS
    ## --------------------
-
-  node property:
-    description: >-
-      A grouping for any property that holds between a node and a value
-    domain: named thing
 
   id:
     identifier: true
@@ -6714,6 +6715,8 @@ classes:
       - xref
       - full name
       - synonym
+      - information content
+      - equivalent identifiers
     slot_usage:
       category:
         required: true

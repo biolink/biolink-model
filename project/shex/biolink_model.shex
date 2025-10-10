@@ -3332,6 +3332,8 @@ linkml:Sparqlpath xsd:string
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
+             <information_content> @linkml:Float ? ;
+             <equivalent_identifiers> @linkml:Uriorcurie * ;
              <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
