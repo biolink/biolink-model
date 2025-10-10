@@ -16,6 +16,8 @@ message AccessibleDnaRegion
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -35,6 +37,8 @@ message Activity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
@@ -49,6 +53,8 @@ message Agent
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  uriorcurie affiliation = 0
   string address = 0
@@ -68,6 +74,8 @@ message AnatomicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -176,6 +184,8 @@ message Article
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -253,6 +263,8 @@ message Attribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -273,6 +285,8 @@ message Bacterium
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -291,6 +305,8 @@ message Behavior
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -368,6 +384,8 @@ message BehavioralExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -390,6 +408,8 @@ message BehavioralFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -409,6 +429,8 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -430,6 +452,8 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -586,6 +610,8 @@ message BiologicalSex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -605,6 +631,8 @@ message BioticExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -623,6 +651,8 @@ message Book
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -649,6 +679,8 @@ message BookChapter
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -680,6 +712,8 @@ message Case
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -956,6 +990,8 @@ message Cell
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -973,6 +1009,8 @@ message CellLine
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -1096,6 +1134,8 @@ message CellularComponent
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -1113,6 +1153,8 @@ message CellularOrganism
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -1254,6 +1296,8 @@ message ChemicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -1365,6 +1409,8 @@ message ChemicalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -1441,6 +1487,8 @@ message ChemicalMixture
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -1578,6 +1626,8 @@ message ChemicalRole
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -1788,6 +1838,8 @@ message ChiSquaredAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -1806,6 +1858,8 @@ message ClinicalAttribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -1825,6 +1879,8 @@ message ClinicalCourse
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -1846,6 +1902,8 @@ message ClinicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
@@ -1861,6 +1919,8 @@ message ClinicalFinding
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -1880,6 +1940,8 @@ message ClinicalIntervention
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
@@ -1894,6 +1956,8 @@ message ClinicalMeasurement
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
  repeated  quantityValue hasQuantitativeValue = 0
@@ -1913,6 +1977,8 @@ message ClinicalModifier
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -1934,6 +2000,8 @@ message ClinicalTrial
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   researchPhaseEnum clinicalTrialPhase = 0
   string clinicalTrialPrimaryPurpose = 0
@@ -1952,6 +2020,8 @@ message CodingSequence
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -1970,6 +2040,8 @@ message Cohort
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -1989,6 +2061,8 @@ message CommonDataElement
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2007,6 +2081,8 @@ message ComplexChemicalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -2028,6 +2104,8 @@ message ComplexMolecularMixture
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -2053,6 +2131,8 @@ message ConceptCountAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2073,6 +2153,8 @@ message ConfidenceLevel
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2199,6 +2281,8 @@ message Dataset
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2219,6 +2303,8 @@ message DatasetDistribution
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2240,6 +2326,8 @@ message DatasetSummary
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2262,6 +2350,8 @@ message DatasetVersion
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2285,6 +2375,8 @@ message Device
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // A device or substance used to help diagnose disease or injury
@@ -2301,6 +2393,8 @@ message DiagnosticAid
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
@@ -2317,6 +2411,8 @@ message Disease
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -2384,6 +2480,8 @@ message DiseaseOrPhenotypicFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -2401,6 +2499,8 @@ message DiseaseOrPhenotypicFeatureExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -2620,6 +2720,8 @@ message Drug
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -2643,6 +2745,8 @@ message DrugExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -2662,6 +2766,8 @@ message DrugLabel
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -2735,6 +2841,8 @@ message DrugToGeneInteractionExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -2909,6 +3017,8 @@ message EnvironmentalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -2930,6 +3040,8 @@ message EnvironmentalFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 message EnvironmentalFoodContaminant
@@ -2945,6 +3057,8 @@ message EnvironmentalFoodContaminant
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -2965,6 +3079,8 @@ message EnvironmentalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // Something that happens at a given place and time.
@@ -2981,6 +3097,8 @@ message Event
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // Class of evidence that supports an association
@@ -2997,6 +3115,8 @@ message EvidenceType
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -3017,6 +3137,8 @@ message Exon
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -3187,6 +3309,8 @@ message Food
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -3211,6 +3335,8 @@ message FoodAdditive
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -3277,6 +3403,8 @@ message Fungus
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -3295,6 +3423,8 @@ message Gene
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -3437,6 +3567,8 @@ message GeneFamily
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4208,6 +4340,8 @@ message GeneticInheritance
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4226,6 +4360,8 @@ message Genome
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4243,6 +4379,8 @@ message GenomicBackgroundExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -4320,6 +4458,8 @@ message Genotype
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4638,6 +4778,8 @@ message GenotypicSex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -4657,6 +4799,8 @@ message GeographicExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -4679,6 +4823,8 @@ message GeographicLocation
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   float latitude = 0
   float longitude = 0
@@ -4697,6 +4843,8 @@ message GeographicLocationAtTime
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   float latitude = 0
   float longitude = 0
@@ -4714,6 +4862,8 @@ message GrossAnatomicalStructure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4733,6 +4883,8 @@ message Haplotype
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4751,6 +4903,8 @@ message Hospitalization
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // A member of the the species Homo sapiens.
@@ -4766,6 +4920,8 @@ message Human
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4784,6 +4940,8 @@ message IndividualOrganism
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4848,6 +5006,8 @@ message Invertebrate
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4864,6 +5024,8 @@ message JournalArticle
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -4902,6 +5064,8 @@ message LifeStage
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -4921,6 +5085,8 @@ message LogOddsAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -4941,6 +5107,8 @@ message MacromolecularComplex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5099,6 +5267,8 @@ message Mammal
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5118,6 +5288,8 @@ message MaterialSample
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // An association between a material sample and the material entity from which it is derived.
@@ -5229,6 +5401,8 @@ message MicroRNA
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5247,6 +5421,8 @@ message MolecularActivity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5406,6 +5582,8 @@ message MolecularEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -5428,6 +5606,8 @@ message MolecularMixture
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -5453,6 +5633,8 @@ message NamedThing
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
@@ -5518,6 +5700,8 @@ message NoncodingRNAProduct
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5536,6 +5720,8 @@ message NucleicAcidEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -5561,6 +5747,8 @@ message NucleicAcidSequenceMotif
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5579,6 +5767,8 @@ message NucleosomeModification
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -5598,6 +5788,8 @@ message ObservedExpectedFrequencyAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -5616,6 +5808,8 @@ message Onset
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -5635,6 +5829,8 @@ message OrganismAttribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -5656,6 +5852,8 @@ message OrganismTaxon
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   taxonomicRank hasTaxonomicRank = 0
  }
@@ -5953,6 +6151,8 @@ message Patent
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -5980,6 +6180,8 @@ message PathologicalAnatomicalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -6001,6 +6203,8 @@ message PathologicalAnatomicalStructure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6020,6 +6224,8 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6039,6 +6245,8 @@ message PathologicalProcessExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -6060,6 +6268,8 @@ message Pathway
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6081,6 +6291,8 @@ message Phenomenon
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.
@@ -6097,6 +6309,8 @@ message PhenotypicFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6229,6 +6443,8 @@ message PhenotypicQuality
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -6248,6 +6464,8 @@ message PhenotypicSex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -6269,6 +6487,8 @@ message PhysicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 message PhysiologicalProcess
@@ -6284,6 +6504,8 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6305,6 +6527,8 @@ message PlanetaryEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 message Plant
@@ -6319,6 +6543,8 @@ message Plant
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6338,6 +6564,8 @@ message Polypeptide
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6355,6 +6583,8 @@ message PopulationOfIndividualOrganisms
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6420,6 +6650,8 @@ message PosttranslationalModification
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6460,6 +6692,8 @@ message PreprintPublication
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -6489,6 +6723,8 @@ message Procedure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // Describes a regulatory relationship between two genes or gene products.
@@ -6551,6 +6787,8 @@ message ProcessedMaterial
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -6576,6 +6814,8 @@ message Protein
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6594,6 +6834,8 @@ message ProteinDomain
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6612,6 +6854,8 @@ message ProteinFamily
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6631,6 +6875,8 @@ message ProteinIsoform
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6646,6 +6892,8 @@ message Publication
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -6777,6 +7025,8 @@ message ReagentTargetedGene
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6796,6 +7046,8 @@ message RegulatoryRegion
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6820,6 +7072,8 @@ message RelativeFrequencyAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -6839,6 +7093,8 @@ message RetrievalSource
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -6863,6 +7119,8 @@ message RNAProduct
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6881,6 +7139,8 @@ message RNAProductIsoform
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6990,6 +7250,8 @@ message SequenceVariant
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7008,6 +7270,8 @@ message Serial
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -7039,6 +7303,8 @@ message SeverityValue
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -7060,6 +7326,8 @@ message SiRNA
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7078,6 +7346,8 @@ message SmallMolecule
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string tradeName = 0
  repeated  drugAvailabilityEnum availableFrom = 0
@@ -7099,6 +7369,8 @@ message Snv
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7119,6 +7391,8 @@ message SocioeconomicAttribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -7137,6 +7411,8 @@ message SocioeconomicExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0
@@ -7160,6 +7436,8 @@ message Study
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  }
 // A group of people banded together or treated as a group as participants in a research study.
@@ -7175,6 +7453,8 @@ message StudyPopulation
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7194,6 +7474,8 @@ message StudyVariable
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -7264,6 +7546,8 @@ message TextMiningResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -7284,6 +7568,8 @@ message TextMiningStudyResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -7311,6 +7597,8 @@ message Transcript
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7375,6 +7663,8 @@ message TranscriptionFactorBindingSite
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7394,6 +7684,8 @@ message Treatment
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  drug hasDrug = 0
  repeated  device hasDevice = 0
@@ -7721,6 +8013,8 @@ message Vertebrate
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7739,6 +8033,8 @@ message Virus
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -7755,6 +8051,8 @@ message WebPage
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   string license = 0
   string rights = 0
@@ -7781,6 +8079,8 @@ message Zygosity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
   labelType name = 0
   ontologyClass hasAttributeType = 0

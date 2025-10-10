@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-10T21:18:36
+# Generation date: 2025-10-10T14:36:25
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1907,6 +1907,8 @@ class NamedThing(Entity):
     xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     full_name: Optional[Union[str, LabelType]] = None
     synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
+    information_content: Optional[float] = None
+    equivalent_identifiers: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1934,6 +1936,13 @@ class NamedThing(Entity):
         if not isinstance(self.synonym, list):
             self.synonym = [self.synonym] if self.synonym is not None else []
         self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
+
+        if self.information_content is not None and not isinstance(self.information_content, float):
+            self.information_content = float(self.information_content)
+
+        if not isinstance(self.equivalent_identifiers, list):
+            self.equivalent_identifiers = [self.equivalent_identifiers] if self.equivalent_identifiers is not None else []
+        self.equivalent_identifiers = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.equivalent_identifiers]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -14728,6 +14737,9 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
 class slots:
     pass
 
+slots.node_property = Slot(uri=BIOLINK.node_property, name="node property", curie=BIOLINK.curie('node_property'),
+                   model_uri=BIOLINK.node_property, domain=NamedThing, range=Optional[str])
+
 slots.nodes = Slot(uri=BIOLINK.nodes, name="nodes", curie=BIOLINK.curie('nodes'),
                    model_uri=BIOLINK.nodes, domain=None, range=Optional[Union[dict[Union[str, EntityId], Union[dict, Entity]], list[Union[dict, Entity]]]])
 
@@ -14754,9 +14766,6 @@ slots.has_unit = Slot(uri=BIOLINK.has_unit, name="has unit", curie=BIOLINK.curie
 
 slots.base_coordinate = Slot(uri=BIOLINK.base_coordinate, name="base coordinate", curie=BIOLINK.curie('base_coordinate'),
                    model_uri=BIOLINK.base_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
-
-slots.node_property = Slot(uri=BIOLINK.node_property, name="node property", curie=BIOLINK.curie('node_property'),
-                   model_uri=BIOLINK.node_property, domain=NamedThing, range=Optional[str])
 
 slots.id = Slot(uri=BIOLINK.id, name="id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.id, domain=Entity, range=Union[str, EntityId])
@@ -16219,6 +16228,12 @@ slots.agent_type = Slot(uri=BIOLINK.agent_type, name="agent type", curie=BIOLINK
 
 slots.has_biological_sex = Slot(uri=BIOLINK.has_biological_sex, name="has biological sex", curie=BIOLINK.curie('has_biological_sex'),
                    model_uri=BIOLINK.has_biological_sex, domain=None, range=Optional[Union[str, BiologicalSexId]])
+
+slots.information_content = Slot(uri=BIOLINK.information_content, name="information content", curie=BIOLINK.curie('information_content'),
+                   model_uri=BIOLINK.information_content, domain=None, range=Optional[float])
+
+slots.equivalent_identifiers = Slot(uri=BIOLINK.equivalent_identifiers, name="equivalent identifiers", curie=BIOLINK.curie('equivalent_identifiers'),
+                   model_uri=BIOLINK.equivalent_identifiers, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
