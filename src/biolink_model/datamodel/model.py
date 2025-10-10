@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-10T13:39:43
+# Generation date: 2025-10-10T14:04:39
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -14269,9 +14269,15 @@ class ResearchPhaseEnum(EnumDefinitionImpl):
     clinical_trial_phase_1 = PermissibleValue(
         text="clinical_trial_phase_1",
         description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.""")
+    clinical_trial_phase_1_to_2 = PermissibleValue(
+        text="clinical_trial_phase_1_to_2",
+        description="""A study that tests the safety, side effects, and best dose of a new treatment. Phase I/II clinical trials also test how well a certain type of cancer or other disease responds to a new treatment. In the phase II part of the clinical trial, patients usually receive the highest dose of treatment that did not cause harmful side effects in the phase I part of the clinical trial. Combining phases I and II may allow research questions to be answered more quickly or with fewer patients. Also called phase 1/phase 2 clinical trial.""")
     clinical_trial_phase_2 = PermissibleValue(
         text="clinical_trial_phase_2",
         description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.""")
+    clinical_trial_phase_2_to_3 = PermissibleValue(
+        text="clinical_trial_phase_2_to_3",
+        description="""A study that tests how well a new treatment works for a certain type of cancer or other disease and compares the new treatment with a standard treatment. Phase II/III clinical trials may also provide more information about the safety and side effects of the new treatment. Combining phases II and III may allow research questions to be answered more quickly or with fewer patients. Also called phase 2/phase 3 clinical trial.""")
     clinical_trial_phase_3 = PermissibleValue(
         text="clinical_trial_phase_3",
         description="""In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.""")
