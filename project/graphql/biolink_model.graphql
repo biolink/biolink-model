@@ -1531,6 +1531,67 @@ type CellularOrganism implements SubjectOfInvestigation
     hasAttribute: [Attribute]
   }
 
+type ChemicalAffectsBiologicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+    subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    subjectContextQualifier: AnatomicalEntity
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+    objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectContextQualifier: AnatomicalEntity
+    objectDirectionQualifier: DirectionQualifierEnum
+    causalMechanismQualifier: CausalMechanismQualifierEnum
+    anatomicalContextQualifier: AnatomicalEntity
+    qualifiedPredicate: String
+    speciesContextQualifier: OrganismTaxon
+    subject: ChemicalEntity!
+    predicate: PredicateType!
+    object: BiologicalEntity!
+  }
+
 type ChemicalAffectsGeneAssociation
   {
     id: String!
@@ -1589,7 +1650,7 @@ type ChemicalAffectsGeneAssociation
     speciesContextQualifier: OrganismTaxon
     subject: ChemicalEntity!
     predicate: PredicateType!
-    object: GeneOrGeneProduct!
+    object: BiologicalEntity!
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -1741,7 +1802,7 @@ type ChemicalExposure implements ExposureEvent
     timepoint: TimeType
   }
 
-type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMixin
+type ChemicalGeneInteractionAssociation
   {
     id: String!
     iri: IriType
@@ -1824,7 +1885,7 @@ interface ChemicalOrDrugOrTreatment
   {
   }
 
-type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1881,7 +1942,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     predicate: PredicateType!
   }
 
-type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
+type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
   {
     id: String!
     iri: IriType
@@ -1957,7 +2018,7 @@ type ChemicalRole
     iri: IriType
   }
 
-type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
+type ChemicalToChemicalAssociation
   {
     id: String!
     iri: IriType
@@ -2050,7 +2111,7 @@ type ChemicalToChemicalDerivationAssociation
     predicate: PredicateType!
   }
 
-type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2107,7 +2168,7 @@ interface ChemicalToEntityAssociationMixin
     object: NamedThing!
   }
 
-type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
+type ChemicalToPathwayAssociation
   {
     id: String!
     iri: IriType
@@ -8829,3 +8890,4 @@ type Zygosity
     hasQualitativeValue: NamedThing
     iri: IriType
   }
+
