@@ -2618,14 +2618,6 @@ slots:
       canonical_predicate: true
     broad_mappings:
       - WIKIDATA_PROPERTY:P129
-    close_mappings:
-      - CHEMBL.MECHANISM:binding_agent
-      - CHEMBL.MECHANISM:chelating_agent
-      - CHEMBL.MECHANISM:cross-linking_agent
-      - CHEMBL.MECHANISM:oxidative_enzyme
-      - CHEMBL.MECHANISM:sequestering_agent
-      - CHEMBL.MECHANISM:substrate
-      - DRUGBANK:target
     narrow_mappings:
        # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
@@ -8741,6 +8733,8 @@ classes:
     id_prefixes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
+    close_mappings:
+      - DRUGBANK:target
 
   gene or gene product or gene family:
     description: >-
@@ -12564,10 +12558,86 @@ enums:
 
   CausalMechanismQualifierEnum:
     permissible_values:
+      activation:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+        close_mappings:
+          - CHEMBL.MECHANISM:activator
+          - DGIdb:activator
+      agonism:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an
+          endogenous ligand.
+        close_mappings:
+          - CHEMBL.MECHANISM:agonist
+          - DGIdb:agonist
+        narrow_mappings:
+          - CHEMBL.MECHANISM:partial_agonist
+          - DGIdb:partial_agonist
+      antibody_inhibition:
+        is_a: inhibition
+        description: >-
+          A causal mechanism in which an antibody specifically binds to and interferes with the target.
       binding:
         description: >-
           A causal mechanism mediated by the direct contact between effector and target chemical or
           biomolecular entity, which form a stable physical interaction.
+        close_mappings:
+          - signor:binding
+      catalytic_activity:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector catalyzes a biochemical reaction affecting the target’s function or state.
+        close_mappings:
+          - signor:catalytic_activity
+      chelating:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector binds to and sequesters metal ions, thereby preventing the
+          target from interacting with the metal ions.
+        close_mappings:
+          - CHEMBL.MECHANISM:chelator
+      chemical_activation:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector activates its target through a chemical process or compound.
+        close_mappings:
+          - signor:chemical_activation
+      chemical_inhibition:
+        is_a: inhibition
+        description: >-
+          A causal mechanism in which the effector inhibits its target through a chemical process or compound.
+        close_mappings:
+          - signor:chemical_inhibition
+      chemical_modification:
+        description: >-
+          A causal mechanism in which the effector chemically modifies its target, altering its structure or function.
+        close_mappings:
+          - signor:chemical_modification
+      cross_linking:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector covalently links two or more target molecules,
+          forming stable crosslinks that alter structural or functional properties.
+        close_mappings:
+          - CHEMBL.MECHANISM:cross-linking_agent
+      degradation:
+        close_mappings:
+          - signor:destabilization
+      destabilization:
+        description: >-
+          A causal mechanism in which the effector decreases the stability of its target, promoting degradation or loss of function.
+        close_mappings:
+          - signor:destabilization
+      deacetylation:
+        close_mappings:
+          - signor:deacetylation
+      demethylation:
+        is_a: post_translational_modification
+        close_mappings:
+          - signor:demethylation
       inhibition:
         is_a: binding
         description: >-
@@ -12586,25 +12656,6 @@ enums:
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - CHEMBL.MECHANISM:negative_modulator
           - DGIdb:negative_modulator
-      antibody_inhibition:
-        is_a: inhibition
-        description: >-
-          A causal mechanism in which an antibody specifically binds to and interferes with the target.
-      antagonism:
-        is_a: inhibition
-        description: >-
-          A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist
-          through competing for the binding site.
-        close_mappings:
-          - DGIdb:antagonist
-          - CHEMBL.MECHANISM:antagonist
-        narrow_mappings:
-          - CHEMBL.MECHANISM:allosteric_antagonist
-      molecular_channel_blockage:
-        is_a: inhibition
-        description: >-
-          A causal mechanism in which the effector binds to a molecular channel and prevents or reduces
-          transport of ions through it.
       inverse_agonism:
         is_a: inhibition
         description: >-
@@ -12613,6 +12664,30 @@ enums:
         close_mappings:
           - CHEMBL.MECHANISM:inverse_agonist
           - DGIdb:inverse_agonist
+      isomerization:
+        description: >-
+          A causal mechanism in which the effector induces a structural rearrangement (isomerization) of its target molecule.
+        close_mappings:
+          - signor:isomerization
+      molecular_channel_blockage:
+        is_a: inhibition
+        description: >-
+          A causal mechanism in which the effector binds to a molecular channel and prevents or reduces
+          transport of ions through it.
+      molecular_channel_opening:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector binds to a molecular channel and facilitates transport of
+          ions through it.
+        close_mappings:
+          - CHEMBL.MECHANISM:opener
+      modulation:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector alters the activity or function of its target without strictly activating or inhibiting it,
+          often in a context-dependent manner.
+        close_mappings:
+          - CHEMBL.MECHANISM:modulator
       negative_allosteric_modulation:
         is_a: inhibition
         description: >-
@@ -12623,77 +12698,113 @@ enums:
           - DGIdb:inhibitory_allosteric_modulator
         narrow_mappings:
           - DGIdb:negative_modulator
-      agonism:
+      neddylation:
+        is_a: post_translational_modification
+        close_mappings:
+          - signor:neddylation
+      phosphorylation:
+        close_mappings:
+          - signor:phosphorylation
+      polyubiquitination:
+        is_a: post_translational_modification
+        close_mappings:
+          - signor:polyubiquitination
+      post_transcriptional_regulation:
+        description: >-
+          A causal mechanism in which the effector regulates the processing, stability, or translation of target RNA.
+        close_mappings:
+          - signor:post_transcriptional_regulation
+      post_translational_modification:
+        description: >-
+          A causal mechanism in which the effector modifies a protein after translation, altering its function or localization.
+        close_mappings:
+          - signor:post_translational_modification
+      precursor_of:
+        description: >-
+          A causal mechanism in which the effector acts as a biochemical precursor that is converted into the target entity.
+        close_mappings:
+          - signor:precursor_of
+      proteolysis:
         is_a: activation
         description: >-
-          A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an
-          endogenous ligand.
+          A causal mechanism in which the effector cleaves peptide bonds in a protein target, promoting degradation or rearrangement.
         close_mappings:
-          - CHEMBL.MECHANISM:agonist
-          - DGIdb:agonist
-        narrow_mappings:
-          - CHEMBL.MECHANISM:partial_agonist
-          - DGIdb:partial_agonist
-      molecular_channel_opening:
-        is_a: activation
+          - CHEMBL.MECHANISM:proteolytic_enzyme
+      relocalization:
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and facilitates transport of
-          ions through it.
+          A causal mechanism in which the effector causes a change in the subcellular localization of its target.
         close_mappings:
-          - CHEMBL.MECHANISM:opener
-      positive_allosteric_modulation:
-        is_a: activation
-        description: >-
-          A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
-          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:positive_allosteric_modulator
-          - CHEMBL.MECHANISM:positive_modulator
-          - DGIdb:positive_allosteric_modulator
-        broad_mappings:
-          - DGIdb:modulator
-          - DGIdb:allosteric_modulator
-      potentiation:
+          - signor:relocalization
+      reducing_agent:
         is_a: binding
         description: >-
-          A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some
-          other chemical or drug on its target.
+          A causal mechanism in which the effector donates electrons (or hydrogen) to reduce its target molecule,
+          altering redox state or chemical identity.
         close_mappings:
-      activation:
+          - CHEMBL.MECHANISM:reducing_agent
+      RNAi_inhibition:
+        is_a: inhibition
+        description: >-
+          A causal mechanism in which the effector suppresses gene expression by RNA interference (RNAi),
+          reducing mRNA and thus protein production.
+        close_mappings:
+          - CHEMBL.MECHANISM:RNAi_inhibitor
+      sequestering:
         is_a: binding
         description: >-
-          A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+          A causal mechanism in which the effector binds to and sequesters its target, thereby preventing the target
+          from interacting with other entities.
         close_mappings:
-          - CHEMBL.MECHANISM:activator
-          - DGIdb:activator
-      inducer:
-        is_a: binding
+          - CHEMBL.MECHANISM:sequestering_agent
+      small_molecule_catalysis:
+        is_a: catalytic_activity
         description: >-
-          A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that
-          processes drugs in the body.
+          A causal mechanism mediated by a small molecule that catalyzes or enhances the rate of a biochemical reaction involving the target.
         close_mappings:
-          - DGIdb:inducer
-      transcriptional_regulation:
-        description: >-
-          A causal mechanism mediated by through the control of target gene transcription
-      signaling_mediated_control:
-        description: >-
-          A causal mechanism mediated by the activation or control of signaling events that influence the some aspect
-          of the target entity (e.g. its activity, processing, transport, etc)
+          - signor:small_molecule_catalysis
       stabilization:
         is_a: activation
         close_mappings:
           - CHEMBL.MECHANISM:stabiliser
+          - signor:stabilization
       stimulation:
         is_a: activation
         close_mappings:
           - DGIdb:stimulator
           - SEMMEDDB:STIMULATES
-          - DGIdb:stimulator
-      releasing_activity:
-        is_a: activation
+      substrate:
+        description: >-
+          A causal mechanism qualifier indicating the effector acts as a substrate for a biochemical reaction
+          catalyzed by the target.
         close_mappings:
-          - CHEMBL:MECHANISM:releasing_agent
+          - CHEMBL.MECHANISM:substrate
+      transcriptional_regulation:
+        description: >-
+          A causal mechanism mediated by through the control of target gene transcription
+        close_mappings:
+          - signor:transcriptional_regulation
+      translation_regulation:
+        description: >-
+          A causal mechanism in which the effector modulates the translation of target mRNA into protein.
+        close_mappings:
+          - signor:translation_regulation
+      tyrosination:
+        is_a: post_translational_modification
+        close_mappings:
+          - signor:tyrosination
+      ubiquitination:
+        close_mappings:
+          - signor:ubiquitination
+      trimethylation:
+        is_a: post_translational_modification
+        close_mappings:
+          - signor:trimethylation
+      monoubiquitination:
+        is_a: post_translational_modification
+        close_mappings:
+          - signor:monoubiquitination
+
+
 
   LogicalInterpretationEnum:
     permissible_values:
