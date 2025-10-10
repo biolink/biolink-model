@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-07T15:20:37
+# Generation date: 2025-10-10T13:39:43
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1189,7 +1189,11 @@ class ProcessRegulatesProcessAssociationId(AssociationId):
     pass
 
 
-class ChemicalAffectsGeneAssociationId(AssociationId):
+class ChemicalAffectsBiologicalEntityAssociationId(AssociationId):
+    pass
+
+
+class ChemicalAffectsGeneAssociationId(ChemicalAffectsBiologicalEntityAssociationId):
     pass
 
 
@@ -9312,11 +9316,6 @@ class ChemicalToPathwayAssociation(Association):
         if not isinstance(self.id, ChemicalToPathwayAssociationId):
             self.id = ChemicalToPathwayAssociationId(self.id)
 
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, ChemicalEntityId):
@@ -9591,24 +9590,24 @@ class ProcessRegulatesProcessAssociation(Association):
 
 
 @dataclass(repr=False)
-class ChemicalAffectsGeneAssociation(Association):
+class ChemicalAffectsBiologicalEntityAssociation(Association):
     """
-    Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance,
+    Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance,
     activity,localization, processing, expression, etc.)
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalAffectsGeneAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalAffectsGeneAssociation"
-    class_name: ClassVar[str] = "chemical affects gene association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalAffectsGeneAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalAffectsBiologicalEntityAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalAffectsBiologicalEntityAssociation"
+    class_name: ClassVar[str] = "chemical affects biological entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalAffectsBiologicalEntityAssociation
 
-    id: Union[str, ChemicalAffectsGeneAssociationId] = None
+    id: Union[str, ChemicalAffectsBiologicalEntityAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, BiologicalEntityId] = None
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
@@ -9628,8 +9627,8 @@ class ChemicalAffectsGeneAssociation(Association):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalAffectsGeneAssociationId):
-            self.id = ChemicalAffectsGeneAssociationId(self.id)
+        if not isinstance(self.id, ChemicalAffectsBiologicalEntityAssociationId):
+            self.id = ChemicalAffectsBiologicalEntityAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9643,8 +9642,8 @@ class ChemicalAffectsGeneAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, BiologicalEntityId):
+            self.object = BiologicalEntityId(self.object)
 
         if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, ChemicalOrGeneOrGeneProductFormOrVariantEnum):
             self.subject_form_or_variant_qualifier = ChemicalOrGeneOrGeneProductFormOrVariantEnum(self.subject_form_or_variant_qualifier)
@@ -9690,6 +9689,38 @@ class ChemicalAffectsGeneAssociation(Association):
 
         if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
             self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class ChemicalAffectsGeneAssociation(ChemicalAffectsBiologicalEntityAssociation):
+    """
+    Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance,
+    activity,localization, processing, expression, etc.)
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalAffectsGeneAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalAffectsGeneAssociation"
+    class_name: ClassVar[str] = "chemical affects gene association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalAffectsGeneAssociation
+
+    id: Union[str, ChemicalAffectsGeneAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, ChemicalEntityId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, BiologicalEntityId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalAffectsGeneAssociationId):
+            self.id = ChemicalAffectsGeneAssociationId(self.id)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -16567,59 +16598,59 @@ slots.process_regulates_process_association_predicate = Slot(uri=RDF.predicate, 
 slots.process_regulates_process_association_object = Slot(uri=RDF.object, name="process regulates process association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.process_regulates_process_association_object, domain=ProcessRegulatesProcessAssociation, range=Union[str, BiologicalProcessId])
 
-slots.chemical_affects_gene_association_subject = Slot(uri=RDF.subject, name="chemical affects gene association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject, domain=ChemicalAffectsGeneAssociation, range=Union[str, ChemicalEntityId])
+slots.chemical_affects_biological_entity_association_subject = Slot(uri=RDF.subject, name="chemical affects biological entity association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject, domain=ChemicalAffectsBiologicalEntityAssociation, range=Union[str, ChemicalEntityId])
 
-slots.chemical_affects_gene_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="chemical affects gene association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_form_or_variant_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
+slots.chemical_affects_biological_entity_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="chemical affects biological entity association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject_form_or_variant_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
 
-slots.chemical_affects_gene_association_subject_part_qualifier = Slot(uri=BIOLINK.subject_part_qualifier, name="chemical affects gene association_subject part qualifier", curie=BIOLINK.curie('subject_part_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_part_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
+slots.chemical_affects_biological_entity_association_subject_part_qualifier = Slot(uri=BIOLINK.subject_part_qualifier, name="chemical affects biological entity association_subject part qualifier", curie=BIOLINK.curie('subject_part_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject_part_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
 
-slots.chemical_affects_gene_association_subject_derivative_qualifier = Slot(uri=BIOLINK.subject_derivative_qualifier, name="chemical affects gene association_subject derivative qualifier", curie=BIOLINK.curie('subject_derivative_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_derivative_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "ChemicalEntityDerivativeEnum"]])
+slots.chemical_affects_biological_entity_association_subject_derivative_qualifier = Slot(uri=BIOLINK.subject_derivative_qualifier, name="chemical affects biological entity association_subject derivative qualifier", curie=BIOLINK.curie('subject_derivative_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject_derivative_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "ChemicalEntityDerivativeEnum"]])
 
-slots.chemical_affects_gene_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="chemical affects gene association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+slots.chemical_affects_biological_entity_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="chemical affects biological entity association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject_aspect_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
 
-slots.chemical_affects_gene_association_subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, name="chemical affects gene association_subject context qualifier", curie=BIOLINK.curie('subject_context_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+slots.chemical_affects_biological_entity_association_subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, name="chemical affects biological entity association_subject context qualifier", curie=BIOLINK.curie('subject_context_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
-slots.chemical_affects_gene_association_subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="chemical affects gene association_subject direction qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_direction_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+slots.chemical_affects_biological_entity_association_subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="chemical affects biological entity association_subject direction qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_subject_direction_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
-slots.chemical_affects_gene_association_predicate = Slot(uri=RDF.predicate, name="chemical affects gene association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_predicate, domain=ChemicalAffectsGeneAssociation, range=Union[str, PredicateType])
+slots.chemical_affects_biological_entity_association_predicate = Slot(uri=RDF.predicate, name="chemical affects biological entity association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_predicate, domain=ChemicalAffectsBiologicalEntityAssociation, range=Union[str, PredicateType])
 
-slots.chemical_affects_gene_association_qualified_predicate = Slot(uri=BIOLINK.qualified_predicate, name="chemical affects gene association_qualified predicate", curie=BIOLINK.curie('qualified_predicate'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_qualified_predicate, domain=ChemicalAffectsGeneAssociation, range=Optional[str])
+slots.chemical_affects_biological_entity_association_qualified_predicate = Slot(uri=BIOLINK.qualified_predicate, name="chemical affects biological entity association_qualified predicate", curie=BIOLINK.curie('qualified_predicate'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_qualified_predicate, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[str])
 
-slots.chemical_affects_gene_association_object = Slot(uri=RDF.object, name="chemical affects gene association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object, domain=ChemicalAffectsGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+slots.chemical_affects_biological_entity_association_object = Slot(uri=RDF.object, name="chemical affects biological entity association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_object, domain=ChemicalAffectsBiologicalEntityAssociation, range=Union[str, BiologicalEntityId])
 
-slots.chemical_affects_gene_association_object_form_or_variant_qualifier = Slot(uri=BIOLINK.object_form_or_variant_qualifier, name="chemical affects gene association_object form or variant qualifier", curie=BIOLINK.curie('object_form_or_variant_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_form_or_variant_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
+slots.chemical_affects_biological_entity_association_object_form_or_variant_qualifier = Slot(uri=BIOLINK.object_form_or_variant_qualifier, name="chemical affects biological entity association_object form or variant qualifier", curie=BIOLINK.curie('object_form_or_variant_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_object_form_or_variant_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
 
-slots.chemical_affects_gene_association_object_part_qualifier = Slot(uri=BIOLINK.object_part_qualifier, name="chemical affects gene association_object part qualifier", curie=BIOLINK.curie('object_part_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_part_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
+slots.chemical_affects_biological_entity_association_object_part_qualifier = Slot(uri=BIOLINK.object_part_qualifier, name="chemical affects biological entity association_object part qualifier", curie=BIOLINK.curie('object_part_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_object_part_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
 
-slots.chemical_affects_gene_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical affects gene association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+slots.chemical_affects_biological_entity_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical affects biological entity association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_object_aspect_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
 
-slots.chemical_affects_gene_association_object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name="chemical affects gene association_object context qualifier", curie=BIOLINK.curie('object_context_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+slots.chemical_affects_biological_entity_association_object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name="chemical affects biological entity association_object context qualifier", curie=BIOLINK.curie('object_context_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_object_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
-slots.chemical_affects_gene_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical affects gene association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_direction_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+slots.chemical_affects_biological_entity_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical affects biological entity association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_object_direction_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
-slots.chemical_affects_gene_association_causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="chemical affects gene association_causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_causal_mechanism_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
+slots.chemical_affects_biological_entity_association_causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="chemical affects biological entity association_causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_causal_mechanism_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
-slots.chemical_affects_gene_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical affects gene association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_anatomical_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+slots.chemical_affects_biological_entity_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical affects biological entity association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_anatomical_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
-slots.chemical_affects_gene_association_species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="chemical affects gene association_species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_species_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, OrganismTaxonId]])
+slots.chemical_affects_biological_entity_association_species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="chemical affects biological entity association_species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_species_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, OrganismTaxonId]])
 
 slots.gene_affects_chemical_association_subject = Slot(uri=RDF.subject, name="gene affects chemical association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_affects_chemical_association_subject, domain=GeneAffectsChemicalAssociation, range=Union[dict, GeneOrGeneProduct])

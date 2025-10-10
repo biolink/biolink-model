@@ -4548,7 +4548,7 @@
       "domain_of": [
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4614,7 +4614,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "GeneToDiseaseOrPhenotypicFeatureAssociation",
         "GeneHasVariantThatContributesToDiseaseAssociation"
@@ -4637,7 +4637,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4664,7 +4664,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4685,7 +4685,7 @@
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4705,7 +4705,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4749,7 +4749,7 @@
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4815,7 +4815,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4836,7 +4836,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4882,7 +4882,7 @@
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4903,7 +4903,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4930,7 +4930,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4969,7 +4969,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "CausalMechanismQualifierEnum",
@@ -5003,7 +5003,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
@@ -5038,7 +5038,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "MacromolecularMachineToEntityAssociationMixin"
       ],
@@ -16083,7 +16083,7 @@
           "local_name_value": "predicate"
         }
       },
-      "description": "participation of a gene or gene product or gene family in  a given biological process or activity (e.g., gene product  participates in biological process; gene catalyzes molecular activity; gene family is actively involved in a pathway).",
+      "description": "participation of a gene or gene product or gene family in a given biological process or activity (e.g., gene product participates in biological process; gene catalyzes molecular activity; gene family is actively involved in a pathway).",
       "notes": [
         "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
       ],
@@ -16196,7 +16196,7 @@
           "local_name_value": "predicate"
         }
       },
-      "description": "Relationship in which a biological process has the participation of a gene or gene product or gene family in  a  (e.g., pathway has participant gene product).",
+      "description": "Relationship in which a biological process has the participation of a gene or gene product or gene family in a  (e.g., pathway has participant gene product).",
       "notes": [
         "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
       ],
@@ -18245,7 +18245,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject",
+      "name": "chemical_affects_biological_entity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -18267,12 +18267,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -18281,7 +18281,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_form_or_variant_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
       "examples": [
@@ -18311,12 +18311,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_form_or_variant_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
       "alias": "subject form or variant qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject form or variant qualifier",
@@ -18324,7 +18324,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_part_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
       "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).",
       "in_subset": [
@@ -18332,12 +18332,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_part_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
       "alias": "subject part qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject part qualifier",
@@ -18345,7 +18345,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_derivative_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
       "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association (or statement).",
       "examples": [
@@ -18359,12 +18359,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_derivative_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
       "alias": "subject derivative qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject derivative qualifier",
@@ -18372,7 +18372,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_aspect_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
       "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
       "examples": [
@@ -18398,12 +18398,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_aspect_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
       "alias": "subject aspect qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject aspect qualifier",
@@ -18411,19 +18411,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
       "alias": "subject context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject context qualifier",
@@ -18431,7 +18431,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_direction_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
       "in_subset": [
@@ -18439,12 +18439,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_direction_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "alias": "subject direction qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject direction qualifier",
@@ -18452,7 +18452,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_predicate",
+      "name": "chemical_affects_biological_entity_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18477,12 +18477,12 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "subproperty_of": "affects",
       "is_usage_slot": true,
@@ -18492,7 +18492,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_qualified_predicate",
+      "name": "chemical_affects_biological_entity_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
       "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
@@ -18500,12 +18500,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "qualified_predicate",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
       "alias": "qualified predicate",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "subproperty_of": "causes",
       "is_usage_slot": true,
@@ -18514,7 +18514,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object",
+      "name": "chemical_affects_biological_entity_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18536,22 +18536,21 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "GeneOrGeneProduct",
+      "range": "BiologicalEntity",
       "required": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_form_or_variant_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
       "examples": [
@@ -18581,12 +18580,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_form_or_variant_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
       "alias": "object form or variant qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object form or variant qualifier",
@@ -18594,7 +18593,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_part_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
       "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement).",
       "in_subset": [
@@ -18602,12 +18601,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_part_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
       "alias": "object part qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object part qualifier",
@@ -18615,7 +18614,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_aspect_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
       "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
       "examples": [
@@ -18641,12 +18640,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_aspect_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
       "alias": "object aspect qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object aspect qualifier",
@@ -18654,19 +18653,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
       "alias": "object context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object context qualifier",
@@ -18674,7 +18673,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_direction_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
@@ -18682,12 +18681,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_direction_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "alias": "object direction qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object direction qualifier",
@@ -18695,7 +18694,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_causal_mechanism_qualifier",
+      "name": "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
       "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
       "in_subset": [
@@ -18703,12 +18702,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "causal_mechanism_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
       "alias": "causal mechanism qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "causal mechanism qualifier",
@@ -18716,7 +18715,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_anatomical_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_anatomical_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
@@ -18737,12 +18736,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "anatomical_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "alias": "anatomical context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
@@ -18750,7 +18749,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_species_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_species_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
       "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
       "notes": [
@@ -18771,12 +18770,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "species_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
       "alias": "species context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "species context qualifier",
@@ -29331,7 +29330,7 @@
     {
       "name": "GeneOrGeneProductOrGeneFamily",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamily",
-      "description": "A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and  some other general class of entity (e.g. biological process or anatomical entity)",
+      "description": "A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and some other general class of entity (e.g. biological process or anatomical entity)",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "mixin": true,
       "slot_usage": {},
@@ -32741,6 +32740,7 @@
       "name": "ChemicalToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin",
       "description": "An interaction between a chemical entity and another entity",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "ChemicalEntityToEntityAssociationMixin",
       "mixin": true,
@@ -32781,9 +32781,6 @@
       "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
-      "mixins": [
-        "ChemicalToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -33023,7 +33020,6 @@
       ],
       "is_a": "Association",
       "mixins": [
-        "ChemicalToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
@@ -33089,7 +33085,6 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "mixins": [
-        "ChemicalToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
         "EntityToFeatureOrDiseaseQualifiersMixin"
       ],
@@ -33164,7 +33159,6 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "mixins": [
-        "ChemicalToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
@@ -33355,9 +33349,6 @@
         "SIO:001250"
       ],
       "is_a": "Association",
-      "mixins": [
-        "ChemicalToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -33488,9 +33479,6 @@
         "SIO:001257"
       ],
       "is_a": "Association",
-      "mixins": [
-        "ChemicalToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -33666,9 +33654,9 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalAffectsGeneAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
-      "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "name": "ChemicalAffectsBiologicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsBiologicalEntityAssociation",
+      "description": "Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "slots": [
@@ -33711,24 +33699,93 @@
         "has_confidence_score",
         "association_type",
         "association_category",
-        "chemical_affects_gene_association_subject_form_or_variant_qualifier",
-        "chemical_affects_gene_association_subject_part_qualifier",
-        "chemical_affects_gene_association_subject_derivative_qualifier",
-        "chemical_affects_gene_association_subject_aspect_qualifier",
-        "chemical_affects_gene_association_subject_context_qualifier",
-        "chemical_affects_gene_association_subject_direction_qualifier",
-        "chemical_affects_gene_association_object_form_or_variant_qualifier",
-        "chemical_affects_gene_association_object_part_qualifier",
-        "chemical_affects_gene_association_object_aspect_qualifier",
-        "chemical_affects_gene_association_object_context_qualifier",
-        "chemical_affects_gene_association_object_direction_qualifier",
-        "chemical_affects_gene_association_causal_mechanism_qualifier",
-        "chemical_affects_gene_association_anatomical_context_qualifier",
-        "chemical_affects_gene_association_qualified_predicate",
-        "chemical_affects_gene_association_species_context_qualifier",
-        "chemical_affects_gene_association_subject",
-        "chemical_affects_gene_association_predicate",
-        "chemical_affects_gene_association_object"
+        "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_subject_part_qualifier",
+        "chemical_affects_biological_entity_association_subject_derivative_qualifier",
+        "chemical_affects_biological_entity_association_subject_aspect_qualifier",
+        "chemical_affects_biological_entity_association_subject_context_qualifier",
+        "chemical_affects_biological_entity_association_subject_direction_qualifier",
+        "chemical_affects_biological_entity_association_object_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_object_part_qualifier",
+        "chemical_affects_biological_entity_association_object_aspect_qualifier",
+        "chemical_affects_biological_entity_association_object_context_qualifier",
+        "chemical_affects_biological_entity_association_object_direction_qualifier",
+        "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
+        "chemical_affects_biological_entity_association_anatomical_context_qualifier",
+        "chemical_affects_biological_entity_association_qualified_predicate",
+        "chemical_affects_biological_entity_association_species_context_qualifier",
+        "chemical_affects_biological_entity_association_subject",
+        "chemical_affects_biological_entity_association_predicate",
+        "chemical_affects_biological_entity_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsBiologicalEntityAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalAffectsGeneAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
+      "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "ChemicalAffectsBiologicalEntityAssociation",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_subject_part_qualifier",
+        "chemical_affects_biological_entity_association_subject_derivative_qualifier",
+        "chemical_affects_biological_entity_association_subject_aspect_qualifier",
+        "chemical_affects_biological_entity_association_subject_context_qualifier",
+        "chemical_affects_biological_entity_association_subject_direction_qualifier",
+        "chemical_affects_biological_entity_association_object_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_object_part_qualifier",
+        "chemical_affects_biological_entity_association_object_aspect_qualifier",
+        "chemical_affects_biological_entity_association_object_context_qualifier",
+        "chemical_affects_biological_entity_association_object_direction_qualifier",
+        "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
+        "chemical_affects_biological_entity_association_anatomical_context_qualifier",
+        "chemical_affects_biological_entity_association_qualified_predicate",
+        "chemical_affects_biological_entity_association_species_context_qualifier",
+        "chemical_affects_biological_entity_association_subject",
+        "chemical_affects_biological_entity_association_predicate",
+        "chemical_affects_biological_entity_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
@@ -38473,9 +38530,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-07T15:20:17",
-  "source_file_size": 426420,
-  "generation_date": "2025-10-07T15:20:23",
+  "source_file_date": "2025-10-10T13:39:06",
+  "source_file_size": 426421,
+  "generation_date": "2025-10-10T13:39:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

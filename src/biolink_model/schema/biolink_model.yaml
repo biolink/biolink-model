@@ -8741,7 +8741,7 @@ classes:
   gene or gene product or gene family:
     description: >-
       A union of gene family or gene loci or gene products, useful to define
-      the association between a gene or gene product or gene family and 
+      the association between a gene or gene product or gene family and
       some other general class of entity (e.g. biological process or anatomical entity)
     mixin: true
 
@@ -9792,7 +9792,6 @@ classes:
       predicate:
         subproperty_of: assesses
 
-
   contributor association:
     is_a: association
     defining_slots:
@@ -9990,8 +9989,8 @@ classes:
         subproperty_of: participates in
         symmetric: false
         description: >-
-          participation of a gene or gene product or gene family in 
-          a given biological process or activity (e.g., gene product 
+          participation of a gene or gene product or gene family in
+          a given biological process or activity (e.g., gene product
           participates in biological process; gene catalyzes molecular
           activity; gene family is actively involved in a pathway).
 
@@ -10015,7 +10014,7 @@ classes:
         symmetric: false
         description: >-
           Relationship in which a biological process has the
-          participation of a gene or gene product or gene family in 
+          participation of a gene or gene product or gene family in
           a  (e.g., pathway has participant gene product).
 
   biological process or activity to biological process or activity association:
@@ -10179,6 +10178,7 @@ classes:
         description: "the drug that is an interactor"
 
   chemical to entity association mixin:
+    deprecated: true
     description: >-
       An interaction between a chemical entity and another entity
     is_a: chemical entity to entity association mixin
@@ -10221,8 +10221,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - chemical to entity association mixin
     slot_usage:
       object:
         range: chemical entity
@@ -10292,7 +10290,6 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
     slot_usage:
       object:
@@ -10309,7 +10306,6 @@ classes:
       - predicate
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
       - entity to feature or disease qualifiers mixin
     slots:
@@ -10328,7 +10324,6 @@ classes:
       - predicate
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
     slot_usage:
       predicate:
@@ -10372,8 +10367,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - chemical to entity association mixin
     slot_usage:
       subject:
         range: chemical entity
@@ -10424,8 +10417,6 @@ classes:
     is_a: association
     exact_mappings:
       - SIO:001257
-    mixins:
-      - chemical to entity association mixin
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -10507,9 +10498,9 @@ classes:
       object:
         range: biological process
 
-  chemical affects gene association:
+  chemical affects biological entity association:
     description: >-
-      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      Describes an effect that a chemical has on a biological entity (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: association
     slots:
@@ -10548,7 +10539,7 @@ classes:
       qualified predicate:
         subproperty_of: causes
       object:
-        range: gene or gene product
+        range: biological entity
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10565,6 +10556,13 @@ classes:
         range: anatomical entity
       species context qualifier:
         range: organism taxon
+
+  chemical affects gene association:
+    description: >-
+      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      of on its abundance, activity,localization, processing, expression, etc.)
+    is_a: chemical affects biological entity association
+
 
   gene affects chemical association:
     description: >-
