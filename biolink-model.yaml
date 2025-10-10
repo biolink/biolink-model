@@ -12355,6 +12355,17 @@ enums:
           In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
+      clinical_trial_phase_1_to_2:
+        is_a: clinical_trial_phase
+        description: >-
+          A study that tests the safety, side effects, and best dose of a new treatment. Phase I/II
+          clinical trials also test how well a certain type of cancer or other disease responds to a
+          new treatment. In the phase II part of the clinical trial, patients usually receive the
+          highest dose of treatment that did not cause harmful side effects in the phase I part of
+          the clinical trial. Combining phases I and II may allow research questions to be answered
+          more quickly or with fewer patients. Also called phase 1/phase 2 clinical trial.
+        see_also:
+          - https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-i-ii-clinical-trial
       clinical_trial_phase_2:
         is_a: clinical_trial_phase
         description: >-
@@ -12362,6 +12373,16 @@ enums:
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
+      clinical_trial_phase_2_to_3:
+        is_a: clinical_trial_phase
+        description: >-
+          A study that tests how well a new treatment works for a certain type of cancer or other
+          disease and compares the new treatment with a standard treatment. Phase II/III clinical
+          trials may also provide more information about the safety and side effects of the new
+          treatment. Combining phases II and III may allow research questions to be answered more
+          quickly or with fewer patients. Also called phase 2/phase 3 clinical trial.
+        see_also:
+          - https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-ii-iii-clinical-trial
       clinical_trial_phase_3:
         is_a: clinical_trial_phase
         description: >-

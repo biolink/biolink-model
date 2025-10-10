@@ -260,7 +260,9 @@ enum ResearchPhaseEnum
     pre_clinical_research_phase
     clinical_trial_phase
     clinical_trial_phase_1
+    clinical_trial_phase_1_to_2
     clinical_trial_phase_2
+    clinical_trial_phase_2_to_3
     clinical_trial_phase_3
     clinical_trial_phase_4
     not_provided
@@ -8890,3 +8892,4 @@ type Zygosity
     hasQualitativeValue: NamedThing
     iri: IriType
   }
+

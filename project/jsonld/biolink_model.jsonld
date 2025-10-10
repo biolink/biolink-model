@@ -1239,9 +1239,25 @@
           "is_a": "clinical_trial_phase"
         },
         {
+          "text": "clinical_trial_phase_1_to_2",
+          "description": "A study that tests the safety, side effects, and best dose of a new treatment. Phase I/II clinical trials also test how well a certain type of cancer or other disease responds to a new treatment. In the phase II part of the clinical trial, patients usually receive the highest dose of treatment that did not cause harmful side effects in the phase I part of the clinical trial. Combining phases I and II may allow research questions to be answered more quickly or with fewer patients. Also called phase 1/phase 2 clinical trial.",
+          "is_a": "clinical_trial_phase",
+          "see_also": [
+            "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-i-ii-clinical-trial"
+          ]
+        },
+        {
           "text": "clinical_trial_phase_2",
           "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.",
           "is_a": "clinical_trial_phase"
+        },
+        {
+          "text": "clinical_trial_phase_2_to_3",
+          "description": "A study that tests how well a new treatment works for a certain type of cancer or other disease and compares the new treatment with a standard treatment. Phase II/III clinical trials may also provide more information about the safety and side effects of the new treatment. Combining phases II and III may allow research questions to be answered more quickly or with fewer patients. Also called phase 2/phase 3 clinical trial.",
+          "is_a": "clinical_trial_phase",
+          "see_also": [
+            "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-ii-iii-clinical-trial"
+          ]
         },
         {
           "text": "clinical_trial_phase_3",
@@ -38530,9 +38546,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-10T20:55:21",
-  "source_file_size": 426421,
-  "generation_date": "2025-10-10T20:55:27",
+  "source_file_date": "2025-10-10T14:08:37",
+  "source_file_size": 427920,
+  "generation_date": "2025-10-10T14:08:49",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
