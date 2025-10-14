@@ -189,19 +189,16 @@ slots:
   chembl drug warning:
     is_a: node property
     description: Text describing warnings for use of chemicals as therapeutics.
-    domain: ChemicalEntity
     range: string
 
   chembl prodrug:
     is_a: node property
     description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body. 
-    domain: ChemicalEntity
     range: boolean
 
   chembl chirality:
     is_a: node property
     description: Tern indicating the chirality of the chemical entity.
-    domain: ChemicalEntity
     range: string
 
   chembl action type:
