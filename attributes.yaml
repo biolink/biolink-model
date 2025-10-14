@@ -171,7 +171,7 @@ slots:
     is_a: node property
     range: float
 
- automat equivalent identifiers:
+  automat equivalent identifiers:
     is_a: node property
     description: >-
       A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is
@@ -186,35 +186,35 @@ slots:
       - biolink:xref
       - biolink:synonyms
 
-chembl drug warning:
+  chembl drug warning:
     is_a: node property
     description: Text describing warnings for use of chemicals as therapeutics.
     domain: ChemicalEntity
     range: string
 
-chembl prodrug:
+  chembl prodrug:
     is_a: node property
     description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body. 
     domain: ChemicalEntity
     range: boolean
 
-chembl chirality:
+  chembl chirality:
     is_a: node property
     description: Tern indicating the chirality of the chemical entity.
     domain: ChemicalEntity
     range: string
 
-chembl action type:
+  chembl action type:
     is_a: edge property
     description: >-
     range: string
 
-chembl mechanism of action:
+  chembl mechanism of action:
     is_a: edge property
     description: Provides more detail about the reported mechanism of action.
     range: string
      
-chembl direct interaction:
+  chembl direct interaction:
     is_a: edge property
     description: Indicates if the reported mechanism of action involves a direct physical interaction.
     range: boolean
