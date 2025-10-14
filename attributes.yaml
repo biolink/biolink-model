@@ -166,12 +166,12 @@ classes:
 
 slots:
 
-  automat information content:
+  information content:
     description: Information content (IC) value for a term, primarily from Automats.
     is_a: node property
     range: float
 
-  automat equivalent identifiers:
+  equivalent identifiers:
     is_a: node property
     description: >-
       A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is
