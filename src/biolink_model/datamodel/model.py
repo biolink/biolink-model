@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-10T21:55:57
+# Generation date: 2025-10-14T18:40:12
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -16230,10 +16230,19 @@ slots.has_biological_sex = Slot(uri=BIOLINK.has_biological_sex, name="has biolog
                    model_uri=BIOLINK.has_biological_sex, domain=None, range=Optional[Union[str, BiologicalSexId]])
 
 slots.information_content = Slot(uri=BIOLINK.information_content, name="information content", curie=BIOLINK.curie('information_content'),
-                   model_uri=BIOLINK.information_content, domain=None, range=Optional[float])
+                   model_uri=BIOLINK.information_content, domain=NamedThing, range=Optional[float])
 
 slots.equivalent_identifiers = Slot(uri=BIOLINK.equivalent_identifiers, name="equivalent identifiers", curie=BIOLINK.curie('equivalent_identifiers'),
                    model_uri=BIOLINK.equivalent_identifiers, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+
+slots.chembl_drug_warning = Slot(uri=BIOLINK.chembl_drug_warning, name="chembl drug warning", curie=BIOLINK.curie('chembl_drug_warning'),
+                   model_uri=BIOLINK.chembl_drug_warning, domain=NamedThing, range=Optional[str])
+
+slots.chembl_prodrug = Slot(uri=BIOLINK.chembl_prodrug, name="chembl prodrug", curie=BIOLINK.curie('chembl_prodrug'),
+                   model_uri=BIOLINK.chembl_prodrug, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
+slots.chembl_chirality = Slot(uri=BIOLINK.chembl_chirality, name="chembl chirality", curie=BIOLINK.curie('chembl_chirality'),
+                   model_uri=BIOLINK.chembl_chirality, domain=NamedThing, range=Optional[str])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])

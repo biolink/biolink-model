@@ -13697,6 +13697,8 @@
       "definition_uri": "https://w3id.org/biolink/vocab/information_content",
       "description": "Information content (IC) value for a term, primarily from Automats.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/information_content",
       "owner": "NamedThing",
       "domain_of": [
@@ -13723,6 +13725,42 @@
       ],
       "range": "uriorcurie",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_drug_warning",
+      "definition_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
+      "description": "Text describing warnings for use of chemicals as therapeutics.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
+      "owner": "chembl_drug_warning",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_prodrug",
+      "definition_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
+      "description": "Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
+      "owner": "chembl_prodrug",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_chirality",
+      "definition_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
+      "description": "Tern indicating the chirality of the chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
+      "owner": "chembl_chirality",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -38891,9 +38929,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-10T21:55:37",
+  "source_file_date": "2025-10-14T18:39:52",
   "source_file_size": 428013,
-  "generation_date": "2025-10-10T21:55:43",
+  "generation_date": "2025-10-14T18:39:58",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
