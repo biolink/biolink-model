@@ -201,18 +201,3 @@ slots:
     description: Tern indicating the chirality of the chemical entity.
     range: string
 
-  chembl action type:
-    is_a: edge property
-    description: >-
-    range: string
-
-  chembl mechanism of action:
-    is_a: edge property
-    description: Provides more detail about the reported mechanism of action.
-    range: string
-     
-  chembl direct interaction:
-    is_a: edge property
-    description: Indicates if the reported mechanism of action involves a direct physical interaction.
-    range: boolean
-
