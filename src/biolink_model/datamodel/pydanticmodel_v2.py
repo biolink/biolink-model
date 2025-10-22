@@ -283,6 +283,7 @@ class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
     dominant_negative_variant_form = "dominant_negative_variant_form"
     polymorphic_form = "polymorphic_form"
     snp_form = "snp_form"
+    mutant_form = "mutant_form"
     analog_form = "analog_form"
 
 

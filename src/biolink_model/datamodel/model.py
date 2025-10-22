@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-14T18:40:12
+# Generation date: 2025-10-22T04:17:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -14328,6 +14328,7 @@ class ChemicalOrGeneOrGeneProductFormOrVariantEnum(EnumDefinitionImpl):
     dominant_negative_variant_form = PermissibleValue(text="dominant_negative_variant_form")
     polymorphic_form = PermissibleValue(text="polymorphic_form")
     snp_form = PermissibleValue(text="snp_form")
+    mutant_form = PermissibleValue(text="mutant_form")
     analog_form = PermissibleValue(text="analog_form")
 
     _defn = EnumDefinition(
