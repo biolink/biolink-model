@@ -2571,6 +2571,7 @@ slots:
    ## end of Publication related predicates
 
   was tested for effect on:
+    deprecated: true
     is_a: related to at instance level
     aliases: ['was assayed against', 'was experimentally tested against']
     description: >-
@@ -2584,9 +2585,10 @@ slots:
     annotations:
       canonical_predicate: true
 
-  is assessed by:
+  was tested for effect of:
+    deprecated: true
     is_a: related to at instance level
-    inverse: assesses
+    inverse: was tested for effect on
     domain: named thing
     range: named thing
 
