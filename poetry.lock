@@ -380,28 +380,29 @@ markers = {main = "sys_platform == \"win32\" or platform_system == \"Windows\""}
 
 [[package]]
 name = "curies"
-version = "0.7.10"
-description = "Idiomatic conversion between URIs and compact URIs (CURIEs)."
+version = "0.9.2"
+description = "Idiomatic conversion between URIs and compact URIs (CURIEs)"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "curies-0.7.10-py3-none-any.whl", hash = "sha256:ad80f420dd76b6f3e921a245370ff6ab7473c48c29c17254970c03cd2e58af5f"},
-    {file = "curies-0.7.10.tar.gz", hash = "sha256:98a7ceb94710fab3a02727a7f85ba0719dd22be5fc8b5f2ad1d7d4cfc47d64ce"},
+    {file = "curies-0.9.2-py3-none-any.whl", hash = "sha256:102ab6c3e55394744019eeac3b4775c47178a6023cdbb58f58f920b5f571fcc3"},
+    {file = "curies-0.9.2.tar.gz", hash = "sha256:938527aab5f6d2d952297848d73ef7d715f4a45d5c9904653e47d33ae60d385f"},
 ]
 
 [package.dependencies]
-pydantic = "*"
+eval_type_backport = {version = "*", markers = "python_version < \"3.10\""}
+pydantic = ">=2.0"
 pytrie = "*"
-requests = "*"
+typing-extensions = "*"
 
 [package.extras]
-docs = ["sphinx", "sphinx-automodapi", "sphinx-rtd-theme"]
+docs = ["sphinx (>=8)", "sphinx-rtd-theme (>=3.0)", "sphinx_automodapi"]
 fastapi = ["defusedxml", "fastapi", "httpx", "python-multipart", "uvicorn"]
 flask = ["defusedxml", "flask"]
 pandas = ["pandas"]
 rdflib = ["rdflib"]
-tests = ["coverage", "pytest"]
+tests = ["coverage", "pytest", "requests"]
 
 [[package]]
 name = "daff"
@@ -508,6 +509,22 @@ files = [
     {file = "et_xmlfile-2.0.0-py3-none-any.whl", hash = "sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"},
     {file = "et_xmlfile-2.0.0.tar.gz", hash = "sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54"},
 ]
+
+[[package]]
+name = "eval-type-backport"
+version = "0.2.2"
+description = "Like `typing._eval_type`, but lets older Python versions use newer typing features."
+optional = false
+python-versions = ">=3.8"
+groups = ["main", "dev"]
+markers = "python_version == \"3.9\""
+files = [
+    {file = "eval_type_backport-0.2.2-py3-none-any.whl", hash = "sha256:cb6ad7c393517f476f96d456d0412ea80f0a8cf96f6892834cd9340149111b0a"},
+    {file = "eval_type_backport-0.2.2.tar.gz", hash = "sha256:f0576b4cf01ebb5bd358d02314d31846af5e07678387486e2c798af0e7d849c1"},
+]
+
+[package.extras]
+tests = ["pytest"]
 
 [[package]]
 name = "exceptiongroup"
@@ -1957,7 +1974,6 @@ optional = false
 python-versions = "*"
 groups = ["main", "dev"]
 files = [
-    {file = "PyTrie-0.4.0-py3-none-any.whl", hash = "sha256:f687c224ee8c66cda8e8628a903011b692635ffbb08d4b39c5f92b18eb78c950"},
     {file = "PyTrie-0.4.0.tar.gz", hash = "sha256:8f4488f402d3465993fb6b6efa09866849ed8cda7903b50647b7d0342b805379"},
 ]
 
@@ -3176,4 +3192,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "c073c8921a12093fe095f7f2e5e63873026247c4ad448157f5105c15bc2e2476"
+content-hash = "0047ecf1aa6adfec6d7c995ff1da612ba7ca46f3ac20bf43fb7ec482d6f575bb"
