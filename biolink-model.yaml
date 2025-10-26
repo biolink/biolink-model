@@ -7265,6 +7265,23 @@ classes:
         description: >-
           The role of the InformationResource in the retrieval of the
           knowledge expressed in an Edge, or data used to generate this knowledge.
+          SHOULD hold a single value from the ResourceRoleEnum, except when indicating 
+          that a particular primary or aggregator source was also the 'ingest_source'.
+        range: ResourceRoleEnum
+        multivalued: true
+      ingest source: 
+        description: >- 
+          A flag to indicate the resource from which the data used to create the edge was
+          initially retrieved through an ingest process.
+        range: boolean
+      ingest files:
+        description: >-
+          A list of one or more files from the ingest source that provided the data used to
+          create the knowledge reported in the edge/record. If the data came from more than one file,
+          indicate all that apply. If the data was ingested from database dump or an API,
+          report the endpoint name/url, or database table(s).          
+        range: string
+        multivalued: true
       upstream resource ids:
         description: >-
           A list of upstream InformationResources from which the resource
@@ -12798,8 +12815,25 @@ enums:
       is found in Biolink Model, but is repeated here for convenience.
     permissible_values:
       "primary_knowledge_source":
+        description: >-
+          The information resource that created or curated the knowledge expressed in the edge/record
+          (or at least the furthest upstream resource that can be determined and cited here).  
       "aggregator_knowledge_source":
+        description: >-
+          An information resource that aggregated the knowledge expressed in the edge/record, in the processes of passing
+          it along to its current serialized form. Can be an external community resource that aggregates knowledge
+          (e.g. "infores:dgidb"), or a resource within the project ecosystem (e.g. "infores:molepro" in NCATS Translator).          
       "supporting_data_source":
+        description: >-
+          An information resource form which more foundational data was retrieved, and evaluated/analyzed to generate new
+          knowledge that is expressed in the edge/record. e.g. a clinical EHR data warehouse that provides data analyzed by
+          the Multiomics ISB-Wellness system, to generate novel statistical correlation edges between concepts in the data. 
+      "ingest_source":
+        description: >-
+          An information resource from which the data reporting knowledge expressed in the edge/record was initially retrieved
+          through an ingest process. This is typically the same resource as the primary_knowledge_source - except in cases
+          where the ingest_source is an aggregator, and the primary_knowledge_source is the upstream source from which it retrieved
+          the data.
     in_subset:
       - translator_minimal
 
