@@ -584,7 +584,7 @@ slots:
       different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript,
       and protein HGVS expressions/nomenclatures and is thus multivalued.
     comments: >-
-      For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples:
+      For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and :
       https://hgvs-nomenclature.org/stable/recommendations/summary/.
 
   stoichiometry:
@@ -7282,6 +7282,9 @@ classes:
           report the endpoint name/url, or database table(s).          
         range: string
         multivalued: true
+        examples:
+          - CTD_chemicals_diseases.tsv
+          - CTD_chemicals.tsv
       upstream resource ids:
         description: >-
           A list of upstream InformationResources from which the resource
