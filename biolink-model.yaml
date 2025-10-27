@@ -7268,8 +7268,8 @@ classes:
           SHOULD hold a single value from the ResourceRoleEnum, except when indicating 
           that a particular primary or aggregator source was also the 'ingest_source'.
         range: ResourceRoleEnum
-        multivalued: true
-      ingest source: 
+        multivalued: true    # only needed if we go with capturing ingest source as a resource role
+      ingest source:         # alterntive to capturing ingest source in the resoruce_role slot
         description: >- 
           A flag to indicate the resource from which the data used to create the edge was
           initially retrieved through an ingest process.
