@@ -14,10 +14,6 @@ on:
     types: [opened, edited]
   issue_comment:
     types: [created, edited]
-  pull_request:
-    types: [opened, edited]
-  pull_request_review_comment:
-    types: [created, edited]
 
 jobs:
   check-mention:
@@ -27,7 +23,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+
       - name: Check for qualifying mention
         id: check
         uses: actions/github-script@v6
@@ -44,13 +40,13 @@ jobs:
               console.log('Error loading allowed users:', error);
               allowedUsers = ['cmungall']; // Fallback
             }
-            
+
             // Get content and user from event payload directly to avoid API calls when possible
             let content = '';
             let userLogin = '';
             let itemType = '';
             let itemNumber = 0;
-            
+
             if (context.eventName === 'issues') {
               content = context.payload.issue.body || '';
               userLogin = context.payload.issue.user.login;
@@ -72,17 +68,17 @@ jobs:
               itemType = 'pull_request';
               itemNumber = context.payload.pull_request.number;
             }
-            
+
             // Check if user is allowed and mention exists
             const isAllowed = allowedUsers.includes(userLogin);
             const mentionRegex = /@dragon-ai-agent\s+please\s+(.*)/i;
             const mentionMatch = content.match(mentionRegex);
-            
+
             const qualifiedMention = isAllowed && mentionMatch !== null;
             const prompt = qualifiedMention ? mentionMatch[1].trim() : '';
-            
+
             console.log(`User: ${userLogin}, Allowed: ${isAllowed}, Has mention: ${mentionMatch !== null}`);
-            
+
             return {
               qualifiedMention,
               itemType,
@@ -111,7 +107,7 @@ jobs:
         run: |
           git config --global user.name "Dragon-AI Agent"
           git config --global user.email "dragon-ai-agent[bot]@users.noreply.github.com"
-      
+
       - name: Create tools directory
         run: mkdir -p ${{ env.TOOLS_DIR }}
 
@@ -131,7 +127,7 @@ jobs:
           # Safely write prompt to file
           mkdir -p /tmp/claude-input
           echo "${{ fromJSON(needs.check-mention.outputs.result).prompt }}" > /tmp/claude-input/prompt.txt
-          
+
       - name: Set up Anthropic API key and GitHub token
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -143,12 +139,12 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
-          
+
       - name: Install python tools
         run: |
           uv venv
           source .venv/bin/activate
-        
+
       - name: Create structured Claude prompt
         run: |
           cat > /tmp/claude-input/claude_prompt.txt << EOL
@@ -162,7 +158,7 @@ jobs:
 
           Always end by informing the user what you did (or were not able to do) with a message, either on an issue or a PR,
           as appropriate.
-          
+
           The request is below, enclosed in triple backticks:
           \`\`\`
           $(cat /tmp/claude-input/prompt.txt)
@@ -172,8 +168,8 @@ jobs:
           that provide additional context.
 
           EOL
-      
-      
+
+
       - name: Run Claude Code in headless mode
         id: claude-response
         run: |
@@ -184,5 +180,5 @@ jobs:
           claude -p "$(cat /tmp/claude-input/claude_prompt.txt)" \
             --output-format stream-json \
             --allowedTools "Bash(git:*)" "Bash(gh:*)" "FileSystem(*)" \
-            --verbose 
-          
+            --verbose
+

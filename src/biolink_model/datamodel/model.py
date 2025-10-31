@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-22T04:17:57
+# Generation date: 2025-10-31T16:02:58
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -15368,11 +15368,11 @@ slots.author = Slot(uri=BIOLINK.author, name="author", curie=BIOLINK.curie('auth
 slots.has_author = Slot(uri=BIOLINK.has_author, name="has author", curie=BIOLINK.curie('has_author'),
                    model_uri=BIOLINK.has_author, domain=Publication, range=Optional[Union[Union[str, AgentId], list[Union[str, AgentId]]]])
 
-slots.assesses = Slot(uri=BIOLINK.assesses, name="assesses", curie=BIOLINK.curie('assesses'),
-                   model_uri=BIOLINK.assesses, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
+slots.was_tested_for_effect_on = Slot(uri=BIOLINK.was_tested_for_effect_on, name="was tested for effect on", curie=BIOLINK.curie('was_tested_for_effect_on'),
+                   model_uri=BIOLINK.was_tested_for_effect_on, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
-slots.is_assessed_by = Slot(uri=BIOLINK.is_assessed_by, name="is assessed by", curie=BIOLINK.curie('is_assessed_by'),
-                   model_uri=BIOLINK.is_assessed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
+slots.was_tested_for_effect_of = Slot(uri=BIOLINK.was_tested_for_effect_of, name="was tested for effect of", curie=BIOLINK.curie('was_tested_for_effect_of'),
+                   model_uri=BIOLINK.was_tested_for_effect_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.interacts_with = Slot(uri=BIOLINK.interacts_with, name="interacts with", curie=BIOLINK.curie('interacts_with'),
                    model_uri=BIOLINK.interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
