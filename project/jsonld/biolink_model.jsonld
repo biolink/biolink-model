@@ -6497,8 +6497,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "assesses",
-      "definition_uri": "https://w3id.org/biolink/vocab/assesses",
+      "name": "was_tested_for_effect_on",
+      "definition_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_on",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -6506,31 +6506,34 @@
           "@type": "Annotation"
         }
       ],
-      "description": "The effect of a thing on a target was interrogated in some assay. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.",
+      "description": "Reports that the subject was interrogated in an experiment to determine how it may affect the object. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
-        "was assayed against"
+        "was assayed against",
+        "was experimentally tested against"
       ],
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/assesses",
+      "slot_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_on",
       "inherited": true,
-      "owner": "assesses",
-      "inverse": "is_assessed_by",
+      "owner": "was_tested_for_effect_on",
+      "inverse": "was_tested_for_effect_of",
       "range": "NamedThing",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "is_assessed_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/is_assessed_by",
+      "name": "was_tested_for_effect_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_of",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/is_assessed_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_of",
       "inherited": true,
-      "owner": "is_assessed_by",
-      "inverse": "assesses",
+      "owner": "was_tested_for_effect_of",
+      "inverse": "was_tested_for_effect_on",
       "range": "NamedThing",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -15198,7 +15201,7 @@
       "domain_of": [
         "ChemicalEntityAssessesNamedThingAssociation"
       ],
-      "subproperty_of": "assesses",
+      "subproperty_of": "was_tested_for_effect_on",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "predicate_type",
@@ -32118,6 +32121,7 @@
     {
       "name": "ChemicalEntityAssessesNamedThingAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "slots": [
@@ -38933,9 +38937,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-22T04:17:37",
-  "source_file_size": 428067,
-  "generation_date": "2025-10-22T04:17:42",
+  "source_file_date": "2025-10-31T16:25:00",
+  "source_file_size": 428261,
+  "generation_date": "2025-10-31T16:25:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

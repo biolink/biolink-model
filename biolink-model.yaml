@@ -2570,11 +2570,12 @@ slots:
 
    ## end of Publication related predicates
 
-  assesses:
+  was tested for effect on:
+    deprecated: true
     is_a: related to at instance level
-    aliases: ['was assayed against']
+    aliases: ['was assayed against', 'was experimentally tested against']
     description: >-
-      The effect of a thing on a target was interrogated in some assay.
+      Reports that the subject was interrogated in an experiment to determine how it may affect the object.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
       where the affect of the perturbing agent on the target entity was interrogated in a particular assay.
       The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type
@@ -2584,9 +2585,10 @@ slots:
     annotations:
       canonical_predicate: true
 
-  is assessed by:
+  was tested for effect of:
+    deprecated: true
     is_a: related to at instance level
-    inverse: assesses
+    inverse: was tested for effect on
     domain: named thing
     range: named thing
 
@@ -9785,6 +9787,7 @@ classes:
 
 
   chemical entity assesses named thing association:
+    deprecated: true
     is_a: association
     slot_usage:
       subject:
@@ -9792,7 +9795,7 @@ classes:
       object:
         range: named thing
       predicate:
-        subproperty_of: assesses
+        subproperty_of: was tested for effect on
 
   contributor association:
     is_a: association
