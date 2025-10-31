@@ -9789,6 +9789,7 @@ classes:
 
 
   chemical entity assesses named thing association:
+    deprecated: true
     is_a: association
     slot_usage:
       subject:
@@ -9796,7 +9797,7 @@ classes:
       object:
         range: named thing
       predicate:
-        subproperty_of: assesses
+        subproperty_of: was tested for effect on
 
   contributor association:
     is_a: association
