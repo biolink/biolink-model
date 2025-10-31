@@ -7103,8 +7103,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "affects_response_to",
-      "definition_uri": "https://w3id.org/biolink/vocab/affects_response_to",
+      "name": "affects_sensitivity_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/affects_sensitivity_to",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7112,6 +7112,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "holds between two chemical entities or genes or gene products where the action of one affects the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7119,39 +7120,38 @@
       "exact_mappings": [
         "http://ctdbase.org/affects_response_to"
       ],
-      "is_a": "affects",
+      "is_a": "related_to_at_instance_level",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/affects_response_to",
+      "slot_uri": "https://w3id.org/biolink/vocab/affects_sensitivity_to",
       "inherited": true,
-      "owner": "affects_response_to",
-      "inverse": "response_affected_by",
+      "owner": "affects_sensitivity_to",
+      "inverse": "sensitivity_affected_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "response_affected_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/response_affected_by",
-      "description": "holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.",
+      "name": "sensitivity_affected_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_affected_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "affected_by",
+      "is_a": "related_to_at_instance_level",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/response_affected_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_affected_by",
       "inherited": true,
-      "owner": "response_affected_by",
-      "inverse": "affects_response_to",
+      "owner": "sensitivity_affected_by",
+      "inverse": "affects_sensitivity_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "increases_response_to",
-      "definition_uri": "https://w3id.org/biolink/vocab/increases_response_to",
+      "name": "increases_sensitivity_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/increases_sensitivity_to",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7160,11 +7160,11 @@
         },
         {
           "tag": "opposite_of",
-          "value": "decreases response to",
+          "value": "decreases sensitivity to",
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
+      "description": "holds between two chemical entities or genes or gene products where the action or effect of one increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7172,38 +7172,38 @@
       "exact_mappings": [
         "http://ctdbase.org/increases_response_to"
       ],
-      "is_a": "affects_response_to",
+      "is_a": "affects_sensitivity_to",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/increases_response_to",
+      "slot_uri": "https://w3id.org/biolink/vocab/increases_sensitivity_to",
       "inherited": true,
-      "owner": "increases_response_to",
-      "inverse": "response_increased_by",
+      "owner": "increases_sensitivity_to",
+      "inverse": "sensitivity_increased_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "response_increased_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/response_increased_by",
+      "name": "sensitivity_increased_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_increased_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "response_affected_by",
+      "is_a": "related_to_at_instance_level",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/response_increased_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_increased_by",
       "inherited": true,
-      "owner": "response_increased_by",
-      "inverse": "increases_response_to",
+      "owner": "sensitivity_increased_by",
+      "inverse": "increases_sensitivity_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "decreases_response_to",
-      "definition_uri": "https://w3id.org/biolink/vocab/decreases_response_to",
+      "name": "decreases_sensitivity_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/decreases_sensitivity_to",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7212,11 +7212,11 @@
         },
         {
           "tag": "opposite_of",
-          "value": "increases response to",
+          "value": "increases sensitivity to",
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
+      "description": "holds between two chemical entities or genes or gene products where the action or effect of one decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7227,30 +7227,30 @@
       "narrow_mappings": [
         "http://ctdbase.org/decreases_response_to_substance"
       ],
-      "is_a": "affects_response_to",
+      "is_a": "affects_sensitivity_to",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/decreases_response_to",
+      "slot_uri": "https://w3id.org/biolink/vocab/decreases_sensitivity_to",
       "inherited": true,
-      "owner": "decreases_response_to",
-      "inverse": "response_decreased_by",
+      "owner": "decreases_sensitivity_to",
+      "inverse": "sensitivity_decreased_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "response_decreased_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/response_decreased_by",
+      "name": "sensitivity_decreased_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_decreased_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "response_affected_by",
+      "is_a": "sensitivity_affected_by",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/response_decreased_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_decreased_by",
       "inherited": true,
-      "owner": "response_decreased_by",
-      "inverse": "decreases_response_to",
+      "owner": "sensitivity_decreased_by",
+      "inverse": "decreases_sensitivity_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
@@ -38937,9 +38937,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-31T16:25:00",
-  "source_file_size": 428261,
-  "generation_date": "2025-10-31T16:25:11",
+  "source_file_date": "2025-10-31T16:36:54",
+  "source_file_size": 428444,
+  "generation_date": "2025-10-31T16:37:05",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

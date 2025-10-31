@@ -2914,7 +2914,7 @@ slots:
     description: >-
       holds between two chemical entities or genes or gene products where the action of one affects
       the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component,
-      macromolecular machine mixin, biological or pathological process) to the other.    
+      macromolecular machine mixin, biological or pathological process) to the other.
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2949,12 +2949,12 @@ slots:
       - CTD:increases_response_to
 
   sensitivity increased by:
-    is_a: response affected by
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: increases response to
+    inverse: increases sensitivity to
 
   decreases sensitivity to:
     description: >-

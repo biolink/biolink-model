@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-31T16:25:36
+# Generation date: 2025-10-31T16:37:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -15446,23 +15446,23 @@ slots.chemical_role_mixin = Slot(uri=BIOLINK.chemical_role_mixin, name="chemical
 slots.biological_role_mixin = Slot(uri=BIOLINK.biological_role_mixin, name="biological role mixin", curie=BIOLINK.curie('biological_role_mixin'),
                    model_uri=BIOLINK.biological_role_mixin, domain=None, range=Optional[str])
 
-slots.affects_response_to = Slot(uri=BIOLINK.affects_response_to, name="affects response to", curie=BIOLINK.curie('affects_response_to'),
-                   model_uri=BIOLINK.affects_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+slots.affects_sensitivity_to = Slot(uri=BIOLINK.affects_sensitivity_to, name="affects sensitivity to", curie=BIOLINK.curie('affects_sensitivity_to'),
+                   model_uri=BIOLINK.affects_sensitivity_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
-slots.response_affected_by = Slot(uri=BIOLINK.response_affected_by, name="response affected by", curie=BIOLINK.curie('response_affected_by'),
-                   model_uri=BIOLINK.response_affected_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+slots.sensitivity_affected_by = Slot(uri=BIOLINK.sensitivity_affected_by, name="sensitivity affected by", curie=BIOLINK.curie('sensitivity_affected_by'),
+                   model_uri=BIOLINK.sensitivity_affected_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
-slots.increases_response_to = Slot(uri=BIOLINK.increases_response_to, name="increases response to", curie=BIOLINK.curie('increases_response_to'),
-                   model_uri=BIOLINK.increases_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+slots.increases_sensitivity_to = Slot(uri=BIOLINK.increases_sensitivity_to, name="increases sensitivity to", curie=BIOLINK.curie('increases_sensitivity_to'),
+                   model_uri=BIOLINK.increases_sensitivity_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
-slots.response_increased_by = Slot(uri=BIOLINK.response_increased_by, name="response increased by", curie=BIOLINK.curie('response_increased_by'),
-                   model_uri=BIOLINK.response_increased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+slots.sensitivity_increased_by = Slot(uri=BIOLINK.sensitivity_increased_by, name="sensitivity increased by", curie=BIOLINK.curie('sensitivity_increased_by'),
+                   model_uri=BIOLINK.sensitivity_increased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
-slots.decreases_response_to = Slot(uri=BIOLINK.decreases_response_to, name="decreases response to", curie=BIOLINK.curie('decreases_response_to'),
-                   model_uri=BIOLINK.decreases_response_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+slots.decreases_sensitivity_to = Slot(uri=BIOLINK.decreases_sensitivity_to, name="decreases sensitivity to", curie=BIOLINK.curie('decreases_sensitivity_to'),
+                   model_uri=BIOLINK.decreases_sensitivity_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
-slots.response_decreased_by = Slot(uri=BIOLINK.response_decreased_by, name="response decreased by", curie=BIOLINK.curie('response_decreased_by'),
-                   model_uri=BIOLINK.response_decreased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+slots.sensitivity_decreased_by = Slot(uri=BIOLINK.sensitivity_decreased_by, name="sensitivity decreased by", curie=BIOLINK.curie('sensitivity_decreased_by'),
+                   model_uri=BIOLINK.sensitivity_decreased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.regulates = Slot(uri=BIOLINK.regulates, name="regulates", curie=BIOLINK.curie('regulates'),
                    model_uri=BIOLINK.regulates, domain=None, range=Optional[Union[Union[dict, "PhysicalEssenceOrOccurrent"], list[Union[dict, "PhysicalEssenceOrOccurrent"]]]])
