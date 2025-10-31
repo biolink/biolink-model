@@ -2909,8 +2909,12 @@ slots:
     narrow_mappings:
       - CHEBI:24432
 
-  affects response to:
-    is_a: affects
+  affects sensitivity to:
+    is_a: related to at instance level
+    description: >-
+      holds between two chemical entities or genes or gene products where the action of one affects
+      the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component,
+      macromolecular machine mixin, biological or pathological process) to the other.
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2920,69 +2924,63 @@ slots:
     exact_mappings:
       - CTD:affects_response_to
 
-  response affected by:
-    description: >-
-      holds between two chemical entities where the susceptibility of a biological entity or system
-      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
-      biological or pathological process) of one is affected by the action of the other.
-    is_a: affected by
+  sensitivity affected by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: affects response to
+    inverse: affects sensitivity to
 
-  increases response to:
+  increases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      increases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: decreases response to
+      opposite_of: decreases sensitivity to
     exact_mappings:
       - CTD:increases_response_to
 
-  response increased by:
-    is_a: response affected by
+  sensitivity increased by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: increases response to
+    inverse: increases sensitivity to
 
-  decreases response to:
+  decreases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      decreases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: increases response to
+      opposite_of: increases sensitivity to
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
 
-  response decreased by:
-    is_a: response affected by
+  sensitivity decreased by:
+    is_a: sensitivity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: decreases response to
+    inverse: decreases sensitivity to
 
   regulates:
     is_a: affects
