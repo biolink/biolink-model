@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-25T08:32:06
+# Generation date: 2025-10-31T16:19:12
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -179,4 +179,3 @@ slots.prefix = Slot(uri=BIOLINK.prefix, name="prefix", curie=BIOLINK.curie('pref
 
 slots.order = Slot(uri=BIOLINK.order, name="order", curie=BIOLINK.curie('order'),
                    model_uri=BIOLINK.order, domain=None, range=Optional[int])
-
