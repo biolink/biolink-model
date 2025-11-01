@@ -6450,11 +6450,6 @@ slots:
       - value: computational_model
       - value: text_mining_agent
 
-  has biological sex:
-    description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
-    required: false
-    range: biological sex
-
 classes:
   # Add the KGX-specific classes without modifying biolink classes
   KnowledgeGraph:
@@ -7263,8 +7258,8 @@ classes:
       resource role:
         required: true
         description: >-
-          The role of the InformationResource in the retrieval of the
-          knowledge expressed in an Edge, or data used to generate this knowledge.
+            The role of the InformationResource in the retrieval of the
+            knowledge expressed in an Edge, or data used to generate this knowledge.
       upstream resource ids:
         description: >-
           A list of upstream InformationResources from which the resource
