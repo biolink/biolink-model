@@ -249,6 +249,7 @@ linkml:Sparqlpath xsd:string
              <p_value> @linkml:Float ? ;
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
+             <has_supporting_study_result> @<StudyResult> * ;
              <update_date> @linkml:Date ? ;
              <has_confidence_score> @linkml:Float ? ;
              rdf:type @linkml:String * ;
@@ -3019,6 +3020,22 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<IceesStudyResult> CLOSED {
+    (  $<IceesStudyResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ? ;
+          <chi_squared_statistic> @linkml:Float ? ;
+          <chi_squared_dof> @linkml:Integer ? ;
+          <chi_squared_p> @linkml:Float ? ;
+          <total_sample_size> @linkml:Integer ? ;
+          <fisher_exact_odds_ratio> @linkml:Float ? ;
+          <fisher_exact_p> @linkml:Float ? ;
+          <log_odds_ratio> @linkml:Float ? ;
+          <log_odds_ratio_95_ci> @linkml:Float *
+       ) ;
+       rdf:type [ <IceesStudyResult> ]
+    )
+}
+
 <IndividualOrganism>  (
     CLOSED {
        (  $<IndividualOrganism_tes> (  &<OrganismalEntity_tes> ;
@@ -4374,7 +4391,7 @@ linkml:Sparqlpath xsd:string
 )
 
 <StudyResult>  (
-    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<LogOddsAnalysisResult> OR
+    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<IceesStudyResult> OR @<LogOddsAnalysisResult> OR
     @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult> OR
     @<TextMiningStudyResult>
 )
