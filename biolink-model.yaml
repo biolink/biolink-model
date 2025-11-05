@@ -5834,7 +5834,7 @@ slots:
     range: float
     multivalued: true
     examples:
-      - value: [ 0.6996904681742875, 1.6429124024089072 ]
+      - value: [0.6996904681742875,1.6429124024089072]
 
   total sample size:
     is_a: dataset count
@@ -5938,7 +5938,7 @@ slots:
     exact_mappings:
       - STATO:0000030
     examples:
-    - value: 26.38523077566414
+      - value: 26.38523077566414
 
   chi squared dof:
     is_a: association slot
@@ -5947,7 +5947,7 @@ slots:
        number of values in the final calculation of a statistic that are free to vary
     range: integer
     examples:
-    - value: 1
+      - value: 1
 
   chi squared p:
     is_a: association slot
@@ -5956,7 +5956,7 @@ slots:
        (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
     range: float
     examples:
-    - value: 2.7967079822744063e-07
+      - value: 2.7967079822744063e-07
 
   fisher exact odds ratio:
     is_a: association slot
@@ -5969,7 +5969,7 @@ slots:
           OR < 1 implies Negative association (Group A less likely to have Outcome 1)
     range: float
     examples:
-    - value: 3.226188583240579
+      - value: 3.226188583240579
 
   fisher exact p:
     is_a: association slot
@@ -5981,7 +5981,7 @@ slots:
       are small or expected counts are low.
     range: float
     examples:
-    - value: 2.8581244515361156e-06
+      - value: 2.8581244515361156e-06
 
   z score:
     aliases: ['z-score', 'z-value', 'standard score', 'normal score']
