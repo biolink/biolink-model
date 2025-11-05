@@ -1215,6 +1215,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A member of the the species Homo sapiens.</td>
 </tr>
 <tr>
+<td><a href="IceesStudyResult/">IceesStudyResult</a></td>
+<td>A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.</td>
+</tr>
+<tr>
 <td><a href="IndividualOrganism/">IndividualOrganism</a></td>
 <td>An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576</td>
 </tr>
@@ -1527,10 +1531,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)</td>
 </tr>
 <tr>
-<td><a href="TextMiningResult/">TextMiningResult</a></td>
-<td>A result of text mining.</td>
-</tr>
-<tr>
 <td><a href="TextMiningStudyResult/">TextMiningStudyResult</a></td>
 <td>A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.</td>
 </tr>
@@ -1606,6 +1606,18 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>chapter of a book</td>
 </tr>
 <tr>
+<td><a href="chembl_chirality/">chembl_chirality</a></td>
+<td>Tern indicating the chirality of the chemical entity.</td>
+</tr>
+<tr>
+<td><a href="chembl_drug_warning/">chembl_drug_warning</a></td>
+<td>Text describing warnings for use of chemicals as therapeutics.</td>
+</tr>
+<tr>
+<td><a href="chembl_prodrug/">chembl_prodrug</a></td>
+<td>Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.</td>
+</tr>
+<tr>
 <td><a href="clinical_trial_intervention_boxed_warning/">clinical_trial_intervention_boxed_warning</a></td>
 <td>A boolean flag indicating whether a clinical trial intervention has a boxed warning. A boxed warning is the strongest warning that the FDA requires on a prescription drug label. This property should be populated from DailyMed.</td>
 </tr>
@@ -1652,6 +1664,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="download_url/">download_url</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.</td>
 </tr>
 <tr>
 <td><a href="exact_synonym/">exact_synonym</a></td>
@@ -1752,6 +1768,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="in_taxon_label/">in_taxon_label</a></td>
 <td>The human readable scientific name for the taxon of the entity.</td>
+</tr>
+<tr>
+<td><a href="information_content/">information_content</a></td>
+<td>Information content (IC) value for a term, primarily from Automats.</td>
 </tr>
 <tr>
 <td><a href="ingest_date/">ingest_date</a></td>
@@ -1965,8 +1985,8 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Holds between two entities where the presence or application of one alters the chance that the other will come to be.</td>
 </tr>
 <tr>
-<td><a href="affects_response_to/">affects_response_to</a></td>
-<td>None</td>
+<td><a href="affects_sensitivity_to/">affects_sensitivity_to</a></td>
+<td>holds between two chemical entities or genes or gene products where the action of one affects the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other.</td>
 </tr>
 <tr>
 <td><a href="ameliorates_condition/">ameliorates_condition</a></td>
@@ -1983,10 +2003,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="applied_to_treat/">applied_to_treat</a></td>
 <td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity was actually taken by one or more patients with the intent of treating the condition.</td>
-</tr>
-<tr>
-<td><a href="assesses/">assesses</a></td>
-<td>The effect of a thing on a target was interrogated in some assay. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.</td>
 </tr>
 <tr>
 <td><a href="associated_with/">associated_with</a></td>
@@ -2153,8 +2169,8 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.</td>
 </tr>
 <tr>
-<td><a href="decreases_response_to/">decreases_response_to</a></td>
-<td>holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</td>
+<td><a href="decreases_sensitivity_to/">decreases_sensitivity_to</a></td>
+<td>holds between two chemical entities or genes or gene products where the action or effect of one decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</td>
 </tr>
 <tr>
 <td><a href="derives_from/">derives_from</a></td>
@@ -2509,8 +2525,8 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object.</td>
 </tr>
 <tr>
-<td><a href="increases_response_to/">increases_response_to</a></td>
-<td>holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</td>
+<td><a href="increases_sensitivity_to/">increases_sensitivity_to</a></td>
+<td>holds between two chemical entities or genes or gene products where the action or effect of one increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</td>
 </tr>
 <tr>
 <td><a href="indirectly_physically_interacts_with/">indirectly_physically_interacts_with</a></td>
@@ -2523,10 +2539,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="is_active_ingredient_of/">is_active_ingredient_of</a></td>
 <td>holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component</td>
-</tr>
-<tr>
-<td><a href="is_assessed_by/">is_assessed_by</a></td>
-<td>None</td>
 </tr>
 <tr>
 <td><a href="is_diagnosed_by/">is_diagnosed_by</a></td>
@@ -2789,19 +2801,7 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="response_affected_by/">response_affected_by</a></td>
-<td>holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.</td>
-</tr>
-<tr>
 <td><a href="response_associated_with/">response_associated_with</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="response_decreased_by/">response_decreased_by</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="response_increased_by/">response_increased_by</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -2809,7 +2809,19 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>holds between two entities that are considered equivalent to each other</td>
 </tr>
 <tr>
+<td><a href="sensitivity_affected_by/">sensitivity_affected_by</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="sensitivity_associated_with/">sensitivity_associated_with</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="sensitivity_decreased_by/">sensitivity_decreased_by</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="sensitivity_increased_by/">sensitivity_increased_by</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -2895,6 +2907,14 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="variant_part_of/">variant_part_of</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="was_tested_for_effect_of/">was_tested_for_effect_of</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="was_tested_for_effect_on/">was_tested_for_effect_on</a></td>
+<td>Reports that the subject was interrogated in an experiment to determine how it may affect the object. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.</td>
 </tr>
 <tr>
 <td><a href="xenologous_to/">xenologous_to</a></td>
@@ -3095,6 +3115,18 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.</td>
 </tr>
 <tr>
+<td><a href="BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td>An association between a biological process or activity and an anatomical entity.</td>
+</tr>
+<tr>
+<td><a href="BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td>Classification relationship between biological processes or activities (e.g. coupling of two molecular activities;  assignment of molecular activity to a pathway; implicating a pathway in a biological process; etc.)</td>
+</tr>
+<tr>
+<td><a href="BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td>Relationship between a biological processor activity (e.g. molecular activity, biological process or pathway) to gene or gene product or gene family.</td>
+</tr>
+<tr>
 <td><a href="CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
 <td>An association between a Case (patient) and a Disease</td>
 </tr>
@@ -3121,6 +3153,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td>An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.</td>
+</tr>
+<tr>
+<td><a href="ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 </tr>
 <tr>
 <td><a href="ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
@@ -3231,8 +3267,20 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
+<td><a href="GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td>Relationship between a gene family and a contained gene or gene product or gene family.</td>
+</tr>
+<tr>
 <td><a href="GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td>An association between a gene or gene product or gene family and an anatomical entity.</td>
+</tr>
+<tr>
+<td><a href="GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td>Relationship between a gene or gene product or gene family to a specified biological process or activity (e.g. molecular activity, biological process or pathway).</td>
 </tr>
 <tr>
 <td><a href="GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
@@ -3522,8 +3570,16 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')</td>
 </tr>
 <tr>
+<td><a href="chi_squared_dof/">chi_squared_dof</a></td>
+<td>Degrees of freedom (dof) in a chi-squared test referring to the number of values in the final calculation of a statistic that are free to vary</td>
+</tr>
+<tr>
+<td><a href="chi_squared_p/">chi_squared_p</a></td>
+<td>The chi-square p-value tells you the probability that the observed differences (or associations) in your data occurred by random chance, assuming the null hypothesis is true.</td>
+</tr>
+<tr>
 <td><a href="chi_squared_statistic/">chi_squared_statistic</a></td>
-<td>represents the chi-squared statistic computed from observations</td>
+<td>The chi-squared statistic measures how much observed data deviate from expected values under the null hypothesis.</td>
 </tr>
 <tr>
 <td><a href="clinical_approval_status/">clinical_approval_status</a></td>
@@ -3594,6 +3650,26 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td></td>
 </tr>
 <tr>
+<td><a href="fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a></td>
+<td>The Fisher Exact Test is used to determine whether there is a non-random association between two categorical variables in a 2×2 contingency table, especially when sample sizes are small. The odds ratio (OR) quantifies the strength of that association.</td>
+</tr>
+<tr>
+<td>OR = 1 implies No association</td>
+<td></td>
+</tr>
+<tr>
+<td>OR &gt; 1 implies Positive association (Group A more likely to have Outcome 1)</td>
+<td></td>
+</tr>
+<tr>
+<td>OR &lt; 1 implies Negative association (Group A less likely to have Outcome 1)</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="fisher_exact_p/">fisher_exact_p</a></td>
+<td>The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that the null hypothesis of independence is true. It's most commonly used for 2×2 contingency tables, especially when sample sizes are small or expected counts are low.</td>
+</tr>
+<tr>
 <td><a href="form_or_variant_qualifier/">form_or_variant_qualifier</a></td>
 <td>A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.</td>
 </tr>
@@ -3651,11 +3727,11 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="log_odds_ratio/">log_odds_ratio</a></td>
-<td>The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the odds of event Y occurring in a non-exposed group has</td>
+<td>The natural logarithm of the odds ratio (OR), or the ratio of the odds of an event Y occurring in an exposed group versus the odds of an event Y occurring in a non-exposed group.</td>
 </tr>
 <tr>
 <td><a href="log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a></td>
-<td>The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.</td>
+<td>The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.</td>
 </tr>
 <tr>
 <td><a href="logical_interpretation/">logical_interpretation</a></td>

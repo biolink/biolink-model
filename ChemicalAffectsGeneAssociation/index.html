@@ -298,7 +298,7 @@
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalAffectsGeneAssociation
-      Association &lt;|-- ChemicalAffectsGeneAssociation
+      ChemicalAffectsBiologicalEntityAssociation &lt;|-- ChemicalAffectsGeneAssociation
 
       ChemicalAffectsGeneAssociation : adjusted_p_value
 
@@ -336,6 +336,10 @@
 
           ChemicalAffectsGeneAssociation --|&gt; Study : has_supporting_studies
 
+      ChemicalAffectsGeneAssociation : has_supporting_study_result
+
+          ChemicalAffectsGeneAssociation --|&gt; StudyResult : has_supporting_study_result
+
       ChemicalAffectsGeneAssociation : id
 
       ChemicalAffectsGeneAssociation : iri
@@ -352,7 +356,7 @@
 
       ChemicalAffectsGeneAssociation : object
 
-          ChemicalAffectsGeneAssociation --|&gt; GeneOrGeneProduct : object
+          ChemicalAffectsGeneAssociation --|&gt; BiologicalEntity : object
 
       ChemicalAffectsGeneAssociation : object_aspect_qualifier
 
@@ -478,7 +482,10 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
+<li><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a><ul>
 <li><strong>ChemicalAffectsGeneAssociation</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -498,91 +505,91 @@
 <tr>
 <td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></br></td>
 <td>0..1 <br/> <a href="../ChemicalOrGeneOrGeneProductFormOrVariantEnum/">ChemicalOrGeneOrGeneProductFormOrVariantEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>mutation, late stage, severe, transplant, chemical analog</td>
 </tr>
 <tr>
 <td><a href="../subject_part_qualifier/">subject_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalPartQualifierEnum/">GeneOrGeneProductOrChemicalPartQualifierEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../subject_derivative_qualifier/">subject_derivative_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../ChemicalEntityDerivativeEnum/">ChemicalEntityDerivativeEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>metabolite</td>
 </tr>
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../subject_context_qualifier/">subject_context_qualifier</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object_form_or_variant_qualifier/">object_form_or_variant_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../ChemicalOrGeneOrGeneProductFormOrVariantEnum/">ChemicalOrGeneOrGeneProductFormOrVariantEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>mutation, late stage, severe, transplant, chemical analog</td>
 </tr>
 <tr>
 <td><a href="../object_part_qualifier/">object_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalPartQualifierEnum/">GeneOrGeneProductOrChemicalPartQualifierEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../object_context_qualifier/">object_context_qualifier</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker') </i></td>
 <td>0..1 <br/> <a href="../CausalMechanismQualifierEnum/">CausalMechanismQualifierEnum</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>blood, cerebral cortext</td>
 </tr>
 <tr>
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
 <td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td>direct</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>zebrafish, human</td>
 </tr>
 <tr>
@@ -599,7 +606,7 @@
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
-<td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
+<td>1 <br/> <a href="../BiologicalEntity/">BiologicalEntity</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
@@ -778,6 +785,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../update_date/">update_date</a>: <br/> <i> date on which an entity was updated. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -845,78 +858,7 @@
 description: Describes an effect that a chemical has on a gene or gene product (e.g.
   an impact of on its abundance, activity,localization, processing, expression, etc.)
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: association
-slots:
-- subject form or variant qualifier
-- subject part qualifier
-- subject derivative qualifier
-- subject aspect qualifier
-- subject context qualifier
-- subject direction qualifier
-- object form or variant qualifier
-- object part qualifier
-- object aspect qualifier
-- object context qualifier
-- object direction qualifier
-- causal mechanism qualifier
-- anatomical context qualifier
-- qualified predicate
-- species context qualifier
-slot_usage:
-  subject:
-    name: subject
-    range: chemical entity
-  subject form or variant qualifier:
-    name: subject form or variant qualifier
-    range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
-  subject part qualifier:
-    name: subject part qualifier
-    range: GeneOrGeneProductOrChemicalPartQualifierEnum
-  subject derivative qualifier:
-    name: subject derivative qualifier
-    range: ChemicalEntityDerivativeEnum
-  subject aspect qualifier:
-    name: subject aspect qualifier
-    range: GeneOrGeneProductOrChemicalEntityAspectEnum
-  subject context qualifier:
-    name: subject context qualifier
-    range: anatomical entity
-  subject direction qualifier:
-    name: subject direction qualifier
-    range: DirectionQualifierEnum
-  predicate:
-    name: predicate
-    subproperty_of: affects
-  qualified predicate:
-    name: qualified predicate
-    subproperty_of: causes
-  object:
-    name: object
-    range: gene or gene product
-  object form or variant qualifier:
-    name: object form or variant qualifier
-    range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
-  object part qualifier:
-    name: object part qualifier
-    range: GeneOrGeneProductOrChemicalPartQualifierEnum
-  object aspect qualifier:
-    name: object aspect qualifier
-    range: GeneOrGeneProductOrChemicalEntityAspectEnum
-  object context qualifier:
-    name: object context qualifier
-    range: anatomical entity
-  object direction qualifier:
-    name: object direction qualifier
-    range: DirectionQualifierEnum
-  causal mechanism qualifier:
-    name: causal mechanism qualifier
-    range: CausalMechanismQualifierEnum
-  anatomical context qualifier:
-    name: anatomical context qualifier
-    range: anatomical entity
-  species context qualifier:
-    name: species context qualifier
-    range: organism taxon
+is_a: chemical affects biological entity association
 
 </code></pre>
 </details>

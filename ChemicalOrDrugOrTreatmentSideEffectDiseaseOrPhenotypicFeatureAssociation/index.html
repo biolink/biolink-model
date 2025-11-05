@@ -298,7 +298,6 @@
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
       ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation &lt;|-- ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
 
@@ -341,6 +340,10 @@
       ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : has_supporting_studies
 
           ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation --|&gt; Study : has_supporting_studies
+
+      ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : has_supporting_study_result
+
+          ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation --|&gt; StudyResult : has_supporting_study_result
 
       ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : id
 
@@ -416,7 +419,7 @@
 
       ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : subject
 
-          ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation --|&gt; ChemicalEntityOrGeneOrGeneProduct : subject
+          ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation --|&gt; NamedThing : subject
 
       ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : subject_aspect_qualifier
 
@@ -452,8 +455,8 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]<ul>
-<li><strong>ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</strong> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
+<li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]<ul>
+<li><strong>ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</strong> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
 </ul>
 </li>
 </ul>
@@ -473,21 +476,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> the chemical entity or entity that is an interactor </i></br></td>
-<td>1 <br/> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
+<td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease or phenotype </i></td>
 <td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td>MONDO:0017314, MP:0013229</td>
 </tr>
 <tr>
@@ -725,6 +728,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../update_date/">update_date</a>: <br/> <i> date on which an entity was updated. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -801,7 +810,6 @@ description: This association defines a relationship between a chemical or treat
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: chemical or drug or treatment to disease or phenotypic feature association
 mixins:
-- chemical to entity association mixin
 - entity to disease or phenotypic feature association mixin
 slot_usage:
   predicate:

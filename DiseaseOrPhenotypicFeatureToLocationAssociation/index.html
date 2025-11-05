@@ -329,6 +329,10 @@
 
           DiseaseOrPhenotypicFeatureToLocationAssociation --|&gt; Study : has_supporting_studies
 
+      DiseaseOrPhenotypicFeatureToLocationAssociation : has_supporting_study_result
+
+          DiseaseOrPhenotypicFeatureToLocationAssociation --|&gt; StudyResult : has_supporting_study_result
+
       DiseaseOrPhenotypicFeatureToLocationAssociation : id
 
       DiseaseOrPhenotypicFeatureToLocationAssociation : iri
@@ -441,19 +445,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> disease or phenotype </i></br></td>
 <td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td>MONDO:0017314, MP:0013229</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> anatomical entity in which the disease or feature is found. </i></td>
 <td>1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td>UBERON:0002048</td>
 </tr>
 <tr>
@@ -627,6 +631,12 @@
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

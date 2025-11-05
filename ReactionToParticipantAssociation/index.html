@@ -329,6 +329,10 @@
 
           ReactionToParticipantAssociation --|&gt; Study : has_supporting_studies
 
+      ReactionToParticipantAssociation : has_supporting_study_result
+
+          ReactionToParticipantAssociation --|&gt; StudyResult : has_supporting_study_result
+
       ReactionToParticipantAssociation : id
 
       ReactionToParticipantAssociation : iri
@@ -431,7 +435,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]<ul>
+<li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a><ul>
 <li><strong>ReactionToParticipantAssociation</strong><ul>
 <li><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></li>
 </ul>
@@ -473,21 +477,21 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../subject/">subject</a>: <br/> <i> the chemical entity or entity that is an interactor </i></td>
+<td><a href="../subject/">subject</a>: <br/> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../MolecularEntity/">MolecularEntity</a></td>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the chemical element that is the target of the statement </i></td>
 <td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -661,6 +665,12 @@
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

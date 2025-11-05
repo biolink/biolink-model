@@ -332,6 +332,8 @@
 
       NamedThing : description
 
+      NamedThing : equivalent_identifiers
+
       NamedThing : full_name
 
       NamedThing : has_attribute
@@ -339,6 +341,8 @@
           NamedThing --|&gt; Attribute : has_attribute
 
       NamedThing : id
+
+      NamedThing : information_content
 
       NamedThing : iri
 
@@ -411,6 +415,18 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -542,6 +558,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Attribute/">Attribute</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Attribute/">Attribute</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ChemicalRole/">ChemicalRole</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -568,6 +596,18 @@
 <tr>
 <td><a href="../ChemicalRole/">ChemicalRole</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalRole/">ChemicalRole</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalRole/">ChemicalRole</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -602,6 +642,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../BiologicalSex/">BiologicalSex</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalSex/">BiologicalSex</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PhenotypicSex/">PhenotypicSex</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -632,6 +684,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PhenotypicSex/">PhenotypicSex</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicSex/">PhenotypicSex</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../GenotypicSex/">GenotypicSex</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -662,6 +726,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GenotypicSex/">GenotypicSex</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypicSex/">GenotypicSex</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../SeverityValue/">SeverityValue</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -688,6 +764,18 @@
 <tr>
 <td><a href="../SeverityValue/">SeverityValue</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SeverityValue/">SeverityValue</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SeverityValue/">SeverityValue</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -740,6 +828,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="./">NamedThing</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="./">NamedThing</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td><a href="../has_taxonomic_rank/">has_taxonomic_rank</a></td>
 <td>domain</td>
@@ -770,6 +870,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Event/">Event</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -790,6 +902,18 @@
 <tr>
 <td><a href="../Event/">Event</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Event/">Event</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Event/">Event</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -818,6 +942,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../AdministrativeEntity/">AdministrativeEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AdministrativeEntity/">AdministrativeEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -848,6 +984,228 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../creation_date/">creation_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../creation_date/">creation_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../creation_date/">creation_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../creation_date/">creation_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../creation_date/">creation_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -874,6 +1232,60 @@
 <tr>
 <td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../creation_date/">creation_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -902,6 +1314,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../StudyVariable/">StudyVariable</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -928,6 +1352,18 @@
 <tr>
 <td><a href="../StudyVariable/">StudyVariable</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../StudyVariable/">StudyVariable</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../StudyVariable/">StudyVariable</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -962,182 +1398,14 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
-<td><a href="../creation_date/">creation_date</a></td>
+<td><a href="../CommonDataElement/">CommonDataElement</a></td>
+<td><a href="../information_content/">information_content</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
-<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
-<td><a href="../synonym/">synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
-<td><a href="../creation_date/">creation_date</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ObservedExpectedFrequencyAnalysisResult/">ObservedExpectedFrequencyAnalysisResult</a></td>
-<td><a href="../synonym/">synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
-<td><a href="../creation_date/">creation_date</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../RelativeFrequencyAnalysisResult/">RelativeFrequencyAnalysisResult</a></td>
-<td><a href="../synonym/">synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../creation_date/">creation_date</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../synonym/">synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
-<td><a href="../creation_date/">creation_date</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
-<td><a href="../synonym/">synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
-<td><a href="../creation_date/">creation_date</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
-<td><a href="../synonym/">synonym</a></td>
+<td><a href="../CommonDataElement/">CommonDataElement</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1172,6 +1440,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Agent/">Agent</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Agent/">Agent</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -1198,6 +1478,18 @@
 <tr>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1232,6 +1524,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../DatasetDistribution/">DatasetDistribution</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -1258,6 +1562,18 @@
 <tr>
 <td><a href="../DatasetDistribution/">DatasetDistribution</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DatasetDistribution/">DatasetDistribution</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DatasetDistribution/">DatasetDistribution</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1292,6 +1608,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../DatasetVersion/">DatasetVersion</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DatasetVersion/">DatasetVersion</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../DatasetSummary/">DatasetSummary</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -1318,6 +1646,18 @@
 <tr>
 <td><a href="../DatasetSummary/">DatasetSummary</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DatasetSummary/">DatasetSummary</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DatasetSummary/">DatasetSummary</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1352,6 +1692,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ConfidenceLevel/">ConfidenceLevel</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ConfidenceLevel/">ConfidenceLevel</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../EvidenceType/">EvidenceType</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
@@ -1378,6 +1730,18 @@
 <tr>
 <td><a href="../EvidenceType/">EvidenceType</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EvidenceType/">EvidenceType</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EvidenceType/">EvidenceType</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1412,6 +1776,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Publication/">Publication</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Publication/">Publication</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Book/">Book</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1438,6 +1814,18 @@
 <tr>
 <td><a href="../Book/">Book</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Book/">Book</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Book/">Book</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1472,6 +1860,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../BookChapter/">BookChapter</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BookChapter/">BookChapter</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Serial/">Serial</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1498,6 +1898,18 @@
 <tr>
 <td><a href="../Serial/">Serial</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Serial/">Serial</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Serial/">Serial</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1532,6 +1944,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Article/">Article</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Article/">Article</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../JournalArticle/">JournalArticle</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1558,6 +1982,18 @@
 <tr>
 <td><a href="../JournalArticle/">JournalArticle</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../JournalArticle/">JournalArticle</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../JournalArticle/">JournalArticle</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1592,6 +2028,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Patent/">Patent</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Patent/">Patent</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../WebPage/">WebPage</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1622,6 +2070,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../WebPage/">WebPage</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../WebPage/">WebPage</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PreprintPublication/">PreprintPublication</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1652,6 +2112,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PreprintPublication/">PreprintPublication</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PreprintPublication/">PreprintPublication</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../DrugLabel/">DrugLabel</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1682,6 +2154,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../DrugLabel/">DrugLabel</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugLabel/">DrugLabel</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../RetrievalSource/">RetrievalSource</a></td>
 <td><a href="../xref/">xref</a></td>
 <td>domain</td>
@@ -1708,6 +2192,18 @@
 <tr>
 <td><a href="../RetrievalSource/">RetrievalSource</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RetrievalSource/">RetrievalSource</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RetrievalSource/">RetrievalSource</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1736,6 +2232,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PhysicalEntity/">PhysicalEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhysicalEntity/">PhysicalEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Activity/">Activity</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -1756,6 +2264,18 @@
 <tr>
 <td><a href="../Activity/">Activity</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Activity/">Activity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Activity/">Activity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1784,6 +2304,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Procedure/">Procedure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Procedure/">Procedure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Phenomenon/">Phenomenon</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -1804,6 +2336,18 @@
 <tr>
 <td><a href="../Phenomenon/">Phenomenon</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Phenomenon/">Phenomenon</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Phenomenon/">Phenomenon</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1832,6 +2376,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Device/">Device</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Device/">Device</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../DiagnosticAid/">DiagnosticAid</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -1852,6 +2408,18 @@
 <tr>
 <td><a href="../DiagnosticAid/">DiagnosticAid</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiagnosticAid/">DiagnosticAid</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiagnosticAid/">DiagnosticAid</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1880,6 +2448,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../StudyPopulation/">StudyPopulation</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../StudyPopulation/">StudyPopulation</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../MaterialSample/">MaterialSample</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -1900,6 +2480,18 @@
 <tr>
 <td><a href="../MaterialSample/">MaterialSample</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSample/">MaterialSample</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSample/">MaterialSample</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -1928,6 +2520,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PlanetaryEntity/">PlanetaryEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PlanetaryEntity/">PlanetaryEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../EnvironmentalProcess/">EnvironmentalProcess</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -1952,6 +2556,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../EnvironmentalProcess/">EnvironmentalProcess</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalProcess/">EnvironmentalProcess</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../EnvironmentalFeature/">EnvironmentalFeature</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -1972,6 +2588,18 @@
 <tr>
 <td><a href="../EnvironmentalFeature/">EnvironmentalFeature</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalFeature/">EnvironmentalFeature</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalFeature/">EnvironmentalFeature</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2012,6 +2640,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GeographicLocation/">GeographicLocation</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicLocation/">GeographicLocation</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../GeographicLocationAtTime/">GeographicLocationAtTime</a></td>
 <td><a href="../latitude/">latitude</a></td>
 <td>domain</td>
@@ -2048,6 +2688,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GeographicLocationAtTime/">GeographicLocationAtTime</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicLocationAtTime/">GeographicLocationAtTime</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../BiologicalEntity/">BiologicalEntity</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -2068,6 +2720,18 @@
 <tr>
 <td><a href="../BiologicalEntity/">BiologicalEntity</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalEntity/">BiologicalEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalEntity/">BiologicalEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2132,6 +2796,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../MolecularEntity/">MolecularEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularEntity/">MolecularEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2180,6 +2856,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../SmallMolecule/">SmallMolecule</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2228,6 +2916,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../SmallMolecule/">SmallMolecule</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SmallMolecule/">SmallMolecule</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2272,6 +2972,18 @@
 <tr>
 <td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalMixture/">ChemicalMixture</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2330,6 +3042,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../NucleicAcidEntity/">NucleicAcidEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../NucleicAcidEntity/">NucleicAcidEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../RegulatoryRegion/">RegulatoryRegion</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -2360,6 +3084,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../RegulatoryRegion/">RegulatoryRegion</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RegulatoryRegion/">RegulatoryRegion</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../AccessibleDnaRegion/">AccessibleDnaRegion</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -2390,6 +3126,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../AccessibleDnaRegion/">AccessibleDnaRegion</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AccessibleDnaRegion/">AccessibleDnaRegion</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../TranscriptionFactorBindingSite/">TranscriptionFactorBindingSite</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -2420,6 +3168,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../TranscriptionFactorBindingSite/">TranscriptionFactorBindingSite</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TranscriptionFactorBindingSite/">TranscriptionFactorBindingSite</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../MolecularMixture/">MolecularMixture</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2468,6 +3228,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../MolecularMixture/">MolecularMixture</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularMixture/">MolecularMixture</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2512,6 +3284,18 @@
 <tr>
 <td><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexMolecularMixture/">ComplexMolecularMixture</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2548,6 +3332,18 @@
 <tr>
 <td><a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2576,6 +3372,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../MolecularActivity/">MolecularActivity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivity/">MolecularActivity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../BiologicalProcess/">BiologicalProcess</a></td>
 <td><a href="../has_input/">has_input</a></td>
 <td>range</td>
@@ -2612,6 +3420,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Pathway/">Pathway</a></td>
 <td><a href="../has_input/">has_input</a></td>
 <td>range</td>
@@ -2648,6 +3468,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Pathway/">Pathway</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Pathway/">Pathway</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PhysiologicalProcess/">PhysiologicalProcess</a></td>
 <td><a href="../has_input/">has_input</a></td>
 <td>range</td>
@@ -2684,6 +3516,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PhysiologicalProcess/">PhysiologicalProcess</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhysiologicalProcess/">PhysiologicalProcess</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Behavior/">Behavior</a></td>
 <td><a href="../has_input/">has_input</a></td>
 <td>range</td>
@@ -2720,6 +3564,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Behavior/">Behavior</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Behavior/">Behavior</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ProcessedMaterial/">ProcessedMaterial</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2768,6 +3624,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ProcessedMaterial/">ProcessedMaterial</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProcessedMaterial/">ProcessedMaterial</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Drug/">Drug</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2816,6 +3684,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Drug/">Drug</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Drug/">Drug</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2864,6 +3744,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalFoodContaminant/">EnvironmentalFoodContaminant</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../FoodAdditive/">FoodAdditive</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2912,6 +3804,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../FoodAdditive/">FoodAdditive</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../FoodAdditive/">FoodAdditive</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Food/">Food</a></td>
 <td><a href="../available_from/">available_from</a></td>
 <td>domain</td>
@@ -2956,6 +3860,18 @@
 <tr>
 <td><a href="../Food/">Food</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Food/">Food</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Food/">Food</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2990,6 +3906,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../OrganismAttribute/">OrganismAttribute</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismAttribute/">OrganismAttribute</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PhenotypicQuality/">PhenotypicQuality</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -3020,6 +3948,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PhenotypicQuality/">PhenotypicQuality</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicQuality/">PhenotypicQuality</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../GeneticInheritance/">GeneticInheritance</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3040,6 +3980,18 @@
 <tr>
 <td><a href="../GeneticInheritance/">GeneticInheritance</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneticInheritance/">GeneticInheritance</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneticInheritance/">GeneticInheritance</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3068,6 +4020,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../OrganismalEntity/">OrganismalEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntity/">OrganismalEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Bacterium/">Bacterium</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3088,6 +4052,18 @@
 <tr>
 <td><a href="../Bacterium/">Bacterium</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Bacterium/">Bacterium</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Bacterium/">Bacterium</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3116,6 +4092,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Virus/">Virus</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Virus/">Virus</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../CellularOrganism/">CellularOrganism</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3136,6 +4124,18 @@
 <tr>
 <td><a href="../CellularOrganism/">CellularOrganism</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CellularOrganism/">CellularOrganism</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CellularOrganism/">CellularOrganism</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3164,6 +4164,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Mammal/">Mammal</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Mammal/">Mammal</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Human/">Human</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3184,6 +4196,18 @@
 <tr>
 <td><a href="../Human/">Human</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Human/">Human</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Human/">Human</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3212,6 +4236,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Plant/">Plant</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Plant/">Plant</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Invertebrate/">Invertebrate</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3232,6 +4268,18 @@
 <tr>
 <td><a href="../Invertebrate/">Invertebrate</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Invertebrate/">Invertebrate</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Invertebrate/">Invertebrate</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3260,6 +4308,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Vertebrate/">Vertebrate</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Vertebrate/">Vertebrate</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Fungus/">Fungus</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3280,6 +4340,18 @@
 <tr>
 <td><a href="../Fungus/">Fungus</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Fungus/">Fungus</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Fungus/">Fungus</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3308,6 +4380,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../LifeStage/">LifeStage</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../LifeStage/">LifeStage</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../IndividualOrganism/">IndividualOrganism</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3328,6 +4412,18 @@
 <tr>
 <td><a href="../IndividualOrganism/">IndividualOrganism</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IndividualOrganism/">IndividualOrganism</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IndividualOrganism/">IndividualOrganism</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3356,6 +4452,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PopulationOfIndividualOrganisms/">PopulationOfIndividualOrganisms</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PopulationOfIndividualOrganisms/">PopulationOfIndividualOrganisms</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3376,6 +4484,18 @@
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3404,6 +4524,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Disease/">Disease</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Disease/">Disease</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3424,6 +4556,18 @@
 <tr>
 <td><a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3452,6 +4596,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../BehavioralFeature/">BehavioralFeature</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralFeature/">BehavioralFeature</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3472,6 +4628,18 @@
 <tr>
 <td><a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3500,6 +4668,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../CellularComponent/">CellularComponent</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CellularComponent/">CellularComponent</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Cell/">Cell</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3524,6 +4704,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Cell/">Cell</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Cell/">Cell</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../CellLine/">CellLine</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3548,6 +4740,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../CellLine/">CellLine</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CellLine/">CellLine</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3568,6 +4772,18 @@
 <tr>
 <td><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GrossAnatomicalStructure/">GrossAnatomicalStructure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3608,6 +4824,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Gene/">Gene</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Gene/">Gene</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../GeneProductMixin/">GeneProductMixin</a></td>
 <td><a href="../synonym/">synonym</a></td>
 <td>domain</td>
@@ -3656,6 +4884,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../MacromolecularComplex/">MacromolecularComplex</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularComplex/">MacromolecularComplex</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../NucleosomeModification/">NucleosomeModification</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -3686,6 +4926,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../NucleosomeModification/">NucleosomeModification</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../NucleosomeModification/">NucleosomeModification</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Genome/">Genome</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -3716,6 +4968,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Genome/">Genome</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Genome/">Genome</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Exon/">Exon</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3740,6 +5004,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Exon/">Exon</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Exon/">Exon</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Transcript/">Transcript</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3760,6 +5036,18 @@
 <tr>
 <td><a href="../Transcript/">Transcript</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Transcript/">Transcript</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Transcript/">Transcript</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3794,6 +5082,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../CodingSequence/">CodingSequence</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CodingSequence/">CodingSequence</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Polypeptide/">Polypeptide</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3818,6 +5118,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Polypeptide/">Polypeptide</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Polypeptide/">Polypeptide</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Protein/">Protein</a></td>
 <td><a href="../synonym/">synonym</a></td>
 <td>domain</td>
@@ -3842,6 +5154,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Protein/">Protein</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Protein/">Protein</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ProteinIsoform/">ProteinIsoform</a></td>
 <td><a href="../synonym/">synonym</a></td>
 <td>domain</td>
@@ -3862,6 +5186,18 @@
 <tr>
 <td><a href="../ProteinIsoform/">ProteinIsoform</a></td>
 <td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinIsoform/">ProteinIsoform</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinIsoform/">ProteinIsoform</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3896,6 +5232,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ProteinDomain/">ProteinDomain</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinDomain/">ProteinDomain</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PosttranslationalModification/">PosttranslationalModification</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3916,6 +5264,18 @@
 <tr>
 <td><a href="../PosttranslationalModification/">PosttranslationalModification</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PosttranslationalModification/">PosttranslationalModification</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PosttranslationalModification/">PosttranslationalModification</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3950,6 +5310,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ProteinFamily/">ProteinFamily</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinFamily/">ProteinFamily</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../NucleicAcidSequenceMotif/">NucleicAcidSequenceMotif</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -3970,6 +5342,18 @@
 <tr>
 <td><a href="../NucleicAcidSequenceMotif/">NucleicAcidSequenceMotif</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../NucleicAcidSequenceMotif/">NucleicAcidSequenceMotif</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../NucleicAcidSequenceMotif/">NucleicAcidSequenceMotif</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -3998,6 +5382,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../RNAProduct/">RNAProduct</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RNAProduct/">RNAProduct</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../RNAProductIsoform/">RNAProductIsoform</a></td>
 <td><a href="../synonym/">synonym</a></td>
 <td>domain</td>
@@ -4018,6 +5414,18 @@
 <tr>
 <td><a href="../RNAProductIsoform/">RNAProductIsoform</a></td>
 <td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RNAProductIsoform/">RNAProductIsoform</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../RNAProductIsoform/">RNAProductIsoform</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4046,6 +5454,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../NoncodingRNAProduct/">NoncodingRNAProduct</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../NoncodingRNAProduct/">NoncodingRNAProduct</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../MicroRNA/">MicroRNA</a></td>
 <td><a href="../synonym/">synonym</a></td>
 <td>domain</td>
@@ -4070,6 +5490,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../MicroRNA/">MicroRNA</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MicroRNA/">MicroRNA</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../SiRNA/">SiRNA</a></td>
 <td><a href="../synonym/">synonym</a></td>
 <td>domain</td>
@@ -4090,6 +5522,18 @@
 <tr>
 <td><a href="../SiRNA/">SiRNA</a></td>
 <td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SiRNA/">SiRNA</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SiRNA/">SiRNA</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4130,6 +5574,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GeneFamily/">GeneFamily</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamily/">GeneFamily</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Zygosity/">Zygosity</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4160,6 +5616,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Zygosity/">Zygosity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Zygosity/">Zygosity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Genotype/">Genotype</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -4190,6 +5658,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Genotype/">Genotype</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Genotype/">Genotype</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Haplotype/">Haplotype</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -4216,6 +5696,18 @@
 <tr>
 <td><a href="../Haplotype/">Haplotype</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Haplotype/">Haplotype</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Haplotype/">Haplotype</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4256,6 +5748,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../SequenceVariant/">SequenceVariant</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceVariant/">SequenceVariant</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Snv/">Snv</a></td>
 <td><a href="../has_gene/">has_gene</a></td>
 <td>domain</td>
@@ -4292,6 +5796,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Snv/">Snv</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Snv/">Snv</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ReagentTargetedGene/">ReagentTargetedGene</a></td>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a></td>
 <td>domain</td>
@@ -4322,6 +5838,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ReagentTargetedGene/">ReagentTargetedGene</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ReagentTargetedGene/">ReagentTargetedGene</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ClinicalAttribute/">ClinicalAttribute</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4348,6 +5876,18 @@
 <tr>
 <td><a href="../ClinicalAttribute/">ClinicalAttribute</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalAttribute/">ClinicalAttribute</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalAttribute/">ClinicalAttribute</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4382,6 +5922,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ClinicalMeasurement/">ClinicalMeasurement</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalMeasurement/">ClinicalMeasurement</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ClinicalModifier/">ClinicalModifier</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4412,6 +5964,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ClinicalModifier/">ClinicalModifier</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalModifier/">ClinicalModifier</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ClinicalCourse/">ClinicalCourse</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4442,6 +6006,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ClinicalCourse/">ClinicalCourse</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalCourse/">ClinicalCourse</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Onset/">Onset</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4468,6 +6044,18 @@
 <tr>
 <td><a href="../Onset/">Onset</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Onset/">Onset</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Onset/">Onset</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4492,6 +6080,18 @@
 <tr>
 <td><a href="../ClinicalEntity/">ClinicalEntity</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalEntity/">ClinicalEntity</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalEntity/">ClinicalEntity</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4532,6 +6132,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ClinicalIntervention/">ClinicalIntervention</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -4556,6 +6168,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ClinicalIntervention/">ClinicalIntervention</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalIntervention/">ClinicalIntervention</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ClinicalFinding/">ClinicalFinding</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -4580,6 +6204,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ClinicalFinding/">ClinicalFinding</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalFinding/">ClinicalFinding</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Hospitalization/">Hospitalization</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -4600,6 +6236,18 @@
 <tr>
 <td><a href="../Hospitalization/">Hospitalization</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Hospitalization/">Hospitalization</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Hospitalization/">Hospitalization</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4634,6 +6282,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../SocioeconomicAttribute/">SocioeconomicAttribute</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicAttribute/">SocioeconomicAttribute</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Case/">Case</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -4658,6 +6318,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Case/">Case</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Case/">Case</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../Cohort/">Cohort</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
@@ -4678,6 +6350,18 @@
 <tr>
 <td><a href="../Cohort/">Cohort</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Cohort/">Cohort</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Cohort/">Cohort</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4724,6 +6408,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PathologicalProcess/">PathologicalProcess</a></td>
 <td><a href="../has_input/">has_input</a></td>
 <td>range</td>
@@ -4760,6 +6456,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PathologicalProcess/">PathologicalProcess</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcess/">PathologicalProcess</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4786,6 +6494,18 @@
 <tr>
 <td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4814,6 +6534,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../PathologicalAnatomicalStructure/">PathologicalAnatomicalStructure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalStructure/">PathologicalAnatomicalStructure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4840,6 +6572,18 @@
 <tr>
 <td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4874,6 +6618,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4904,6 +6660,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4934,6 +6702,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../DrugExposure/">DrugExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -4960,6 +6740,18 @@
 <tr>
 <td><a href="../DrugExposure/">DrugExposure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4996,6 +6788,18 @@
 <tr>
 <td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -5042,6 +6846,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../BioticExposure/">BioticExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -5068,6 +6884,18 @@
 <tr>
 <td><a href="../BioticExposure/">BioticExposure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -5102,6 +6930,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -5132,6 +6972,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -5162,6 +7014,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
 <td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>range</td>
@@ -5188,6 +7052,18 @@
 <tr>
 <td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
 <td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../information_content/">information_content</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -5270,6 +7146,30 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
@@ -5325,6 +7225,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>range</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -5349,14 +7255,32 @@
 </tr>
 <tr>
 <td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>range</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>range</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>range</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
@@ -5415,6 +7339,12 @@
 </tr>
 <tr>
 <td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -6464,6 +8394,18 @@
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../update_date/">update_date</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
 <td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>range</td>
@@ -6518,6 +8460,8 @@ slots:
 - xref
 - full name
 - synonym
+- information content
+- equivalent identifiers
 slot_usage:
   category:
     name: category

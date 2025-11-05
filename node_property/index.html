@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: node_property - Biolink Model Documentation</title>
+        <title>Slot: node_property (Abstract) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-node_property" class="md-skip">
+        <a href="#slot-node_property-abstract" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: node_property
+              Slot: node_property (Abstract)
             
           </span>
         </div>
@@ -648,7 +648,7 @@
   
 
 
-<h1 id="slot-node_property"><strong> Slot: node_property </strong></h1>
+<h1 id="slot-node_property-abstract"><strong> Slot: node_property </strong> <span style="color: purple;"><strong><small> (Abstract) </small></strong></span></h1>
 <div class="highlight-box"><strong>Description:</strong><i> A grouping for any property that holds between a node and a value</i><br>
 
 
@@ -733,6 +733,11 @@
 <li><a href="../animal_model_available_from/">animal_model_available_from</a></li>
 <li><a href="../in_taxon_label/">in_taxon_label</a></li>
 <li><a href="../provided_by/">provided_by</a></li>
+<li><a href="../information_content/">information_content</a></li>
+<li><a href="../equivalent_identifiers/">equivalent_identifiers</a></li>
+<li><a href="../chembl_drug_warning/">chembl_drug_warning</a></li>
+<li><a href="../chembl_prodrug/">chembl_prodrug</a></li>
+<li><a href="../chembl_chirality/">chembl_chirality</a></li>
 </ul>
 </li>
 </ul>
@@ -742,6 +747,7 @@
 <pre><code class="language-yaml">name: node property
 description: A grouping for any property that holds between a node and a value
 from_schema: https://w3id.org/biolink/biolink-model
+abstract: true
 domain: named thing
 alias: node_property
 range: string

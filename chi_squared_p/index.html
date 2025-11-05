@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/decreases_response_to/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/chi_squared_p/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: decreases_response_to (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: chi_squared_p - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-decreases_response_to-multivalued" class="md-skip">
+        <a href="#slot-chi_squared_p" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: decreases_response_to (multivalued)
+              Slot: chi_squared_p
             
           </span>
         </div>
@@ -621,9 +621,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
+  <a href="#applicable-classes" class="md-nav__link">
     <span class="md-ellipsis">
-      Annotations
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
     </span>
   </a>
   
@@ -657,75 +666,71 @@
   
 
 
-<h1 id="slot-decreases_response_to-multivalued"><strong> Slot: decreases_response_to </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</i><br>
+<h1 id="slot-chi_squared_p"><strong> Slot: chi_squared_p </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> The chi-square p-value tells you the probability that the observed differences (or associations) in your data occurred by random chance, assuming the null hypothesis is true.</i><br>
 
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a><br>
-<strong>Range:</strong>   <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br></p>
+<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
+<strong>Range:</strong>   <a href="../Float/">Float</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../related_to/">related_to</a><ul>
-<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affects/">affects</a><ul>
-<li><a href="../affects_response_to/">affects_response_to</a><ul>
-<li><strong>decreases_response_to</strong></li>
+<li><a href="../association_slot/">association_slot</a><ul>
+<li><strong>chi_squared_p</strong></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="annotations">Annotations</h2>
+<h2 id="applicable-classes">Applicable Classes</h2>
 <table>
 <thead>
 <tr>
-<th>property</th>
-<th>value</th>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>canonical_predicate</td>
-<td>True</td>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td>A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chi_squared_p</td>
+<td>2.7967079822744063e-07</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: decreases response to
-annotations:
-  canonical_predicate:
-    tag: canonical_predicate
-    value: true
-  opposite_of:
-    tag: opposite_of
-    value: increases response to
-description: holds between two chemical entities where the action or effect of one
-  decreases the susceptibility of a biological entity or system (e.g. an organism,
-  cell, cellular component, macromolecular machine mixin, biological or pathological
-  process) to the other
-in_subset:
-- translator_minimal
+<pre><code class="language-yaml">name: chi squared p
+description: The chi-square p-value tells you the probability that the observed differences
+  (or associations) in your data occurred by random chance, assuming the null hypothesis
+  is true.
+examples:
+- value: '2.7967079822744063e-07'
 from_schema: https://w3id.org/biolink/biolink-model
-exact_mappings:
-- CTD:decreases_response_to
-narrow_mappings:
-- CTD:decreases_response_to_substance
-is_a: affects response to
-domain: chemical entity or gene or gene product
-inherited: true
-alias: decreases_response_to
-range: chemical entity or gene or gene product
-multivalued: true
+is_a: association slot
+domain: association
+alias: chi_squared_p
+domain_of:
+- icees study result
+range: float
 
 </code></pre>
 

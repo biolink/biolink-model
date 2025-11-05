@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/is_assessed_by/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/sensitivity_decreased_by/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: is_assessed_by (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: sensitivity_decreased_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-is_assessed_by-multivalued" class="md-skip">
+        <a href="#slot-sensitivity_decreased_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: is_assessed_by (multivalued)
+              Slot: sensitivity_decreased_by (multivalued)
             
           </span>
         </div>
@@ -648,21 +648,24 @@
   
 
 
-<h1 id="slot-is_assessed_by-multivalued"><strong> Slot: is_assessed_by </strong>  (multivalued)</h1>
+<h1 id="slot-sensitivity_decreased_by-multivalued"><strong> Slot: sensitivity_decreased_by </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
-  <strong>Inverse:</strong> assesses</a></small><br>
+  <strong>Inverse:</strong> decreases sensitivity to</a></small><br>
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
-<strong>Range:</strong>   <a href="../NamedThing/">NamedThing</a> <br></p>
+<p><strong>Domain:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a><br>
+<strong>Range:</strong>   <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><strong>is_assessed_by</strong></li>
+<li><a href="../sensitivity_affected_by/">sensitivity_affected_by</a><ul>
+<li><strong>sensitivity_decreased_by</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -671,14 +674,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: is assessed by
+<pre><code class="language-yaml">name: sensitivity decreased by
+in_subset:
+- translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: related to at instance level
-domain: named thing
+is_a: sensitivity affected by
+domain: chemical entity or gene or gene product
 inherited: true
-alias: is_assessed_by
-inverse: assesses
-range: named thing
+alias: sensitivity_decreased_by
+inverse: decreases sensitivity to
+range: chemical entity or gene or gene product
 multivalued: true
 
 </code></pre>

@@ -335,6 +335,10 @@
 
           CellLineAsAModelOfDiseaseAssociation --|&gt; Study : has_supporting_studies
 
+      CellLineAsAModelOfDiseaseAssociation : has_supporting_study_result
+
+          CellLineAsAModelOfDiseaseAssociation --|&gt; StudyResult : has_supporting_study_result
+
       CellLineAsAModelOfDiseaseAssociation : id
 
       CellLineAsAModelOfDiseaseAssociation : iri
@@ -468,19 +472,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> A cell line derived from an organismal entity with a disease state that is used as a model of that disease. </i></td>
 <td>1 <br/> <a href="../CellLine/">CellLine</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> The relationship to the disease </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td>MONDO:0020066</td>
 </tr>
 <tr>
@@ -678,6 +682,12 @@
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

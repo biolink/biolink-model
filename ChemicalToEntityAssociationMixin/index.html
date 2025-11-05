@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/ChemicalToEntityAssociationMixin/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Class: ChemicalToEntityAssociationMixin - Biolink Model Documentation</title>
+<title>Class: ChemicalToEntityAssociationMixin (DEPRECATED) - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-chemicaltoentityassociationmixin">
+<a class="md-skip" href="#class-chemicaltoentityassociationmixin-deprecated">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ChemicalToEntityAssociationMixin
+              Class: ChemicalToEntityAssociationMixin (DEPRECATED)
             
           </span>
 </div>
@@ -299,22 +299,13 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-chemicaltoentityassociationmixin"><strong>  Class: ChemicalToEntityAssociationMixin </strong></h1>
+<h1 id="class-chemicaltoentityassociationmixin-deprecated"><strong>  Class: ChemicalToEntityAssociationMixin </strong> <span style="color: red;"><strong> (DEPRECATED) </strong></span></h1>
 <div class="highlight-box">
 <strong>Description:</strong><i> An interaction between a chemical entity and another entity</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalToEntityAssociationMixin
       ChemicalEntityToEntityAssociationMixin &lt;|-- ChemicalToEntityAssociationMixin
-
-
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalToChemicalAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalToDiseaseOrPhenotypicFeatureAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalToPathwayAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalGeneInteractionAssociation
-
 
       ChemicalToEntityAssociationMixin : object
 
@@ -376,28 +367,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
-<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
-</tr>
-<tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td>An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.</td>
-</tr>
-<tr>
-<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td>This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.</td>
-</tr>
-<tr>
-<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td>This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.</td>
-</tr>
-<tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
-<td>An interaction between a chemical entity and a biological process or pathway.</td>
-</tr>
-<tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td>describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -405,6 +376,7 @@
 <details open="">
 <pre><code class="language-yaml">name: chemical to entity association mixin
 description: An interaction between a chemical entity and another entity
+deprecated: 'True'
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: chemical entity to entity association mixin
 mixin: true

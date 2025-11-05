@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/response_affected_by/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/sensitivity_affected_by/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: response_affected_by (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: sensitivity_affected_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-response_affected_by-multivalued" class="md-skip">
+        <a href="#slot-sensitivity_affected_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: response_affected_by (multivalued)
+              Slot: sensitivity_affected_by (multivalued)
             
           </span>
         </div>
@@ -648,10 +648,10 @@
   
 
 
-<h1 id="slot-response_affected_by-multivalued"><strong> Slot: response_affected_by </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.</i><br>
+<h1 id="slot-sensitivity_affected_by-multivalued"><strong> Slot: sensitivity_affected_by </strong>  (multivalued)</h1>
+<div class="highlight-box">
 
-  <strong>Inverse:</strong> affects response to</a></small><br>
+  <strong>Inverse:</strong> affects sensitivity to</a></small><br>
 <br>
 
 </div>
@@ -662,12 +662,8 @@
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affected_by/">affected_by</a><ul>
-<li><strong>response_affected_by</strong><ul>
-<li><a href="../response_increased_by/">response_increased_by</a></li>
-<li><a href="../response_decreased_by/">response_decreased_by</a></li>
-</ul>
-</li>
+<li><strong>sensitivity_affected_by</strong><ul>
+<li><a href="../sensitivity_decreased_by/">sensitivity_decreased_by</a></li>
 </ul>
 </li>
 </ul>
@@ -678,19 +674,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: response affected by
-description: holds between two chemical entities where the susceptibility of a biological
-  entity or system (e.g. an organism, cell, cellular component, macromolecular machine
-  mixin, biological or pathological process) of one is affected by the action of the
-  other.
+<pre><code class="language-yaml">name: sensitivity affected by
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: affected by
+is_a: related to at instance level
 domain: chemical entity or gene or gene product
 inherited: true
-alias: response_affected_by
-inverse: affects response to
+alias: sensitivity_affected_by
+inverse: affects sensitivity to
 range: chemical entity or gene or gene product
 multivalued: true
 

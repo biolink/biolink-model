@@ -317,6 +317,8 @@
 
       Study : description
 
+      Study : equivalent_identifiers
+
       Study : full_name
 
       Study : has_attribute
@@ -324,6 +326,8 @@
           Study --|&gt; Attribute : has_attribute
 
       Study : id
+
+      Study : information_content
 
       Study : iri
 
@@ -387,6 +391,18 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -512,6 +528,30 @@
 <td><a href="./">Study</a></td>
 </tr>
 <tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
 <td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>range</td>
@@ -615,6 +655,12 @@
 </tr>
 <tr>
 <td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>range</td>
 <td><a href="./">Study</a></td>
@@ -987,6 +1033,18 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>range</td>
 <td><a href="./">Study</a></td>

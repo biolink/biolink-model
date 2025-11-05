@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/affects_response_to/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/increases_sensitivity_to/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: affects_response_to (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: increases_sensitivity_to (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-affects_response_to-multivalued" class="md-skip">
+        <a href="#slot-increases_sensitivity_to-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: affects_response_to (multivalued)
+              Slot: increases_sensitivity_to (multivalued)
             
           </span>
         </div>
@@ -657,19 +657,22 @@
   
 
 
-<h1 id="slot-affects_response_to-multivalued"><strong> Slot: affects_response_to </strong>  (multivalued)</h1>
+<h1 id="slot-increases_sensitivity_to-multivalued"><strong> Slot: increases_sensitivity_to </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> holds between two chemical entities or genes or gene products where the action or effect of one increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</i><br>
+
+
+<br>
+
+</div>
+
 <p><strong>Domain:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a><br>
 <strong>Range:</strong>   <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affects/">affects</a><ul>
-<li><strong>affects_response_to</strong><ul>
-<li><a href="../increases_response_to/">increases_response_to</a></li>
-<li><a href="../decreases_response_to/">decreases_response_to</a></li>
-</ul>
-</li>
+<li><a href="../affects_sensitivity_to/">affects_sensitivity_to</a><ul>
+<li><strong>increases_sensitivity_to</strong></li>
 </ul>
 </li>
 </ul>
@@ -695,20 +698,27 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: affects response to
+<pre><code class="language-yaml">name: increases sensitivity to
 annotations:
   canonical_predicate:
     tag: canonical_predicate
     value: true
+  opposite_of:
+    tag: opposite_of
+    value: decreases sensitivity to
+description: holds between two chemical entities or genes or gene products where the
+  action or effect of one increases the susceptibility/sensitivity of a biological
+  entity or system (e.g. an organism, cell, cellular component, macromolecular machine
+  mixin, biological or pathological process) to the other
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
 exact_mappings:
-- CTD:affects_response_to
-is_a: affects
+- CTD:increases_response_to
+is_a: affects sensitivity to
 domain: chemical entity or gene or gene product
 inherited: true
-alias: affects_response_to
+alias: increases_sensitivity_to
 range: chemical entity or gene or gene product
 multivalued: true
 

@@ -298,7 +298,6 @@
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalToPathwayAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalToPathwayAssociation
       Association &lt;|-- ChemicalToPathwayAssociation
 
       ChemicalToPathwayAssociation : adjusted_p_value
@@ -328,6 +327,10 @@
       ChemicalToPathwayAssociation : has_supporting_studies
 
           ChemicalToPathwayAssociation --|&gt; Study : has_supporting_studies
+
+      ChemicalToPathwayAssociation : has_supporting_study_result
+
+          ChemicalToPathwayAssociation --|&gt; StudyResult : has_supporting_study_result
 
       ChemicalToPathwayAssociation : id
 
@@ -421,7 +424,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><strong>ChemicalToPathwayAssociation</strong> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]</li>
+<li><strong>ChemicalToPathwayAssociation</strong></li>
 </ul>
 </li>
 </ul>
@@ -441,19 +444,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> the chemical entity that is affecting the pathway </i></br></td>
 <td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the pathway that is affected by the chemical </i></td>
 <td>1 <br/> <a href="../Pathway/">Pathway</a></td>
-<td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a>, <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -631,6 +634,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../update_date/">update_date</a>: <br/> <i> date on which an entity was updated. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -701,8 +710,6 @@ from_schema: https://w3id.org/biolink/biolink-model
 exact_mappings:
 - SIO:001250
 is_a: association
-mixins:
-- chemical to entity association mixin
 slot_usage:
   subject:
     name: subject

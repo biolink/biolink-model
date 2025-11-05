@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://biolink.github.io/biolink-model/BiologicalProcessOrActivityToAnatomicalEntityAssociation/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
+<title>Class: BiologicalProcessOrActivityToAnatomicalEntityAssociation - Biolink Model Documentation</title>
+<link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../style.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-J23SCD6JB8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-J23SCD6JB8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-J23SCD6JB8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="black" data-md-color-scheme="black" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-biologicalprocessoractivitytoanatomicalentityassociation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Biolink Model Documentation" class="md-header__button md-logo" data-md-component="logo" href=".." title="Biolink Model Documentation">
+<img alt="logo" src="../images/biolink-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Biolink Model Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: BiologicalProcessOrActivityToAnatomicalEntityAssociation
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/biolink/biolink-model" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Biolink Model Documentation" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Biolink Model Documentation">
+<img alt="logo" src="../images/biolink-logo.png"/>
+</a>
+    Biolink Model Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/biolink/biolink-model" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-modeling-language/">
+<span class="md-ellipsis">
+    Using the LinkML Modeling Language
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../association-examples-with-qualifiers/">
+<span class="md-ellipsis">
+    Associations with Qualifiers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reading-a-qualifier-based-statement/">
+<span class="md-ellipsis">
+    Interpreting a Fully Qualified Edge
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../curating-the-model/">
+<span class="md-ellipsis">
+    Curating Biolink
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maintaining-the-model/">
+<span class="md-ellipsis">
+    Maintaining Biolink
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../working-with-the-model/">
+<span class="md-ellipsis">
+    Working with Biolink
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://biolink.github.io/information-resource-registry">
+<span class="md-ellipsis">
+    Infores Identifier Registry
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Visualizations
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Visualizations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../categories.html">
+<span class="md-ellipsis">
+    Classes (categories)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../predicates.html">
+<span class="md-ellipsis">
+    Predicates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../qualifiers.html">
+<span class="md-ellipsis">
+    Qualifiers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../associations.html">
+<span class="md-ellipsis">
+    Associations
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aspects.html">
+<span class="md-ellipsis">
+    Aspects
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faq/">
+<span class="md-ellipsis">
+    FAQ
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+<span class="md-ellipsis">
+      Inheritance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+<span class="md-ellipsis">
+      Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+<span class="md-ellipsis">
+      LinkML Source
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-biologicalprocessoractivitytoanatomicalentityassociation"><strong>  Class: BiologicalProcessOrActivityToAnatomicalEntityAssociation </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An association between a biological process or activity and an anatomical entity.</i><br/>
+</div>
+<div class="mermaid"> classDiagram
+    class BiologicalProcessOrActivityToAnatomicalEntityAssociation
+      Association &lt;|-- BiologicalProcessOrActivityToAnatomicalEntityAssociation
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : adjusted_p_value
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : agent_type
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; AgentTypeEnum : agent_type
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : aggregator_knowledge_source
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : category
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : deprecated
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : description
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : has_attribute
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; Attribute : has_attribute
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : has_confidence_score
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : has_evidence
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; EvidenceType : has_evidence
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : has_supporting_studies
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; Study : has_supporting_studies
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : has_supporting_study_result
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; StudyResult : has_supporting_study_result
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : id
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : iri
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : knowledge_level
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : knowledge_source
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : name
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : negated
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : object
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; AnatomicalEntity : object
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : object_category
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; OntologyClass : object_category
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : object_category_closure
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; OntologyClass : object_category_closure
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : object_closure
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : object_label_closure
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : object_namespace
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : original_object
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : original_predicate
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : original_subject
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : p_value
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : predicate
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : primary_knowledge_source
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : publications
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; Publication : publications
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : qualifier
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : qualifiers
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; OntologyClass : qualifiers
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : retrieval_source_ids
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; RetrievalSource : retrieval_source_ids
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : sources
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; RetrievalSource : sources
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : subject
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; BiologicalProcessOrActivity : subject
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : subject_category
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; OntologyClass : subject_category
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : subject_category_closure
+
+          BiologicalProcessOrActivityToAnatomicalEntityAssociation --|&gt; OntologyClass : subject_category_closure
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : subject_closure
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : subject_label_closure
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : subject_namespace
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : timepoint
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : type
+
+      BiologicalProcessOrActivityToAnatomicalEntityAssociation : update_date
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../Entity/">Entity</a><ul>
+<li><a href="../Association/">Association</a><ul>
+<li><strong>BiologicalProcessOrActivityToAnatomicalEntityAssociation</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Inheritance</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
+<td>1 <br/> <a href="../BiologicalProcessOrActivity/">BiologicalProcessOrActivity</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
+<td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td>1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../qualifier/">qualifier</a>: <br/> <i> grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../qualifiers/">qualifiers</a>: <br/> <i> connects an association to qualifiers that modify or qualify the meaning of that association </i></td>
+<td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../publications/">publications</a>: <br/> <i> One or more publications that report the statement expressed in an Association, or provide information used as evidence supporting this statement. </i></td>
+<td>* <br/> <a href="../Publication/">Publication</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../sources/">sources</a>: <br/> <i> A set of RetrievalSources, which traces where the statement expressed in an Association came from. For example, the provenance of a Gene-Chemical Edge might be traced through the Translator Resource that provided it (e.g. MolePro) to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to the resource that originally created/curated it (e.g. ClinicalTrials.org). </i></td>
+<td>* <br/> <a href="../RetrievalSource/">RetrievalSource</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_evidence/">has_evidence</a>: <br/> <i> connects an association to an instance of supporting evidence </i></td>
+<td>* <br/> <a href="../EvidenceType/">EvidenceType</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../knowledge_source/">knowledge_source</a>: <br/> <i> An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a>: <br/> <i> The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a>: <br/> <i> An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../knowledge_level/">knowledge_level</a>: <br/> <i> Describes the level of knowledge expressed in a statement, based on the reasoning or analysis methods used to generate the statement, or the scope or specificity of what the statement expresses to be true. </i></td>
+<td>1 <br/> <a href="../KnowledgeLevelEnum/">KnowledgeLevelEnum</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>knowledge_assertion, prediction, statistical_association</td>
+</tr>
+<tr>
+<td><a href="../agent_type/">agent_type</a>: <br/> <i> Describes the high-level category of agent who originally generated a statement of knowledge or other type of information. </i></td>
+<td>1 <br/> <a href="../AgentTypeEnum/">AgentTypeEnum</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>manual_agent, automated_agent, computational_model, text_mining_agent</td>
+</tr>
+<tr>
+<td><a href="../timepoint/">timepoint</a>: <br/> <i> a point in time </i></td>
+<td>0..1 <br/> <a href="../TimeType/">TimeType</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../original_subject/">original_subject</a>: <br/> <i> used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../original_predicate/">original_predicate</a>: <br/> <i> used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_category/">subject_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>biolink:Gene</td>
+</tr>
+<tr>
+<td><a href="../object_category/">object_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>biolink:Disease</td>
+</tr>
+<tr>
+<td><a href="../subject_closure/">subject_closure</a>: <br/> <i> Used to hold the subject closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_closure/">object_closure</a>: <br/> <i> Used to hold the object closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>['MONDO:0000167', 'MONDO:0005395']</td>
+</tr>
+<tr>
+<td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>['biolink:Gene", "biolink:NamedThing']</td>
+</tr>
+<tr>
+<td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>['biolink:Disease", "biolink:NamedThing']</td>
+</tr>
+<tr>
+<td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>NCBIGene</td>
+</tr>
+<tr>
+<td><a href="../object_namespace/">object_namespace</a>: <br/> <i> Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>MONDO</td>
+</tr>
+<tr>
+<td><a href="../subject_label_closure/">subject_label_closure</a>: <br/> <i> Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>['BRACA1']</td>
+</tr>
+<tr>
+<td><a href="../object_label_closure/">object_label_closure</a>: <br/> <i> Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>breast cancer, cancer</td>
+</tr>
+<tr>
+<td><a href="../retrieval_source_ids/">retrieval_source_ids</a>: <br/> <i> A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge. </i></td>
+<td>* <br/> <a href="../RetrievalSource/">RetrievalSource</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../p_value/">p_value</a>: <br/> <i> A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a>: <br/> <i> The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P&lt;. 05), unless P&lt;. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
+<td>* <br/> <a href="../Study/">Study</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../update_date/">update_date</a>: <br/> <i> date on which an entity was updated. This can be applied to nodes or edges </i></td>
+<td>0..1 <br/> <a href="../Date/">Date</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
+<td>0..1 <br/> <a href="../IriType/">IriType</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../type/">type</a>: <br/> <i> rdf:type of biolink:Association should be fixed at rdf:Statement </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
+<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
+<td>0..1 <br/> <a href="../NarrativeText/">NarrativeText</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
+<td>* <br/> <a href="../Attribute/">Attribute</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../deprecated/">deprecated</a>: <br/> <i> A boolean flag indicating that an entity is no longer considered current or valid. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<details open="">
+<pre><code class="language-yaml">name: biological process or activity to anatomical entity association
+description: An association between a biological process or activity and an anatomical
+  entity.
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: association
+slot_usage:
+  subject:
+    name: subject
+    range: biological process or activity
+  object:
+    name: object
+    range: anatomical entity
+defining_slots:
+- subject
+- object
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

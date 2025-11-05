@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: log_odds_ratio_95_ci - Biolink Model Documentation</title>
+        <title>Slot: log_odds_ratio_95_ci (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-log_odds_ratio_95_ci" class="md-skip">
+        <a href="#slot-log_odds_ratio_95_ci-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: log_odds_ratio_95_ci
+              Slot: log_odds_ratio_95_ci (multivalued)
             
           </span>
         </div>
@@ -621,6 +621,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -648,8 +666,8 @@
   
 
 
-<h1 id="slot-log_odds_ratio_95_ci"><strong> Slot: log_odds_ratio_95_ci </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.</i><br>
+<h1 id="slot-log_odds_ratio_95_ci-multivalued"><strong> Slot: log_odds_ratio_95_ci </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.</i><br>
 
 
 <br>
@@ -665,17 +683,57 @@
 </ul>
 </li>
 </ul>
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td>A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>log_odds_ratio_95_ci</td>
+<td>[0.6996904681742875, 1.6429124024089072]</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: log odds ratio 95 ci
 description: The ninety-five percent confidence range in which the true log odds ratio
-  for the sample population falls.
+  for the sample population falls. To calculate the 95% confidence interval (CI) for
+  a log odds ratio (a pair of numbers), you need the standard error (SE) of the log
+  odds ratio.  This interval helps you understand the precision of your estimate and
+  whether the association is statistically significant.
+examples:
+- value: '[0.6996904681742875, 1.6429124024089072]'
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: association slot
 domain: association
 alias: log_odds_ratio_95_ci
+domain_of:
+- icees study result
 range: float
+multivalued: true
 
 </code></pre>
 

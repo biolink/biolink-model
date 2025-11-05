@@ -306,6 +306,8 @@
 
       SeverityValue : description
 
+      SeverityValue : equivalent_identifiers
+
       SeverityValue : full_name
 
       SeverityValue : has_attribute
@@ -325,6 +327,8 @@
           SeverityValue --|&gt; QuantityValue : has_quantitative_value
 
       SeverityValue : id
+
+      SeverityValue : information_content
 
       SeverityValue : iri
 
@@ -367,7 +371,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br> <i> The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term. </i></br></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../Attribute/">Attribute</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
 <td></td>
 </tr>
 <tr>
@@ -391,13 +395,13 @@
 <tr>
 <td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
-<td><a href="../Attribute/">Attribute</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>
 <tr>
@@ -421,6 +425,18 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>

@@ -621,6 +621,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -649,7 +667,7 @@
 
 
 <h1 id="slot-chi_squared_statistic"><strong> Slot: chi_squared_statistic </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> represents the chi-squared statistic computed from observations</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> The chi-squared statistic measures how much observed data deviate from expected values under the null hypothesis.</i><br>
 
 
 <br>
@@ -665,17 +683,54 @@
 </ul>
 </li>
 </ul>
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td>A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chi_squared_statistic</td>
+<td>26.38523077566414</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: chi squared statistic
-description: represents the chi-squared statistic computed from observations
+description: The chi-squared statistic measures how much observed data deviate from
+  expected values under the null hypothesis.
+examples:
+- value: '26.38523077566414'
 from_schema: https://w3id.org/biolink/biolink-model
 exact_mappings:
 - STATO:0000030
 is_a: association slot
 domain: association
 alias: chi_squared_statistic
+domain_of:
+- icees study result
 range: float
 
 </code></pre>

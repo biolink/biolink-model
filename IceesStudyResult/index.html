@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/TextMiningResult/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/IceesStudyResult/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Class: TextMiningResult - Biolink Model Documentation</title>
+<title>Class: IceesStudyResult - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-textminingresult">
+<a class="md-skip" href="#class-iceesstudyresult">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: TextMiningResult
+              Class: IceesStudyResult
             
           </span>
 </div>
@@ -292,47 +292,67 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-textminingresult"><strong>  Class: TextMiningResult </strong></h1>
+<h1 id="class-iceesstudyresult"><strong>  Class: IceesStudyResult </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> A result of text mining.</i><br/>
+<strong>Description:</strong><i> A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class TextMiningResult
-      StudyResult &lt;|-- TextMiningResult
+    class IceesStudyResult
+      StudyResult &lt;|-- IceesStudyResult
 
-      TextMiningResult : category
+      IceesStudyResult : category
 
-      TextMiningResult : creation_date
+      IceesStudyResult : chi_squared_dof
 
-      TextMiningResult : deprecated
+      IceesStudyResult : chi_squared_p
 
-      TextMiningResult : description
+      IceesStudyResult : chi_squared_statistic
 
-      TextMiningResult : format
+      IceesStudyResult : creation_date
 
-      TextMiningResult : full_name
+      IceesStudyResult : deprecated
 
-      TextMiningResult : has_attribute
+      IceesStudyResult : description
 
-          TextMiningResult --|&gt; Attribute : has_attribute
+      IceesStudyResult : equivalent_identifiers
 
-      TextMiningResult : id
+      IceesStudyResult : fisher_exact_odds_ratio
 
-      TextMiningResult : iri
+      IceesStudyResult : fisher_exact_p
 
-      TextMiningResult : license
+      IceesStudyResult : format
 
-      TextMiningResult : name
+      IceesStudyResult : full_name
 
-      TextMiningResult : provided_by
+      IceesStudyResult : has_attribute
 
-      TextMiningResult : rights
+          IceesStudyResult --|&gt; Attribute : has_attribute
 
-      TextMiningResult : synonym
+      IceesStudyResult : id
 
-      TextMiningResult : type
+      IceesStudyResult : information_content
 
-      TextMiningResult : xref
+      IceesStudyResult : iri
+
+      IceesStudyResult : license
+
+      IceesStudyResult : log_odds_ratio
+
+      IceesStudyResult : log_odds_ratio_95_ci
+
+      IceesStudyResult : name
+
+      IceesStudyResult : provided_by
+
+      IceesStudyResult : rights
+
+      IceesStudyResult : synonym
+
+      IceesStudyResult : total_sample_size
+
+      IceesStudyResult : type
+
+      IceesStudyResult : xref
 
 
 </div>
@@ -342,7 +362,7 @@
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../InformationContentEntity/">InformationContentEntity</a><ul>
 <li><a href="../StudyResult/">StudyResult</a><ul>
-<li><strong>TextMiningResult</strong></li>
+<li><strong>IceesStudyResult</strong></li>
 </ul>
 </li>
 </ul>
@@ -364,7 +384,73 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../license/">license</a>: <br> <i> None </i></br></td>
+<td><a href="../chi_squared_statistic/">chi_squared_statistic</a>: <br> <i> The chi-squared statistic measures how much observed data deviate from expected values under the null hypothesis. </i></br></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td>26.38523077566414</td>
+</tr>
+<tr>
+<td><a href="../chi_squared_dof/">chi_squared_dof</a>: <br/> <i> Degrees of freedom (dof) in a chi-squared test referring to the number of values in the final calculation of a statistic that are free to vary </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="../chi_squared_p/">chi_squared_p</a>: <br/> <i> The chi-square p-value tells you the probability that the observed differences (or associations) in your data occurred by random chance, assuming the null hypothesis is true. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td>2.7967079822744063e-07</td>
+</tr>
+<tr>
+<td><a href="../total_sample_size/">total_sample_size</a>: <br/> <i> The total number of patients or participants within a sample population. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a>: <br/> <i> The Fisher Exact Test is used to determine whether there is a non-random association between two categorical variables in a 2×2 contingency table, especially when sample sizes are small. The odds ratio (OR) quantifies the strength of that association.</i></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OR = 1 implies No association</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OR &gt; 1 implies Positive association (Group A more likely to have Outcome 1)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OR &lt; 1 implies Negative association (Group A less likely to have Outcome 1) </td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td>3.226188583240579</td>
+</tr>
+<tr>
+<td><a href="../fisher_exact_p/">fisher_exact_p</a>: <br/> <i> The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that the null hypothesis of independence is true. It's most commonly used for 2×2 contingency tables, especially when sample sizes are small or expected counts are low. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td>2.8581244515361156e-06</td>
+</tr>
+<tr>
+<td><a href="../log_odds_ratio/">log_odds_ratio</a>: <br/> <i> The natural logarithm of the odds ratio (OR), or the ratio of the odds of an event Y occurring in an exposed group versus the odds of an event Y occurring in a non-exposed group. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a>: <br/> <i> The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant. </i></td>
+<td>* <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td>[0.6996904681742875, 1.6429124024089072]</td>
+</tr>
+<tr>
+<td><a href="../license/">license</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 <td></td>
@@ -408,6 +494,18 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -463,10 +561,21 @@
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: text mining result
-description: A result of text mining.
+<pre><code class="language-yaml">name: icees study result
+description: A study result that represents a result, from a supporting Study, which
+  is specifically associated with an Integrated Clinical and Environmental Exposures
+  Service (ICEES) knowledge assertion.
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: study result
+slots:
+- chi squared statistic
+- chi squared dof
+- chi squared p
+- total sample size
+- fisher exact odds ratio
+- fisher exact p
+- log odds ratio
+- log odds ratio 95 ci
 
 </code></pre>
 </details>

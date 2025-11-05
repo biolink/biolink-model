@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/assesses/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/was_tested_for_effect_of/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: assesses (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: was_tested_for_effect_of (DEPRECATED) (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-assesses-multivalued" class="md-skip">
+        <a href="#slot-was_tested_for_effect_of-deprecated-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: assesses (multivalued)
+              Slot: was_tested_for_effect_of (DEPRECATED) (multivalued)
             
           </span>
         </div>
@@ -621,15 +621,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -657,10 +648,10 @@
   
 
 
-<h1 id="slot-assesses-multivalued"><strong> Slot: assesses </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> The effect of a thing on a target was interrogated in some assay. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.</i><br>
-   <strong>Aliases:</strong> was assayed against<br>
+<h1 id="slot-was_tested_for_effect_of-deprecated-multivalued"><strong> Slot: was_tested_for_effect_of </strong>  <span style="color: red;"><strong> (DEPRECATED) </strong></span>  (multivalued)</h1>
+<div class="highlight-box">
 
+  <strong>Inverse:</strong> was tested for effect on</a></small><br>
 <br>
 
 </div>
@@ -671,47 +662,23 @@
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><strong>assesses</strong></li>
+<li><strong>was_tested_for_effect_of</strong></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="annotations">Annotations</h2>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>canonical_predicate</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: assesses
-annotations:
-  canonical_predicate:
-    tag: canonical_predicate
-    value: true
-description: The effect of a thing on a target was interrogated in some assay. A relationship
-  between some perturbing agent (usually a chemical compound) and some target entity,
-  where the affect of the perturbing agent on the target entity was interrogated in
-  a particular assay. The target might be a particular protein, tissue, phenotype,
-  whole organism, cell line, or other type of biological entity.
+<pre><code class="language-yaml">name: was tested for effect of
+deprecated: 'True'
 from_schema: https://w3id.org/biolink/biolink-model
-aliases:
-- was assayed against
 is_a: related to at instance level
 domain: named thing
 inherited: true
-alias: assesses
+alias: was_tested_for_effect_of
+inverse: was tested for effect on
 range: named thing
 multivalued: true
 

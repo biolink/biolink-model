@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/response_decreased_by/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/chembl_chirality/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: response_decreased_by (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: chembl_chirality - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-response_decreased_by-multivalued" class="md-skip">
+        <a href="#slot-chembl_chirality" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: response_decreased_by (multivalued)
+              Slot: chembl_chirality
             
           </span>
         </div>
@@ -648,46 +648,33 @@
   
 
 
-<h1 id="slot-response_decreased_by-multivalued"><strong> Slot: response_decreased_by </strong>  (multivalued)</h1>
-<div class="highlight-box">
+<h1 id="slot-chembl_chirality"><strong> Slot: chembl_chirality </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> Tern indicating the chirality of the chemical entity.</i><br>
 
-  <strong>Inverse:</strong> decreases response to</a></small><br>
+
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a><br>
-<strong>Range:</strong>   <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br></p>
+<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
+<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../related_to/">related_to</a><ul>
-<li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affected_by/">affected_by</a><ul>
-<li><a href="../response_affected_by/">response_affected_by</a><ul>
-<li><strong>response_decreased_by</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="../node_property/">node_property</a><ul>
+<li><strong>chembl_chirality</strong></li>
 </ul>
 </li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: response decreased by
-in_subset:
-- translator_minimal
+<pre><code class="language-yaml">name: chembl chirality
+description: Tern indicating the chirality of the chemical entity.
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: response affected by
-domain: chemical entity or gene or gene product
-inherited: true
-alias: response_decreased_by
-inverse: decreases response to
-range: chemical entity or gene or gene product
-multivalued: true
+is_a: node property
+domain: named thing
+alias: chembl_chirality
+range: string
 
 </code></pre>
 

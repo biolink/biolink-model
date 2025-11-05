@@ -337,6 +337,8 @@
 
       InformationContentEntity : description
 
+      InformationContentEntity : equivalent_identifiers
+
       InformationContentEntity : format
 
       InformationContentEntity : full_name
@@ -346,6 +348,8 @@
           InformationContentEntity --|&gt; Attribute : has_attribute
 
       InformationContentEntity : id
+
+      InformationContentEntity : information_content
 
       InformationContentEntity : iri
 
@@ -448,6 +452,18 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -527,60 +543,6 @@
 <td><a href="./">InformationContentEntity</a></td>
 </tr>
 <tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../license/">license</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../rights/">rights</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../format/">format</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../StudyVariable/">StudyVariable</a></td>
-<td><a href="../license/">license</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../StudyVariable/">StudyVariable</a></td>
-<td><a href="../rights/">rights</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../StudyVariable/">StudyVariable</a></td>
-<td><a href="../format/">format</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../CommonDataElement/">CommonDataElement</a></td>
-<td><a href="../license/">license</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../CommonDataElement/">CommonDataElement</a></td>
-<td><a href="../rights/">rights</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../CommonDataElement/">CommonDataElement</a></td>
-<td><a href="../format/">format</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
 <td><a href="../ConceptCountAnalysisResult/">ConceptCountAnalysisResult</a></td>
 <td><a href="../license/">license</a></td>
 <td>domain</td>
@@ -635,24 +597,6 @@
 <td><a href="./">InformationContentEntity</a></td>
 </tr>
 <tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../license/">license</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../rights/">rights</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningResult/">TextMiningResult</a></td>
-<td><a href="../format/">format</a></td>
-<td>domain</td>
-<td><a href="./">InformationContentEntity</a></td>
-</tr>
-<tr>
 <td><a href="../ChiSquaredAnalysisResult/">ChiSquaredAnalysisResult</a></td>
 <td><a href="../license/">license</a></td>
 <td>domain</td>
@@ -684,6 +628,78 @@
 </tr>
 <tr>
 <td><a href="../LogOddsAnalysisResult/">LogOddsAnalysisResult</a></td>
+<td><a href="../format/">format</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../license/">license</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../rights/">rights</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../format/">format</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../license/">license</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../rights/">rights</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../format/">format</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../StudyVariable/">StudyVariable</a></td>
+<td><a href="../license/">license</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../StudyVariable/">StudyVariable</a></td>
+<td><a href="../rights/">rights</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../StudyVariable/">StudyVariable</a></td>
+<td><a href="../format/">format</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../CommonDataElement/">CommonDataElement</a></td>
+<td><a href="../license/">license</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../CommonDataElement/">CommonDataElement</a></td>
+<td><a href="../rights/">rights</a></td>
+<td>domain</td>
+<td><a href="./">InformationContentEntity</a></td>
+</tr>
+<tr>
+<td><a href="../CommonDataElement/">CommonDataElement</a></td>
 <td><a href="../format/">format</a></td>
 <td>domain</td>
 <td><a href="./">InformationContentEntity</a></td>

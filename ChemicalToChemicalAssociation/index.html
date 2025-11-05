@@ -298,7 +298,6 @@
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalToChemicalAssociation
-      ChemicalToEntityAssociationMixin &lt;|-- ChemicalToChemicalAssociation
       Association &lt;|-- ChemicalToChemicalAssociation
 
 
@@ -333,6 +332,10 @@
       ChemicalToChemicalAssociation : has_supporting_studies
 
           ChemicalToChemicalAssociation --|&gt; Study : has_supporting_studies
+
+      ChemicalToChemicalAssociation : has_supporting_study_result
+
+          ChemicalToChemicalAssociation --|&gt; StudyResult : has_supporting_study_result
 
       ChemicalToChemicalAssociation : id
 
@@ -398,7 +401,7 @@
 
       ChemicalToChemicalAssociation : subject
 
-          ChemicalToChemicalAssociation --|&gt; ChemicalEntityOrGeneOrGeneProduct : subject
+          ChemicalToChemicalAssociation --|&gt; NamedThing : subject
 
       ChemicalToChemicalAssociation : subject_category
 
@@ -426,7 +429,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><strong>ChemicalToChemicalAssociation</strong> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]<ul>
+<li><strong>ChemicalToChemicalAssociation</strong><ul>
 <li><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></li>
 <li><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></li>
 </ul>
@@ -448,8 +451,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> the chemical entity or entity that is an interactor </i></br></td>
-<td>1 <br/> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
+<td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -640,6 +643,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../update_date/">update_date</a>: <br/> <i> date on which an entity was updated. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -708,8 +717,6 @@ description: A relationship between two chemical entities. This can encompass ac
   interactions as well as temporal causal edges, e.g. one chemical converted to another.
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: association
-mixins:
-- chemical to entity association mixin
 slots:
 - subject
 - predicate

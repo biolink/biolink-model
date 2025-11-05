@@ -135,20 +135,6 @@
                             {
                                 "name": "regulated_by",
                                 "parent": "affected_by"
-                            },
-                            {
-                                "name": "response_affected_by",
-                                "parent": "affected_by",
-                                "children": [
-                                    {
-                                        "name": "response_decreased_by",
-                                        "parent": "response_affected_by"
-                                    },
-                                    {
-                                        "name": "response_increased_by",
-                                        "parent": "response_affected_by"
-                                    }
-                                ]
                             }
                         ]
                     },
@@ -156,20 +142,6 @@
                         "name": "affects",
                         "parent": "related_to_at_instance_level",
                         "children": [
-                            {
-                                "name": "affects_response_to",
-                                "parent": "affects",
-                                "children": [
-                                    {
-                                        "name": "decreases_response_to",
-                                        "parent": "affects_response_to"
-                                    },
-                                    {
-                                        "name": "increases_response_to",
-                                        "parent": "affects_response_to"
-                                    }
-                                ]
-                            },
                             {
                                 "name": "ameliorates_condition",
                                 "parent": "affects"
@@ -225,11 +197,21 @@
                         ]
                     },
                     {
-                        "name": "applied_to_treat",
-                        "parent": "related_to_at_instance_level"
+                        "name": "affects_sensitivity_to",
+                        "parent": "related_to_at_instance_level",
+                        "children": [
+                            {
+                                "name": "decreases_sensitivity_to",
+                                "parent": "affects_sensitivity_to"
+                            },
+                            {
+                                "name": "increases_sensitivity_to",
+                                "parent": "affects_sensitivity_to"
+                            }
+                        ]
                     },
                     {
-                        "name": "assesses",
+                        "name": "applied_to_treat",
                         "parent": "related_to_at_instance_level"
                     },
                     {
@@ -687,10 +669,6 @@
                         ]
                     },
                     {
-                        "name": "is_assessed_by",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
                         "name": "is_diagnosed_by",
                         "parent": "related_to_at_instance_level"
                     },
@@ -942,6 +920,20 @@
                     },
                     {
                         "name": "related_condition",
+                        "parent": "related_to_at_instance_level"
+                    },
+                    {
+                        "name": "sensitivity_affected_by",
+                        "parent": "related_to_at_instance_level",
+                        "children": [
+                            {
+                                "name": "sensitivity_decreased_by",
+                                "parent": "sensitivity_affected_by"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "sensitivity_increased_by",
                         "parent": "related_to_at_instance_level"
                     },
                     {

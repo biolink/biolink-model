@@ -691,24 +691,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
-<td>Describes a regulatory relationship between two genes or gene products.</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
-<td>A regulatory relationship between two genes</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
 </tr>
 <tr>
 <td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
@@ -716,19 +701,24 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
-<td>Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td>A regulatory relationship between two genes</td>
 <td>yes</td>
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td>None</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>Qualifiers for disease or phenotype to entity associations.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
@@ -739,6 +729,16 @@
 <td><a href="../EntityToFeatureOrVariantQualifiersMixin/">EntityToFeatureOrVariantQualifiersMixin</a></td>
 <td>Qualifiers for entity to variant associations.</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td>Describes a regulatory relationship between two genes or gene products.</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -758,7 +758,7 @@ alias: object_direction_qualifier
 domain_of:
 - predicate mapping
 - gene regulates gene association
-- chemical affects gene association
+- chemical affects biological entity association
 - gene affects chemical association
 - entity to feature or disease qualifiers mixin
 - entity to feature or variant qualifiers mixin

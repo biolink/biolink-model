@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/response_increased_by/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/sensitivity_increased_by/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: response_increased_by (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: sensitivity_increased_by (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-response_increased_by-multivalued" class="md-skip">
+        <a href="#slot-sensitivity_increased_by-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: response_increased_by (multivalued)
+              Slot: sensitivity_increased_by (multivalued)
             
           </span>
         </div>
@@ -648,10 +648,10 @@
   
 
 
-<h1 id="slot-response_increased_by-multivalued"><strong> Slot: response_increased_by </strong>  (multivalued)</h1>
+<h1 id="slot-sensitivity_increased_by-multivalued"><strong> Slot: sensitivity_increased_by </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
-  <strong>Inverse:</strong> increases response to</a></small><br>
+  <strong>Inverse:</strong> increases sensitivity to</a></small><br>
 <br>
 
 </div>
@@ -662,13 +662,7 @@
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affected_by/">affected_by</a><ul>
-<li><a href="../response_affected_by/">response_affected_by</a><ul>
-<li><strong>response_increased_by</strong></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><strong>sensitivity_increased_by</strong></li>
 </ul>
 </li>
 </ul>
@@ -677,15 +671,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: response increased by
+<pre><code class="language-yaml">name: sensitivity increased by
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/biolink-model
-is_a: response affected by
+is_a: related to at instance level
 domain: chemical entity or gene or gene product
 inherited: true
-alias: response_increased_by
-inverse: increases response to
+alias: sensitivity_increased_by
+inverse: increases sensitivity to
 range: chemical entity or gene or gene product
 multivalued: true
 

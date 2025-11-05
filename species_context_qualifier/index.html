@@ -700,13 +700,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
-<td>Describes a regulatory relationship between two genes or gene products.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -720,9 +715,14 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
-<td>Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td>Describes a regulatory relationship between two genes or gene products.</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -766,7 +766,7 @@ alias: species_context_qualifier
 domain_of:
 - predicate mapping
 - gene regulates gene association
-- chemical affects gene association
+- chemical affects biological entity association
 - gene affects chemical association
 - macromolecular machine to entity association mixin
 range: organism taxon

@@ -330,6 +330,10 @@
 
           AnatomicalEntityToAnatomicalEntityAssociation --|&gt; Study : has_supporting_studies
 
+      AnatomicalEntityToAnatomicalEntityAssociation : has_supporting_study_result
+
+          AnatomicalEntityToAnatomicalEntityAssociation --|&gt; StudyResult : has_supporting_study_result
+
       AnatomicalEntityToAnatomicalEntityAssociation : id
 
       AnatomicalEntityToAnatomicalEntityAssociation : iri
@@ -632,6 +636,12 @@
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

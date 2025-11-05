@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/ChemicalEntityAssessesNamedThingAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Class: ChemicalEntityAssessesNamedThingAssociation - Biolink Model Documentation</title>
+<title>Class: ChemicalEntityAssessesNamedThingAssociation (DEPRECATED) - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-chemicalentityassessesnamedthingassociation">
+<a class="md-skip" href="#class-chemicalentityassessesnamedthingassociation-deprecated">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ChemicalEntityAssessesNamedThingAssociation
+              Class: ChemicalEntityAssessesNamedThingAssociation (DEPRECATED)
             
           </span>
 </div>
@@ -292,7 +292,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-chemicalentityassessesnamedthingassociation"><strong>  Class: ChemicalEntityAssessesNamedThingAssociation </strong></h1>
+<h1 id="class-chemicalentityassessesnamedthingassociation-deprecated"><strong>  Class: ChemicalEntityAssessesNamedThingAssociation </strong> <span style="color: red;"><strong> (DEPRECATED) </strong></span></h1>
 <div class="mermaid"> classDiagram
     class ChemicalEntityAssessesNamedThingAssociation
       Association &lt;|-- ChemicalEntityAssessesNamedThingAssociation
@@ -324,6 +324,10 @@
       ChemicalEntityAssessesNamedThingAssociation : has_supporting_studies
 
           ChemicalEntityAssessesNamedThingAssociation --|&gt; Study : has_supporting_studies
+
+      ChemicalEntityAssessesNamedThingAssociation : has_supporting_study_result
+
+          ChemicalEntityAssessesNamedThingAssociation --|&gt; StudyResult : has_supporting_study_result
 
       ChemicalEntityAssessesNamedThingAssociation : id
 
@@ -627,6 +631,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../update_date/">update_date</a>: <br/> <i> date on which an entity was updated. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -691,6 +701,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: chemical entity assesses named thing association
+deprecated: 'True'
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: association
 slot_usage:
@@ -702,7 +713,7 @@ slot_usage:
     range: named thing
   predicate:
     name: predicate
-    subproperty_of: assesses
+    subproperty_of: was tested for effect on
 
 </code></pre>
 </details>

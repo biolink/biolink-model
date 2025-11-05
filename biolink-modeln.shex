@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.2
+# version: 4.3.3
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -249,6 +249,7 @@ linkml:Sparqlpath xsd:string
              <p_value> @linkml:Float ? ;
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
+             <has_supporting_study_result> @<StudyResult> * ;
              <update_date> @linkml:Date ? ;
              <has_confidence_score> @linkml:Float ? ;
              rdf:type @linkml:String * ;
@@ -257,8 +258,11 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ]
        )
     } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
-    @<CaseToDiseaseAssociation> OR @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation>
-    OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsGeneAssociation> OR
+    @<BiologicalProcessOrActivityToAnatomicalEntityAssociation> OR
+    @<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> OR
+    @<BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation> OR @<CaseToDiseaseAssociation> OR
+    @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation> OR
+    @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsBiologicalEntityAssociation> OR
     @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR
     @<ChemicalGeneInteractionAssociation> OR @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR
     @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR
@@ -267,8 +271,10 @@ linkml:Sparqlpath xsd:string
     @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
     @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneAffectsChemicalAssociation> OR
-    @<GeneRegulatesGeneAssociation> OR @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR
-    @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
+    @<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> OR @<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> OR
+    @<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> OR @<GeneRegulatesGeneAssociation> OR
+    @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
+    @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
     @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
     @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation>
     OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
@@ -427,6 +433,38 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<BiologicalProcess> OR @<MolecularActivity>
 )
+
+<BiologicalProcessOrActivityToAnatomicalEntityAssociation> CLOSED {
+    (  $<BiologicalProcessOrActivityToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<BiologicalProcessOrActivity> ;
+          rdf:object @<AnatomicalEntity>
+       ) ;
+       rdf:type [ <BiologicalProcessOrActivityToAnatomicalEntityAssociation> ]
+    )
+}
+
+<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> CLOSED {
+    (  $<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<BiologicalProcessOrActivity> ;
+          rdf:object @<BiologicalProcessOrActivity> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> ]
+    )
+}
+
+<BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation> CLOSED {
+    (  $<BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<BiologicalProcessOrActivity> ;
+          rdf:object @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation> ]
+    )
+}
 
 <BiologicalSex>  (
     CLOSED {
@@ -658,192 +696,204 @@ linkml:Sparqlpath xsd:string
     } OR @<Fungus> OR @<Invertebrate> OR @<Mammal> OR @<Plant> OR @<Vertebrate>
 )
 
+<ChemicalAffectsBiologicalEntityAssociation>  (
+    CLOSED {
+       (  $<ChemicalAffectsBiologicalEntityAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             <subject_form_or_variant_qualifier> [
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
+             <subject_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
+             <subject_derivative_qualifier> [ <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> ] ? ;
+             <subject_aspect_qualifier> [
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#absorption>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ] ? ;
+             <subject_context_qualifier> @<AnatomicalEntity> ? ;
+             <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+             <object_form_or_variant_qualifier> [
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
+             <object_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
+             <object_aspect_qualifier> [
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#absorption>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ] ? ;
+             <object_context_qualifier> @<AnatomicalEntity> ? ;
+             <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+             <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> ] ? ;
+             <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+             <qualified_predicate> @linkml:String ? ;
+             <species_context_qualifier> @<OrganismTaxon> ? ;
+             rdf:subject @<ChemicalEntity> ;
+             rdf:predicate @<PredicateType> ;
+             rdf:object @<BiologicalEntity>
+          ) ;
+          rdf:type [ <ChemicalAffectsBiologicalEntityAssociation> ]
+       )
+    } OR @<ChemicalAffectsGeneAssociation>
+)
+
 <ChemicalAffectsGeneAssociation> CLOSED {
-    (  $<ChemicalAffectsGeneAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          <subject_form_or_variant_qualifier> [
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
-          <subject_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
-          <subject_derivative_qualifier> [ <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> ] ? ;
-          <subject_aspect_qualifier> [
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#absorption>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ] ? ;
-          <subject_context_qualifier> @<AnatomicalEntity> ? ;
-          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
-             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
-             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
-             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_form_or_variant_qualifier> [
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
-             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
-          <object_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
-          <object_aspect_qualifier> [
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#absorption>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>
-             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ] ? ;
-          <object_context_qualifier> @<AnatomicalEntity> ? ;
-          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
-             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
-             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
-             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> ] ? ;
-          <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
-          <qualified_predicate> @linkml:String ? ;
-          <species_context_qualifier> @<OrganismTaxon> ? ;
-          rdf:subject @<ChemicalEntity> ;
-          rdf:predicate @<PredicateType> ;
-          rdf:object @<GeneOrGeneProduct>
+    (  $<ChemicalAffectsGeneAssociation_tes> (  &<ChemicalAffectsBiologicalEntityAssociation_tes> ;
+          rdf:type [ <ChemicalAffectsBiologicalEntityAssociation> ] ?
        ) ;
        rdf:type [ <ChemicalAffectsGeneAssociation> ]
     )
@@ -940,8 +990,6 @@ linkml:Sparqlpath xsd:string
 <ChemicalGeneInteractionAssociation> CLOSED {
     (  $<ChemicalGeneInteractionAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          &<ChemicalToEntityAssociationMixin_tes> ;
-          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
           <subject_form_or_variant_qualifier> [
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
@@ -951,6 +999,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
           <subject_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
@@ -970,6 +1019,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
           <object_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
@@ -1046,8 +1096,6 @@ linkml:Sparqlpath xsd:string
     (  $<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation_tes> ( 
           &<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> ;
           rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
-          &<ChemicalToEntityAssociationMixin_tes> ;
-          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
           rdf:predicate @<PredicateType>
@@ -1060,8 +1108,6 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
-             &<ChemicalToEntityAssociationMixin_tes> ;
-             rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
              &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
              rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
              &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
@@ -1105,8 +1151,6 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalToChemicalAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
-             &<ChemicalToEntityAssociationMixin_tes> ;
-             rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
              rdf:object @<ChemicalEntity>
           ) ;
           rdf:type [ <ChemicalToChemicalAssociation> ]
@@ -1129,8 +1173,6 @@ linkml:Sparqlpath xsd:string
 <ChemicalToDiseaseOrPhenotypicFeatureAssociation> CLOSED {
     (  $<ChemicalToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          &<ChemicalToEntityAssociationMixin_tes> ;
-          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
           rdf:object @<DiseaseOrPhenotypicFeature> ;
@@ -1155,8 +1197,6 @@ linkml:Sparqlpath xsd:string
 <ChemicalToPathwayAssociation> CLOSED {
     (  $<ChemicalToPathwayAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          &<ChemicalToEntityAssociationMixin_tes> ;
-          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
           rdf:subject @<ChemicalEntity> ;
           rdf:object @<Pathway>
        ) ;
@@ -1244,7 +1284,9 @@ linkml:Sparqlpath xsd:string
           <clinical_trial_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1_to_2>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
@@ -1661,7 +1703,9 @@ linkml:Sparqlpath xsd:string
           <max_research_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1_to_2>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ?
@@ -1784,7 +1828,9 @@ linkml:Sparqlpath xsd:string
           <max_research_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1_to_2>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ?
@@ -2063,6 +2109,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
           <subject_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
@@ -2143,6 +2190,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
           <object_part_qualifier> [ <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>
@@ -2279,6 +2327,17 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> CLOSED {
+    (  $<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<Gene> ;
+          rdf:object @<GeneFamily> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> ]
+    )
+}
+
 <GeneGroupingMixin> {
     (  $<GeneGroupingMixin_tes> <has_gene_or_gene_product> @<Gene> * ;
        rdf:type [ <GeneGroupingMixin> ] ?
@@ -2306,6 +2365,33 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<GeneProductMixin>
 )
+
+<GeneOrGeneProductOrGeneFamily> {
+    (  $<GeneOrGeneProductOrGeneFamily_tes> rdf:type . * ;
+       rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ?
+    )
+}
+
+<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> CLOSED {
+    (  $<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:object @<AnatomicalEntity>
+       ) ;
+       rdf:type [ <GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> ]
+    )
+}
+
+<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> CLOSED {
+    (  $<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:object @<BiologicalProcessOrActivity> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> ]
+    )
+}
 
 <GeneProductIsoformMixin> {
     (  $<GeneProductIsoformMixin_tes> (  &<GeneProductMixin_tes> ;
@@ -2433,6 +2519,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
                 <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
                 <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+                <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
                 <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
              <subject_aspect_qualifier> [
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
@@ -2933,6 +3020,22 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<IceesStudyResult> CLOSED {
+    (  $<IceesStudyResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ? ;
+          <chi_squared_statistic> @linkml:Float ? ;
+          <chi_squared_dof> @linkml:Integer ? ;
+          <chi_squared_p> @linkml:Float ? ;
+          <total_sample_size> @linkml:Integer ? ;
+          <fisher_exact_odds_ratio> @linkml:Float ? ;
+          <fisher_exact_p> @linkml:Float ? ;
+          <log_odds_ratio> @linkml:Float ? ;
+          <log_odds_ratio_95_ci> @linkml:Float *
+       ) ;
+       rdf:type [ <IceesStudyResult> ]
+    )
+}
+
 <IndividualOrganism>  (
     CLOSED {
        (  $<IndividualOrganism_tes> (  &<OrganismalEntity_tes> ;
@@ -3253,6 +3356,8 @@ linkml:Sparqlpath xsd:string
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
+             <information_content> @linkml:Float ? ;
+             <equivalent_identifiers> @linkml:Uriorcurie * ;
              <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
@@ -4286,9 +4391,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <StudyResult>  (
-    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<LogOddsAnalysisResult> OR
-    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult> OR
-    @<TextMiningStudyResult>
+    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<IceesStudyResult> OR @<LogOddsAnalysisResult> OR
+    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningStudyResult>
 )
 
 <StudyResult_struct> {
@@ -4328,14 +4432,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <TaxonomicRank> ]
-    )
-}
-
-<TextMiningResult> CLOSED {
-    (  $<TextMiningResult_tes> (  &<StudyResult_tes> ;
-          rdf:type [ <StudyResult> ] ?
-       ) ;
-       rdf:type [ <TextMiningResult> ]
     )
 }
 

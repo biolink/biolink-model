@@ -22,6 +22,18 @@
                 "parent": "Association"
             },
             {
+                "name": "biological_process_or_activity_to_anatomical_entity_association",
+                "parent": "Association"
+            },
+            {
+                "name": "biological_process_or_activity_to_biological_process_or_activity_association",
+                "parent": "Association"
+            },
+            {
+                "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association",
+                "parent": "Association"
+            },
+            {
                 "name": "case_to_disease_association",
                 "parent": "Association"
             },
@@ -48,12 +60,14 @@
                 ]
             },
             {
-                "name": "chemical_affects_gene_association",
-                "parent": "Association"
-            },
-            {
-                "name": "chemical_entity_assesses_named_thing_association",
-                "parent": "Association"
+                "name": "chemical_affects_biological_entity_association",
+                "parent": "Association",
+                "children": [
+                    {
+                        "name": "chemical_affects_gene_association",
+                        "parent": "chemical_affects_biological_entity_association"
+                    }
+                ]
             },
             {
                 "name": "chemical_entity_or_gene_or_gene_product_regulates_gene_association",
@@ -169,6 +183,18 @@
             },
             {
                 "name": "gene_affects_chemical_association",
+                "parent": "Association"
+            },
+            {
+                "name": "gene_family_to_gene_or_gene_product_or_gene_family_association",
+                "parent": "Association"
+            },
+            {
+                "name": "gene_or_gene_product_or_gene_family_to_anatomical_entity_association",
+                "parent": "Association"
+            },
+            {
+                "name": "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association",
                 "parent": "Association"
             },
             {

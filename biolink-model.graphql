@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.2
+# version: 4.3.3
 enum AffinityParameterEnum
   {
     pIC50
@@ -78,6 +78,7 @@ enum ChemicalOrGeneOrGeneProductFormOrVariantEnum
     dominant_negative_variant_form
     polymorphic_form
     snp_form
+    mutant_form
     analog_form
   }
 
@@ -260,7 +261,9 @@ enum ResearchPhaseEnum
     pre_clinical_research_phase
     clinical_trial_phase
     clinical_trial_phase_1
+    clinical_trial_phase_1_to_2
     clinical_trial_phase_2
+    clinical_trial_phase_2_to_3
     clinical_trial_phase_3
     clinical_trial_phase_4
     not_provided
@@ -314,6 +317,8 @@ type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGenePro
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -333,6 +338,8 @@ type Activity implements ActivityAndBehavior
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -353,6 +360,8 @@ interface AdministrativeEntity
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -367,6 +376,8 @@ type Agent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     affiliation: [Uriorcurie]
     address: String
@@ -386,6 +397,8 @@ type AnatomicalEntity implements PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -430,6 +443,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -475,6 +489,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -521,6 +536,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -544,6 +560,8 @@ type Article
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -604,6 +622,7 @@ type Association
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -621,6 +640,8 @@ type Attribute implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -641,6 +662,8 @@ type Bacterium
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -660,6 +683,8 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -706,6 +731,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -737,6 +763,8 @@ type BehavioralExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -759,6 +787,8 @@ type BehavioralFeature
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -782,6 +812,8 @@ type BiologicalEntity implements ThingWithTaxon
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -800,6 +832,8 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -821,12 +855,155 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
+  }
+
+type BiologicalProcessOrActivityToAnatomicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    predicate: PredicateType!
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: BiologicalProcessOrActivity!
+    object: AnatomicalEntity!
+  }
+
+type BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: BiologicalProcessOrActivity!
+    object: BiologicalProcessOrActivity!
+    predicate: PredicateType!
+  }
+
+type BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: BiologicalProcessOrActivity!
+    object: GeneOrGeneProductOrGeneFamily!
+    predicate: PredicateType!
   }
 
 type BiologicalSex
@@ -840,6 +1017,8 @@ type BiologicalSex
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -859,6 +1038,8 @@ type BioticExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -877,6 +1058,8 @@ type Book
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -904,6 +1087,8 @@ type BookChapter
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -935,6 +1120,8 @@ type Case implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -979,6 +1166,7 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1033,6 +1221,7 @@ type CaseToGeneAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1081,6 +1270,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1138,6 +1328,7 @@ type CaseToVariantAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1185,6 +1376,7 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1220,6 +1412,8 @@ type Cell
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1238,6 +1432,8 @@ type CellLine implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1283,6 +1479,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1339,6 +1536,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1369,6 +1567,8 @@ type CellularComponent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1387,10 +1587,74 @@ type CellularOrganism implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasAttribute: [Attribute]
+  }
+
+type ChemicalAffectsBiologicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+    subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    subjectContextQualifier: AnatomicalEntity
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+    objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectContextQualifier: AnatomicalEntity
+    objectDirectionQualifier: DirectionQualifierEnum
+    causalMechanismQualifier: CausalMechanismQualifierEnum
+    anatomicalContextQualifier: AnatomicalEntity
+    qualifiedPredicate: String
+    speciesContextQualifier: OrganismTaxon
+    subject: ChemicalEntity!
+    predicate: PredicateType!
+    object: BiologicalEntity!
   }
 
 type ChemicalAffectsGeneAssociation
@@ -1430,6 +1694,7 @@ type ChemicalAffectsGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1451,7 +1716,7 @@ type ChemicalAffectsGeneAssociation
     speciesContextQualifier: OrganismTaxon
     subject: ChemicalEntity!
     predicate: PredicateType!
-    object: GeneOrGeneProduct!
+    object: BiologicalEntity!
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -1467,6 +1732,8 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -1512,6 +1779,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1562,6 +1830,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1594,6 +1863,8 @@ type ChemicalExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1603,7 +1874,7 @@ type ChemicalExposure implements ExposureEvent
     timepoint: TimeType
   }
 
-type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMixin
+type ChemicalGeneInteractionAssociation
   {
     id: String!
     iri: IriType
@@ -1640,6 +1911,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1670,6 +1942,8 @@ type ChemicalMixture implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -1686,7 +1960,7 @@ interface ChemicalOrDrugOrTreatment
   {
   }
 
-type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1725,6 +1999,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1743,7 +2018,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     predicate: PredicateType!
   }
 
-type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
+type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
   {
     id: String!
     iri: IriType
@@ -1782,6 +2057,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1811,6 +2087,8 @@ type ChemicalRole
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1819,7 +2097,7 @@ type ChemicalRole
     iri: IriType
   }
 
-type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
+type ChemicalToChemicalAssociation
   {
     id: String!
     iri: IriType
@@ -1856,6 +2134,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1902,6 +2181,7 @@ type ChemicalToChemicalDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1912,7 +2192,7 @@ type ChemicalToChemicalDerivationAssociation
     predicate: PredicateType!
   }
 
-type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1951,6 +2231,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1969,7 +2250,7 @@ interface ChemicalToEntityAssociationMixin
     object: NamedThing!
   }
 
-type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
+type ChemicalToPathwayAssociation
   {
     id: String!
     iri: IriType
@@ -2007,6 +2288,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2028,6 +2310,8 @@ type ChiSquaredAnalysisResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2046,6 +2330,8 @@ type ClinicalAttribute
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2065,6 +2351,8 @@ type ClinicalCourse
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2086,6 +2374,8 @@ type ClinicalEntity
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -2101,6 +2391,8 @@ type ClinicalFinding
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2121,6 +2413,8 @@ type ClinicalIntervention
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -2135,6 +2429,8 @@ type ClinicalMeasurement
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasQuantitativeValue: [QuantityValue]
@@ -2154,6 +2450,8 @@ type ClinicalModifier
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2175,6 +2473,8 @@ type ClinicalTrial
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     clinicalTrialPhase: ResearchPhaseEnum
     clinicalTrialPrimaryPurpose: String
@@ -2194,6 +2494,8 @@ type CodingSequence implements GenomicEntity
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2212,6 +2514,8 @@ type Cohort implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2231,6 +2535,8 @@ type CommonDataElement
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2249,6 +2555,8 @@ type ComplexChemicalExposure
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2270,6 +2578,8 @@ type ComplexMolecularMixture
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -2295,6 +2605,8 @@ type ConceptCountAnalysisResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2315,6 +2627,8 @@ type ConfidenceLevel
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2358,6 +2672,7 @@ type ContributorAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2405,6 +2720,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2442,6 +2758,8 @@ type Dataset
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2462,6 +2780,8 @@ type DatasetDistribution
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2483,6 +2803,8 @@ type DatasetSummary
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2505,6 +2827,8 @@ type DatasetVersion
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2528,6 +2852,8 @@ type Device
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -2544,6 +2870,8 @@ type DiagnosticAid
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -2560,6 +2888,8 @@ type Disease
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2603,6 +2933,7 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2627,6 +2958,8 @@ type DiseaseOrPhenotypicFeature implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2644,6 +2977,8 @@ type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEn
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2702,6 +3037,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2749,6 +3085,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2803,6 +3140,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2847,6 +3185,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2881,6 +3220,8 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -2904,6 +3245,8 @@ type DrugExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2923,6 +3266,8 @@ type DrugLabel
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2985,6 +3330,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3003,6 +3349,8 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3049,6 +3397,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3129,6 +3478,7 @@ type EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3256,6 +3606,7 @@ type EntityToPhenotypicFeatureAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3294,6 +3645,8 @@ type EnvironmentalExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3316,6 +3669,8 @@ type EnvironmentalFeature
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -3332,6 +3687,8 @@ type EnvironmentalFoodContaminant
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -3353,6 +3710,8 @@ type EnvironmentalProcess implements Occurrent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -3378,6 +3737,8 @@ type Event
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -3394,6 +3755,8 @@ type EvidenceType
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -3414,6 +3777,8 @@ type Exon
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3457,6 +3822,7 @@ type ExonToTranscriptRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3511,6 +3877,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3558,6 +3925,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3603,6 +3971,8 @@ type Food
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -3628,6 +3998,8 @@ type FoodAdditive
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -3690,6 +4062,7 @@ type FunctionalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3710,6 +4083,8 @@ type Fungus
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3728,6 +4103,8 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3773,6 +4150,7 @@ type GeneAffectsChemicalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3835,6 +4213,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3879,10 +4258,59 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
+  }
+
+type GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: Gene!
+    object: GeneFamily!
+    predicate: PredicateType!
   }
 
 interface GeneGroupingMixin
@@ -3927,6 +4355,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3953,6 +4382,104 @@ type GeneHasVariantThatContributesToDiseaseAssociation
 interface GeneOrGeneProduct
   {
     name: SymbolType
+  }
+
+interface GeneOrGeneProductOrGeneFamily
+  {
+  }
+
+type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    predicate: PredicateType!
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: GeneOrGeneProductOrGeneFamily!
+    object: AnatomicalEntity!
+  }
+
+type GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
+    updateDate: Date
+    hasConfidenceScore: Float
+    type: [String]
+    category: [Uriorcurie]
+    subject: GeneOrGeneProductOrGeneFamily!
+    object: BiologicalProcessOrActivity!
+    predicate: PredicateType!
   }
 
 interface GeneProductIsoformMixin
@@ -4006,6 +4533,7 @@ type GeneRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4056,6 +4584,7 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4116,6 +4645,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4183,6 +4713,7 @@ type GeneToExpressionSiteAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4233,6 +4764,7 @@ interface GeneToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4278,6 +4810,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4328,6 +4861,7 @@ type GeneToGeneFamilyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4374,6 +4908,7 @@ type GeneToGeneHomologyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4420,6 +4955,7 @@ type GeneToGeneProductRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4467,6 +5003,7 @@ type GeneToGoTermAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4513,6 +5050,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4558,6 +5096,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4594,6 +5133,8 @@ type GeneticInheritance
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4612,6 +5153,8 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4629,6 +5172,8 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4684,6 +5229,7 @@ type GenomicSequenceLocalization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4711,6 +5257,8 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4755,6 +5303,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4808,6 +5357,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4868,6 +5418,7 @@ type GenotypeToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4914,6 +5465,7 @@ type GenotypeToGenotypePartAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4961,6 +5513,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5018,6 +5571,7 @@ type GenotypeToVariantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5038,6 +5592,8 @@ type GenotypicSex
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5057,6 +5613,8 @@ type GeographicExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5079,6 +5637,8 @@ type GeographicLocation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     latitude: Float
     longitude: Float
@@ -5097,6 +5657,8 @@ type GeographicLocationAtTime
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     latitude: Float
     longitude: Float
@@ -5115,6 +5677,8 @@ type GrossAnatomicalStructure
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5134,6 +5698,8 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5153,6 +5719,8 @@ type Hospitalization
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -5172,10 +5740,42 @@ type Human implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
     hasAttribute: [Attribute]
+  }
+
+type IceesStudyResult
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    providedBy: [String]
+    xref: [Uriorcurie]
+    fullName: LabelType
+    synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
+    category: [Uriorcurie]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    chiSquaredStatistic: Float
+    chiSquaredDof: Integer
+    chiSquaredP: Float
+    totalSampleSize: Integer
+    fisherExactOddsRatio: Float
+    fisherExactP: Float
+    logOddsRatio: Float
+    logOddsRatio95Ci: [Float]
   }
 
 type IndividualOrganism implements SubjectOfInvestigation
@@ -5190,6 +5790,8 @@ type IndividualOrganism implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5209,6 +5811,8 @@ interface InformationContentEntity
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -5253,6 +5857,7 @@ type InformationContentEntityToNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5274,6 +5879,8 @@ type Invertebrate
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5290,6 +5897,8 @@ type JournalArticle
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -5334,6 +5943,8 @@ type LifeStage implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5353,6 +5964,8 @@ type LogOddsAnalysisResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -5373,6 +5986,8 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5421,6 +6036,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5468,6 +6084,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5523,6 +6140,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5544,6 +6162,8 @@ type Mammal implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5568,6 +6188,8 @@ type MaterialSample implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -5608,6 +6230,7 @@ type MaterialSampleDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5657,6 +6280,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5687,6 +6311,8 @@ type MicroRNA
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5712,6 +6338,8 @@ type MolecularActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5758,6 +6386,7 @@ type MolecularActivityToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5804,6 +6433,7 @@ type MolecularActivityToMolecularActivityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5849,6 +6479,7 @@ type MolecularActivityToPathwayAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5871,6 +6502,8 @@ type MolecularEntity implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -5893,6 +6526,8 @@ type MolecularMixture
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -5922,6 +6557,8 @@ type NamedThing
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -5962,6 +6599,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5993,6 +6631,8 @@ type NoncodingRNAProduct
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6011,6 +6651,8 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -6036,6 +6678,8 @@ type NucleicAcidSequenceMotif
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6054,6 +6698,8 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6073,6 +6719,8 @@ type ObservedExpectedFrequencyAnalysisResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -6095,6 +6743,8 @@ type Onset
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6119,6 +6769,8 @@ type OrganismAttribute
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6140,6 +6792,8 @@ type OrganismTaxon
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     hasTaxonomicRank: TaxonomicRank
   }
@@ -6188,6 +6842,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6235,6 +6890,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6280,6 +6936,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6327,6 +6984,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6374,6 +7032,7 @@ type OrganismToOrganismAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6394,6 +7053,8 @@ type OrganismalEntity implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6439,6 +7100,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6494,6 +7156,7 @@ type PairwiseGeneToGeneInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6539,6 +7202,7 @@ type PairwiseMolecularInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6560,6 +7224,8 @@ type Patent
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -6591,6 +7257,8 @@ type PathologicalAnatomicalExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6616,6 +7284,8 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6639,6 +7309,8 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6658,6 +7330,8 @@ type PathologicalProcessExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6684,6 +7358,8 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6705,6 +7381,8 @@ type Phenomenon implements Occurrent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -6721,6 +7399,8 @@ type PhenotypicFeature
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6766,6 +7446,7 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6843,6 +7524,7 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6872,6 +7554,8 @@ type PhenotypicQuality
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6891,6 +7575,8 @@ type PhenotypicSex
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6912,6 +7598,8 @@ type PhysicalEntity implements PhysicalEssence
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -6936,6 +7624,8 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6957,6 +7647,8 @@ type PlanetaryEntity
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -6972,6 +7664,8 @@ type Plant
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6991,6 +7685,8 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7008,6 +7704,8 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7051,6 +7749,7 @@ type PopulationToPopulationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7073,6 +7772,8 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7113,6 +7814,8 @@ type PreprintPublication
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7142,6 +7845,8 @@ type Procedure implements ActivityAndBehavior
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -7182,6 +7887,7 @@ type ProcessRegulatesProcessAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7204,6 +7910,8 @@ type ProcessedMaterial
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -7229,6 +7937,8 @@ type Protein implements GeneProductMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7247,6 +7957,8 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7266,6 +7978,8 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7285,6 +7999,8 @@ type ProteinIsoform implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7300,6 +8016,8 @@ type Publication
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7359,6 +8077,7 @@ type ReactionToCatalystAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7408,6 +8127,7 @@ type ReactionToParticipantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7433,6 +8153,8 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7452,6 +8174,8 @@ type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduc
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7480,6 +8204,8 @@ type RelativeFrequencyAnalysisResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7499,6 +8225,8 @@ type RetrievalSource
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7524,6 +8252,8 @@ type RNAProduct implements GeneProductMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7542,6 +8272,8 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7591,6 +8323,7 @@ type SequenceAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7635,6 +8368,7 @@ type SequenceFeatureRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7655,6 +8389,8 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7702,6 +8438,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7719,6 +8456,8 @@ type Serial
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7750,6 +8489,8 @@ type SeverityValue
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7771,6 +8512,8 @@ type SiRNA
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7789,6 +8532,8 @@ type SmallMolecule
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -7810,6 +8555,8 @@ type Snv
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7830,6 +8577,8 @@ type SocioeconomicAttribute
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7848,6 +8597,8 @@ type SocioeconomicExposure implements ExposureEvent
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7879,6 +8630,8 @@ type Study
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
   }
 
@@ -7894,6 +8647,8 @@ type StudyPopulation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7913,6 +8668,8 @@ interface StudyResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7933,6 +8690,8 @@ type StudyVariable
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7982,6 +8741,7 @@ type TaxonToTaxonAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7993,26 +8753,6 @@ type TaxonToTaxonAssociation
 type TaxonomicRank
   {
     id: String!
-  }
-
-type TextMiningResult
-  {
-    id: String!
-    iri: IriType
-    type: [String]
-    name: LabelType
-    description: NarrativeText
-    hasAttribute: [Attribute]
-    deprecated: Boolean
-    providedBy: [String]
-    xref: [Uriorcurie]
-    fullName: LabelType
-    synonym: [LabelType]
-    category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type TextMiningStudyResult
@@ -8028,6 +8768,8 @@ type TextMiningStudyResult
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8061,6 +8803,8 @@ type Transcript
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8104,6 +8848,7 @@ type TranscriptToGeneRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8125,6 +8870,8 @@ type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGe
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8144,6 +8891,8 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     hasDrug: [Drug]
     hasDevice: [Device]
@@ -8188,6 +8937,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8241,6 +8991,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8302,6 +9053,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8348,6 +9100,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8399,6 +9152,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8456,6 +9210,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
+    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8481,6 +9236,8 @@ type Vertebrate
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8499,6 +9256,8 @@ type Virus implements SubjectOfInvestigation
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8515,6 +9274,8 @@ type WebPage
     providedBy: [String]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8542,6 +9303,8 @@ type Zygosity
     xref: [Uriorcurie]
     fullName: LabelType
     synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!

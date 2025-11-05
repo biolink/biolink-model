@@ -316,6 +316,10 @@
       Association &lt;|-- GenotypeToVariantAssociation
       Association &lt;|-- GeneToGeneAssociation
       Association &lt;|-- GeneToGeneFamilyAssociation
+      Association &lt;|-- GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
+      Association &lt;|-- GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
+      Association &lt;|-- BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
+      Association &lt;|-- BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
       Association &lt;|-- CellLineToDiseaseOrPhenotypicFeatureAssociation
       Association &lt;|-- ChemicalToChemicalAssociation
       Association &lt;|-- ChemicalToDiseaseOrPhenotypicFeatureAssociation
@@ -327,7 +331,7 @@
       Association &lt;|-- ChemicalGeneInteractionAssociation
       Association &lt;|-- GeneRegulatesGeneAssociation
       Association &lt;|-- ProcessRegulatesProcessAssociation
-      Association &lt;|-- ChemicalAffectsGeneAssociation
+      Association &lt;|-- ChemicalAffectsBiologicalEntityAssociation
       Association &lt;|-- GeneAffectsChemicalAssociation
       Association &lt;|-- DrugToGeneAssociation
       Association &lt;|-- MaterialSampleDerivationAssociation
@@ -368,6 +372,8 @@
       Association &lt;|-- SequenceFeatureRelationship
       Association &lt;|-- ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
       Association &lt;|-- AnatomicalEntityToAnatomicalEntityAssociation
+      Association &lt;|-- GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
+      Association &lt;|-- BiologicalProcessOrActivityToAnatomicalEntityAssociation
       Association &lt;|-- OrganismTaxonToOrganismTaxonAssociation
       Association &lt;|-- OrganismTaxonToEnvironmentAssociation
 
@@ -399,6 +405,10 @@
       Association : has_supporting_studies
 
           Association --|&gt; Study : has_supporting_studies
+
+      Association : has_supporting_study_result
+
+          Association --|&gt; StudyResult : has_supporting_study_result
 
       Association : id
 
@@ -500,18 +510,22 @@
 <li><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></li>
 <li><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></li>
 <li><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></li>
+<li><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></li>
+<li><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></li>
+<li><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></li>
+<li><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></li>
 <li><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
-<li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]</li>
-<li><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
-<li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]</li>
+<li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></li>
+<li><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
+<li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]</li>
 <li><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a> [ <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>]</li>
 <li><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></li>
-<li><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]</li>
+<li><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></li>
 <li><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></li>
-<li><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a> [ <a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a>]</li>
+<li><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></li>
 <li><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></li>
 <li><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></li>
-<li><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></li>
+<li><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></li>
 <li><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></li>
 <li><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a> [ <a href="../DrugToEntityAssociationMixin/">DrugToEntityAssociationMixin</a>]</li>
 <li><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></li>
@@ -552,6 +566,8 @@
 <li><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></li>
 <li><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></li>
 <li><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></li>
+<li><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></li>
+<li><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></li>
 <li><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a> [ <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>]</li>
 <li><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a> [ <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>]</li>
 </ul>
@@ -759,6 +775,12 @@
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -992,6 +1014,54 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../chi_squared_statistic/">chi_squared_statistic</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../chi_squared_dof/">chi_squared_dof</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../chi_squared_p/">chi_squared_p</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../total_sample_size/">total_sample_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../fisher_exact_p/">fisher_exact_p</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../log_odds_ratio/">log_odds_ratio</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="./">Association</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -1168,6 +1238,12 @@
 <tr>
 <td><a href="./">Association</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="./">Association</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -1371,6 +1447,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -1557,6 +1639,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -1743,6 +1831,12 @@
 </tr>
 <tr>
 <td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -1929,6 +2023,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -2115,6 +2215,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -2301,6 +2407,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -2487,6 +2599,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -2673,6 +2791,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -2859,6 +2983,780 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -3093,6 +3991,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -3274,6 +4178,12 @@
 <tr>
 <td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3471,6 +4381,12 @@
 </tr>
 <tr>
 <td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -3699,6 +4615,12 @@
 </tr>
 <tr>
 <td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -3952,6 +4874,12 @@
 <tr>
 <td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4161,6 +5089,12 @@
 </tr>
 <tr>
 <td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -4360,6 +5294,12 @@
 <tr>
 <td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4557,6 +5497,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -4762,6 +5708,12 @@
 <tr>
 <td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5008,6 +5960,12 @@
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5265,6 +6223,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -5457,6 +6421,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -5643,6 +6613,12 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -5824,6 +6800,12 @@
 <tr>
 <td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6040,6 +7022,12 @@
 <tr>
 <td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6279,6 +7267,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -6489,6 +7483,12 @@
 </tr>
 <tr>
 <td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -6675,6 +7675,294 @@
 </tr>
 <tr>
 <td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_part_qualifier/">subject_part_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_derivative_qualifier/">subject_derivative_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_context_qualifier/">subject_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_form_or_variant_qualifier/">object_form_or_variant_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_part_qualifier/">object_part_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_context_qualifier/">object_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -6946,6 +8234,12 @@
 <tr>
 <td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7233,6 +8527,12 @@
 </tr>
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -7419,6 +8719,12 @@
 </tr>
 <tr>
 <td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -7618,6 +8924,12 @@
 <tr>
 <td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7833,6 +9145,12 @@
 </tr>
 <tr>
 <td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -8050,6 +9368,12 @@
 <tr>
 <td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8271,6 +9595,12 @@
 </tr>
 <tr>
 <td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -8835,6 +10165,12 @@
 </tr>
 <tr>
 <td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9057,6 +10393,12 @@
 </tr>
 <tr>
 <td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9321,6 +10663,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9502,6 +10850,12 @@
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9759,6 +11113,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -9988,6 +11348,12 @@
 <tr>
 <td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10233,6 +11599,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10473,6 +11845,12 @@
 </tr>
 <tr>
 <td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10707,6 +12085,12 @@
 </tr>
 <tr>
 <td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -10893,6 +12277,12 @@
 </tr>
 <tr>
 <td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -11074,6 +12464,12 @@
 <tr>
 <td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11266,6 +12662,12 @@
 <tr>
 <td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11565,6 +12967,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -11811,6 +13219,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -12057,6 +13471,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -12298,6 +13718,12 @@
 <tr>
 <td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12555,6 +13981,12 @@
 </tr>
 <tr>
 <td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -12801,6 +14233,12 @@
 </tr>
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -13018,6 +14456,12 @@
 <tr>
 <td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13246,6 +14690,12 @@
 <tr>
 <td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13461,6 +14911,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -13653,6 +15109,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -13834,6 +15296,12 @@
 <tr>
 <td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14031,6 +15499,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -14259,6 +15733,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -14482,6 +15962,12 @@
 <tr>
 <td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14763,6 +16249,12 @@
 </tr>
 <tr>
 <td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -14974,6 +16466,12 @@
 <tr>
 <td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15202,6 +16700,12 @@
 <tr>
 <td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15459,6 +16963,12 @@
 </tr>
 <tr>
 <td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -15676,6 +17186,12 @@
 <tr>
 <td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15909,6 +17425,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -16090,6 +17612,12 @@
 <tr>
 <td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16306,6 +17834,12 @@
 <tr>
 <td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16545,6 +18079,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -16731,6 +18271,12 @@
 </tr>
 <tr>
 <td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -16912,6 +18458,12 @@
 <tr>
 <td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17121,6 +18673,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -17307,6 +18865,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -17493,6 +19057,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -17679,6 +19249,12 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -17865,6 +19441,12 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -18046,6 +19628,12 @@
 <tr>
 <td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18249,6 +19837,12 @@
 </tr>
 <tr>
 <td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -18447,6 +20041,12 @@
 </tr>
 <tr>
 <td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -18633,6 +20233,12 @@
 </tr>
 <tr>
 <td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -18819,6 +20425,12 @@
 </tr>
 <tr>
 <td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -19005,6 +20617,12 @@
 </tr>
 <tr>
 <td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -19191,6 +20809,12 @@
 </tr>
 <tr>
 <td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -19377,6 +21001,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -19558,6 +21188,12 @@
 <tr>
 <td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19755,6 +21391,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -19941,6 +21583,12 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -20127,6 +21775,12 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityPartOfAssociation/">AnatomicalEntityToAnatomicalEntityPartOfAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityPartOfAssociation/">AnatomicalEntityToAnatomicalEntityPartOfAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -20313,6 +21967,396 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -20517,6 +22561,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -20698,6 +22748,12 @@
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20895,6 +22951,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -21081,6 +23143,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
+<td><a href="../has_supporting_study_result/">has_supporting_study_result</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -21132,6 +23200,7 @@ slots:
 - p value
 - adjusted p value
 - has supporting studies
+- has supporting study result
 - update date
 - has confidence score
 slot_usage:

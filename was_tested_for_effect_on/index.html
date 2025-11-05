@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/increases_response_to/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/was_tested_for_effect_on/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: increases_response_to (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: was_tested_for_effect_on (DEPRECATED) (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-increases_response_to-multivalued" class="md-skip">
+        <a href="#slot-was_tested_for_effect_on-deprecated-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: increases_response_to (multivalued)
+              Slot: was_tested_for_effect_on (DEPRECATED) (multivalued)
             
           </span>
         </div>
@@ -657,27 +657,21 @@
   
 
 
-<h1 id="slot-increases_response_to-multivalued"><strong> Slot: increases_response_to </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other</i><br>
-
+<h1 id="slot-was_tested_for_effect_on-deprecated-multivalued"><strong> Slot: was_tested_for_effect_on </strong>  <span style="color: red;"><strong> (DEPRECATED) </strong></span>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> Reports that the subject was interrogated in an experiment to determine how it may affect the object. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.</i><br>
+   <strong>Aliases:</strong> was assayed against, was experimentally tested against<br>
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a><br>
-<strong>Range:</strong>   <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <br></p>
+<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
+<strong>Range:</strong>   <a href="../NamedThing/">NamedThing</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affects/">affects</a><ul>
-<li><a href="../affects_response_to/">affects_response_to</a><ul>
-<li><strong>increases_response_to</strong></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><strong>was_tested_for_effect_on</strong></li>
 </ul>
 </li>
 </ul>
@@ -701,28 +695,27 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: increases response to
+<pre><code class="language-yaml">name: was tested for effect on
 annotations:
   canonical_predicate:
     tag: canonical_predicate
     value: true
-  opposite_of:
-    tag: opposite_of
-    value: decreases response to
-description: holds between two chemical entities where the action or effect of one
-  increases the susceptibility of a biological entity or system (e.g. an organism,
-  cell, cellular component, macromolecular machine mixin, biological or pathological
-  process) to the other
-in_subset:
-- translator_minimal
+description: Reports that the subject was interrogated in an experiment to determine
+  how it may affect the object. A relationship between some perturbing agent (usually
+  a chemical compound) and some target entity, where the affect of the perturbing
+  agent on the target entity was interrogated in a particular assay. The target might
+  be a particular protein, tissue, phenotype, whole organism, cell line, or other
+  type of biological entity.
+deprecated: 'True'
 from_schema: https://w3id.org/biolink/biolink-model
-exact_mappings:
-- CTD:increases_response_to
-is_a: affects response to
-domain: chemical entity or gene or gene product
+aliases:
+- was assayed against
+- was experimentally tested against
+is_a: related to at instance level
+domain: named thing
 inherited: true
-alias: increases_response_to
-range: chemical entity or gene or gene product
+alias: was_tested_for_effect_on
+range: named thing
 multivalued: true
 
 </code></pre>

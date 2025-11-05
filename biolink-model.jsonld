@@ -2,9 +2,10 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "imports": [
-    "linkml:types"
+    "linkml:types",
+    "attributes"
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "prefixes": [
@@ -1239,9 +1240,25 @@
           "is_a": "clinical_trial_phase"
         },
         {
+          "text": "clinical_trial_phase_1_to_2",
+          "description": "A study that tests the safety, side effects, and best dose of a new treatment. Phase I/II clinical trials also test how well a certain type of cancer or other disease responds to a new treatment. In the phase II part of the clinical trial, patients usually receive the highest dose of treatment that did not cause harmful side effects in the phase I part of the clinical trial. Combining phases I and II may allow research questions to be answered more quickly or with fewer patients. Also called phase 1/phase 2 clinical trial.",
+          "is_a": "clinical_trial_phase",
+          "see_also": [
+            "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-i-ii-clinical-trial"
+          ]
+        },
+        {
           "text": "clinical_trial_phase_2",
           "description": "In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.",
           "is_a": "clinical_trial_phase"
+        },
+        {
+          "text": "clinical_trial_phase_2_to_3",
+          "description": "A study that tests how well a new treatment works for a certain type of cancer or other disease and compares the new treatment with a standard treatment. Phase II/III clinical trials may also provide more information about the safety and side effects of the new treatment. Combining phases II and III may allow research questions to be answered more quickly or with fewer patients. Also called phase 2/phase 3 clinical trial.",
+          "is_a": "clinical_trial_phase",
+          "see_also": [
+            "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-ii-iii-clinical-trial"
+          ]
         },
         {
           "text": "clinical_trial_phase_3",
@@ -1345,6 +1362,10 @@
         {
           "text": "snp_form",
           "is_a": "polymorphic_form"
+        },
+        {
+          "text": "mutant_form",
+          "is_a": "genetic_variant_form"
         },
         {
           "text": "analog_form",
@@ -2123,6 +2144,18 @@
   ],
   "slots": [
     {
+      "name": "node_property",
+      "definition_uri": "https://w3id.org/biolink/vocab/node_property",
+      "description": "A grouping for any property that holds between a node and a value",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "abstract": true,
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/node_property",
+      "owner": "node_property",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "nodes",
       "definition_uri": "https://w3id.org/biolink/vocab/nodes",
       "description": "A list of entities that can be a subject or object of an association",
@@ -2388,17 +2421,6 @@
       "slot_uri": "https://w3id.org/biolink/vocab/base_coordinate",
       "owner": "base_coordinate",
       "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "node_property",
-      "definition_uri": "https://w3id.org/biolink/vocab/node_property",
-      "description": "A grouping for any property that holds between a node and a value",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/node_property",
-      "owner": "node_property",
-      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -4548,7 +4570,7 @@
       "domain_of": [
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4614,7 +4636,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "GeneToDiseaseOrPhenotypicFeatureAssociation",
         "GeneHasVariantThatContributesToDiseaseAssociation"
@@ -4637,7 +4659,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4664,7 +4686,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4685,7 +4707,7 @@
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4705,7 +4727,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4749,7 +4771,7 @@
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4815,7 +4837,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4836,7 +4858,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4882,7 +4904,7 @@
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -4903,7 +4925,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4930,7 +4952,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -4969,7 +4991,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "CausalMechanismQualifierEnum",
@@ -5003,7 +5025,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
@@ -5038,7 +5060,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneRegulatesGeneAssociation",
-        "ChemicalAffectsGeneAssociation",
+        "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "MacromolecularMachineToEntityAssociationMixin"
       ],
@@ -6475,8 +6497,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "assesses",
-      "definition_uri": "https://w3id.org/biolink/vocab/assesses",
+      "name": "was_tested_for_effect_on",
+      "definition_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_on",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -6484,31 +6506,34 @@
           "@type": "Annotation"
         }
       ],
-      "description": "The effect of a thing on a target was interrogated in some assay. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.",
+      "description": "Reports that the subject was interrogated in an experiment to determine how it may affect the object. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "aliases": [
-        "was assayed against"
+        "was assayed against",
+        "was experimentally tested against"
       ],
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/assesses",
+      "slot_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_on",
       "inherited": true,
-      "owner": "assesses",
-      "inverse": "is_assessed_by",
+      "owner": "was_tested_for_effect_on",
+      "inverse": "was_tested_for_effect_of",
       "range": "NamedThing",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "is_assessed_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/is_assessed_by",
+      "name": "was_tested_for_effect_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_of",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/is_assessed_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_of",
       "inherited": true,
-      "owner": "is_assessed_by",
-      "inverse": "assesses",
+      "owner": "was_tested_for_effect_of",
+      "inverse": "was_tested_for_effect_on",
       "range": "NamedThing",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -7078,8 +7103,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "affects_response_to",
-      "definition_uri": "https://w3id.org/biolink/vocab/affects_response_to",
+      "name": "affects_sensitivity_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/affects_sensitivity_to",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7087,6 +7112,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "holds between two chemical entities or genes or gene products where the action of one affects the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7094,39 +7120,38 @@
       "exact_mappings": [
         "http://ctdbase.org/affects_response_to"
       ],
-      "is_a": "affects",
+      "is_a": "related_to_at_instance_level",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/affects_response_to",
+      "slot_uri": "https://w3id.org/biolink/vocab/affects_sensitivity_to",
       "inherited": true,
-      "owner": "affects_response_to",
-      "inverse": "response_affected_by",
+      "owner": "affects_sensitivity_to",
+      "inverse": "sensitivity_affected_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "response_affected_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/response_affected_by",
-      "description": "holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.",
+      "name": "sensitivity_affected_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_affected_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "affected_by",
+      "is_a": "related_to_at_instance_level",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/response_affected_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_affected_by",
       "inherited": true,
-      "owner": "response_affected_by",
-      "inverse": "affects_response_to",
+      "owner": "sensitivity_affected_by",
+      "inverse": "affects_sensitivity_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "increases_response_to",
-      "definition_uri": "https://w3id.org/biolink/vocab/increases_response_to",
+      "name": "increases_sensitivity_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/increases_sensitivity_to",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7135,11 +7160,11 @@
         },
         {
           "tag": "opposite_of",
-          "value": "decreases response to",
+          "value": "decreases sensitivity to",
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
+      "description": "holds between two chemical entities or genes or gene products where the action or effect of one increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7147,38 +7172,38 @@
       "exact_mappings": [
         "http://ctdbase.org/increases_response_to"
       ],
-      "is_a": "affects_response_to",
+      "is_a": "affects_sensitivity_to",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/increases_response_to",
+      "slot_uri": "https://w3id.org/biolink/vocab/increases_sensitivity_to",
       "inherited": true,
-      "owner": "increases_response_to",
-      "inverse": "response_increased_by",
+      "owner": "increases_sensitivity_to",
+      "inverse": "sensitivity_increased_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "response_increased_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/response_increased_by",
+      "name": "sensitivity_increased_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_increased_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "response_affected_by",
+      "is_a": "related_to_at_instance_level",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/response_increased_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_increased_by",
       "inherited": true,
-      "owner": "response_increased_by",
-      "inverse": "increases_response_to",
+      "owner": "sensitivity_increased_by",
+      "inverse": "increases_sensitivity_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "decreases_response_to",
-      "definition_uri": "https://w3id.org/biolink/vocab/decreases_response_to",
+      "name": "decreases_sensitivity_to",
+      "definition_uri": "https://w3id.org/biolink/vocab/decreases_sensitivity_to",
       "annotations": [
         {
           "tag": "canonical_predicate",
@@ -7187,11 +7212,11 @@
         },
         {
           "tag": "opposite_of",
-          "value": "increases response to",
+          "value": "increases sensitivity to",
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
+      "description": "holds between two chemical entities or genes or gene products where the action or effect of one decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7202,30 +7227,30 @@
       "narrow_mappings": [
         "http://ctdbase.org/decreases_response_to_substance"
       ],
-      "is_a": "affects_response_to",
+      "is_a": "affects_sensitivity_to",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/decreases_response_to",
+      "slot_uri": "https://w3id.org/biolink/vocab/decreases_sensitivity_to",
       "inherited": true,
-      "owner": "decreases_response_to",
-      "inverse": "response_decreased_by",
+      "owner": "decreases_sensitivity_to",
+      "inverse": "sensitivity_decreased_by",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "response_decreased_by",
-      "definition_uri": "https://w3id.org/biolink/vocab/response_decreased_by",
+      "name": "sensitivity_decreased_by",
+      "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_decreased_by",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "response_affected_by",
+      "is_a": "sensitivity_affected_by",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
-      "slot_uri": "https://w3id.org/biolink/vocab/response_decreased_by",
+      "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_decreased_by",
       "inherited": true,
-      "owner": "response_decreased_by",
-      "inverse": "decreases_response_to",
+      "owner": "sensitivity_decreased_by",
+      "inverse": "decreases_sensitivity_to",
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
@@ -12529,7 +12554,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/has_supporting_study_result",
-      "owner": "has_supporting_study_result",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
       "range": "StudyResult",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -12537,25 +12565,38 @@
     {
       "name": "log_odds_ratio",
       "definition_uri": "https://w3id.org/biolink/vocab/log_odds_ratio",
-      "description": "The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the odds of event Y occurring in a non-exposed group has",
+      "description": "The natural logarithm of the odds ratio (OR), or the ratio of the odds of an event Y occurring in an exposed group versus the odds of an event Y occurring in a non-exposed group.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/log_odds_ratio",
-      "owner": "log_odds_ratio",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
       "range": "float",
       "@type": "SlotDefinition"
     },
     {
       "name": "log_odds_ratio_95_ci",
       "definition_uri": "https://w3id.org/biolink/vocab/log_odds_ratio_95_ci",
-      "description": "The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.",
+      "description": "The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.",
+      "examples": [
+        {
+          "value": "[0.6996904681742875, 1.6429124024089072]",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/log_odds_ratio_95_ci",
-      "owner": "log_odds_ratio_95_ci",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
       "range": "float",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12566,7 +12607,10 @@
       "is_a": "dataset_count",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/total_sample_size",
-      "owner": "total_sample_size",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
@@ -12690,7 +12734,13 @@
     {
       "name": "chi_squared_statistic",
       "definition_uri": "https://w3id.org/biolink/vocab/chi_squared_statistic",
-      "description": "represents the chi-squared statistic computed from observations",
+      "description": "The chi-squared statistic measures how much observed data deviate from expected values under the null hypothesis.",
+      "examples": [
+        {
+          "value": "26.38523077566414",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/STATO_0000030"
@@ -12698,7 +12748,94 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_statistic",
-      "owner": "chi_squared_statistic",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chi_squared_dof",
+      "definition_uri": "https://w3id.org/biolink/vocab/chi_squared_dof",
+      "description": "Degrees of freedom (dof) in a chi-squared test referring to the number of values in the final calculation of a statistic that are free to vary",
+      "examples": [
+        {
+          "value": "1",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_dof",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chi_squared_p",
+      "definition_uri": "https://w3id.org/biolink/vocab/chi_squared_p",
+      "description": "The chi-square p-value tells you the probability that the observed differences (or associations) in your data occurred by random chance, assuming the null hypothesis is true.",
+      "examples": [
+        {
+          "value": "2.7967079822744063e-07",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_p",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fisher_exact_odds_ratio",
+      "definition_uri": "https://w3id.org/biolink/vocab/fisher_exact_odds_ratio",
+      "description": "The Fisher Exact Test is used to determine whether there is a non-random association between two categorical variables in a 2\u00d72 contingency table, especially when sample sizes are small. The odds ratio (OR) quantifies the strength of that association.\n   OR = 1 implies No association\n   OR > 1 implies Positive association (Group A more likely to have Outcome 1)\n   OR < 1 implies Negative association (Group A less likely to have Outcome 1)",
+      "examples": [
+        {
+          "value": "3.226188583240579",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/fisher_exact_odds_ratio",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fisher_exact_p",
+      "definition_uri": "https://w3id.org/biolink/vocab/fisher_exact_p",
+      "description": "The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that the null hypothesis of independence is true. It's most commonly used for 2\u00d72 contingency tables, especially when sample sizes are small or expected counts are low.",
+      "examples": [
+        {
+          "value": "2.8581244515361156e-06",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/fisher_exact_p",
+      "owner": "IceesStudyResult",
+      "domain_of": [
+        "IceesStudyResult"
+      ],
       "range": "float",
       "@type": "SlotDefinition"
     },
@@ -13672,6 +13809,77 @@
         "Case"
       ],
       "range": "BiologicalSex",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "information_content",
+      "definition_uri": "https://w3id.org/biolink/vocab/information_content",
+      "description": "Information content (IC) value for a term, primarily from Automats.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/information_content",
+      "owner": "NamedThing",
+      "domain_of": [
+        "NamedThing"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "equivalent_identifiers",
+      "definition_uri": "https://w3id.org/biolink/vocab/equivalent_identifiers",
+      "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "see_also": [
+        "biolink:xref",
+        "biolink:synonyms"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/equivalent_identifiers",
+      "owner": "NamedThing",
+      "domain_of": [
+        "NamedThing"
+      ],
+      "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_drug_warning",
+      "definition_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
+      "description": "Text describing warnings for use of chemicals as therapeutics.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
+      "owner": "chembl_drug_warning",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_prodrug",
+      "definition_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
+      "description": "Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
+      "owner": "chembl_prodrug",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_chirality",
+      "definition_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
+      "description": "Tern indicating the chirality of the chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
+      "owner": "chembl_chirality",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -15105,7 +15313,7 @@
       "domain_of": [
         "ChemicalEntityAssessesNamedThingAssociation"
       ],
-      "subproperty_of": "assesses",
+      "subproperty_of": "was_tested_for_effect_on",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "predicate_type",
@@ -15879,6 +16087,456 @@
         "GeneToGeneFamilyAssociation"
       ],
       "subproperty_of": "member_of",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_family_to_gene_or_gene_product_or_gene_family_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Gene",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_family_to_gene_or_gene_product_or_gene_family_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "GeneFamily",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_family_to_gene_or_gene_product_or_gene_family_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "membership of a gene or gene product, or strict subset relationship gene family, in the given gene family.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "subproperty_of": "has_part",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "domain_of": [
+        "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "GeneOrGeneProductOrGeneFamily",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "domain_of": [
+        "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "BiologicalProcessOrActivity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "participation of a gene or gene product or gene family in a given biological process or activity (e.g., gene product participates in biological process; gene catalyzes molecular activity; gene family is actively involved in a pathway).",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "domain_of": [
+        "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation"
+      ],
+      "subproperty_of": "participates_in",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "BiologicalProcessOrActivity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "GeneOrGeneProductOrGeneFamily",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Relationship in which a biological process has the participation of a gene or gene product or gene family in a  (e.g., pathway has participant gene product).",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation"
+      ],
+      "subproperty_of": "has_participant",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_biological_process_or_activity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "BiologicalProcessOrActivity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_biological_process_or_activity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "BiologicalProcessOrActivity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_biological_process_or_activity_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "One biological processes or activities is a subclass of another.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation"
+      ],
+      "subproperty_of": "subclass_of",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "predicate_type",
@@ -17795,7 +18453,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject",
+      "name": "chemical_affects_biological_entity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -17817,12 +18475,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -17831,7 +18489,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_form_or_variant_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
       "examples": [
@@ -17861,12 +18519,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_form_or_variant_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
       "alias": "subject form or variant qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject form or variant qualifier",
@@ -17874,7 +18532,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_part_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
       "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).",
       "in_subset": [
@@ -17882,12 +18540,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_part_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
       "alias": "subject part qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject part qualifier",
@@ -17895,7 +18553,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_derivative_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_derivative_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
       "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association (or statement).",
       "examples": [
@@ -17909,12 +18567,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_derivative_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
       "alias": "subject derivative qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject derivative qualifier",
@@ -17922,7 +18580,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_aspect_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
       "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
       "examples": [
@@ -17948,12 +18606,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_aspect_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
       "alias": "subject aspect qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject aspect qualifier",
@@ -17961,19 +18619,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
       "alias": "subject context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject context qualifier",
@@ -17981,7 +18639,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_subject_direction_qualifier",
+      "name": "chemical_affects_biological_entity_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
       "in_subset": [
@@ -17989,12 +18647,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "subject_direction_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "alias": "subject direction qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject direction qualifier",
@@ -18002,7 +18660,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_predicate",
+      "name": "chemical_affects_biological_entity_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18027,12 +18685,12 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "subproperty_of": "affects",
       "is_usage_slot": true,
@@ -18042,7 +18700,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_qualified_predicate",
+      "name": "chemical_affects_biological_entity_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
       "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
@@ -18050,12 +18708,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "qualified_predicate",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
       "alias": "qualified predicate",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "subproperty_of": "causes",
       "is_usage_slot": true,
@@ -18064,7 +18722,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object",
+      "name": "chemical_affects_biological_entity_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18086,22 +18744,21 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "GeneOrGeneProduct",
+      "range": "BiologicalEntity",
       "required": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_form_or_variant_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
       "examples": [
@@ -18131,12 +18788,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_form_or_variant_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
       "alias": "object form or variant qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object form or variant qualifier",
@@ -18144,7 +18801,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_part_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
       "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement).",
       "in_subset": [
@@ -18152,12 +18809,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_part_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
       "alias": "object part qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object part qualifier",
@@ -18165,7 +18822,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_aspect_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
       "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
       "examples": [
@@ -18191,12 +18848,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_aspect_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
       "alias": "object aspect qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object aspect qualifier",
@@ -18204,19 +18861,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
       "alias": "object context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object context qualifier",
@@ -18224,7 +18881,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_object_direction_qualifier",
+      "name": "chemical_affects_biological_entity_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
       "in_subset": [
@@ -18232,12 +18889,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "object_direction_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "alias": "object direction qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object direction qualifier",
@@ -18245,7 +18902,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_causal_mechanism_qualifier",
+      "name": "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
       "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
       "in_subset": [
@@ -18253,12 +18910,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "causal_mechanism_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
       "alias": "causal mechanism qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "causal mechanism qualifier",
@@ -18266,7 +18923,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_anatomical_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_anatomical_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
@@ -18287,12 +18944,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "anatomical_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "alias": "anatomical context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
@@ -18300,7 +18957,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_affects_gene_association_species_context_qualifier",
+      "name": "chemical_affects_biological_entity_association_species_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
       "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
       "notes": [
@@ -18321,12 +18978,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "species_context_qualifier",
-      "domain": "ChemicalAffectsGeneAssociation",
+      "domain": "ChemicalAffectsBiologicalEntityAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
       "alias": "species context qualifier",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsBiologicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "species context qualifier",
@@ -23662,6 +24319,151 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "domain_of": [
+        "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "GeneOrGeneProductOrGeneFamily",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_or_gene_product_or_gene_family_to_anatomical_entity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "domain_of": [
+        "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_anatomical_entity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "BiologicalProcessOrActivity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_process_or_activity_to_anatomical_entity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "domain_of": [
+        "BiologicalProcessOrActivityToAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "organism_taxon_to_entity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -24313,6 +25115,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -24352,6 +25156,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -24381,6 +25187,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -24411,6 +25219,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -24441,6 +25251,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -24469,6 +25281,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -24596,6 +25410,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -24675,6 +25491,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "organism_taxon_has_taxonomic_rank"
       ],
@@ -24704,6 +25522,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -24728,6 +25548,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -24756,6 +25578,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -24764,6 +25588,156 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/StudyResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ConceptCountAnalysisResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
+      "description": "A result of a concept count analysis.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "information_content",
+        "equivalent_identifiers",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservedExpectedFrequencyAnalysisResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
+      "description": "A result of a observed expected frequency analysis.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "information_content",
+        "equivalent_identifiers",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RelativeFrequencyAnalysisResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
+      "description": "A result of a relative frequency analysis.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "information_content",
+        "equivalent_identifiers",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChiSquaredAnalysisResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
+      "description": "A result of a chi squared analysis.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "information_content",
+        "equivalent_identifiers",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "LogOddsAnalysisResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/LogOddsAnalysisResult",
+      "description": "A result of a log odds ratio analysis.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "information_content",
+        "equivalent_identifiers",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/LogOddsAnalysisResult",
       "@type": "ClassDefinition"
     },
     {
@@ -24784,6 +25758,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -24799,6 +25775,44 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/TextMiningStudyResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IceesStudyResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/IceesStudyResult",
+      "description": "A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "information_content",
+        "equivalent_identifiers",
+        "named_thing_category",
+        "license",
+        "rights",
+        "format",
+        "creation_date",
+        "chi_squared_statistic",
+        "chi_squared_dof",
+        "chi_squared_p",
+        "total_sample_size",
+        "fisher_exact_odds_ratio",
+        "fisher_exact_p",
+        "log_odds_ratio",
+        "log_odds_ratio_95_ci"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/IceesStudyResult",
       "@type": "ClassDefinition"
     },
     {
@@ -24829,6 +25843,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -24860,6 +25876,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -24891,6 +25909,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -24899,174 +25919,6 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CommonDataElement",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ConceptCountAnalysisResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
-      "description": "A result of a concept count analysis.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ObservedExpectedFrequencyAnalysisResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
-      "description": "A result of a observed expected frequency analysis.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "RelativeFrequencyAnalysisResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
-      "description": "A result of a relative frequency analysis.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "TextMiningResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/TextMiningResult",
-      "description": "A result of text mining.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/TextMiningResult",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ChiSquaredAnalysisResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
-      "description": "A result of a chi squared analysis.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "LogOddsAnalysisResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/LogOddsAnalysisResult",
-      "description": "A result of a log odds ratio analysis.",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/LogOddsAnalysisResult",
       "@type": "ClassDefinition"
     },
     {
@@ -25108,6 +25960,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "affiliation",
         "address",
@@ -25162,6 +26016,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25196,6 +26052,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25227,6 +26085,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25256,6 +26116,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25287,6 +26149,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25327,6 +26191,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25364,6 +26230,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25405,6 +26273,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25445,6 +26315,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25482,6 +26354,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25528,6 +26402,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25576,6 +26452,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25623,6 +26501,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25666,6 +26546,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25705,6 +26587,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25743,6 +26627,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25780,6 +26666,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25816,6 +26704,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "license",
         "rights",
@@ -25879,6 +26769,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -25948,6 +26840,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -25988,6 +26882,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26028,6 +26924,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26058,6 +26956,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26086,6 +26986,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26112,6 +27014,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -26166,6 +27070,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26190,6 +27096,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26219,6 +27127,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26245,6 +27155,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -26273,6 +27185,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "latitude",
         "longitude"
@@ -26299,6 +27213,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "latitude",
         "longitude",
@@ -26352,6 +27268,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -26450,6 +27368,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -26529,6 +27449,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -26606,6 +27528,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -26675,6 +27599,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -26752,6 +27678,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -26799,6 +27727,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -26839,6 +27769,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -26879,6 +27811,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -26935,6 +27869,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -26994,6 +27930,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -27035,6 +27973,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27095,6 +28035,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27144,6 +28086,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27196,6 +28140,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27244,6 +28190,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27285,6 +28233,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27344,6 +28294,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -27425,6 +28377,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -27487,6 +28441,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -27545,6 +28501,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -27602,6 +28560,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "trade_name",
         "available_from",
@@ -27636,6 +28596,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -27675,6 +28637,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -27720,6 +28684,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -27757,6 +28723,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27787,6 +28755,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27820,6 +28790,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27852,6 +28824,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27887,6 +28861,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27922,6 +28898,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27954,6 +28932,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -27989,6 +28969,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28023,6 +29005,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28058,6 +29042,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28104,6 +29090,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28147,6 +29135,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28195,6 +29185,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28231,6 +29223,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28311,6 +29305,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28401,6 +29397,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28431,6 +29429,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28502,6 +29502,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28550,6 +29552,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28593,6 +29597,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28627,6 +29633,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28673,6 +29681,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28731,6 +29741,16 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GeneOrGeneProductOrGeneFamily",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamily",
+      "description": "A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and some other general class of entity (e.g. biological process or anatomical entity)",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "mixin": true,
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamily",
       "@type": "ClassDefinition"
     },
     {
@@ -28793,6 +29813,8 @@
         "provided_by",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28881,6 +29903,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -28912,6 +29936,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28955,6 +29981,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -28987,6 +30015,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29026,6 +30056,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29058,6 +30090,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29107,6 +30141,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29157,6 +30193,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29195,6 +30233,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29230,6 +30270,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29260,6 +30302,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29298,6 +30342,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29328,6 +30374,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29363,6 +30411,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29395,6 +30445,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29429,6 +30481,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29467,6 +30521,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29509,6 +30565,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label"
@@ -29590,6 +30648,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29617,6 +30677,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -29665,6 +30727,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29703,6 +30767,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29788,6 +30854,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29825,6 +30893,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29869,6 +30939,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -29897,6 +30969,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -29927,6 +31001,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_quantitative_value",
@@ -29954,6 +31030,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -29984,6 +31062,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30017,6 +31097,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30046,6 +31128,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -30077,6 +31161,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "clinical_trial_phase",
         "clinical_trial_primary_purpose",
@@ -30103,6 +31189,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -30131,6 +31219,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -30162,6 +31252,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category"
       ],
       "slot_usage": {},
@@ -30184,6 +31276,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30219,6 +31313,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -30258,6 +31354,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -30316,6 +31414,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30380,6 +31480,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -30410,6 +31512,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30445,6 +31549,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
@@ -30473,6 +31579,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30505,6 +31613,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30540,6 +31650,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30568,6 +31680,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30609,6 +31723,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30640,6 +31756,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30686,6 +31804,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "has_drug",
         "has_device",
@@ -30719,6 +31839,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30769,6 +31891,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30800,6 +31924,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30831,6 +31957,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -30861,6 +31989,8 @@
         "xref",
         "full_name",
         "synonym",
+        "information_content",
+        "equivalent_identifiers",
         "named_thing_category",
         "attribute_name",
         "has_attribute_type",
@@ -31036,6 +32166,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31087,6 +32218,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31111,6 +32243,7 @@
     {
       "name": "ChemicalEntityAssessesNamedThingAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "slots": [
@@ -31149,6 +32282,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31202,6 +32336,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31262,6 +32397,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31320,6 +32456,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31378,6 +32515,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31441,6 +32579,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31498,6 +32637,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31557,6 +32697,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31567,6 +32708,246 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "description": "Relationship between a gene family and a contained gene or gene product or gene family.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "gene_family_to_gene_or_gene_product_or_gene_family_association_subject",
+        "gene_family_to_gene_or_gene_product_or_gene_family_association_object",
+        "gene_family_to_gene_or_gene_product_or_gene_family_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "description": "Relationship between a gene or gene product or gene family to a specified biological process or activity (e.g. molecular activity, biological process or pathway).",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_subject",
+        "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_object",
+        "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "description": "Relationship between a biological processor activity (e.g. molecular activity, biological process or pathway) to gene or gene product or gene family.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject",
+        "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object",
+        "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
+      "description": "Classification relationship between biological processes or activities (e.g. coupling of two molecular activities;  assignment of molecular activity to a pathway; implicating a pathway in a biological process; etc.)",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "biological_process_or_activity_to_biological_process_or_activity_association_subject",
+        "biological_process_or_activity_to_biological_process_or_activity_association_object",
+        "biological_process_or_activity_to_biological_process_or_activity_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -31635,6 +33016,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31701,6 +33083,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31759,6 +33142,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31844,6 +33228,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -31900,6 +33285,7 @@
       "name": "ChemicalToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin",
       "description": "An interaction between a chemical entity and another entity",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "ChemicalEntityToEntityAssociationMixin",
       "mixin": true,
@@ -31940,9 +33326,6 @@
       "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
-      "mixins": [
-        "ChemicalToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -31979,6 +33362,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32036,6 +33420,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32097,6 +33482,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32154,6 +33540,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32182,7 +33569,6 @@
       ],
       "is_a": "Association",
       "mixins": [
-        "ChemicalToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
@@ -32223,6 +33609,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32248,7 +33635,6 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "mixins": [
-        "ChemicalToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
         "EntityToFeatureOrDiseaseQualifiersMixin"
       ],
@@ -32290,6 +33676,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32323,7 +33710,6 @@
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "mixins": [
-        "ChemicalToEntityAssociationMixin",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
@@ -32364,6 +33750,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32436,6 +33823,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32493,6 +33881,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32514,9 +33903,6 @@
         "SIO:001250"
       ],
       "is_a": "Association",
-      "mixins": [
-        "ChemicalToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -32554,6 +33940,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32611,6 +33998,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32647,9 +34035,6 @@
         "SIO:001257"
       ],
       "is_a": "Association",
-      "mixins": [
-        "ChemicalToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -32686,6 +34071,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32754,6 +34140,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32812,6 +34199,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -32825,9 +34213,9 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalAffectsGeneAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
-      "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "name": "ChemicalAffectsBiologicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsBiologicalEntityAssociation",
+      "description": "Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "Association",
       "slots": [
@@ -32866,28 +34254,99 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
         "association_category",
-        "chemical_affects_gene_association_subject_form_or_variant_qualifier",
-        "chemical_affects_gene_association_subject_part_qualifier",
-        "chemical_affects_gene_association_subject_derivative_qualifier",
-        "chemical_affects_gene_association_subject_aspect_qualifier",
-        "chemical_affects_gene_association_subject_context_qualifier",
-        "chemical_affects_gene_association_subject_direction_qualifier",
-        "chemical_affects_gene_association_object_form_or_variant_qualifier",
-        "chemical_affects_gene_association_object_part_qualifier",
-        "chemical_affects_gene_association_object_aspect_qualifier",
-        "chemical_affects_gene_association_object_context_qualifier",
-        "chemical_affects_gene_association_object_direction_qualifier",
-        "chemical_affects_gene_association_causal_mechanism_qualifier",
-        "chemical_affects_gene_association_anatomical_context_qualifier",
-        "chemical_affects_gene_association_qualified_predicate",
-        "chemical_affects_gene_association_species_context_qualifier",
-        "chemical_affects_gene_association_subject",
-        "chemical_affects_gene_association_predicate",
-        "chemical_affects_gene_association_object"
+        "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_subject_part_qualifier",
+        "chemical_affects_biological_entity_association_subject_derivative_qualifier",
+        "chemical_affects_biological_entity_association_subject_aspect_qualifier",
+        "chemical_affects_biological_entity_association_subject_context_qualifier",
+        "chemical_affects_biological_entity_association_subject_direction_qualifier",
+        "chemical_affects_biological_entity_association_object_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_object_part_qualifier",
+        "chemical_affects_biological_entity_association_object_aspect_qualifier",
+        "chemical_affects_biological_entity_association_object_context_qualifier",
+        "chemical_affects_biological_entity_association_object_direction_qualifier",
+        "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
+        "chemical_affects_biological_entity_association_anatomical_context_qualifier",
+        "chemical_affects_biological_entity_association_qualified_predicate",
+        "chemical_affects_biological_entity_association_species_context_qualifier",
+        "chemical_affects_biological_entity_association_subject",
+        "chemical_affects_biological_entity_association_predicate",
+        "chemical_affects_biological_entity_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsBiologicalEntityAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalAffectsGeneAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
+      "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "ChemicalAffectsBiologicalEntityAssociation",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_subject_part_qualifier",
+        "chemical_affects_biological_entity_association_subject_derivative_qualifier",
+        "chemical_affects_biological_entity_association_subject_aspect_qualifier",
+        "chemical_affects_biological_entity_association_subject_context_qualifier",
+        "chemical_affects_biological_entity_association_subject_direction_qualifier",
+        "chemical_affects_biological_entity_association_object_form_or_variant_qualifier",
+        "chemical_affects_biological_entity_association_object_part_qualifier",
+        "chemical_affects_biological_entity_association_object_aspect_qualifier",
+        "chemical_affects_biological_entity_association_object_context_qualifier",
+        "chemical_affects_biological_entity_association_object_direction_qualifier",
+        "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
+        "chemical_affects_biological_entity_association_anatomical_context_qualifier",
+        "chemical_affects_biological_entity_association_qualified_predicate",
+        "chemical_affects_biological_entity_association_species_context_qualifier",
+        "chemical_affects_biological_entity_association_subject",
+        "chemical_affects_biological_entity_association_predicate",
+        "chemical_affects_biological_entity_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
@@ -32941,6 +34400,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33019,6 +34479,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33093,6 +34554,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33158,6 +34620,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33259,6 +34722,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33338,6 +34802,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33574,6 +35039,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33645,6 +35111,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33751,6 +35218,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33807,6 +35275,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33905,6 +35374,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -33979,6 +35449,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34056,6 +35527,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34132,6 +35604,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34205,6 +35678,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34263,6 +35737,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34321,6 +35796,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34379,6 +35855,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34502,6 +35979,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34576,6 +36054,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34659,6 +36138,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34733,6 +36213,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34808,6 +36289,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34884,6 +36366,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -34963,6 +36446,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35036,6 +36520,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35098,6 +36583,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35166,6 +36652,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35228,6 +36715,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35291,6 +36779,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35365,6 +36854,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35436,6 +36926,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35519,6 +37010,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35595,6 +37087,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35664,6 +37157,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35735,6 +37229,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35807,6 +37302,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35871,6 +37367,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35929,6 +37426,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -35986,6 +37484,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36065,6 +37564,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36132,6 +37632,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36190,6 +37691,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36263,6 +37765,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36321,6 +37824,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36379,6 +37883,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36434,6 +37939,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36488,6 +37994,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36547,6 +38054,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36606,6 +38114,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36665,6 +38174,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36725,6 +38235,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36782,6 +38293,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36845,6 +38357,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36903,6 +38416,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -36960,6 +38474,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37019,6 +38534,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37076,6 +38592,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37132,6 +38649,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37189,6 +38707,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37246,6 +38765,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37258,6 +38778,124 @@
       "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
       "defining_slots": [
         "predicate"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "description": "An association between a gene or gene product or gene family and an anatomical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "predicate",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject",
+        "gene_or_gene_product_or_gene_family_to_anatomical_entity_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "description": "An association between a biological process or activity and an anatomical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "predicate",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "has_supporting_studies",
+        "has_supporting_study_result",
+        "update_date",
+        "has_confidence_score",
+        "association_type",
+        "association_category",
+        "biological_process_or_activity_to_anatomical_entity_association_subject",
+        "biological_process_or_activity_to_anatomical_entity_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivityToAnatomicalEntityAssociation",
+      "defining_slots": [
+        "subject",
+        "object"
       ],
       "@type": "ClassDefinition"
     },
@@ -37326,6 +38964,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37383,6 +39022,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37440,6 +39080,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37501,6 +39142,7 @@
         "p_value",
         "adjusted_p_value",
         "has_supporting_studies",
+        "has_supporting_study_result",
         "update_date",
         "has_confidence_score",
         "association_type",
@@ -37516,13 +39158,14 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-10-06T22:36:03",
-  "source_file_size": 422296,
-  "generation_date": "2025-10-06T22:36:09",
+  "source_file_date": "2025-11-05T01:13:51",
+  "source_file_size": 431069,
+  "generation_date": "2025-11-05T01:13:57",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
+    "attributes.context.jsonld",
     {
       "@base": "https://w3id.org/biolink/vocab/"
     }

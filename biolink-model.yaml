@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.2
+version: 4.3.3
 
 ## ------------
 ##
@@ -205,6 +205,7 @@ subsets:
 
 imports:
   - linkml:types
+  - attributes
 
 types:
 
@@ -278,6 +279,12 @@ types:
 ## ------------
 
 slots:
+
+  node property:
+    abstract: true
+    description: >-
+      A grouping for any property that holds between a node and a value
+    domain: named thing
 
   nodes:
     multivalued: true
@@ -476,11 +483,6 @@ slots:
    ## --------------------
    ## NODE PROPERTY SLOTS
    ## --------------------
-
-  node property:
-    description: >-
-      A grouping for any property that holds between a node and a value
-    domain: named thing
 
   id:
     identifier: true
@@ -2568,11 +2570,12 @@ slots:
 
    ## end of Publication related predicates
 
-  assesses:
+  was tested for effect on:
+    deprecated: true
     is_a: related to at instance level
-    aliases: ['was assayed against']
+    aliases: ['was assayed against', 'was experimentally tested against']
     description: >-
-      The effect of a thing on a target was interrogated in some assay.
+      Reports that the subject was interrogated in an experiment to determine how it may affect the object.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
       where the affect of the perturbing agent on the target entity was interrogated in a particular assay.
       The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type
@@ -2582,9 +2585,10 @@ slots:
     annotations:
       canonical_predicate: true
 
-  is assessed by:
+  was tested for effect of:
+    deprecated: true
     is_a: related to at instance level
-    inverse: assesses
+    inverse: was tested for effect on
     domain: named thing
     range: named thing
 
@@ -2905,8 +2909,12 @@ slots:
     narrow_mappings:
       - CHEBI:24432
 
-  affects response to:
-    is_a: affects
+  affects sensitivity to:
+    is_a: related to at instance level
+    description: >-
+      holds between two chemical entities or genes or gene products where the action of one affects
+      the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component,
+      macromolecular machine mixin, biological or pathological process) to the other.
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2916,69 +2924,63 @@ slots:
     exact_mappings:
       - CTD:affects_response_to
 
-  response affected by:
-    description: >-
-      holds between two chemical entities where the susceptibility of a biological entity or system
-      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
-      biological or pathological process) of one is affected by the action of the other.
-    is_a: affected by
+  sensitivity affected by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: affects response to
+    inverse: affects sensitivity to
 
-  increases response to:
+  increases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      increases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: decreases response to
+      opposite_of: decreases sensitivity to
     exact_mappings:
       - CTD:increases_response_to
 
-  response increased by:
-    is_a: response affected by
+  sensitivity increased by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: increases response to
+    inverse: increases sensitivity to
 
-  decreases response to:
+  decreases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      decreases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: increases response to
+      opposite_of: increases sensitivity to
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
 
-  response decreased by:
-    is_a: response affected by
+  sensitivity decreased by:
+    is_a: sensitivity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: decreases response to
+    inverse: decreases sensitivity to
 
   regulates:
     is_a: affects
@@ -5817,22 +5819,28 @@ slots:
   log odds ratio:
     is_a: association slot
     description: >-
-      The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the
-      odds of event Y occurring in a non-exposed group has
+      The natural logarithm of the odds ratio (OR), or the ratio of
+      the odds of an event Y occurring in an exposed group versus
+      the odds of an event Y occurring in a non-exposed group.
     range: float
 
   log odds ratio 95 ci:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+      To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
+      you need the standard error (SE) of the log odds ratio.  This interval helps you understand
+      the precision of your estimate and whether the association is statistically significant.
     range: float
+    multivalued: true
+    examples:
+      - value: [0.6996904681742875, 1.6429124024089072]
 
   total sample size:
     is_a: dataset count
     description: >-
       The total number of patients or participants within a sample population.
     range: integer
-
 
   mechanism of action:
     is_a: association slot
@@ -5925,9 +5933,55 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      represents the chi-squared statistic computed from observations
+      The chi-squared statistic measures how much observed
+      data deviate from expected values under the null hypothesis.
     exact_mappings:
       - STATO:0000030
+    examples:
+      - value: 26.38523077566414
+
+  chi squared dof:
+    is_a: association slot
+    description: >-
+       Degrees of freedom (dof) in a chi-squared test referring to the
+       number of values in the final calculation of a statistic that are free to vary
+    range: integer
+    examples:
+      - value: 1
+
+  chi squared p:
+    is_a: association slot
+    description: >-
+       The chi-square p-value tells you the probability that the observed differences
+       (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
+    range: float
+    examples:
+      - value: 2.7967079822744063e-07
+
+  fisher exact odds ratio:
+    is_a: association slot
+    description: >-
+       The Fisher Exact Test is used to determine whether there is a non-random association between
+       two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
+       The odds ratio (OR) quantifies the strength of that association.
+          OR = 1 implies No association
+          OR > 1 implies Positive association (Group A more likely to have Outcome 1)
+          OR < 1 implies Negative association (Group A less likely to have Outcome 1)
+    range: float
+    examples:
+      - value: 3.226188583240579
+
+  fisher exact p:
+    is_a: association slot
+    description: >-
+      The Fisher exact p-value tells you the probability of observing a table
+      as extreme as (or more extreme than) your actual data, assuming that
+      the null hypothesis of independence is true. It's most commonly used
+      for 2×2 contingency tables, especially when sample sizes
+      are small or expected counts are low.
+    range: float
+    examples:
+      - value: 2.8581244515361156e-06
 
   z score:
     aliases: ['z-score', 'z-value', 'standard score', 'normal score']
@@ -6713,6 +6767,8 @@ classes:
       - xref
       - full name
       - synonym
+      - information content
+      - equivalent identifiers
     slot_usage:
       category:
         required: true
@@ -6801,12 +6857,38 @@ classes:
       analyses, or a larger scale clinical trial or experimental research investigation.
     is_a: information content entity
 
+   ## epc result sets
+  concept count analysis result:
+    is_a: study result
+    description: >-
+      A result of a concept count analysis.
+
+  observed expected frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a observed expected frequency analysis.
+
+  relative frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a relative frequency analysis.
+
+  chi squared analysis result:
+    is_a: study result
+    description: >-
+      A result of a chi squared analysis.
+
+  log odds analysis result:
+    is_a: study result
+    description: >-
+      A result of a log odds ratio analysis.
+
   text mining study result:
+    is_a: study result
     description: >-
       A study result that represents information extracted from text using natural language processing techniques.
       This includes the extracted text, location offsets within the source document, confidence scores, and other
       metadata related to the text mining process.
-    is_a: study result
     slots:
       - supporting text
       - subject location in text
@@ -6816,9 +6898,24 @@ classes:
       - supporting document year
       - supporting text section type
 
+  icees study result:
+    is_a: study result
+    description: >-
+      A study result that represents a result, from a supporting Study, which is specifically associated
+      with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.
+    slots:
+      - chi squared statistic
+      - chi squared dof
+      - chi squared p
+      - total sample size
+      - fisher exact odds ratio
+      - fisher exact p
+      - log odds ratio
+      - log odds ratio 95 ci
+
   study:
-    description: a detailed investigation and/or analysis
     is_a: activity
+    description: a detailed investigation and/or analysis
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -6845,37 +6942,6 @@ classes:
       (https://cde.nlm.nih.gov/home)
     close_mappings:
       - NCIT:C19984
-
-   ## epc result sets
-  concept count analysis result:
-    is_a: study result
-    description: >-
-      A result of a concept count analysis.
-
-  observed expected frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a observed expected frequency analysis.
-
-  relative frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a relative frequency analysis.
-
-  text mining result:
-    is_a: study result
-    description: >-
-      A result of text mining.
-
-  chi squared analysis result:
-    is_a: study result
-    description: >-
-      A result of a chi squared analysis.
-
-  log odds analysis result:
-    is_a: study result
-    description: >-
-      A result of a log odds ratio analysis.
 
   agent:
     is_a: administrative entity
@@ -8738,6 +8804,13 @@ classes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
 
+  gene or gene product or gene family:
+    description: >-
+      A union of gene family or gene loci or gene products, useful to define
+      the association between a gene or gene product or gene family and
+      some other general class of entity (e.g. biological process or anatomical entity)
+    mixin: true
+
   gene:
     description: >-
       A region (or regions) that includes all of the sequence elements
@@ -9735,6 +9808,7 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
+      - has supporting study result
       - update date
       - has confidence score
     slot_usage:
@@ -9776,6 +9850,7 @@ classes:
 
 
   chemical entity assesses named thing association:
+    deprecated: true
     is_a: association
     slot_usage:
       subject:
@@ -9783,8 +9858,7 @@ classes:
       object:
         range: named thing
       predicate:
-        subproperty_of: assesses
-
+        subproperty_of: was tested for effect on
 
   contributor association:
     is_a: association
@@ -9942,6 +10016,96 @@ classes:
         description: >-
           membership of the gene in the given gene family.
 
+  gene family to gene or gene product or gene family association:
+    description: >-
+      Relationship between a gene family and
+      a contained gene or gene product or gene family.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene
+      object:
+        range: gene family
+      predicate:
+        subproperty_of: has part
+        symmetric: false
+        description: >-
+          membership of a gene or gene product,
+          or strict subset relationship gene family,
+          in the given gene family.
+
+  gene or gene product or gene family to biological process or activity association:
+    description: >-
+      Relationship between a gene or gene product or gene family to a
+      specified biological process or activity (e.g. molecular activity,
+      biological process or pathway).
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene or gene product or gene family
+      object:
+        range: biological process or activity
+      predicate:
+        subproperty_of: participates in
+        symmetric: false
+        description: >-
+          participation of a gene or gene product or gene family in
+          a given biological process or activity (e.g., gene product
+          participates in biological process; gene catalyzes molecular
+          activity; gene family is actively involved in a pathway).
+
+  biological process or activity to gene or gene product or gene family association:
+    description: >-
+      Relationship between a biological processor activity
+      (e.g. molecular activity, biological process or pathway)
+      to gene or gene product or gene family.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: gene or gene product or gene family
+      predicate:
+        subproperty_of: has participant
+        symmetric: false
+        description: >-
+          Relationship in which a biological process has the
+          participation of a gene or gene product or gene family in
+          a  (e.g., pathway has participant gene product).
+
+  biological process or activity to biological process or activity association:
+    description: >-
+      Classification relationship between biological processes or activities
+      (e.g. coupling of two molecular activities;  assignment of molecular
+      activity to a pathway; implicating a pathway in a biological process; etc.)
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: biological process or activity
+      predicate:
+        subproperty_of: subclass of
+        symmetric: false
+        description: >-
+          One biological processes or activities is a subclass of another.
+
   gene expression mixin:
     description: >-
       Observed gene expression intensity, context (site, stage) and
@@ -10082,6 +10246,7 @@ classes:
         description: "the drug that is an interactor"
 
   chemical to entity association mixin:
+    deprecated: true
     description: >-
       An interaction between a chemical entity and another entity
     is_a: chemical entity to entity association mixin
@@ -10124,8 +10289,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - chemical to entity association mixin
     slot_usage:
       object:
         range: chemical entity
@@ -10195,7 +10358,6 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
     slot_usage:
       object:
@@ -10212,7 +10374,6 @@ classes:
       - predicate
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
       - entity to feature or disease qualifiers mixin
     slots:
@@ -10231,7 +10392,6 @@ classes:
       - predicate
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
     slot_usage:
       predicate:
@@ -10275,8 +10435,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - chemical to entity association mixin
     slot_usage:
       subject:
         range: chemical entity
@@ -10327,8 +10485,6 @@ classes:
     is_a: association
     exact_mappings:
       - SIO:001257
-    mixins:
-      - chemical to entity association mixin
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -10410,9 +10566,9 @@ classes:
       object:
         range: biological process
 
-  chemical affects gene association:
+  chemical affects biological entity association:
     description: >-
-      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      Describes an effect that a chemical has on a biological entity (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: association
     slots:
@@ -10451,7 +10607,7 @@ classes:
       qualified predicate:
         subproperty_of: causes
       object:
-        range: gene or gene product
+        range: biological entity
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10468,6 +10624,13 @@ classes:
         range: anatomical entity
       species context qualifier:
         range: organism taxon
+
+  chemical affects gene association:
+    description: >-
+      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      of on its abundance, activity,localization, processing, expression, etc.)
+    is_a: chemical affects biological entity association
+
 
   gene affects chemical association:
     description: >-
@@ -11886,7 +12049,8 @@ classes:
       object direction qualifier:
         range: DirectionQualifierEnum
 
-  anatomical entity to anatomical entity association:   # schema: gocam
+  anatomical entity to anatomical entity association:
+    # schema: gocam
     is_a: association
     abstract: true
     defining_slots:
@@ -11899,7 +12063,7 @@ classes:
         range: anatomical entity
 
   anatomical entity to anatomical entity part of association:
-     #      schema: gocam
+     # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
@@ -11940,6 +12104,32 @@ classes:
           the structure at an earlier time
       predicate:
         subproperty_of: develops from
+
+  gene or gene product or gene family to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a gene or gene product or gene family and an anatomical entity.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: gene or gene product or gene family
+      object:
+        range: anatomical entity
+
+  biological process or activity to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a biological process or activity and an anatomical entity.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: anatomical entity
 
   organism taxon to entity association:
     mixin: true
@@ -12233,6 +12423,17 @@ enums:
           In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
+      clinical_trial_phase_1_to_2:
+        is_a: clinical_trial_phase
+        description: >-
+          A study that tests the safety, side effects, and best dose of a new treatment. Phase I/II
+          clinical trials also test how well a certain type of cancer or other disease responds to a
+          new treatment. In the phase II part of the clinical trial, patients usually receive the
+          highest dose of treatment that did not cause harmful side effects in the phase I part of
+          the clinical trial. Combining phases I and II may allow research questions to be answered
+          more quickly or with fewer patients. Also called phase 1/phase 2 clinical trial.
+        see_also:
+          - https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-i-ii-clinical-trial
       clinical_trial_phase_2:
         is_a: clinical_trial_phase
         description: >-
@@ -12240,6 +12441,16 @@ enums:
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
+      clinical_trial_phase_2_to_3:
+        is_a: clinical_trial_phase
+        description: >-
+          A study that tests how well a new treatment works for a certain type of cancer or other
+          disease and compares the new treatment with a standard treatment. Phase II/III clinical
+          trials may also provide more information about the safety and side effects of the new
+          treatment. Combining phases II and III may allow research questions to be answered more
+          quickly or with fewer patients. Also called phase 2/phase 3 clinical trial.
+        see_also:
+          - https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-ii-iii-clinical-trial
       clinical_trial_phase_3:
         is_a: clinical_trial_phase
         description: >-
@@ -12299,6 +12510,8 @@ enums:
         is_a: genetic_variant_form
       snp_form:
         is_a: polymorphic_form
+      mutant_form:
+        is_a: genetic_variant_form
       analog_form:
         is_a: modified_form
 
