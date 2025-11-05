@@ -1,5 +1,21 @@
 CHANGES
 =======
+4.3.3
+----
+## What's Changed
+* Added one slightly broader mixin (gene or gene product or gene family) plus an additional set of Association definitions to support extra broad stroke biological relationships for the Panther ingest (from gene classifications parsed in by automat-panther) by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1610
+* Added missing biolink association "biological process or activity to gene or gene product or gene family association" by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1611
+* add chemical affects biological entity association and refactor chemi… by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1614
+* Clincial trials 1 2 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1615
+* Slots for automat by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1616
+* Update attributes.yaml by @mbrush in https://github.com/biolink/biolink-model/pull/1617
+* Add mutant_form tform  or variant enum by @mbrush in https://github.com/biolink/biolink-model/pull/1620
+* deprecate 'assesses' / 'was tested for effect on' by @mbrush in https://github.com/biolink/biolink-model/pull/1622
+* Curies version bump by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1626
+* Fixing issues with `affects_response_to` predicates by @mbrush in https://github.com/biolink/biolink-model/pull/1625
+* Added ICEES related Study Result class and slots, with some rearrangement in definition ordering for readability by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1629
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.2...v4.3.3
+
 4.2.6-rc5
 ----
 * Add FMA by @cbizon in https://github.com/biolink/biolink-model/pull/1554
@@ -467,7 +483,7 @@ Update actions to use github user
 2.2.10
 ------
 mapping fixes - remove obsolete mappings, swap text based mappings with ids where applicable
-add associated with predicate along with associated with sensitivity to predicates. 
+add associated with predicate along with associated with sensitivity to predicates.
 
 2.2.9
 -----
@@ -592,7 +608,7 @@ Added predicates for increase/decrease expression predicates, opposite of predic
 domain for treats and transcription/translation predicates
 Domain/range changes for 'interacts with' predicate
 Add owlstart enumerations for logical interpretations
-Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context 
+Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context
 as another doc fix
 Bump urllib to 1.26.3
 Added last broad mappings from wikidata to the model
