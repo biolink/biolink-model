@@ -5819,22 +5819,28 @@ slots:
   log odds ratio:
     is_a: association slot
     description: >-
-      The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the
-      odds of event Y occurring in a non-exposed group has
+      The natural logarithm of the odds ratio (OR), or the ratio of
+      the odds of an event Y occurring in an exposed group versus
+      the odds of an event Y occurring in a non-exposed group.
     range: float
 
   log odds ratio 95 ci:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+      To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), 
+      you need the standard error (SE) of the log odds ratio.  This interval helps you understand
+      the precision of your estimate and whether the association is statistically significant.
     range: float
+    multivalued: true
+    examples:
+      - value: [ 0.6996904681742875, 1.6429124024089072 ]
 
   total sample size:
     is_a: dataset count
     description: >-
       The total number of patients or participants within a sample population.
     range: integer
-
 
   mechanism of action:
     is_a: association slot
@@ -5927,9 +5933,55 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      represents the chi-squared statistic computed from observations
+      The chi-squared statistic measures how much observed
+      data deviate from expected values under the null hypothesis.
     exact_mappings:
       - STATO:0000030
+    examples:
+    - value: 26.38523077566414
+
+  chi squared dof:
+    is_a: association slot
+    description: >-
+       Degrees of freedom (dof) in a chi-squared test referring to the
+       number of values in the final calculation of a statistic that are free to vary
+    range: integer
+    examples:
+    - value: 1
+
+  chi squared p:
+    is_a: association slot
+    description: >-
+       The chi-square p-value tells you the probability that the observed differences
+       (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
+    range: float
+    examples:
+    - value: 2.7967079822744063e-07
+
+  fisher exact odds ratio:
+    is_a: association slot
+    description: >-
+       The Fisher Exact Test is used to determine whether there is a non-random association between
+       two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
+       The odds ratio (OR) quantifies the strength of that association.
+          OR = 1 implies No association
+          OR > 1 implies Positive association (Group A more likely to have Outcome 1)
+          OR < 1 implies Negative association (Group A less likely to have Outcome 1)
+    range: float
+    examples:
+    - value: 3.226188583240579
+
+  fisher exact p:
+    is_a: association slot
+    description: >-
+      The Fisher exact p-value tells you the probability of observing a table
+      as extreme as (or more extreme than) your actual data, assuming that 
+      the null hypothesis of independence is true. It's most commonly used 
+      for 2×2 contingency tables, especially when sample sizes
+      are small or expected counts are low.
+    range: float
+    examples:
+    - value: 2.8581244515361156e-06
 
   z score:
     aliases: ['z-score', 'z-value', 'standard score', 'normal score']
@@ -6805,12 +6857,44 @@ classes:
       analyses, or a larger scale clinical trial or experimental research investigation.
     is_a: information content entity
 
+   ## epc result sets
+  concept count analysis result:
+    is_a: study result
+    description: >-
+      A result of a concept count analysis.
+
+  observed expected frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a observed expected frequency analysis.
+
+  relative frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a relative frequency analysis.
+
+  text mining result:
+    is_a: study result
+    description: >-
+      A result of text mining.
+      (Note: is this a duplication of 'text mining study result' below?)
+
+  chi squared analysis result:
+    is_a: study result
+    description: >-
+      A result of a chi squared analysis.
+
+  log odds analysis result:
+    is_a: study result
+    description: >-
+      A result of a log odds ratio analysis.
+
   text mining study result:
+    is_a: study result
     description: >-
       A study result that represents information extracted from text using natural language processing techniques.
       This includes the extracted text, location offsets within the source document, confidence scores, and other
       metadata related to the text mining process.
-    is_a: study result
     slots:
       - supporting text
       - subject location in text
@@ -6820,9 +6904,24 @@ classes:
       - supporting document year
       - supporting text section type
 
+  icees study result:
+    is_a: study result
+    description: >-
+      A study result that represents a result, from a supporting Study, which is specifically associated
+      with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.
+    slots:
+      - chi squared statistic
+      - chi squared dof
+      - chi squared p
+      - total sample size
+      - fisher exact odds ratio
+      - fisher exact p
+      - log odds ratio
+      - log odds ratio 95 ci
+
   study:
-    description: a detailed investigation and/or analysis
     is_a: activity
+    description: a detailed investigation and/or analysis
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -6849,37 +6948,6 @@ classes:
       (https://cde.nlm.nih.gov/home)
     close_mappings:
       - NCIT:C19984
-
-   ## epc result sets
-  concept count analysis result:
-    is_a: study result
-    description: >-
-      A result of a concept count analysis.
-
-  observed expected frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a observed expected frequency analysis.
-
-  relative frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a relative frequency analysis.
-
-  text mining result:
-    is_a: study result
-    description: >-
-      A result of text mining.
-
-  chi squared analysis result:
-    is_a: study result
-    description: >-
-      A result of a chi squared analysis.
-
-  log odds analysis result:
-    is_a: study result
-    description: >-
-      A result of a log odds ratio analysis.
 
   agent:
     is_a: administrative entity
@@ -9746,6 +9814,7 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
+      - has supporting study result
       - update date
       - has confidence score
     slot_usage:
