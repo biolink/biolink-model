@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 4.3.2
+// version: 4.3.3
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -7650,28 +7650,6 @@ message TaxonToTaxonAssociation
 message TaxonomicRank
  {
   string id = 0
- }
-// A result of text mining. (Note: is this a duplication of 'text mining study result' below?)
-message TextMiningResult
- {
-  string id = 0
-  iriType iri = 0
- repeated  string type = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
- repeated  string providedBy = 0
- repeated  uriorcurie xref = 0
-  labelType fullName = 0
- repeated  labelType synonym = 0
-  float informationContent = 0
- repeated  uriorcurie equivalentIdentifiers = 0
- repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.
 message TextMiningStudyResult

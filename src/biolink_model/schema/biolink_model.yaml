@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.2
+version: 4.3.3
 
 ## ------------
 ##
@@ -5828,7 +5828,7 @@ slots:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
-      To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), 
+      To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
       you need the standard error (SE) of the log odds ratio.  This interval helps you understand
       the precision of your estimate and whether the association is statistically significant.
     range: float
@@ -5975,8 +5975,8 @@ slots:
     is_a: association slot
     description: >-
       The Fisher exact p-value tells you the probability of observing a table
-      as extreme as (or more extreme than) your actual data, assuming that 
-      the null hypothesis of independence is true. It's most commonly used 
+      as extreme as (or more extreme than) your actual data, assuming that
+      the null hypothesis of independence is true. It's most commonly used
       for 2×2 contingency tables, especially when sample sizes
       are small or expected counts are low.
     range: float
@@ -6872,12 +6872,6 @@ classes:
     is_a: study result
     description: >-
       A result of a relative frequency analysis.
-
-  text mining result:
-    is_a: study result
-    description: >-
-      A result of text mining.
-      (Note: is this a duplication of 'text mining study result' below?)
 
   chi squared analysis result:
     is_a: study result

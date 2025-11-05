@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.2
+# version: 4.3.3
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -4392,8 +4392,7 @@ linkml:Sparqlpath xsd:string
 
 <StudyResult>  (
     @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<IceesStudyResult> OR @<LogOddsAnalysisResult> OR
-    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult> OR
-    @<TextMiningStudyResult>
+    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningStudyResult>
 )
 
 <StudyResult_struct> {
@@ -4433,14 +4432,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <TaxonomicRank> ]
-    )
-}
-
-<TextMiningResult> CLOSED {
-    (  $<TextMiningResult_tes> (  &<StudyResult_tes> ;
-          rdf:type [ <StudyResult> ] ?
-       ) ;
-       rdf:type [ <TextMiningResult> ]
     )
 }
 

@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "imports": [
     "linkml:types",
     "attributes"
@@ -12580,7 +12580,7 @@
     {
       "name": "log_odds_ratio_95_ci",
       "definition_uri": "https://w3id.org/biolink/vocab/log_odds_ratio_95_ci",
-      "description": "The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),  you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.",
+      "description": "The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.",
       "examples": [
         {
           "value": "[0.6996904681742875, 1.6429124024089072]",
@@ -12821,7 +12821,7 @@
     {
       "name": "fisher_exact_p",
       "definition_uri": "https://w3id.org/biolink/vocab/fisher_exact_p",
-      "description": "The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that  the null hypothesis of independence is true. It's most commonly used  for 2\u00d72 contingency tables, especially when sample sizes are small or expected counts are low.",
+      "description": "The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that the null hypothesis of independence is true. It's most commonly used for 2\u00d72 contingency tables, especially when sample sizes are small or expected counts are low.",
       "examples": [
         {
           "value": "2.8581244515361156e-06",
@@ -25678,36 +25678,6 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "TextMiningResult",
-      "definition_uri": "https://w3id.org/biolink/vocab/TextMiningResult",
-      "description": "A result of text mining. (Note: is this a duplication of 'text mining study result' below?)",
-      "from_schema": "https://w3id.org/biolink/biolink-model",
-      "is_a": "StudyResult",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "information_content",
-        "equivalent_identifiers",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/TextMiningResult",
       "@type": "ClassDefinition"
     },
     {
@@ -39188,9 +39158,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-05T00:41:49",
-  "source_file_size": 431242,
-  "generation_date": "2025-11-05T00:41:55",
+  "source_file_date": "2025-11-04T17:03:43",
+  "source_file_size": 431069,
+  "generation_date": "2025-11-04T17:03:55",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

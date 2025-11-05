@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-05T00:42:07
+# Generation date: 2025-11-04T16:48:37
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.3.2"
+version = "4.3.3"
 
 # Namespaces
 AGRKB = CurieNamespace('AGRKB', 'https://www.alliancegenome.org/')
@@ -498,10 +498,6 @@ class ObservedExpectedFrequencyAnalysisResultId(StudyResultId):
 
 
 class RelativeFrequencyAnalysisResultId(StudyResultId):
-    pass
-
-
-class TextMiningResultId(StudyResultId):
     pass
 
 
@@ -2500,35 +2496,6 @@ class RelativeFrequencyAnalysisResult(StudyResult):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RelativeFrequencyAnalysisResultId):
             self.id = RelativeFrequencyAnalysisResultId(self.id)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class TextMiningResult(StudyResult):
-    """
-    A result of text mining. (Note: is this a duplication of 'text mining study result' below?)
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningResult"]
-    class_class_curie: ClassVar[str] = "biolink:TextMiningResult"
-    class_name: ClassVar[str] = "text mining result"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
-
-    id: Union[str, TextMiningResultId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, TextMiningResultId):
-            self.id = TextMiningResultId(self.id)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
