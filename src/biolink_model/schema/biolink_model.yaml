@@ -5809,12 +5809,12 @@ slots:
       - RO:0002558
     multivalued: true
 
-  has supporting study result:
+  has supporting study results:
     range: study result
     multivalued: true
     is_a: association slot
     description: >-
-      connects an association to an instance of supporting study result
+      Connects an association to instances of supporting study result
 
   log odds ratio:
     is_a: association slot
@@ -9808,7 +9808,7 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
-      - has supporting study result
+      - has supporting study results
       - update date
       - has confidence score
     slot_usage:

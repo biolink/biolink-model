@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-05T01:14:11
+# Generation date: 2025-11-05T20:54:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7646,7 +7646,7 @@ class Association(Entity):
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
     has_supporting_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
-    has_supporting_study_result: Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]] = empty_list()
+    has_supporting_study_results: Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]] = empty_list()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
     type: Optional[Union[str, list[str]]] = empty_list()
@@ -7775,9 +7775,9 @@ class Association(Entity):
             self.has_supporting_studies = [self.has_supporting_studies] if self.has_supporting_studies is not None else []
         self.has_supporting_studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.has_supporting_studies]
 
-        if not isinstance(self.has_supporting_study_result, list):
-            self.has_supporting_study_result = [self.has_supporting_study_result] if self.has_supporting_study_result is not None else []
-        self.has_supporting_study_result = [v if isinstance(v, StudyResultId) else StudyResultId(v) for v in self.has_supporting_study_result]
+        if not isinstance(self.has_supporting_study_results, list):
+            self.has_supporting_study_results = [self.has_supporting_study_results] if self.has_supporting_study_results is not None else []
+        self.has_supporting_study_results = [v if isinstance(v, StudyResultId) else StudyResultId(v) for v in self.has_supporting_study_results]
 
         if self.update_date is not None and not isinstance(self.update_date, XSDDate):
             self.update_date = XSDDate(self.update_date)
@@ -16073,8 +16073,8 @@ slots.has_confidence_score = Slot(uri=BIOLINK.has_confidence_score, name="has co
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
 
-slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result, name="has supporting study result", curie=BIOLINK.curie('has_supporting_study_result'),
-                   model_uri=BIOLINK.has_supporting_study_result, domain=Association, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
+slots.has_supporting_study_results = Slot(uri=BIOLINK.has_supporting_study_results, name="has supporting study results", curie=BIOLINK.curie('has_supporting_study_results'),
+                   model_uri=BIOLINK.has_supporting_study_results, domain=Association, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
 
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])

@@ -249,7 +249,7 @@ linkml:Sparqlpath xsd:string
              <p_value> @linkml:Float ? ;
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
-             <has_supporting_study_result> @<StudyResult> * ;
+             <has_supporting_study_results> @<StudyResult> * ;
              <update_date> @linkml:Date ? ;
              <has_confidence_score> @linkml:Float ? ;
              rdf:type @linkml:String * ;
