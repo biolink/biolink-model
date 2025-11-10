@@ -6108,6 +6108,14 @@ slots:
     examples:
       - value: 0.018
 
+  from study:
+    is_a: association slot
+    description: >-
+      Connects an association or study result to the study that provided it.
+    range: study
+    exact_mappings:
+      - OBAN:has_study_id
+
   supporting text:
     is_a: association slot
     description: The segment of text from a document that supports the mined assertion.
@@ -6844,18 +6852,20 @@ classes:
     abstract: true
 
   study result:
-    abstract: true
+    is_a: information content entity
     description: >-
       A collection of data items from a study that are about a particular study subject or experimental unit (the
       'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
       of this data as evidence.
+    abstract: true
+    slots:
+      - from study
     notes:
       The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
       that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
       focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any
       scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
       analyses, or a larger scale clinical trial or experimental research investigation.
-    is_a: information content entity
 
    ## epc result sets
   concept count analysis result:
