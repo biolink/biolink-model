@@ -5809,12 +5809,13 @@ slots:
       - RO:0002558
     multivalued: true
 
-  has supporting study results:
+  has study results:
+    is_a: association slot
+    domain: study
     range: study result
     multivalued: true
-    is_a: association slot
     description: >-
-      Connects an association to instances of supporting study result
+      Connects an study to instances of its study result
 
   log odds ratio:
     is_a: association slot
@@ -6108,14 +6109,6 @@ slots:
     examples:
       - value: 0.018
 
-  from study:
-    is_a: association slot
-    description: >-
-      Connects an association or study result to the study that provided it.
-    range: study
-    exact_mappings:
-      - OBAN:has_study_id
-
   supporting text:
     is_a: association slot
     description: The segment of text from a document that supports the mined assertion.
@@ -6397,8 +6390,12 @@ slots:
   has supporting studies:
     is_a: association slot
     range: study
-    description: A study that produced information used as evidence to generate the knowledge expressed in an Association.
+    description: >-
+      Studies that produced information used as evidence 
+      to generate the knowledge expressed in an Association.
     multivalued: true
+    close_mappings:
+      - OBAN:has_study_id
 
   supporting study metadata:
     is_a: association slot
@@ -6858,8 +6855,6 @@ classes:
       'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
       of this data as evidence.
     abstract: true
-    slots:
-      - from study
     notes:
       The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
       that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
@@ -6926,6 +6921,11 @@ classes:
   study:
     is_a: activity
     description: a detailed investigation and/or analysis
+    slots:
+      - has study results
+    slot usage:
+      has study results:
+        inlined_as_list: true
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -9818,7 +9818,6 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
-      - has supporting study results
       - update date
       - has confidence score
     slot_usage:
@@ -9829,13 +9828,12 @@ classes:
         required: false
       sources:
         inlined_as_list: true
-      has supporting study results:
-        inlined_as_list: true
+      has supporting studies:
+        inlined: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
-
 
   disease associated with response to chemical entity association:
     description: >-
