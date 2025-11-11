@@ -5,7 +5,7 @@
   "version": "4.3.4",
   "imports": [
     "linkml:types",
-    "attributes"
+    "biolink:attributes"
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "prefixes": [
@@ -39106,14 +39106,14 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-11T01:12:42",
-  "source_file_size": 431245,
-  "generation_date": "2025-11-11T01:12:47",
+  "source_file_date": "2025-11-11T18:40:46",
+  "source_file_size": 431253,
+  "generation_date": "2025-11-11T18:40:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
-    "attributes.context.jsonld",
+    "https://w3id.org/biolink/vocab/attributes.context.jsonld",
     {
       "@base": "https://w3id.org/biolink/vocab/"
     }
