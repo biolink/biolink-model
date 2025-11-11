@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-05T20:54:28
+# Generation date: 2025-11-11T00:40:21
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -3524,12 +3524,15 @@ class Study(Activity):
 
     id: Union[str, StudyId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_study_results: Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]] = empty_dict()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyId):
             self.id = StudyId(self.id)
+
+        self._normalize_inlined_as_list(slot_name="has_study_results", slot_type=StudyResult, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -7645,8 +7648,7 @@ class Association(Entity):
     retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]] = empty_list()
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
-    has_supporting_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
-    has_supporting_study_results: Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]] = empty_list()
+    has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
     type: Optional[Union[str, list[str]]] = empty_list()
@@ -7771,13 +7773,7 @@ class Association(Entity):
         if self.adjusted_p_value is not None and not isinstance(self.adjusted_p_value, float):
             self.adjusted_p_value = float(self.adjusted_p_value)
 
-        if not isinstance(self.has_supporting_studies, list):
-            self.has_supporting_studies = [self.has_supporting_studies] if self.has_supporting_studies is not None else []
-        self.has_supporting_studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.has_supporting_studies]
-
-        if not isinstance(self.has_supporting_study_results, list):
-            self.has_supporting_study_results = [self.has_supporting_study_results] if self.has_supporting_study_results is not None else []
-        self.has_supporting_study_results = [v if isinstance(v, StudyResultId) else StudyResultId(v) for v in self.has_supporting_study_results]
+        self._normalize_inlined_as_dict(slot_name="has_supporting_studies", slot_type=Study, key_name="id", keyed=True)
 
         if self.update_date is not None and not isinstance(self.update_date, XSDDate):
             self.update_date = XSDDate(self.update_date)
@@ -16073,8 +16069,8 @@ slots.has_confidence_score = Slot(uri=BIOLINK.has_confidence_score, name="has co
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
 
-slots.has_supporting_study_results = Slot(uri=BIOLINK.has_supporting_study_results, name="has supporting study results", curie=BIOLINK.curie('has_supporting_study_results'),
-                   model_uri=BIOLINK.has_supporting_study_results, domain=Association, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
+slots.has_study_results = Slot(uri=BIOLINK.has_study_results, name="has study results", curie=BIOLINK.curie('has_study_results'),
+                   model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
 
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
@@ -16305,6 +16301,9 @@ slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_catego
 slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA["P105"]])
 
+slots.study_has_study_results = Slot(uri=BIOLINK.has_study_results, name="study_has study results", curie=BIOLINK.curie('has_study_results'),
+                   model_uri=BIOLINK.study_has_study_results, domain=Study, range=Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]])
+
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
 
@@ -16397,6 +16396,9 @@ slots.association_category = Slot(uri=BIOLINK.category, name="association_catego
 
 slots.association_sources = Slot(uri=BIOLINK.sources, name="association_sources", curie=BIOLINK.curie('sources'),
                    model_uri=BIOLINK.association_sources, domain=Association, range=Optional[Union[dict[Union[str, RetrievalSourceId], Union[dict, RetrievalSource]], list[Union[dict, RetrievalSource]]]])
+
+slots.association_has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="association_has supporting studies", curie=BIOLINK.curie('has_supporting_studies'),
+                   model_uri=BIOLINK.association_has_supporting_studies, domain=Association, range=Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]])
 
 slots.disease_associated_with_response_to_chemical_entity_association_subject = Slot(uri=RDF.subject, name="disease associated with response to chemical entity association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.disease_associated_with_response_to_chemical_entity_association_subject, domain=DiseaseAssociatedWithResponseToChemicalEntityAssociation, range=Union[str, DiseaseId])
