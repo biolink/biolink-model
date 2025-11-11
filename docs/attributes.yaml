@@ -1,0 +1,203 @@
+---
+id: https://w3id.org/biolink/biolink-model/attributes
+name: Attributes
+description: Attributes as candidates for inclusion in Biolink Model
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  AGRKB: 'https://www.alliancegenome.org/'
+  apollo: 'https://github.com/GMOD/Apollo'
+  AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
+  biolink: 'https://w3id.org/biolink/vocab/'
+  bioschemas: 'https://bioschemas.org/'
+  linkml: 'https://w3id.org/linkml/'
+  CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+   # Placeholder: just points to GMOD Chado wiki
+  CHADO: 'http://gmod.org/wiki/Chado/'
+   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
+  ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
+  CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
+  CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  CLINVAR: 'http://identifiers.org/clinvar'
+  COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
+  COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
+  ComplexPortal: 'https://www.ebi.ac.uk/complexportal/complex/'
+  CPT: 'https://www.ama-assn.org/practice-management/cpt/'
+  CTD.CHEMICAL: 'http://ctdbase.org/detail.go?type=chem&acc='
+  CTD.DISEASE: 'http://ctdbase.org/detail.go?type=disease&db=MESH&acc='
+  CTD.GENE: 'http://ctdbase.org/detail.go?type=gene&acc='
+  CTD: 'http://ctdbase.org/'
+  DGIdb: 'https://www.dgidb.org/interaction_types'
+  dcat: 'http://www.w3.org/ns/dcat#'
+  dct: 'http://purl.org/dc/terms/'
+  dcid: 'https://datacommons.org/browser/'
+  doi: 'https://doi.org/'
+  DOID-PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
+  DrugCentral: 'http://drugcentral.org/drugcard/'
+  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  EDAM-DATA: 'http://edamontology.org/data_'
+  EDAM-FORMAT: 'http://edamontology.org/format_'
+  EDAM-OPERATION: 'http://edamontology.org/operation_'
+  EDAM-TOPIC: 'http://edamontology.org/topic_'
+  EFO: 'http://www.ebi.ac.uk/efo/EFO_'
+  ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  fabio: 'http://purl.org/spar/fabio/'
+  FMA: 'http://purl.obolibrary.org/obo/FMA_'
+  foaf: 'http://xmlns.com/foaf/0.1/'
+  foodb.compound: 'http://foodb.ca/compounds/'
+  foodb.food: 'http://foodb.ca/foods/'
+  FYECO: 'https://www.pombase.org/term/'
+  FYPO: 'http://purl.obolibrary.org/obo/FYPO_'   # Fission Yeast Phenotype Ontology
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
+  GOP: 'http://purl.obolibrary.org/obo/go#'
+  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+  GSID: 'https://scholar.google.com/citations?user='
+  GTEx: 'https://www.gtexportal.org/home/gene/'
+  GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
+  gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
+  HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
+  HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
+  ICD10: 'https://icd.who.int/browse10/2016/en#/'
+  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  icd11: 'http://id.who.int/icd/entity/'
+  icd11.foundation: 'http://id.who.int/icd/entity/'
+  interpro: 'https://www.ebi.ac.uk/interpro/entry/'
+  INO: 'http://purl.obolibrary.org/obo/INO_'
+  isbn: 'https://www.isbn-international.org/identifier/'  # note: a resolvable base URI not available from isbn-international
+  isni: 'https://isni.org/isni/'
+  issn: 'https://portal.issn.org/resource/ISSN/'
+  ncats.drug: 'https://drugs.ncats.io/drug/'
+  KEGG.BRITE: 'https://bioregistry.io/kegg.brite:'
+  KEGG: 'http://www.kegg.jp/entry/'
+  KEGG.GENES: 'https://bioregistry.io/kegg.genes:bsu:'
+  KEGG.PATHWAY: 'https://bioregistry.io/kegg.pathway:'
+  KEGG.RCLASS: 'https://www.genome.jp/dbget-bin/www_bget?rc:'
+  LOINC: 'http://loinc.org/rdf/'
+  MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
+  medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
+  METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
+  MESH: 'http://id.nlm.nih.gov/mesh/'
+  MI: 'http://purl.obolibrary.org/obo/MI_'
+  mirbase: 'http://identifiers.org/mirbase'
+  mmmp.biomaps: 'https://bioregistry.io/mmmp.biomaps:'
+  MmusDv: 'http://purl.obolibrary.org/obo/MMUSDV_'
+  MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
+  NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
+  ncats.bioplanet: 'https://tripod.nih.gov/bioplanet/detail.jsp?pid='
+  NCBIGene: 'http://identifiers.org/ncbigene/'
+  NCIT-OBO: 'http://purl.obolibrary.org/obo/ncit#'
+  NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
+  NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
+  OBAN: 'http://purl.org/oban/'
+  OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
+  ORCID: 'https://orcid.org/'
+  orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
+  os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
+  PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
+  PathWhiz: 'http://smpdb.ca/pathways/#'   #  See also https://smpdb.ca/pathwhiz/
+  pav: 'http://purl.org/pav/'
+  PHARMGKB.DRUG: 'https://www.pharmgkb.org/chemical/'
+  PHARMGKB.DISEASE: 'https://www.pharmgkb.org/disease/'
+  PHARMGKB.GENE: 'https://www.pharmgkb.org/gene/'
+  PHARMGKB.PATHWAYS: 'https://www.pharmgkb.org/pathway/'
+  PHARMGKB.VARIANT: 'https://www.pharmgkb.org/variant/'
+  PHAROS: 'http://pharos.nih.gov'
+  PomBase: 'https://www.pombase.org/gene/'
+  prov: 'http://www.w3.org/ns/prov#'
+  qud: 'http://qudt.org/1.1/schema/qudt#'
+  REPODB: 'http://apps.chiragjpgroup.org/repoDB/'
+  ResearchID: 'https://publons.com/researcher/'
+  RO: 'http://purl.obolibrary.org/obo/RO_'
+  RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
+  RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
+  schema: 'http://schema.org/'
+  ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
+  SEED.REACTION: 'https://modelseed.org/biochem/reactions/'
+  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  SNOMEDCT: 'http://snomed.info/id/'
+  SPDI: 'https://api.ncbi.nlm.nih.gov/variation/v0/spdi/'
+  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
+  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
+  UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
+  STY: 'http://purl.bioontology.org/ontology/STY/'
+  UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
+  UniProtKB: 'http://purl.uniprot.org/uniprot/'
+  UNIPROT.ISOFORM: 'http://purl.uniprot.org/isoforms/'
+  VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
+  UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
+  VMC: 'https://github.com/ga4gh/vr-spec/'
+  WBls: 'http://purl.obolibrary.org/obo/WBls_'
+  WBbt: 'http://purl.obolibrary.org/obo/WBbt_'
+  WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
+  WIKIDATA: 'https://www.wikidata.org/entity/'             #  Wikidata Entity
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/prop/'
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  XPO: 'http://purl.obolibrary.org/obo/XPO_'   #  Xenopus Phenotype Ontology
+  Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
+  PMC: 'http://europepmc.org/articles/PMC'
+
+default_prefix: biolink
+default_range: string
+
+default_curi_maps:
+  - obo_context
+  - idot_context
+  - monarch_context
+  - semweb_context
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+  - oboInOwl
+  - BIOGRID
+  - SO
+
+imports:
+  - linkml:types
+
+classes:
+
+slots:
+
+  information content:
+    description: Information content (IC) value for a term, primarily from Automats.
+    is_a: node property
+    range: float
+
+  equivalent identifiers:
+    is_a: node property
+    description: >-
+      A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is
+      used to represent a collection of identifiers that are considered equivalent to the primary identifier
+      of an entity. These equivalent identifiers may come from different databases, ontologies, or naming
+      conventions, but they all refer to the same underlying concept or entity. This attribute is particularly
+      useful in data integration and interoperability scenarios, where it is important to recognize and link
+      different representations of the same entity across various sources.
+    range: uriorcurie
+    multivalued: true
+    see_also:
+      - biolink:xref
+      - biolink:synonyms
+
+  chembl drug warning:
+    is_a: node property
+    description: Text describing warnings for use of chemicals as therapeutics.
+    range: string
+
+  chembl prodrug:
+    is_a: node property
+    description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body. 
+    range: boolean
+
+  chembl chirality:
+    is_a: node property
+    description: Tern indicating the chirality of the chemical entity.
+    range: string
+
