@@ -5809,12 +5809,13 @@ slots:
       - RO:0002558
     multivalued: true
 
-  has supporting study results:
+  has study results:
+    is_a: association slot
+    domain: study
     range: study result
     multivalued: true
-    is_a: association slot
     description: >-
-      Connects an association to instances of supporting study result
+      Connects an study to instances of its study result
 
   log odds ratio:
     is_a: association slot
@@ -6389,8 +6390,12 @@ slots:
   has supporting studies:
     is_a: association slot
     range: study
-    description: A study that produced information used as evidence to generate the knowledge expressed in an Association.
+    description: >-
+      Studies that produced information used as evidence 
+      to generate the knowledge expressed in an Association.
     multivalued: true
+    close_mappings:
+      - OBAN:has_study_id
 
   supporting study metadata:
     is_a: association slot
@@ -6844,18 +6849,18 @@ classes:
     abstract: true
 
   study result:
-    abstract: true
+    is_a: information content entity
     description: >-
       A collection of data items from a study that are about a particular study subject or experimental unit (the
       'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
       of this data as evidence.
+    abstract: true
     notes:
       The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
       that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
       focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any
       scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
       analyses, or a larger scale clinical trial or experimental research investigation.
-    is_a: information content entity
 
    ## epc result sets
   concept count analysis result:
@@ -6916,6 +6921,11 @@ classes:
   study:
     is_a: activity
     description: a detailed investigation and/or analysis
+    slots:
+      - has study results
+    slot_usage:
+      has study results:
+        inlined_as_list: true
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -9808,7 +9818,6 @@ classes:
       - p value
       - adjusted p value
       - has supporting studies
-      - has supporting study results
       - update date
       - has confidence score
     slot_usage:
@@ -9819,11 +9828,12 @@ classes:
         required: false
       sources:
         inlined_as_list: true
+      has supporting studies:
+        inlined: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
-
 
   disease associated with response to chemical entity association:
     description: >-
