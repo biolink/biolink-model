@@ -341,10 +341,6 @@
 
           GeneAsAModelOfDiseaseAssociation --|&gt; Study : has_supporting_studies
 
-      GeneAsAModelOfDiseaseAssociation : has_supporting_study_result
-
-          GeneAsAModelOfDiseaseAssociation --|&gt; StudyResult : has_supporting_study_result
-
       GeneAsAModelOfDiseaseAssociation : has_total
 
       GeneAsAModelOfDiseaseAssociation : id
@@ -513,13 +509,13 @@
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a>, <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../GeneToDiseaseOrPhenotypicFeatureAssociation/">GeneToDiseaseOrPhenotypicFeatureAssociation</a>, <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -676,7 +672,7 @@
 <td><a href="../subject_label_closure/">subject_label_closure</a>: <br/> <i> Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['BRACA1']</td>
+<td>['BRCA1']</td>
 </tr>
 <tr>
 <td><a href="../object_label_closure/">object_label_closure</a>: <br/> <i> Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
@@ -703,14 +699,8 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
-<td><a href="../Association/">Association</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
-<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/has_supporting_study_result/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/has_study_results/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: has_supporting_study_result (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: has_study_results (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-has_supporting_study_result-multivalued" class="md-skip">
+        <a href="#slot-has_study_results-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: has_supporting_study_result (multivalued)
+              Slot: has_study_results (multivalued)
             
           </span>
         </div>
@@ -657,20 +657,20 @@
   
 
 
-<h1 id="slot-has_supporting_study_result-multivalued"><strong> Slot: has_supporting_study_result </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> connects an association to an instance of supporting study result</i><br>
+<h1 id="slot-has_study_results-multivalued"><strong> Slot: has_study_results </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> Connects an study to instances of its study result</i><br>
 
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
+<p><strong>Domain:</strong> <a href="../Study/">Study</a><br>
 <strong>Range:</strong>   <a href="../StudyResult/">StudyResult</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
-<li><strong>has_supporting_study_result</strong></li>
+<li><strong>has_study_results</strong></li>
 </ul>
 </li>
 </ul>
@@ -685,23 +685,23 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Association/">Association</a></td>
-<td>A typed association between two entities, supported by evidence</td>
-<td>no</td>
+<td><a href="../Study/">Study</a></td>
+<td>a detailed investigation and/or analysis</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: has supporting study result
-description: connects an association to an instance of supporting study result
+<pre><code class="language-yaml">name: has study results
+description: Connects an study to instances of its study result
 from_schema: https://w3id.org/biolink/biolink-model
 is_a: association slot
-domain: association
-alias: has_supporting_study_result
+domain: study
+alias: has_study_results
 domain_of:
-- association
+- study
 range: study result
 multivalued: true
 

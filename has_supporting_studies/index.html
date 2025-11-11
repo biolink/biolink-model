@@ -658,7 +658,7 @@
 
 
 <h1 id="slot-has_supporting_studies-multivalued"><strong> Slot: has_supporting_studies </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> A study that produced information used as evidence to generate the knowledge expressed in an Association.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> Studies that produced information used as evidence to generate the knowledge expressed in an Association.</i><br>
 
 
 <br>
@@ -687,7 +687,7 @@
 <tr>
 <td><a href="../Association/">Association</a></td>
 <td>A typed association between two entities, supported by evidence</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -695,9 +695,11 @@
 <details open>
 
 <pre><code class="language-yaml">name: has supporting studies
-description: A study that produced information used as evidence to generate the knowledge
+description: Studies that produced information used as evidence to generate the knowledge
   expressed in an Association.
 from_schema: https://w3id.org/biolink/biolink-model
+close_mappings:
+- OBAN:has_study_id
 is_a: association slot
 domain: association
 alias: has_supporting_studies

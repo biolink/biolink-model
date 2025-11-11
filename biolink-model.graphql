@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.3
+# version: 4.3.4
 enum AffinityParameterEnum
   {
     pIC50
@@ -443,7 +443,6 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -489,7 +488,6 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -536,7 +534,6 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -622,7 +619,6 @@ type Association
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -731,7 +727,6 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -903,7 +898,6 @@ type BiologicalProcessOrActivityToAnatomicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -949,7 +943,6 @@ type BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -996,7 +989,6 @@ type BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1166,7 +1158,6 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1221,7 +1212,6 @@ type CaseToGeneAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1270,7 +1260,6 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1328,7 +1317,6 @@ type CaseToVariantAssociation implements CaseToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1376,7 +1364,6 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1479,7 +1466,6 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1536,7 +1522,6 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1632,7 +1617,6 @@ type ChemicalAffectsBiologicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1694,7 +1678,6 @@ type ChemicalAffectsGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1779,7 +1762,6 @@ type ChemicalEntityAssessesNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1830,7 +1812,6 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1911,7 +1892,6 @@ type ChemicalGeneInteractionAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -1999,7 +1979,6 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2057,7 +2036,6 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2134,7 +2112,6 @@ type ChemicalToChemicalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2181,7 +2158,6 @@ type ChemicalToChemicalDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2231,7 +2207,6 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseO
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2288,7 +2263,6 @@ type ChemicalToPathwayAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2476,6 +2450,7 @@ type ClinicalTrial
     informationContent: Float
     equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
+    hasStudyResults: [StudyResult]
     clinicalTrialPhase: ResearchPhaseEnum
     clinicalTrialPrimaryPurpose: String
     creationDate: Date
@@ -2672,7 +2647,6 @@ type ContributorAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2720,7 +2694,6 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -2933,7 +2906,6 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3037,7 +3009,6 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3085,7 +3056,6 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3140,7 +3110,6 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3185,7 +3154,6 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3330,7 +3298,6 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3397,7 +3364,6 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3478,7 +3444,6 @@ type EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3606,7 +3571,6 @@ type EntityToPhenotypicFeatureAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3822,7 +3786,6 @@ type ExonToTranscriptRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3877,7 +3840,6 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -3925,7 +3887,6 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4062,7 +4023,6 @@ type FunctionalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4150,7 +4110,6 @@ type GeneAffectsChemicalAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4213,7 +4172,6 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4303,7 +4261,6 @@ type GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4355,7 +4312,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4426,7 +4382,6 @@ type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4472,7 +4427,6 @@ type GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4533,7 +4487,6 @@ type GeneRegulatesGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4584,7 +4537,6 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4645,7 +4597,6 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4713,7 +4664,6 @@ type GeneToExpressionSiteAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4764,7 +4714,6 @@ interface GeneToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4810,7 +4759,6 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4861,7 +4809,6 @@ type GeneToGeneFamilyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4908,7 +4855,6 @@ type GeneToGeneHomologyAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -4955,7 +4901,6 @@ type GeneToGeneProductRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5003,7 +4948,6 @@ type GeneToGoTermAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5050,7 +4994,6 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5096,7 +5039,6 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5229,7 +5171,6 @@ type GenomicSequenceLocalization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5303,7 +5244,6 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5357,7 +5297,6 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5418,7 +5357,6 @@ type GenotypeToGeneAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5465,7 +5403,6 @@ type GenotypeToGenotypePartAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5513,7 +5450,6 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5571,7 +5507,6 @@ type GenotypeToVariantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -5857,7 +5792,6 @@ type InformationContentEntityToNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6036,7 +5970,6 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6084,7 +6017,6 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6140,7 +6072,6 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6230,7 +6161,6 @@ type MaterialSampleDerivationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6280,7 +6210,6 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6386,7 +6315,6 @@ type MolecularActivityToChemicalEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6433,7 +6361,6 @@ type MolecularActivityToMolecularActivityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6479,7 +6406,6 @@ type MolecularActivityToPathwayAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6599,7 +6525,6 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6842,7 +6767,6 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6890,7 +6814,6 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6936,7 +6859,6 @@ type OrganismTaxonToOrganismTaxonInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -6984,7 +6906,6 @@ type OrganismTaxonToOrganismTaxonSpecialization
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7032,7 +6953,6 @@ type OrganismToOrganismAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7100,7 +7020,6 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7156,7 +7075,6 @@ type PairwiseGeneToGeneInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7202,7 +7120,6 @@ type PairwiseMolecularInteraction
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7446,7 +7363,6 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7524,7 +7440,6 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7749,7 +7664,6 @@ type PopulationToPopulationAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -7887,7 +7801,6 @@ type ProcessRegulatesProcessAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8077,7 +7990,6 @@ type ReactionToCatalystAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8127,7 +8039,6 @@ type ReactionToParticipantAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8323,7 +8234,6 @@ type SequenceAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8368,7 +8278,6 @@ type SequenceFeatureRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8438,7 +8347,6 @@ interface SequenceVariantModulatesTreatmentAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8633,6 +8541,7 @@ type Study
     informationContent: Float
     equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
+    hasStudyResults: [StudyResult]
   }
 
 type StudyPopulation
@@ -8741,7 +8650,6 @@ type TaxonToTaxonAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8848,7 +8756,6 @@ type TranscriptToGeneRelationship
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8937,7 +8844,6 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -8991,7 +8897,6 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -9053,7 +8958,6 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -9100,7 +9004,6 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -9152,7 +9055,6 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]
@@ -9210,7 +9112,6 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     pValue: Float
     adjustedPValue: Float
     hasSupportingStudies: [Study]
-    hasSupportingStudyResult: [StudyResult]
     updateDate: Date
     hasConfidenceScore: Float
     type: [String]

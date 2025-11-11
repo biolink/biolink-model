@@ -329,10 +329,6 @@
 
           MacromolecularMachineToMolecularActivityAssociation --|&gt; Study : has_supporting_studies
 
-      MacromolecularMachineToMolecularActivityAssociation : has_supporting_study_result
-
-          MacromolecularMachineToMolecularActivityAssociation --|&gt; StudyResult : has_supporting_study_result
-
       MacromolecularMachineToMolecularActivityAssociation : id
 
       MacromolecularMachineToMolecularActivityAssociation : iri
@@ -452,19 +448,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> gene, product or macromolecular complex that has the function associated with the GO term </i></br></td>
 <td>1 <br/> <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
 <td>ZFIN:ZDB-GENE-050417-357</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> class describing the activity, process or localization of the gene product </i></td>
 <td>1 <br/> <a href="../MolecularActivity/">MolecularActivity</a></td>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
 <td>GO:0016301, GO:0045211</td>
 </tr>
 <tr>
@@ -615,7 +611,7 @@
 <td><a href="../subject_label_closure/">subject_label_closure</a>: <br/> <i> Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['BRACA1']</td>
+<td>['BRCA1']</td>
 </tr>
 <tr>
 <td><a href="../object_label_closure/">object_label_closure</a>: <br/> <i> Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
@@ -642,14 +638,8 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
-<td><a href="../Association/">Association</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
-<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

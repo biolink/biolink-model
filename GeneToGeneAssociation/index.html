@@ -335,10 +335,6 @@
 
           GeneToGeneAssociation --|&gt; Study : has_supporting_studies
 
-      GeneToGeneAssociation : has_supporting_study_result
-
-          GeneToGeneAssociation --|&gt; StudyResult : has_supporting_study_result
-
       GeneToGeneAssociation : id
 
       GeneToGeneAssociation : iri
@@ -613,7 +609,7 @@
 <td><a href="../subject_label_closure/">subject_label_closure</a>: <br/> <i> Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['BRACA1']</td>
+<td>['BRCA1']</td>
 </tr>
 <tr>
 <td><a href="../object_label_closure/">object_label_closure</a>: <br/> <i> Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
@@ -640,14 +636,8 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> A study that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
 <td>* <br/> <a href="../Study/">Study</a></td>
-<td><a href="../Association/">Association</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../has_supporting_study_result/">has_supporting_study_result</a>: <br/> <i> connects an association to an instance of supporting study result </i></td>
-<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

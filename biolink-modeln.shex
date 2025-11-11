@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.3
+# version: 4.3.4
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -249,7 +249,6 @@ linkml:Sparqlpath xsd:string
              <p_value> @linkml:Float ? ;
              <adjusted_p_value> @linkml:Float ? ;
              <has_supporting_studies> @<Study> * ;
-             <has_supporting_study_result> @<StudyResult> * ;
              <update_date> @linkml:Date ? ;
              <has_confidence_score> @linkml:Float ? ;
              rdf:type @linkml:String * ;
@@ -4373,7 +4372,8 @@ linkml:Sparqlpath xsd:string
 <Study>  (
     CLOSED {
        (  $<Study_tes> (  &<Activity_tes> ;
-             rdf:type [ <Activity> ] ?
+             rdf:type [ <Activity> ] ? ;
+             <has_study_results> @<StudyResult> *
           ) ;
           rdf:type [ <Study> ]
        )

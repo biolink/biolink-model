@@ -336,6 +336,10 @@
 
           ClinicalTrial --|&gt; Attribute : has_attribute
 
+      ClinicalTrial : has_study_results
+
+          ClinicalTrial --|&gt; StudyResult : has_study_results
+
       ClinicalTrial : id
 
       ClinicalTrial : information_content
@@ -397,6 +401,12 @@
 <td><a href="../creation_date/">creation_date</a>: <br/> <i> date on which an entity was created. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_study_results/">has_study_results</a>: <br/> <i> Connects an study to instances of its study result </i></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Study/">Study</a></td>
 <td></td>
 </tr>
 <tr>

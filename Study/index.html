@@ -325,6 +325,10 @@
 
           Study --|&gt; Attribute : has_attribute
 
+      Study : has_study_results
+
+          Study --|&gt; StudyResult : has_study_results
+
       Study : id
 
       Study : information_content
@@ -371,7 +375,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../provided_by/">provided_by</a>: <br> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></br></td>
+<td><a href="../has_study_results/">has_study_results</a>: <br> <i> Connects an study to instances of its study result </i></br></td>
+<td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
@@ -467,6 +477,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="./">Study</a></td>
+<td><a href="../has_study_results/">has_study_results</a></td>
+<td>domain</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../has_study_results/">has_study_results</a></td>
+<td>domain</td>
+<td><a href="./">Study</a></td>
+</tr>
 <tr>
 <td><a href="../Association/">Association</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
@@ -1088,6 +1110,12 @@ close_mappings:
 narrow_mappings:
 - SIO:000994
 is_a: activity
+slots:
+- has study results
+slot_usage:
+  has study results:
+    name: has study results
+    inlined_as_list: true
 
 </code></pre>
 </details>
