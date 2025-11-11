@@ -192,6 +192,7 @@ gen-viz:
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml ; \
+	cp attributes.yaml src/biolink_model/schema/attributes.yaml ; \
 	# this generates the data structure required for the d3 visualizations
 	$(RUN) generate_viz_json ; \
 	# DO NOT REMOVE: these cp statements are crucial to maintain the w3 ids for the model artifacts
@@ -208,6 +209,7 @@ gendoc: $(DOCDIR)
 	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
 	cp biolink-model.yaml $(DOCDIR) ; \
+	cp attributes.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	cp -r $(SRC)/docs/images $(DOCDIR)/images ; \
 	# the .json cp here is the data required for the d3 visualizations
