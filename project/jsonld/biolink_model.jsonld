@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/biolink-model",
-  "version": "4.3.3",
+  "version": "4.3.4",
   "imports": [
     "linkml:types",
     "attributes"
@@ -13623,7 +13623,7 @@
     {
       "name": "has_supporting_studies",
       "definition_uri": "https://w3id.org/biolink/vocab/has_supporting_studies",
-      "description": "Studies that produced information used as evidence  to generate the knowledge expressed in an Association.",
+      "description": "Studies that produced information used as evidence to generate the knowledge expressed in an Association.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "close_mappings": [
         "http://purl.org/oban/has_study_id"
@@ -15123,7 +15123,7 @@
     {
       "name": "association_has_supporting_studies",
       "definition_uri": "https://w3id.org/biolink/vocab/has_supporting_studies",
-      "description": "Studies that produced information used as evidence  to generate the knowledge expressed in an Association.",
+      "description": "Studies that produced information used as evidence to generate the knowledge expressed in an Association.",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "close_mappings": [
         "http://purl.org/oban/has_study_id"
@@ -39106,9 +39106,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-11T00:58:46",
-  "source_file_size": 431246,
-  "generation_date": "2025-11-11T00:58:52",
+  "source_file_date": "2025-11-10T17:06:42",
+  "source_file_size": 431245,
+  "generation_date": "2025-11-10T17:06:55",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
