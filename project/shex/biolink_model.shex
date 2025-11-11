@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.2
+# version: 4.3.3
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -3019,6 +3019,22 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<IceesStudyResult> CLOSED {
+    (  $<IceesStudyResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ? ;
+          <chi_squared_statistic> @linkml:Float ? ;
+          <chi_squared_dof> @linkml:Integer ? ;
+          <chi_squared_p> @linkml:Float ? ;
+          <total_sample_size> @linkml:Integer ? ;
+          <fisher_exact_odds_ratio> @linkml:Float ? ;
+          <fisher_exact_p> @linkml:Float ? ;
+          <log_odds_ratio> @linkml:Float ? ;
+          <log_odds_ratio_95_ci> @linkml:Float *
+       ) ;
+       rdf:type [ <IceesStudyResult> ]
+    )
+}
+
 <IndividualOrganism>  (
     CLOSED {
        (  $<IndividualOrganism_tes> (  &<OrganismalEntity_tes> ;
@@ -4356,7 +4372,8 @@ linkml:Sparqlpath xsd:string
 <Study>  (
     CLOSED {
        (  $<Study_tes> (  &<Activity_tes> ;
-             rdf:type [ <Activity> ] ?
+             rdf:type [ <Activity> ] ? ;
+             <has_study_results> @<StudyResult> *
           ) ;
           rdf:type [ <Study> ]
        )
@@ -4374,9 +4391,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <StudyResult>  (
-    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<LogOddsAnalysisResult> OR
-    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult> OR
-    @<TextMiningStudyResult>
+    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<IceesStudyResult> OR @<LogOddsAnalysisResult> OR
+    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningStudyResult>
 )
 
 <StudyResult_struct> {
@@ -4416,14 +4432,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <TaxonomicRank> ]
-    )
-}
-
-<TextMiningResult> CLOSED {
-    (  $<TextMiningResult_tes> (  &<StudyResult_tes> ;
-          rdf:type [ <StudyResult> ] ?
-       ) ;
-       rdf:type [ <TextMiningResult> ]
     )
 }
 
@@ -4668,4 +4676,3 @@ linkml:Sparqlpath xsd:string
        rdf:type [ <Zygosity> ]
     )
 }
-

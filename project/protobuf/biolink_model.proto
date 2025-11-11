@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 4.3.2
+// version: 4.3.3
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -2003,6 +2003,7 @@ message ClinicalTrial
   float informationContent = 0
  repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
+ repeated  studyResult hasStudyResults = 0
   researchPhaseEnum clinicalTrialPhase = 0
   string clinicalTrialPrimaryPurpose = 0
   date creationDate = 0
@@ -4927,6 +4928,36 @@ message Human
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// A study result that represents a result, from a supporting Study, which is specifically associated with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.
+message IceesStudyResult
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+  labelType fullName = 0
+ repeated  labelType synonym = 0
+  float informationContent = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
+ repeated  uriorcurie category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+  float chiSquaredStatistic = 0
+  integer chiSquaredDof = 0
+  float chiSquaredP = 0
+  integer totalSampleSize = 0
+  float fisherExactOddsRatio = 0
+  float fisherExactP = 0
+  float logOddsRatio = 0
+ repeated  float logOddsRatio95Ci = 0
+ }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
  {
@@ -7439,6 +7470,7 @@ message Study
   float informationContent = 0
  repeated  uriorcurie equivalentIdentifiers = 0
  repeated  uriorcurie category = 0
+ repeated  studyResult hasStudyResults = 0
  }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation
@@ -7531,28 +7563,6 @@ message TaxonToTaxonAssociation
 message TaxonomicRank
  {
   string id = 0
- }
-// A result of text mining.
-message TextMiningResult
- {
-  string id = 0
-  iriType iri = 0
- repeated  string type = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
- repeated  string providedBy = 0
- repeated  uriorcurie xref = 0
-  labelType fullName = 0
- repeated  labelType synonym = 0
-  float informationContent = 0
- repeated  uriorcurie equivalentIdentifiers = 0
- repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.
 message TextMiningStudyResult

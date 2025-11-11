@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.2
+# version: 4.3.3
 enum AffinityParameterEnum
   {
     pIC50
@@ -2450,6 +2450,7 @@ type ClinicalTrial
     informationContent: Float
     equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
+    hasStudyResults: [StudyResult]
     clinicalTrialPhase: ResearchPhaseEnum
     clinicalTrialPrimaryPurpose: String
     creationDate: Date
@@ -5682,6 +5683,36 @@ type Human implements SubjectOfInvestigation
     hasAttribute: [Attribute]
   }
 
+type IceesStudyResult
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    providedBy: [String]
+    xref: [Uriorcurie]
+    fullName: LabelType
+    synonym: [LabelType]
+    informationContent: Float
+    equivalentIdentifiers: [Uriorcurie]
+    category: [Uriorcurie]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    chiSquaredStatistic: Float
+    chiSquaredDof: Integer
+    chiSquaredP: Float
+    totalSampleSize: Integer
+    fisherExactOddsRatio: Float
+    fisherExactP: Float
+    logOddsRatio: Float
+    logOddsRatio95Ci: [Float]
+  }
+
 type IndividualOrganism implements SubjectOfInvestigation
   {
     id: String!
@@ -8510,6 +8541,7 @@ type Study
     informationContent: Float
     equivalentIdentifiers: [Uriorcurie]
     category: [Uriorcurie]!
+    hasStudyResults: [StudyResult]
   }
 
 type StudyPopulation
@@ -8629,28 +8661,6 @@ type TaxonToTaxonAssociation
 type TaxonomicRank
   {
     id: String!
-  }
-
-type TextMiningResult
-  {
-    id: String!
-    iri: IriType
-    type: [String]
-    name: LabelType
-    description: NarrativeText
-    hasAttribute: [Attribute]
-    deprecated: Boolean
-    providedBy: [String]
-    xref: [Uriorcurie]
-    fullName: LabelType
-    synonym: [LabelType]
-    informationContent: Float
-    equivalentIdentifiers: [Uriorcurie]
-    category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type TextMiningStudyResult
@@ -9203,4 +9213,3 @@ type Zygosity
     hasQualitativeValue: NamedThing
     iri: IriType
   }
-

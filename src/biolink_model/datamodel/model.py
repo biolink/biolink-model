@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-04T11:35:48
+# Generation date: 2025-11-10T16:41:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.3.2"
+version = "4.3.3"
 
 # Namespaces
 AGRKB = CurieNamespace('AGRKB', 'https://www.alliancegenome.org/')
@@ -489,18 +489,6 @@ class StudyResultId(InformationContentEntityId):
     pass
 
 
-class TextMiningStudyResultId(StudyResultId):
-    pass
-
-
-class StudyVariableId(InformationContentEntityId):
-    pass
-
-
-class CommonDataElementId(InformationContentEntityId):
-    pass
-
-
 class ConceptCountAnalysisResultId(StudyResultId):
     pass
 
@@ -513,15 +501,27 @@ class RelativeFrequencyAnalysisResultId(StudyResultId):
     pass
 
 
-class TextMiningResultId(StudyResultId):
-    pass
-
-
 class ChiSquaredAnalysisResultId(StudyResultId):
     pass
 
 
 class LogOddsAnalysisResultId(StudyResultId):
+    pass
+
+
+class TextMiningStudyResultId(StudyResultId):
+    pass
+
+
+class IceesStudyResultId(StudyResultId):
+    pass
+
+
+class StudyVariableId(InformationContentEntityId):
+    pass
+
+
+class CommonDataElementId(InformationContentEntityId):
     pass
 
 
@@ -2419,128 +2419,6 @@ class StudyResult(InformationContentEntity):
 
 
 @dataclass(repr=False)
-class TextMiningStudyResult(StudyResult):
-    """
-    A study result that represents information extracted from text using natural language processing techniques. This
-    includes the extracted text, location offsets within the source document, confidence scores, and other metadata
-    related to the text mining process.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningStudyResult"]
-    class_class_curie: ClassVar[str] = "biolink:TextMiningStudyResult"
-    class_name: ClassVar[str] = "text mining study result"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningStudyResult
-
-    id: Union[str, TextMiningStudyResultId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-    supporting_text: Optional[Union[str, list[str]]] = empty_list()
-    subject_location_in_text: Optional[Union[int, list[int]]] = empty_list()
-    object_location_in_text: Optional[Union[int, list[int]]] = empty_list()
-    extraction_confidence_score: Optional[int] = None
-    supporting_document_type: Optional[str] = None
-    supporting_document_year: Optional[int] = None
-    supporting_text_section_type: Optional[str] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, TextMiningStudyResultId):
-            self.id = TextMiningStudyResultId(self.id)
-
-        if not isinstance(self.supporting_text, list):
-            self.supporting_text = [self.supporting_text] if self.supporting_text is not None else []
-        self.supporting_text = [v if isinstance(v, str) else str(v) for v in self.supporting_text]
-
-        if not isinstance(self.subject_location_in_text, list):
-            self.subject_location_in_text = [self.subject_location_in_text] if self.subject_location_in_text is not None else []
-        self.subject_location_in_text = [v if isinstance(v, int) else int(v) for v in self.subject_location_in_text]
-
-        if not isinstance(self.object_location_in_text, list):
-            self.object_location_in_text = [self.object_location_in_text] if self.object_location_in_text is not None else []
-        self.object_location_in_text = [v if isinstance(v, int) else int(v) for v in self.object_location_in_text]
-
-        if self.extraction_confidence_score is not None and not isinstance(self.extraction_confidence_score, int):
-            self.extraction_confidence_score = int(self.extraction_confidence_score)
-
-        if self.supporting_document_type is not None and not isinstance(self.supporting_document_type, str):
-            self.supporting_document_type = str(self.supporting_document_type)
-
-        if self.supporting_document_year is not None and not isinstance(self.supporting_document_year, int):
-            self.supporting_document_year = int(self.supporting_document_year)
-
-        if self.supporting_text_section_type is not None and not isinstance(self.supporting_text_section_type, str):
-            self.supporting_text_section_type = str(self.supporting_text_section_type)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class StudyVariable(InformationContentEntity):
-    """
-    a variable that is used as a measure in the investigation of a study
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["StudyVariable"]
-    class_class_curie: ClassVar[str] = "biolink:StudyVariable"
-    class_name: ClassVar[str] = "study variable"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
-
-    id: Union[str, StudyVariableId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, StudyVariableId):
-            self.id = StudyVariableId(self.id)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class CommonDataElement(InformationContentEntity):
-    """
-    A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable
-    responses, used systematically across different sites, studies, or clinical trials to ensure consistent data
-    collection. Multiple CDEs (from one or more Collections) can be curated into Forms. (https://cde.nlm.nih.gov/home)
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["CommonDataElement"]
-    class_class_curie: ClassVar[str] = "biolink:CommonDataElement"
-    class_name: ClassVar[str] = "common data element"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
-
-    id: Union[str, CommonDataElementId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, CommonDataElementId):
-            self.id = CommonDataElementId(self.id)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
 class ConceptCountAnalysisResult(StudyResult):
     """
     A result of a concept count analysis.
@@ -2628,35 +2506,6 @@ class RelativeFrequencyAnalysisResult(StudyResult):
 
 
 @dataclass(repr=False)
-class TextMiningResult(StudyResult):
-    """
-    A result of text mining.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningResult"]
-    class_class_curie: ClassVar[str] = "biolink:TextMiningResult"
-    class_name: ClassVar[str] = "text mining result"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
-
-    id: Union[str, TextMiningResultId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, TextMiningResultId):
-            self.id = TextMiningResultId(self.id)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
 class ChiSquaredAnalysisResult(StudyResult):
     """
     A result of a chi squared analysis.
@@ -2705,6 +2554,191 @@ class LogOddsAnalysisResult(StudyResult):
             self.MissingRequiredField("id")
         if not isinstance(self.id, LogOddsAnalysisResultId):
             self.id = LogOddsAnalysisResultId(self.id)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class TextMiningStudyResult(StudyResult):
+    """
+    A study result that represents information extracted from text using natural language processing techniques. This
+    includes the extracted text, location offsets within the source document, confidence scores, and other metadata
+    related to the text mining process.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["TextMiningStudyResult"]
+    class_class_curie: ClassVar[str] = "biolink:TextMiningStudyResult"
+    class_name: ClassVar[str] = "text mining study result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningStudyResult
+
+    id: Union[str, TextMiningStudyResultId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    supporting_text: Optional[Union[str, list[str]]] = empty_list()
+    subject_location_in_text: Optional[Union[int, list[int]]] = empty_list()
+    object_location_in_text: Optional[Union[int, list[int]]] = empty_list()
+    extraction_confidence_score: Optional[int] = None
+    supporting_document_type: Optional[str] = None
+    supporting_document_year: Optional[int] = None
+    supporting_text_section_type: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, TextMiningStudyResultId):
+            self.id = TextMiningStudyResultId(self.id)
+
+        if not isinstance(self.supporting_text, list):
+            self.supporting_text = [self.supporting_text] if self.supporting_text is not None else []
+        self.supporting_text = [v if isinstance(v, str) else str(v) for v in self.supporting_text]
+
+        if not isinstance(self.subject_location_in_text, list):
+            self.subject_location_in_text = [self.subject_location_in_text] if self.subject_location_in_text is not None else []
+        self.subject_location_in_text = [v if isinstance(v, int) else int(v) for v in self.subject_location_in_text]
+
+        if not isinstance(self.object_location_in_text, list):
+            self.object_location_in_text = [self.object_location_in_text] if self.object_location_in_text is not None else []
+        self.object_location_in_text = [v if isinstance(v, int) else int(v) for v in self.object_location_in_text]
+
+        if self.extraction_confidence_score is not None and not isinstance(self.extraction_confidence_score, int):
+            self.extraction_confidence_score = int(self.extraction_confidence_score)
+
+        if self.supporting_document_type is not None and not isinstance(self.supporting_document_type, str):
+            self.supporting_document_type = str(self.supporting_document_type)
+
+        if self.supporting_document_year is not None and not isinstance(self.supporting_document_year, int):
+            self.supporting_document_year = int(self.supporting_document_year)
+
+        if self.supporting_text_section_type is not None and not isinstance(self.supporting_text_section_type, str):
+            self.supporting_text_section_type = str(self.supporting_text_section_type)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class IceesStudyResult(StudyResult):
+    """
+    A study result that represents a result, from a supporting Study, which is specifically associated with an
+    Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["IceesStudyResult"]
+    class_class_curie: ClassVar[str] = "biolink:IceesStudyResult"
+    class_name: ClassVar[str] = "icees study result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.IceesStudyResult
+
+    id: Union[str, IceesStudyResultId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    chi_squared_statistic: Optional[float] = None
+    chi_squared_dof: Optional[int] = None
+    chi_squared_p: Optional[float] = None
+    total_sample_size: Optional[int] = None
+    fisher_exact_odds_ratio: Optional[float] = None
+    fisher_exact_p: Optional[float] = None
+    log_odds_ratio: Optional[float] = None
+    log_odds_ratio_95_ci: Optional[Union[float, list[float]]] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, IceesStudyResultId):
+            self.id = IceesStudyResultId(self.id)
+
+        if self.chi_squared_statistic is not None and not isinstance(self.chi_squared_statistic, float):
+            self.chi_squared_statistic = float(self.chi_squared_statistic)
+
+        if self.chi_squared_dof is not None and not isinstance(self.chi_squared_dof, int):
+            self.chi_squared_dof = int(self.chi_squared_dof)
+
+        if self.chi_squared_p is not None and not isinstance(self.chi_squared_p, float):
+            self.chi_squared_p = float(self.chi_squared_p)
+
+        if self.total_sample_size is not None and not isinstance(self.total_sample_size, int):
+            self.total_sample_size = int(self.total_sample_size)
+
+        if self.fisher_exact_odds_ratio is not None and not isinstance(self.fisher_exact_odds_ratio, float):
+            self.fisher_exact_odds_ratio = float(self.fisher_exact_odds_ratio)
+
+        if self.fisher_exact_p is not None and not isinstance(self.fisher_exact_p, float):
+            self.fisher_exact_p = float(self.fisher_exact_p)
+
+        if self.log_odds_ratio is not None and not isinstance(self.log_odds_ratio, float):
+            self.log_odds_ratio = float(self.log_odds_ratio)
+
+        if not isinstance(self.log_odds_ratio_95_ci, list):
+            self.log_odds_ratio_95_ci = [self.log_odds_ratio_95_ci] if self.log_odds_ratio_95_ci is not None else []
+        self.log_odds_ratio_95_ci = [v if isinstance(v, float) else float(v) for v in self.log_odds_ratio_95_ci]
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class StudyVariable(InformationContentEntity):
+    """
+    a variable that is used as a measure in the investigation of a study
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["StudyVariable"]
+    class_class_curie: ClassVar[str] = "biolink:StudyVariable"
+    class_name: ClassVar[str] = "study variable"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
+
+    id: Union[str, StudyVariableId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyVariableId):
+            self.id = StudyVariableId(self.id)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class CommonDataElement(InformationContentEntity):
+    """
+    A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable
+    responses, used systematically across different sites, studies, or clinical trials to ensure consistent data
+    collection. Multiple CDEs (from one or more Collections) can be curated into Forms. (https://cde.nlm.nih.gov/home)
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["CommonDataElement"]
+    class_class_curie: ClassVar[str] = "biolink:CommonDataElement"
+    class_name: ClassVar[str] = "common data element"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
+
+    id: Union[str, CommonDataElementId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CommonDataElementId):
+            self.id = CommonDataElementId(self.id)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -3490,12 +3524,15 @@ class Study(Activity):
 
     id: Union[str, StudyId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    has_study_results: Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]] = empty_dict()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, StudyId):
             self.id = StudyId(self.id)
+
+        self._normalize_inlined_as_list(slot_name="has_study_results", slot_type=StudyResult, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -7611,7 +7648,7 @@ class Association(Entity):
     retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]] = empty_list()
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
-    has_supporting_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
+    has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
     type: Optional[Union[str, list[str]]] = empty_list()
@@ -7736,9 +7773,7 @@ class Association(Entity):
         if self.adjusted_p_value is not None and not isinstance(self.adjusted_p_value, float):
             self.adjusted_p_value = float(self.adjusted_p_value)
 
-        if not isinstance(self.has_supporting_studies, list):
-            self.has_supporting_studies = [self.has_supporting_studies] if self.has_supporting_studies is not None else []
-        self.has_supporting_studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.has_supporting_studies]
+        self._normalize_inlined_as_dict(slot_name="has_supporting_studies", slot_type=Study, key_name="id", keyed=True)
 
         if self.update_date is not None and not isinstance(self.update_date, XSDDate):
             self.update_date = XSDDate(self.update_date)
@@ -16034,14 +16069,14 @@ slots.has_confidence_score = Slot(uri=BIOLINK.has_confidence_score, name="has co
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
 
-slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result, name="has supporting study result", curie=BIOLINK.curie('has_supporting_study_result'),
-                   model_uri=BIOLINK.has_supporting_study_result, domain=Association, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
+slots.has_study_results = Slot(uri=BIOLINK.has_study_results, name="has study results", curie=BIOLINK.curie('has_study_results'),
+                   model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
 
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
 
 slots.log_odds_ratio_95_ci = Slot(uri=BIOLINK.log_odds_ratio_95_ci, name="log odds ratio 95 ci", curie=BIOLINK.curie('log_odds_ratio_95_ci'),
-                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=Association, range=Optional[Union[float, list[float]]])
 
 slots.total_sample_size = Slot(uri=BIOLINK.total_sample_size, name="total sample size", curie=BIOLINK.curie('total_sample_size'),
                    model_uri=BIOLINK.total_sample_size, domain=Association, range=Optional[int])
@@ -16069,6 +16104,18 @@ slots.supporting_data_set = Slot(uri=BIOLINK.supporting_data_set, name="supporti
 
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
                    model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
+
+slots.chi_squared_dof = Slot(uri=BIOLINK.chi_squared_dof, name="chi squared dof", curie=BIOLINK.curie('chi_squared_dof'),
+                   model_uri=BIOLINK.chi_squared_dof, domain=Association, range=Optional[int])
+
+slots.chi_squared_p = Slot(uri=BIOLINK.chi_squared_p, name="chi squared p", curie=BIOLINK.curie('chi_squared_p'),
+                   model_uri=BIOLINK.chi_squared_p, domain=Association, range=Optional[float])
+
+slots.fisher_exact_odds_ratio = Slot(uri=BIOLINK.fisher_exact_odds_ratio, name="fisher exact odds ratio", curie=BIOLINK.curie('fisher_exact_odds_ratio'),
+                   model_uri=BIOLINK.fisher_exact_odds_ratio, domain=Association, range=Optional[float])
+
+slots.fisher_exact_p = Slot(uri=BIOLINK.fisher_exact_p, name="fisher exact p", curie=BIOLINK.curie('fisher_exact_p'),
+                   model_uri=BIOLINK.fisher_exact_p, domain=Association, range=Optional[float])
 
 slots.z_score = Slot(uri=BIOLINK.z_score, name="z score", curie=BIOLINK.curie('z_score'),
                    model_uri=BIOLINK.z_score, domain=Association, range=Optional[float])
@@ -16254,6 +16301,9 @@ slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_catego
 slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA["P105"]])
 
+slots.study_has_study_results = Slot(uri=BIOLINK.has_study_results, name="study_has study results", curie=BIOLINK.curie('has_study_results'),
+                   model_uri=BIOLINK.study_has_study_results, domain=Study, range=Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]])
+
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
 
@@ -16346,6 +16396,9 @@ slots.association_category = Slot(uri=BIOLINK.category, name="association_catego
 
 slots.association_sources = Slot(uri=BIOLINK.sources, name="association_sources", curie=BIOLINK.curie('sources'),
                    model_uri=BIOLINK.association_sources, domain=Association, range=Optional[Union[dict[Union[str, RetrievalSourceId], Union[dict, RetrievalSource]], list[Union[dict, RetrievalSource]]]])
+
+slots.association_has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="association_has supporting studies", curie=BIOLINK.curie('has_supporting_studies'),
+                   model_uri=BIOLINK.association_has_supporting_studies, domain=Association, range=Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]])
 
 slots.disease_associated_with_response_to_chemical_entity_association_subject = Slot(uri=RDF.subject, name="disease associated with response to chemical entity association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.disease_associated_with_response_to_chemical_entity_association_subject, domain=DiseaseAssociatedWithResponseToChemicalEntityAssociation, range=Union[str, DiseaseId])
