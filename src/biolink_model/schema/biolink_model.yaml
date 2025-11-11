@@ -24,7 +24,7 @@ prefixes:
   AGRKB: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
-  biolink: 'https://w3id.org/biolink/biolink-model/'
+  biolink: 'https://w3id.org/biolink/vocab/'
   bioschemas: 'https://bioschemas.org/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -205,7 +205,7 @@ subsets:
 
 imports:
   - linkml:types
-  - attributes
+  - biolink:attributes
 
 types:
 
