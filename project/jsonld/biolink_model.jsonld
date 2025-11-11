@@ -12155,7 +12155,7 @@
       "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
-          "value": "['BRACA1']",
+          "value": "['BRCA1']",
           "description": "The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.",
           "@type": "Example"
         }
@@ -39106,9 +39106,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-11T00:40:01",
-  "source_file_size": 431247,
-  "generation_date": "2025-11-11T00:40:07",
+  "source_file_date": "2025-11-10T16:50:10",
+  "source_file_size": 431246,
+  "generation_date": "2025-11-10T16:50:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
