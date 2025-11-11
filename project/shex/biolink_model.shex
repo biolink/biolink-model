@@ -1150,7 +1150,8 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalToChemicalAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
-             rdf:object @<ChemicalEntity>
+             rdf:object @<ChemicalEntity> ;
+             <species_context_qualifier> @<OrganismTaxon> ?
           ) ;
           rdf:type [ <ChemicalToChemicalAssociation> ]
        )

@@ -2119,6 +2119,7 @@ type ChemicalToChemicalAssociation
     subject: NamedThing!
     predicate: PredicateType!
     object: ChemicalEntity!
+    speciesContextQualifier: OrganismTaxon
   }
 
 type ChemicalToChemicalDerivationAssociation
@@ -2162,6 +2163,7 @@ type ChemicalToChemicalDerivationAssociation
     hasConfidenceScore: Float
     type: [String]
     category: [Uriorcurie]
+    speciesContextQualifier: OrganismTaxon
     catalystQualifier: [MacromolecularMachineMixin]
     subject: ChemicalEntity!
     object: ChemicalEntity!
@@ -7995,6 +7997,7 @@ type ReactionToCatalystAssociation
     type: [String]
     category: [Uriorcurie]
     predicate: PredicateType!
+    speciesContextQualifier: OrganismTaxon
     stoichiometry: Integer
     reactionDirection: ReactionDirectionEnum
     reactionSide: ReactionSideEnum
@@ -8045,6 +8048,7 @@ type ReactionToParticipantAssociation
     category: [Uriorcurie]
     predicate: PredicateType!
     object: ChemicalEntity!
+    speciesContextQualifier: OrganismTaxon
     stoichiometry: Integer
     reactionDirection: ReactionDirectionEnum
     reactionSide: ReactionSideEnum

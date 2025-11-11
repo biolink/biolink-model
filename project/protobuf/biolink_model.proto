@@ -1680,6 +1680,7 @@ message ChemicalToChemicalAssociation
   namedThing subject = 0
   predicateType predicate = 0
   chemicalEntity object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
 message ChemicalToChemicalDerivationAssociation
@@ -1723,6 +1724,7 @@ message ChemicalToChemicalDerivationAssociation
   float hasConfidenceScore = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
   chemicalEntity subject = 0
   chemicalEntity object = 0
@@ -6988,6 +6990,7 @@ message ReactionToCatalystAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
+  organismTaxon speciesContextQualifier = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
   reactionSideEnum reactionSide = 0
@@ -7037,6 +7040,7 @@ message ReactionToParticipantAssociation
  repeated  uriorcurie category = 0
   predicateType predicate = 0
   chemicalEntity object = 0
+  organismTaxon speciesContextQualifier = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
   reactionSideEnum reactionSide = 0
