@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-11T20:02:00
+# Generation date: 2025-11-12T06:20:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7635,6 +7635,8 @@ class Association(Entity):
     original_subject: Optional[str] = None
     original_predicate: Optional[Union[str, URIorCURIE]] = None
     original_object: Optional[str] = None
+    subject_feature_name: Optional[str] = None
+    object_feature_name: Optional[str] = None
     subject_category: Optional[Union[str, OntologyClassId]] = None
     object_category: Optional[Union[str, OntologyClassId]] = None
     subject_closure: Optional[Union[str, list[str]]] = empty_list()
@@ -7726,6 +7728,12 @@ class Association(Entity):
 
         if self.original_object is not None and not isinstance(self.original_object, str):
             self.original_object = str(self.original_object)
+
+        if self.subject_feature_name is not None and not isinstance(self.subject_feature_name, str):
+            self.subject_feature_name = str(self.subject_feature_name)
+
+        if self.object_feature_name is not None and not isinstance(self.object_feature_name, str):
+            self.object_feature_name = str(self.object_feature_name)
 
         if self.subject_category is not None and not isinstance(self.subject_category, OntologyClassId):
             self.subject_category = OntologyClassId(self.subject_category)
@@ -16015,6 +16023,12 @@ slots.original_object = Slot(uri=BIOLINK.original_object, name="original object"
 
 slots.original_predicate = Slot(uri=BIOLINK.original_predicate, name="original predicate", curie=BIOLINK.curie('original_predicate'),
                    model_uri=BIOLINK.original_predicate, domain=Association, range=Optional[Union[str, URIorCURIE]])
+
+slots.subject_feature_name = Slot(uri=BIOLINK.subject_feature_name, name="subject feature name", curie=BIOLINK.curie('subject_feature_name'),
+                   model_uri=BIOLINK.subject_feature_name, domain=Association, range=Optional[str])
+
+slots.object_feature_name = Slot(uri=BIOLINK.object_feature_name, name="object feature name", curie=BIOLINK.curie('object_feature_name'),
+                   model_uri=BIOLINK.object_feature_name, domain=Association, range=Optional[str])
 
 slots.subject_closure = Slot(uri=BIOLINK.subject_closure, name="subject closure", curie=BIOLINK.curie('subject_closure'),
                    model_uri=BIOLINK.subject_closure, domain=Association, range=Optional[Union[str, list[str]]])

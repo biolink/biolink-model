@@ -429,6 +429,8 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -474,6 +476,8 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -520,6 +524,8 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -605,6 +611,8 @@ type Association
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -713,6 +721,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -884,6 +894,8 @@ type BiologicalProcessOrActivityToAnatomicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -929,6 +941,8 @@ type BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -975,6 +989,8 @@ type BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1144,6 +1160,8 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1198,6 +1216,8 @@ type CaseToGeneAssociation implements CaseToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1246,6 +1266,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1303,6 +1325,8 @@ type CaseToVariantAssociation implements CaseToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1350,6 +1374,8 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1452,6 +1478,8 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1508,6 +1536,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1603,6 +1633,8 @@ type ChemicalAffectsBiologicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1664,6 +1696,8 @@ type ChemicalAffectsGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1748,6 +1782,8 @@ type ChemicalEntityAssessesNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1798,6 +1834,8 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1878,6 +1916,8 @@ type ChemicalGeneInteractionAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -1965,6 +2005,8 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2022,6 +2064,8 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2098,6 +2142,8 @@ type ChemicalToChemicalAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2145,6 +2191,8 @@ type ChemicalToChemicalDerivationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2195,6 +2243,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseO
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2251,6 +2301,8 @@ type ChemicalToPathwayAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2635,6 +2687,8 @@ type ContributorAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2682,6 +2736,8 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2894,6 +2950,8 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -2997,6 +3055,8 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3044,6 +3104,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3098,6 +3160,8 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3142,6 +3206,8 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3286,6 +3352,8 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3352,6 +3420,8 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3432,6 +3502,8 @@ type EntityToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3559,6 +3631,8 @@ type EntityToPhenotypicFeatureAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3774,6 +3848,8 @@ type ExonToTranscriptRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3828,6 +3904,8 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -3875,6 +3953,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4011,6 +4091,8 @@ type FunctionalAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4098,6 +4180,8 @@ type GeneAffectsChemicalAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4160,6 +4244,8 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4249,6 +4335,8 @@ type GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4300,6 +4388,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4370,6 +4460,8 @@ type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4415,6 +4507,8 @@ type GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4475,6 +4569,8 @@ type GeneRegulatesGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4525,6 +4621,8 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4585,6 +4683,8 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4652,6 +4752,8 @@ type GeneToExpressionSiteAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4702,6 +4804,8 @@ interface GeneToGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4747,6 +4851,8 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4797,6 +4903,8 @@ type GeneToGeneFamilyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4843,6 +4951,8 @@ type GeneToGeneHomologyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4889,6 +4999,8 @@ type GeneToGeneProductRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4936,6 +5048,8 @@ type GeneToGoTermAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -4982,6 +5096,8 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5027,6 +5143,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5159,6 +5277,8 @@ type GenomicSequenceLocalization
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5232,6 +5352,8 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5285,6 +5407,8 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5345,6 +5469,8 @@ type GenotypeToGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5391,6 +5517,8 @@ type GenotypeToGenotypePartAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5438,6 +5566,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5495,6 +5625,8 @@ type GenotypeToVariantAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5780,6 +5912,8 @@ type InformationContentEntityToNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -5958,6 +6092,8 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6005,6 +6141,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6060,6 +6198,8 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6149,6 +6289,8 @@ type MaterialSampleDerivationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6198,6 +6340,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6303,6 +6447,8 @@ type MolecularActivityToChemicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6349,6 +6495,8 @@ type MolecularActivityToMolecularActivityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6394,6 +6542,8 @@ type MolecularActivityToPathwayAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6513,6 +6663,8 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6755,6 +6907,8 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6802,6 +6956,8 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6847,6 +7003,8 @@ type OrganismTaxonToOrganismTaxonInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6894,6 +7052,8 @@ type OrganismTaxonToOrganismTaxonSpecialization
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -6941,6 +7101,8 @@ type OrganismToOrganismAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7008,6 +7170,8 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7063,6 +7227,8 @@ type PairwiseGeneToGeneInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7108,6 +7274,8 @@ type PairwiseMolecularInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7351,6 +7519,8 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7428,6 +7598,8 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7652,6 +7824,8 @@ type PopulationToPopulationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7789,6 +7963,8 @@ type ProcessRegulatesProcessAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -7978,6 +8154,8 @@ type ReactionToCatalystAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8028,6 +8206,8 @@ type ReactionToParticipantAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8224,6 +8404,8 @@ type SequenceAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8268,6 +8450,8 @@ type SequenceFeatureRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8337,6 +8521,8 @@ interface SequenceVariantModulatesTreatmentAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8640,6 +8826,8 @@ type TaxonToTaxonAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8746,6 +8934,8 @@ type TranscriptToGeneRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8834,6 +9024,8 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8887,6 +9079,8 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8948,6 +9142,8 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -8994,6 +9190,8 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -9045,6 +9243,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]
@@ -9102,6 +9302,8 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
     subjectCategory: OntologyClass
     objectCategory: OntologyClass
     subjectClosure: [String]

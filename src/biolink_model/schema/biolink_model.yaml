@@ -5540,6 +5540,18 @@ slots:
     domain: association
     range: uriorcurie
 
+  subject feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated subject
+      for example, a particular sequence variant of a gene
+
+  object feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated object
+      for example, a symptom diagnosis of a disease
+
   subject closure:
     is_a: association slot
     description: >-
@@ -9803,6 +9815,8 @@ classes:
       - original subject
       - original predicate
       - original object
+      - subject feature name
+      - object feature name
        # denormalized fields
       - subject category
       - object category
