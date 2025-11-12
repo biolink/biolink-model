@@ -6422,12 +6422,13 @@ slots:
         such that this study metadata must be captured directly on the edge.
     abstract: true
 
-  supporting study method type:
+  supporting study method types:
     is_a: supporting study metadata
     description: >-
-      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of
+      Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
       experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
+    multivalued: true
 
   supporting study method description:
     is_a: supporting study metadata

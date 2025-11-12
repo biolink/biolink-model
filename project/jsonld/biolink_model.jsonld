@@ -13688,15 +13688,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "supporting_study_method_type",
-      "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_method_type",
-      "description": "A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+      "name": "supporting_study_method_types",
+      "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_method_types",
+      "description": "Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
       "from_schema": "https://w3id.org/biolink/biolink-model",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_method_type",
-      "owner": "supporting_study_method_type",
+      "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_method_types",
+      "owner": "supporting_study_method_types",
       "range": "uriorcurie",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -39343,9 +39344,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-12T20:05:58",
-  "source_file_size": 431739,
-  "generation_date": "2025-11-12T20:06:04",
+  "source_file_date": "2025-11-12T20:22:47",
+  "source_file_size": 431765,
+  "generation_date": "2025-11-12T20:22:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

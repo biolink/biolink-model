@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-12T20:06:19
+# Generation date: 2025-11-12T20:23:08
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -16268,8 +16268,8 @@ slots.has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="ha
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
 
-slots.supporting_study_method_type = Slot(uri=BIOLINK.supporting_study_method_type, name="supporting study method type", curie=BIOLINK.curie('supporting_study_method_type'),
-                   model_uri=BIOLINK.supporting_study_method_type, domain=Association, range=Optional[Union[str, URIorCURIE]])
+slots.supporting_study_method_types = Slot(uri=BIOLINK.supporting_study_method_types, name="supporting study method types", curie=BIOLINK.curie('supporting_study_method_types'),
+                   model_uri=BIOLINK.supporting_study_method_types, domain=Association, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.supporting_study_method_description = Slot(uri=BIOLINK.supporting_study_method_description, name="supporting study method description", curie=BIOLINK.curie('supporting_study_method_description'),
                    model_uri=BIOLINK.supporting_study_method_description, domain=Association, range=Optional[Union[str, URIorCURIE]])
