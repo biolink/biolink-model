@@ -5515,17 +5515,23 @@ slots:
     in_subset:
       - translator_minimal
 
-  original subject:
+  original subjects:
     is_a: association slot
     description: >-
-      used to hold the original subject of a relation (or predicate) that an external knowledge
-      source uses before transformation to match the biolink-model specification.
+      used to hold the original subject(s) of a relation (or predicate) that an external knowledge
+      source uses before transformation to match the biolink-model specification or Translator
+      node normalization.
+    multivalued: true
+    domain: association
 
-  original object:
+  original objects:
     is_a: association slot
     description: >-
-      used to hold the original object of a relation (or predicate) that an external knowledge
-      source uses before transformation to match the biolink-model specification.
+      used to hold the original object(s) of a relation (or predicate) that an external knowledge
+      source uses before transformation to match the biolink-model specification or Translator
+      node normalization.
+    multivalued: true
+    domain: association
 
   original predicate:
     aliases: ['original relation', 'relation']
@@ -9800,9 +9806,9 @@ classes:
       - knowledge level
       - agent type
       - timepoint
-      - original subject
+      - original subjects
       - original predicate
-      - original object
+      - original objects
        # denormalized fields
       - subject category
       - object category
