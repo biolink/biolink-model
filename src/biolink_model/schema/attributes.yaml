@@ -1,3 +1,7 @@
+# This file extends biolink.yaml with additional node and edge properties created as placeholders so that they can be used in knowledge graphs and pass KGX validation which requires Biolink compliance. 
+# They will remain here until such time as we can evaluate their utility, and how they should be modeled, before deciding if/what to move into Biolink proper.
+# The convention for naming such properties is to begin with the name/infores code for the source of the property, and then use the name of the property as defined by the source.  
+# e.g. we created an edge property to hold the 'interaction score' from  DGIdb - which we name "dgidb interaction score"
 ---
 id: https://w3id.org/biolink/biolink-model/attributes
 name: Attributes
@@ -200,4 +204,33 @@ slots:
     is_a: node property
     description: Tern indicating the chirality of the chemical entity.
     range: string
+
+  dgidb interaction score:
+    is_a: node property
+    description: >-
+      A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence 
+     score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
+      score. See https://dgidb.org/about/overview/interaction-score.
+    range: float
+
+  dgidb evidence score:
+    is_a: node property
+    description: >-
+      A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is 
+      simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
+    range: integer
+    
+  dgidb relative drug specificity score:
+    is_a: node property
+    description: >-
+      A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average
+      known gene partners for all drugs to the known partners for the given drug. See https://dgidb.org/about/overview/interaction-score.
+    range: float
+
+  dgidb relative gene specificity score:
+    is_a: node property
+    description: >-
+      A score defined by DGIdb that quantifies the drug-interaction specificity of a given gene - representing the ratio of average
+      known drug partners for all genes to the known partners for the given gene. See https://dgidb.org/about/overview/interaction-score.
+    range: float
 
