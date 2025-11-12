@@ -12469,9 +12469,8 @@ enums:
         is_a: abundance
       degradation:
       cleavage:
-        is_a: degradation
       hydrolysis:
-        is_a: degradation
+        is_a: cleavage
       metabolic_processing:
       mutation_rate:
       stability:
@@ -12482,6 +12481,7 @@ enums:
       aggregation:
       interaction:
       release:
+	  isomerization:
       secretion:
         is_a: transport
       uptake:
@@ -12680,8 +12680,14 @@ enums:
         description: >-
           An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein,
           promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating
-          the signaling event.
-      antisense_oligonucleotide_inhibition:
+          a signaling event.
+      atpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein,
+          promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating
+          a signaling event.
+	  antisense_oligonucleotide_inhibition:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary
@@ -12770,12 +12776,30 @@ enums:
         description: >-
           A modulation mechanism mediated by the direct contact between effector and target chemical or
           biomolecular entity, which form a stable physical interaction (tyically non-covalent).
-      adduction:
+      covalent_binding:
         is_a: modulation      
         description: >-
-          A modulation mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their
+          A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or
+          biomolecular entity.
+	  adduction:
+        is_a: covalent_binding      
+        description: >-
+          A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their
           reactive metabolite(s) to a target protein.
-      stabilization:
+      crosslinking:
+        is_a: covalent_binding
+        description: >-
+          A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them
+          into a rigid sctructure.  
+      transglutamination:
+        is_a: covalent_binding
+        description: >-
+          A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalysed by a transglutaminase.
+      disuphide_binding:
+        is_a: covalent_binding
+        description: >-
+          A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.
+	  stabilization:
         is_a: modulation
         description: >-
           A modulation mechanism in which the effector increases the conformational stability of a protein or complex.
@@ -12815,11 +12839,6 @@ enums:
         is_a: modulation
         description: >-
           A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.
-      crosslinking:
-        is_a: modulation
-        description: >-
-          A modulation mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them
-          into a rigid sctructure. 
       chelation:
         is_a: modulation
         description: >-
@@ -12833,8 +12852,12 @@ enums:
       sequestration:
         is_a: modulation
         description: >-
-          A modulation mechanism in which an efector binds to a substance such as a drug, toxin or metabolite and reduces its availability for
+          A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for
           further interactions.
+      oxidoreduction:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which in which electrons are transferred between molecules catalysed by an oxidoreductase enzyme.	  
       exogenous_protein:
         is_a: modulation
         description: >-
@@ -12898,25 +12921,31 @@ enums:
         is_a: molecular_modification
       dephosphorylation:
         is_a: molecular_modification   
-	    neddylation:
+	  neddylation:
         is_a: molecular_modification
-	    lipidation:
+	  deneddylation:
         is_a: molecular_modification
-	    palmitoylation:
+	  lipidation:
+        is_a: molecular_modification
+	  palmitoylation:
         is_a: lipidation
-      tyrosination:
+	  myristoylation:
+        is_a: lipidation
+	  tyrosination:
         is_a: molecular_modification
       carboxylation:
         is_a: molecular_modification
-	    ubiquitination:
+	  ubiquitination:
         is_a: molecular_modification
-	    monoubiquitination:
+	  monoubiquitination:
         is_a: ubiquitination
-		  polyubiquitination:
+	  polyubiquitination:
         is_a: ubiquitination
-		  deubiquitination:
+	  deubiquitination:
         is_a: molecular_modification
-		  acetylation:
+	  sulfation:
+	    is_a: molecular_modification
+	  acetylation:
         is_a: molecular_modification
       reduction:
         is_a: molecular_modification
@@ -12926,27 +12955,35 @@ enums:
         is_a: molecular_modification
         description: >-
           A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.
-      deacetylation:
+      acetylation:
+        is_a: molecular_modification
+	  deacetylation:
         is_a: molecular_modification
       glycosylation:
         is_a: molecular_modification
       deglycosylation:
         is_a: molecular_modification
-	    methylation:
+	  methylation:
         is_a: molecular_modification
-	    trimethylation:
+	  trimethylation:
         is_a: methylation
-	    demethylation:
+	  demethylation:
         is_a: molecular_modification
-	    sumoylation:
+	  sumoylation:
         is_a: molecular_modification
-	    desumoylation:
+	  desumoylation:
         is_a: molecular_modification
-	    ADP_ribosylation:
+	  ADP-ribosylation:
         is_a: molecular_modification
-	    hydroxylation:
+	  de_adp_ribosylation:
+        is_a: molecular_modification		
+	  ampylation:
         is_a: molecular_modification
-	    s_nitrosylation:
+		description: >-
+		  A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
+	  hydroxylation:
+        is_a: molecular_modification
+	  s_nitrosylation:
         is_a: molecular_modification
 	
 
