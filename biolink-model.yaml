@@ -10504,12 +10504,12 @@ classes:
 
   chemical gene interaction association:
     description: >-
-      describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
+      describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
-    exact_mappings:
-      - SIO:001257
+    broad_mappings:
+      - SIO:001257    ## chemical-gene association
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -10525,7 +10525,7 @@ classes:
       object:
         range: gene or gene product
       predicate:
-        subproperty_of: physically interacts with
+        subproperty_of: interacts with
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
