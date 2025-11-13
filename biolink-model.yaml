@@ -12481,7 +12481,7 @@ enums:
       aggregation:
       interaction:
       release:
-	  isomerization:
+      isomerization:
       secretion:
         is_a: transport
       uptake:
@@ -12673,27 +12673,27 @@ enums:
           An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein,
           promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating
           a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose
-		  activity is attenuated through gtpase activation.
+          activity is attenuated through gtpase activation.
       atpase_activation:
         is_a: negative_modulation
         description: >-
           An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein,
           promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating
           a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose
-		  activity is attenuated through atpase activation.
+          activity is attenuated through atpase activation.
       antisense_oligonucleotide_inhibition:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary
           mRNA sequence through binding and targeting it for degradation. Note that while this is called "inhibition', it is not
-		  inhibition in the classic biochemical sense that requires a direct interaction between effector and target. 
+          inhibition in the classic biochemical sense that requires a direct interaction between effector and target. 
       rna_interference_inhibition:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys
           messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein.
-		  Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct
-		  interaction between effector and target. 
+          Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct
+          interaction between effector and target. 
       suppression:
         is_a: negative_modulation
         description: >-
@@ -12722,7 +12722,7 @@ enums:
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - CHEMBL.MECHANISM:negative_modulator
           - DGIdb:negative_modulator
-	  antibody_inhibition:
+      antibody_inhibition:
         is_a: inhibition
         description: >-
           An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.
@@ -12750,8 +12750,8 @@ enums:
         is_a: inhibition
         description: >-
           An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active
-		  site, in a way that reduces the activity of the target.
-	  negative_allosteric_modulation:
+          site, in a way that reduces the activity of the target.
+      negative_allosteric_modulation:
         is_a: noncompetitive_inhibition
         description: >-
           A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
@@ -12954,7 +12954,7 @@ enums:
       deubiquitination:
         is_a: molecular_modification
       sulfation:
-	    is_a: molecular_modification
+        is_a: molecular_modification
       reduction:
         is_a: molecular_modification
         description: >-
