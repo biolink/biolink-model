@@ -12577,18 +12577,6 @@ enums:
         description: >-
           A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing
           its activity or abundance, or its sensitivity to other factors that do so.
-      positive_allosteric_modulation:
-        is_a: positive_modulation
-        description: >-
-          A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
-          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:positive_allosteric_modulator
-          - CHEMBL.MECHANISM:positive_modulator
-          - DGIdb:positive_allosteric_modulator
-        broad_mappings:
-          - DGIdb:modulator
-          - DGIdb:allosteric_modulator
       potentiation:
         is_a: positive_modulation
         description: >-
@@ -12604,7 +12592,7 @@ enums:
       cofactor:
         is_a: positive_modulation
         description: >-
-          A positive modulation mechanism in which the effector (usally some non-protein chemical compound or metallic ion) 
+          A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion) 
           is required for a target enzyme's biological/catalytic activity.
       activation:
         is_a: positive_modulation
@@ -12613,6 +12601,18 @@ enums:
         close_mappings:
           - CHEMBL.MECHANISM:activator
           - DGIdb:activator
+      positive_allosteric_modulation:
+        is_a: activation
+        description: >-
+          A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
+          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+        close_mappings:
+          - CHEMBL.MECHANISM:positive_allosteric_modulator
+          - CHEMBL.MECHANISM:positive_modulator
+          - DGIdb:positive_allosteric_modulator
+        broad_mappings:
+          - DGIdb:modulator
+          - DGIdb:allosteric_modulator		  
       agonism:
         is_a: activation
         description: >-
@@ -12660,48 +12660,50 @@ enums:
         description: >-
           A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding
           its activity or abundance, or its sensitivity to other factors that do so.      
-      negative_allosteric_modulation:
-        is_a: negative_modulation
-        description: >-
-          A negative modulation mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
-          receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:negative_allosteric_modulator
-          - DGIdb:inhibitory_allosteric_modulator
         narrow_mappings:
           - DGIdb:negative_modulator
       negative_gene_editing_modulation:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which the effector elicits the negative modulation of its target through
-          a gene editting activity.       
+          a gene editing activity.       
       gtpase_activation:
         is_a: negative_modulation
         description: >-
           An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein,
           promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating
-          a signaling event.
+          a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose
+		  activity is attenuated through gtpase activation.
       atpase_activation:
         is_a: negative_modulation
         description: >-
           An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein,
           promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating
-          a signaling event.
-	  antisense_oligonucleotide_inhibition:
+          a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose
+		  activity is attenuated through atpase activation.
+      antisense_oligonucleotide_inhibition:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary
-          mRNA sequence through binding and targeting it for degradation.      
+          mRNA sequence through binding and targeting it for degradation. Note that while this is called "inhibition', it is not
+		  inhibition in the classic biochemical sense that requires a direct interaction between effector and target. 
       rna_interference_inhibition:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys
-          messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein.     
+          messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein.
+		  Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct
+		  interaction between effector and target. 
       suppression:
         is_a: negative_modulation
         description: >-
           A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a
-          physiological process.          
+          physiological process.
+      feedback_inhibition:
+        is_a: negative_modulation
+        description: >-
+          An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway,
+          which stops the production of the final product when it's no longer needed.		  
       inhibition:
         is_a: negative_modulation
         description: >-
@@ -12720,7 +12722,7 @@ enums:
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - CHEMBL.MECHANISM:negative_modulator
           - DGIdb:negative_modulator
-      antibody_inhibition:
+	  antibody_inhibition:
         is_a: inhibition
         description: >-
           An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.
@@ -12742,13 +12744,21 @@ enums:
       competitive_inhibition:
         is_a: inhibition
         description: >-
-          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) pand revents the binding
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding
           of a substrate (or another binding partner) and vice versa.
-      feedback_inhibition:
+      noncompetitive_inhibition:
         is_a: inhibition
         description: >-
-          An inhibition mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway,
-          which stops the production of the final product when it's no longer needed.
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active
+		  site, in a way that reduces the activity of the target.
+	  negative_allosteric_modulation:
+        is_a: noncompetitive_inhibition
+        description: >-
+          A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
+          receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding. 
+        close_mappings:
+          - CHEMBL.MECHANISM:negative_allosteric_modulator
+          - DGIdb:inhibitory_allosteric_modulator		  
       gating_inhibition:
         is_a: inhibition
         description: >-
@@ -12775,13 +12785,13 @@ enums:
         is_a: modulation      
         description: >-
           A modulation mechanism mediated by the direct contact between effector and target chemical or
-          biomolecular entity, which form a stable physical interaction (tyically non-covalent).
+          biomolecular entity, which form a stable physical interaction (typically non-covalent).
       covalent_binding:
         is_a: modulation      
         description: >-
           A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or
           biomolecular entity.
-	  adduction:
+      adduction:
         is_a: covalent_binding      
         description: >-
           A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their
@@ -12790,16 +12800,16 @@ enums:
         is_a: covalent_binding
         description: >-
           A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them
-          into a rigid sctructure.  
+          into a rigid structure.  
       transglutamination:
         is_a: covalent_binding
         description: >-
-          A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalysed by a transglutaminase.
+          A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.
       disuphide_binding:
         is_a: covalent_binding
         description: >-
           A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.
-	  stabilization:
+      stabilization:
         is_a: modulation
         description: >-
           A modulation mechanism in which the effector increases the conformational stability of a protein or complex.
@@ -12811,7 +12821,7 @@ enums:
       destabilization:
         is_a: modulation
         description: >-
-          A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilise
+          A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize
           the protein and allow it to complete the folding process to yield a functional protein.
       degradation:
         is_a: modulation
@@ -12829,7 +12839,7 @@ enums:
       disruption:
         is_a: modulation
         description: >-
-          A modulation mechanism in which an effector destabilises or disrupts a protein complex, macromolecular assembly, cell membrane etc.
+          A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.
       opening:
         is_a: modulation
         description: >-
@@ -12857,7 +12867,7 @@ enums:
       oxidoreduction:
         is_a: modulation
         description: >-
-          A modulation mechanism in which in which electrons are transferred between molecules catalysed by an oxidoreductase enzyme.	  
+          A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.	  
       exogenous_protein:
         is_a: modulation
         description: >-
@@ -12880,10 +12890,10 @@ enums:
         is_a: modulation
         description: >-
           A modulation mechanism mediated by through the catalytic activity of the effector on the target.
-      chemical modification:
+      chemical_modification:
         is_a: modulation
         description: >-
-          A modulation mechanism mediated by a protein/complex effector altering the abundance of a small molecule by modifying it or
+          A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or
           converting it to something else.
       relocalization:
         is_a: modulation
@@ -12916,37 +12926,35 @@ enums:
         is_a: modulation
         description: >-
           A modulation mechanism through which an effect is mediated by the modification of a target, through addition
-          of chemical moieties such phosphate groups, ubiquitin, lidids, etc., which alter its activity or cellular behavior.
+          of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.
       phosphorylation:
         is_a: molecular_modification
       dephosphorylation:
         is_a: molecular_modification   
-	  neddylation:
+      neddylation:
         is_a: molecular_modification
-	  deneddylation:
+      deneddylation:
         is_a: molecular_modification
-	  lipidation:
+      lipidation:
         is_a: molecular_modification
-	  palmitoylation:
+      palmitoylation:
         is_a: lipidation
-	  myristoylation:
+      myristoylation:
         is_a: lipidation
-	  tyrosination:
+      tyrosination:
         is_a: molecular_modification
       carboxylation:
         is_a: molecular_modification
-	  ubiquitination:
+      ubiquitination:
         is_a: molecular_modification
-	  monoubiquitination:
+      monoubiquitination:
         is_a: ubiquitination
-	  polyubiquitination:
+      polyubiquitination:
         is_a: ubiquitination
-	  deubiquitination:
+      deubiquitination:
         is_a: molecular_modification
-	  sulfation:
+      sulfation:
 	    is_a: molecular_modification
-	  acetylation:
-        is_a: molecular_modification
       reduction:
         is_a: molecular_modification
         description: >-
@@ -12957,35 +12965,34 @@ enums:
           A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.
       acetylation:
         is_a: molecular_modification
-	  deacetylation:
+      deacetylation:
         is_a: molecular_modification
       glycosylation:
         is_a: molecular_modification
       deglycosylation:
         is_a: molecular_modification
-	  methylation:
+      methylation:
         is_a: molecular_modification
-	  trimethylation:
+      trimethylation:
         is_a: methylation
-	  demethylation:
+      demethylation:
         is_a: molecular_modification
-	  sumoylation:
+      sumoylation:
         is_a: molecular_modification
-	  desumoylation:
+      desumoylation:
         is_a: molecular_modification
-	  ADP-ribosylation:
+      ADP-ribosylation:
         is_a: molecular_modification
-	  de_adp_ribosylation:
-        is_a: molecular_modification		
-	  ampylation:
+      de-ADP-ribosylation:
         is_a: molecular_modification
-		description: >-
-		  A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
-	  hydroxylation:
+      ampylation:
         is_a: molecular_modification
-	  s_nitrosylation:
+        description: >-
+          A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
+      hydroxylation:
         is_a: molecular_modification
-	
+      s_nitrosylation:
+        is_a: molecular_modification
 
   LogicalInterpretationEnum:
     permissible_values:
