@@ -105,6 +105,8 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -151,6 +153,8 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -232,6 +236,8 @@ message Association
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -339,6 +345,8 @@ message BehaviorToBehavioralFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -486,6 +494,8 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -531,6 +541,8 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -577,6 +589,8 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -744,6 +758,8 @@ message CaseToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -791,6 +807,8 @@ message CaseToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -839,6 +857,8 @@ message CaseToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -896,6 +916,8 @@ message CaseToVariantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -942,6 +964,8 @@ message CausalGeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1041,6 +1065,8 @@ message CellLineAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1097,6 +1123,8 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1184,6 +1212,8 @@ message ChemicalAffectsBiologicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1245,6 +1275,8 @@ message ChemicalAffectsGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1328,6 +1360,8 @@ message ChemicalEntityAssessesNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1374,6 +1408,8 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1443,6 +1479,8 @@ message ChemicalGeneInteractionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1526,6 +1564,8 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1583,6 +1623,8 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1659,6 +1701,8 @@ message ChemicalToChemicalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1680,6 +1724,7 @@ message ChemicalToChemicalAssociation
   namedThing subject = 0
   predicateType predicate = 0
   chemicalEntity object = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
 message ChemicalToChemicalDerivationAssociation
@@ -1705,6 +1750,8 @@ message ChemicalToChemicalDerivationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1723,6 +1770,7 @@ message ChemicalToChemicalDerivationAssociation
   float hasConfidenceScore = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
   chemicalEntity subject = 0
   chemicalEntity object = 0
@@ -1754,6 +1802,8 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -1803,6 +1853,8 @@ message ChemicalToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2185,6 +2237,8 @@ message ContributorAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2231,6 +2285,8 @@ message CorrelatedGeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2443,6 +2499,8 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2535,6 +2593,8 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2582,6 +2642,8 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2629,6 +2691,8 @@ message DiseaseToExposureEventAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2673,6 +2737,8 @@ message DiseaseToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2810,6 +2876,8 @@ message DrugToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2875,6 +2943,8 @@ message DruggableGeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2938,6 +3008,8 @@ message EntityToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -2985,6 +3057,8 @@ message EntityToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3169,6 +3243,8 @@ message ExonToTranscriptRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3217,6 +3293,8 @@ message ExposureEventToOutcomeAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3264,6 +3342,8 @@ message ExposureEventToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3370,6 +3450,8 @@ message FunctionalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3457,6 +3539,8 @@ message GeneAffectsChemicalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3518,6 +3602,8 @@ message GeneAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3599,6 +3685,8 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3644,6 +3732,8 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3705,6 +3795,8 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3750,6 +3842,8 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3796,6 +3890,8 @@ message GeneRegulatesGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3845,6 +3941,8 @@ message GeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3904,6 +4002,8 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -3964,6 +4064,8 @@ message GeneToExpressionSiteAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4013,6 +4115,8 @@ message GeneToGeneCoexpressionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4063,6 +4167,8 @@ message GeneToGeneFamilyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4109,6 +4215,8 @@ message GeneToGeneHomologyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4155,6 +4263,8 @@ message GeneToGeneProductRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4201,6 +4311,8 @@ message GeneToGoTermAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4247,6 +4359,8 @@ message GeneToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4291,6 +4405,8 @@ message GeneToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4418,6 +4534,8 @@ message GenomicSequenceLocalization
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4490,6 +4608,8 @@ message GenotypeAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4542,6 +4662,8 @@ message GenotypeToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4595,6 +4717,8 @@ message GenotypeToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4641,6 +4765,8 @@ message GenotypeToGenotypePartAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4688,6 +4814,8 @@ message GenotypeToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -4745,6 +4873,8 @@ message GenotypeToVariantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5002,6 +5132,8 @@ message InformationContentEntityToNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5169,6 +5301,8 @@ message MacromolecularMachineToBiologicalProcessAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5216,6 +5350,8 @@ message MacromolecularMachineToCellularComponentAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5263,6 +5399,8 @@ message MacromolecularMachineToMolecularActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5347,6 +5485,8 @@ message MaterialSampleDerivationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5396,6 +5536,8 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5486,6 +5628,8 @@ message MolecularActivityToChemicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5532,6 +5676,8 @@ message MolecularActivityToMolecularActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5577,6 +5723,8 @@ message MolecularActivityToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5691,6 +5839,8 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5912,6 +6062,8 @@ message OrganismTaxonToOrganismTaxonInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -5959,6 +6111,8 @@ message OrganismTaxonToOrganismTaxonSpecialization
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6005,6 +6159,8 @@ message OrganismToOrganismAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6051,6 +6207,8 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6102,6 +6260,8 @@ message PairwiseGeneToGeneInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6147,6 +6307,8 @@ message PairwiseMolecularInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6372,6 +6534,8 @@ message PhenotypicFeatureToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6431,6 +6595,8 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6645,6 +6811,8 @@ message PopulationToPopulationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6782,6 +6950,8 @@ message ProcessRegulatesProcessAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6969,6 +7139,8 @@ message ReactionToCatalystAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -6988,6 +7160,7 @@ message ReactionToCatalystAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   predicateType predicate = 0
+  organismTaxon speciesContextQualifier = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
   reactionSideEnum reactionSide = 0
@@ -7017,6 +7190,8 @@ message ReactionToParticipantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7037,6 +7212,7 @@ message ReactionToParticipantAssociation
  repeated  uriorcurie category = 0
   predicateType predicate = 0
   chemicalEntity object = 0
+  organismTaxon speciesContextQualifier = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
   reactionSideEnum reactionSide = 0
@@ -7203,6 +7379,8 @@ message SequenceAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7247,6 +7425,8 @@ message SequenceFeatureRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7538,6 +7718,8 @@ message TaxonToTaxonAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7638,6 +7820,8 @@ message TranscriptToGeneRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7725,6 +7909,8 @@ message VariantAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7777,6 +7963,8 @@ message VariantToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7831,6 +8019,8 @@ message VariantToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7877,6 +8067,8 @@ message VariantToGeneExpressionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7927,6 +8119,8 @@ message VariantToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0
@@ -7984,6 +8178,8 @@ message VariantToPopulationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
   ontologyClass subjectCategory = 0
   ontologyClass objectCategory = 0
  repeated  string subjectClosure = 0

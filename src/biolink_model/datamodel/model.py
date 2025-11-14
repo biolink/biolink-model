@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-14T13:00:45
+# Generation date: 2025-11-14T13:05:47
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -7635,6 +7635,8 @@ class Association(Entity):
     original_subject: Optional[str] = None
     original_predicate: Optional[Union[str, URIorCURIE]] = None
     original_object: Optional[str] = None
+    subject_feature_name: Optional[str] = None
+    object_feature_name: Optional[str] = None
     subject_category: Optional[Union[str, OntologyClassId]] = None
     object_category: Optional[Union[str, OntologyClassId]] = None
     subject_closure: Optional[Union[str, list[str]]] = empty_list()
@@ -7726,6 +7728,12 @@ class Association(Entity):
 
         if self.original_object is not None and not isinstance(self.original_object, str):
             self.original_object = str(self.original_object)
+
+        if self.subject_feature_name is not None and not isinstance(self.subject_feature_name, str):
+            self.subject_feature_name = str(self.subject_feature_name)
+
+        if self.object_feature_name is not None and not isinstance(self.object_feature_name, str):
+            self.object_feature_name = str(self.object_feature_name)
 
         if self.subject_category is not None and not isinstance(self.subject_category, OntologyClassId):
             self.subject_category = OntologyClassId(self.subject_category)
@@ -8867,6 +8875,7 @@ class ChemicalToChemicalAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, ChemicalEntityId] = None
+    species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -8888,6 +8897,9 @@ class ChemicalToChemicalAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, ChemicalEntityId):
             self.object = ChemicalEntityId(self.object)
+
+        if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
+            self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -16012,6 +16024,12 @@ slots.original_object = Slot(uri=BIOLINK.original_object, name="original object"
 slots.original_predicate = Slot(uri=BIOLINK.original_predicate, name="original predicate", curie=BIOLINK.curie('original_predicate'),
                    model_uri=BIOLINK.original_predicate, domain=Association, range=Optional[Union[str, URIorCURIE]])
 
+slots.subject_feature_name = Slot(uri=BIOLINK.subject_feature_name, name="subject feature name", curie=BIOLINK.curie('subject_feature_name'),
+                   model_uri=BIOLINK.subject_feature_name, domain=Association, range=Optional[str])
+
+slots.object_feature_name = Slot(uri=BIOLINK.object_feature_name, name="object feature name", curie=BIOLINK.curie('object_feature_name'),
+                   model_uri=BIOLINK.object_feature_name, domain=Association, range=Optional[str])
+
 slots.subject_closure = Slot(uri=BIOLINK.subject_closure, name="subject closure", curie=BIOLINK.curie('subject_closure'),
                    model_uri=BIOLINK.subject_closure, domain=Association, range=Optional[Union[str, list[str]]])
 
@@ -16250,8 +16268,8 @@ slots.has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="ha
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
 
-slots.supporting_study_method_type = Slot(uri=BIOLINK.supporting_study_method_type, name="supporting study method type", curie=BIOLINK.curie('supporting_study_method_type'),
-                   model_uri=BIOLINK.supporting_study_method_type, domain=Association, range=Optional[Union[str, URIorCURIE]])
+slots.supporting_study_method_types = Slot(uri=BIOLINK.supporting_study_method_types, name="supporting study method types", curie=BIOLINK.curie('supporting_study_method_types'),
+                   model_uri=BIOLINK.supporting_study_method_types, domain=Association, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.supporting_study_method_description = Slot(uri=BIOLINK.supporting_study_method_description, name="supporting study method description", curie=BIOLINK.curie('supporting_study_method_description'),
                    model_uri=BIOLINK.supporting_study_method_description, domain=Association, range=Optional[Union[str, URIorCURIE]])

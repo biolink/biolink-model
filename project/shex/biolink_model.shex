@@ -235,6 +235,8 @@ linkml:Sparqlpath xsd:string
              <original_subject> @linkml:String ? ;
              <original_predicate> @linkml:Uriorcurie ? ;
              <original_object> @linkml:String ? ;
+             <subject_feature_name> @linkml:String ? ;
+             <object_feature_name> @linkml:String ? ;
              <subject_category> @<OntologyClass> ? ;
              <object_category> @<OntologyClass> ? ;
              <subject_closure> @linkml:String * ;
@@ -1150,7 +1152,8 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalToChemicalAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
-             rdf:object @<ChemicalEntity>
+             rdf:object @<ChemicalEntity> ;
+             <species_context_qualifier> @<OrganismTaxon> ?
           ) ;
           rdf:type [ <ChemicalToChemicalAssociation> ]
        )

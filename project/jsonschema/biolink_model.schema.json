@@ -768,6 +768,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -899,6 +906,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -1131,6 +1145,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -1262,6 +1283,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -1750,6 +1778,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -1881,6 +1916,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -2632,6 +2674,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -2790,6 +2839,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3682,6 +3738,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -3813,6 +3876,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -4045,6 +4115,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -4176,6 +4253,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -4408,6 +4492,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -4539,6 +4630,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -5664,6 +5762,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -5802,6 +5907,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -6034,6 +6146,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -6165,6 +6284,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -6449,6 +6575,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -6614,6 +6747,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -6850,6 +6990,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -6981,6 +7128,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -7273,6 +7427,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -7428,6 +7589,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -8007,6 +8175,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -8165,6 +8340,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8416,6 +8598,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -8554,6 +8743,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -9106,6 +9302,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                     "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
@@ -9279,6 +9482,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -9542,6 +9752,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                     "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
@@ -9715,6 +9932,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -10121,6 +10345,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -10252,6 +10483,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -10496,6 +10734,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -10627,6 +10872,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -11029,6 +11281,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                     "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
@@ -11180,6 +11439,13 @@
                 "subject_derivative_qualifier": {
                     "$ref": "#/$defs/ChemicalEntityDerivativeEnum",
                     "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association (or statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -11647,6 +11913,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -11805,6 +12078,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -12078,6 +12358,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -12236,6 +12523,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -12639,6 +12933,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -12742,6 +13043,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -12770,6 +13078,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -13012,6 +13327,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -13115,6 +13437,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "the upstream chemical entity",
                     "type": "string"
@@ -13143,6 +13472,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -13389,6 +13725,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -13527,6 +13870,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -13766,6 +14116,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -13897,6 +14254,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -16767,6 +17131,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -16898,6 +17269,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -17190,6 +17568,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -17345,6 +17730,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -18650,6 +19042,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -18789,6 +19188,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -19335,6 +19741,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -19466,6 +19879,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -19698,6 +20118,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -19829,6 +20256,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -20061,6 +20495,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -20192,6 +20633,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -20476,6 +20924,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -20641,6 +21096,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -21449,6 +21911,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -21580,6 +22049,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -22050,6 +22526,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -22205,6 +22688,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -22452,6 +22942,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -22583,6 +23080,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -22822,6 +23326,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -22953,6 +23464,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -24194,6 +24712,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -24325,6 +24850,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -24557,6 +25089,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -24695,6 +25234,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -24987,6 +25533,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -25145,6 +25698,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -25747,6 +26307,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -25878,6 +26445,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -26441,6 +27015,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                     "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement)."
@@ -26617,6 +27198,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -26915,6 +27503,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -27070,6 +27665,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -27458,6 +28060,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -27589,6 +28198,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -27881,6 +28497,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -28036,6 +28659,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -28347,6 +28977,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -28478,6 +29115,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -28710,6 +29354,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -28841,6 +29492,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -29081,6 +29739,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -29223,6 +29888,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -29518,6 +30190,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -29673,6 +30352,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -29967,6 +30653,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -30122,6 +30815,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -30356,6 +31056,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -30508,6 +31215,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -30747,6 +31461,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -30899,6 +31620,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -31131,6 +31859,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -31262,6 +31997,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -31494,6 +32236,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -31625,6 +32374,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -31857,6 +32613,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -31988,6 +32751,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -32220,6 +32990,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -32351,6 +33128,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -32583,6 +33367,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -32714,6 +33505,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -33006,6 +33804,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -33161,6 +33966,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_form_or_variant_qualifier": {
                     "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
@@ -33892,6 +34704,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -34038,6 +34857,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -34452,6 +35278,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -34603,6 +35436,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -34858,6 +35698,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -35009,6 +35856,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -35239,6 +36093,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -35370,6 +36231,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -35602,6 +36470,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -35733,6 +36608,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -36017,6 +36899,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -36175,6 +37064,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -36405,6 +37301,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -36536,6 +37439,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -38292,6 +39202,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -38423,6 +39340,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -40553,6 +41477,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -40691,6 +41622,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -40923,6 +41861,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -41061,6 +42006,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -41293,6 +42245,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -41431,6 +42390,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -41934,6 +42900,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -42065,6 +43038,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -42311,6 +43291,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -42449,6 +43436,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -43006,6 +44000,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -43137,6 +44138,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -43369,6 +44377,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -43500,6 +44515,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -43732,6 +44754,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -43863,6 +44892,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -44609,6 +45645,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -44758,6 +45801,13 @@
                     ]
                 },
                 "subject_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
                         "string",
                         "null"
@@ -46227,6 +47277,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -46358,6 +47415,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -46590,6 +47654,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -46721,6 +47792,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -46953,6 +48031,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -47084,6 +48169,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -47341,6 +48433,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -47492,6 +48591,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -47722,6 +48828,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -47853,6 +48966,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -48091,6 +49211,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -48222,6 +49349,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -49820,6 +50954,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -49978,6 +51119,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -50260,6 +51408,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -50418,6 +51573,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -51806,6 +52968,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -51937,6 +53106,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -52801,6 +53977,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -52932,6 +54115,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -54491,6 +55681,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -54602,6 +55799,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "stoichiometry": {
                     "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
                     "type": [
@@ -54637,6 +55841,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -54869,6 +56080,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -54980,6 +56198,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "stoichiometry": {
                     "description": "the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.",
                     "type": [
@@ -55015,6 +56240,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -55946,6 +57178,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -56077,6 +57316,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -56318,6 +57564,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -56449,6 +57702,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -58656,6 +59916,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -58787,6 +60054,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -59389,6 +60663,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -59520,6 +60801,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -60093,6 +61381,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -60244,6 +61539,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -60499,6 +61801,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -60650,6 +61959,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -60880,6 +62196,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -61011,6 +62334,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -61250,6 +62580,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -61402,6 +62739,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -61686,6 +63030,13 @@
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -61844,6 +63195,13 @@
                 "subject_direction_qualifier": {
                     "$ref": "#/$defs/DirectionQualifierEnum",
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "subject_label_closure": {
                     "description": "Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -62109,6 +63467,13 @@
                         "null"
                     ]
                 },
+                "object_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "items": {
@@ -62240,6 +63605,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "subject_feature_name": {
+                    "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
