@@ -1,5 +1,5 @@
 ---
-id: https://w3id.org/biolink/biolink-model
+id: https://w3id.org/biolink/vocab/
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -205,7 +205,7 @@ subsets:
 
 imports:
   - linkml:types
-  - biolink:attributes
+  - https://w3id.org/biolink/biolink-model/attributes
 
 types:
 
@@ -6772,8 +6772,8 @@ classes:
       - xref
       - full name
       - synonym
-      - information content
       - equivalent identifiers
+      - information content
     slot_usage:
       category:
         required: true

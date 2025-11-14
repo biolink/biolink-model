@@ -1,8 +1,8 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-11T01:12:59
+# Generation date: 2025-11-14T13:00:45
 # Schema: Biolink-Model
 #
-# id: https://w3id.org/biolink/biolink-model
+# id: https://w3id.org/biolink/vocab/
 # description: Entity and association taxonomy and datamodel for life-sciences data
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -1907,8 +1907,8 @@ class NamedThing(Entity):
     xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     full_name: Optional[Union[str, LabelType]] = None
     synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
-    information_content: Optional[float] = None
     equivalent_identifiers: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    information_content: Optional[float] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1937,12 +1937,12 @@ class NamedThing(Entity):
             self.synonym = [self.synonym] if self.synonym is not None else []
         self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
 
-        if self.information_content is not None and not isinstance(self.information_content, float):
-            self.information_content = float(self.information_content)
-
         if not isinstance(self.equivalent_identifiers, list):
             self.equivalent_identifiers = [self.equivalent_identifiers] if self.equivalent_identifiers is not None else []
         self.equivalent_identifiers = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.equivalent_identifiers]
+
+        if self.information_content is not None and not isinstance(self.information_content, float):
+            self.information_content = float(self.information_content)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):

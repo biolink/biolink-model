@@ -8,7 +8,6 @@ prefixes:
   AGRKB: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
-  biolink: 'https://w3id.org/biolink/vocab/'
   bioschemas: 'https://bioschemas.org/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -141,8 +140,8 @@ prefixes:
   Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
   PMC: 'http://europepmc.org/articles/PMC'
 
-default_prefix: biolink
 default_range: string
+default_prefix: biolink
 
 default_curi_maps:
   - obo_context
@@ -193,7 +192,7 @@ slots:
 
   chembl prodrug:
     is_a: node property
-    description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body. 
+    description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.
     range: boolean
 
   chembl chirality:
