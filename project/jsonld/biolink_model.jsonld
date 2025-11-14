@@ -13848,11 +13848,9 @@
     },
     {
       "name": "information_content",
-      "definition_uri": "https://w3id.org/biolink/vocab/information_content",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/information_content",
       "description": "Information content (IC) value for a term, primarily from Automats.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
-      "is_a": "node_property",
-      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/information_content",
       "owner": "NamedThing",
       "domain_of": [
@@ -13863,15 +13861,13 @@
     },
     {
       "name": "equivalent_identifiers",
-      "definition_uri": "https://w3id.org/biolink/vocab/equivalent_identifiers",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/equivalent_identifiers",
       "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "see_also": [
         "biolink:xref",
         "biolink:synonyms"
       ],
-      "is_a": "node_property",
-      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/equivalent_identifiers",
       "owner": "NamedThing",
       "domain_of": [
@@ -13883,38 +13879,78 @@
     },
     {
       "name": "chembl_drug_warning",
-      "definition_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_drug_warning",
       "description": "Text describing warnings for use of chemicals as therapeutics.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
-      "is_a": "node_property",
-      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
-      "owner": "chembl_drug_warning",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "chembl_prodrug",
-      "definition_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_prodrug",
       "description": "Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
-      "is_a": "node_property",
-      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
-      "owner": "chembl_prodrug",
       "range": "boolean",
       "@type": "SlotDefinition"
     },
     {
       "name": "chembl_chirality",
-      "definition_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_chirality",
       "description": "Tern indicating the chirality of the chemical entity.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
-      "is_a": "node_property",
-      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
-      "owner": "chembl_chirality",
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dgidb_relative_drug_specificity_score",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_relative_drug_specificity_score",
+      "description": "A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average known gene partners for all drugs to the known partners for the given drug. See https://dgidb.org/about/overview/interaction-score.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/dgidb_relative_drug_specificity_score",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dgidb_relative_gene_specificity_score",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_relative_gene_specificity_score",
+      "description": "A score defined by DGIdb that quantifies the drug-interaction specificity of a given gene - representing the ratio of average known drug partners for all genes to the known partners for the given gene. See https://dgidb.org/about/overview/interaction-score.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/dgidb_relative_gene_specificity_score",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "intact_confidence_value",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/intact_confidence_value",
+      "description": "A score defined by MI / IntAct that represents the degree of confidence in the existence of a particular interaction by assessing the annotation of that specific interaction in a standards-compliant dataset. The score given to an interaction will increase as the number of experimental evidences supporting that interaction increases. Experimental evidences contribute more highly to the final score than evidences derived by predictive algorithms or literature text-mining methods. Range is 0-1, with higher scores indicated more confidence. See here for details: https://www.ebi.ac.uk/intact/documentation/user-guide#interaction_scoring.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "aliases": [
+        "intact miscore",
+        "intact interaction score"
+      ],
+      "slot_uri": "https://w3id.org/biolink/vocab/intact_confidence_value",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dgidb_interaction_score",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_interaction_score",
+      "description": "A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence  score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity score. See https://dgidb.org/about/overview/interaction-score.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/dgidb_interaction_score",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dgidb_evidence_score",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_evidence_score",
+      "description": "A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is  simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/dgidb_evidence_score",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -39344,9 +39380,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-14T21:11:35",
+  "source_file_date": "2025-11-14T21:30:36",
   "source_file_size": 431789,
-  "generation_date": "2025-11-14T21:11:42",
+  "generation_date": "2025-11-14T21:30:41",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

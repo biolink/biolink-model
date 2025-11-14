@@ -171,11 +171,9 @@ slots:
 
   information content:
     description: Information content (IC) value for a term, primarily from Automats.
-    is_a: node property
     range: float
 
   equivalent identifiers:
-    is_a: node property
     description: >-
       A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is
       used to represent a collection of identifiers that are considered equivalent to the primary identifier
@@ -190,36 +188,30 @@ slots:
       - biolink:synonyms
 
   chembl drug warning:
-    is_a: node property
     description: Text describing warnings for use of chemicals as therapeutics.
     range: string
 
   chembl prodrug:
-    is_a: node property
     description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.
     range: boolean
 
   chembl chirality:
-    is_a: node property
     description: Tern indicating the chirality of the chemical entity.
     range: string
     
   dgidb relative drug specificity score:
-    is_a: node property
     description: >-
       A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average
       known gene partners for all drugs to the known partners for the given drug. See https://dgidb.org/about/overview/interaction-score.
     range: float
 
   dgidb relative gene specificity score:
-    is_a: node property
     description: >-
       A score defined by DGIdb that quantifies the drug-interaction specificity of a given gene - representing the ratio of average
       known drug partners for all genes to the known partners for the given gene. See https://dgidb.org/about/overview/interaction-score.
     range: float
 
   intact confidence value:
-    is_a: node property
     aliases: ['intact miscore', 'intact interaction score']
     description: >-
       A score defined by MI / IntAct that represents the degree of confidence in the existence of a particular interaction by assessing
@@ -229,15 +221,13 @@ slots:
       confidence. See here for details: https://www.ebi.ac.uk/intact/documentation/user-guide#interaction_scoring.
 
   dgidb interaction score:
-    is_a: edge property
     description: >-
       A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence 
-     score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
+      score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
       score. See https://dgidb.org/about/overview/interaction-score.
     range: float
 
   dgidb evidence score:
-    is_a: edge property
     description: >-
       A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is 
       simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
