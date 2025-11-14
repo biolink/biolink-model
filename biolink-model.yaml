@@ -1,5 +1,5 @@
 ---
-id: https://w3id.org/biolink/biolink-model
+id: https://w3id.org/biolink/vocab/
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -205,7 +205,7 @@ subsets:
 
 imports:
   - linkml:types
-  - attributes
+  - https://w3id.org/biolink/biolink-model/attributes
 
 types:
 
@@ -5540,6 +5540,18 @@ slots:
     domain: association
     range: uriorcurie
 
+  subject feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated subject
+      for example, a particular sequence variant of a gene
+
+  object feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated object
+      for example, a symptom diagnosis of a disease
+
   subject closure:
     is_a: association slot
     description: >-
@@ -6410,12 +6422,13 @@ slots:
         such that this study metadata must be captured directly on the edge.
     abstract: true
 
-  supporting study method type:
+  supporting study method types:
     is_a: supporting study metadata
     description: >-
-      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of
+      Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
       experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
+    multivalued: true
 
   supporting study method description:
     is_a: supporting study metadata
@@ -6772,8 +6785,8 @@ classes:
       - xref
       - full name
       - synonym
-      - information content
       - equivalent identifiers
+      - information content
     slot_usage:
       category:
         required: true
@@ -9803,6 +9816,8 @@ classes:
       - original subject
       - original predicate
       - original object
+      - subject feature name
+      - object feature name
        # denormalized fields
       - subject category
       - object category
@@ -10296,6 +10311,7 @@ classes:
       - subject
       - predicate
       - object
+      - species context qualifier
     defining_slots:
       - subject
       - object
