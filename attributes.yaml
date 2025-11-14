@@ -204,21 +204,6 @@ slots:
     is_a: node property
     description: Tern indicating the chirality of the chemical entity.
     range: string
-
-  dgidb interaction score:
-    is_a: node property
-    description: >-
-      A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence 
-     score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
-      score. See https://dgidb.org/about/overview/interaction-score.
-    range: float
-
-  dgidb evidence score:
-    is_a: node property
-    description: >-
-      A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is 
-      simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
-    range: integer
     
   dgidb relative drug specificity score:
     is_a: node property
@@ -242,4 +227,19 @@ slots:
       the annotation of that specific interaction in a standards-compliant dataset. The score given to an interaction will increase as
       the number of experimental evidences supporting that interaction increases. Experimental evidences contribute more highly to the final
       score than evidences derived by predictive algorithms or literature text-mining methods. Range is 0-1, with higher scores indicated more
-      confidence. See here for details: https://www.ebi.ac.uk/intact/documentation/user-guide#interaction_scoring
+      confidence. See here for details: https://www.ebi.ac.uk/intact/documentation/user-guide#interaction_scoring.
+
+  dgidb interaction score:
+    is_a: edge property
+    description: >-
+      A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence 
+     score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
+      score. See https://dgidb.org/about/overview/interaction-score.
+    range: float
+
+  dgidb evidence score:
+    is_a: edge property
+    description: >-
+      A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is 
+      simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
+    range: integer
