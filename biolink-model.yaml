@@ -5506,6 +5506,11 @@ slots:
     description: >-
       A property that indicates the taxonomic classification of an entity.
       Values for this slot should be from the NCBITaxon ontology.
+    comments: >-
+      Note there is also a predicate 'in taxon'
+      that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is
+      an acceptable practice for KG construction, but for many applications it is more convenient to
+      use this property slot to directly annotate the taxon on the entity itself.
     in_subset:
       - translator_minimal
     range: uriorcurie

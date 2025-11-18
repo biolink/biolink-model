@@ -11906,6 +11906,9 @@
       "name": "taxon",
       "definition_uri": "https://w3id.org/biolink/vocab/taxon",
       "description": "A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.",
+      "comments": [
+        "Note there is also a predicate 'in taxon' that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is an acceptable practice for KG construction, but for many applications it is more convenient to use this property slot to directly annotate the taxon on the entity itself."
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -39712,9 +39715,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-18T11:20:39",
-  "source_file_size": 434518,
-  "generation_date": "2025-11-18T11:20:52",
+  "source_file_date": "2025-11-18T11:46:23",
+  "source_file_size": 434873,
+  "generation_date": "2025-11-18T11:46:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

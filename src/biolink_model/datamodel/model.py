@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-18T11:21:19
+# Generation date: 2025-11-18T11:47:04
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
