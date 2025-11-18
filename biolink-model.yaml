@@ -1169,6 +1169,14 @@ slots:
     range: string
     domain: clinical trial
 
+  clinical trial enrollment type:
+    is_a: node property
+    description: >-
+      The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual,
+      anticipated, or estimated)
+    range: string
+    domain: clinical trial
+
   clinical trial start date:
     is_a: node property
     description: >-
@@ -1200,11 +1208,11 @@ slots:
     is_a: node property
     description: >-
         connects a clinical trial to one or more interventions being tested in the trial
-    range: intervention
+    range: clinical intervention
     multivalued: true
     domain: clinical trial
 
-  clinical trial studies conditions:
+  clinical trial conditions:
     is_a: node property
     description: >-
         connects a clinical trial to one or more conditions being studied in the trial
@@ -9490,9 +9498,9 @@ classes:
       - clinical trial age stage
       - clinical trial age range
       - clinical trial tested intervention
-      - interventions
-      - conditions
-      - creation date  # maybe?
+      - clinical trial interventions
+      - clinical trial conditions
+      - creation date
     id_prefixes:
       - CLINICALTRIALS
 
@@ -12379,6 +12387,15 @@ enums:
         description: The recruitment or availability status is unknown.
       WITHDRAWN:
         description: The study was halted before enrolling its first participant.
+
+  ClinicalTrialAgeStageEnum:
+    description: >-
+      Enumeration of age stages or populations commonly used in clinical trials
+      to categorize participant demographics and target populations.
+    permissible_values:
+      adult:
+      child:
+      older_adult:
 
   ApprovalStatusEnum:
     description: >-

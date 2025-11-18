@@ -1124,6 +1124,23 @@
       ]
     },
     {
+      "name": "ClinicalTrialAgeStageEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum",
+      "description": "Enumeration of age stages or populations commonly used in clinical trials to categorize participant demographics and target populations.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "adult"
+        },
+        {
+          "text": "child"
+        },
+        {
+          "text": "older_adult"
+        }
+      ]
+    },
+    {
       "name": "ApprovalStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ApprovalStatusEnum",
       "description": "",
@@ -3709,7 +3726,10 @@
       "is_a": "node_property",
       "domain": "ClinicalTrial",
       "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_intervention_model",
-      "owner": "clinical_trial_intervention_model",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -3733,7 +3753,10 @@
       "is_a": "node_property",
       "domain": "ClinicalTrial",
       "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_overall_status",
-      "owner": "clinical_trial_overall_status",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
       "range": "ClinicalTrialStatusEnum",
       "@type": "SlotDefinition"
     },
@@ -3755,10 +3778,135 @@
       "description": "Records whether the clinical trials are testing the intervention.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
-      "domain": "Association",
+      "domain": "ClinicalTrial",
       "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_tested_intervention",
-      "owner": "clinical_trial_tested_intervention",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_brief_title",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_brief_title",
+      "description": "The brief title of a clinical trial as determined by clinicaltrials.gov",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_brief_title",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_enrollment_type",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_enrollment_type",
+      "description": "The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated)",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_enrollment_type",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_start_date",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_start_date",
+      "description": "The start date of a clinical trial as determined by clinicaltrials.gov",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_start_date",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_enrollment",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_enrollment",
+      "description": "The enrollment number of a clinical trial as determined by clinicaltrials.gov",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_enrollment",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_age_stage",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_age_stage",
+      "description": "The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_age_stage",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "ClinicalTrialAgeStageEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_age_range",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_age_range",
+      "description": "The age range of a clinical trial as determined by clinicaltrials.gov",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_age_range",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_interventions",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_interventions",
+      "description": "connects a clinical trial to one or more interventions being tested in the trial",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_interventions",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "ClinicalIntervention",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "clinical_trial_conditions",
+      "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_conditions",
+      "description": "connects a clinical trial to one or more conditions being studied in the trial",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ClinicalTrial",
+      "slot_uri": "https://w3id.org/biolink/vocab/clinical_trial_conditions",
+      "owner": "ClinicalTrial",
+      "domain_of": [
+        "ClinicalTrial"
+      ],
+      "range": "DiseaseOrPhenotypicFeature",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -31283,6 +31431,17 @@
         "study_has_study_results",
         "clinical_trial_phase",
         "clinical_trial_primary_purpose",
+        "clinical_trial_intervention_model",
+        "clinical_trial_overall_status",
+        "clinical_trial_brief_title",
+        "clinical_trial_enrollment_type",
+        "clinical_trial_start_date",
+        "clinical_trial_enrollment",
+        "clinical_trial_age_stage",
+        "clinical_trial_age_range",
+        "clinical_trial_tested_intervention",
+        "clinical_trial_interventions",
+        "clinical_trial_conditions",
         "creation_date"
       ],
       "slot_usage": {},
@@ -39380,9 +39539,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-14T21:57:38",
-  "source_file_size": 431789,
-  "generation_date": "2025-11-14T21:57:44",
+  "source_file_date": "2025-11-17T17:30:45",
+  "source_file_size": 434230,
+  "generation_date": "2025-11-17T17:30:56",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

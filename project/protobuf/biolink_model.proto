@@ -2058,6 +2058,17 @@ message ClinicalTrial
  repeated  studyResult hasStudyResults = 0
   researchPhaseEnum clinicalTrialPhase = 0
   string clinicalTrialPrimaryPurpose = 0
+  string clinicalTrialInterventionModel = 0
+  clinicalTrialStatusEnum clinicalTrialOverallStatus = 0
+  string clinicalTrialBriefTitle = 0
+  string clinicalTrialEnrollmentType = 0
+  date clinicalTrialStartDate = 0
+  integer clinicalTrialEnrollment = 0
+  clinicalTrialAgeStageEnum clinicalTrialAgeStage = 0
+  string clinicalTrialAgeRange = 0
+  string clinicalTrialTestedIntervention = 0
+ repeated  clinicalIntervention clinicalTrialInterventions = 0
+ repeated  diseaseOrPhenotypicFeature clinicalTrialConditions = 0
   date creationDate = 0
  }
 message CodingSequence
