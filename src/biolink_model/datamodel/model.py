@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-18T05:10:15
+# Generation date: 2025-11-17T21:15:51
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -9500,9 +9500,9 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
 @dataclass(repr=False)
 class ChemicalGeneInteractionAssociation(Association):
     """
-    describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
-    effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
-    (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
+    describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect
+    resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g.
+    impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     """
     _inherited_slots: ClassVar[list[str]] = []
 

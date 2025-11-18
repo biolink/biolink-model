@@ -18166,7 +18166,7 @@
       "domain_of": [
         "ChemicalGeneInteractionAssociation"
       ],
-      "subproperty_of": "physically_interacts_with",
+      "subproperty_of": "interacts_with",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "predicate_type",
@@ -34338,9 +34338,9 @@
     {
       "name": "ChemicalGeneInteractionAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation",
-      "description": "describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)",
+      "description": "describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "exact_mappings": [
+      "broad_mappings": [
         "SIO:001257"
       ],
       "is_a": "Association",
@@ -39539,9 +39539,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-18T05:09:54",
-  "source_file_size": 434230,
-  "generation_date": "2025-11-18T05:10:00",
+  "source_file_date": "2025-11-17T21:15:15",
+  "source_file_size": 434243,
+  "generation_date": "2025-11-17T21:15:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
