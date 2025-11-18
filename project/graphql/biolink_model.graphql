@@ -326,6 +326,7 @@ type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGenePro
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -347,6 +348,7 @@ type Activity implements ActivityAndBehavior
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -369,6 +371,7 @@ interface AdministrativeEntity
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -385,6 +388,7 @@ type Agent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     affiliation: [Uriorcurie]
     address: String
@@ -406,6 +410,7 @@ type AnatomicalEntity implements PhysicalEssence, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -572,6 +577,7 @@ type Article
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -653,6 +659,7 @@ type Attribute implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -675,6 +682,7 @@ type Bacterium
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -696,6 +704,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -777,6 +786,7 @@ type BehavioralExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -801,6 +811,7 @@ type BehavioralFeature
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -826,6 +837,7 @@ type BiologicalEntity implements ThingWithTaxon
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -846,6 +858,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -869,6 +882,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1034,6 +1048,7 @@ type BiologicalSex
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1055,6 +1070,7 @@ type BioticExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1075,6 +1091,7 @@ type Book
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -1104,6 +1121,7 @@ type BookChapter
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -1137,6 +1155,7 @@ type Case implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1434,6 +1453,7 @@ type Cell
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1454,6 +1474,7 @@ type CellLine implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1591,6 +1612,7 @@ type CellularComponent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1611,6 +1633,7 @@ type CellularOrganism implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1758,6 +1781,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -1891,6 +1915,7 @@ type ChemicalExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1971,6 +1996,7 @@ type ChemicalMixture implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -2118,6 +2144,7 @@ type ChemicalRole
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2347,6 +2374,7 @@ type ChiSquaredAnalysisResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2367,6 +2395,7 @@ type ClinicalAttribute
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2388,6 +2417,7 @@ type ClinicalCourse
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2411,6 +2441,7 @@ type ClinicalEntity
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -2428,6 +2459,7 @@ type ClinicalFinding
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2450,6 +2482,7 @@ type ClinicalIntervention
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -2466,6 +2499,7 @@ type ClinicalMeasurement
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasQuantitativeValue: [QuantityValue]
@@ -2487,6 +2521,7 @@ type ClinicalModifier
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2510,6 +2545,7 @@ type ClinicalTrial
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     hasStudyResults: [StudyResult]
     clinicalTrialPhase: ResearchPhaseEnum
@@ -2543,6 +2579,7 @@ type CodingSequence implements GenomicEntity
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2563,6 +2600,7 @@ type Cohort implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2584,6 +2622,7 @@ type CommonDataElement
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2604,6 +2643,7 @@ type ComplexChemicalExposure
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2627,6 +2667,7 @@ type ComplexMolecularMixture
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -2654,6 +2695,7 @@ type ConceptCountAnalysisResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2676,6 +2718,7 @@ type ConfidenceLevel
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2809,6 +2852,7 @@ type Dataset
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2831,6 +2875,7 @@ type DatasetDistribution
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2854,6 +2899,7 @@ type DatasetSummary
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2878,6 +2924,7 @@ type DatasetVersion
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -2903,6 +2950,7 @@ type Device
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -2921,6 +2969,7 @@ type DiagnosticAid
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -2939,6 +2988,7 @@ type Disease
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3010,6 +3060,7 @@ type DiseaseOrPhenotypicFeature implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3029,6 +3080,7 @@ type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEn
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3276,6 +3328,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -3301,6 +3354,7 @@ type DrugExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3322,6 +3376,7 @@ type DrugLabel
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -3406,6 +3461,7 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3705,6 +3761,7 @@ type EnvironmentalExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3729,6 +3786,7 @@ type EnvironmentalFeature
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -3747,6 +3805,7 @@ type EnvironmentalFoodContaminant
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -3770,6 +3829,7 @@ type EnvironmentalProcess implements Occurrent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -3797,6 +3857,7 @@ type Event
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -3815,6 +3876,7 @@ type EvidenceType
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -3837,6 +3899,7 @@ type Exon
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4034,6 +4097,7 @@ type Food
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -4061,6 +4125,7 @@ type FoodAdditive
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -4147,6 +4212,7 @@ type Fungus
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4167,6 +4233,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4324,6 +4391,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5215,6 +5283,7 @@ type GeneticInheritance
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5235,6 +5304,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5254,6 +5324,7 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5340,6 +5411,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5681,6 +5753,7 @@ type GenotypicSex
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5702,6 +5775,7 @@ type GeographicExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5726,6 +5800,7 @@ type GeographicLocation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     latitude: Float
     longitude: Float
@@ -5746,6 +5821,7 @@ type GeographicLocationAtTime
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     latitude: Float
     longitude: Float
@@ -5766,6 +5842,7 @@ type GrossAnatomicalStructure
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5787,6 +5864,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5808,6 +5886,7 @@ type Hospitalization
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -5829,6 +5908,7 @@ type Human implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5850,6 +5930,7 @@ type IceesStudyResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -5879,6 +5960,7 @@ type IndividualOrganism implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5900,6 +5982,7 @@ interface InformationContentEntity
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -5969,6 +6052,7 @@ type Invertebrate
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5987,6 +6071,7 @@ type JournalArticle
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -6033,6 +6118,7 @@ type LifeStage implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6054,6 +6140,7 @@ type LogOddsAnalysisResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -6076,6 +6163,7 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6255,6 +6343,7 @@ type Mammal implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6281,6 +6370,7 @@ type MaterialSample implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -6406,6 +6496,7 @@ type MicroRNA
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6433,6 +6524,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6600,6 +6692,7 @@ type MolecularEntity implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -6624,6 +6717,7 @@ type MolecularMixture
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -6655,6 +6749,7 @@ type NamedThing
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -6730,6 +6825,7 @@ type NoncodingRNAProduct
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6750,6 +6846,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -6777,6 +6874,7 @@ type NucleicAcidSequenceMotif
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6797,6 +6895,7 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6818,6 +6917,7 @@ type ObservedExpectedFrequencyAnalysisResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -6842,6 +6942,7 @@ type Onset
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6868,6 +6969,7 @@ type OrganismAttribute
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -6891,6 +6993,7 @@ type OrganismTaxon
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     hasTaxonomicRank: TaxonomicRank
   }
@@ -7157,6 +7260,7 @@ type OrganismalEntity implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7331,6 +7435,7 @@ type Patent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7364,6 +7469,7 @@ type PathologicalAnatomicalExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7391,6 +7497,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7416,6 +7523,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7437,6 +7545,7 @@ type PathologicalProcessExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7465,6 +7574,7 @@ type Pathway implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7488,6 +7598,7 @@ type Phenomenon implements Occurrent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -7506,6 +7617,7 @@ type PhenotypicFeature
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7663,6 +7775,7 @@ type PhenotypicQuality
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7684,6 +7797,7 @@ type PhenotypicSex
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -7707,6 +7821,7 @@ type PhysicalEntity implements PhysicalEssence
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -7733,6 +7848,7 @@ type PhysiologicalProcess implements OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7756,6 +7872,7 @@ type PlanetaryEntity
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -7773,6 +7890,7 @@ type Plant
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7794,6 +7912,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7813,6 +7932,7 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7882,6 +8002,7 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -7924,6 +8045,7 @@ type PreprintPublication
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -7955,6 +8077,7 @@ type Procedure implements ActivityAndBehavior
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
   }
 
@@ -8021,6 +8144,7 @@ type ProcessedMaterial
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -8048,6 +8172,7 @@ type Protein implements GeneProductMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8068,6 +8193,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8089,6 +8215,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8110,6 +8237,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8127,6 +8255,7 @@ type Publication
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8268,6 +8397,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8289,6 +8419,7 @@ type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduc
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8319,6 +8450,7 @@ type RelativeFrequencyAnalysisResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8340,6 +8472,7 @@ type RetrievalSource
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8367,6 +8500,7 @@ type RNAProduct implements GeneProductMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8387,6 +8521,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8506,6 +8641,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8574,6 +8710,7 @@ type Serial
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8607,6 +8744,7 @@ type SeverityValue
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -8630,6 +8768,7 @@ type SiRNA
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8650,6 +8789,7 @@ type SmallMolecule
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     tradeName: String
     availableFrom: [DrugAvailabilityEnum]
@@ -8673,6 +8813,7 @@ type Snv
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8695,6 +8836,7 @@ type SocioeconomicAttribute
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -8715,6 +8857,7 @@ type SocioeconomicExposure implements ExposureEvent
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -8748,6 +8891,7 @@ type Study
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     hasStudyResults: [StudyResult]
   }
@@ -8766,6 +8910,7 @@ type StudyPopulation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8787,6 +8932,7 @@ interface StudyResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8809,6 +8955,7 @@ type StudyVariable
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8888,6 +9035,7 @@ type TextMiningStudyResult
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -8923,6 +9071,7 @@ type Transcript
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -8991,6 +9140,7 @@ type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGe
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -9012,6 +9162,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     hasDrug: [Drug]
     hasDevice: [Device]
@@ -9363,6 +9514,7 @@ type Vertebrate
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -9383,6 +9535,7 @@ type Virus implements SubjectOfInvestigation
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -9401,6 +9554,7 @@ type WebPage
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     license: String
     rights: String
@@ -9430,6 +9584,7 @@ type Zygosity
     synonym: [LabelType]
     equivalentIdentifiers: [Uriorcurie]
     informationContent: Float
+    taxon: Uriorcurie
     category: [Uriorcurie]!
     name: LabelType
     hasAttributeType: OntologyClass!
