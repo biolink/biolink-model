@@ -158,6 +158,15 @@ class ClinicalTrialStatusEnum(str, Enum):
     """
 
 
+class ClinicalTrialAgeStageEnum(str, Enum):
+    """
+    Enumeration of age stages or populations commonly used in clinical trials to categorize participant demographics and target populations.
+    """
+    adult = "adult"
+    child = "child"
+    older_adult = "older_adult"
+
+
 class ApprovalStatusEnum(str, Enum):
     discovery_and_development_phase = "discovery_and_development_phase"
     """
@@ -3986,6 +3995,17 @@ class ClinicalTrial(Study):
     """
     clinical_trial_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The phase that a clinical trials study represents""")
     clinical_trial_primary_purpose: Optional[str] = Field(default=None, description="""The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).""")
+    clinical_trial_intervention_model: Optional[str] = Field(default=None, description="""The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).""")
+    clinical_trial_overall_status: Optional[ClinicalTrialStatusEnum] = Field(default=None, description="""The overall status of a clinical trial as determined by clinicaltrials.gov""")
+    clinical_trial_brief_title: Optional[str] = Field(default=None, description="""The brief title of a clinical trial as determined by clinicaltrials.gov""")
+    clinical_trial_enrollment_type: Optional[str] = Field(default=None, description="""The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated)""")
+    clinical_trial_start_date: Optional[date] = Field(default=None, description="""The start date of a clinical trial as determined by clinicaltrials.gov""")
+    clinical_trial_enrollment: Optional[int] = Field(default=None, description="""The enrollment number of a clinical trial as determined by clinicaltrials.gov""")
+    clinical_trial_age_stage: Optional[ClinicalTrialAgeStageEnum] = Field(default=None, description="""The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)""")
+    clinical_trial_age_range: Optional[str] = Field(default=None, description="""The age range of a clinical trial as determined by clinicaltrials.gov""")
+    clinical_trial_tested_intervention: Optional[str] = Field(default=None, description="""Records whether the clinical trials are testing the intervention.""")
+    clinical_trial_interventions: Optional[list[str]] = Field(default=None, description="""connects a clinical trial to one or more interventions being tested in the trial""")
+    clinical_trial_conditions: Optional[list[str]] = Field(default=None, description="""connects a clinical trial to one or more conditions being studied in the trial""")
     creation_date: Optional[date] = Field(default=None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     has_study_results: Optional[list[Union[StudyResult,ConceptCountAnalysisResult,ObservedExpectedFrequencyAnalysisResult,RelativeFrequencyAnalysisResult,ChiSquaredAnalysisResult,LogOddsAnalysisResult,TextMiningStudyResult,IceesStudyResult]]] = Field(default=None, description="""Connects an study to instances of its study result""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")

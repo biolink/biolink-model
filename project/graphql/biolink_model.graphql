@@ -92,6 +92,13 @@ enum ClinicalApprovalStatusEnum
     not_provided
   }
 
+enum ClinicalTrialAgeStageEnum
+  {
+    adult
+    child
+    older_adult
+  }
+
 enum ClinicalTrialStatusEnum
   {
     ACTIVE_NOT_RECRUITING
@@ -2507,6 +2514,17 @@ type ClinicalTrial
     hasStudyResults: [StudyResult]
     clinicalTrialPhase: ResearchPhaseEnum
     clinicalTrialPrimaryPurpose: String
+    clinicalTrialInterventionModel: String
+    clinicalTrialOverallStatus: ClinicalTrialStatusEnum
+    clinicalTrialBriefTitle: String
+    clinicalTrialEnrollmentType: String
+    clinicalTrialStartDate: Date
+    clinicalTrialEnrollment: Integer
+    clinicalTrialAgeStage: ClinicalTrialAgeStageEnum
+    clinicalTrialAgeRange: String
+    clinicalTrialTestedIntervention: String
+    clinicalTrialInterventions: [ClinicalIntervention]
+    clinicalTrialConditions: [DiseaseOrPhenotypicFeature]
     creationDate: Date
   }
 
