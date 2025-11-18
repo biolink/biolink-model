@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-18T06:32:14
+# Generation date: 2025-11-18T11:21:19
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1909,6 +1909,7 @@ class NamedThing(Entity):
     synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
     equivalent_identifiers: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     information_content: Optional[float] = None
+    taxon: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1943,6 +1944,9 @@ class NamedThing(Entity):
 
         if self.information_content is not None and not isinstance(self.information_content, float):
             self.information_content = float(self.information_content)
+
+        if self.taxon is not None and not isinstance(self.taxon, URIorCURIE):
+            self.taxon = URIorCURIE(self.taxon)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -16077,6 +16081,9 @@ slots.develops_from = Slot(uri=BIOLINK.develops_from, name="develops from", curi
 
 slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curie=BIOLINK.curie('develops_into'),
                    model_uri=BIOLINK.develops_into, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
+
+slots.taxon = Slot(uri=BIOLINK.taxon, name="taxon", curie=BIOLINK.curie('taxon'),
+                   model_uri=BIOLINK.taxon, domain=NamedThing, range=Optional[Union[str, URIorCURIE]])
 
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]])

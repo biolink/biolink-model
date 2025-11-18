@@ -5501,6 +5501,15 @@ slots:
     is_a: related to at instance level
     inverse: develops from
 
+  taxon:
+    is_a: node property
+    description: >-
+      A property that indicates the taxonomic classification of an entity.
+      Values for this slot should be from the NCBITaxon ontology.
+    in_subset:
+        - translator_minimal
+    range: uriorcurie
+
   in taxon:
     aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source']
     is_a: related to at instance level
@@ -6845,6 +6854,7 @@ classes:
       - synonym
       - equivalent identifiers
       - information content
+      - taxon
     slot_usage:
       category:
         required: true
