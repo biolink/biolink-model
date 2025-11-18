@@ -15500,12 +15500,90 @@
                     },
                     "type": "array"
                 },
+                "clinical_trial_age_range": {
+                    "description": "The age range of a clinical trial as determined by clinicaltrials.gov",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_age_stage": {
+                    "$ref": "#/$defs/ClinicalTrialAgeStageEnum",
+                    "description": "The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)"
+                },
+                "clinical_trial_brief_title": {
+                    "description": "The brief title of a clinical trial as determined by clinicaltrials.gov",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_conditions": {
+                    "description": "connects a clinical trial to one or more conditions being studied in the trial",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "clinical_trial_enrollment": {
+                    "description": "The enrollment number of a clinical trial as determined by clinicaltrials.gov",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "clinical_trial_enrollment_type": {
+                    "description": "The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_intervention_model": {
+                    "description": "The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_interventions": {
+                    "description": "connects a clinical trial to one or more interventions being tested in the trial",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "clinical_trial_overall_status": {
+                    "$ref": "#/$defs/ClinicalTrialStatusEnum",
+                    "description": "The overall status of a clinical trial as determined by clinicaltrials.gov"
+                },
                 "clinical_trial_phase": {
                     "$ref": "#/$defs/ResearchPhaseEnum",
                     "description": "The phase that a clinical trials study represents"
                 },
                 "clinical_trial_primary_purpose": {
                     "description": "The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_start_date": {
+                    "description": "The start date of a clinical trial as determined by clinicaltrials.gov",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_tested_intervention": {
+                    "description": "Records whether the clinical trials are testing the intervention.",
                     "type": [
                         "string",
                         "null"
@@ -15664,6 +15742,16 @@
             "title": "ClinicalTrial",
             "type": "object"
         },
+        "ClinicalTrialAgeStageEnum": {
+            "description": "Enumeration of age stages or populations commonly used in clinical trials to categorize participant demographics and target populations.",
+            "enum": [
+                "adult",
+                "child",
+                "older_adult"
+            ],
+            "title": "ClinicalTrialAgeStageEnum",
+            "type": "string"
+        },
         "ClinicalTrialStatusEnum": {
             "description": "Enumeration of clinical trial statuses indicating the recruitment state, availability, or regulatory status of a clinical study or intervention.",
             "enum": [
@@ -15698,12 +15786,90 @@
                     },
                     "type": "array"
                 },
+                "clinical_trial_age_range": {
+                    "description": "The age range of a clinical trial as determined by clinicaltrials.gov",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_age_stage": {
+                    "$ref": "#/$defs/ClinicalTrialAgeStageEnum",
+                    "description": "The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)"
+                },
+                "clinical_trial_brief_title": {
+                    "description": "The brief title of a clinical trial as determined by clinicaltrials.gov",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_conditions": {
+                    "description": "connects a clinical trial to one or more conditions being studied in the trial",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "clinical_trial_enrollment": {
+                    "description": "The enrollment number of a clinical trial as determined by clinicaltrials.gov",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "clinical_trial_enrollment_type": {
+                    "description": "The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_intervention_model": {
+                    "description": "The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_interventions": {
+                    "description": "connects a clinical trial to one or more interventions being tested in the trial",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "clinical_trial_overall_status": {
+                    "$ref": "#/$defs/ClinicalTrialStatusEnum",
+                    "description": "The overall status of a clinical trial as determined by clinicaltrials.gov"
+                },
                 "clinical_trial_phase": {
                     "$ref": "#/$defs/ResearchPhaseEnum",
                     "description": "The phase that a clinical trials study represents"
                 },
                 "clinical_trial_primary_purpose": {
                     "description": "The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_start_date": {
+                    "description": "The start date of a clinical trial as determined by clinicaltrials.gov",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clinical_trial_tested_intervention": {
+                    "description": "Records whether the clinical trials are testing the intervention.",
                     "type": [
                         "string",
                         "null"
@@ -64316,7 +64482,7 @@
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/biolink/biolink-model",
+    "$id": "https://w3id.org/biolink/vocab/",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",

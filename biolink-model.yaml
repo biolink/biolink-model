@@ -1,5 +1,5 @@
 ---
-id: https://w3id.org/biolink/biolink-model
+id: https://w3id.org/biolink/vocab/
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -205,7 +205,7 @@ subsets:
 
 imports:
   - linkml:types
-  - biolink:attributes
+  - https://w3id.org/biolink/biolink-model/attributes
 
 types:
 
@@ -1159,10 +1159,68 @@ slots:
     is_a: node property
     description: >-
       Records whether the clinical trials are testing the intervention.
-    domain: association
+    domain: clinical trial
     range: string
 
-   ## Biological Entity properties
+  clinical trial brief title:
+    is_a: node property
+    description: >-
+      The brief title of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial enrollment type:
+    is_a: node property
+    description: >-
+      The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual,
+      anticipated, or estimated)
+    range: string
+    domain: clinical trial
+
+  clinical trial start date:
+    is_a: node property
+    description: >-
+      The start date of a clinical trial as determined by clinicaltrials.gov
+    range: date
+    domain: clinical trial
+  clinical trial enrollment:
+    is_a: node property
+    description: >-
+      The enrollment number of a clinical trial as determined by clinicaltrials.gov
+    range: integer
+    domain: clinical trial
+
+  clinical trial age stage:
+    is_a: node property
+    description: >-
+      The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
+    range: ClinicalTrialAgeStageEnum
+    domain: clinical trial
+
+  clinical trial age range:
+    is_a: node property
+    description: >-
+      The age range of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial interventions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more interventions being tested in the trial
+    range: clinical intervention
+    multivalued: true
+    domain: clinical trial
+
+  clinical trial conditions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more conditions being studied in the trial
+    range: disease or phenotypic feature
+    multivalued: true
+    domain: clinical trial
+
+    ## Biological Entity properties
 
   has biological sequence:
     is_a: node property
@@ -6422,12 +6480,13 @@ slots:
         such that this study metadata must be captured directly on the edge.
     abstract: true
 
-  supporting study method type:
+  supporting study method types:
     is_a: supporting study metadata
     description: >-
-      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of
+      Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
       experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
+    multivalued: true
 
   supporting study method description:
     is_a: supporting study metadata
@@ -6784,8 +6843,8 @@ classes:
       - xref
       - full name
       - synonym
-      - information content
       - equivalent identifiers
+      - information content
     slot_usage:
       category:
         required: true
@@ -9430,7 +9489,18 @@ classes:
     slots:
       - clinical trial phase
       - clinical trial primary purpose
-      - creation date  # maybe?
+      - clinical trial intervention model
+      - clinical trial overall status
+      - clinical trial brief title
+      - clinical trial enrollment type
+      - clinical trial start date
+      - clinical trial enrollment
+      - clinical trial age stage
+      - clinical trial age range
+      - clinical trial tested intervention
+      - clinical trial interventions
+      - clinical trial conditions
+      - creation date
     id_prefixes:
       - CLINICALTRIALS
 
@@ -12317,6 +12387,15 @@ enums:
         description: The recruitment or availability status is unknown.
       WITHDRAWN:
         description: The study was halted before enrolling its first participant.
+
+  ClinicalTrialAgeStageEnum:
+    description: >-
+      Enumeration of age stages or populations commonly used in clinical trials
+      to categorize participant demographics and target populations.
+    permissible_values:
+      adult:
+      child:
+      older_adult:
 
   ApprovalStatusEnum:
     description: >-

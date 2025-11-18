@@ -1293,6 +1293,31 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
           <clinical_trial_primary_purpose> @linkml:String ? ;
+          <clinical_trial_intervention_model> @linkml:String ? ;
+          <clinical_trial_overall_status> [ <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#ACTIVE_NOT_RECRUITING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#APPROVED_FOR_MARKETING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#AVAILABLE>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#COMPLETED>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#ENROLLING_BY_INVITATION>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#NO_LONGER_AVAILABLE>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#NOT_YET_RECRUITING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#RECRUITING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#SUSPENDED>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#TEMPORARILY_NOT_AVAILABLE>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#TERMINATED>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#UNKNOWN>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#WITHDRAWN> ] ? ;
+          <clinical_trial_brief_title> @linkml:String ? ;
+          <clinical_trial_enrollment_type> @linkml:String ? ;
+          <clinical_trial_start_date> @linkml:Date ? ;
+          <clinical_trial_enrollment> @linkml:Integer ? ;
+          <clinical_trial_age_stage> [ <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#adult>
+             <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#child>
+             <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#older_adult> ] ? ;
+          <clinical_trial_age_range> @linkml:String ? ;
+          <clinical_trial_tested_intervention> @linkml:String ? ;
+          <clinical_trial_interventions> @<ClinicalIntervention> * ;
+          <clinical_trial_conditions> @<DiseaseOrPhenotypicFeature> * ;
           <creation_date> @linkml:Date ?
        ) ;
        rdf:type [ <ClinicalTrial> ]
@@ -3358,8 +3383,8 @@ linkml:Sparqlpath xsd:string
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
-             <information_content> @linkml:Float ? ;
              <equivalent_identifiers> @linkml:Uriorcurie * ;
+             <information_content> @linkml:Float ? ;
              <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
