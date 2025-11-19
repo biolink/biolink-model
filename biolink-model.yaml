@@ -9772,6 +9772,7 @@ classes:
     aliases: ['medical action', 'medical intervention']
      # 'named thing' seems too generic here but not sure what applies better here
     is_a: exposure event
+    mixins:
       - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
