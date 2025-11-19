@@ -31,7 +31,7 @@ enable = true
 vcs = "git"
 style = "pep440"
 
-[tool.poetry.dev-dependencies]
+[poetry.group.dev.dependencies]
 linkml = ">=1.6.3"
 mkdocs = "^1.4.2"
 mkdocs-material = "^9.5.17"
