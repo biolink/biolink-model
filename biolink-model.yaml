@@ -1106,7 +1106,52 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Clinical Trials
+  ## Exposure Events
+
+  exposure type:
+    is_a: node property
+    description: >-
+      Type of exposure
+    domain: exposure event
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
+#           To some extent, the subclassing of Exposure Events provides some typing?
+
+  exposure vehicle:
+    is_a: node property
+    description: >-
+      Type of exposure event.
+    domain: exposure event
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure route:
+    is_a: node property
+    description: >-
+      Route of exposure.
+    domain: exposure event
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure start stage:
+    is_a: node property
+    description: >-
+      Starting stage of exposure event.
+    domain: exposure event
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure end stage:
+    is_a: node property
+    description: >-
+      Ending stage of exposure event.
+    domain: exposure event
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure additional condition:
+    is_a: node property
+    description: >-
+      Additional conditions impacting an exposure event.
+    domain: exposure event
+
+  ## Clinical Trials
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -9589,6 +9634,12 @@ classes:
     aliases: ['exposure', 'experimental condition']
     slots:
       - timepoint
+      - exposure type
+      - exposure vehicle
+      - exposure route
+      - exposure start stage
+      - exposure end stage
+      - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
