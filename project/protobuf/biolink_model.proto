@@ -391,8 +391,9 @@ message BehaviorToBehavioralFeatureAssociation
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -404,12 +405,16 @@ message BehavioralExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // A phenotypic feature which is behavioral in nature.
 message BehavioralFeature
@@ -649,8 +654,9 @@ message BiologicalSex
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -662,12 +668,16 @@ message BioticExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -1458,8 +1468,9 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -1471,12 +1482,17 @@ message ChemicalExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
- repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
+ repeated  quantityValue hasQuantitativeValue = 0
  }
 // describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
 message ChemicalGeneInteractionAssociation
@@ -2173,8 +2189,9 @@ message CommonDataElement
 // A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
 message ComplexChemicalExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -2186,11 +2203,16 @@ message ComplexChemicalExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
+  timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
@@ -2609,8 +2631,9 @@ message DiseaseOrPhenotypicFeature
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -2622,12 +2645,16 @@ message DiseaseOrPhenotypicFeatureExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
 message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
@@ -2865,8 +2892,9 @@ message Drug
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -2878,12 +2906,17 @@ message DrugExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
- repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
+ repeated  quantityValue hasQuantitativeValue = 0
  }
 // a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions or warnings for administration, storage and disposal instructions, etc.
 message DrugLabel
@@ -2965,8 +2998,9 @@ message DrugToGeneAssociation
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -2978,12 +3012,17 @@ message DrugToGeneInteractionExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
- repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
+ repeated  quantityValue hasQuantitativeValue = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 message DruggableGeneToDiseaseAssociation
@@ -3148,8 +3187,9 @@ message EntityToPhenotypicFeatureAssociation
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -3161,12 +3201,16 @@ message EnvironmentalExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 message EnvironmentalFeature
  {
@@ -3337,6 +3381,34 @@ message ExonToTranscriptRelationship
  repeated  uriorcurie category = 0
   exon subject = 0
   transcript object = 0
+ }
+// A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+message ExposureEvent
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+  labelType fullName = 0
+ repeated  labelType synonym = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
+  float informationContent = 0
+  uriorcurie taxon = 0
+ repeated  uriorcurie category = 0
+  timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // An association between an exposure event and an outcome.
 message ExposureEventToOutcomeAssociation
@@ -4566,8 +4638,9 @@ message Genome
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -4579,12 +4652,16 @@ message GenomicBackgroundExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  repeated  gene hasGeneOrGeneProduct = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
@@ -5003,8 +5080,9 @@ message GenotypicSex
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -5016,12 +5094,16 @@ message GeographicExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -6476,8 +6558,9 @@ message Patent
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -6489,12 +6572,16 @@ message PathologicalAnatomicalExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 // An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalAnatomicalStructure
@@ -6544,8 +6631,9 @@ message PathologicalProcess
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 message PathologicalProcessExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
@@ -6557,12 +6645,16 @@ message PathologicalProcessExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  }
 message Pathway
  {
@@ -7763,8 +7855,9 @@ message SocioeconomicAttribute
 // A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 message SocioeconomicExposure
  {
-  string id = 0
+  iriType iri = 0
  repeated  string type = 0
+  labelType name = 0
   narrativeText description = 0
   boolean deprecated = 0
  repeated  string providedBy = 0
@@ -7775,13 +7868,17 @@ message SocioeconomicExposure
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  labelType name = 0
-  ontologyClass hasAttributeType = 0
- repeated  quantityValue hasQuantitativeValue = 0
-  namedThing hasQualitativeValue = 0
-  iriType iri = 0
- repeated  socioeconomicAttribute hasAttribute = 0
   timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
+ repeated  socioeconomicAttribute hasAttribute = 0
  }
 // a detailed investigation and/or analysis
 message Study
@@ -8023,7 +8120,6 @@ message TranscriptionFactorBindingSite
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 message Treatment
  {
-  string id = 0
   iriType iri = 0
  repeated  string type = 0
   labelType name = 0
@@ -8038,10 +8134,19 @@ message Treatment
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
+  timeType timepoint = 0
+  string exposureType = 0
+  string exposureVehicle = 0
+  string exposureRoute = 0
+  integer exposureStartAge = 0
+  integer exposureEndAge = 0
+  time exposureDuration = 0
+  string exposureMagnitude = 0
+  string exposureAdditionalCondition = 0
+  string id = 0
  repeated  drug hasDrug = 0
  repeated  device hasDevice = 0
  repeated  procedure hasProcedure = 0
-  timeType timepoint = 0
  }
 message VariantAsAModelOfDiseaseAssociation
  {

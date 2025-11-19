@@ -302,10 +302,8 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <Attribute> ]
        )
-    } OR @<BehavioralExposure> OR @<BiologicalSex> OR @<BioticExposure> OR @<ChemicalExposure> OR @<ChemicalRole> OR
-    @<ClinicalAttribute> OR @<ComplexChemicalExposure> OR @<DiseaseOrPhenotypicFeatureExposure> OR @<EnvironmentalExposure> OR
-    @<GenomicBackgroundExposure> OR @<OrganismAttribute> OR @<PathologicalAnatomicalExposure> OR @<PathologicalProcessExposure> OR
-    @<SeverityValue> OR @<SocioeconomicAttribute> OR @<SocioeconomicExposure> OR @<Zygosity>
+    } OR @<BiologicalSex> OR @<ChemicalRole> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR
+    @<SocioeconomicAttribute> OR @<Zygosity>
 )
 
 <Bacterium> CLOSED {
@@ -359,11 +357,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <BehavioralExposure> CLOSED {
-    (  $<BehavioralExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<BehavioralExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <BehavioralExposure> ]
     )
@@ -478,11 +473,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <BioticExposure> CLOSED {
-    (  $<BioticExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<BioticExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <BioticExposure> ]
     )
@@ -977,11 +969,9 @@ linkml:Sparqlpath xsd:string
 
 <ChemicalExposure>  (
     CLOSED {
-       (  $<ChemicalExposure_tes> (  &<Attribute_tes> ;
-             rdf:type [ <Attribute> ] ? ;
-             &<ExposureEvent_tes> ;
+       (  $<ChemicalExposure_tes> (  &<ExposureEvent_tes> ;
              rdf:type [ <ExposureEvent> ] ? ;
-             <timepoint> @<TimeType> ?
+             <has_quantitative_value> @<QuantityValue> *
           ) ;
           rdf:type [ <ChemicalExposure> ]
        )
@@ -1354,8 +1344,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <ComplexChemicalExposure> CLOSED {
-    (  $<ComplexChemicalExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ?
+    (  $<ComplexChemicalExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <ComplexChemicalExposure> ]
     )
@@ -1506,13 +1496,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <DiseaseOrPhenotypicFeatureExposure> CLOSED {
-    (  $<DiseaseOrPhenotypicFeatureExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<DiseaseOrPhenotypicFeatureExposure_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<PathologicalEntityMixin_tes> ;
-          rdf:type [ <PathologicalEntityMixin> ] ? ;
-          <timepoint> @<TimeType> ?
+          rdf:type [ <PathologicalEntityMixin> ] ?
        ) ;
        rdf:type [ <DiseaseOrPhenotypicFeatureExposure> ]
     )
@@ -1629,9 +1616,7 @@ linkml:Sparqlpath xsd:string
 <DrugExposure>  (
     CLOSED {
        (  $<DrugExposure_tes> (  &<ChemicalExposure_tes> ;
-             rdf:type [ <ChemicalExposure> ] ? ;
-             &<ExposureEvent_tes> ;
-             rdf:type [ <ExposureEvent> ] ?
+             rdf:type [ <ChemicalExposure> ] ?
           ) ;
           rdf:type [ <DrugExposure> ]
        )
@@ -1884,11 +1869,8 @@ linkml:Sparqlpath xsd:string
 
 <EnvironmentalExposure>  (
     CLOSED {
-       (  $<EnvironmentalExposure_tes> (  &<Attribute_tes> ;
-             rdf:type [ <Attribute> ] ? ;
-             &<ExposureEvent_tes> ;
-             rdf:type [ <ExposureEvent> ] ? ;
-             <timepoint> @<TimeType> ?
+       (  $<EnvironmentalExposure_tes> (  &<ExposureEvent_tes> ;
+             rdf:type [ <ExposureEvent> ] ?
           ) ;
           rdf:type [ <EnvironmentalExposure> ]
        )
@@ -1969,14 +1951,28 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<ExposureEvent> {
-    (  $<ExposureEvent_tes> (  &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ? ;
-          <timepoint> @<TimeType> ?
-       ) ;
-       rdf:type [ <ExposureEvent> ]
-    )
-}
+<ExposureEvent>  (
+    CLOSED {
+       (  $<ExposureEvent_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
+             <timepoint> @<TimeType> ? ;
+             <exposure_type> @linkml:String ? ;
+             <exposure_vehicle> @linkml:String ? ;
+             <exposure_route> @linkml:String ? ;
+             <exposure_start_age> @linkml:Integer ? ;
+             <exposure_end_age> @linkml:Integer ? ;
+             <exposure_duration> @linkml:Time ? ;
+             <exposure_magnitude> @linkml:String ? ;
+             <exposure_additional_condition> @linkml:String ?
+          ) ;
+          rdf:type [ <ExposureEvent> ]
+       )
+    } OR @<BehavioralExposure> OR @<BioticExposure> OR @<ChemicalExposure> OR @<ComplexChemicalExposure> OR
+    @<DiseaseOrPhenotypicFeatureExposure> OR @<EnvironmentalExposure> OR @<GenomicBackgroundExposure> OR
+    @<PathologicalAnatomicalExposure> OR @<PathologicalProcessExposure> OR @<SocioeconomicExposure> OR @<Treatment>
+)
 
 <ExposureEventToOutcomeAssociation> CLOSED {
     (  $<ExposureEventToOutcomeAssociation_tes> (  &<Association_tes> ;
@@ -2777,9 +2773,7 @@ linkml:Sparqlpath xsd:string
 }
 
 <GenomicBackgroundExposure> CLOSED {
-    (  $<GenomicBackgroundExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<GenomicBackgroundExposure_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<GeneGroupingMixin_tes> ;
           rdf:type [ <GeneGroupingMixin> ] ? ;
@@ -2791,7 +2785,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ThingWithTaxon> ] ? ;
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <timepoint> @<TimeType> ? ;
           <has_gene_or_gene_product> @<Gene> * ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
           <in_taxon> @<OrganismTaxon> * ;
@@ -2969,9 +2962,7 @@ linkml:Sparqlpath xsd:string
 
 <GeographicExposure> CLOSED {
     (  $<GeographicExposure_tes> (  &<EnvironmentalExposure_tes> ;
-          rdf:type [ <EnvironmentalExposure> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ?
+          rdf:type [ <EnvironmentalExposure> ] ?
        ) ;
        rdf:type [ <GeographicExposure> ]
     )
@@ -3391,8 +3382,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
-    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR
-    @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
+    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<ExposureEvent> OR @<InformationContentEntity> OR @<OrganismTaxon> OR
+    @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
 )
 
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
@@ -3494,7 +3485,7 @@ linkml:Sparqlpath xsd:string
 }
 
 <OntologyClass>  (
-    @<ExposureEvent> OR @<RelationshipType> OR @<TaxonomicRank>
+    @<RelationshipType> OR @<TaxonomicRank>
 )
 
 <OntologyClass_struct> {
@@ -3681,11 +3672,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <PathologicalAnatomicalExposure> CLOSED {
-    (  $<PathologicalAnatomicalExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<PathologicalAnatomicalExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <PathologicalAnatomicalExposure> ]
     )
@@ -3726,11 +3714,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <PathologicalProcessExposure> CLOSED {
-    (  $<PathologicalProcessExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<PathologicalProcessExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <PathologicalProcessExposure> ]
     )
@@ -4369,12 +4354,9 @@ linkml:Sparqlpath xsd:string
 }
 
 <SocioeconomicExposure> CLOSED {
-    (  $<SocioeconomicExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<SocioeconomicExposure_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
-          <has_attribute> @<SocioeconomicAttribute> + ;
-          <timepoint> @<TimeType> ?
+          <has_attribute> @<SocioeconomicAttribute> +
        ) ;
        rdf:type [ <SocioeconomicExposure> ]
     )
@@ -4524,16 +4506,13 @@ linkml:Sparqlpath xsd:string
 }
 
 <Treatment> CLOSED {
-    (  $<Treatment_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<Treatment_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<ChemicalOrDrugOrTreatment_tes> ;
           rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
           <has_drug> @<Drug> * ;
           <has_device> @<Device> * ;
-          <has_procedure> @<Procedure> * ;
-          <timepoint> @<TimeType> ?
+          <has_procedure> @<Procedure> *
        ) ;
        rdf:type [ <Treatment> ]
     )

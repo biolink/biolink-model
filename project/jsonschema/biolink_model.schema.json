@@ -2996,6 +2996,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -3013,29 +3070,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -3053,7 +3089,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -3115,7 +3151,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -4973,6 +5008,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -4990,29 +5082,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -5030,7 +5101,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -5092,7 +5163,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -11129,6 +11199,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -11146,17 +11273,6 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "has_quantitative_value": {
                     "description": "connects an attribute to a value",
                     "items": {
@@ -11168,7 +11284,7 @@
                     ]
                 },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -11186,7 +11302,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -11248,7 +11364,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -16779,6 +16894,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -16796,29 +16968,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -16836,7 +16987,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -16869,6 +17020,14 @@
                         "null"
                     ]
                 },
+                "timepoint": {
+                    "description": "a point in time",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -16890,7 +17049,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -19958,6 +20116,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -19975,29 +20190,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -20015,7 +20209,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -20077,7 +20271,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -21940,6 +22133,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -21957,17 +22207,6 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "has_quantitative_value": {
                     "description": "connects an attribute to a value",
                     "items": {
@@ -21979,7 +22218,7 @@
                     ]
                 },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -21997,7 +22236,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -22059,7 +22298,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -22696,6 +22934,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -22713,10 +23008,6 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
                 "has_gene_or_gene_product": {
                     "description": "connects an entity with one or more gene or gene products",
                     "items": {
@@ -22724,13 +23015,6 @@
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -22745,7 +23029,7 @@
                     ]
                 },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -22763,7 +23047,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -22825,7 +23109,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -24118,6 +24401,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -24135,29 +24475,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -24175,7 +24494,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -24237,7 +24556,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -25513,6 +25831,205 @@
                 "id"
             ],
             "title": "ExonToTranscriptRelationship",
+            "type": "object"
+        },
+        "ExposureEvent": {
+            "additionalProperties": false,
+            "description": "A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "enum": [
+                        "biolink:ExposureEvent"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deprecated": {
+                    "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "equivalent_identifiers": {
+                    "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_attribute": {
+                    "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
+                    "type": "string"
+                },
+                "information_content": {
+                    "description": "Information content (IC) value for a term, primarily from Automats.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "taxon": {
+                    "description": "A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "timepoint": {
+                    "description": "a point in time",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "ExposureEvent",
             "type": "object"
         },
         "ExposureEventToOutcomeAssociation": {
@@ -35015,6 +35532,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -35031,10 +35605,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
                 },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
@@ -35053,25 +35623,8 @@
                         "null"
                     ]
                 },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "in_taxon": {
@@ -35106,7 +35659,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -35169,7 +35722,6 @@
             },
             "required": [
                 "id",
-                "has_attribute_type",
                 "category"
             ],
             "title": "GenomicBackgroundExposure",
@@ -38361,6 +38913,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -38378,29 +38987,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -38418,7 +39006,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -38480,7 +39068,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -41165,7 +41752,49 @@
                                 "$ref": "#/$defs/ClinicalEntity"
                             },
                             {
+                                "$ref": "#/$defs/ExposureEvent"
+                            },
+                            {
+                                "$ref": "#/$defs/GenomicBackgroundExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/PathologicalProcessExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/PathologicalAnatomicalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/ChemicalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/ComplexChemicalExposure"
+                            },
+                            {
                                 "$ref": "#/$defs/Treatment"
+                            },
+                            {
+                                "$ref": "#/$defs/BioticExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/EnvironmentalExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/BehavioralExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/SocioeconomicExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/GeographicExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugExposure"
+                            },
+                            {
+                                "$ref": "#/$defs/DrugToGeneInteractionExposure"
                             },
                             {
                                 "$ref": "#/$defs/ClinicalIntervention"
@@ -41514,45 +42143,6 @@
                             },
                             {
                                 "$ref": "#/$defs/SocioeconomicAttribute"
-                            },
-                            {
-                                "$ref": "#/$defs/GenomicBackgroundExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/PathologicalProcessExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/PathologicalAnatomicalExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/DiseaseOrPhenotypicFeatureExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/ChemicalExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/ComplexChemicalExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/BioticExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/EnvironmentalExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/BehavioralExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/SocioeconomicExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/GeographicExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/DrugExposure"
-                            },
-                            {
-                                "$ref": "#/$defs/DrugToGeneInteractionExposure"
                             },
                             {
                                 "$ref": "#/$defs/ClinicalMeasurement"
@@ -50540,6 +51130,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -50557,29 +51204,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -50597,7 +51223,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -50659,7 +51285,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -51042,6 +51667,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -51059,29 +51741,8 @@
                         "null"
                     ]
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -51099,7 +51760,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -51161,7 +51822,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category"
             ],
@@ -60133,6 +60793,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -60147,29 +60864,8 @@
                     },
                     "type": "array"
                 },
-                "has_attribute_type": {
-                    "description": "connects an attribute to a class that describes it",
-                    "type": "string"
-                },
-                "has_qualitative_value": {
-                    "description": "connects an attribute to a value",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_quantitative_value": {
-                    "description": "connects an attribute to a value",
-                    "items": {
-                        "$ref": "#/$defs/QuantityValue"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {
@@ -60187,7 +60883,7 @@
                     ]
                 },
                 "name": {
-                    "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+                    "description": "A human-readable name for an attribute or entity.",
                     "type": [
                         "string",
                         "null"
@@ -60249,7 +60945,6 @@
                 }
             },
             "required": [
-                "has_attribute_type",
                 "id",
                 "category",
                 "has_attribute"
@@ -62250,6 +62945,63 @@
                         "null"
                     ]
                 },
+                "exposure_additional_condition": {
+                    "description": "Additional conditions impacting an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_duration": {
+                    "description": "Duration of an exposure event.",
+                    "format": "time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_end_age": {
+                    "description": "Ending stage of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_magnitude": {
+                    "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_route": {
+                    "description": "Route of exposure.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_start_age": {
+                    "description": "Starting age of an exposure event.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "exposure_type": {
+                    "description": "Type of exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposure_vehicle": {
+                    "description": "Type of an exposure event.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "full_name": {
                     "description": "a long-form human readable name for a thing",
                     "type": [
@@ -62298,7 +63050,7 @@
                     ]
                 },
                 "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
                     "type": "string"
                 },
                 "information_content": {

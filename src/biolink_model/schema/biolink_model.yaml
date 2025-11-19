@@ -1106,7 +1106,70 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Clinical Trials
+  ## Exposure Events
+
+  exposure type:
+    is_a: node property
+    description: >-
+      Type of exposure
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
+#           To some extent, the subclassing of Exposure Events provides some typing?
+
+  exposure vehicle:
+    is_a: node property
+    description: >-
+      Type of an exposure event.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure route:
+    is_a: node property
+    description: >-
+      Route of exposure.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure start age:
+    is_a: node property
+    description: >-
+      Starting age of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure end age:
+    is_a: node property
+    description: >-
+      Ending stage of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure duration:
+    is_a: node property
+    description: >-
+      Duration of an exposure event.
+    domain: exposure event
+    range: time
+
+  exposure magnitude:
+    is_a: node property
+    description: >-
+      Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
+    domain: exposure event
+    range: string   # might want to be a more constrained data type here?
+
+  exposure additional condition:
+    is_a: node property
+    description: >-
+      Additional conditions impacting an exposure event.
+    domain: exposure event
+    range: string
+
+  ## Clinical Trials
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -9583,14 +9646,27 @@ classes:
    ## Exposures
 
   exposure event:
-    is_a: ontology class
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['exposure', 'experimental condition']
-    mixin: true
     slots:
       - timepoint
+      - exposure type
+      - exposure vehicle
+      - exposure route
+      - exposure start age
+      - exposure end age
+      - exposure duration
+      - exposure magnitude
+      - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
+    slot_usage:
+      id:
+        description: >-
+          Could generally be a CURIE from a suitable exposure ontology like ECTO.
     exact_mappings:
       - XCO:0000000
     in_subset:
@@ -9598,9 +9674,8 @@ classes:
 
    # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
@@ -9639,9 +9714,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
       a precondition, leading to or influencing an outcome,
@@ -9658,18 +9731,15 @@ classes:
       - MPATH:603
 
   pathological anatomical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - pathological entity mixin
     description: >-
       A disease or phenotypic feature state, when viewed as an exposure,
@@ -9678,9 +9748,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     slots:
       - has quantitative value
     description: >-
@@ -9694,7 +9762,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
-    is_a: attribute
+    is_a: exposure event
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9704,8 +9772,6 @@ classes:
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
-    mixins:
-      - exposure event
     broad_mappings:
        # slightly broader than just drug effects on a biological system
       - SIO:001005
@@ -9725,9 +9791,8 @@ classes:
   treatment:
     aliases: ['medical action', 'medical intervention']
      # 'named thing' seems too generic here but not sure what applies better here
-    is_a: named thing
+    is_a: exposure event
     mixins:
-      - exposure event
       - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
@@ -9743,18 +9808,14 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
-    is_a: attribute
+    is_a: exposure event
     aliases: ['viral exposure', 'bacterial exposure']
-    mixins:
-      - exposure event
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
 
   geographic exposure:
     is_a: environmental exposure
-    mixins:
-      - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
@@ -9777,25 +9838,19 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A socioeconomic exposure is a factor relating to social and
       financial status of an affected individual (e.g. poverty).

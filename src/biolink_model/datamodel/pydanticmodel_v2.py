@@ -656,7 +656,7 @@ class KnowledgeGraph(ConfiguredBaseModel):
     """
     A knowledge graph is a structured representation of knowledge in the form of a graph, where nodes represent entities or concepts, and edges represent relationships between them. Knowledge graphs are used to organize and connect information from various sources, enabling better understanding, analysis, and reasoning about complex domains.
     """
-    nodes: Optional[list[Union[Entity,NamedThing,Association,DiseaseAssociatedWithResponseToChemicalEntityAssociation,ChemicalEntityAssessesNamedThingAssociation,ContributorAssociation,GenotypeToGenotypePartAssociation,GenotypeToGeneAssociation,GenotypeToVariantAssociation,GeneToGeneAssociation,GeneToGeneFamilyAssociation,GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation,GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation,BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation,BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation,CellLineToDiseaseOrPhenotypicFeatureAssociation,ChemicalToChemicalAssociation,ChemicalToDiseaseOrPhenotypicFeatureAssociation,ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation,GeneToPathwayAssociation,MolecularActivityToPathwayAssociation,ChemicalToPathwayAssociation,NamedThingAssociatedWithLikelihoodOfNamedThingAssociation,ChemicalGeneInteractionAssociation,GeneRegulatesGeneAssociation,ProcessRegulatesProcessAssociation,ChemicalAffectsBiologicalEntityAssociation,GeneAffectsChemicalAssociation,DrugToGeneAssociation,MaterialSampleDerivationAssociation,MaterialSampleToDiseaseOrPhenotypicFeatureAssociation,DiseaseToExposureEventAssociation,ExposureEventToOutcomeAssociation,PhenotypicFeatureToPhenotypicFeatureAssociation,InformationContentEntityToNamedThingAssociation,DiseaseOrPhenotypicFeatureToLocationAssociation,DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation,GenotypeToPhenotypicFeatureAssociation,ExposureEventToPhenotypicFeatureAssociation,DiseaseToPhenotypicFeatureAssociation,CaseToPhenotypicFeatureAssociation,CaseToDiseaseAssociation,CaseToVariantAssociation,CaseToGeneAssociation,BehaviorToBehavioralFeatureAssociation,GeneToDiseaseOrPhenotypicFeatureAssociation,PhenotypicFeatureToDiseaseAssociation,VariantToGeneAssociation,VariantToPopulationAssociation,PopulationToPopulationAssociation,VariantToPhenotypicFeatureAssociation,VariantToDiseaseAssociation,GenotypeToDiseaseAssociation,OrganismalEntityAsAModelOfDiseaseAssociation,OrganismToOrganismAssociation,TaxonToTaxonAssociation,GeneToExpressionSiteAssociation,SequenceVariantModulatesTreatmentAssociation,FunctionalAssociation,MolecularActivityToChemicalEntityAssociation,MolecularActivityToMolecularActivityAssociation,EntityToDiseaseAssociation,EntityToPhenotypicFeatureAssociation,SequenceAssociation,SequenceFeatureRelationship,ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation,AnatomicalEntityToAnatomicalEntityAssociation,GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation,BiologicalProcessOrActivityToAnatomicalEntityAssociation,OrganismTaxonToOrganismTaxonAssociation,OrganismTaxonToEnvironmentAssociation,OrganismTaxonToOrganismTaxonSpecialization,OrganismTaxonToOrganismTaxonInteraction,AnatomicalEntityToAnatomicalEntityPartOfAssociation,AnatomicalEntityToAnatomicalEntityOntogenicAssociation,TranscriptToGeneRelationship,GeneToGeneProductRelationship,ExonToTranscriptRelationship,GenomicSequenceLocalization,MacromolecularMachineToMolecularActivityAssociation,MacromolecularMachineToBiologicalProcessAssociation,MacromolecularMachineToCellularComponentAssociation,GeneToGoTermAssociation,GenotypeAsAModelOfDiseaseAssociation,VariantAsAModelOfDiseaseAssociation,VariantToGeneExpressionAssociation,GeneToPhenotypicFeatureAssociation,GeneToDiseaseAssociation,CausalGeneToDiseaseAssociation,CorrelatedGeneToDiseaseAssociation,DruggableGeneToDiseaseAssociation,GeneAsAModelOfDiseaseAssociation,GeneHasVariantThatContributesToDiseaseAssociation,ChemicalAffectsGeneAssociation,ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation,ReactionToParticipantAssociation,ChemicalToChemicalDerivationAssociation,ReactionToCatalystAssociation,CellLineAsAModelOfDiseaseAssociation,GeneToGeneHomologyAssociation,GeneToGeneCoexpressionAssociation,PairwiseGeneToGeneInteraction,PairwiseMolecularInteraction,Attribute,OrganismTaxon,Event,AdministrativeEntity,InformationContentEntity,PhysicalEntity,Activity,Procedure,Phenomenon,Device,DiagnosticAid,PlanetaryEntity,BiologicalEntity,ChemicalEntity,ClinicalEntity,Treatment,ClinicalIntervention,Hospitalization,MolecularEntity,ChemicalMixture,EnvironmentalFoodContaminant,FoodAdditive,MolecularMixture,ComplexMolecularMixture,ProcessedMaterial,Food,Drug,SmallMolecule,NucleicAcidEntity,RegulatoryRegion,BiologicalProcessOrActivity,GeneticInheritance,OrganismalEntity,DiseaseOrPhenotypicFeature,Gene,MacromolecularComplex,NucleosomeModification,Genome,Exon,Transcript,CodingSequence,Polypeptide,ProteinDomain,PosttranslationalModification,ProteinFamily,NucleicAcidSequenceMotif,GeneFamily,Genotype,Haplotype,SequenceVariant,ReagentTargetedGene,Snv,Protein,ProteinIsoform,RNAProduct,RNAProductIsoform,NoncodingRNAProduct,MicroRNA,SiRNA,Disease,PhenotypicFeature,BehavioralFeature,ClinicalFinding,Bacterium,Virus,CellularOrganism,LifeStage,IndividualOrganism,PopulationOfIndividualOrganisms,AnatomicalEntity,CellLine,CellularComponent,Cell,GrossAnatomicalStructure,PathologicalAnatomicalStructure,StudyPopulation,Cohort,Case,Mammal,Plant,Invertebrate,Vertebrate,Fungus,Human,MolecularActivity,BiologicalProcess,Pathway,PhysiologicalProcess,Behavior,PathologicalProcess,AccessibleDnaRegion,TranscriptionFactorBindingSite,EnvironmentalProcess,EnvironmentalFeature,GeographicLocation,GeographicLocationAtTime,Study,ClinicalTrial,MaterialSample,StudyResult,StudyVariable,CommonDataElement,Dataset,DatasetDistribution,DatasetVersion,DatasetSummary,ConfidenceLevel,EvidenceType,Publication,RetrievalSource,Book,BookChapter,Serial,Article,Patent,WebPage,PreprintPublication,DrugLabel,JournalArticle,ConceptCountAnalysisResult,ObservedExpectedFrequencyAnalysisResult,RelativeFrequencyAnalysisResult,ChiSquaredAnalysisResult,LogOddsAnalysisResult,TextMiningStudyResult,IceesStudyResult,Agent,ChemicalRole,BiologicalSex,SeverityValue,OrganismAttribute,Zygosity,ClinicalAttribute,SocioeconomicAttribute,GenomicBackgroundExposure,PathologicalProcessExposure,PathologicalAnatomicalExposure,DiseaseOrPhenotypicFeatureExposure,ChemicalExposure,ComplexChemicalExposure,BioticExposure,EnvironmentalExposure,BehavioralExposure,SocioeconomicExposure,GeographicExposure,DrugExposure,DrugToGeneInteractionExposure,ClinicalMeasurement,ClinicalModifier,ClinicalCourse,Onset,PhenotypicQuality,PhenotypicSex,GenotypicSex]]] = Field(default=None, description="""A list of entities that can be a subject or object of an association""")
+    nodes: Optional[list[Union[Entity,NamedThing,Association,DiseaseAssociatedWithResponseToChemicalEntityAssociation,ChemicalEntityAssessesNamedThingAssociation,ContributorAssociation,GenotypeToGenotypePartAssociation,GenotypeToGeneAssociation,GenotypeToVariantAssociation,GeneToGeneAssociation,GeneToGeneFamilyAssociation,GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation,GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation,BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation,BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation,CellLineToDiseaseOrPhenotypicFeatureAssociation,ChemicalToChemicalAssociation,ChemicalToDiseaseOrPhenotypicFeatureAssociation,ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation,GeneToPathwayAssociation,MolecularActivityToPathwayAssociation,ChemicalToPathwayAssociation,NamedThingAssociatedWithLikelihoodOfNamedThingAssociation,ChemicalGeneInteractionAssociation,GeneRegulatesGeneAssociation,ProcessRegulatesProcessAssociation,ChemicalAffectsBiologicalEntityAssociation,GeneAffectsChemicalAssociation,DrugToGeneAssociation,MaterialSampleDerivationAssociation,MaterialSampleToDiseaseOrPhenotypicFeatureAssociation,DiseaseToExposureEventAssociation,ExposureEventToOutcomeAssociation,PhenotypicFeatureToPhenotypicFeatureAssociation,InformationContentEntityToNamedThingAssociation,DiseaseOrPhenotypicFeatureToLocationAssociation,DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation,GenotypeToPhenotypicFeatureAssociation,ExposureEventToPhenotypicFeatureAssociation,DiseaseToPhenotypicFeatureAssociation,CaseToPhenotypicFeatureAssociation,CaseToDiseaseAssociation,CaseToVariantAssociation,CaseToGeneAssociation,BehaviorToBehavioralFeatureAssociation,GeneToDiseaseOrPhenotypicFeatureAssociation,PhenotypicFeatureToDiseaseAssociation,VariantToGeneAssociation,VariantToPopulationAssociation,PopulationToPopulationAssociation,VariantToPhenotypicFeatureAssociation,VariantToDiseaseAssociation,GenotypeToDiseaseAssociation,OrganismalEntityAsAModelOfDiseaseAssociation,OrganismToOrganismAssociation,TaxonToTaxonAssociation,GeneToExpressionSiteAssociation,SequenceVariantModulatesTreatmentAssociation,FunctionalAssociation,MolecularActivityToChemicalEntityAssociation,MolecularActivityToMolecularActivityAssociation,EntityToDiseaseAssociation,EntityToPhenotypicFeatureAssociation,SequenceAssociation,SequenceFeatureRelationship,ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation,AnatomicalEntityToAnatomicalEntityAssociation,GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation,BiologicalProcessOrActivityToAnatomicalEntityAssociation,OrganismTaxonToOrganismTaxonAssociation,OrganismTaxonToEnvironmentAssociation,OrganismTaxonToOrganismTaxonSpecialization,OrganismTaxonToOrganismTaxonInteraction,AnatomicalEntityToAnatomicalEntityPartOfAssociation,AnatomicalEntityToAnatomicalEntityOntogenicAssociation,TranscriptToGeneRelationship,GeneToGeneProductRelationship,ExonToTranscriptRelationship,GenomicSequenceLocalization,MacromolecularMachineToMolecularActivityAssociation,MacromolecularMachineToBiologicalProcessAssociation,MacromolecularMachineToCellularComponentAssociation,GeneToGoTermAssociation,GenotypeAsAModelOfDiseaseAssociation,VariantAsAModelOfDiseaseAssociation,VariantToGeneExpressionAssociation,GeneToPhenotypicFeatureAssociation,GeneToDiseaseAssociation,CausalGeneToDiseaseAssociation,CorrelatedGeneToDiseaseAssociation,DruggableGeneToDiseaseAssociation,GeneAsAModelOfDiseaseAssociation,GeneHasVariantThatContributesToDiseaseAssociation,ChemicalAffectsGeneAssociation,ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation,ReactionToParticipantAssociation,ChemicalToChemicalDerivationAssociation,ReactionToCatalystAssociation,CellLineAsAModelOfDiseaseAssociation,GeneToGeneHomologyAssociation,GeneToGeneCoexpressionAssociation,PairwiseGeneToGeneInteraction,PairwiseMolecularInteraction,Attribute,OrganismTaxon,Event,AdministrativeEntity,InformationContentEntity,PhysicalEntity,Activity,Procedure,Phenomenon,Device,DiagnosticAid,PlanetaryEntity,BiologicalEntity,ChemicalEntity,ClinicalEntity,ExposureEvent,GenomicBackgroundExposure,PathologicalProcessExposure,PathologicalAnatomicalExposure,DiseaseOrPhenotypicFeatureExposure,ChemicalExposure,ComplexChemicalExposure,Treatment,BioticExposure,EnvironmentalExposure,BehavioralExposure,SocioeconomicExposure,GeographicExposure,DrugExposure,DrugToGeneInteractionExposure,ClinicalIntervention,Hospitalization,MolecularEntity,ChemicalMixture,EnvironmentalFoodContaminant,FoodAdditive,MolecularMixture,ComplexMolecularMixture,ProcessedMaterial,Food,Drug,SmallMolecule,NucleicAcidEntity,RegulatoryRegion,BiologicalProcessOrActivity,GeneticInheritance,OrganismalEntity,DiseaseOrPhenotypicFeature,Gene,MacromolecularComplex,NucleosomeModification,Genome,Exon,Transcript,CodingSequence,Polypeptide,ProteinDomain,PosttranslationalModification,ProteinFamily,NucleicAcidSequenceMotif,GeneFamily,Genotype,Haplotype,SequenceVariant,ReagentTargetedGene,Snv,Protein,ProteinIsoform,RNAProduct,RNAProductIsoform,NoncodingRNAProduct,MicroRNA,SiRNA,Disease,PhenotypicFeature,BehavioralFeature,ClinicalFinding,Bacterium,Virus,CellularOrganism,LifeStage,IndividualOrganism,PopulationOfIndividualOrganisms,AnatomicalEntity,CellLine,CellularComponent,Cell,GrossAnatomicalStructure,PathologicalAnatomicalStructure,StudyPopulation,Cohort,Case,Mammal,Plant,Invertebrate,Vertebrate,Fungus,Human,MolecularActivity,BiologicalProcess,Pathway,PhysiologicalProcess,Behavior,PathologicalProcess,AccessibleDnaRegion,TranscriptionFactorBindingSite,EnvironmentalProcess,EnvironmentalFeature,GeographicLocation,GeographicLocationAtTime,Study,ClinicalTrial,MaterialSample,StudyResult,StudyVariable,CommonDataElement,Dataset,DatasetDistribution,DatasetVersion,DatasetSummary,ConfidenceLevel,EvidenceType,Publication,RetrievalSource,Book,BookChapter,Serial,Article,Patent,WebPage,PreprintPublication,DrugLabel,JournalArticle,ConceptCountAnalysisResult,ObservedExpectedFrequencyAnalysisResult,RelativeFrequencyAnalysisResult,ChiSquaredAnalysisResult,LogOddsAnalysisResult,TextMiningStudyResult,IceesStudyResult,Agent,ChemicalRole,BiologicalSex,SeverityValue,OrganismAttribute,Zygosity,ClinicalAttribute,SocioeconomicAttribute,ClinicalMeasurement,ClinicalModifier,ClinicalCourse,Onset,PhenotypicQuality,PhenotypicSex,GenotypicSex]]] = Field(default=None, description="""A list of entities that can be a subject or object of an association""")
     edges: Optional[list[Union[Association,DiseaseAssociatedWithResponseToChemicalEntityAssociation,ChemicalEntityAssessesNamedThingAssociation,ContributorAssociation,GenotypeToGenotypePartAssociation,GenotypeToGeneAssociation,GenotypeToVariantAssociation,GeneToGeneAssociation,GeneToGeneFamilyAssociation,GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation,GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation,BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation,BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation,CellLineToDiseaseOrPhenotypicFeatureAssociation,ChemicalToChemicalAssociation,ChemicalToDiseaseOrPhenotypicFeatureAssociation,ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation,GeneToPathwayAssociation,MolecularActivityToPathwayAssociation,ChemicalToPathwayAssociation,NamedThingAssociatedWithLikelihoodOfNamedThingAssociation,ChemicalGeneInteractionAssociation,GeneRegulatesGeneAssociation,ProcessRegulatesProcessAssociation,ChemicalAffectsBiologicalEntityAssociation,GeneAffectsChemicalAssociation,DrugToGeneAssociation,MaterialSampleDerivationAssociation,MaterialSampleToDiseaseOrPhenotypicFeatureAssociation,DiseaseToExposureEventAssociation,ExposureEventToOutcomeAssociation,PhenotypicFeatureToPhenotypicFeatureAssociation,InformationContentEntityToNamedThingAssociation,DiseaseOrPhenotypicFeatureToLocationAssociation,DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation,GenotypeToPhenotypicFeatureAssociation,ExposureEventToPhenotypicFeatureAssociation,DiseaseToPhenotypicFeatureAssociation,CaseToPhenotypicFeatureAssociation,CaseToDiseaseAssociation,CaseToVariantAssociation,CaseToGeneAssociation,BehaviorToBehavioralFeatureAssociation,GeneToDiseaseOrPhenotypicFeatureAssociation,PhenotypicFeatureToDiseaseAssociation,VariantToGeneAssociation,VariantToPopulationAssociation,PopulationToPopulationAssociation,VariantToPhenotypicFeatureAssociation,VariantToDiseaseAssociation,GenotypeToDiseaseAssociation,OrganismalEntityAsAModelOfDiseaseAssociation,OrganismToOrganismAssociation,TaxonToTaxonAssociation,GeneToExpressionSiteAssociation,SequenceVariantModulatesTreatmentAssociation,FunctionalAssociation,MolecularActivityToChemicalEntityAssociation,MolecularActivityToMolecularActivityAssociation,EntityToDiseaseAssociation,EntityToPhenotypicFeatureAssociation,SequenceAssociation,SequenceFeatureRelationship,ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation,AnatomicalEntityToAnatomicalEntityAssociation,GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation,BiologicalProcessOrActivityToAnatomicalEntityAssociation,OrganismTaxonToOrganismTaxonAssociation,OrganismTaxonToEnvironmentAssociation,OrganismTaxonToOrganismTaxonSpecialization,OrganismTaxonToOrganismTaxonInteraction,AnatomicalEntityToAnatomicalEntityPartOfAssociation,AnatomicalEntityToAnatomicalEntityOntogenicAssociation,TranscriptToGeneRelationship,GeneToGeneProductRelationship,ExonToTranscriptRelationship,GenomicSequenceLocalization,MacromolecularMachineToMolecularActivityAssociation,MacromolecularMachineToBiologicalProcessAssociation,MacromolecularMachineToCellularComponentAssociation,GeneToGoTermAssociation,GenotypeAsAModelOfDiseaseAssociation,VariantAsAModelOfDiseaseAssociation,VariantToGeneExpressionAssociation,GeneToPhenotypicFeatureAssociation,GeneToDiseaseAssociation,CausalGeneToDiseaseAssociation,CorrelatedGeneToDiseaseAssociation,DruggableGeneToDiseaseAssociation,GeneAsAModelOfDiseaseAssociation,GeneHasVariantThatContributesToDiseaseAssociation,ChemicalAffectsGeneAssociation,ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation,ReactionToParticipantAssociation,ChemicalToChemicalDerivationAssociation,ReactionToCatalystAssociation,CellLineAsAModelOfDiseaseAssociation,GeneToGeneHomologyAssociation,GeneToGeneCoexpressionAssociation,PairwiseGeneToGeneInteraction,PairwiseMolecularInteraction]]] = Field(default=None, description="""A list of associations between two entities.""")
 
 
@@ -4288,29 +4288,20 @@ class Cohort(StudyPopulation, SubjectOfInvestigation):
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class ExposureEvent(OntologyClass):
+class ExposureEvent(NamedThing, OntologyClass):
     """
     A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-
-
-class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity, ThingWithTaxon, PhysicalEssence, Attribute, OntologyClass):
-    """
-    A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
-    """
-    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    has_gene_or_gene_product: Optional[list[str]] = Field(default=None, description="""connects an entity with one or more gene or gene products""")
-    has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
-    in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
-    in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4318,8 +4309,44 @@ class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity,
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: list[Literal["https://w3id.org/biolink/vocab/ExposureEvent","biolink:ExposureEvent"]] = Field(default=["biolink:ExposureEvent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
+    deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+
+
+class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity, ThingWithTaxon, PhysicalEssence, OntologyClass):
+    """
+    A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
+    """
+    has_gene_or_gene_product: Optional[list[str]] = Field(default=None, description="""connects an entity with one or more gene or gene products""")
+    has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
+    in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
+    synonym: Optional[list[str]] = Field(default=None, description="""Alternate human-readable names for a thing""")
+    equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
+    information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
+    taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/GenomicBackgroundExposure","biolink:GenomicBackgroundExposure"]] = Field(default=["biolink:GenomicBackgroundExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
@@ -4358,17 +4385,20 @@ class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class PathologicalProcessExposure(ExposureEvent, Attribute):
+class PathologicalProcessExposure(ExposureEvent):
     """
     A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4376,8 +4406,10 @@ class PathologicalProcessExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/PathologicalProcessExposure","biolink:PathologicalProcessExposure"]] = Field(default=["biolink:PathologicalProcessExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
@@ -4406,17 +4438,20 @@ class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity)
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
+class PathologicalAnatomicalExposure(ExposureEvent):
     """
     An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4424,24 +4459,29 @@ class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure","biolink:PathologicalAnatomicalExposure"]] = Field(default=["biolink:PathologicalAnatomicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent, Attribute):
+class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent):
     """
     A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4449,24 +4489,30 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent,
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure","biolink:DiseaseOrPhenotypicFeatureExposure"]] = Field(default=["biolink:DiseaseOrPhenotypicFeatureExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class ChemicalExposure(ExposureEvent, Attribute):
+class ChemicalExposure(ExposureEvent):
     """
     A chemical exposure is an intake of a particular chemical entity.
     """
     has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4474,23 +4520,29 @@ class ChemicalExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/ChemicalExposure","biolink:ChemicalExposure"]] = Field(default=["biolink:ChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class ComplexChemicalExposure(Attribute):
+class ComplexChemicalExposure(ExposureEvent):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     """
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4498,24 +4550,30 @@ class ComplexChemicalExposure(Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/ComplexChemicalExposure","biolink:ComplexChemicalExposure"]] = Field(default=["biolink:ComplexChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class DrugExposure(ChemicalExposure, ExposureEvent):
+class DrugExposure(ChemicalExposure):
     """
     A drug exposure is an intake of a particular drug.
     """
-    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
     has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4523,8 +4581,10 @@ class DrugExposure(ChemicalExposure, ExposureEvent):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/DrugExposure","biolink:DrugExposure"]] = Field(default=["biolink:DrugExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
@@ -4535,13 +4595,17 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
     """
     has_gene_or_gene_product: Optional[list[str]] = Field(default=None, description="""connects an entity with one or more gene or gene products""")
-    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
     has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4549,14 +4613,16 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/DrugToGeneInteractionExposure","biolink:DrugToGeneInteractionExposure"]] = Field(default=["biolink:DrugToGeneInteractionExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
+class Treatment(ExposureEvent, ChemicalOrDrugOrTreatment):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
     """
@@ -4564,6 +4630,15 @@ class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     has_device: Optional[list[str]] = Field(default=None, description="""connects an entity to one or more (medical) devices""")
     has_procedure: Optional[list[str]] = Field(default=None, description="""connects an entity to one or more (medical) procedures""")
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4571,7 +4646,6 @@ class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/Treatment","biolink:Treatment"]] = Field(default=["biolink:Treatment"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
@@ -4581,17 +4655,20 @@ class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class BioticExposure(ExposureEvent, Attribute):
+class BioticExposure(ExposureEvent):
     """
     An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4599,24 +4676,29 @@ class BioticExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/BioticExposure","biolink:BioticExposure"]] = Field(default=["biolink:BioticExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class EnvironmentalExposure(ExposureEvent, Attribute):
+class EnvironmentalExposure(ExposureEvent):
     """
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4624,24 +4706,29 @@ class EnvironmentalExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/EnvironmentalExposure","biolink:EnvironmentalExposure"]] = Field(default=["biolink:EnvironmentalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class GeographicExposure(EnvironmentalExposure, ExposureEvent):
+class GeographicExposure(EnvironmentalExposure):
     """
     A geographic exposure is a factor relating to geographic proximity to some impactful entity.
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4649,24 +4736,29 @@ class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/GeographicExposure","biolink:GeographicExposure"]] = Field(default=["biolink:GeographicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class BehavioralExposure(ExposureEvent, Attribute):
+class BehavioralExposure(ExposureEvent):
     """
     A behavioral exposure is a factor relating to behavior impacting an individual.
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4674,24 +4766,29 @@ class BehavioralExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/BehavioralExposure","biolink:BehavioralExposure"]] = Field(default=["biolink:BehavioralExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class SocioeconomicExposure(ExposureEvent, Attribute):
+class SocioeconomicExposure(ExposureEvent):
     """
     A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
     """
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
-    name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
-    has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
+    exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
+    exposure_route: Optional[str] = Field(default=None, description="""Route of exposure.""")
+    exposure_start_age: Optional[int] = Field(default=None, description="""Starting age of an exposure event.""")
+    exposure_end_age: Optional[int] = Field(default=None, description="""Ending stage of an exposure event.""")
+    exposure_duration: Optional[str] = Field(default=None, description="""Duration of an exposure event.""")
+    exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
+    exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
+    id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4699,8 +4796,10 @@ class SocioeconomicExposure(ExposureEvent, Attribute):
     equivalent_identifiers: Optional[list[str]] = Field(default=None, description="""A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.""")
     information_content: Optional[float] = Field(default=None, description="""Information content (IC) value for a term, primarily from Automats.""")
     taxon: Optional[str] = Field(default=None, description="""A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.""")
+    iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/SocioeconomicExposure","biolink:SocioeconomicExposure"]] = Field(default=["biolink:SocioeconomicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
+    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: list[str] = Field(default=..., description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")

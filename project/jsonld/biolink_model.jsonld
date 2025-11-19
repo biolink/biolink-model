@@ -3686,6 +3686,126 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "exposure_type",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_type",
+      "description": "Type of exposure",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_type",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_vehicle",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_vehicle",
+      "description": "Type of an exposure event.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_vehicle",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_route",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_route",
+      "description": "Route of exposure.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_route",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_start_age",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_start_age",
+      "description": "Starting age of an exposure event.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_start_age",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_end_age",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_end_age",
+      "description": "Ending stage of an exposure event.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_end_age",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_duration",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_duration",
+      "description": "Duration of an exposure event.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_duration",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "time",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_magnitude",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_magnitude",
+      "description": "Magnitude of an exposure event, e.g, parts per million of a toxic chemical.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_magnitude",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_additional_condition",
+      "definition_uri": "https://w3id.org/biolink/vocab/exposure_additional_condition",
+      "description": "Additional conditions impacting an exposure event.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/exposure_additional_condition",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "clinical_trial_phase",
       "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_phase",
       "description": "The phase that a clinical trials study represents",
@@ -15174,6 +15294,34 @@
       "usage_slot_name": "has attribute",
       "range": "ClinicalAttribute",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_event_id",
+      "definition_uri": "https://w3id.org/biolink/vocab/id",
+      "description": "Could generally be a CURIE from a suitable exposure ontology like ECTO.",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "https://www.alliancegenome.org/primaryId",
+        "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#ID",
+        "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#DB_Object_ID"
+      ],
+      "is_a": "id",
+      "domain": "ExposureEvent",
+      "slot_uri": "https://w3id.org/biolink/vocab/id",
+      "identifier": true,
+      "alias": "id",
+      "owner": "ExposureEvent",
+      "domain_of": [
+        "ExposureEvent"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -31816,33 +31964,14 @@
       "exact_mappings": [
         "XCO:0000000"
       ],
-      "is_a": "OntologyClass",
-      "mixin": true,
-      "slots": [
-        "id",
-        "timepoint"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ExposureEvent",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "GenomicBackgroundExposure",
-      "definition_uri": "https://w3id.org/biolink/vocab/GenomicBackgroundExposure",
-      "description": "A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
+      "is_a": "NamedThing",
       "mixins": [
-        "ExposureEvent",
-        "GeneGroupingMixin",
-        "PhysicalEssence",
-        "GenomicEntity",
-        "ThingWithTaxon",
         "OntologyClass"
       ],
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -31854,12 +31983,59 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
         "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ExposureEvent",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GenomicBackgroundExposure",
+      "definition_uri": "https://w3id.org/biolink/vocab/GenomicBackgroundExposure",
+      "description": "A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "ExposureEvent",
+      "mixins": [
+        "GeneGroupingMixin",
+        "PhysicalEssence",
+        "GenomicEntity",
+        "ThingWithTaxon",
+        "OntologyClass"
+      ],
+      "slots": [
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "equivalent_identifiers",
+        "information_content",
+        "taxon",
+        "named_thing_category",
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id",
         "has_gene_or_gene_product",
         "has_biological_sequence",
         "in_taxon",
@@ -31936,13 +32112,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/PathologicalProcessExposure",
       "description": "A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -31954,12 +32128,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PathologicalProcessExposure",
@@ -32005,13 +32183,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure",
       "description": "An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32023,12 +32199,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure",
@@ -32039,14 +32219,14 @@
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure",
       "description": "A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
+      "is_a": "ExposureEvent",
       "mixins": [
-        "ExposureEvent",
         "PathologicalEntityMixin"
       ],
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32058,12 +32238,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure",
@@ -32078,13 +32262,11 @@
         "ECTO:9000000",
         "SIO:001399"
       ],
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32096,12 +32278,17 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_qualitative_value",
-        "iri",
-        "has_quantitative_value",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id",
+        "has_quantitative_value"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalExposure",
@@ -32112,10 +32299,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/ComplexChemicalExposure",
       "description": "A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32127,11 +32315,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ComplexChemicalExposure",
@@ -32154,12 +32347,10 @@
         "SIO:001005"
       ],
       "is_a": "ChemicalExposure",
-      "mixins": [
-        "ExposureEvent"
-      ],
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32171,12 +32362,17 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_qualitative_value",
-        "iri",
-        "has_quantitative_value",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id",
+        "has_quantitative_value"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DrugExposure",
@@ -32192,8 +32388,9 @@
         "GeneGroupingMixin"
       ],
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32205,12 +32402,17 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_qualitative_value",
-        "iri",
-        "has_quantitative_value",
         "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id",
+        "has_quantitative_value",
         "has_gene_or_gene_product"
       ],
       "slot_usage": {},
@@ -32233,13 +32435,11 @@
       "broad_mappings": [
         "MAXO:0000058"
       ],
-      "is_a": "NamedThing",
+      "is_a": "ExposureEvent",
       "mixins": [
-        "ExposureEvent",
         "ChemicalOrDrugOrTreatment"
       ],
       "slots": [
-        "id",
         "iri",
         "type",
         "name",
@@ -32254,10 +32454,19 @@
         "information_content",
         "taxon",
         "named_thing_category",
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id",
         "has_drug",
         "has_device",
-        "has_procedure",
-        "timepoint"
+        "has_procedure"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Treatment",
@@ -32272,13 +32481,11 @@
         "viral exposure",
         "bacterial exposure"
       ],
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32290,12 +32497,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BioticExposure",
@@ -32326,12 +32537,10 @@
         "dcid:WinterStoremEvent"
       ],
       "is_a": "EnvironmentalExposure",
-      "mixins": [
-        "ExposureEvent"
-      ],
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32343,12 +32552,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeographicExposure",
@@ -32359,13 +32572,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalExposure",
       "description": "A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32377,12 +32588,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EnvironmentalExposure",
@@ -32393,13 +32608,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/BehavioralExposure",
       "description": "A behavioral exposure is a factor relating to behavior impacting an individual.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "has_attribute",
         "deprecated",
@@ -32411,12 +32624,16 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BehavioralExposure",
@@ -32427,13 +32644,11 @@
       "definition_uri": "https://w3id.org/biolink/vocab/SocioeconomicExposure",
       "description": "A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "Attribute",
-      "mixins": [
-        "ExposureEvent"
-      ],
+      "is_a": "ExposureEvent",
       "slots": [
-        "id",
+        "iri",
         "type",
+        "name",
         "description",
         "deprecated",
         "provided_by",
@@ -32444,13 +32659,17 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "attribute_name",
-        "has_attribute_type",
-        "has_quantitative_value",
-        "has_qualitative_value",
-        "iri",
-        "socioeconomic_exposure_has_attribute",
-        "timepoint"
+        "timepoint",
+        "exposure_type",
+        "exposure_vehicle",
+        "exposure_route",
+        "exposure_start_age",
+        "exposure_end_age",
+        "exposure_duration",
+        "exposure_magnitude",
+        "exposure_additional_condition",
+        "exposure_event_id",
+        "socioeconomic_exposure_has_attribute"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/SocioeconomicExposure",
@@ -39715,9 +39934,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-18T19:56:19",
-  "source_file_size": 434873,
-  "generation_date": "2025-11-18T19:56:25",
+  "source_file_date": "2025-11-19T20:37:46",
+  "source_file_size": 436545,
+  "generation_date": "2025-11-19T20:37:52",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
