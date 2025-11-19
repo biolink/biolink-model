@@ -1113,6 +1113,7 @@ slots:
     description: >-
       Type of exposure
     domain: exposure event
+    range: string
 #    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
 #           To some extent, the subclassing of Exposure Events provides some typing?
 
@@ -1121,6 +1122,7 @@ slots:
     description: >-
       Type of an exposure event.
     domain: exposure event
+    range: string
 #    range: not sure how standardized this can be made, i.e., into a Biolink Enum
 
   exposure route:
@@ -1128,6 +1130,7 @@ slots:
     description: >-
       Route of exposure.
     domain: exposure event
+    range: string
 #    range: not sure how standardized this can be made, i.e., into a Biolink Enum
 
   exposure start age:
@@ -1150,12 +1153,20 @@ slots:
       Duration of an exposure event.
     domain: exposure event
     range: time
-  
+
+  exposure magnitude:
+    is_a: node property
+    description: >-
+      Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
+    domain: exposure event
+    range: string   # might want to be a more constrained data type here?
+
   exposure additional condition:
     is_a: node property
     description: >-
       Additional conditions impacting an exposure event.
     domain: exposure event
+    range: string
 
   ## Clinical Trials
 
@@ -9644,8 +9655,10 @@ classes:
       - exposure type
       - exposure vehicle
       - exposure route
-      - exposure start stage
-      - exposure end stage
+      - exposure start age
+      - exposure end age
+      - exposure duration
+      - exposure magnitude
       - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
