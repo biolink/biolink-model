@@ -1119,7 +1119,7 @@ slots:
   exposure vehicle:
     is_a: node property
     description: >-
-      Type of exposure event.
+      Type of an exposure event.
     domain: exposure event
 #    range: not sure how standardized this can be made, i.e., into a Biolink Enum
 
@@ -1130,20 +1130,27 @@ slots:
     domain: exposure event
 #    range: not sure how standardized this can be made, i.e., into a Biolink Enum
 
-  exposure start stage:
+  exposure start age:
     is_a: node property
     description: >-
-      Starting stage of exposure event.
+      Starting age of an exposure event.
     domain: exposure event
-#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+    range: integer
 
-  exposure end stage:
+  exposure end age:
     is_a: node property
     description: >-
-      Ending stage of exposure event.
+      Ending stage of an exposure event.
     domain: exposure event
-#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+    range: integer
 
+  exposure duration:
+    is_a: node property
+    description: >-
+      Duration of an exposure event.
+    domain: exposure event
+    range: time
+  
   exposure additional condition:
     is_a: node property
     description: >-
