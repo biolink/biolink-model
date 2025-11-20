@@ -12567,6 +12567,17 @@ enums:
         description: >-
           A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different
           binding site than the natural ('orthosteric') ligand site.
+       mixed_allosteric_modulation:
+        is_a: allosteric_modulation
+        description: >-
+          An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect
+          in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context, 
+          receptor subtype, cellular environment).
+       biphasic_allosteric_modulation:
+        is_a: mixed_allosteric_modulation
+        description: >-
+          A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations, 
+          and an inhibitory effect at higher concentrations.         
       mixed_agonism:
         is_a: modulation
         description: >-
@@ -12634,6 +12645,11 @@ enums:
         description: >-
           An agonism mechanism in which the effector  binds to a receptor and activates certain signaling
           pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.
+      antibody_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic 
+          the effect of an endogenous ligand.           
       molecular_channel_opening:
         is_a: activation
         description: >-
@@ -12741,6 +12757,12 @@ enums:
         description: >-
           An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation
           by a positive allosteric modulator at that site.
+      non_competitive_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric),
+          or irreversibly/insurmountably inactivates the receptor - reduces the receptor’s maximal response (Emax) in a way that 
+          cannot be overcome by adding more agonist.     
       competitive_inhibition:
         is_a: inhibition
         description: >-
