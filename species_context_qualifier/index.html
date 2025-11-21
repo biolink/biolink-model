@@ -700,14 +700,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
-<td>Describes a regulatory relationship between two genes or gene products.</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
@@ -715,8 +715,13 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td>Describes a regulatory relationship between two genes or gene products.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -759,12 +764,13 @@ examples:
 - value: human
 in_subset:
 - translator_minimal
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: statement qualifier
 domain: association
 alias: species_context_qualifier
 domain_of:
 - predicate mapping
+- chemical to chemical association
 - gene regulates gene association
 - chemical affects biological entity association
 - gene affects chemical association

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/supporting_study_method_type/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/clinical_trial_age_range/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: supporting_study_method_type - Biolink Model Documentation</title>
+        <title>Slot: clinical_trial_age_range - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-supporting_study_method_type" class="md-skip">
+        <a href="#slot-clinical_trial_age_range" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: supporting_study_method_type
+              Slot: clinical_trial_age_range
             
           </span>
         </div>
@@ -621,6 +621,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -648,38 +657,52 @@
   
 
 
-<h1 id="slot-supporting_study_method_type"><strong> Slot: supporting_study_method_type </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).</i><br>
+<h1 id="slot-clinical_trial_age_range"><strong> Slot: clinical_trial_age_range </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> The age range of a clinical trial as determined by clinicaltrials.gov</i><br>
 
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
-<strong>Range:</strong>   <a href="../Uriorcurie/">Uriorcurie</a> <br></p>
+<p><strong>Domain:</strong> <a href="../ClinicalTrial/">ClinicalTrial</a><br>
+<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../association_slot/">association_slot</a><ul>
-<li><a href="../supporting_study_metadata/">supporting_study_metadata</a><ul>
-<li><strong>supporting_study_method_type</strong></li>
+<li><a href="../node_property/">node_property</a><ul>
+<li><strong>clinical_trial_age_range</strong></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td>A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: supporting study method type
-description: A type of method that was applied in a study used to generate the information
-  used as evidence (e.g. a type of experimental assay, or statistical calculation,
-  or computational analysis).
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: supporting study metadata
-domain: association
-alias: supporting_study_method_type
-range: uriorcurie
+<pre><code class="language-yaml">name: clinical trial age range
+description: The age range of a clinical trial as determined by clinicaltrials.gov
+from_schema: https://w3id.org/biolink/vocab/
+is_a: node property
+domain: clinical trial
+alias: clinical_trial_age_range
+domain_of:
+- clinical trial
+range: string
 
 </code></pre>
 

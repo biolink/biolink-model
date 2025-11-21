@@ -371,6 +371,8 @@
 
           GenotypeToDiseaseAssociation --|&gt; DirectionQualifierEnum : object_direction_qualifier
 
+      GenotypeToDiseaseAssociation : object_feature_name
+
       GenotypeToDiseaseAssociation : object_label_closure
 
       GenotypeToDiseaseAssociation : object_namespace
@@ -427,6 +429,8 @@
 
           GenotypeToDiseaseAssociation --|&gt; DirectionQualifierEnum : subject_direction_qualifier
 
+      GenotypeToDiseaseAssociation : subject_feature_name
+
       GenotypeToDiseaseAssociation : subject_label_closure
 
       GenotypeToDiseaseAssociation : subject_namespace
@@ -466,19 +470,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> a genotype that is associated in some way with a disease state </i></td>
 <td>1 <br/> <a href="../Genotype/">Genotype</a></td>
-<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> E.g. is pathogenic for </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> a disease that is associated with that genotype </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
 <td>MONDO:0016419</td>
 </tr>
 <tr>
@@ -567,6 +571,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -764,7 +780,7 @@
 <pre><code class="language-yaml">name: genotype to disease association
 comments:
 - TODO decide no how to model pathogenicity
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 mixins:
 - genotype to entity association mixin

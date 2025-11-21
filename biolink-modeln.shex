@@ -235,6 +235,8 @@ linkml:Sparqlpath xsd:string
              <original_subject> @linkml:String ? ;
              <original_predicate> @linkml:Uriorcurie ? ;
              <original_object> @linkml:String ? ;
+             <subject_feature_name> @linkml:String ? ;
+             <object_feature_name> @linkml:String ? ;
              <subject_category> @<OntologyClass> ? ;
              <object_category> @<OntologyClass> ? ;
              <subject_closure> @linkml:String * ;
@@ -300,10 +302,8 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <Attribute> ]
        )
-    } OR @<BehavioralExposure> OR @<BiologicalSex> OR @<BioticExposure> OR @<ChemicalExposure> OR @<ChemicalRole> OR
-    @<ClinicalAttribute> OR @<ComplexChemicalExposure> OR @<DiseaseOrPhenotypicFeatureExposure> OR @<EnvironmentalExposure> OR
-    @<GenomicBackgroundExposure> OR @<OrganismAttribute> OR @<PathologicalAnatomicalExposure> OR @<PathologicalProcessExposure> OR
-    @<SeverityValue> OR @<SocioeconomicAttribute> OR @<SocioeconomicExposure> OR @<Zygosity>
+    } OR @<BiologicalSex> OR @<ChemicalRole> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR
+    @<SocioeconomicAttribute> OR @<Zygosity>
 )
 
 <Bacterium> CLOSED {
@@ -357,11 +357,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <BehavioralExposure> CLOSED {
-    (  $<BehavioralExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<BehavioralExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <BehavioralExposure> ]
     )
@@ -476,11 +473,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <BioticExposure> CLOSED {
-    (  $<BioticExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<BioticExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <BioticExposure> ]
     )
@@ -737,6 +731,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
@@ -817,6 +812,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
@@ -860,24 +856,106 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+             <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#biphasic_allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#induction>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#cofactor>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#partial_agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#biased_agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_agonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#guanyl_nucleotide_exchange>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_gene_editing_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#gtpase_activation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#atpase_activation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antisense_oligonucleotide_inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#rna_interference_inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#suppression>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#feedback_inhibition>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_antagonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#non_competitive_antagonism>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#competitive_inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#noncompetitive_inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#gating_inhibition>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#irreversible_inhibition>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#covalent_binding>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#adduction>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#crosslinking>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transglutamination>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#disuphide_binding>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
-                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> ] ? ;
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chaperone_mediated_stabilization>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#destabilization>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#degradation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#cleavage>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydrolysis>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#disruption>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#opening>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#multitarget_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chelation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#release>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sequestration>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#oxidoreduction>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#exogenous_protein>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#exogenous_gene>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#translational_regulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#catalytic_activity>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chemical_modification>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#relocalization>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#isomerization>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#immune_system_modulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#vaccine_antigen>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#post_transcriptional_regulation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_modification>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#phosphorylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#dephosphorylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#neddylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deneddylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#lipidation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#palmitoylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#myristoylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#tyrosination>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#carboxylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ubiquitination>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#monoubiquitination>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#polyubiquitination>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deubiquitination>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sulfation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#reduction>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#oxidation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#acetylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deacetylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#glycosylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deglycosylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#methylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#trimethylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#demethylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sumoylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#desumoylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ADP-ribosylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#de-ADP-ribosylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
+                <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
              <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
              <qualified_predicate> @linkml:String ? ;
              <species_context_qualifier> @<OrganismTaxon> ? ;
@@ -975,11 +1053,9 @@ linkml:Sparqlpath xsd:string
 
 <ChemicalExposure>  (
     CLOSED {
-       (  $<ChemicalExposure_tes> (  &<Attribute_tes> ;
-             rdf:type [ <Attribute> ] ? ;
-             &<ExposureEvent_tes> ;
+       (  $<ChemicalExposure_tes> (  &<ExposureEvent_tes> ;
              rdf:type [ <ExposureEvent> ] ? ;
-             <timepoint> @<TimeType> ?
+             <has_quantitative_value> @<QuantityValue> *
           ) ;
           rdf:type [ <ChemicalExposure> ]
        )
@@ -1150,7 +1226,8 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ChemicalToChemicalAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
-             rdf:object @<ChemicalEntity>
+             rdf:object @<ChemicalEntity> ;
+             <species_context_qualifier> @<OrganismTaxon> ?
           ) ;
           rdf:type [ <ChemicalToChemicalAssociation> ]
        )
@@ -1290,6 +1367,31 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
           <clinical_trial_primary_purpose> @linkml:String ? ;
+          <clinical_trial_intervention_model> @linkml:String ? ;
+          <clinical_trial_overall_status> [ <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#ACTIVE_NOT_RECRUITING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#APPROVED_FOR_MARKETING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#AVAILABLE>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#COMPLETED>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#ENROLLING_BY_INVITATION>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#NO_LONGER_AVAILABLE>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#NOT_YET_RECRUITING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#RECRUITING>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#SUSPENDED>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#TEMPORARILY_NOT_AVAILABLE>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#TERMINATED>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#UNKNOWN>
+             <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#WITHDRAWN> ] ? ;
+          <clinical_trial_brief_title> @linkml:String ? ;
+          <clinical_trial_enrollment_type> @linkml:String ? ;
+          <clinical_trial_start_date> @linkml:Date ? ;
+          <clinical_trial_enrollment> @linkml:Integer ? ;
+          <clinical_trial_age_stage> [ <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#adult>
+             <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#child>
+             <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#older_adult> ] ? ;
+          <clinical_trial_age_range> @linkml:String ? ;
+          <clinical_trial_tested_intervention> @linkml:String ? ;
+          <clinical_trial_interventions> @<ClinicalIntervention> * ;
+          <clinical_trial_conditions> @<DiseaseOrPhenotypicFeature> * ;
           <creation_date> @linkml:Date ?
        ) ;
        rdf:type [ <ClinicalTrial> ]
@@ -1326,8 +1428,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <ComplexChemicalExposure> CLOSED {
-    (  $<ComplexChemicalExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ?
+    (  $<ComplexChemicalExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <ComplexChemicalExposure> ]
     )
@@ -1478,13 +1580,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <DiseaseOrPhenotypicFeatureExposure> CLOSED {
-    (  $<DiseaseOrPhenotypicFeatureExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<DiseaseOrPhenotypicFeatureExposure_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<PathologicalEntityMixin_tes> ;
-          rdf:type [ <PathologicalEntityMixin> ] ? ;
-          <timepoint> @<TimeType> ?
+          rdf:type [ <PathologicalEntityMixin> ] ?
        ) ;
        rdf:type [ <DiseaseOrPhenotypicFeatureExposure> ]
     )
@@ -1601,9 +1700,7 @@ linkml:Sparqlpath xsd:string
 <DrugExposure>  (
     CLOSED {
        (  $<DrugExposure_tes> (  &<ChemicalExposure_tes> ;
-             rdf:type [ <ChemicalExposure> ] ? ;
-             &<ExposureEvent_tes> ;
-             rdf:type [ <ExposureEvent> ] ?
+             rdf:type [ <ChemicalExposure> ] ?
           ) ;
           rdf:type [ <DrugExposure> ]
        )
@@ -1856,11 +1953,8 @@ linkml:Sparqlpath xsd:string
 
 <EnvironmentalExposure>  (
     CLOSED {
-       (  $<EnvironmentalExposure_tes> (  &<Attribute_tes> ;
-             rdf:type [ <Attribute> ] ? ;
-             &<ExposureEvent_tes> ;
-             rdf:type [ <ExposureEvent> ] ? ;
-             <timepoint> @<TimeType> ?
+       (  $<EnvironmentalExposure_tes> (  &<ExposureEvent_tes> ;
+             rdf:type [ <ExposureEvent> ] ?
           ) ;
           rdf:type [ <EnvironmentalExposure> ]
        )
@@ -1941,14 +2035,28 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<ExposureEvent> {
-    (  $<ExposureEvent_tes> (  &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ? ;
-          <timepoint> @<TimeType> ?
-       ) ;
-       rdf:type [ <ExposureEvent> ]
-    )
-}
+<ExposureEvent>  (
+    CLOSED {
+       (  $<ExposureEvent_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
+             <timepoint> @<TimeType> ? ;
+             <exposure_type> @linkml:String ? ;
+             <exposure_vehicle> @linkml:String ? ;
+             <exposure_route> @linkml:String ? ;
+             <exposure_start_age> @linkml:Integer ? ;
+             <exposure_end_age> @linkml:Integer ? ;
+             <exposure_duration> @linkml:Time ? ;
+             <exposure_magnitude> @linkml:String ? ;
+             <exposure_additional_condition> @linkml:String ?
+          ) ;
+          rdf:type [ <ExposureEvent> ]
+       )
+    } OR @<BehavioralExposure> OR @<BioticExposure> OR @<ChemicalExposure> OR @<ComplexChemicalExposure> OR
+    @<DiseaseOrPhenotypicFeatureExposure> OR @<EnvironmentalExposure> OR @<GenomicBackgroundExposure> OR
+    @<PathologicalAnatomicalExposure> OR @<PathologicalProcessExposure> OR @<SocioeconomicExposure> OR @<Treatment>
+)
 
 <ExposureEventToOutcomeAssociation> CLOSED {
     (  $<ExposureEventToOutcomeAssociation_tes> (  &<Association_tes> ;
@@ -2137,6 +2245,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
@@ -2217,6 +2326,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
@@ -2261,24 +2371,106 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <object_derivative_qualifier> [ <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> ] ? ;
-          <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+          <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#biphasic_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#induction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#cofactor>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#partial_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#biased_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_gene_editing_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#gtpase_activation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#atpase_activation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antisense_oligonucleotide_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#rna_interference_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#suppression>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#feedback_inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_antagonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#non_competitive_antagonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#competitive_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#noncompetitive_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#gating_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#irreversible_inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#covalent_binding>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#adduction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#crosslinking>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transglutamination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#disuphide_binding>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> ] ? ;
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chaperone_mediated_stabilization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#destabilization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#degradation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#cleavage>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydrolysis>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#disruption>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#opening>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#multitarget_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chelation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#release>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sequestration>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#oxidoreduction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#exogenous_protein>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#exogenous_gene>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#translational_regulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#catalytic_activity>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chemical_modification>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#relocalization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#isomerization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#immune_system_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#vaccine_antigen>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#post_transcriptional_regulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_modification>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#phosphorylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#dephosphorylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#neddylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deneddylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#lipidation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#palmitoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#myristoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#tyrosination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#carboxylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#monoubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#polyubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sulfation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#reduction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#oxidation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#acetylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deacetylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#glycosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deglycosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#methylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#trimethylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#demethylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sumoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#desumoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ADP-ribosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#de-ADP-ribosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
           <qualified_predicate> @linkml:String ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
@@ -2434,6 +2626,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
@@ -2539,6 +2732,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+                <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
                 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
@@ -2749,9 +2943,7 @@ linkml:Sparqlpath xsd:string
 }
 
 <GenomicBackgroundExposure> CLOSED {
-    (  $<GenomicBackgroundExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<GenomicBackgroundExposure_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<GeneGroupingMixin_tes> ;
           rdf:type [ <GeneGroupingMixin> ] ? ;
@@ -2763,7 +2955,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ThingWithTaxon> ] ? ;
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <timepoint> @<TimeType> ? ;
           <has_gene_or_gene_product> @<Gene> * ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
           <in_taxon> @<OrganismTaxon> * ;
@@ -2941,9 +3132,7 @@ linkml:Sparqlpath xsd:string
 
 <GeographicExposure> CLOSED {
     (  $<GeographicExposure_tes> (  &<EnvironmentalExposure_tes> ;
-          rdf:type [ <EnvironmentalExposure> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ?
+          rdf:type [ <EnvironmentalExposure> ] ?
        ) ;
        rdf:type [ <GeographicExposure> ]
     )
@@ -3355,15 +3544,16 @@ linkml:Sparqlpath xsd:string
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
-             <information_content> @linkml:Float ? ;
              <equivalent_identifiers> @linkml:Uriorcurie * ;
+             <information_content> @linkml:Float ? ;
+             <taxon> @linkml:Uriorcurie ? ;
              <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
-    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR
-    @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
+    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<ExposureEvent> OR @<InformationContentEntity> OR @<OrganismTaxon> OR
+    @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
 )
 
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
@@ -3465,7 +3655,7 @@ linkml:Sparqlpath xsd:string
 }
 
 <OntologyClass>  (
-    @<ExposureEvent> OR @<RelationshipType> OR @<TaxonomicRank>
+    @<RelationshipType> OR @<TaxonomicRank>
 )
 
 <OntologyClass_struct> {
@@ -3652,11 +3842,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <PathologicalAnatomicalExposure> CLOSED {
-    (  $<PathologicalAnatomicalExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<PathologicalAnatomicalExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <PathologicalAnatomicalExposure> ]
     )
@@ -3697,11 +3884,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <PathologicalProcessExposure> CLOSED {
-    (  $<PathologicalProcessExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
-          rdf:type [ <ExposureEvent> ] ? ;
-          <timepoint> @<TimeType> ?
+    (  $<PathologicalProcessExposure_tes> (  &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ?
        ) ;
        rdf:type [ <PathologicalProcessExposure> ]
     )
@@ -3965,24 +4149,106 @@ linkml:Sparqlpath xsd:string
           <object_part_qualifier> @linkml:String ? ;
           <object_derivative_qualifier> @linkml:String ? ;
           <object_context_qualifier> @linkml:String ? ;
-          <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+          <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#biphasic_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#induction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#cofactor>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#partial_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#biased_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_agonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_gene_editing_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#gtpase_activation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#atpase_activation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antisense_oligonucleotide_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#rna_interference_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#suppression>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#feedback_inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_antagonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#non_competitive_antagonism>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#competitive_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#noncompetitive_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#gating_inhibition>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#irreversible_inhibition>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#covalent_binding>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#adduction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#crosslinking>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transglutamination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#disuphide_binding>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>
-             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> ] ? ;
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chaperone_mediated_stabilization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#destabilization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#degradation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#cleavage>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydrolysis>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#disruption>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#opening>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#multitarget_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chelation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#release>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sequestration>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#oxidoreduction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#exogenous_protein>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#exogenous_gene>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#translational_regulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#catalytic_activity>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#chemical_modification>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#relocalization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#isomerization>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#immune_system_modulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#vaccine_antigen>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#post_transcriptional_regulation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_modification>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#phosphorylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#dephosphorylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#neddylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deneddylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#lipidation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#palmitoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#myristoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#tyrosination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#carboxylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#monoubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#polyubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deubiquitination>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sulfation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#reduction>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#oxidation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#acetylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deacetylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#glycosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#deglycosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#methylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#trimethylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#demethylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#sumoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#desumoylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ADP-ribosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#de-ADP-ribosylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
+             <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
           <anatomical_context_qualifier> @linkml:String ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           <exact_match> @<NamedThing> * ;
@@ -4340,12 +4606,9 @@ linkml:Sparqlpath xsd:string
 }
 
 <SocioeconomicExposure> CLOSED {
-    (  $<SocioeconomicExposure_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<SocioeconomicExposure_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
-          <has_attribute> @<SocioeconomicAttribute> + ;
-          <timepoint> @<TimeType> ?
+          <has_attribute> @<SocioeconomicAttribute> +
        ) ;
        rdf:type [ <SocioeconomicExposure> ]
     )
@@ -4495,16 +4758,13 @@ linkml:Sparqlpath xsd:string
 }
 
 <Treatment> CLOSED {
-    (  $<Treatment_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          &<ExposureEvent_tes> ;
+    (  $<Treatment_tes> (  &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<ChemicalOrDrugOrTreatment_tes> ;
           rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
           <has_drug> @<Drug> * ;
           <has_device> @<Device> * ;
-          <has_procedure> @<Procedure> * ;
-          <timepoint> @<TimeType> ?
+          <has_procedure> @<Procedure> *
        ) ;
        rdf:type [ <Treatment> ]
     )

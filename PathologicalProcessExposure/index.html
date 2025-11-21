@@ -299,7 +299,6 @@
 <div class="mermaid"> classDiagram
     class PathologicalProcessExposure
       ExposureEvent &lt;|-- PathologicalProcessExposure
-      Attribute &lt;|-- PathologicalProcessExposure
 
       PathologicalProcessExposure : category
 
@@ -309,23 +308,27 @@
 
       PathologicalProcessExposure : equivalent_identifiers
 
+      PathologicalProcessExposure : exposure_additional_condition
+
+      PathologicalProcessExposure : exposure_duration
+
+      PathologicalProcessExposure : exposure_end_age
+
+      PathologicalProcessExposure : exposure_magnitude
+
+      PathologicalProcessExposure : exposure_route
+
+      PathologicalProcessExposure : exposure_start_age
+
+      PathologicalProcessExposure : exposure_type
+
+      PathologicalProcessExposure : exposure_vehicle
+
       PathologicalProcessExposure : full_name
 
       PathologicalProcessExposure : has_attribute
 
           PathologicalProcessExposure --|&gt; Attribute : has_attribute
-
-      PathologicalProcessExposure : has_attribute_type
-
-          PathologicalProcessExposure --|&gt; OntologyClass : has_attribute_type
-
-      PathologicalProcessExposure : has_qualitative_value
-
-          PathologicalProcessExposure --|&gt; NamedThing : has_qualitative_value
-
-      PathologicalProcessExposure : has_quantitative_value
-
-          PathologicalProcessExposure --|&gt; QuantityValue : has_quantitative_value
 
       PathologicalProcessExposure : id
 
@@ -339,6 +342,8 @@
 
       PathologicalProcessExposure : synonym
 
+      PathologicalProcessExposure : taxon
+
       PathologicalProcessExposure : timepoint
 
       PathologicalProcessExposure : type
@@ -351,8 +356,8 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../Attribute/">Attribute</a> [ <a href="../OntologyClass/">OntologyClass</a>]<ul>
-<li><strong>PathologicalProcessExposure</strong> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
+<li><a href="../ExposureEvent/">ExposureEvent</a> [ <a href="../OntologyClass/">OntologyClass</a>]<ul>
+<li><strong>PathologicalProcessExposure</strong></li>
 </ul>
 </li>
 </ul>
@@ -378,39 +383,57 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a>: <br/> <i> The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term. </i></td>
-<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
+<td><a href="../exposure_type/">exposure_type</a>: <br/> <i> Type of exposure </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_attribute_type/">has_attribute_type</a>: <br/> <i> connects an attribute to a class that describes it </i></td>
-<td>1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
-<td><a href="../Attribute/">Attribute</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a>: <br/> <i> Type of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a>: <br/> <i> connects an attribute to a value </i></td>
-<td>* <br/> <a href="../QuantityValue/">QuantityValue</a></td>
-<td><a href="../Attribute/">Attribute</a></td>
+<td><a href="../exposure_route/">exposure_route</a>: <br/> <i> Route of exposure. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a>: <br/> <i> connects an attribute to a value </i></td>
-<td>0..1 <br/> <a href="../NamedThing/">NamedThing</a></td>
-<td><a href="../Attribute/">Attribute</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a>: <br/> <i> Starting age of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
-<td>0..1 <br/> <a href="../IriType/">IriType</a></td>
-<td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a>: <br/> <i> Ending stage of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
+<td><a href="../exposure_duration/">exposure_duration</a>: <br/> <i> Duration of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Time/">Time</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a>: <br/> <i> Magnitude of an exposure event, e.g, parts per million of a toxic chemical. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a>: <br/> <i> Additional conditions impacting an exposure event. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a>: <br/> <i> Could generally be a CURIE from a suitable exposure ontology like ECTO. </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>
 <tr>
@@ -438,15 +461,27 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
-<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
+<td>0..1 <br/> <a href="../IriType/">IriType</a></td>
+<td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
 <tr>
@@ -458,6 +493,12 @@
 <tr>
 <td><a href="../type/">type</a>: <br/> <i> None </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
+<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
@@ -486,10 +527,8 @@
 <pre><code class="language-yaml">name: pathological process exposure
 description: A pathological process, when viewed as an exposure, representing a precondition,
   leading to or influencing an outcome, e.g. autoimmunity leading to disease.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: attribute
-mixins:
-- exposure event
+from_schema: https://w3id.org/biolink/vocab/
+is_a: exposure event
 
 </code></pre>
 </details>

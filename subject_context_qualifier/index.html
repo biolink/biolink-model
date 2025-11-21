@@ -684,13 +684,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td></td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td>describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -699,8 +699,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
-<td></td>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -716,7 +716,7 @@
 <pre><code class="language-yaml">name: subject context qualifier
 in_subset:
 - translator_minimal
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: context qualifier
 domain: association
 alias: subject_context_qualifier

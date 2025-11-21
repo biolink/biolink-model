@@ -379,6 +379,8 @@
 
           DiseaseToPhenotypicFeatureAssociation --|&gt; DirectionQualifierEnum : object_direction_qualifier
 
+      DiseaseToPhenotypicFeatureAssociation : object_feature_name
+
       DiseaseToPhenotypicFeatureAssociation : object_label_closure
 
       DiseaseToPhenotypicFeatureAssociation : object_namespace
@@ -442,6 +444,8 @@
       DiseaseToPhenotypicFeatureAssociation : subject_direction_qualifier
 
           DiseaseToPhenotypicFeatureAssociation --|&gt; DirectionQualifierEnum : subject_direction_qualifier
+
+      DiseaseToPhenotypicFeatureAssociation : subject_feature_name
 
       DiseaseToPhenotypicFeatureAssociation : subject_label_closure
 
@@ -509,19 +513,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> disease class </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td>MONDO:0017314</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
 <td>HP:0002487, WBPhenotype:0000180, MP:0001569</td>
 </tr>
 <tr>
@@ -616,6 +620,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -813,7 +829,7 @@
 <pre><code class="language-yaml">name: disease to phenotypic feature association
 description: An association between a disease and a phenotypic feature in which the
   phenotypic feature is associated with the disease in some way.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 close_mappings:
 - dcid:DiseaseSymptomAssociation
 is_a: association

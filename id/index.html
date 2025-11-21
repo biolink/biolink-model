@@ -671,13 +671,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../OntologyClass/">OntologyClass</a></td>
-<td>a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.</td>
+<td><a href="../Entity/">Entity</a></td>
+<td>Root Biolink Model class for all things and informational relationships, real or imagined.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Entity/">Entity</a></td>
-<td>Root Biolink Model class for all things and informational relationships, real or imagined.</td>
+<td><a href="../OntologyClass/">OntologyClass</a></td>
+<td>a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -690,7 +690,7 @@ description: A unique identifier for an entity. Must be either a CURIE shorthand
   a URI or a complete URI
 in_subset:
 - translator_minimal
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - AGRKB:primaryId
 - gff3:ID

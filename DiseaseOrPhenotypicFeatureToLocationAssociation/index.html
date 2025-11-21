@@ -357,6 +357,8 @@
 
       DiseaseOrPhenotypicFeatureToLocationAssociation : object_closure
 
+      DiseaseOrPhenotypicFeatureToLocationAssociation : object_feature_name
+
       DiseaseOrPhenotypicFeatureToLocationAssociation : object_label_closure
 
       DiseaseOrPhenotypicFeatureToLocationAssociation : object_namespace
@@ -405,6 +407,8 @@
 
       DiseaseOrPhenotypicFeatureToLocationAssociation : subject_closure
 
+      DiseaseOrPhenotypicFeatureToLocationAssociation : subject_feature_name
+
       DiseaseOrPhenotypicFeatureToLocationAssociation : subject_label_closure
 
       DiseaseOrPhenotypicFeatureToLocationAssociation : subject_namespace
@@ -441,19 +445,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> disease or phenotype </i></br></td>
 <td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td>MONDO:0017314, MP:0013229</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> anatomical entity in which the disease or feature is found. </i></td>
 <td>1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td>UBERON:0002048</td>
 </tr>
 <tr>
@@ -542,6 +546,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -697,7 +713,7 @@
 <pre><code class="language-yaml">name: disease or phenotypic feature to location association
 description: An association between either a disease or a phenotypic feature and an
   anatomical entity, where the disease/feature manifests in that site.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 mixins:
 - disease or phenotypic feature to entity association mixin

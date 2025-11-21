@@ -363,6 +363,8 @@
 
       GeneToGeneAssociation : object_closure
 
+      GeneToGeneAssociation : object_feature_name
+
       GeneToGeneAssociation : object_label_closure
 
       GeneToGeneAssociation : object_namespace
@@ -410,6 +412,8 @@
           GeneToGeneAssociation --|&gt; OntologyClass : subject_category_closure
 
       GeneToGeneAssociation : subject_closure
+
+      GeneToGeneAssociation : subject_feature_name
 
       GeneToGeneAssociation : subject_label_closure
 
@@ -553,6 +557,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -708,7 +724,7 @@
 <pre><code class="language-yaml">name: gene to gene association
 description: abstract parent class for different kinds of gene-gene or gene product
   to gene product relationships. Includes homology and interaction.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - molecular or genetic interaction
 is_a: association

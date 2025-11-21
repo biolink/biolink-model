@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.4
+version: 4.3.5
 
 ## ------------
 ##
@@ -1106,7 +1106,70 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Clinical Trials
+  ## Exposure Events
+
+  exposure type:
+    is_a: node property
+    description: >-
+      Type of exposure
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
+#           To some extent, the subclassing of Exposure Events provides some typing?
+
+  exposure vehicle:
+    is_a: node property
+    description: >-
+      Type of an exposure event.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure route:
+    is_a: node property
+    description: >-
+      Route of exposure.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure start age:
+    is_a: node property
+    description: >-
+      Starting age of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure end age:
+    is_a: node property
+    description: >-
+      Ending stage of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure duration:
+    is_a: node property
+    description: >-
+      Duration of an exposure event.
+    domain: exposure event
+    range: time
+
+  exposure magnitude:
+    is_a: node property
+    description: >-
+      Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
+    domain: exposure event
+    range: string   # might want to be a more constrained data type here?
+
+  exposure additional condition:
+    is_a: node property
+    description: >-
+      Additional conditions impacting an exposure event.
+    domain: exposure event
+    range: string
+
+  ## Clinical Trials
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -1159,10 +1222,68 @@ slots:
     is_a: node property
     description: >-
       Records whether the clinical trials are testing the intervention.
-    domain: association
+    domain: clinical trial
     range: string
 
-   ## Biological Entity properties
+  clinical trial brief title:
+    is_a: node property
+    description: >-
+      The brief title of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial enrollment type:
+    is_a: node property
+    description: >-
+      The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual,
+      anticipated, or estimated)
+    range: string
+    domain: clinical trial
+
+  clinical trial start date:
+    is_a: node property
+    description: >-
+      The start date of a clinical trial as determined by clinicaltrials.gov
+    range: date
+    domain: clinical trial
+  clinical trial enrollment:
+    is_a: node property
+    description: >-
+      The enrollment number of a clinical trial as determined by clinicaltrials.gov
+    range: integer
+    domain: clinical trial
+
+  clinical trial age stage:
+    is_a: node property
+    description: >-
+      The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
+    range: ClinicalTrialAgeStageEnum
+    domain: clinical trial
+
+  clinical trial age range:
+    is_a: node property
+    description: >-
+      The age range of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial interventions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more interventions being tested in the trial
+    range: clinical intervention
+    multivalued: true
+    domain: clinical trial
+
+  clinical trial conditions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more conditions being studied in the trial
+    range: disease or phenotypic feature
+    multivalued: true
+    domain: clinical trial
+
+    ## Biological Entity properties
 
   has biological sequence:
     is_a: node property
@@ -2620,14 +2741,6 @@ slots:
       canonical_predicate: true
     broad_mappings:
       - WIKIDATA_PROPERTY:P129
-    close_mappings:
-      - CHEMBL.MECHANISM:binding_agent
-      - CHEMBL.MECHANISM:chelating_agent
-      - CHEMBL.MECHANISM:cross-linking_agent
-      - CHEMBL.MECHANISM:oxidative_enzyme
-      - CHEMBL.MECHANISM:sequestering_agent
-      - CHEMBL.MECHANISM:substrate
-      - DRUGBANK:target
     narrow_mappings:
        # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
@@ -5443,6 +5556,20 @@ slots:
     is_a: related to at instance level
     inverse: develops from
 
+  taxon:
+    is_a: node property
+    description: >-
+      A property that indicates the taxonomic classification of an entity.
+      Values for this slot should be from the NCBITaxon ontology.
+    comments: >-
+      Note there is also a predicate 'in taxon'
+      that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is
+      an acceptable practice for KG construction, but for many applications it is more convenient to
+      use this property slot to directly annotate the taxon on the entity itself.
+    in_subset:
+      - translator_minimal
+    range: uriorcurie
+
   in taxon:
     aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source']
     is_a: related to at instance level
@@ -6787,6 +6914,7 @@ classes:
       - synonym
       - equivalent identifiers
       - information content
+      - taxon
     slot_usage:
       category:
         required: true
@@ -8826,6 +8954,8 @@ classes:
     id_prefixes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
+    close_mappings:
+      - DRUGBANK:target
 
   gene or gene product or gene family:
     description: >-
@@ -9431,7 +9561,18 @@ classes:
     slots:
       - clinical trial phase
       - clinical trial primary purpose
-      - creation date  # maybe?
+      - clinical trial intervention model
+      - clinical trial overall status
+      - clinical trial brief title
+      - clinical trial enrollment type
+      - clinical trial start date
+      - clinical trial enrollment
+      - clinical trial age stage
+      - clinical trial age range
+      - clinical trial tested intervention
+      - clinical trial interventions
+      - clinical trial conditions
+      - creation date
     id_prefixes:
       - CLINICALTRIALS
 
@@ -9499,14 +9640,27 @@ classes:
    ## Exposures
 
   exposure event:
-    is_a: ontology class
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['exposure', 'experimental condition']
-    mixin: true
     slots:
       - timepoint
+      - exposure type
+      - exposure vehicle
+      - exposure route
+      - exposure start age
+      - exposure end age
+      - exposure duration
+      - exposure magnitude
+      - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
+    slot_usage:
+      id:
+        description: >-
+          Could generally be a CURIE from a suitable exposure ontology like ECTO.
     exact_mappings:
       - XCO:0000000
     in_subset:
@@ -9514,9 +9668,8 @@ classes:
 
    # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
@@ -9555,9 +9708,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
       a precondition, leading to or influencing an outcome,
@@ -9574,18 +9725,15 @@ classes:
       - MPATH:603
 
   pathological anatomical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - pathological entity mixin
     description: >-
       A disease or phenotypic feature state, when viewed as an exposure,
@@ -9594,9 +9742,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     slots:
       - has quantitative value
     description: >-
@@ -9610,7 +9756,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
-    is_a: attribute
+    is_a: exposure event
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9620,8 +9766,6 @@ classes:
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
-    mixins:
-      - exposure event
     broad_mappings:
        # slightly broader than just drug effects on a biological system
       - SIO:001005
@@ -9641,9 +9785,8 @@ classes:
   treatment:
     aliases: ['medical action', 'medical intervention']
      # 'named thing' seems too generic here but not sure what applies better here
-    is_a: named thing
+    is_a: exposure event
     mixins:
-      - exposure event
       - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
@@ -9659,18 +9802,14 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
-    is_a: attribute
+    is_a: exposure event
     aliases: ['viral exposure', 'bacterial exposure']
-    mixins:
-      - exposure event
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
 
   geographic exposure:
     is_a: environmental exposure
-    mixins:
-      - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
@@ -9693,25 +9832,19 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A socioeconomic exposure is a factor relating to social and
       financial status of an affected individual (e.g. poverty).
@@ -10505,12 +10638,12 @@ classes:
 
   chemical gene interaction association:
     description: >-
-      describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
+      describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
-    exact_mappings:
-      - SIO:001257
+    broad_mappings:
+      - SIO:001257    ## chemical-gene association
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -10526,7 +10659,7 @@ classes:
       object:
         range: gene or gene product
       predicate:
-        subproperty_of: physically interacts with
+        subproperty_of: interacts with
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
@@ -12319,6 +12452,15 @@ enums:
       WITHDRAWN:
         description: The study was halted before enrolling its first participant.
 
+  ClinicalTrialAgeStageEnum:
+    description: >-
+      Enumeration of age stages or populations commonly used in clinical trials
+      to categorize participant demographics and target populations.
+    permissible_values:
+      adult:
+      child:
+      older_adult:
+
   ApprovalStatusEnum:
     description: >-
     permissible_values:
@@ -12567,9 +12709,8 @@ enums:
         is_a: abundance
       degradation:
       cleavage:
-        is_a: degradation
       hydrolysis:
-        is_a: degradation
+        is_a: cleavage
       metabolic_processing:
       mutation_rate:
       stability:
@@ -12580,6 +12721,7 @@ enums:
       aggregation:
       interaction:
       release:
+      isomerization:
       secretion:
         is_a: transport
       uptake:
@@ -12656,14 +12798,172 @@ enums:
 
   CausalMechanismQualifierEnum:
     permissible_values:
-      binding:
+      modulation:
         description: >-
-          A causal mechanism mediated by the direct contact between effector and target chemical or
-          biomolecular entity, which form a stable physical interaction.
+          A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or
+          unclear whether action is positive or negative
+      allosteric_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different
+          binding site than the natural ('orthosteric') ligand site.
+      mixed_allosteric_modulation:
+        is_a: allosteric_modulation
+        description: >-
+          An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect
+          in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context,
+          receptor subtype, cellular environment).
+      biphasic_allosteric_modulation:
+        is_a: mixed_allosteric_modulation
+        description: >-
+          A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations,
+          and an inhibitory effect at higher concentrations.
+      mixed_agonism:
+        is_a: modulation
+        description: >-
+          An modulation mechanism in which the effector acts as both an agonist (activating a receptor) and an antagonist
+          (blocking a receptor) at different receptor sites.
+      positive_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing
+          its activity or abundance, or its sensitivity to other factors that do so.
+      potentiation:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and enhances or intensifies the effect of some
+          other chemical or drug on its target.
+      induction:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and increases the activity/rate of an enzyme that
+          processes drugs in the body.
+        close_mappings:
+          - DGIdb:inducer
+      cofactor:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion)
+          is required for a target enzyme's biological/catalytic activity.
+      activation:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and positively affects the normal functioning of its target.
+        close_mappings:
+          - CHEMBL.MECHANISM:activator
+          - DGIdb:activator
+      positive_allosteric_modulation:
+        is_a: activation
+        description: >-
+          A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
+          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+        close_mappings:
+          - CHEMBL.MECHANISM:positive_allosteric_modulator
+          - CHEMBL.MECHANISM:positive_modulator
+          - DGIdb:positive_allosteric_modulator
+        broad_mappings:
+          - DGIdb:modulator
+          - DGIdb:allosteric_modulator
+      agonism:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector binds and activates a receptor to mimic the effect of an
+          endogenous ligand.
+        close_mappings:
+          - CHEMBL.MECHANISM:agonist
+          - DGIdb:agonist
+        narrow_mappings:
+          - CHEMBL.MECHANISM:partial_agonist
+          - DGIdb:partial_agonist
+      partial_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector binds to and only partially activates a receptor
+          (relative to the response to a full agonist)
+      biased_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector  binds to a receptor and activates certain signaling
+          pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.
+      antibody_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic
+          the effect of an endogenous ligand.
+      molecular_channel_opening:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector binds to a molecular channel and facilitates transport of
+          ions through it.
+        close_mappings:
+          - CHEMBL.MECHANISM:opener
+      stimulation:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector directly or indirectly affects its target, stimulating a
+          physiological response.
+        close_mappings:
+          - DGIdb:stimulator
+          - SEMMEDDB:STIMULATES
+          - DGIdb:stimulator
+      guanyl_nucleotide_exchange:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector catalyzes the exchange of guanosine diphosphate (GDP) for
+          guanosine triphosphate (GTP) in a guanine nucleotide-binding protein (G-protein).
+      negative_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding
+          its activity or abundance, or its sensitivity to other factors that do so.
+        narrow_mappings:
+          - DGIdb:negative_modulator
+      negative_gene_editing_modulation:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which the effector elicits the negative modulation of its target through
+          a gene editing activity.
+      gtpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein,
+          promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating
+          a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose
+          activity is attenuated through gtpase activation.
+      atpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein,
+          promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating
+          a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose
+          activity is attenuated through atpase activation.
+      antisense_oligonucleotide_inhibition:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary
+          mRNA sequence through binding and targeting it for degradation. Note that while this is called "inhibition', it is not
+          inhibition in the classic biochemical sense that requires a direct interaction between effector and target.
+      rna_interference_inhibition:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys
+          messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein.
+          Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct
+          interaction between effector and target.
+      suppression:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a
+          physiological process.
+      feedback_inhibition:
+        is_a: negative_modulation
+        description: >-
+          An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway,
+          which stops the production of the final product when it's no longer needed.
       inhibition:
-        is_a: binding
+        is_a: negative_modulation
         description: >-
-          A causal mechanism in which the effector binds to the target and negatively effects its normal function,
+          A negative modulation mechanism in which the effector binds to the target and negatively effects its normal function,
           e.g. prevention of enzymatic reaction or activation of downstream pathway.
         close_mappings:
           - DGIdb:inhibitor
@@ -12681,111 +12981,280 @@ enums:
       antibody_inhibition:
         is_a: inhibition
         description: >-
-          A causal mechanism in which an antibody specifically binds to and interferes with the target.
+          An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.
       antagonism:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist
+          An inhibition mechanism in which the effector binds to a receptor and prevents activation by an agonist
           through competing for the binding site.
         close_mappings:
           - DGIdb:antagonist
           - CHEMBL.MECHANISM:antagonist
         narrow_mappings:
           - CHEMBL.MECHANISM:allosteric_antagonist
+      allosteric_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation
+          by a positive allosteric modulator at that site.
+      non_competitive_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric),
+          or irreversibly/insurmountably inactivates the receptor - reduces the receptor’s maximal response (Emax) in a way that
+          cannot be overcome by adding more agonist.
+      competitive_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding
+          of a substrate (or another binding partner) and vice versa.
+      noncompetitive_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active
+          site, in a way that reduces the activity of the target.
+      negative_allosteric_modulation:
+        is_a: noncompetitive_inhibition
+        description: >-
+          A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
+          receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding.
+        close_mappings:
+          - CHEMBL.MECHANISM:negative_allosteric_modulator
+          - DGIdb:inhibitory_allosteric_modulator
+      gating_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism mediated by the transition of ion channels between their open (conducting) and closed
+          (non-conducting) conformational states.
+      irreversible_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which an effector permanently binds to a target, permanently disrupting its activity.
       molecular_channel_blockage:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and prevents or reduces
+          An inhibition mechanism in which the effector binds to a molecular channel and prevents or reduces
           transport of ions through it.
       inverse_agonism:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
+          An inhibition mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
           its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
         close_mappings:
           - CHEMBL.MECHANISM:inverse_agonist
           - DGIdb:inverse_agonist
-      negative_allosteric_modulation:
-        is_a: inhibition
+      binding:
+        is_a: modulation
         description: >-
-          A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
-          receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:negative_allosteric_modulator
-          - DGIdb:inhibitory_allosteric_modulator
-        narrow_mappings:
-          - DGIdb:negative_modulator
-      agonism:
-        is_a: activation
+          A modulation mechanism mediated by the direct contact between effector and target chemical or
+          biomolecular entity, which form a stable physical interaction (typically non-covalent).
+      covalent_binding:
+        is_a: modulation
         description: >-
-          A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an
-          endogenous ligand.
-        close_mappings:
-          - CHEMBL.MECHANISM:agonist
-          - DGIdb:agonist
-        narrow_mappings:
-          - CHEMBL.MECHANISM:partial_agonist
-          - DGIdb:partial_agonist
-      molecular_channel_opening:
-        is_a: activation
+          A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or
+          biomolecular entity.
+      adduction:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and facilitates transport of
-          ions through it.
-        close_mappings:
-          - CHEMBL.MECHANISM:opener
-      positive_allosteric_modulation:
-        is_a: activation
+          A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their
+          reactive metabolite(s) to a target protein.
+      crosslinking:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
-          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:positive_allosteric_modulator
-          - CHEMBL.MECHANISM:positive_modulator
-          - DGIdb:positive_allosteric_modulator
-        broad_mappings:
-          - DGIdb:modulator
-          - DGIdb:allosteric_modulator
-      potentiation:
-        is_a: binding
+          A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them
+          into a rigid structure.
+      transglutamination:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some
-          other chemical or drug on its target.
-        close_mappings:
-      activation:
-        is_a: binding
+          A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.
+      disuphide_binding:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
-        close_mappings:
-          - CHEMBL.MECHANISM:activator
-          - DGIdb:activator
-      inducer:
-        is_a: binding
-        description: >-
-          A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that
-          processes drugs in the body.
-        close_mappings:
-          - DGIdb:inducer
-      transcriptional_regulation:
-        description: >-
-          A causal mechanism mediated by through the control of target gene transcription
-      signaling_mediated_control:
-        description: >-
-          A causal mechanism mediated by the activation or control of signaling events that influence the some aspect
-          of the target entity (e.g. its activity, processing, transport, etc)
+          A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.
       stabilization:
-        is_a: activation
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which the effector increases the conformational stability of a protein or complex.
         close_mappings:
           - CHEMBL.MECHANISM:stabiliser
-      stimulation:
-        is_a: activation
-        close_mappings:
-          - DGIdb:stimulator
-          - SEMMEDDB:STIMULATES
-          - DGIdb:stimulator
-      releasing_activity:
-        is_a: activation
+      chaperone_mediated_stabilization:
+        is_a: stabilization
+        description: >-
+      destabilization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize
+          the protein and allow it to complete the folding process to yield a functional protein.
+      degradation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that controls protein and cellular component levels through the regulated breakdown and recycling of molecules.
+      cleavage:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector promotes degeneration of the target protein through cleaving of the peptide bonds.
+      hydrolysis:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector cleaves its target through a chemical reaction where a molecule of water is used to
+          break a bond.
+      disruption:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.
+      opening:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector positively effects the normal functioning of an ion channel e.g., facilitates transport
+          of ions through the channel.
+      multitarget_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.
+      chelation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector binds to a metal ion target, reducing its availability/reactivity for further interactions.
+      release:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector reverses the normal functioning of a transporter, causing release of the substrate, rather than uptake
         close_mappings:
           - CHEMBL:MECHANISM:releasing_agent
+      sequestration:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for
+          further interactions.
+      oxidoreduction:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.
+      exogenous_protein:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a protein from an exogenous source acts as a substitute or supplement for a specific protein which is
+          absent or has reduced function in an affected target/subject.
+      exogenous_gene:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a nucleic acid from an exogenous source acts as a substitute or supplement for a specific gene which
+          is absent or has reduced function in an affected target/subject.
+      transcriptional_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the control of target gene transcription.
+      translational_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the control of target gene translation.
+      catalytic_activity:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the catalytic activity of the effector on the target.
+      chemical_modification:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or
+          converting it to something else.
+      relocalization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by an effector that alters the localization of a target in the cell or body.
+      isomerization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by an effector that alters the isomeric conformation of a target.
+      signaling_mediated_control:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by the activation or control of signaling events that influence the some aspect
+          of the target entity (e.g. its activity, processing, transport, etc.).
+      immune_system_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which the actions of the effector on the immune system ultimately mediate the affects a target.
+      vaccine_antigen:
+        is_a: immune_system_modulation
+        description: >-
+          An immune system modulation mechanism in which a vaccine mediates its effect through the activation of the immune
+          system against the target.
+      post_transcriptional_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism which controls expression of a target gene at the RNA level after a gene has been transcribed
+          into messenger RNA (mRNA).
+      molecular_modification:
+        is_a: modulation
+        description: >-
+          A modulation mechanism through which an effect is mediated by the modification of a target, through addition
+          of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.
+      phosphorylation:
+        is_a: molecular_modification
+      dephosphorylation:
+        is_a: molecular_modification
+      neddylation:
+        is_a: molecular_modification
+      deneddylation:
+        is_a: molecular_modification
+      lipidation:
+        is_a: molecular_modification
+      palmitoylation:
+        is_a: lipidation
+      myristoylation:
+        is_a: lipidation
+      tyrosination:
+        is_a: molecular_modification
+      carboxylation:
+        is_a: molecular_modification
+      ubiquitination:
+        is_a: molecular_modification
+      monoubiquitination:
+        is_a: ubiquitination
+      polyubiquitination:
+        is_a: ubiquitination
+      deubiquitination:
+        is_a: molecular_modification
+      sulfation:
+        is_a: molecular_modification
+      reduction:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification mechanism in which an effector modifies a target substrate via a reduction reaction.
+      oxidation:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.
+      acetylation:
+        is_a: molecular_modification
+      deacetylation:
+        is_a: molecular_modification
+      glycosylation:
+        is_a: molecular_modification
+      deglycosylation:
+        is_a: molecular_modification
+      methylation:
+        is_a: molecular_modification
+      trimethylation:
+        is_a: methylation
+      demethylation:
+        is_a: molecular_modification
+      sumoylation:
+        is_a: molecular_modification
+      desumoylation:
+        is_a: molecular_modification
+      ADP-ribosylation:
+        is_a: molecular_modification
+      de-ADP-ribosylation:
+        is_a: molecular_modification
+      ampylation:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
+      hydroxylation:
+        is_a: molecular_modification
+      s_nitrosylation:
+        is_a: molecular_modification
 
   LogicalInterpretationEnum:
     permissible_values:

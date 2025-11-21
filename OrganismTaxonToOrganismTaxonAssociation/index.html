@@ -362,6 +362,8 @@
 
       OrganismTaxonToOrganismTaxonAssociation : object_closure
 
+      OrganismTaxonToOrganismTaxonAssociation : object_feature_name
+
       OrganismTaxonToOrganismTaxonAssociation : object_label_closure
 
       OrganismTaxonToOrganismTaxonAssociation : object_namespace
@@ -410,6 +412,8 @@
 
       OrganismTaxonToOrganismTaxonAssociation : subject_closure
 
+      OrganismTaxonToOrganismTaxonAssociation : subject_feature_name
+
       OrganismTaxonToOrganismTaxonAssociation : subject_label_closure
 
       OrganismTaxonToOrganismTaxonAssociation : subject_namespace
@@ -450,19 +454,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> organism taxon that is the subject of the association </i></br></td>
 <td>1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a>, <a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
 <td></td>
 </tr>
 <tr>
@@ -551,6 +555,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -705,7 +721,7 @@
 <details open="">
 <pre><code class="language-yaml">name: organism taxon to organism taxon association
 description: A relationship between two organism taxon nodes
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 abstract: true
 mixins:

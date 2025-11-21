@@ -357,6 +357,8 @@
 
       MacromolecularMachineToMolecularActivityAssociation : object_closure
 
+      MacromolecularMachineToMolecularActivityAssociation : object_feature_name
+
       MacromolecularMachineToMolecularActivityAssociation : object_label_closure
 
       MacromolecularMachineToMolecularActivityAssociation : object_namespace
@@ -408,6 +410,8 @@
           MacromolecularMachineToMolecularActivityAssociation --|&gt; OntologyClass : subject_category_closure
 
       MacromolecularMachineToMolecularActivityAssociation : subject_closure
+
+      MacromolecularMachineToMolecularActivityAssociation : subject_feature_name
 
       MacromolecularMachineToMolecularActivityAssociation : subject_label_closure
 
@@ -555,6 +559,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -712,7 +728,7 @@ description: A functional association between a macromolecular machine (gene, ge
   product or complex) and a molecular activity (as represented in the GO molecular
   function branch), where the entity carries out the activity, or contributes to its
   execution.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: functional association
 mixins:
 - macromolecular machine to entity association mixin

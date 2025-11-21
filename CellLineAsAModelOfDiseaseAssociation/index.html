@@ -369,6 +369,8 @@
 
           CellLineAsAModelOfDiseaseAssociation --|&gt; DirectionQualifierEnum : object_direction_qualifier
 
+      CellLineAsAModelOfDiseaseAssociation : object_feature_name
+
       CellLineAsAModelOfDiseaseAssociation : object_label_closure
 
       CellLineAsAModelOfDiseaseAssociation : object_namespace
@@ -427,6 +429,8 @@
 
           CellLineAsAModelOfDiseaseAssociation --|&gt; DirectionQualifierEnum : subject_direction_qualifier
 
+      CellLineAsAModelOfDiseaseAssociation : subject_feature_name
+
       CellLineAsAModelOfDiseaseAssociation : subject_label_closure
 
       CellLineAsAModelOfDiseaseAssociation : subject_namespace
@@ -468,25 +472,25 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> A cell line derived from an organismal entity with a disease state that is used as a model of that disease. </i></td>
 <td>1 <br/> <a href="../CellLine/">CellLine</a></td>
-<td><a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> The relationship to the disease </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td>MONDO:0020066</td>
 </tr>
 <tr>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
 <td>0..1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>MONDO:0004979, MONDO:0005148</td>
 </tr>
 <tr>
@@ -593,6 +597,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -782,7 +798,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: cell line as a model of disease association
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: cell line to disease or phenotypic feature association
 mixins:
 - model to disease association mixin

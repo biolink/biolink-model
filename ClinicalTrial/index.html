@@ -316,11 +316,41 @@
 
       ClinicalTrial : category
 
+      ClinicalTrial : clinical_trial_age_range
+
+      ClinicalTrial : clinical_trial_age_stage
+
+          ClinicalTrial --|&gt; ClinicalTrialAgeStageEnum : clinical_trial_age_stage
+
+      ClinicalTrial : clinical_trial_brief_title
+
+      ClinicalTrial : clinical_trial_conditions
+
+          ClinicalTrial --|&gt; DiseaseOrPhenotypicFeature : clinical_trial_conditions
+
+      ClinicalTrial : clinical_trial_enrollment
+
+      ClinicalTrial : clinical_trial_enrollment_type
+
+      ClinicalTrial : clinical_trial_intervention_model
+
+      ClinicalTrial : clinical_trial_interventions
+
+          ClinicalTrial --|&gt; ClinicalIntervention : clinical_trial_interventions
+
+      ClinicalTrial : clinical_trial_overall_status
+
+          ClinicalTrial --|&gt; ClinicalTrialStatusEnum : clinical_trial_overall_status
+
       ClinicalTrial : clinical_trial_phase
 
           ClinicalTrial --|&gt; ResearchPhaseEnum : clinical_trial_phase
 
       ClinicalTrial : clinical_trial_primary_purpose
+
+      ClinicalTrial : clinical_trial_start_date
+
+      ClinicalTrial : clinical_trial_tested_intervention
 
       ClinicalTrial : creation_date
 
@@ -351,6 +381,8 @@
       ClinicalTrial : provided_by
 
       ClinicalTrial : synonym
+
+      ClinicalTrial : taxon
 
       ClinicalTrial : type
 
@@ -398,6 +430,72 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../clinical_trial_intervention_model/">clinical_trial_intervention_model</a>: <br/> <i> The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_overall_status/">clinical_trial_overall_status</a>: <br/> <i> The overall status of a clinical trial as determined by clinicaltrials.gov </i></td>
+<td>0..1 <br/> <a href="../ClinicalTrialStatusEnum/">ClinicalTrialStatusEnum</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_brief_title/">clinical_trial_brief_title</a>: <br/> <i> The brief title of a clinical trial as determined by clinicaltrials.gov </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_enrollment_type/">clinical_trial_enrollment_type</a>: <br/> <i> The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated) </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_start_date/">clinical_trial_start_date</a>: <br/> <i> The start date of a clinical trial as determined by clinicaltrials.gov </i></td>
+<td>0..1 <br/> <a href="../Date/">Date</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_enrollment/">clinical_trial_enrollment</a>: <br/> <i> The enrollment number of a clinical trial as determined by clinicaltrials.gov </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_age_stage/">clinical_trial_age_stage</a>: <br/> <i> The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult) </i></td>
+<td>0..1 <br/> <a href="../ClinicalTrialAgeStageEnum/">ClinicalTrialAgeStageEnum</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_age_range/">clinical_trial_age_range</a>: <br/> <i> The age range of a clinical trial as determined by clinicaltrials.gov </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_tested_intervention/">clinical_trial_tested_intervention</a>: <br/> <i> Records whether the clinical trials are testing the intervention. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_interventions/">clinical_trial_interventions</a>: <br/> <i> connects a clinical trial to one or more interventions being tested in the trial </i></td>
+<td>* <br/> <a href="../ClinicalIntervention/">ClinicalIntervention</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../clinical_trial_conditions/">clinical_trial_conditions</a>: <br/> <i> connects a clinical trial to one or more conditions being studied in the trial </i></td>
+<td>* <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../creation_date/">creation_date</a>: <br/> <i> date on which an entity was created. This can be applied to nodes or edges </i></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td>direct</td>
@@ -434,14 +532,20 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
-<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -512,6 +616,72 @@
 <td>domain</td>
 <td><a href="./">ClinicalTrial</a></td>
 </tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_intervention_model/">clinical_trial_intervention_model</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_overall_status/">clinical_trial_overall_status</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_brief_title/">clinical_trial_brief_title</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_enrollment_type/">clinical_trial_enrollment_type</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_start_date/">clinical_trial_start_date</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_enrollment/">clinical_trial_enrollment</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_age_stage/">clinical_trial_age_stage</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_age_range/">clinical_trial_age_range</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_tested_intervention/">clinical_trial_tested_intervention</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_interventions/">clinical_trial_interventions</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
+<tr>
+<td><a href="./">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_conditions/">clinical_trial_conditions</a></td>
+<td>domain</td>
+<td><a href="./">ClinicalTrial</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="valid-id-prefixes">Valid ID Prefixes</h2>
@@ -538,7 +708,7 @@ id_prefixes:
 description: A clinical trial is a research study that prospectively assigns human
   participants or groups of humans to one or more health-related interventions to
   evaluate the effects on health outcomes.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - NCIT:C71104
 - SIO:001000
@@ -546,6 +716,17 @@ is_a: study
 slots:
 - clinical trial phase
 - clinical trial primary purpose
+- clinical trial intervention model
+- clinical trial overall status
+- clinical trial brief title
+- clinical trial enrollment type
+- clinical trial start date
+- clinical trial enrollment
+- clinical trial age stage
+- clinical trial age range
+- clinical trial tested intervention
+- clinical trial interventions
+- clinical trial conditions
 - creation date
 
 </code></pre>

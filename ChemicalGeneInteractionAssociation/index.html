@@ -294,7 +294,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-chemicalgeneinteractionassociation"><strong>  Class: ChemicalGeneInteractionAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</i><br/>
+<strong>Description:</strong><i> describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class ChemicalGeneInteractionAssociation
@@ -364,6 +364,8 @@
 
           ChemicalGeneInteractionAssociation --|&gt; AnatomicalEntity : object_context_qualifier
 
+      ChemicalGeneInteractionAssociation : object_feature_name
+
       ChemicalGeneInteractionAssociation : object_form_or_variant_qualifier
 
           ChemicalGeneInteractionAssociation --|&gt; ChemicalOrGeneOrGeneProductFormOrVariantEnum : object_form_or_variant_qualifier
@@ -427,6 +429,8 @@
       ChemicalGeneInteractionAssociation : subject_derivative_qualifier
 
           ChemicalGeneInteractionAssociation --|&gt; ChemicalEntityDerivativeEnum : subject_derivative_qualifier
+
+      ChemicalGeneInteractionAssociation : subject_feature_name
 
       ChemicalGeneInteractionAssociation : subject_form_or_variant_qualifier
 
@@ -626,6 +630,18 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../subject_category/">subject_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -774,13 +790,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: chemical gene interaction association
-description: describes a physical interaction between a chemical entity and a gene
-  or gene product. Any biological or chemical effect resulting from such an interaction
-  are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact
+description: describes an interaction between a chemical entity and a gene or gene
+  product. Any biological or chemical effect resulting from such an interaction are
+  out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact
   of a chemical on the abundance, activity, structure, etc, of either participant
   in the interaction)
-from_schema: https://w3id.org/biolink/biolink-model
-exact_mappings:
+from_schema: https://w3id.org/biolink/vocab/
+broad_mappings:
 - SIO:001257
 is_a: association
 slots:
@@ -801,7 +817,7 @@ slot_usage:
     range: gene or gene product
   predicate:
     name: predicate
-    subproperty_of: physically interacts with
+    subproperty_of: interacts with
   subject form or variant qualifier:
     name: subject form or variant qualifier
     range: ChemicalOrGeneOrGeneProductFormOrVariantEnum

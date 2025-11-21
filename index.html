@@ -1143,6 +1143,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.</td>
 </tr>
 <tr>
+<td><a href="ExposureEvent/">ExposureEvent</a></td>
+<td>A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes</td>
+</tr>
+<tr>
 <td><a href="Food/">Food</a></td>
 <td>A substance consumed by a living organism as a source of nutrition</td>
 </tr>
@@ -1606,16 +1610,28 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>chapter of a book</td>
 </tr>
 <tr>
-<td><a href="chembl_chirality/">chembl_chirality</a></td>
-<td>Tern indicating the chirality of the chemical entity.</td>
+<td><a href="clinical_trial_age_range/">clinical_trial_age_range</a></td>
+<td>The age range of a clinical trial as determined by clinicaltrials.gov</td>
 </tr>
 <tr>
-<td><a href="chembl_drug_warning/">chembl_drug_warning</a></td>
-<td>Text describing warnings for use of chemicals as therapeutics.</td>
+<td><a href="clinical_trial_age_stage/">clinical_trial_age_stage</a></td>
+<td>The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)</td>
 </tr>
 <tr>
-<td><a href="chembl_prodrug/">chembl_prodrug</a></td>
-<td>Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.</td>
+<td><a href="clinical_trial_brief_title/">clinical_trial_brief_title</a></td>
+<td>The brief title of a clinical trial as determined by clinicaltrials.gov</td>
+</tr>
+<tr>
+<td><a href="clinical_trial_conditions/">clinical_trial_conditions</a></td>
+<td>connects a clinical trial to one or more conditions being studied in the trial</td>
+</tr>
+<tr>
+<td><a href="clinical_trial_enrollment/">clinical_trial_enrollment</a></td>
+<td>The enrollment number of a clinical trial as determined by clinicaltrials.gov</td>
+</tr>
+<tr>
+<td><a href="clinical_trial_enrollment_type/">clinical_trial_enrollment_type</a></td>
+<td>The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated)</td>
 </tr>
 <tr>
 <td><a href="clinical_trial_intervention_boxed_warning/">clinical_trial_intervention_boxed_warning</a></td>
@@ -1624,6 +1640,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="clinical_trial_intervention_model/">clinical_trial_intervention_model</a></td>
 <td>The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).</td>
+</tr>
+<tr>
+<td><a href="clinical_trial_interventions/">clinical_trial_interventions</a></td>
+<td>connects a clinical trial to one or more interventions being tested in the trial</td>
 </tr>
 <tr>
 <td><a href="clinical_trial_overall_status/">clinical_trial_overall_status</a></td>
@@ -1636,6 +1656,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="clinical_trial_primary_purpose/">clinical_trial_primary_purpose</a></td>
 <td>The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).</td>
+</tr>
+<tr>
+<td><a href="clinical_trial_start_date/">clinical_trial_start_date</a></td>
+<td>The start date of a clinical trial as determined by clinicaltrials.gov</td>
 </tr>
 <tr>
 <td><a href="clinical_trial_tested_intervention/">clinical_trial_tested_intervention</a></td>
@@ -1666,12 +1690,40 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="equivalent_identifiers/">equivalent_identifiers</a></td>
-<td>A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.</td>
-</tr>
-<tr>
 <td><a href="exact_synonym/">exact_synonym</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>Additional conditions impacting an exposure event.</td>
+</tr>
+<tr>
+<td><a href="exposure_duration/">exposure_duration</a></td>
+<td>Duration of an exposure event.</td>
+</tr>
+<tr>
+<td><a href="exposure_end_age/">exposure_end_age</a></td>
+<td>Ending stage of an exposure event.</td>
+</tr>
+<tr>
+<td><a href="exposure_magnitude/">exposure_magnitude</a></td>
+<td>Magnitude of an exposure event, e.g, parts per million of a toxic chemical.</td>
+</tr>
+<tr>
+<td><a href="exposure_route/">exposure_route</a></td>
+<td>Route of exposure.</td>
+</tr>
+<tr>
+<td><a href="exposure_start_age/">exposure_start_age</a></td>
+<td>Starting age of an exposure event.</td>
+</tr>
+<tr>
+<td><a href="exposure_type/">exposure_type</a></td>
+<td>Type of exposure</td>
+</tr>
+<tr>
+<td><a href="exposure_vehicle/">exposure_vehicle</a></td>
+<td>Type of an exposure event.</td>
 </tr>
 <tr>
 <td><a href="format/">format</a></td>
@@ -1768,10 +1820,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="in_taxon_label/">in_taxon_label</a></td>
 <td>The human readable scientific name for the taxon of the entity.</td>
-</tr>
-<tr>
-<td><a href="information_content/">information_content</a></td>
-<td>Information content (IC) value for a term, primarily from Automats.</td>
 </tr>
 <tr>
 <td><a href="ingest_date/">ingest_date</a></td>
@@ -1892,6 +1940,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="systematic_synonym/">systematic_synonym</a></td>
 <td>more commonly used for gene symbols in yeast</td>
+</tr>
+<tr>
+<td><a href="taxon/">taxon</a></td>
+<td>A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.</td>
 </tr>
 <tr>
 <td><a href="trade_name/">trade_name</a></td>
@@ -3172,7 +3224,7 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td>describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
 </tr>
 <tr>
 <td><a href="ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation</a></td>
@@ -3782,6 +3834,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).</td>
 </tr>
 <tr>
+<td><a href="object_feature_name/">object_feature_name</a></td>
+<td>Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease</td>
+</tr>
+<tr>
 <td><a href="object_form_or_variant_qualifier/">object_form_or_variant_qualifier</a></td>
 <td>A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement).</td>
 </tr>
@@ -3994,6 +4050,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).</td>
 </tr>
 <tr>
+<td><a href="subject_feature_name/">subject_feature_name</a></td>
+<td>Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene</td>
+</tr>
+<tr>
 <td><a href="subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a></td>
 <td>A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).</td>
 </tr>
@@ -4062,8 +4122,8 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A uri or curie pointing to information about the methodology used to generate data supporting an Association.</td>
 </tr>
 <tr>
-<td><a href="supporting_study_method_type/">supporting_study_method_type</a></td>
-<td>A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).</td>
+<td><a href="supporting_study_method_types/">supporting_study_method_types</a></td>
+<td>Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).</td>
 </tr>
 <tr>
 <td><a href="supporting_study_size/">supporting_study_size</a></td>
@@ -4131,6 +4191,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="ClinicalApprovalStatusEnum/">ClinicalApprovalStatusEnum</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td><a href="ClinicalTrialAgeStageEnum/">ClinicalTrialAgeStageEnum</a></td>
+<td>Enumeration of age stages or populations commonly used in clinical trials to categorize participant demographics and target populations.</td>
 </tr>
 <tr>
 <td><a href="ClinicalTrialStatusEnum/">ClinicalTrialStatusEnum</a></td>

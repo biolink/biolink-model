@@ -688,14 +688,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>Qualifiers for entity to disease or phenotype associations.</td>
 <td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
-<td>Describes a regulatory relationship between two genes or gene products.</td>
-<td>yes</td>
 </tr>
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
@@ -703,8 +698,8 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td>Qualifiers for entity to disease or phenotype associations.</td>
+<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>Qualifiers for disease or phenotype to entity associations.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -713,19 +708,24 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
+<td>Qualifiers for entity to gene associations.</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../EntityToFeatureOrVariantQualifiersMixin/">EntityToFeatureOrVariantQualifiersMixin</a></td>
 <td>Qualifiers for entity to variant associations.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td>Describes a regulatory relationship between two genes or gene products.</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
-<td>Qualifiers for entity to gene associations.</td>
-<td>no</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -748,7 +748,7 @@ notes:
   ‘affects’ is needed for the core triple reading, but does not make sense in the
   full statement reading  (because “Chemical X affects increased expression of Gene
   Y'''' is not what we mean to say here: it causes increased expression of Gene Y)'
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: qualifier
 domain: association
 alias: qualified_predicate

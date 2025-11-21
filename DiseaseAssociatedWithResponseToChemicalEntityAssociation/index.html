@@ -356,6 +356,8 @@
 
       DiseaseAssociatedWithResponseToChemicalEntityAssociation : object_closure
 
+      DiseaseAssociatedWithResponseToChemicalEntityAssociation : object_feature_name
+
       DiseaseAssociatedWithResponseToChemicalEntityAssociation : object_label_closure
 
       DiseaseAssociatedWithResponseToChemicalEntityAssociation : object_namespace
@@ -411,6 +413,8 @@
           DiseaseAssociatedWithResponseToChemicalEntityAssociation --|&gt; OntologyClass : subject_category_closure
 
       DiseaseAssociatedWithResponseToChemicalEntityAssociation : subject_closure
+
+      DiseaseAssociatedWithResponseToChemicalEntityAssociation : subject_feature_name
 
       DiseaseAssociatedWithResponseToChemicalEntityAssociation : subject_label_closure
 
@@ -561,6 +565,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -717,7 +733,7 @@
 description: A statistical association between a disease and a chemical entity where
   the chemical entity has a therapeutic or adverse effect on the disease progression,
   symptoms or outcomes in a patient, cell line, or any model system.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 slots:
 - response context qualifier

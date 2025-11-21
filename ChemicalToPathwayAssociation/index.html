@@ -356,6 +356,8 @@
 
       ChemicalToPathwayAssociation : object_closure
 
+      ChemicalToPathwayAssociation : object_feature_name
+
       ChemicalToPathwayAssociation : object_label_closure
 
       ChemicalToPathwayAssociation : object_namespace
@@ -403,6 +405,8 @@
           ChemicalToPathwayAssociation --|&gt; OntologyClass : subject_category_closure
 
       ChemicalToPathwayAssociation : subject_closure
+
+      ChemicalToPathwayAssociation : subject_feature_name
 
       ChemicalToPathwayAssociation : subject_label_closure
 
@@ -541,6 +545,18 @@
 </tr>
 <tr>
 <td><a href="../original_object/">original_object</a>: <br/> <i> used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -696,7 +712,7 @@
 <pre><code class="language-yaml">name: chemical to pathway association
 description: An interaction between a chemical entity and a biological process or
   pathway.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - SIO:001250
 is_a: association

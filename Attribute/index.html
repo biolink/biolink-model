@@ -323,16 +323,6 @@
       Attribute &lt;|-- Zygosity
       Attribute &lt;|-- ClinicalAttribute
       Attribute &lt;|-- SocioeconomicAttribute
-      Attribute &lt;|-- GenomicBackgroundExposure
-      Attribute &lt;|-- PathologicalProcessExposure
-      Attribute &lt;|-- PathologicalAnatomicalExposure
-      Attribute &lt;|-- DiseaseOrPhenotypicFeatureExposure
-      Attribute &lt;|-- ChemicalExposure
-      Attribute &lt;|-- ComplexChemicalExposure
-      Attribute &lt;|-- BioticExposure
-      Attribute &lt;|-- EnvironmentalExposure
-      Attribute &lt;|-- BehavioralExposure
-      Attribute &lt;|-- SocioeconomicExposure
 
 
       Attribute : category
@@ -373,6 +363,8 @@
 
       Attribute : synonym
 
+      Attribute : taxon
+
       Attribute : type
 
       Attribute : xref
@@ -391,16 +383,6 @@
 <li><a href="../Zygosity/">Zygosity</a></li>
 <li><a href="../ClinicalAttribute/">ClinicalAttribute</a></li>
 <li><a href="../SocioeconomicAttribute/">SocioeconomicAttribute</a></li>
-<li><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a> <a href="../GeneGroupingMixin/">GeneGroupingMixin</a> <a href="../PhysicalEssence/">PhysicalEssence</a> <a href="../GenomicEntity/">GenomicEntity</a> <a href="../ThingWithTaxon/">ThingWithTaxon</a> <a href="../OntologyClass/">OntologyClass</a>]</li>
-<li><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
-<li><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
-<li><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a> <a href="../PathologicalEntityMixin/">PathologicalEntityMixin</a>]</li>
-<li><a href="../ChemicalExposure/">ChemicalExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
-<li><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></li>
-<li><a href="../BioticExposure/">BioticExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
-<li><a href="../EnvironmentalExposure/">EnvironmentalExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
-<li><a href="../BehavioralExposure/">BehavioralExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
-<li><a href="../SocioeconomicExposure/">SocioeconomicExposure</a> [ <a href="../ExposureEvent/">ExposureEvent</a>]</li>
 </ul>
 </li>
 </ul>
@@ -452,7 +434,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>
 <tr>
@@ -480,14 +462,20 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
-<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -1639,21 +1627,9 @@
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
-<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td><a href="../has_attribute/">has_attribute</a></td>
+<td>range</td>
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
@@ -1670,24 +1646,6 @@
 </tr>
 <tr>
 <td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>range</td>
 <td><a href="./">Attribute</a></td>
@@ -1700,44 +1658,8 @@
 </tr>
 <tr>
 <td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>range</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
@@ -1754,38 +1676,8 @@
 </tr>
 <tr>
 <td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>range</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
@@ -1797,18 +1689,6 @@
 <tr>
 <td><a href="../DrugExposure/">DrugExposure</a></td>
 <td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DrugExposure/">DrugExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DrugExposure/">DrugExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>domain</td>
 <td><a href="./">Attribute</a></td>
 </tr>
@@ -1821,18 +1701,6 @@
 <tr>
 <td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
 <td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
 <td>domain</td>
 <td><a href="./">Attribute</a></td>
 </tr>
@@ -1850,44 +1718,8 @@
 </tr>
 <tr>
 <td><a href="../BioticExposure/">BioticExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../BioticExposure/">BioticExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../BioticExposure/">BioticExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../BioticExposure/">BioticExposure</a></td>
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>range</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../GeographicExposure/">GeographicExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../GeographicExposure/">GeographicExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../GeographicExposure/">GeographicExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
@@ -1898,68 +1730,14 @@
 </tr>
 <tr>
 <td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>range</td>
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
 <td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
 <td><a href="../has_attribute/">has_attribute</a></td>
 <td>range</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
-<td><a href="../has_attribute_type/">has_attribute_type</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
-<td><a href="../has_quantitative_value/">has_quantitative_value</a></td>
-<td>domain</td>
-<td><a href="./">Attribute</a></td>
-</tr>
-<tr>
-<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
-<td><a href="../has_qualitative_value/">has_qualitative_value</a></td>
-<td>domain</td>
 <td><a href="./">Attribute</a></td>
 </tr>
 <tr>
@@ -2611,7 +2389,7 @@ description: A property or characteristic of an entity. For example, an apple ma
   have attributes such as depth, lat, long, material.
 in_subset:
 - samples
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - SIO:000614
 is_a: named thing

@@ -700,14 +700,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneExpressionMixin/">GeneExpressionMixin</a></td>
-<td>Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
 <td>An association between a gene and a gene expression site, possibly qualified by stage/timing info.</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../GeneExpressionMixin/">GeneExpressionMixin</a></td>
+<td>Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -736,7 +736,7 @@ examples:
   description: larval stage
 in_subset:
 - translator_minimal
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: statement qualifier
 domain: association
 alias: stage_qualifier

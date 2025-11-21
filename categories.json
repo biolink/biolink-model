@@ -34,10 +34,6 @@
                 "parent": "NamedThing",
                 "children": [
                     {
-                        "name": "behavioral_exposure",
-                        "parent": "attribute"
-                    },
-                    {
                         "name": "biological_sex",
                         "parent": "attribute",
                         "children": [
@@ -48,26 +44,6 @@
                             {
                                 "name": "phenotypic_sex",
                                 "parent": "biological_sex"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "biotic_exposure",
-                        "parent": "attribute"
-                    },
-                    {
-                        "name": "chemical_exposure",
-                        "parent": "attribute",
-                        "children": [
-                            {
-                                "name": "drug_exposure",
-                                "parent": "chemical_exposure",
-                                "children": [
-                                    {
-                                        "name": "drug_to_gene_interaction_exposure",
-                                        "parent": "drug_exposure"
-                                    }
-                                ]
                             }
                         ]
                     },
@@ -100,28 +76,6 @@
                         ]
                     },
                     {
-                        "name": "complex_chemical_exposure",
-                        "parent": "attribute"
-                    },
-                    {
-                        "name": "disease_or_phenotypic_feature_exposure",
-                        "parent": "attribute"
-                    },
-                    {
-                        "name": "environmental_exposure",
-                        "parent": "attribute",
-                        "children": [
-                            {
-                                "name": "geographic_exposure",
-                                "parent": "environmental_exposure"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "genomic_background_exposure",
-                        "parent": "attribute"
-                    },
-                    {
                         "name": "organism_attribute",
                         "parent": "attribute",
                         "children": [
@@ -132,19 +86,7 @@
                         ]
                     },
                     {
-                        "name": "pathological_anatomical_exposure",
-                        "parent": "attribute"
-                    },
-                    {
-                        "name": "pathological_process_exposure",
-                        "parent": "attribute"
-                    },
-                    {
                         "name": "socioeconomic_attribute",
-                        "parent": "attribute"
-                    },
-                    {
-                        "name": "socioeconomic_exposure",
                         "parent": "attribute"
                     },
                     {
@@ -532,6 +474,74 @@
                 "parent": "NamedThing"
             },
             {
+                "name": "exposure_event",
+                "parent": "NamedThing",
+                "children": [
+                    {
+                        "name": "behavioral_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "biotic_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "chemical_exposure",
+                        "parent": "exposure_event",
+                        "children": [
+                            {
+                                "name": "drug_exposure",
+                                "parent": "chemical_exposure",
+                                "children": [
+                                    {
+                                        "name": "drug_to_gene_interaction_exposure",
+                                        "parent": "drug_exposure"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "complex_chemical_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "disease_or_phenotypic_feature_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "environmental_exposure",
+                        "parent": "exposure_event",
+                        "children": [
+                            {
+                                "name": "geographic_exposure",
+                                "parent": "environmental_exposure"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "genomic_background_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "pathological_anatomical_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "pathological_process_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "socioeconomic_exposure",
+                        "parent": "exposure_event"
+                    },
+                    {
+                        "name": "treatment",
+                        "parent": "exposure_event"
+                    }
+                ]
+            },
+            {
                 "name": "information_content_entity",
                 "parent": "NamedThing",
                 "children": [
@@ -695,10 +705,6 @@
             },
             {
                 "name": "procedure",
-                "parent": "NamedThing"
-            },
-            {
-                "name": "treatment",
                 "parent": "NamedThing"
             }
         ]

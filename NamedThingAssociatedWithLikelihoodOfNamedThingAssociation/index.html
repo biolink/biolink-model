@@ -359,6 +359,8 @@
 
           NamedThingAssociatedWithLikelihoodOfNamedThingAssociation --|&gt; OntologyClass : object_context_qualifier
 
+      NamedThingAssociatedWithLikelihoodOfNamedThingAssociation : object_feature_name
+
       NamedThingAssociatedWithLikelihoodOfNamedThingAssociation : object_label_closure
 
       NamedThingAssociatedWithLikelihoodOfNamedThingAssociation : object_namespace
@@ -416,6 +418,8 @@
       NamedThingAssociatedWithLikelihoodOfNamedThingAssociation : subject_context_qualifier
 
           NamedThingAssociatedWithLikelihoodOfNamedThingAssociation --|&gt; OntologyClass : subject_context_qualifier
+
+      NamedThingAssociatedWithLikelihoodOfNamedThingAssociation : subject_feature_name
 
       NamedThingAssociatedWithLikelihoodOfNamedThingAssociation : subject_label_closure
 
@@ -589,6 +593,18 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../subject_feature_name/">subject_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_feature_name/">object_feature_name</a>: <br/> <i> Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../subject_category/">subject_category</a>: <br/> <i> Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>0..1 <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -738,7 +754,7 @@
 <details open="">
 <pre><code class="language-yaml">name: named thing associated with likelihood of named thing association
 description: ''
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 slots:
 - subject

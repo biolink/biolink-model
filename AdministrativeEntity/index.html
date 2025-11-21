@@ -327,6 +327,8 @@
 
       AdministrativeEntity : synonym
 
+      AdministrativeEntity : taxon
+
       AdministrativeEntity : type
 
       AdministrativeEntity : xref
@@ -382,14 +384,20 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
-<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -446,7 +454,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: administrative entity
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: named thing
 abstract: true
 

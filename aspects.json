@@ -36,18 +36,18 @@
                 "parent": "[root]"
             },
             {
-                "name": "degradation",
+                "name": "cleavage",
                 "parent": "[root]",
                 "children": [
                     {
-                        "name": "cleavage",
-                        "parent": "degradation"
-                    },
-                    {
                         "name": "hydrolysis",
-                        "parent": "degradation"
+                        "parent": "cleavage"
                     }
                 ]
+            },
+            {
+                "name": "degradation",
+                "parent": "[root]"
             },
             {
                 "name": "folding",
@@ -55,6 +55,10 @@
             },
             {
                 "name": "interaction",
+                "parent": "[root]"
+            },
+            {
+                "name": "isomerization",
                 "parent": "[root]"
             },
             {

@@ -306,9 +306,8 @@
 <p>Aliases: medical action, medical intervention  </p>
 <div class="mermaid"> classDiagram
     class Treatment
-      ExposureEvent &lt;|-- Treatment
       ChemicalOrDrugOrTreatment &lt;|-- Treatment
-      NamedThing &lt;|-- Treatment
+      ExposureEvent &lt;|-- Treatment
 
       Treatment : category
 
@@ -317,6 +316,22 @@
       Treatment : description
 
       Treatment : equivalent_identifiers
+
+      Treatment : exposure_additional_condition
+
+      Treatment : exposure_duration
+
+      Treatment : exposure_end_age
+
+      Treatment : exposure_magnitude
+
+      Treatment : exposure_route
+
+      Treatment : exposure_start_age
+
+      Treatment : exposure_type
+
+      Treatment : exposure_vehicle
 
       Treatment : full_name
 
@@ -348,6 +363,8 @@
 
       Treatment : synonym
 
+      Treatment : taxon
+
       Treatment : timepoint
 
       Treatment : type
@@ -360,7 +377,10 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>Treatment</strong> [ <a href="../ExposureEvent/">ExposureEvent</a> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a>]</li>
+<li><a href="../ExposureEvent/">ExposureEvent</a> [ <a href="../OntologyClass/">OntologyClass</a>]<ul>
+<li><strong>Treatment</strong> [ <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a>]</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -402,6 +422,60 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../exposure_type/">exposure_type</a>: <br/> <i> Type of exposure </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a>: <br/> <i> Type of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_route/">exposure_route</a>: <br/> <i> Route of exposure. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_start_age/">exposure_start_age</a>: <br/> <i> Starting age of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_end_age/">exposure_end_age</a>: <br/> <i> Ending stage of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_duration/">exposure_duration</a>: <br/> <i> Duration of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Time/">Time</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a>: <br/> <i> Magnitude of an exposure event, e.g, parts per million of a toxic chemical. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a>: <br/> <i> Additional conditions impacting an exposure event. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ExposureEvent/">ExposureEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a>: <br/> <i> Could generally be a CURIE from a suitable exposure ontology like ECTO. </i></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
@@ -426,21 +500,21 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
-<td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -511,7 +585,7 @@
 <pre><code class="language-yaml">name: treatment
 description: A treatment is targeted at a disease or phenotype and may involve multiple
   drug 'exposures', medical devices and/or procedures
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - medical action
 - medical intervention
@@ -520,9 +594,8 @@ exact_mappings:
 - SIO:001398
 broad_mappings:
 - MAXO:0000058
-is_a: named thing
+is_a: exposure event
 mixins:
-- exposure event
 - chemical or drug or treatment
 slots:
 - has drug

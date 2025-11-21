@@ -759,6 +759,11 @@
 <td>None</td>
 </tr>
 <tr>
+<td>isomerization</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
 <td>secretion</td>
 <td>None</td>
 <td>None</td>
@@ -973,7 +978,7 @@
 <details open>
 
 <pre><code class="language-yaml">name: GeneOrGeneProductOrChemicalEntityAspectEnum
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 permissible_values:
   activity_or_abundance:
     text: activity_or_abundance
@@ -996,10 +1001,9 @@ permissible_values:
     text: degradation
   cleavage:
     text: cleavage
-    is_a: degradation
   hydrolysis:
     text: hydrolysis
-    is_a: degradation
+    is_a: cleavage
   metabolic_processing:
     text: metabolic_processing
   mutation_rate:
@@ -1020,6 +1024,8 @@ permissible_values:
     text: interaction
   release:
     text: release
+  isomerization:
+    text: isomerization
   secretion:
     text: secretion
     is_a: transport

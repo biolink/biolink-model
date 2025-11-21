@@ -333,6 +333,8 @@
 
       PosttranslationalModification : synonym
 
+      PosttranslationalModification : taxon
+
       PosttranslationalModification : type
 
       PosttranslationalModification : xref
@@ -384,7 +386,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -396,7 +398,13 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -406,8 +414,8 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
-<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -467,7 +475,7 @@
 description: A chemical modification of a polypeptide or protein that occurs after
   translation. e.g. polypeptide cleavage to form separate proteins, methylation or
   acetylation of histone tail amino acids, protein ubiquitination.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 is_a: biological entity
 mixins:
 - gene product isoform mixin

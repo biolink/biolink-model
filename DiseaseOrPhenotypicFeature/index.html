@@ -350,6 +350,8 @@
 
       DiseaseOrPhenotypicFeature : synonym
 
+      DiseaseOrPhenotypicFeature : taxon
+
       DiseaseOrPhenotypicFeature : type
 
       DiseaseOrPhenotypicFeature : xref
@@ -393,7 +395,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>
 <tr>
@@ -433,14 +435,20 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
-<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
@@ -521,6 +529,12 @@
 <td><a href="../BehavioralFeature/">BehavioralFeature</a></td>
 <td><a href="../inheritance/">inheritance</a></td>
 <td>domain</td>
+<td><a href="./">DiseaseOrPhenotypicFeature</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../clinical_trial_conditions/">clinical_trial_conditions</a></td>
+<td>range</td>
 <td><a href="./">DiseaseOrPhenotypicFeature</a></td>
 </tr>
 <tr>
@@ -623,7 +637,7 @@ description: Either one of a disease or an individual phenotypic feature. Some k
   see definitions of phenotypic feature and disease in this model for their independent
   descriptions.  This class is helpful to enforce domains and ranges that may involve
   either a disease or a phenotypic feature.
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - phenome
 narrow_mappings:

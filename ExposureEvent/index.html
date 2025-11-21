@@ -279,13 +279,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mixin-usage">
-<span class="md-ellipsis">
-      Mixin Usage
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
 <span class="md-ellipsis">
       Usages
@@ -314,6 +307,7 @@
 <div class="mermaid"> classDiagram
     class ExposureEvent
       OntologyClass &lt;|-- ExposureEvent
+      NamedThing &lt;|-- ExposureEvent
 
 
       ExposureEvent &lt;|-- GenomicBackgroundExposure
@@ -321,25 +315,86 @@
       ExposureEvent &lt;|-- PathologicalAnatomicalExposure
       ExposureEvent &lt;|-- DiseaseOrPhenotypicFeatureExposure
       ExposureEvent &lt;|-- ChemicalExposure
-      ExposureEvent &lt;|-- DrugExposure
+      ExposureEvent &lt;|-- ComplexChemicalExposure
       ExposureEvent &lt;|-- Treatment
       ExposureEvent &lt;|-- BioticExposure
-      ExposureEvent &lt;|-- GeographicExposure
       ExposureEvent &lt;|-- EnvironmentalExposure
       ExposureEvent &lt;|-- BehavioralExposure
       ExposureEvent &lt;|-- SocioeconomicExposure
 
 
+      ExposureEvent : category
+
+      ExposureEvent : deprecated
+
+      ExposureEvent : description
+
+      ExposureEvent : equivalent_identifiers
+
+      ExposureEvent : exposure_additional_condition
+
+      ExposureEvent : exposure_duration
+
+      ExposureEvent : exposure_end_age
+
+      ExposureEvent : exposure_magnitude
+
+      ExposureEvent : exposure_route
+
+      ExposureEvent : exposure_start_age
+
+      ExposureEvent : exposure_type
+
+      ExposureEvent : exposure_vehicle
+
+      ExposureEvent : full_name
+
+      ExposureEvent : has_attribute
+
+          ExposureEvent --|&gt; Attribute : has_attribute
+
       ExposureEvent : id
 
+      ExposureEvent : information_content
+
+      ExposureEvent : iri
+
+      ExposureEvent : name
+
+      ExposureEvent : provided_by
+
+      ExposureEvent : synonym
+
+      ExposureEvent : taxon
+
       ExposureEvent : timepoint
+
+      ExposureEvent : type
+
+      ExposureEvent : xref
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../OntologyClass/">OntologyClass</a><ul>
-<li><strong>ExposureEvent</strong></li>
+<li><a href="../Entity/">Entity</a><ul>
+<li><a href="../NamedThing/">NamedThing</a><ul>
+<li><strong>ExposureEvent</strong> [ <a href="../OntologyClass/">OntologyClass</a>]<ul>
+<li><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a> [ <a href="../GeneGroupingMixin/">GeneGroupingMixin</a> <a href="../PhysicalEssence/">PhysicalEssence</a> <a href="../GenomicEntity/">GenomicEntity</a> <a href="../ThingWithTaxon/">ThingWithTaxon</a> <a href="../OntologyClass/">OntologyClass</a>]</li>
+<li><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></li>
+<li><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></li>
+<li><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a> [ <a href="../PathologicalEntityMixin/">PathologicalEntityMixin</a>]</li>
+<li><a href="../ChemicalExposure/">ChemicalExposure</a></li>
+<li><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></li>
+<li><a href="../Treatment/">Treatment</a> [ <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a>]</li>
+<li><a href="../BioticExposure/">BioticExposure</a></li>
+<li><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></li>
+<li><a href="../BehavioralExposure/">BehavioralExposure</a></li>
+<li><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -361,69 +416,142 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a></td>
+<td><a href="../exposure_type/">exposure_type</a>: <br/> <i> Type of exposure </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
 <td></td>
 </tr>
-</tbody>
-</table>
-<h2 id="mixin-usage">Mixin Usage</h2>
-<table>
-<thead>
 <tr>
-<th>mixed into</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
-<td>A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.</td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a>: <br/> <i> Type of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
-<td>A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.</td>
+<td><a href="../exposure_route/">exposure_route</a>: <br/> <i> Route of exposure. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
-<td>An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.</td>
+<td><a href="../exposure_start_age/">exposure_start_age</a>: <br/> <i> Starting age of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
-<td>A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.</td>
+<td><a href="../exposure_end_age/">exposure_end_age</a>: <br/> <i> Ending stage of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
-<td>A chemical exposure is an intake of a particular chemical entity.</td>
+<td><a href="../exposure_duration/">exposure_duration</a>: <br/> <i> Duration of an exposure event. </i></td>
+<td>0..1 <br/> <a href="../Time/">Time</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../DrugExposure/">DrugExposure</a></td>
-<td>A drug exposure is an intake of a particular drug.</td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a>: <br/> <i> Magnitude of an exposure event, e.g, parts per million of a toxic chemical. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../Treatment/">Treatment</a></td>
-<td>A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures</td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a>: <br/> <i> Additional conditions impacting an exposure event. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../BioticExposure/">BioticExposure</a></td>
-<td>An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).</td>
+<td><a href="../id/">id</a>: <br/> <i> Could generally be a CURIE from a suitable exposure ontology like ECTO. </i></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../GeographicExposure/">GeographicExposure</a></td>
-<td>A geographic exposure is a factor relating to geographic proximity to some impactful entity.</td>
+<td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
-<td>A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.</td>
+<td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
-<td>A behavioral exposure is a factor relating to behavior impacting an individual.</td>
+<td><a href="../full_name/">full_name</a>: <br/> <i> a long-form human readable name for a thing </i></td>
+<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
-<td>A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).</td>
+<td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../equivalent_identifiers/">equivalent_identifiers</a>: <br/> <i> A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources. </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../information_content/">information_content</a>: <br/> <i> Information content (IC) value for a term, primarily from Automats. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../taxon/">taxon</a>: <br/> <i> A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../iri/">iri</a>: <br/> <i> An IRI for an entity. This is determined by the id using expansion rules. </i></td>
+<td>0..1 <br/> <a href="../IriType/">IriType</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../category/">category</a>: <br/> <i> Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values <code>biolink:Protein</code>, <code>biolink:GeneProduct</code>, <code>biolink:MolecularEntity</code>. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature <code>f</code> may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} </i></td>
+<td>1..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
+<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../description/">description</a>: <br/> <i> a human-readable description of an entity </i></td>
+<td>0..1 <br/> <a href="../NarrativeText/">NarrativeText</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../has_attribute/">has_attribute</a>: <br/> <i> connects any entity to an attribute </i></td>
+<td>* <br/> <a href="../Attribute/">Attribute</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../deprecated/">deprecated</a>: <br/> <i> A boolean flag indicating that an entity is no longer considered current or valid. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Entity/">Entity</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -438,6 +566,726 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="./">ExposureEvent</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicBackgroundExposure/">GenomicBackgroundExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalProcessExposure/">PathologicalProcessExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../PathologicalAnatomicalExposure/">PathologicalAnatomicalExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureExposure/">DiseaseOrPhenotypicFeatureExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalExposure/">ChemicalExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../ComplexChemicalExposure/">ComplexChemicalExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugExposure/">DrugExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneInteractionExposure/">DrugToGeneInteractionExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Treatment/">Treatment</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BioticExposure/">BioticExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../GeographicExposure/">GeographicExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../EnvironmentalExposure/">EnvironmentalExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../BehavioralExposure/">BehavioralExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_type/">exposure_type</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_vehicle/">exposure_vehicle</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_route/">exposure_route</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_start_age/">exposure_start_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_end_age/">exposure_end_age</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_duration/">exposure_duration</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_magnitude/">exposure_magnitude</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SocioeconomicExposure/">SocioeconomicExposure</a></td>
+<td><a href="../exposure_additional_condition/">exposure_additional_condition</a></td>
+<td>domain</td>
+<td><a href="./">ExposureEvent</a></td>
+</tr>
 <tr>
 <td><a href="../EntityToExposureEventAssociationMixin/">EntityToExposureEventAssociationMixin</a></td>
 <td><a href="../object/">object</a></td>
@@ -466,16 +1314,30 @@ description: A (possibly time bounded) incidence of a feature of the environment
   mediated by genes
 in_subset:
 - model_organism_database
-from_schema: https://w3id.org/biolink/biolink-model
+from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - exposure
 - experimental condition
 exact_mappings:
 - XCO:0000000
-is_a: ontology class
-mixin: true
+is_a: named thing
+mixins:
+- ontology class
 slots:
 - timepoint
+- exposure type
+- exposure vehicle
+- exposure route
+- exposure start age
+- exposure end age
+- exposure duration
+- exposure magnitude
+- exposure additional condition
+slot_usage:
+  id:
+    name: id
+    description: Could generally be a CURIE from a suitable exposure ontology like
+      ECTO.
 
 </code></pre>
 </details>
