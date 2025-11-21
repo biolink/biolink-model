@@ -43,24 +43,106 @@ enum ApprovalStatusEnum
 
 enum CausalMechanismQualifierEnum
   {
-    binding
+    modulation
+    allosteric_modulation
+    mixed_allosteric_modulation
+    biphasic_allosteric_modulation
+    mixed_agonism
+    positive_modulation
+    potentiation
+    induction
+    cofactor
+    activation
+    positive_allosteric_modulation
+    agonism
+    partial_agonism
+    biased_agonism
+    antibody_agonism
+    molecular_channel_opening
+    stimulation
+    guanyl_nucleotide_exchange
+    negative_modulation
+    negative_gene_editing_modulation
+    gtpase_activation
+    atpase_activation
+    antisense_oligonucleotide_inhibition
+    rna_interference_inhibition
+    suppression
+    feedback_inhibition
     inhibition
     antibody_inhibition
     antagonism
+    allosteric_antagonism
+    non_competitive_antagonism
+    competitive_inhibition
+    noncompetitive_inhibition
+    negative_allosteric_modulation
+    gating_inhibition
+    irreversible_inhibition
     molecular_channel_blockage
     inverse_agonism
-    negative_allosteric_modulation
-    agonism
-    molecular_channel_opening
-    positive_allosteric_modulation
-    potentiation
-    activation
-    inducer
-    transcriptional_regulation
-    signaling_mediated_control
+    binding
+    covalent_binding
+    adduction
+    crosslinking
+    transglutamination
+    disuphide_binding
     stabilization
-    stimulation
-    releasing_activity
+    chaperone_mediated_stabilization
+    destabilization
+    degradation
+    cleavage
+    hydrolysis
+    disruption
+    opening
+    multitarget_modulation
+    chelation
+    release
+    sequestration
+    oxidoreduction
+    exogenous_protein
+    exogenous_gene
+    transcriptional_regulation
+    translational_regulation
+    catalytic_activity
+    chemical_modification
+    relocalization
+    isomerization
+    signaling_mediated_control
+    immune_system_modulation
+    vaccine_antigen
+    post_transcriptional_regulation
+    molecular_modification
+    phosphorylation
+    dephosphorylation
+    neddylation
+    deneddylation
+    lipidation
+    palmitoylation
+    myristoylation
+    tyrosination
+    carboxylation
+    ubiquitination
+    monoubiquitination
+    polyubiquitination
+    deubiquitination
+    sulfation
+    reduction
+    oxidation
+    acetylation
+    deacetylation
+    glycosylation
+    deglycosylation
+    methylation
+    trimethylation
+    demethylation
+    sumoylation
+    desumoylation
+    ADP__HYPHEN_MINUS__ribosylation
+    de__HYPHEN_MINUS__ADP__HYPHEN_MINUS__ribosylation
+    ampylation
+    hydroxylation
+    s_nitrosylation
   }
 
 enum ChemicalEntityDerivativeEnum
@@ -174,6 +256,7 @@ enum GeneOrGeneProductOrChemicalEntityAspectEnum
     aggregation
     interaction
     release
+    isomerization
     secretion
     uptake
     splicing

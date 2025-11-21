@@ -328,6 +328,7 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
     aggregation = "aggregation"
     interaction = "interaction"
     release = "release"
+    isomerization = "isomerization"
     secretion = "secretion"
     uptake = "uptake"
     splicing = "splicing"
@@ -369,69 +370,322 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
 
 
 class CausalMechanismQualifierEnum(str, Enum):
-    binding = "binding"
+    modulation = "modulation"
     """
-    A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.
+    A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or unclear whether action is positive or negative
     """
-    inhibition = "inhibition"
+    allosteric_modulation = "allosteric_modulation"
     """
-    A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.
+    A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different binding site than the natural ('orthosteric') ligand site.
     """
-    antibody_inhibition = "antibody_inhibition"
+    mixed_allosteric_modulation = "mixed_allosteric_modulation"
     """
-    A causal mechanism in which an antibody specifically binds to and interferes with the target.
+    An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context, receptor subtype, cellular environment).
     """
-    antagonism = "antagonism"
+    biphasic_allosteric_modulation = "biphasic_allosteric_modulation"
     """
-    A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.
+    A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations, and an inhibitory effect at higher concentrations.
     """
-    molecular_channel_blockage = "molecular_channel_blockage"
+    mixed_agonism = "mixed_agonism"
     """
-    A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.
+    An modulation mechanism in which the effector acts as both an agonist (activating a receptor) and an antagonist (blocking a receptor) at different receptor sites.
     """
-    inverse_agonism = "inverse_agonism"
+    positive_modulation = "positive_modulation"
     """
-    A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
-    """
-    negative_allosteric_modulation = "negative_allosteric_modulation"
-    """
-    A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-    """
-    agonism = "agonism"
-    """
-    A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.
-    """
-    molecular_channel_opening = "molecular_channel_opening"
-    """
-    A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.
-    """
-    positive_allosteric_modulation = "positive_allosteric_modulation"
-    """
-    A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+    A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing its activity or abundance, or its sensitivity to other factors that do so.
     """
     potentiation = "potentiation"
     """
-    A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.
+    A positive modulation mechanism in which the effector binds to and enhances or intensifies the effect of some other chemical or drug on its target.
+    """
+    induction = "induction"
+    """
+    A positive modulation mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.
+    """
+    cofactor = "cofactor"
+    """
+    A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion) is required for a target enzyme's biological/catalytic activity.
     """
     activation = "activation"
     """
-    A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+    A positive modulation mechanism in which the effector binds to and positively affects the normal functioning of its target.
     """
-    inducer = "inducer"
+    positive_allosteric_modulation = "positive_allosteric_modulation"
     """
-    A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.
+    A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+    """
+    agonism = "agonism"
+    """
+    An activation mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.
+    """
+    partial_agonism = "partial_agonism"
+    """
+    An agonism mechanism in which the effector binds to and only partially activates a receptor (relative to the response to a full agonist)
+    """
+    biased_agonism = "biased_agonism"
+    """
+    An agonism mechanism in which the effector  binds to a receptor and activates certain signaling pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.
+    """
+    antibody_agonism = "antibody_agonism"
+    """
+    An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic the effect of an endogenous ligand.
+    """
+    molecular_channel_opening = "molecular_channel_opening"
+    """
+    An activation mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.
+    """
+    stimulation = "stimulation"
+    """
+    An activation mechanism in which the effector directly or indirectly affects its target, stimulating a physiological response.
+    """
+    guanyl_nucleotide_exchange = "guanyl_nucleotide_exchange"
+    """
+    An activation mechanism in which the effector catalyzes the exchange of guanosine diphosphate (GDP) for guanosine triphosphate (GTP) in a guanine nucleotide-binding protein (G-protein).
+    """
+    negative_modulation = "negative_modulation"
+    """
+    A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding its activity or abundance, or its sensitivity to other factors that do so.
+    """
+    negative_gene_editing_modulation = "negative_gene_editing_modulation"
+    """
+    A negative modulation mechanism in which the effector elicits the negative modulation of its target through a gene editing activity.
+    """
+    gtpase_activation = "gtpase_activation"
+    """
+    An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein, promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose activity is attenuated through gtpase activation.
+    """
+    atpase_activation = "atpase_activation"
+    """
+    An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein, promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose activity is attenuated through atpase activation.
+    """
+    antisense_oligonucleotide_inhibition = "antisense_oligonucleotide_inhibition"
+    """
+    A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary mRNA sequence through binding and targeting it for degradation. Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct interaction between effector and target.
+    """
+    rna_interference_inhibition = "rna_interference_inhibition"
+    """
+    A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein. Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct interaction between effector and target.
+    """
+    suppression = "suppression"
+    """
+    A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a physiological process.
+    """
+    feedback_inhibition = "feedback_inhibition"
+    """
+    An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway, which stops the production of the final product when it's no longer needed.
+    """
+    inhibition = "inhibition"
+    """
+    A negative modulation mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.
+    """
+    antibody_inhibition = "antibody_inhibition"
+    """
+    An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.
+    """
+    antagonism = "antagonism"
+    """
+    An inhibition mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.
+    """
+    allosteric_antagonism = "allosteric_antagonism"
+    """
+    An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation by a positive allosteric modulator at that site.
+    """
+    non_competitive_antagonism = "non_competitive_antagonism"
+    """
+    An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric), or irreversibly/insurmountably inactivates the receptor - reduces the receptor’s maximal response (Emax) in a way that cannot be overcome by adding more agonist.
+    """
+    competitive_inhibition = "competitive_inhibition"
+    """
+    An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding of a substrate (or another binding partner) and vice versa.
+    """
+    noncompetitive_inhibition = "noncompetitive_inhibition"
+    """
+    An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active site, in a way that reduces the activity of the target.
+    """
+    negative_allosteric_modulation = "negative_allosteric_modulation"
+    """
+    A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding.
+    """
+    gating_inhibition = "gating_inhibition"
+    """
+    An inhibition mechanism mediated by the transition of ion channels between their open (conducting) and closed (non-conducting) conformational states.
+    """
+    irreversible_inhibition = "irreversible_inhibition"
+    """
+    An inhibition mechanism in which an effector permanently binds to a target, permanently disrupting its activity.
+    """
+    molecular_channel_blockage = "molecular_channel_blockage"
+    """
+    An inhibition mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.
+    """
+    inverse_agonism = "inverse_agonism"
+    """
+    An inhibition mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
+    """
+    binding = "binding"
+    """
+    A modulation mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction (typically non-covalent).
+    """
+    covalent_binding = "covalent_binding"
+    """
+    A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or biomolecular entity.
+    """
+    adduction = "adduction"
+    """
+    A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their reactive metabolite(s) to a target protein.
+    """
+    crosslinking = "crosslinking"
+    """
+    A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them into a rigid structure.
+    """
+    transglutamination = "transglutamination"
+    """
+    A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.
+    """
+    disuphide_binding = "disuphide_binding"
+    """
+    A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.
+    """
+    stabilization = "stabilization"
+    """
+    A modulation mechanism in which the effector increases the conformational stability of a protein or complex.
+    """
+    chaperone_mediated_stabilization = "chaperone_mediated_stabilization"
+    destabilization = "destabilization"
+    """
+    A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize the protein and allow it to complete the folding process to yield a functional protein.
+    """
+    degradation = "degradation"
+    """
+    A modulation mechanism that controls protein and cellular component levels through the regulated breakdown and recycling of molecules.
+    """
+    cleavage = "cleavage"
+    """
+    A modulation mechanism in which an effector promotes degeneration of the target protein through cleaving of the peptide bonds.
+    """
+    hydrolysis = "hydrolysis"
+    """
+    A modulation mechanism in which an effector cleaves its target through a chemical reaction where a molecule of water is used to break a bond.
+    """
+    disruption = "disruption"
+    """
+    A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.
+    """
+    opening = "opening"
+    """
+    A modulation mechanism in which an effector positively effects the normal functioning of an ion channel e.g., facilitates transport of ions through the channel.
+    """
+    multitarget_modulation = "multitarget_modulation"
+    """
+    A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.
+    """
+    chelation = "chelation"
+    """
+    A modulation mechanism in which an effector binds to a metal ion target, reducing its availability/reactivity for further interactions.
+    """
+    release = "release"
+    """
+    A modulation mechanism in which an effector reverses the normal functioning of a transporter, causing release of the substrate, rather than uptake
+    """
+    sequestration = "sequestration"
+    """
+    A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for further interactions.
+    """
+    oxidoreduction = "oxidoreduction"
+    """
+    A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.
+    """
+    exogenous_protein = "exogenous_protein"
+    """
+    A modulation mechanism in which a protein from an exogenous source acts as a substitute or supplement for a specific protein which is absent or has reduced function in an affected target/subject.
+    """
+    exogenous_gene = "exogenous_gene"
+    """
+    A modulation mechanism in which a nucleic acid from an exogenous source acts as a substitute or supplement for a specific gene which is absent or has reduced function in an affected target/subject.
     """
     transcriptional_regulation = "transcriptional_regulation"
     """
-    A causal mechanism mediated by through the control of target gene transcription
+    A modulation mechanism mediated by through the control of target gene transcription.
+    """
+    translational_regulation = "translational_regulation"
+    """
+    A modulation mechanism mediated by through the control of target gene translation.
+    """
+    catalytic_activity = "catalytic_activity"
+    """
+    A modulation mechanism mediated by through the catalytic activity of the effector on the target.
+    """
+    chemical_modification = "chemical_modification"
+    """
+    A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or converting it to something else.
+    """
+    relocalization = "relocalization"
+    """
+    A modulation mechanism mediated by an effector that alters the localization of a target in the cell or body.
+    """
+    isomerization = "isomerization"
+    """
+    A modulation mechanism mediated by an effector that alters the isomeric conformation of a target.
     """
     signaling_mediated_control = "signaling_mediated_control"
     """
-    A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)
+    A modulation mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc.).
     """
-    stabilization = "stabilization"
-    stimulation = "stimulation"
-    releasing_activity = "releasing_activity"
+    immune_system_modulation = "immune_system_modulation"
+    """
+    A modulation mechanism in which the actions of the effector on the immune system ultimately mediate the affects a target.
+    """
+    vaccine_antigen = "vaccine_antigen"
+    """
+    An immune system modulation mechanism in which a vaccine mediates its effect through the activation of the immune system against the target.
+    """
+    post_transcriptional_regulation = "post_transcriptional_regulation"
+    """
+    A modulation mechanism which controls expression of a target gene at the RNA level after a gene has been transcribed into messenger RNA (mRNA).
+    """
+    molecular_modification = "molecular_modification"
+    """
+    A modulation mechanism through which an effect is mediated by the modification of a target, through addition of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.
+    """
+    phosphorylation = "phosphorylation"
+    dephosphorylation = "dephosphorylation"
+    neddylation = "neddylation"
+    deneddylation = "deneddylation"
+    lipidation = "lipidation"
+    palmitoylation = "palmitoylation"
+    myristoylation = "myristoylation"
+    tyrosination = "tyrosination"
+    carboxylation = "carboxylation"
+    ubiquitination = "ubiquitination"
+    monoubiquitination = "monoubiquitination"
+    polyubiquitination = "polyubiquitination"
+    deubiquitination = "deubiquitination"
+    sulfation = "sulfation"
+    reduction = "reduction"
+    """
+    A molecular modification mechanism in which an effector modifies a target substrate via a reduction reaction.
+    """
+    oxidation = "oxidation"
+    """
+    A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.
+    """
+    acetylation = "acetylation"
+    deacetylation = "deacetylation"
+    glycosylation = "glycosylation"
+    deglycosylation = "deglycosylation"
+    methylation = "methylation"
+    trimethylation = "trimethylation"
+    demethylation = "demethylation"
+    sumoylation = "sumoylation"
+    desumoylation = "desumoylation"
+    ADP_ribosylation = "ADP-ribosylation"
+    de_ADP_ribosylation = "de-ADP-ribosylation"
+    ampylation = "ampylation"
+    """
+    A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
+    """
+    hydroxylation = "hydroxylation"
+    s_nitrosylation = "s_nitrosylation"
 
 
 class LogicalInterpretationEnum(str, Enum):

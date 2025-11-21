@@ -1447,12 +1447,11 @@
           "text": "degradation"
         },
         {
-          "text": "cleavage",
-          "is_a": "degradation"
+          "text": "cleavage"
         },
         {
           "text": "hydrolysis",
-          "is_a": "degradation"
+          "is_a": "cleavage"
         },
         {
           "text": "metabolic_processing"
@@ -1483,6 +1482,9 @@
         },
         {
           "text": "release"
+        },
+        {
+          "text": "isomerization"
         },
         {
           "text": "secretion",
@@ -1641,13 +1643,173 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
-          "text": "binding",
-          "description": "A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction."
+          "text": "modulation",
+          "description": "A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or unclear whether action is positive or negative"
+        },
+        {
+          "text": "allosteric_modulation",
+          "description": "A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different binding site than the natural ('orthosteric') ligand site.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "mixed_allosteric_modulation",
+          "description": "An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context, receptor subtype, cellular environment).",
+          "is_a": "allosteric_modulation"
+        },
+        {
+          "text": "biphasic_allosteric_modulation",
+          "description": "A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations, and an inhibitory effect at higher concentrations.",
+          "is_a": "mixed_allosteric_modulation"
+        },
+        {
+          "text": "mixed_agonism",
+          "description": "An modulation mechanism in which the effector acts as both an agonist (activating a receptor) and an antagonist (blocking a receptor) at different receptor sites.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "positive_modulation",
+          "description": "A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing its activity or abundance, or its sensitivity to other factors that do so.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "potentiation",
+          "description": "A positive modulation mechanism in which the effector binds to and enhances or intensifies the effect of some other chemical or drug on its target.",
+          "is_a": "positive_modulation"
+        },
+        {
+          "text": "induction",
+          "description": "A positive modulation mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.",
+          "is_a": "positive_modulation",
+          "close_mappings": [
+            "DGIdb:inducer"
+          ]
+        },
+        {
+          "text": "cofactor",
+          "description": "A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion) is required for a target enzyme's biological/catalytic activity.",
+          "is_a": "positive_modulation"
+        },
+        {
+          "text": "activation",
+          "description": "A positive modulation mechanism in which the effector binds to and positively affects the normal functioning of its target.",
+          "is_a": "positive_modulation",
+          "close_mappings": [
+            "CHEMBL.MECHANISM:activator",
+            "DGIdb:activator"
+          ]
+        },
+        {
+          "text": "positive_allosteric_modulation",
+          "description": "A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
+          "is_a": "activation",
+          "close_mappings": [
+            "CHEMBL.MECHANISM:positive_allosteric_modulator",
+            "CHEMBL.MECHANISM:positive_modulator",
+            "DGIdb:positive_allosteric_modulator"
+          ],
+          "broad_mappings": [
+            "DGIdb:modulator",
+            "DGIdb:allosteric_modulator"
+          ]
+        },
+        {
+          "text": "agonism",
+          "description": "An activation mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.",
+          "is_a": "activation",
+          "close_mappings": [
+            "CHEMBL.MECHANISM:agonist",
+            "DGIdb:agonist"
+          ],
+          "narrow_mappings": [
+            "CHEMBL.MECHANISM:partial_agonist",
+            "DGIdb:partial_agonist"
+          ]
+        },
+        {
+          "text": "partial_agonism",
+          "description": "An agonism mechanism in which the effector binds to and only partially activates a receptor (relative to the response to a full agonist)",
+          "is_a": "agonism"
+        },
+        {
+          "text": "biased_agonism",
+          "description": "An agonism mechanism in which the effector  binds to a receptor and activates certain signaling pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.",
+          "is_a": "agonism"
+        },
+        {
+          "text": "antibody_agonism",
+          "description": "An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic the effect of an endogenous ligand.",
+          "is_a": "agonism"
+        },
+        {
+          "text": "molecular_channel_opening",
+          "description": "An activation mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.",
+          "is_a": "activation",
+          "close_mappings": [
+            "CHEMBL.MECHANISM:opener"
+          ]
+        },
+        {
+          "text": "stimulation",
+          "description": "An activation mechanism in which the effector directly or indirectly affects its target, stimulating a physiological response.",
+          "is_a": "activation",
+          "close_mappings": [
+            "DGIdb:stimulator",
+            "SEMMEDDB:STIMULATES",
+            "DGIdb:stimulator"
+          ]
+        },
+        {
+          "text": "guanyl_nucleotide_exchange",
+          "description": "An activation mechanism in which the effector catalyzes the exchange of guanosine diphosphate (GDP) for guanosine triphosphate (GTP) in a guanine nucleotide-binding protein (G-protein).",
+          "is_a": "activation"
+        },
+        {
+          "text": "negative_modulation",
+          "description": "A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding its activity or abundance, or its sensitivity to other factors that do so.",
+          "is_a": "modulation",
+          "narrow_mappings": [
+            "DGIdb:negative_modulator"
+          ]
+        },
+        {
+          "text": "negative_gene_editing_modulation",
+          "description": "A negative modulation mechanism in which the effector elicits the negative modulation of its target through a gene editing activity.",
+          "is_a": "negative_modulation"
+        },
+        {
+          "text": "gtpase_activation",
+          "description": "An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein, promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose activity is attenuated through gtpase activation.",
+          "is_a": "negative_modulation"
+        },
+        {
+          "text": "atpase_activation",
+          "description": "An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein, promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose activity is attenuated through atpase activation.",
+          "is_a": "negative_modulation"
+        },
+        {
+          "text": "antisense_oligonucleotide_inhibition",
+          "description": "A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary mRNA sequence through binding and targeting it for degradation. Note that while this is called \"inhibition', it is not inhibition in the classic biochemical sense that requires a direct interaction between effector and target.",
+          "is_a": "negative_modulation"
+        },
+        {
+          "text": "rna_interference_inhibition",
+          "description": "A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein. Note that while this is called \"inhibition', it is not inhibition in the classic biochemical sense that requires a direct interaction between effector and target.",
+          "is_a": "negative_modulation"
+        },
+        {
+          "text": "suppression",
+          "description": "A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a physiological process.",
+          "is_a": "negative_modulation"
+        },
+        {
+          "text": "feedback_inhibition",
+          "description": "An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway, which stops the production of the final product when it's no longer needed.",
+          "is_a": "negative_modulation"
         },
         {
           "text": "inhibition",
-          "description": "A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.",
-          "is_a": "binding",
+          "description": "A negative modulation mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.",
+          "is_a": "negative_modulation",
           "close_mappings": [
             "DGIdb:inhibitor",
             "SEMMEDDB:INHIBITS"
@@ -1666,12 +1828,12 @@
         },
         {
           "text": "antibody_inhibition",
-          "description": "A causal mechanism in which an antibody specifically binds to and interferes with the target.",
+          "description": "An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.",
           "is_a": "inhibition"
         },
         {
           "text": "antagonism",
-          "description": "A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.",
+          "description": "An inhibition mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.",
           "is_a": "inhibition",
           "close_mappings": [
             "DGIdb:antagonist",
@@ -1682,13 +1844,52 @@
           ]
         },
         {
+          "text": "allosteric_antagonism",
+          "description": "An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation by a positive allosteric modulator at that site.",
+          "is_a": "antagonism"
+        },
+        {
+          "text": "non_competitive_antagonism",
+          "description": "An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric), or irreversibly/insurmountably inactivates the receptor - reduces the receptor\u2019s maximal response (Emax) in a way that cannot be overcome by adding more agonist.",
+          "is_a": "antagonism"
+        },
+        {
+          "text": "competitive_inhibition",
+          "description": "An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding of a substrate (or another binding partner) and vice versa.",
+          "is_a": "inhibition"
+        },
+        {
+          "text": "noncompetitive_inhibition",
+          "description": "An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active site, in a way that reduces the activity of the target.",
+          "is_a": "inhibition"
+        },
+        {
+          "text": "negative_allosteric_modulation",
+          "description": "A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding.",
+          "is_a": "noncompetitive_inhibition",
+          "close_mappings": [
+            "CHEMBL.MECHANISM:negative_allosteric_modulator",
+            "DGIdb:inhibitory_allosteric_modulator"
+          ]
+        },
+        {
+          "text": "gating_inhibition",
+          "description": "An inhibition mechanism mediated by the transition of ion channels between their open (conducting) and closed (non-conducting) conformational states.",
+          "is_a": "inhibition"
+        },
+        {
+          "text": "irreversible_inhibition",
+          "description": "An inhibition mechanism in which an effector permanently binds to a target, permanently disrupting its activity.",
+          "is_a": "inhibition"
+        },
+        {
           "text": "molecular_channel_blockage",
-          "description": "A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.",
+          "description": "An inhibition mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.",
           "is_a": "inhibition"
         },
         {
           "text": "inverse_agonism",
-          "description": "A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.",
+          "description": "An inhibition mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.",
           "is_a": "inhibition",
           "close_mappings": [
             "CHEMBL.MECHANISM:inverse_agonist",
@@ -1696,104 +1897,293 @@
           ]
         },
         {
-          "text": "negative_allosteric_modulation",
-          "description": "A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
-          "is_a": "inhibition",
-          "close_mappings": [
-            "CHEMBL.MECHANISM:negative_allosteric_modulator",
-            "DGIdb:inhibitory_allosteric_modulator"
-          ],
-          "narrow_mappings": [
-            "DGIdb:negative_modulator"
-          ]
+          "text": "binding",
+          "description": "A modulation mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction (typically non-covalent).",
+          "is_a": "modulation"
         },
         {
-          "text": "agonism",
-          "description": "A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.",
-          "is_a": "activation",
-          "close_mappings": [
-            "CHEMBL.MECHANISM:agonist",
-            "DGIdb:agonist"
-          ],
-          "narrow_mappings": [
-            "CHEMBL.MECHANISM:partial_agonist",
-            "DGIdb:partial_agonist"
-          ]
+          "text": "covalent_binding",
+          "description": "A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or biomolecular entity.",
+          "is_a": "modulation"
         },
         {
-          "text": "molecular_channel_opening",
-          "description": "A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.",
-          "is_a": "activation",
-          "close_mappings": [
-            "CHEMBL.MECHANISM:opener"
-          ]
+          "text": "adduction",
+          "description": "A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their reactive metabolite(s) to a target protein.",
+          "is_a": "covalent_binding"
         },
         {
-          "text": "positive_allosteric_modulation",
-          "description": "A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)",
-          "is_a": "activation",
-          "close_mappings": [
-            "CHEMBL.MECHANISM:positive_allosteric_modulator",
-            "CHEMBL.MECHANISM:positive_modulator",
-            "DGIdb:positive_allosteric_modulator"
-          ],
-          "broad_mappings": [
-            "DGIdb:modulator",
-            "DGIdb:allosteric_modulator"
-          ]
+          "text": "crosslinking",
+          "description": "A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them into a rigid structure.",
+          "is_a": "covalent_binding"
         },
         {
-          "text": "potentiation",
-          "description": "A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.",
-          "is_a": "binding"
+          "text": "transglutamination",
+          "description": "A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.",
+          "is_a": "covalent_binding"
         },
         {
-          "text": "activation",
-          "description": "A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.",
-          "is_a": "binding",
-          "close_mappings": [
-            "CHEMBL.MECHANISM:activator",
-            "DGIdb:activator"
-          ]
-        },
-        {
-          "text": "inducer",
-          "description": "A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.",
-          "is_a": "binding",
-          "close_mappings": [
-            "DGIdb:inducer"
-          ]
-        },
-        {
-          "text": "transcriptional_regulation",
-          "description": "A causal mechanism mediated by through the control of target gene transcription"
-        },
-        {
-          "text": "signaling_mediated_control",
-          "description": "A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)"
+          "text": "disuphide_binding",
+          "description": "A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.",
+          "is_a": "covalent_binding"
         },
         {
           "text": "stabilization",
-          "is_a": "activation",
+          "description": "A modulation mechanism in which the effector increases the conformational stability of a protein or complex.",
+          "is_a": "modulation",
           "close_mappings": [
             "CHEMBL.MECHANISM:stabiliser"
           ]
         },
         {
-          "text": "stimulation",
-          "is_a": "activation",
-          "close_mappings": [
-            "DGIdb:stimulator",
-            "SEMMEDDB:STIMULATES",
-            "DGIdb:stimulator"
-          ]
+          "text": "chaperone_mediated_stabilization",
+          "description": "",
+          "is_a": "stabilization"
         },
         {
-          "text": "releasing_activity",
-          "is_a": "activation",
+          "text": "destabilization",
+          "description": "A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize the protein and allow it to complete the folding process to yield a functional protein.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "degradation",
+          "description": "A modulation mechanism that controls protein and cellular component levels through the regulated breakdown and recycling of molecules.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "cleavage",
+          "description": "A modulation mechanism in which an effector promotes degeneration of the target protein through cleaving of the peptide bonds.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "hydrolysis",
+          "description": "A modulation mechanism in which an effector cleaves its target through a chemical reaction where a molecule of water is used to break a bond.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "disruption",
+          "description": "A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "opening",
+          "description": "A modulation mechanism in which an effector positively effects the normal functioning of an ion channel e.g., facilitates transport of ions through the channel.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "multitarget_modulation",
+          "description": "A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "chelation",
+          "description": "A modulation mechanism in which an effector binds to a metal ion target, reducing its availability/reactivity for further interactions.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "release",
+          "description": "A modulation mechanism in which an effector reverses the normal functioning of a transporter, causing release of the substrate, rather than uptake",
+          "is_a": "modulation",
           "close_mappings": [
             "CHEMBL:MECHANISM:releasing_agent"
           ]
+        },
+        {
+          "text": "sequestration",
+          "description": "A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for further interactions.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "oxidoreduction",
+          "description": "A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "exogenous_protein",
+          "description": "A modulation mechanism in which a protein from an exogenous source acts as a substitute or supplement for a specific protein which is absent or has reduced function in an affected target/subject.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "exogenous_gene",
+          "description": "A modulation mechanism in which a nucleic acid from an exogenous source acts as a substitute or supplement for a specific gene which is absent or has reduced function in an affected target/subject.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "transcriptional_regulation",
+          "description": "A modulation mechanism mediated by through the control of target gene transcription.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "translational_regulation",
+          "description": "A modulation mechanism mediated by through the control of target gene translation.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "catalytic_activity",
+          "description": "A modulation mechanism mediated by through the catalytic activity of the effector on the target.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "chemical_modification",
+          "description": "A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or converting it to something else.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "relocalization",
+          "description": "A modulation mechanism mediated by an effector that alters the localization of a target in the cell or body.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "isomerization",
+          "description": "A modulation mechanism mediated by an effector that alters the isomeric conformation of a target.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "signaling_mediated_control",
+          "description": "A modulation mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc.).",
+          "is_a": "modulation"
+        },
+        {
+          "text": "immune_system_modulation",
+          "description": "A modulation mechanism in which the actions of the effector on the immune system ultimately mediate the affects a target.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "vaccine_antigen",
+          "description": "An immune system modulation mechanism in which a vaccine mediates its effect through the activation of the immune system against the target.",
+          "is_a": "immune_system_modulation"
+        },
+        {
+          "text": "post_transcriptional_regulation",
+          "description": "A modulation mechanism which controls expression of a target gene at the RNA level after a gene has been transcribed into messenger RNA (mRNA).",
+          "is_a": "modulation"
+        },
+        {
+          "text": "molecular_modification",
+          "description": "A modulation mechanism through which an effect is mediated by the modification of a target, through addition of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.",
+          "is_a": "modulation"
+        },
+        {
+          "text": "phosphorylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "dephosphorylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "neddylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "deneddylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "lipidation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "palmitoylation",
+          "is_a": "lipidation"
+        },
+        {
+          "text": "myristoylation",
+          "is_a": "lipidation"
+        },
+        {
+          "text": "tyrosination",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "carboxylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "ubiquitination",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "monoubiquitination",
+          "is_a": "ubiquitination"
+        },
+        {
+          "text": "polyubiquitination",
+          "is_a": "ubiquitination"
+        },
+        {
+          "text": "deubiquitination",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "sulfation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "reduction",
+          "description": "A molecular modification mechanism in which an effector modifies a target substrate via a reduction reaction.",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "oxidation",
+          "description": "A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "acetylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "deacetylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "glycosylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "deglycosylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "methylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "trimethylation",
+          "is_a": "methylation"
+        },
+        {
+          "text": "demethylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "sumoylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "desumoylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "ADP-ribosylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "de-ADP-ribosylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "ampylation",
+          "description": "A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "hydroxylation",
+          "is_a": "molecular_modification"
+        },
+        {
+          "text": "s_nitrosylation",
+          "is_a": "molecular_modification"
         }
       ]
     },
@@ -6847,15 +7237,6 @@
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "close_mappings": [
-        "https://www.ebi.ac.uk/chembl/mechanism/inspect/binding_agent",
-        "https://www.ebi.ac.uk/chembl/mechanism/inspect/chelating_agent",
-        "https://www.ebi.ac.uk/chembl/mechanism/inspect/cross-linking_agent",
-        "https://www.ebi.ac.uk/chembl/mechanism/inspect/oxidative_enzyme",
-        "https://www.ebi.ac.uk/chembl/mechanism/inspect/sequestering_agent",
-        "https://www.ebi.ac.uk/chembl/mechanism/inspect/substrate",
-        "http://identifiers.org/drugbank/target"
-      ],
       "narrow_mappings": [
         "http://identifiers.org/drugbank/drug-interaction",
         "http://purl.obolibrary.org/obo/FMA_adheres_to",
@@ -30267,6 +30648,9 @@
       "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
       "description": "A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "close_mappings": [
+        "DRUGBANK:target"
+      ],
       "is_a": "MacromolecularMachineMixin",
       "mixin": true,
       "slots": [
@@ -39934,9 +40318,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-19T20:37:46",
-  "source_file_size": 436545,
-  "generation_date": "2025-11-19T20:37:52",
+  "source_file_date": "2025-11-21T14:55:38",
+  "source_file_size": 453105,
+  "generation_date": "2025-11-21T14:55:58",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

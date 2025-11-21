@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-19T20:38:07
+# Generation date: 2025-11-21T14:56:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -14469,6 +14469,7 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     aggregation = PermissibleValue(text="aggregation")
     interaction = PermissibleValue(text="interaction")
     release = PermissibleValue(text="release")
+    isomerization = PermissibleValue(text="isomerization")
     secretion = PermissibleValue(text="secretion")
     uptake = PermissibleValue(text="uptake")
     splicing = PermissibleValue(text="splicing")
@@ -14518,58 +14519,259 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
 class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
-    binding = PermissibleValue(
-        text="binding",
-        description="""A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.""")
-    inhibition = PermissibleValue(
-        text="inhibition",
-        description="""A causal mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.""")
-    antibody_inhibition = PermissibleValue(
-        text="antibody_inhibition",
-        description="A causal mechanism in which an antibody specifically binds to and interferes with the target.")
-    antagonism = PermissibleValue(
-        text="antagonism",
-        description="""A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.""")
-    molecular_channel_blockage = PermissibleValue(
-        text="molecular_channel_blockage",
-        description="""A causal mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.""")
-    inverse_agonism = PermissibleValue(
-        text="inverse_agonism",
-        description="""A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.""")
-    negative_allosteric_modulation = PermissibleValue(
-        text="negative_allosteric_modulation",
-        description="""A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
-    agonism = PermissibleValue(
-        text="agonism",
-        description="""A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.""")
-    molecular_channel_opening = PermissibleValue(
-        text="molecular_channel_opening",
-        description="""A causal mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.""")
-    positive_allosteric_modulation = PermissibleValue(
-        text="positive_allosteric_modulation",
-        description="""A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
+    modulation = PermissibleValue(
+        text="modulation",
+        description="""A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or unclear whether action is positive or negative""")
+    allosteric_modulation = PermissibleValue(
+        text="allosteric_modulation",
+        description="""A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different binding site than the natural ('orthosteric') ligand site.""")
+    mixed_allosteric_modulation = PermissibleValue(
+        text="mixed_allosteric_modulation",
+        description="""An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context, receptor subtype, cellular environment).""")
+    biphasic_allosteric_modulation = PermissibleValue(
+        text="biphasic_allosteric_modulation",
+        description="""A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations, and an inhibitory effect at higher concentrations.""")
+    mixed_agonism = PermissibleValue(
+        text="mixed_agonism",
+        description="""An modulation mechanism in which the effector acts as both an agonist (activating a receptor) and an antagonist (blocking a receptor) at different receptor sites.""")
+    positive_modulation = PermissibleValue(
+        text="positive_modulation",
+        description="""A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing its activity or abundance, or its sensitivity to other factors that do so.""")
     potentiation = PermissibleValue(
         text="potentiation",
-        description="""A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some other chemical or drug on its target.""")
+        description="""A positive modulation mechanism in which the effector binds to and enhances or intensifies the effect of some other chemical or drug on its target.""")
+    induction = PermissibleValue(
+        text="induction",
+        description="""A positive modulation mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.""")
+    cofactor = PermissibleValue(
+        text="cofactor",
+        description="""A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion) is required for a target enzyme's biological/catalytic activity.""")
     activation = PermissibleValue(
         text="activation",
-        description="""A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.""")
-    inducer = PermissibleValue(
-        text="inducer",
-        description="""A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that processes drugs in the body.""")
+        description="""A positive modulation mechanism in which the effector binds to and positively affects the normal functioning of its target.""")
+    positive_allosteric_modulation = PermissibleValue(
+        text="positive_allosteric_modulation",
+        description="""A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
+    agonism = PermissibleValue(
+        text="agonism",
+        description="""An activation mechanism in which the effector binds and activates a receptor to mimic the effect of an endogenous ligand.""")
+    partial_agonism = PermissibleValue(
+        text="partial_agonism",
+        description="""An agonism mechanism in which the effector binds to and only partially activates a receptor (relative to the response to a full agonist)""")
+    biased_agonism = PermissibleValue(
+        text="biased_agonism",
+        description="""An agonism mechanism in which the effector  binds to a receptor and activates certain signaling pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.""")
+    antibody_agonism = PermissibleValue(
+        text="antibody_agonism",
+        description="""An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic the effect of an endogenous ligand.""")
+    molecular_channel_opening = PermissibleValue(
+        text="molecular_channel_opening",
+        description="""An activation mechanism in which the effector binds to a molecular channel and facilitates transport of ions through it.""")
+    stimulation = PermissibleValue(
+        text="stimulation",
+        description="""An activation mechanism in which the effector directly or indirectly affects its target, stimulating a physiological response.""")
+    guanyl_nucleotide_exchange = PermissibleValue(
+        text="guanyl_nucleotide_exchange",
+        description="""An activation mechanism in which the effector catalyzes the exchange of guanosine diphosphate (GDP) for guanosine triphosphate (GTP) in a guanine nucleotide-binding protein (G-protein).""")
+    negative_modulation = PermissibleValue(
+        text="negative_modulation",
+        description="""A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding its activity or abundance, or its sensitivity to other factors that do so.""")
+    negative_gene_editing_modulation = PermissibleValue(
+        text="negative_gene_editing_modulation",
+        description="""A negative modulation mechanism in which the effector elicits the negative modulation of its target through a gene editing activity.""")
+    gtpase_activation = PermissibleValue(
+        text="gtpase_activation",
+        description="""An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein, promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose activity is attenuated through gtpase activation.""")
+    atpase_activation = PermissibleValue(
+        text="atpase_activation",
+        description="""An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein, promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose activity is attenuated through atpase activation.""")
+    antisense_oligonucleotide_inhibition = PermissibleValue(
+        text="antisense_oligonucleotide_inhibition",
+        description="""A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary mRNA sequence through binding and targeting it for degradation. Note that while this is called \"inhibition', it is not inhibition in the classic biochemical sense that requires a direct interaction between effector and target.""")
+    rna_interference_inhibition = PermissibleValue(
+        text="rna_interference_inhibition",
+        description="""A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein. Note that while this is called \"inhibition', it is not inhibition in the classic biochemical sense that requires a direct interaction between effector and target.""")
+    suppression = PermissibleValue(
+        text="suppression",
+        description="""A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a physiological process.""")
+    feedback_inhibition = PermissibleValue(
+        text="feedback_inhibition",
+        description="""An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway, which stops the production of the final product when it's no longer needed.""")
+    inhibition = PermissibleValue(
+        text="inhibition",
+        description="""A negative modulation mechanism in which the effector binds to the target and negatively effects its normal function, e.g. prevention of enzymatic reaction or activation of downstream pathway.""")
+    antibody_inhibition = PermissibleValue(
+        text="antibody_inhibition",
+        description="""An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.""")
+    antagonism = PermissibleValue(
+        text="antagonism",
+        description="""An inhibition mechanism in which the effector binds to a receptor and prevents activation by an agonist through competing for the binding site.""")
+    allosteric_antagonism = PermissibleValue(
+        text="allosteric_antagonism",
+        description="""An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation by a positive allosteric modulator at that site.""")
+    non_competitive_antagonism = PermissibleValue(
+        text="non_competitive_antagonism",
+        description="""An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric), or irreversibly/insurmountably inactivates the receptor - reduces the receptor’s maximal response (Emax) in a way that cannot be overcome by adding more agonist.""")
+    competitive_inhibition = PermissibleValue(
+        text="competitive_inhibition",
+        description="""An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding of a substrate (or another binding partner) and vice versa.""")
+    noncompetitive_inhibition = PermissibleValue(
+        text="noncompetitive_inhibition",
+        description="""An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active site, in a way that reduces the activity of the target.""")
+    negative_allosteric_modulation = PermissibleValue(
+        text="negative_allosteric_modulation",
+        description="""A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding.""")
+    gating_inhibition = PermissibleValue(
+        text="gating_inhibition",
+        description="""An inhibition mechanism mediated by the transition of ion channels between their open (conducting) and closed (non-conducting) conformational states.""")
+    irreversible_inhibition = PermissibleValue(
+        text="irreversible_inhibition",
+        description="""An inhibition mechanism in which an effector permanently binds to a target, permanently disrupting its activity.""")
+    molecular_channel_blockage = PermissibleValue(
+        text="molecular_channel_blockage",
+        description="""An inhibition mechanism in which the effector binds to a molecular channel and prevents or reduces transport of ions through it.""")
+    inverse_agonism = PermissibleValue(
+        text="inverse_agonism",
+        description="""An inhibition mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.""")
+    binding = PermissibleValue(
+        text="binding",
+        description="""A modulation mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction (typically non-covalent).""")
+    covalent_binding = PermissibleValue(
+        text="covalent_binding",
+        description="""A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or biomolecular entity.""")
+    adduction = PermissibleValue(
+        text="adduction",
+        description="""A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their reactive metabolite(s) to a target protein.""")
+    crosslinking = PermissibleValue(
+        text="crosslinking",
+        description="""A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them into a rigid structure.""")
+    transglutamination = PermissibleValue(
+        text="transglutamination",
+        description="""A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.""")
+    disuphide_binding = PermissibleValue(
+        text="disuphide_binding",
+        description="""A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.""")
+    stabilization = PermissibleValue(
+        text="stabilization",
+        description="""A modulation mechanism in which the effector increases the conformational stability of a protein or complex.""")
+    chaperone_mediated_stabilization = PermissibleValue(text="chaperone_mediated_stabilization")
+    destabilization = PermissibleValue(
+        text="destabilization",
+        description="""A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize the protein and allow it to complete the folding process to yield a functional protein.""")
+    degradation = PermissibleValue(
+        text="degradation",
+        description="""A modulation mechanism that controls protein and cellular component levels through the regulated breakdown and recycling of molecules.""")
+    cleavage = PermissibleValue(
+        text="cleavage",
+        description="""A modulation mechanism in which an effector promotes degeneration of the target protein through cleaving of the peptide bonds.""")
+    hydrolysis = PermissibleValue(
+        text="hydrolysis",
+        description="""A modulation mechanism in which an effector cleaves its target through a chemical reaction where a molecule of water is used to break a bond.""")
+    disruption = PermissibleValue(
+        text="disruption",
+        description="""A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.""")
+    opening = PermissibleValue(
+        text="opening",
+        description="""A modulation mechanism in which an effector positively effects the normal functioning of an ion channel e.g., facilitates transport of ions through the channel.""")
+    multitarget_modulation = PermissibleValue(
+        text="multitarget_modulation",
+        description="""A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.""")
+    chelation = PermissibleValue(
+        text="chelation",
+        description="""A modulation mechanism in which an effector binds to a metal ion target, reducing its availability/reactivity for further interactions.""")
+    release = PermissibleValue(
+        text="release",
+        description="""A modulation mechanism in which an effector reverses the normal functioning of a transporter, causing release of the substrate, rather than uptake""")
+    sequestration = PermissibleValue(
+        text="sequestration",
+        description="""A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for further interactions.""")
+    oxidoreduction = PermissibleValue(
+        text="oxidoreduction",
+        description="""A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.""")
+    exogenous_protein = PermissibleValue(
+        text="exogenous_protein",
+        description="""A modulation mechanism in which a protein from an exogenous source acts as a substitute or supplement for a specific protein which is absent or has reduced function in an affected target/subject.""")
+    exogenous_gene = PermissibleValue(
+        text="exogenous_gene",
+        description="""A modulation mechanism in which a nucleic acid from an exogenous source acts as a substitute or supplement for a specific gene which is absent or has reduced function in an affected target/subject.""")
     transcriptional_regulation = PermissibleValue(
         text="transcriptional_regulation",
-        description="A causal mechanism mediated by through the control of target gene transcription")
+        description="A modulation mechanism mediated by through the control of target gene transcription.")
+    translational_regulation = PermissibleValue(
+        text="translational_regulation",
+        description="A modulation mechanism mediated by through the control of target gene translation.")
+    catalytic_activity = PermissibleValue(
+        text="catalytic_activity",
+        description="""A modulation mechanism mediated by through the catalytic activity of the effector on the target.""")
+    chemical_modification = PermissibleValue(
+        text="chemical_modification",
+        description="""A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or converting it to something else.""")
+    relocalization = PermissibleValue(
+        text="relocalization",
+        description="""A modulation mechanism mediated by an effector that alters the localization of a target in the cell or body.""")
+    isomerization = PermissibleValue(
+        text="isomerization",
+        description="""A modulation mechanism mediated by an effector that alters the isomeric conformation of a target.""")
     signaling_mediated_control = PermissibleValue(
         text="signaling_mediated_control",
-        description="""A causal mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc)""")
-    stabilization = PermissibleValue(text="stabilization")
-    stimulation = PermissibleValue(text="stimulation")
-    releasing_activity = PermissibleValue(text="releasing_activity")
+        description="""A modulation mechanism mediated by the activation or control of signaling events that influence the some aspect of the target entity (e.g. its activity, processing, transport, etc.).""")
+    immune_system_modulation = PermissibleValue(
+        text="immune_system_modulation",
+        description="""A modulation mechanism in which the actions of the effector on the immune system ultimately mediate the affects a target.""")
+    vaccine_antigen = PermissibleValue(
+        text="vaccine_antigen",
+        description="""An immune system modulation mechanism in which a vaccine mediates its effect through the activation of the immune system against the target.""")
+    post_transcriptional_regulation = PermissibleValue(
+        text="post_transcriptional_regulation",
+        description="""A modulation mechanism which controls expression of a target gene at the RNA level after a gene has been transcribed into messenger RNA (mRNA).""")
+    molecular_modification = PermissibleValue(
+        text="molecular_modification",
+        description="""A modulation mechanism through which an effect is mediated by the modification of a target, through addition of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.""")
+    phosphorylation = PermissibleValue(text="phosphorylation")
+    dephosphorylation = PermissibleValue(text="dephosphorylation")
+    neddylation = PermissibleValue(text="neddylation")
+    deneddylation = PermissibleValue(text="deneddylation")
+    lipidation = PermissibleValue(text="lipidation")
+    palmitoylation = PermissibleValue(text="palmitoylation")
+    myristoylation = PermissibleValue(text="myristoylation")
+    tyrosination = PermissibleValue(text="tyrosination")
+    carboxylation = PermissibleValue(text="carboxylation")
+    ubiquitination = PermissibleValue(text="ubiquitination")
+    monoubiquitination = PermissibleValue(text="monoubiquitination")
+    polyubiquitination = PermissibleValue(text="polyubiquitination")
+    deubiquitination = PermissibleValue(text="deubiquitination")
+    sulfation = PermissibleValue(text="sulfation")
+    reduction = PermissibleValue(
+        text="reduction",
+        description="""A molecular modification mechanism in which an effector modifies a target substrate via a reduction reaction.""")
+    oxidation = PermissibleValue(
+        text="oxidation",
+        description="""A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.""")
+    acetylation = PermissibleValue(text="acetylation")
+    deacetylation = PermissibleValue(text="deacetylation")
+    glycosylation = PermissibleValue(text="glycosylation")
+    deglycosylation = PermissibleValue(text="deglycosylation")
+    methylation = PermissibleValue(text="methylation")
+    trimethylation = PermissibleValue(text="trimethylation")
+    demethylation = PermissibleValue(text="demethylation")
+    sumoylation = PermissibleValue(text="sumoylation")
+    desumoylation = PermissibleValue(text="desumoylation")
+    ampylation = PermissibleValue(
+        text="ampylation",
+        description="""A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.""")
+    hydroxylation = PermissibleValue(text="hydroxylation")
+    s_nitrosylation = PermissibleValue(text="s_nitrosylation")
 
     _defn = EnumDefinition(
         name="CausalMechanismQualifierEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "ADP-ribosylation",
+            PermissibleValue(text="ADP-ribosylation"))
+        setattr(cls, "de-ADP-ribosylation",
+            PermissibleValue(text="de-ADP-ribosylation"))
 
 class LogicalInterpretationEnum(EnumDefinitionImpl):
 
