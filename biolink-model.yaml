@@ -1,12 +1,12 @@
 ---
-id: https://w3id.org/biolink/biolink-model
+id: https://w3id.org/biolink/vocab/
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.2
+version: 4.3.4
 
 ## ------------
 ##
@@ -205,7 +205,7 @@ subsets:
 
 imports:
   - linkml:types
-  - attributes
+  - https://w3id.org/biolink/biolink-model/attributes
 
 types:
 
@@ -1106,7 +1106,70 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Clinical Trials
+  ## Exposure Events
+
+  exposure type:
+    is_a: node property
+    description: >-
+      Type of exposure
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
+#           To some extent, the subclassing of Exposure Events provides some typing?
+
+  exposure vehicle:
+    is_a: node property
+    description: >-
+      Type of an exposure event.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure route:
+    is_a: node property
+    description: >-
+      Route of exposure.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure start age:
+    is_a: node property
+    description: >-
+      Starting age of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure end age:
+    is_a: node property
+    description: >-
+      Ending stage of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure duration:
+    is_a: node property
+    description: >-
+      Duration of an exposure event.
+    domain: exposure event
+    range: time
+
+  exposure magnitude:
+    is_a: node property
+    description: >-
+      Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
+    domain: exposure event
+    range: string   # might want to be a more constrained data type here?
+
+  exposure additional condition:
+    is_a: node property
+    description: >-
+      Additional conditions impacting an exposure event.
+    domain: exposure event
+    range: string
+
+  ## Clinical Trials
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -1159,10 +1222,68 @@ slots:
     is_a: node property
     description: >-
       Records whether the clinical trials are testing the intervention.
-    domain: association
+    domain: clinical trial
     range: string
 
-   ## Biological Entity properties
+  clinical trial brief title:
+    is_a: node property
+    description: >-
+      The brief title of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial enrollment type:
+    is_a: node property
+    description: >-
+      The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual,
+      anticipated, or estimated)
+    range: string
+    domain: clinical trial
+
+  clinical trial start date:
+    is_a: node property
+    description: >-
+      The start date of a clinical trial as determined by clinicaltrials.gov
+    range: date
+    domain: clinical trial
+  clinical trial enrollment:
+    is_a: node property
+    description: >-
+      The enrollment number of a clinical trial as determined by clinicaltrials.gov
+    range: integer
+    domain: clinical trial
+
+  clinical trial age stage:
+    is_a: node property
+    description: >-
+      The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
+    range: ClinicalTrialAgeStageEnum
+    domain: clinical trial
+
+  clinical trial age range:
+    is_a: node property
+    description: >-
+      The age range of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial interventions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more interventions being tested in the trial
+    range: clinical intervention
+    multivalued: true
+    domain: clinical trial
+
+  clinical trial conditions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more conditions being studied in the trial
+    range: disease or phenotypic feature
+    multivalued: true
+    domain: clinical trial
+
+    ## Biological Entity properties
 
   has biological sequence:
     is_a: node property
@@ -2570,11 +2691,12 @@ slots:
 
    ## end of Publication related predicates
 
-  assesses:
+  was tested for effect on:
+    deprecated: true
     is_a: related to at instance level
-    aliases: ['was assayed against']
+    aliases: ['was assayed against', 'was experimentally tested against']
     description: >-
-      The effect of a thing on a target was interrogated in some assay.
+      Reports that the subject was interrogated in an experiment to determine how it may affect the object.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
       where the affect of the perturbing agent on the target entity was interrogated in a particular assay.
       The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type
@@ -2584,9 +2706,10 @@ slots:
     annotations:
       canonical_predicate: true
 
-  is assessed by:
+  was tested for effect of:
+    deprecated: true
     is_a: related to at instance level
-    inverse: assesses
+    inverse: was tested for effect on
     domain: named thing
     range: named thing
 
@@ -2899,8 +3022,12 @@ slots:
     narrow_mappings:
       - CHEBI:24432
 
-  affects response to:
-    is_a: affects
+  affects sensitivity to:
+    is_a: related to at instance level
+    description: >-
+      holds between two chemical entities or genes or gene products where the action of one affects
+      the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component,
+      macromolecular machine mixin, biological or pathological process) to the other.
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2910,69 +3037,63 @@ slots:
     exact_mappings:
       - CTD:affects_response_to
 
-  response affected by:
-    description: >-
-      holds between two chemical entities where the susceptibility of a biological entity or system
-      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
-      biological or pathological process) of one is affected by the action of the other.
-    is_a: affected by
+  sensitivity affected by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: affects response to
+    inverse: affects sensitivity to
 
-  increases response to:
+  increases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      increases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: decreases response to
+      opposite_of: decreases sensitivity to
     exact_mappings:
       - CTD:increases_response_to
 
-  response increased by:
-    is_a: response affected by
+  sensitivity increased by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: increases response to
+    inverse: increases sensitivity to
 
-  decreases response to:
+  decreases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      decreases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: increases response to
+      opposite_of: increases sensitivity to
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
 
-  response decreased by:
-    is_a: response affected by
+  sensitivity decreased by:
+    is_a: sensitivity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: decreases response to
+    inverse: decreases sensitivity to
 
   regulates:
     is_a: affects
@@ -5435,6 +5556,20 @@ slots:
     is_a: related to at instance level
     inverse: develops from
 
+  taxon:
+    is_a: node property
+    description: >-
+      A property that indicates the taxonomic classification of an entity.
+      Values for this slot should be from the NCBITaxon ontology.
+    comments: >-
+      Note there is also a predicate 'in taxon'
+      that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is
+      an acceptable practice for KG construction, but for many applications it is more convenient to
+      use this property slot to directly annotate the taxon on the entity itself.
+    in_subset:
+      - translator_minimal
+    range: uriorcurie
+
   in taxon:
     aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source']
     is_a: related to at instance level
@@ -5531,6 +5666,18 @@ slots:
       - SIO
     domain: association
     range: uriorcurie
+
+  subject feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated subject
+      for example, a particular sequence variant of a gene
+
+  object feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated object
+      for example, a symptom diagnosis of a disease
 
   subject closure:
     is_a: association slot
@@ -5642,7 +5789,7 @@ slots:
     domain: association
     range: string
     examples:
-      - value: ["BRACA1"]
+      - value: ["BRCA1"]
         description: >-
           The subject label closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
@@ -5801,32 +5948,39 @@ slots:
       - RO:0002558
     multivalued: true
 
-  has supporting study result:
+  has study results:
+    is_a: association slot
+    domain: study
     range: study result
     multivalued: true
-    is_a: association slot
     description: >-
-      connects an association to an instance of supporting study result
+      Connects an study to instances of its study result
 
   log odds ratio:
     is_a: association slot
     description: >-
-      The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the
-      odds of event Y occurring in a non-exposed group has
+      The natural logarithm of the odds ratio (OR), or the ratio of
+      the odds of an event Y occurring in an exposed group versus
+      the odds of an event Y occurring in a non-exposed group.
     range: float
 
   log odds ratio 95 ci:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+      To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
+      you need the standard error (SE) of the log odds ratio.  This interval helps you understand
+      the precision of your estimate and whether the association is statistically significant.
     range: float
+    multivalued: true
+    examples:
+      - value: [0.6996904681742875, 1.6429124024089072]
 
   total sample size:
     is_a: dataset count
     description: >-
       The total number of patients or participants within a sample population.
     range: integer
-
 
   mechanism of action:
     is_a: association slot
@@ -5919,9 +6073,55 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      represents the chi-squared statistic computed from observations
+      The chi-squared statistic measures how much observed
+      data deviate from expected values under the null hypothesis.
     exact_mappings:
       - STATO:0000030
+    examples:
+      - value: 26.38523077566414
+
+  chi squared dof:
+    is_a: association slot
+    description: >-
+       Degrees of freedom (dof) in a chi-squared test referring to the
+       number of values in the final calculation of a statistic that are free to vary
+    range: integer
+    examples:
+      - value: 1
+
+  chi squared p:
+    is_a: association slot
+    description: >-
+       The chi-square p-value tells you the probability that the observed differences
+       (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
+    range: float
+    examples:
+      - value: 2.7967079822744063e-07
+
+  fisher exact odds ratio:
+    is_a: association slot
+    description: >-
+       The Fisher Exact Test is used to determine whether there is a non-random association between
+       two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
+       The odds ratio (OR) quantifies the strength of that association.
+          OR = 1 implies No association
+          OR > 1 implies Positive association (Group A more likely to have Outcome 1)
+          OR < 1 implies Negative association (Group A less likely to have Outcome 1)
+    range: float
+    examples:
+      - value: 3.226188583240579
+
+  fisher exact p:
+    is_a: association slot
+    description: >-
+      The Fisher exact p-value tells you the probability of observing a table
+      as extreme as (or more extreme than) your actual data, assuming that
+      the null hypothesis of independence is true. It's most commonly used
+      for 2×2 contingency tables, especially when sample sizes
+      are small or expected counts are low.
+    range: float
+    examples:
+      - value: 2.8581244515361156e-06
 
   z score:
     aliases: ['z-score', 'z-value', 'standard score', 'normal score']
@@ -6329,8 +6529,12 @@ slots:
   has supporting studies:
     is_a: association slot
     range: study
-    description: A study that produced information used as evidence to generate the knowledge expressed in an Association.
+    description: >-
+      Studies that produced information used as evidence
+      to generate the knowledge expressed in an Association.
     multivalued: true
+    close_mappings:
+      - OBAN:has_study_id
 
   supporting study metadata:
     is_a: association slot
@@ -6345,12 +6549,13 @@ slots:
         such that this study metadata must be captured directly on the edge.
     abstract: true
 
-  supporting study method type:
+  supporting study method types:
     is_a: supporting study metadata
     description: >-
-      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of
+      Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
       experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
+    multivalued: true
 
   supporting study method description:
     is_a: supporting study metadata
@@ -6707,8 +6912,9 @@ classes:
       - xref
       - full name
       - synonym
-      - information content
       - equivalent identifiers
+      - information content
+      - taxon
     slot_usage:
       category:
         required: true
@@ -6784,25 +6990,51 @@ classes:
     abstract: true
 
   study result:
-    abstract: true
+    is_a: information content entity
     description: >-
       A collection of data items from a study that are about a particular study subject or experimental unit (the
       'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
       of this data as evidence.
+    abstract: true
     notes:
       The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
       that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
       focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any
       scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
       analyses, or a larger scale clinical trial or experimental research investigation.
-    is_a: information content entity
+
+   ## epc result sets
+  concept count analysis result:
+    is_a: study result
+    description: >-
+      A result of a concept count analysis.
+
+  observed expected frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a observed expected frequency analysis.
+
+  relative frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a relative frequency analysis.
+
+  chi squared analysis result:
+    is_a: study result
+    description: >-
+      A result of a chi squared analysis.
+
+  log odds analysis result:
+    is_a: study result
+    description: >-
+      A result of a log odds ratio analysis.
 
   text mining study result:
+    is_a: study result
     description: >-
       A study result that represents information extracted from text using natural language processing techniques.
       This includes the extracted text, location offsets within the source document, confidence scores, and other
       metadata related to the text mining process.
-    is_a: study result
     slots:
       - supporting text
       - subject location in text
@@ -6812,9 +7044,29 @@ classes:
       - supporting document year
       - supporting text section type
 
+  icees study result:
+    is_a: study result
+    description: >-
+      A study result that represents a result, from a supporting Study, which is specifically associated
+      with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.
+    slots:
+      - chi squared statistic
+      - chi squared dof
+      - chi squared p
+      - total sample size
+      - fisher exact odds ratio
+      - fisher exact p
+      - log odds ratio
+      - log odds ratio 95 ci
+
   study:
-    description: a detailed investigation and/or analysis
     is_a: activity
+    description: a detailed investigation and/or analysis
+    slots:
+      - has study results
+    slot_usage:
+      has study results:
+        inlined_as_list: true
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -6841,37 +7093,6 @@ classes:
       (https://cde.nlm.nih.gov/home)
     close_mappings:
       - NCIT:C19984
-
-   ## epc result sets
-  concept count analysis result:
-    is_a: study result
-    description: >-
-      A result of a concept count analysis.
-
-  observed expected frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a observed expected frequency analysis.
-
-  relative frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a relative frequency analysis.
-
-  text mining result:
-    is_a: study result
-    description: >-
-      A result of text mining.
-
-  chi squared analysis result:
-    is_a: study result
-    description: >-
-      A result of a chi squared analysis.
-
-  log odds analysis result:
-    is_a: study result
-    description: >-
-      A result of a log odds ratio analysis.
 
   agent:
     is_a: administrative entity
@@ -9340,7 +9561,18 @@ classes:
     slots:
       - clinical trial phase
       - clinical trial primary purpose
-      - creation date  # maybe?
+      - clinical trial intervention model
+      - clinical trial overall status
+      - clinical trial brief title
+      - clinical trial enrollment type
+      - clinical trial start date
+      - clinical trial enrollment
+      - clinical trial age stage
+      - clinical trial age range
+      - clinical trial tested intervention
+      - clinical trial interventions
+      - clinical trial conditions
+      - creation date
     id_prefixes:
       - CLINICALTRIALS
 
@@ -9408,14 +9640,27 @@ classes:
    ## Exposures
 
   exposure event:
-    is_a: ontology class
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['exposure', 'experimental condition']
-    mixin: true
     slots:
       - timepoint
+      - exposure type
+      - exposure vehicle
+      - exposure route
+      - exposure start age
+      - exposure end age
+      - exposure duration
+      - exposure magnitude
+      - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
+    slot_usage:
+      id:
+        description: >-
+          Could generally be a CURIE from a suitable exposure ontology like ECTO.
     exact_mappings:
       - XCO:0000000
     in_subset:
@@ -9423,9 +9668,8 @@ classes:
 
    # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
@@ -9464,9 +9708,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
       a precondition, leading to or influencing an outcome,
@@ -9483,18 +9725,15 @@ classes:
       - MPATH:603
 
   pathological anatomical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - pathological entity mixin
     description: >-
       A disease or phenotypic feature state, when viewed as an exposure,
@@ -9503,9 +9742,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     slots:
       - has quantitative value
     description: >-
@@ -9519,7 +9756,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
-    is_a: attribute
+    is_a: exposure event
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9529,8 +9766,6 @@ classes:
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
-    mixins:
-      - exposure event
     broad_mappings:
        # slightly broader than just drug effects on a biological system
       - SIO:001005
@@ -9550,9 +9785,8 @@ classes:
   treatment:
     aliases: ['medical action', 'medical intervention']
      # 'named thing' seems too generic here but not sure what applies better here
-    is_a: named thing
+    is_a: exposure event
     mixins:
-      - exposure event
       - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
@@ -9568,18 +9802,14 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
-    is_a: attribute
+    is_a: exposure event
     aliases: ['viral exposure', 'bacterial exposure']
-    mixins:
-      - exposure event
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
 
   geographic exposure:
     is_a: environmental exposure
-    mixins:
-      - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
@@ -9602,25 +9832,19 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A socioeconomic exposure is a factor relating to social and
       financial status of an affected individual (e.g. poverty).
@@ -9725,6 +9949,8 @@ classes:
       - original subject
       - original predicate
       - original object
+      - subject feature name
+      - object feature name
        # denormalized fields
       - subject category
       - object category
@@ -9750,11 +9976,12 @@ classes:
         required: false
       sources:
         inlined_as_list: true
+      has supporting studies:
+        inlined: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
-
 
   disease associated with response to chemical entity association:
     description: >-
@@ -9781,6 +10008,7 @@ classes:
 
 
   chemical entity assesses named thing association:
+    deprecated: true
     is_a: association
     slot_usage:
       subject:
@@ -9788,7 +10016,7 @@ classes:
       object:
         range: named thing
       predicate:
-        subproperty_of: assesses
+        subproperty_of: was tested for effect on
 
   contributor association:
     is_a: association
@@ -10216,6 +10444,7 @@ classes:
       - subject
       - predicate
       - object
+      - species context qualifier
     defining_slots:
       - subject
       - object
@@ -10409,12 +10638,12 @@ classes:
 
   chemical gene interaction association:
     description: >-
-      describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
+      describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
-    exact_mappings:
-      - SIO:001257
+    broad_mappings:
+      - SIO:001257    ## chemical-gene association
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -10430,7 +10659,7 @@ classes:
       object:
         range: gene or gene product
       predicate:
-        subproperty_of: physically interacts with
+        subproperty_of: interacts with
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
@@ -12223,6 +12452,15 @@ enums:
       WITHDRAWN:
         description: The study was halted before enrolling its first participant.
 
+  ClinicalTrialAgeStageEnum:
+    description: >-
+      Enumeration of age stages or populations commonly used in clinical trials
+      to categorize participant demographics and target populations.
+    permissible_values:
+      adult:
+      child:
+      older_adult:
+
   ApprovalStatusEnum:
     description: >-
     permissible_values:
@@ -12440,6 +12678,8 @@ enums:
         is_a: genetic_variant_form
       snp_form:
         is_a: polymorphic_form
+      mutant_form:
+        is_a: genetic_variant_form
       analog_form:
         is_a: modified_form
 

@@ -1,3 +1,7 @@
+# This file extends biolink.yaml with additional node and edge properties created as placeholders so that they can be used in knowledge graphs and pass KGX validation which requires Biolink compliance. 
+# They will remain here until such time as we can evaluate their utility, and how they should be modeled, before deciding if/what to move into Biolink proper.
+# The convention for naming such properties is to begin with the name/infores code for the source of the property, and then use the name of the property as defined by the source.  
+# e.g. we created an edge property to hold the 'interaction score' from  DGIdb - which we name "dgidb interaction score"
 ---
 id: https://w3id.org/biolink/biolink-model/attributes
 name: Attributes
@@ -8,7 +12,6 @@ prefixes:
   AGRKB: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
-  biolink: 'https://w3id.org/biolink/vocab/'
   bioschemas: 'https://bioschemas.org/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -141,8 +144,8 @@ prefixes:
   Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
   PMC: 'http://europepmc.org/articles/PMC'
 
-default_prefix: biolink
 default_range: string
+default_prefix: biolink
 
 default_curi_maps:
   - obo_context
@@ -171,7 +174,6 @@ slots:
     range: float
 
   equivalent identifiers:
-    is_a: node property
     description: >-
       A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is
       used to represent a collection of identifiers that are considered equivalent to the primary identifier
@@ -184,3 +186,49 @@ slots:
     see_also:
       - biolink:xref
       - biolink:synonyms
+
+  chembl drug warning:
+    description: Text describing warnings for use of chemicals as therapeutics.
+    range: string
+
+  chembl prodrug:
+    description: Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.
+    range: boolean
+
+  chembl chirality:
+    description: Tern indicating the chirality of the chemical entity.
+    range: string
+    
+  dgidb relative drug specificity score:
+    description: >-
+      A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average
+      known gene partners for all drugs to the known partners for the given drug. See https://dgidb.org/about/overview/interaction-score.
+    range: float
+
+  dgidb relative gene specificity score:
+    description: >-
+      A score defined by DGIdb that quantifies the drug-interaction specificity of a given gene - representing the ratio of average
+      known drug partners for all genes to the known partners for the given gene. See https://dgidb.org/about/overview/interaction-score.
+    range: float
+
+  intact confidence value:
+    aliases: ['intact miscore', 'intact interaction score']
+    description: >-
+      A score defined by MI / IntAct that represents the degree of confidence in the existence of a particular interaction by assessing
+      the annotation of that specific interaction in a standards-compliant dataset. The score given to an interaction will increase as
+      the number of experimental evidences supporting that interaction increases. Experimental evidences contribute more highly to the final
+      score than evidences derived by predictive algorithms or literature text-mining methods. Range is 0-1, with higher scores indicated more
+      confidence. See here for details: https://www.ebi.ac.uk/intact/documentation/user-guide#interaction_scoring.
+
+  dgidb interaction score:
+    description: >-
+      A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence 
+      score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
+      score. See https://dgidb.org/about/overview/interaction-score.
+    range: float
+
+  dgidb evidence score:
+    description: >-
+      A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is 
+      simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
+    range: integer
