@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-21T23:52:59
+# Generation date: 2025-11-22T03:58:30
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -325,6 +325,7 @@ RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 REGULATES = CurieNamespace('regulates', 'http://example.org/UNKNOWN/regulates/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 SKOS = CurieNamespace('skos', 'http://www.w3.org/2004/02/skos/core#')
+USPTO_PATENT = CurieNamespace('uspto-patent', 'http://www.uspto.gov/patent/grant/v1/')
 WGS = CurieNamespace('wgs', 'http://www.w3.org/2003/01/geo/wgs84_pos')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
 DEFAULT_ = BIOLINK
