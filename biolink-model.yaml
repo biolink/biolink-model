@@ -1171,6 +1171,12 @@ slots:
 
   ## Clinical Trials
 
+  elevate to prediction:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.
+    range: boolean
+
   clinical trial phase:
     is_a: node property
     description: >-
