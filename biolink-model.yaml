@@ -1266,6 +1266,7 @@ slots:
       The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
     range: ClinicalTrialAgeStageEnum
     domain: clinical trial
+    multivalued: true
 
   clinical trial age range:
     is_a: node property
