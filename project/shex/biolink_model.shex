@@ -253,6 +253,7 @@ linkml:Sparqlpath xsd:string
              <has_supporting_studies> @<Study> * ;
              <update_date> @linkml:Date ? ;
              <has_confidence_score> @linkml:Float ? ;
+             <elevate_to_prediction> @linkml:Boolean ? ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
@@ -1387,7 +1388,7 @@ linkml:Sparqlpath xsd:string
           <clinical_trial_enrollment> @linkml:Integer ? ;
           <clinical_trial_age_stage> [ <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#adult>
              <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#child>
-             <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#older_adult> ] ? ;
+             <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#older_adult> ] * ;
           <clinical_trial_age_range> @linkml:String ? ;
           <clinical_trial_tested_intervention> @linkml:String ? ;
           <clinical_trial_interventions> @<ClinicalIntervention> * ;

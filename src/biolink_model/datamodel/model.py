@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-22T03:58:30
+# Generation date: 2025-11-25T18:53:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -6676,7 +6676,7 @@ class ClinicalTrial(Study):
     clinical_trial_enrollment_type: Optional[str] = None
     clinical_trial_start_date: Optional[Union[str, XSDDate]] = None
     clinical_trial_enrollment: Optional[int] = None
-    clinical_trial_age_stage: Optional[Union[str, "ClinicalTrialAgeStageEnum"]] = None
+    clinical_trial_age_stage: Optional[Union[Union[str, "ClinicalTrialAgeStageEnum"], list[Union[str, "ClinicalTrialAgeStageEnum"]]]] = empty_list()
     clinical_trial_age_range: Optional[str] = None
     clinical_trial_tested_intervention: Optional[str] = None
     clinical_trial_interventions: Optional[Union[Union[str, ClinicalInterventionId], list[Union[str, ClinicalInterventionId]]]] = empty_list()
@@ -6713,8 +6713,9 @@ class ClinicalTrial(Study):
         if self.clinical_trial_enrollment is not None and not isinstance(self.clinical_trial_enrollment, int):
             self.clinical_trial_enrollment = int(self.clinical_trial_enrollment)
 
-        if self.clinical_trial_age_stage is not None and not isinstance(self.clinical_trial_age_stage, ClinicalTrialAgeStageEnum):
-            self.clinical_trial_age_stage = ClinicalTrialAgeStageEnum(self.clinical_trial_age_stage)
+        if not isinstance(self.clinical_trial_age_stage, list):
+            self.clinical_trial_age_stage = [self.clinical_trial_age_stage] if self.clinical_trial_age_stage is not None else []
+        self.clinical_trial_age_stage = [v if isinstance(v, ClinicalTrialAgeStageEnum) else ClinicalTrialAgeStageEnum(v) for v in self.clinical_trial_age_stage]
 
         if self.clinical_trial_age_range is not None and not isinstance(self.clinical_trial_age_range, str):
             self.clinical_trial_age_range = str(self.clinical_trial_age_range)
@@ -7686,6 +7687,7 @@ class Association(Entity):
     has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
+    elevate_to_prediction: Optional[Union[bool, Bool]] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7821,6 +7823,9 @@ class Association(Entity):
 
         if self.has_confidence_score is not None and not isinstance(self.has_confidence_score, float):
             self.has_confidence_score = float(self.has_confidence_score)
+
+        if self.elevate_to_prediction is not None and not isinstance(self.elevate_to_prediction, Bool):
+            self.elevate_to_prediction = Bool(self.elevate_to_prediction)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -15295,6 +15300,9 @@ slots.exposure_magnitude = Slot(uri=BIOLINK.exposure_magnitude, name="exposure m
 slots.exposure_additional_condition = Slot(uri=BIOLINK.exposure_additional_condition, name="exposure additional condition", curie=BIOLINK.curie('exposure_additional_condition'),
                    model_uri=BIOLINK.exposure_additional_condition, domain=ExposureEvent, range=Optional[str])
 
+slots.elevate_to_prediction = Slot(uri=BIOLINK.elevate_to_prediction, name="elevate to prediction", curie=BIOLINK.curie('elevate_to_prediction'),
+                   model_uri=BIOLINK.elevate_to_prediction, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
 slots.clinical_trial_phase = Slot(uri=BIOLINK.clinical_trial_phase, name="clinical trial phase", curie=BIOLINK.curie('clinical_trial_phase'),
                    model_uri=BIOLINK.clinical_trial_phase, domain=NamedThing, range=Optional[Union[str, "ResearchPhaseEnum"]])
 
@@ -15329,7 +15337,7 @@ slots.clinical_trial_enrollment = Slot(uri=BIOLINK.clinical_trial_enrollment, na
                    model_uri=BIOLINK.clinical_trial_enrollment, domain=ClinicalTrial, range=Optional[int])
 
 slots.clinical_trial_age_stage = Slot(uri=BIOLINK.clinical_trial_age_stage, name="clinical trial age stage", curie=BIOLINK.curie('clinical_trial_age_stage'),
-                   model_uri=BIOLINK.clinical_trial_age_stage, domain=ClinicalTrial, range=Optional[Union[str, "ClinicalTrialAgeStageEnum"]])
+                   model_uri=BIOLINK.clinical_trial_age_stage, domain=ClinicalTrial, range=Optional[Union[Union[str, "ClinicalTrialAgeStageEnum"], list[Union[str, "ClinicalTrialAgeStageEnum"]]]])
 
 slots.clinical_trial_age_range = Slot(uri=BIOLINK.clinical_trial_age_range, name="clinical trial age range", curie=BIOLINK.curie('clinical_trial_age_range'),
                    model_uri=BIOLINK.clinical_trial_age_range, domain=ClinicalTrial, range=Optional[str])
