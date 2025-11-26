@@ -10685,6 +10685,8 @@ classes:
       - object context qualifier
       - anatomical context qualifier
       - causal mechanism qualifier
+      - dgidb interaction score 
+      - dgidb evidence score 
     slot_usage:
       subject:
         range: chemical entity
@@ -10827,7 +10829,9 @@ classes:
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
-
+    slots:
+      - dgidb interaction score 
+      - dgidb evidence score 
 
   gene affects chemical association:
     description: >-
