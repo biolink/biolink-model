@@ -4457,7 +4457,7 @@ class ClinicalTrial(Study):
     clinical_trial_overall_status: Optional[ClinicalTrialStatusEnum] = Field(default=None, description="""The overall status of a clinical trial as determined by clinicaltrials.gov""")
     clinical_trial_brief_title: Optional[str] = Field(default=None, description="""The brief title of a clinical trial as determined by clinicaltrials.gov""")
     clinical_trial_enrollment_type: Optional[str] = Field(default=None, description="""The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual, anticipated, or estimated)""")
-    clinical_trial_start_date: Optional[date] = Field(default=None, description="""The start date of a clinical trial as determined by clinicaltrials.gov""")
+    clinical_trial_start_date: Optional[str] = Field(default=None, description="""The start date of a clinical trial as determined by clinicaltrials.gov""")
     clinical_trial_enrollment: Optional[int] = Field(default=None, description="""The enrollment number of a clinical trial as determined by clinicaltrials.gov""")
     clinical_trial_age_stage: Optional[list[ClinicalTrialAgeStageEnum]] = Field(default=None, description="""The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)""")
     clinical_trial_age_range: Optional[str] = Field(default=None, description="""The age range of a clinical trial as determined by clinicaltrials.gov""")

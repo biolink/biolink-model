@@ -1390,7 +1390,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#WITHDRAWN> ] ? ;
           <clinical_trial_brief_title> @linkml:String ? ;
           <clinical_trial_enrollment_type> @linkml:String ? ;
-          <clinical_trial_start_date> @linkml:Date ? ;
+          <clinical_trial_start_date> @linkml:String ? ;
           <clinical_trial_enrollment> @linkml:Integer ? ;
           <clinical_trial_age_stage> [ <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#adult>
              <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#child>

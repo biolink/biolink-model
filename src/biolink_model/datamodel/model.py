@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-26T00:32:31
+# Generation date: 2025-11-26T01:17:06
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -6698,7 +6698,7 @@ class ClinicalTrial(Study):
     clinical_trial_overall_status: Optional[Union[str, "ClinicalTrialStatusEnum"]] = None
     clinical_trial_brief_title: Optional[str] = None
     clinical_trial_enrollment_type: Optional[str] = None
-    clinical_trial_start_date: Optional[Union[str, XSDDate]] = None
+    clinical_trial_start_date: Optional[str] = None
     clinical_trial_enrollment: Optional[int] = None
     clinical_trial_age_stage: Optional[Union[Union[str, "ClinicalTrialAgeStageEnum"], list[Union[str, "ClinicalTrialAgeStageEnum"]]]] = empty_list()
     clinical_trial_age_range: Optional[str] = None
@@ -6731,8 +6731,8 @@ class ClinicalTrial(Study):
         if self.clinical_trial_enrollment_type is not None and not isinstance(self.clinical_trial_enrollment_type, str):
             self.clinical_trial_enrollment_type = str(self.clinical_trial_enrollment_type)
 
-        if self.clinical_trial_start_date is not None and not isinstance(self.clinical_trial_start_date, XSDDate):
-            self.clinical_trial_start_date = XSDDate(self.clinical_trial_start_date)
+        if self.clinical_trial_start_date is not None and not isinstance(self.clinical_trial_start_date, str):
+            self.clinical_trial_start_date = str(self.clinical_trial_start_date)
 
         if self.clinical_trial_enrollment is not None and not isinstance(self.clinical_trial_enrollment, int):
             self.clinical_trial_enrollment = int(self.clinical_trial_enrollment)
@@ -15355,7 +15355,7 @@ slots.clinical_trial_enrollment_type = Slot(uri=BIOLINK.clinical_trial_enrollmen
                    model_uri=BIOLINK.clinical_trial_enrollment_type, domain=ClinicalTrial, range=Optional[str])
 
 slots.clinical_trial_start_date = Slot(uri=BIOLINK.clinical_trial_start_date, name="clinical trial start date", curie=BIOLINK.curie('clinical_trial_start_date'),
-                   model_uri=BIOLINK.clinical_trial_start_date, domain=ClinicalTrial, range=Optional[Union[str, XSDDate]])
+                   model_uri=BIOLINK.clinical_trial_start_date, domain=ClinicalTrial, range=Optional[str])
 
 slots.clinical_trial_enrollment = Slot(uri=BIOLINK.clinical_trial_enrollment, name="clinical trial enrollment", curie=BIOLINK.curie('clinical_trial_enrollment'),
                    model_uri=BIOLINK.clinical_trial_enrollment, domain=ClinicalTrial, range=Optional[int])

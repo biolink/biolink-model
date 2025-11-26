@@ -2149,7 +2149,7 @@ message ClinicalTrial
   clinicalTrialStatusEnum clinicalTrialOverallStatus = 0
   string clinicalTrialBriefTitle = 0
   string clinicalTrialEnrollmentType = 0
-  date clinicalTrialStartDate = 0
+  string clinicalTrialStartDate = 0
   integer clinicalTrialEnrollment = 0
  repeated  clinicalTrialAgeStageEnum clinicalTrialAgeStage = 0
   string clinicalTrialAgeRange = 0
