@@ -994,7 +994,13 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#prescription> ] * ;
              <max_tolerated_dose> @linkml:String ? ;
              <is_toxic> @linkml:Boolean ? ;
-             <has_chemical_role> @<ChemicalRole> *
+             <has_chemical_role> @<ChemicalRole> * ;
+             <chembl_prodrug> @linkml:Boolean ? ;
+             <chembl_black_box_warning> @linkml:String ? ;
+             <chembl_natural_product> @linkml:Boolean ? ;
+             <chembl_availability_type> @linkml:String ? ;
+             <chembl_chirality> @linkml:String ? ;
+             <chembl_drug_warning> @linkml:String ?
           ) ;
           rdf:type [ <ChemicalEntity> ]
        )

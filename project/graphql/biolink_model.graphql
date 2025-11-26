@@ -1898,6 +1898,12 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
   }
 
 type ChemicalEntityAssessesNamedThingAssociation
@@ -2122,6 +2128,12 @@ type ChemicalMixture implements OntologyClass
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
@@ -2805,6 +2817,12 @@ type ComplexMolecularMixture
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
@@ -3478,6 +3496,12 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
@@ -3976,6 +4000,12 @@ type EnvironmentalFoodContaminant
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
   }
 
 type EnvironmentalProcess implements Occurrent
@@ -4293,6 +4323,12 @@ type Food
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
@@ -4321,6 +4357,12 @@ type FoodAdditive
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
   }
 
 interface FrequencyQualifierMixin
@@ -6933,6 +6975,12 @@ type MolecularEntity implements OntologyClass
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isMetabolite: Boolean
   }
 
@@ -6958,6 +7006,12 @@ type MolecularMixture
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
@@ -7088,6 +7142,12 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
@@ -8408,6 +8468,12 @@ type ProcessedMaterial
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
@@ -9058,6 +9124,12 @@ type SmallMolecule
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    chemblProdrug: Boolean
+    chemblBlackBoxWarning: String
+    chemblNaturalProduct: Boolean
+    chemblAvailabilityType: String
+    chemblChirality: String
+    chemblDrugWarning: String
     isMetabolite: Boolean
   }
 

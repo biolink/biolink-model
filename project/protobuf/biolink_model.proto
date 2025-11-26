@@ -1384,6 +1384,12 @@ message ChemicalEntity
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
  }
 message ChemicalEntityAssessesNamedThingAssociation
  {
@@ -1592,6 +1598,12 @@ message ChemicalMixture
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
@@ -2262,6 +2274,12 @@ message ComplexMolecularMixture
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
@@ -2916,6 +2934,12 @@ message Drug
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
@@ -3288,6 +3312,12 @@ message EnvironmentalFoodContaminant
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
  }
 message EnvironmentalProcess
  {
@@ -3582,6 +3612,12 @@ message Food
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
@@ -3609,6 +3645,12 @@ message FoodAdditive
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
  }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
@@ -6025,6 +6067,12 @@ message MolecularEntity
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   boolean isMetabolite = 0
  }
 // A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
@@ -6050,6 +6098,12 @@ message MolecularMixture
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
@@ -6170,6 +6224,12 @@ message NucleicAcidEntity
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
@@ -7303,6 +7363,12 @@ message ProcessedMaterial
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
@@ -7892,6 +7958,12 @@ message SmallMolecule
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+  boolean chemblProdrug = 0
+  string chemblBlackBoxWarning = 0
+  boolean chemblNaturalProduct = 0
+  string chemblAvailabilityType = 0
+  string chemblChirality = 0
+  string chemblDrugWarning = 0
   boolean isMetabolite = 0
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-26T00:20:06
+# Generation date: 2025-11-25T16:23:06
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -3969,6 +3969,12 @@ class ChemicalEntity(NamedThing):
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
     has_chemical_role: Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]] = empty_list()
+    chembl_prodrug: Optional[Union[bool, Bool]] = None
+    chembl_black_box_warning: Optional[str] = None
+    chembl_natural_product: Optional[Union[bool, Bool]] = None
+    chembl_availability_type: Optional[str] = None
+    chembl_chirality: Optional[str] = None
+    chembl_drug_warning: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -3992,6 +3998,24 @@ class ChemicalEntity(NamedThing):
         if not isinstance(self.has_chemical_role, list):
             self.has_chemical_role = [self.has_chemical_role] if self.has_chemical_role is not None else []
         self.has_chemical_role = [v if isinstance(v, ChemicalRoleId) else ChemicalRoleId(v) for v in self.has_chemical_role]
+
+        if self.chembl_prodrug is not None and not isinstance(self.chembl_prodrug, Bool):
+            self.chembl_prodrug = Bool(self.chembl_prodrug)
+
+        if self.chembl_black_box_warning is not None and not isinstance(self.chembl_black_box_warning, str):
+            self.chembl_black_box_warning = str(self.chembl_black_box_warning)
+
+        if self.chembl_natural_product is not None and not isinstance(self.chembl_natural_product, Bool):
+            self.chembl_natural_product = Bool(self.chembl_natural_product)
+
+        if self.chembl_availability_type is not None and not isinstance(self.chembl_availability_type, str):
+            self.chembl_availability_type = str(self.chembl_availability_type)
+
+        if self.chembl_chirality is not None and not isinstance(self.chembl_chirality, str):
+            self.chembl_chirality = str(self.chembl_chirality)
+
+        if self.chembl_drug_warning is not None and not isinstance(self.chembl_drug_warning, str):
+            self.chembl_drug_warning = str(self.chembl_drug_warning)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -16617,6 +16641,15 @@ slots.chembl_prodrug = Slot(uri=BIOLINK.chembl_prodrug, name="chembl prodrug", c
 
 slots.chembl_chirality = Slot(uri=BIOLINK.chembl_chirality, name="chembl chirality", curie=BIOLINK.curie('chembl_chirality'),
                    model_uri=BIOLINK.chembl_chirality, domain=None, range=Optional[str])
+
+slots.chembl_black_box_warning = Slot(uri=BIOLINK.chembl_black_box_warning, name="chembl black box warning", curie=BIOLINK.curie('chembl_black_box_warning'),
+                   model_uri=BIOLINK.chembl_black_box_warning, domain=None, range=Optional[str])
+
+slots.chembl_natural_product = Slot(uri=BIOLINK.chembl_natural_product, name="chembl natural product", curie=BIOLINK.curie('chembl_natural_product'),
+                   model_uri=BIOLINK.chembl_natural_product, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.chembl_availability_type = Slot(uri=BIOLINK.chembl_availability_type, name="chembl availability type", curie=BIOLINK.curie('chembl_availability_type'),
+                   model_uri=BIOLINK.chembl_availability_type, domain=None, range=Optional[str])
 
 slots.dgidb_relative_drug_specificity_score = Slot(uri=BIOLINK.dgidb_relative_drug_specificity_score, name="dgidb relative drug specificity score", curie=BIOLINK.curie('dgidb_relative_drug_specificity_score'),
                    model_uri=BIOLINK.dgidb_relative_drug_specificity_score, domain=None, range=Optional[float])

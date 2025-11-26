@@ -206,7 +206,7 @@ subsets:
 
 imports:
   - linkml:types
-  - https://w3id.org/biolink/biolink-model/attributes
+  - attributes
 
 types:
 
@@ -7817,6 +7817,12 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - chembl prodrug
+      - chembl black box warning
+      - chembl natural product
+      - chembl availability type
+      - chembl chirality
+      - chembl drug warning
     exact_mappings:
       - CHEBI:24431
       - SIO:010004  # Chemical entity
