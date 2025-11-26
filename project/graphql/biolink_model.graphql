@@ -3780,6 +3780,8 @@ type EntityToDiseaseAssociation
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
     maxResearchPhase: ResearchPhaseEnum
+    fDARegulatoryApprovals: [String]
+    numberOfCases: Integer
   }
 
 interface EntityToDiseaseAssociationMixin
@@ -3910,6 +3912,8 @@ type EntityToPhenotypicFeatureAssociation
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
     maxResearchPhase: ResearchPhaseEnum
+    fDARegulatoryApprovals: [String]
+    numberOfCases: Integer
   }
 
 type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
