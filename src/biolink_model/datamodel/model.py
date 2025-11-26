@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-26T18:27:10
+# Generation date: 2025-11-26T12:13:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -9537,10 +9537,16 @@ class ChemicalGeneInteractionAssociation(Association):
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
     subject_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
+    qualified_predicate: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     object_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
+    causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
+    dgidb_interaction_score: Optional[float] = None
+    dgidb_evidence_score: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -9575,6 +9581,15 @@ class ChemicalGeneInteractionAssociation(Association):
         if self.subject_context_qualifier is not None and not isinstance(self.subject_context_qualifier, AnatomicalEntityId):
             self.subject_context_qualifier = AnatomicalEntityId(self.subject_context_qualifier)
 
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
+            self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.object_aspect_qualifier)
+
         if self.object_form_or_variant_qualifier is not None and not isinstance(self.object_form_or_variant_qualifier, ChemicalOrGeneOrGeneProductFormOrVariantEnum):
             self.object_form_or_variant_qualifier = ChemicalOrGeneOrGeneProductFormOrVariantEnum(self.object_form_or_variant_qualifier)
 
@@ -9586,6 +9601,15 @@ class ChemicalGeneInteractionAssociation(Association):
 
         if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalEntityId):
             self.anatomical_context_qualifier = AnatomicalEntityId(self.anatomical_context_qualifier)
+
+        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
+            self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
+
+        if self.dgidb_interaction_score is not None and not isinstance(self.dgidb_interaction_score, float):
+            self.dgidb_interaction_score = float(self.dgidb_interaction_score)
+
+        if self.dgidb_evidence_score is not None and not isinstance(self.dgidb_evidence_score, int):
+            self.dgidb_evidence_score = int(self.dgidb_evidence_score)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9833,12 +9857,20 @@ class ChemicalAffectsGeneAssociation(ChemicalAffectsBiologicalEntityAssociation)
     subject: Union[str, ChemicalEntityId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, BiologicalEntityId] = None
+    dgidb_interaction_score: Optional[float] = None
+    dgidb_evidence_score: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalAffectsGeneAssociationId):
             self.id = ChemicalAffectsGeneAssociationId(self.id)
+
+        if self.dgidb_interaction_score is not None and not isinstance(self.dgidb_interaction_score, float):
+            self.dgidb_interaction_score = float(self.dgidb_interaction_score)
+
+        if self.dgidb_evidence_score is not None and not isinstance(self.dgidb_evidence_score, int):
+            self.dgidb_evidence_score = int(self.dgidb_evidence_score)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -17044,6 +17076,12 @@ slots.chemical_gene_interaction_association_subject_derivative_qualifier = Slot(
 slots.chemical_gene_interaction_association_subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, name="chemical gene interaction association_subject context qualifier", curie=BIOLINK.curie('subject_context_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_subject_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
+slots.chemical_gene_interaction_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical gene interaction association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_gene_interaction_association_object_direction_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.chemical_gene_interaction_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical gene interaction association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_gene_interaction_association_object_aspect_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+
 slots.chemical_gene_interaction_association_object_form_or_variant_qualifier = Slot(uri=BIOLINK.object_form_or_variant_qualifier, name="chemical gene interaction association_object form or variant qualifier", curie=BIOLINK.curie('object_form_or_variant_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_object_form_or_variant_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
 
@@ -17055,6 +17093,9 @@ slots.chemical_gene_interaction_association_object_context_qualifier = Slot(uri=
 
 slots.chemical_gene_interaction_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical gene interaction association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_anatomical_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+
+slots.chemical_gene_interaction_association_causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="chemical gene interaction association_causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
+                   model_uri=BIOLINK.chemical_gene_interaction_association_causal_mechanism_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.gene_regulates_gene_association_subject = Slot(uri=RDF.subject, name="gene regulates gene association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_regulates_gene_association_subject, domain=GeneRegulatesGeneAssociation, range=Union[dict, GeneOrGeneProduct])

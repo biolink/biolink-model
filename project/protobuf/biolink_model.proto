@@ -1360,6 +1360,8 @@ message ChemicalAffectsGeneAssociation
   chemicalEntity subject = 0
   predicateType predicate = 0
   biologicalEntity object = 0
+  float dgidbInteractionScore = 0
+  integer dgidbEvidenceScore = 0
  }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity
@@ -1567,10 +1569,16 @@ message ChemicalGeneInteractionAssociation
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
+  string qualifiedPredicate = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   anatomicalEntity objectContextQualifier = 0
   anatomicalEntity anatomicalContextQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  float dgidbInteractionScore = 0
+  integer dgidbEvidenceScore = 0
   chemicalEntity subject = 0
   geneOrGeneProduct object = 0
   predicateType predicate = 0

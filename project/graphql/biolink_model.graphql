@@ -1874,6 +1874,8 @@ type ChemicalAffectsGeneAssociation
     subject: ChemicalEntity!
     predicate: PredicateType!
     object: BiologicalEntity!
+    dgidbInteractionScore: Float
+    dgidbEvidenceScore: Integer
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -2097,10 +2099,16 @@ type ChemicalGeneInteractionAssociation
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
     subjectContextQualifier: AnatomicalEntity
+    qualifiedPredicate: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectContextQualifier: AnatomicalEntity
     anatomicalContextQualifier: AnatomicalEntity
+    causalMechanismQualifier: CausalMechanismQualifierEnum
+    dgidbInteractionScore: Float
+    dgidbEvidenceScore: Integer
     subject: ChemicalEntity!
     object: GeneOrGeneProduct!
     predicate: PredicateType!
