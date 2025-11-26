@@ -10677,10 +10677,14 @@ classes:
       - subject part qualifier
       - subject derivative qualifier
       - subject context qualifier
+      - qualified predicate
+      - object direction qualifier
+      - object aspect qualifier
       - object form or variant qualifier
       - object part qualifier
       - object context qualifier
       - anatomical context qualifier
+      - causal mechanism qualifier
     slot_usage:
       subject:
         range: chemical entity
@@ -10696,6 +10700,10 @@ classes:
         range: ChemicalEntityDerivativeEnum
       subject context qualifier:
         range: anatomical entity
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10704,6 +10712,8 @@ classes:
         range: anatomical entity
       anatomical context qualifier:
         range: anatomical entity
+      causal mechanism qualifier:
+        range: CausalMechanismQualifierEnum
 
   gene regulates gene association:
     is_a: association
