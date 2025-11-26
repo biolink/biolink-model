@@ -5463,6 +5463,7 @@
       "domain_of": [
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5617,6 +5618,7 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5644,6 +5646,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5684,6 +5687,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -14713,6 +14717,11 @@
       "description": "A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity score. See https://dgidb.org/about/overview/interaction-score.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/dgidb_interaction_score",
+      "owner": "ChemicalAffectsGeneAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation",
+        "ChemicalAffectsGeneAssociation"
+      ],
       "range": "float",
       "@type": "SlotDefinition"
     },
@@ -14722,6 +14731,11 @@
       "description": "A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/dgidb_evidence_score",
+      "owner": "ChemicalAffectsGeneAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation",
+        "ChemicalAffectsGeneAssociation"
+      ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
@@ -18937,6 +18951,66 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "chemical_gene_interaction_association_object_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_direction_qualifier",
+      "domain": "ChemicalGeneInteractionAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "alias": "object direction qualifier",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_interaction_association_object_aspect_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_aspect_qualifier",
+      "domain": "ChemicalGeneInteractionAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "alias": "object aspect qualifier",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "chemical_gene_interaction_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
@@ -19052,6 +19126,27 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_interaction_association_causal_mechanism_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
+      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "causal_mechanism_qualifier",
+      "domain": "ChemicalGeneInteractionAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
+      "alias": "causal mechanism qualifier",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "causal mechanism qualifier",
+      "range": "CausalMechanismQualifierEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -35373,10 +35468,16 @@
         "chemical_gene_interaction_association_subject_part_qualifier",
         "chemical_gene_interaction_association_subject_derivative_qualifier",
         "chemical_gene_interaction_association_subject_context_qualifier",
+        "qualified_predicate",
+        "chemical_gene_interaction_association_object_direction_qualifier",
+        "chemical_gene_interaction_association_object_aspect_qualifier",
         "chemical_gene_interaction_association_object_form_or_variant_qualifier",
         "chemical_gene_interaction_association_object_part_qualifier",
         "chemical_gene_interaction_association_object_context_qualifier",
         "chemical_gene_interaction_association_anatomical_context_qualifier",
+        "chemical_gene_interaction_association_causal_mechanism_qualifier",
+        "dgidb_interaction_score",
+        "dgidb_evidence_score",
         "chemical_gene_interaction_association_subject",
         "chemical_gene_interaction_association_object",
         "chemical_gene_interaction_association_predicate"
@@ -35647,7 +35748,9 @@
         "chemical_affects_biological_entity_association_species_context_qualifier",
         "chemical_affects_biological_entity_association_subject",
         "chemical_affects_biological_entity_association_predicate",
-        "chemical_affects_biological_entity_association_object"
+        "chemical_affects_biological_entity_association_object",
+        "dgidb_interaction_score",
+        "dgidb_evidence_score"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
@@ -40597,9 +40700,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-26T18:26:48",
-  "source_file_size": 454097,
-  "generation_date": "2025-11-26T18:26:54",
+  "source_file_date": "2025-11-26T12:12:32",
+  "source_file_size": 454603,
+  "generation_date": "2025-11-26T12:12:51",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
