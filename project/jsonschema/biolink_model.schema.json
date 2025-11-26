@@ -24097,6 +24097,16 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "FDA_regulatory_approvals": {
+                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -24247,6 +24257,13 @@
                     "description": "if set to true, then the association is negated i.e. is not true",
                     "type": [
                         "boolean",
+                        "null"
+                    ]
+                },
+                "number_of_cases": {
+                    "description": "The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },
@@ -24488,6 +24505,16 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "FDA_regulatory_approvals": {
+                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -24638,6 +24665,13 @@
                     "description": "if set to true, then the association is negated i.e. is not true",
                     "type": [
                         "boolean",
+                        "null"
+                    ]
+                },
+                "number_of_cases": {
+                    "description": "The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },

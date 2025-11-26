@@ -3193,6 +3193,8 @@ message EntityToDiseaseAssociation
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
   researchPhaseEnum maxResearchPhase = 0
+ repeated  string fDARegulatoryApprovals = 0
+  integer numberOfCases = 0
  }
 message EntityToPhenotypicFeatureAssociation
  {
@@ -3243,6 +3245,8 @@ message EntityToPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
   researchPhaseEnum maxResearchPhase = 0
+ repeated  string fDARegulatoryApprovals = 0
+  integer numberOfCases = 0
  }
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure

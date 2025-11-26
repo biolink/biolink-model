@@ -1811,7 +1811,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ?
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
+          <FDA_regulatory_approvals> @linkml:String * ;
+          <number_of_cases> @linkml:Integer ?
        ) ;
        rdf:type [ <EntityToDiseaseAssociation> ]
     )
@@ -1936,7 +1938,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ?
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
+          <FDA_regulatory_approvals> @linkml:String * ;
+          <number_of_cases> @linkml:Integer ?
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociation> ]
     )

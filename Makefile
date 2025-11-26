@@ -7,6 +7,7 @@ SHELL := bash
 .SECONDARY:
 
 RUN = poetry run
+export PYTHONWARNINGS=ignore::UserWarning:linkml.utils.generator,ignore::UserWarning:linkml_runtime.Namespaces,ignore::UserWarning
 # get values from about.yaml file
 SCHEMA_NAME = $(shell ${SHELL} ./utils/get-value.sh name)
 SOURCE_SCHEMA_PATH = $(shell ${SHELL} ./utils/get-value.sh source_schema_path)

@@ -10118,6 +10118,8 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 class EntityToDiseaseAssociation(Association):
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None)
     max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None)
+    FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
+    number_of_cases: Optional[int] = Field(default=None, description="""The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -10168,6 +10170,8 @@ class EntityToDiseaseAssociation(Association):
 class EntityToPhenotypicFeatureAssociation(Association):
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None)
     max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None)
+    FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
+    number_of_cases: Optional[int] = Field(default=None, description="""The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
