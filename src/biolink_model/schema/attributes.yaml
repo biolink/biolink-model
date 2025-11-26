@@ -1,6 +1,6 @@
-# This file extends biolink.yaml with additional node and edge properties created as placeholders so that they can be used in knowledge graphs and pass KGX validation which requires Biolink compliance. 
+# This file extends biolink.yaml with additional node and edge properties created as placeholders so that they can be used in knowledge graphs and pass KGX validation which requires Biolink compliance.
 # They will remain here until such time as we can evaluate their utility, and how they should be modeled, before deciding if/what to move into Biolink proper.
-# The convention for naming such properties is to begin with the name/infores code for the source of the property, and then use the name of the property as defined by the source.  
+# The convention for naming such properties is to begin with the name/infores code for the source of the property, and then use the name of the property as defined by the source.
 # e.g. we created an edge property to hold the 'interaction score' from  DGIdb - which we name "dgidb interaction score"
 ---
 id: https://w3id.org/biolink/biolink-model/attributes
@@ -198,7 +198,19 @@ slots:
   chembl chirality:
     description: Tern indicating the chirality of the chemical entity.
     range: string
-    
+
+  chembl black box warning:
+    description: Text describing black box warnings for use of chemicals as therapeutics.
+    range: string
+
+  chembl natural product:
+    description: Flag indicating if a chemical entity is a natural product.
+    range: boolean
+
+  chembl availability type:
+    description: Text indicating the availability type of the chemical entity.
+    range: string
+
   dgidb relative drug specificity score:
     description: >-
       A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average
@@ -222,13 +234,14 @@ slots:
 
   dgidb interaction score:
     description: >-
-      A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence 
+      A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence
       score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity
       score. See https://dgidb.org/about/overview/interaction-score.
     range: float
 
   dgidb evidence score:
     description: >-
-      A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is 
+      A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is
       simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
     range: integer
+

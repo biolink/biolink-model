@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-22T03:58:30
+# Generation date: 2025-11-25T16:07:36
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -3969,6 +3969,12 @@ class ChemicalEntity(NamedThing):
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
     has_chemical_role: Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]] = empty_list()
+    chembl_prodrug: Optional[Union[bool, Bool]] = None
+    chembl_black_box_warning: Optional[str] = None
+    chembl_natural_product: Optional[Union[bool, Bool]] = None
+    chembl_availability_type: Optional[str] = None
+    chembl_chirality: Optional[str] = None
+    chembl_drug_warning: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -3992,6 +3998,24 @@ class ChemicalEntity(NamedThing):
         if not isinstance(self.has_chemical_role, list):
             self.has_chemical_role = [self.has_chemical_role] if self.has_chemical_role is not None else []
         self.has_chemical_role = [v if isinstance(v, ChemicalRoleId) else ChemicalRoleId(v) for v in self.has_chemical_role]
+
+        if self.chembl_prodrug is not None and not isinstance(self.chembl_prodrug, Bool):
+            self.chembl_prodrug = Bool(self.chembl_prodrug)
+
+        if self.chembl_black_box_warning is not None and not isinstance(self.chembl_black_box_warning, str):
+            self.chembl_black_box_warning = str(self.chembl_black_box_warning)
+
+        if self.chembl_natural_product is not None and not isinstance(self.chembl_natural_product, Bool):
+            self.chembl_natural_product = Bool(self.chembl_natural_product)
+
+        if self.chembl_availability_type is not None and not isinstance(self.chembl_availability_type, str):
+            self.chembl_availability_type = str(self.chembl_availability_type)
+
+        if self.chembl_chirality is not None and not isinstance(self.chembl_chirality, str):
+            self.chembl_chirality = str(self.chembl_chirality)
+
+        if self.chembl_drug_warning is not None and not isinstance(self.chembl_drug_warning, str):
+            self.chembl_drug_warning = str(self.chembl_drug_warning)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -6676,7 +6700,7 @@ class ClinicalTrial(Study):
     clinical_trial_enrollment_type: Optional[str] = None
     clinical_trial_start_date: Optional[Union[str, XSDDate]] = None
     clinical_trial_enrollment: Optional[int] = None
-    clinical_trial_age_stage: Optional[Union[str, "ClinicalTrialAgeStageEnum"]] = None
+    clinical_trial_age_stage: Optional[Union[Union[str, "ClinicalTrialAgeStageEnum"], list[Union[str, "ClinicalTrialAgeStageEnum"]]]] = empty_list()
     clinical_trial_age_range: Optional[str] = None
     clinical_trial_tested_intervention: Optional[str] = None
     clinical_trial_interventions: Optional[Union[Union[str, ClinicalInterventionId], list[Union[str, ClinicalInterventionId]]]] = empty_list()
@@ -6713,8 +6737,9 @@ class ClinicalTrial(Study):
         if self.clinical_trial_enrollment is not None and not isinstance(self.clinical_trial_enrollment, int):
             self.clinical_trial_enrollment = int(self.clinical_trial_enrollment)
 
-        if self.clinical_trial_age_stage is not None and not isinstance(self.clinical_trial_age_stage, ClinicalTrialAgeStageEnum):
-            self.clinical_trial_age_stage = ClinicalTrialAgeStageEnum(self.clinical_trial_age_stage)
+        if not isinstance(self.clinical_trial_age_stage, list):
+            self.clinical_trial_age_stage = [self.clinical_trial_age_stage] if self.clinical_trial_age_stage is not None else []
+        self.clinical_trial_age_stage = [v if isinstance(v, ClinicalTrialAgeStageEnum) else ClinicalTrialAgeStageEnum(v) for v in self.clinical_trial_age_stage]
 
         if self.clinical_trial_age_range is not None and not isinstance(self.clinical_trial_age_range, str):
             self.clinical_trial_age_range = str(self.clinical_trial_age_range)
@@ -7686,6 +7711,7 @@ class Association(Entity):
     has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
+    elevate_to_prediction: Optional[Union[bool, Bool]] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7821,6 +7847,9 @@ class Association(Entity):
 
         if self.has_confidence_score is not None and not isinstance(self.has_confidence_score, float):
             self.has_confidence_score = float(self.has_confidence_score)
+
+        if self.elevate_to_prediction is not None and not isinstance(self.elevate_to_prediction, Bool):
+            self.elevate_to_prediction = Bool(self.elevate_to_prediction)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -15295,6 +15324,9 @@ slots.exposure_magnitude = Slot(uri=BIOLINK.exposure_magnitude, name="exposure m
 slots.exposure_additional_condition = Slot(uri=BIOLINK.exposure_additional_condition, name="exposure additional condition", curie=BIOLINK.curie('exposure_additional_condition'),
                    model_uri=BIOLINK.exposure_additional_condition, domain=ExposureEvent, range=Optional[str])
 
+slots.elevate_to_prediction = Slot(uri=BIOLINK.elevate_to_prediction, name="elevate to prediction", curie=BIOLINK.curie('elevate_to_prediction'),
+                   model_uri=BIOLINK.elevate_to_prediction, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
 slots.clinical_trial_phase = Slot(uri=BIOLINK.clinical_trial_phase, name="clinical trial phase", curie=BIOLINK.curie('clinical_trial_phase'),
                    model_uri=BIOLINK.clinical_trial_phase, domain=NamedThing, range=Optional[Union[str, "ResearchPhaseEnum"]])
 
@@ -15329,7 +15361,7 @@ slots.clinical_trial_enrollment = Slot(uri=BIOLINK.clinical_trial_enrollment, na
                    model_uri=BIOLINK.clinical_trial_enrollment, domain=ClinicalTrial, range=Optional[int])
 
 slots.clinical_trial_age_stage = Slot(uri=BIOLINK.clinical_trial_age_stage, name="clinical trial age stage", curie=BIOLINK.curie('clinical_trial_age_stage'),
-                   model_uri=BIOLINK.clinical_trial_age_stage, domain=ClinicalTrial, range=Optional[Union[str, "ClinicalTrialAgeStageEnum"]])
+                   model_uri=BIOLINK.clinical_trial_age_stage, domain=ClinicalTrial, range=Optional[Union[Union[str, "ClinicalTrialAgeStageEnum"], list[Union[str, "ClinicalTrialAgeStageEnum"]]]])
 
 slots.clinical_trial_age_range = Slot(uri=BIOLINK.clinical_trial_age_range, name="clinical trial age range", curie=BIOLINK.curie('clinical_trial_age_range'),
                    model_uri=BIOLINK.clinical_trial_age_range, domain=ClinicalTrial, range=Optional[str])
@@ -16609,6 +16641,15 @@ slots.chembl_prodrug = Slot(uri=BIOLINK.chembl_prodrug, name="chembl prodrug", c
 
 slots.chembl_chirality = Slot(uri=BIOLINK.chembl_chirality, name="chembl chirality", curie=BIOLINK.curie('chembl_chirality'),
                    model_uri=BIOLINK.chembl_chirality, domain=None, range=Optional[str])
+
+slots.chembl_black_box_warning = Slot(uri=BIOLINK.chembl_black_box_warning, name="chembl black box warning", curie=BIOLINK.curie('chembl_black_box_warning'),
+                   model_uri=BIOLINK.chembl_black_box_warning, domain=None, range=Optional[str])
+
+slots.chembl_natural_product = Slot(uri=BIOLINK.chembl_natural_product, name="chembl natural product", curie=BIOLINK.curie('chembl_natural_product'),
+                   model_uri=BIOLINK.chembl_natural_product, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.chembl_availability_type = Slot(uri=BIOLINK.chembl_availability_type, name="chembl availability type", curie=BIOLINK.curie('chembl_availability_type'),
+                   model_uri=BIOLINK.chembl_availability_type, domain=None, range=Optional[str])
 
 slots.dgidb_relative_drug_specificity_score = Slot(uri=BIOLINK.dgidb_relative_drug_specificity_score, name="dgidb relative drug specificity score", curie=BIOLINK.curie('dgidb_relative_drug_specificity_score'),
                    model_uri=BIOLINK.dgidb_relative_drug_specificity_score, domain=None, range=Optional[float])

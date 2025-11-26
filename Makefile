@@ -208,7 +208,8 @@ gendoc: $(DOCDIR)
 	cp semmed-exclude-list.yaml $(DOCDIR) ; \
 	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
-	cp biolink-model.yaml $(DOCDIR) ; \
+	# Copy biolink-model.yaml and replace local imports with remote URLs for deployment
+	sed 's|^  - attributes$$|  - https://w3id.org/biolink/biolink-model/attributes|' biolink-model.yaml > $(DOCDIR)/biolink-model.yaml ; \
 	cp attributes.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	cp -r $(SRC)/docs/images $(DOCDIR)/images ; \

@@ -206,7 +206,7 @@ subsets:
 
 imports:
   - linkml:types
-  - https://w3id.org/biolink/biolink-model/attributes
+  - attributes
 
 types:
 
@@ -1171,6 +1171,12 @@ slots:
 
   ## Clinical Trials
 
+  elevate to prediction:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.
+    range: boolean
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -1260,6 +1266,7 @@ slots:
       The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
     range: ClinicalTrialAgeStageEnum
     domain: clinical trial
+    multivalued: true
 
   clinical trial age range:
     is_a: node property
@@ -7810,6 +7817,12 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - chembl prodrug
+      - chembl black box warning
+      - chembl natural product
+      - chembl availability type
+      - chembl chirality
+      - chembl drug warning
     exact_mappings:
       - CHEBI:24431
       - SIO:010004  # Chemical entity
@@ -9969,6 +9982,7 @@ classes:
       - has supporting studies
       - update date
       - has confidence score
+      - elevate to prediction
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
