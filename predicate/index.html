@@ -685,83 +685,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
-<td>An interaction between a chemical entity and another entity</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
-<td>An association between a Case (patient) and a Disease</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../ChemicalEntityToEntityAssociationMixin/">ChemicalEntityToEntityAssociationMixin</a></td>
 <td>An interaction between a chemical entity and another entity</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
-<td>An relationship between a cell line and another entity</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
-<td>an association which has a macromolecular machine mixin as a subject</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
-<td>Qualifier for frequency type associations</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DrugToEntityAssociationMixin/">DrugToEntityAssociationMixin</a></td>
-<td>An interaction between a drug and another entity</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
-<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
-<td>Association between a Case and a Genetic Variant</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a></td>
-<td>An association between a material sample and something.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -770,17 +695,32 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
-<td>An association between a material sample and the material entity from which it is derived.</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../EntityToOutcomeAssociationMixin/">EntityToOutcomeAssociationMixin</a></td>
-<td>An association between some entity and an outcome</td>
+<td><a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a></td>
+<td>An abstract association for use where the case is the subject</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
+<td>Association between a Case and a Gene (e.g., indicating a gene of interest for the case)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a></td>
+<td>An association between a material sample and something.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToEntityAssociationMixin/">DiseaseOrPhenotypicFeatureToEntityAssociationMixin</a></td>
 <td>None</td>
 <td>no</td>
 </tr>
@@ -790,18 +730,13 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
-<td>Association between a Case and a Gene (e.g., indicating a gene of interest for the case)</td>
+<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
+<td>An association between a Case (patient) and a Disease</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Association/">Association</a></td>
-<td>A typed association between two entities, supported by evidence</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CaseToEntityAssociationMixin/">CaseToEntityAssociationMixin</a></td>
-<td>An abstract association for use where the case is the subject</td>
+<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
+<td>Association between a Case and a Genetic Variant</td>
 <td>no</td>
 </tr>
 <tr>
@@ -810,13 +745,78 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
+<td>an association which has a macromolecular machine mixin as a subject</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
+<td>An relationship between a cell line and another entity</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EntityToOutcomeAssociationMixin/">EntityToOutcomeAssociationMixin</a></td>
+<td>An association between some entity and an outcome</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td>An association between a material sample and the material entity from which it is derived.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
+<td>An association between an organism taxon and another entity</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td>This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../OrganismTaxonToEntityAssociation/">OrganismTaxonToEntityAssociation</a></td>
-<td>An association between an organism taxon and another entity</td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
+<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Association/">Association</a></td>
+<td>A typed association between two entities, supported by evidence</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td>Qualifier for frequency type associations</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalToEntityAssociationMixin/">ChemicalToEntityAssociationMixin</a></td>
+<td>An interaction between a chemical entity and another entity</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DiseaseToEntityAssociationMixin/">DiseaseToEntityAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DrugToEntityAssociationMixin/">DrugToEntityAssociationMixin</a></td>
+<td>An interaction between a drug and another entity</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -855,7 +855,7 @@ domain_of:
 - drug to entity association mixin
 - chemical to entity association mixin
 - case to entity association mixin
-- chemical to chemical association
+- chemical entity to chemical entity association
 - named thing associated with likelihood of named thing association
 - material sample to entity association mixin
 - material sample derivation association

@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/ChemicalToPathwayAssociation/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/ChemicalEntityToChemicalEntityAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Class: ChemicalToPathwayAssociation - Biolink Model Documentation</title>
+<title>Class: ChemicalEntityToChemicalEntityAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-chemicaltopathwayassociation">
+<a class="md-skip" href="#class-chemicalentitytochemicalentityassociation">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ChemicalToPathwayAssociation
+              Class: ChemicalEntityToChemicalEntityAssociation
             
           </span>
 </div>
@@ -292,131 +292,142 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-chemicaltopathwayassociation"><strong>  Class: ChemicalToPathwayAssociation </strong></h1>
+<h1 id="class-chemicalentitytochemicalentityassociation"><strong>  Class: ChemicalEntityToChemicalEntityAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> An interaction between a chemical entity and a biological process or pathway.</i><br/>
+<strong>Description:</strong><i> A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class ChemicalToPathwayAssociation
-      Association &lt;|-- ChemicalToPathwayAssociation
+    class ChemicalEntityToChemicalEntityAssociation
+      Association &lt;|-- ChemicalEntityToChemicalEntityAssociation
 
-      ChemicalToPathwayAssociation : adjusted_p_value
 
-      ChemicalToPathwayAssociation : agent_type
+      ChemicalEntityToChemicalEntityAssociation &lt;|-- ReactionToParticipantAssociation
+      ChemicalEntityToChemicalEntityAssociation &lt;|-- ChemicalEntityToChemicalDerivationAssociation
 
-          ChemicalToPathwayAssociation --|&gt; AgentTypeEnum : agent_type
 
-      ChemicalToPathwayAssociation : aggregator_knowledge_source
+      ChemicalEntityToChemicalEntityAssociation : adjusted_p_value
 
-      ChemicalToPathwayAssociation : category
+      ChemicalEntityToChemicalEntityAssociation : agent_type
 
-      ChemicalToPathwayAssociation : deprecated
+          ChemicalEntityToChemicalEntityAssociation --|&gt; AgentTypeEnum : agent_type
 
-      ChemicalToPathwayAssociation : description
+      ChemicalEntityToChemicalEntityAssociation : aggregator_knowledge_source
 
-      ChemicalToPathwayAssociation : has_attribute
+      ChemicalEntityToChemicalEntityAssociation : category
 
-          ChemicalToPathwayAssociation --|&gt; Attribute : has_attribute
+      ChemicalEntityToChemicalEntityAssociation : deprecated
 
-      ChemicalToPathwayAssociation : has_confidence_score
+      ChemicalEntityToChemicalEntityAssociation : description
 
-      ChemicalToPathwayAssociation : has_evidence
+      ChemicalEntityToChemicalEntityAssociation : elevate_to_prediction
 
-          ChemicalToPathwayAssociation --|&gt; EvidenceType : has_evidence
+      ChemicalEntityToChemicalEntityAssociation : has_attribute
 
-      ChemicalToPathwayAssociation : has_supporting_studies
+          ChemicalEntityToChemicalEntityAssociation --|&gt; Attribute : has_attribute
 
-          ChemicalToPathwayAssociation --|&gt; Study : has_supporting_studies
+      ChemicalEntityToChemicalEntityAssociation : has_confidence_score
 
-      ChemicalToPathwayAssociation : id
+      ChemicalEntityToChemicalEntityAssociation : has_evidence
 
-      ChemicalToPathwayAssociation : iri
+          ChemicalEntityToChemicalEntityAssociation --|&gt; EvidenceType : has_evidence
 
-      ChemicalToPathwayAssociation : knowledge_level
+      ChemicalEntityToChemicalEntityAssociation : has_supporting_studies
 
-          ChemicalToPathwayAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
+          ChemicalEntityToChemicalEntityAssociation --|&gt; Study : has_supporting_studies
 
-      ChemicalToPathwayAssociation : knowledge_source
+      ChemicalEntityToChemicalEntityAssociation : id
 
-      ChemicalToPathwayAssociation : name
+      ChemicalEntityToChemicalEntityAssociation : iri
 
-      ChemicalToPathwayAssociation : negated
+      ChemicalEntityToChemicalEntityAssociation : knowledge_level
 
-      ChemicalToPathwayAssociation : object
+          ChemicalEntityToChemicalEntityAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
 
-          ChemicalToPathwayAssociation --|&gt; Pathway : object
+      ChemicalEntityToChemicalEntityAssociation : knowledge_source
 
-      ChemicalToPathwayAssociation : object_category
+      ChemicalEntityToChemicalEntityAssociation : name
 
-          ChemicalToPathwayAssociation --|&gt; OntologyClass : object_category
+      ChemicalEntityToChemicalEntityAssociation : negated
 
-      ChemicalToPathwayAssociation : object_category_closure
+      ChemicalEntityToChemicalEntityAssociation : object
 
-          ChemicalToPathwayAssociation --|&gt; OntologyClass : object_category_closure
+          ChemicalEntityToChemicalEntityAssociation --|&gt; ChemicalEntity : object
 
-      ChemicalToPathwayAssociation : object_closure
+      ChemicalEntityToChemicalEntityAssociation : object_category
 
-      ChemicalToPathwayAssociation : object_feature_name
+          ChemicalEntityToChemicalEntityAssociation --|&gt; OntologyClass : object_category
 
-      ChemicalToPathwayAssociation : object_label_closure
+      ChemicalEntityToChemicalEntityAssociation : object_category_closure
 
-      ChemicalToPathwayAssociation : object_namespace
+          ChemicalEntityToChemicalEntityAssociation --|&gt; OntologyClass : object_category_closure
 
-      ChemicalToPathwayAssociation : original_object
+      ChemicalEntityToChemicalEntityAssociation : object_closure
 
-      ChemicalToPathwayAssociation : original_predicate
+      ChemicalEntityToChemicalEntityAssociation : object_feature_name
 
-      ChemicalToPathwayAssociation : original_subject
+      ChemicalEntityToChemicalEntityAssociation : object_label_closure
 
-      ChemicalToPathwayAssociation : p_value
+      ChemicalEntityToChemicalEntityAssociation : object_namespace
 
-      ChemicalToPathwayAssociation : predicate
+      ChemicalEntityToChemicalEntityAssociation : original_object
 
-      ChemicalToPathwayAssociation : primary_knowledge_source
+      ChemicalEntityToChemicalEntityAssociation : original_predicate
 
-      ChemicalToPathwayAssociation : publications
+      ChemicalEntityToChemicalEntityAssociation : original_subject
 
-          ChemicalToPathwayAssociation --|&gt; Publication : publications
+      ChemicalEntityToChemicalEntityAssociation : p_value
 
-      ChemicalToPathwayAssociation : qualifier
+      ChemicalEntityToChemicalEntityAssociation : predicate
 
-      ChemicalToPathwayAssociation : qualifiers
+      ChemicalEntityToChemicalEntityAssociation : primary_knowledge_source
 
-          ChemicalToPathwayAssociation --|&gt; OntologyClass : qualifiers
+      ChemicalEntityToChemicalEntityAssociation : publications
 
-      ChemicalToPathwayAssociation : retrieval_source_ids
+          ChemicalEntityToChemicalEntityAssociation --|&gt; Publication : publications
 
-          ChemicalToPathwayAssociation --|&gt; RetrievalSource : retrieval_source_ids
+      ChemicalEntityToChemicalEntityAssociation : qualifier
 
-      ChemicalToPathwayAssociation : sources
+      ChemicalEntityToChemicalEntityAssociation : qualifiers
 
-          ChemicalToPathwayAssociation --|&gt; RetrievalSource : sources
+          ChemicalEntityToChemicalEntityAssociation --|&gt; OntologyClass : qualifiers
 
-      ChemicalToPathwayAssociation : subject
+      ChemicalEntityToChemicalEntityAssociation : retrieval_source_ids
 
-          ChemicalToPathwayAssociation --|&gt; ChemicalEntity : subject
+          ChemicalEntityToChemicalEntityAssociation --|&gt; RetrievalSource : retrieval_source_ids
 
-      ChemicalToPathwayAssociation : subject_category
+      ChemicalEntityToChemicalEntityAssociation : sources
 
-          ChemicalToPathwayAssociation --|&gt; OntologyClass : subject_category
+          ChemicalEntityToChemicalEntityAssociation --|&gt; RetrievalSource : sources
 
-      ChemicalToPathwayAssociation : subject_category_closure
+      ChemicalEntityToChemicalEntityAssociation : species_context_qualifier
 
-          ChemicalToPathwayAssociation --|&gt; OntologyClass : subject_category_closure
+          ChemicalEntityToChemicalEntityAssociation --|&gt; OrganismTaxon : species_context_qualifier
 
-      ChemicalToPathwayAssociation : subject_closure
+      ChemicalEntityToChemicalEntityAssociation : subject
 
-      ChemicalToPathwayAssociation : subject_feature_name
+          ChemicalEntityToChemicalEntityAssociation --|&gt; NamedThing : subject
 
-      ChemicalToPathwayAssociation : subject_label_closure
+      ChemicalEntityToChemicalEntityAssociation : subject_category
 
-      ChemicalToPathwayAssociation : subject_namespace
+          ChemicalEntityToChemicalEntityAssociation --|&gt; OntologyClass : subject_category
 
-      ChemicalToPathwayAssociation : timepoint
+      ChemicalEntityToChemicalEntityAssociation : subject_category_closure
 
-      ChemicalToPathwayAssociation : type
+          ChemicalEntityToChemicalEntityAssociation --|&gt; OntologyClass : subject_category_closure
 
-      ChemicalToPathwayAssociation : update_date
+      ChemicalEntityToChemicalEntityAssociation : subject_closure
+
+      ChemicalEntityToChemicalEntityAssociation : subject_feature_name
+
+      ChemicalEntityToChemicalEntityAssociation : subject_label_closure
+
+      ChemicalEntityToChemicalEntityAssociation : subject_namespace
+
+      ChemicalEntityToChemicalEntityAssociation : timepoint
+
+      ChemicalEntityToChemicalEntityAssociation : type
+
+      ChemicalEntityToChemicalEntityAssociation : update_date
 
 
 </div>
@@ -424,7 +435,11 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><strong>ChemicalToPathwayAssociation</strong></li>
+<li><strong>ChemicalEntityToChemicalEntityAssociation</strong><ul>
+<li><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></li>
+<li><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -442,22 +457,28 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> the chemical entity that is affecting the pathway </i></br></td>
-<td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../Association/">Association</a></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
+<td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
+<td>direct</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a></td>
+<td>direct</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../object/">object</a>: <br/> <i> the pathway that is affected by the chemical </i></td>
-<td>1 <br/> <a href="../Pathway/">Pathway</a></td>
-<td><a href="../Association/">Association</a></td>
+<td><a href="../object/">object</a>: <br/> <i> the chemical element that is the target of the statement </i></td>
+<td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td>direct</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>direct</td>
+<td>zebrafish, human</td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
@@ -658,6 +679,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -709,22 +736,21 @@
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: chemical to pathway association
-description: An interaction between a chemical entity and a biological process or
-  pathway.
+<pre><code class="language-yaml">name: chemical entity to chemical entity association
+description: A relationship between two chemical entities. This can encompass actual
+  interactions as well as temporal causal edges, e.g. one chemical converted to another.
 from_schema: https://w3id.org/biolink/vocab/
-exact_mappings:
-- SIO:001250
 is_a: association
+slots:
+- subject
+- predicate
+- object
+- species context qualifier
 slot_usage:
-  subject:
-    name: subject
-    description: the chemical entity that is affecting the pathway
-    range: chemical entity
   object:
     name: object
-    description: the pathway that is affected by the chemical
-    range: pathway
+    description: the chemical element that is the target of the statement
+    range: chemical entity
 defining_slots:
 - subject
 - object

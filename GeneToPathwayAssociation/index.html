@@ -315,6 +315,8 @@
 
       GeneToPathwayAssociation : description
 
+      GeneToPathwayAssociation : elevate_to_prediction
+
       GeneToPathwayAssociation : has_attribute
 
           GeneToPathwayAssociation --|&gt; Attribute : has_attribute
@@ -445,19 +447,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> the gene or gene product entity that participates or influences the pathway </i></br></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the pathway that includes or is affected by the gene or gene product </i></td>
 <td>1 <br/> <a href="../Pathway/">Pathway</a></td>
-<td><a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -655,6 +657,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

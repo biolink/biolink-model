@@ -1690,6 +1690,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
+<td><a href="elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.</td>
+</tr>
+<tr>
 <td><a href="exact_synonym/">exact_synonym</a></td>
 <td>None</td>
 </tr>
@@ -1880,6 +1884,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="node_property/">node_property</a></td>
 <td>A grouping for any property that holds between a node and a value</td>
+</tr>
+<tr>
+<td><a href="number_of_cases/">number_of_cases</a></td>
+<td>The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.</td>
 </tr>
 <tr>
 <td><a href="pages/">pages</a></td>
@@ -3223,6 +3231,26 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A regulatory relationship between two genes</td>
 </tr>
 <tr>
+<td><a href="ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td>An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.</td>
+</tr>
+<tr>
+<td><a href="ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
+<td>A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P</td>
+</tr>
+<tr>
+<td><a href="ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
+<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
+</tr>
+<tr>
+<td><a href="ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td>An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.</td>
+</tr>
+<tr>
+<td><a href="ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
+<td>An interaction between a chemical entity and a biological process or pathway.</td>
+</tr>
+<tr>
 <td><a href="ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
 <td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
 </tr>
@@ -3233,22 +3261,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td>This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.</td>
-</tr>
-<tr>
-<td><a href="ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
-<td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
-</tr>
-<tr>
-<td><a href="ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
-<td>A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P</td>
-</tr>
-<tr>
-<td><a href="ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td>An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.</td>
-</tr>
-<tr>
-<td><a href="ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
-<td>An interaction between a chemical entity and a biological process or pathway.</td>
 </tr>
 <tr>
 <td><a href="ContributorAssociation/">ContributorAssociation</a></td>

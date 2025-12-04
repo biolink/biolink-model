@@ -701,6 +701,11 @@
 <td>yes</td>
 </tr>
 <tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
@@ -722,6 +727,7 @@ domain: association
 alias: causal_mechanism_qualifier
 domain_of:
 - predicate mapping
+- chemical gene interaction association
 - chemical affects biological entity association
 - gene affects chemical association
 range: CausalMechanismQualifierEnum

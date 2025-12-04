@@ -321,6 +321,8 @@
 
           GenotypeToDiseaseAssociation --|&gt; Disease : disease_context_qualifier
 
+      GenotypeToDiseaseAssociation : elevate_to_prediction
+
       GenotypeToDiseaseAssociation : frequency_qualifier
 
       GenotypeToDiseaseAssociation : has_attribute
@@ -470,19 +472,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> a genotype that is associated in some way with a disease state </i></td>
 <td>1 <br/> <a href="../Genotype/">Genotype</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
+<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> E.g. is pathogenic for </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
+<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> a disease that is associated with that genotype </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a></td>
+<td><a href="../GenotypeToEntityAssociationMixin/">GenotypeToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td>MONDO:0016419</td>
 </tr>
 <tr>
@@ -680,6 +682,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

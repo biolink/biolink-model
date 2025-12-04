@@ -322,6 +322,12 @@
 
       ChemicalAffectsGeneAssociation : description
 
+      ChemicalAffectsGeneAssociation : dgidb_evidence_score
+
+      ChemicalAffectsGeneAssociation : dgidb_interaction_score
+
+      ChemicalAffectsGeneAssociation : elevate_to_prediction
+
       ChemicalAffectsGeneAssociation : has_attribute
 
           ChemicalAffectsGeneAssociation --|&gt; Attribute : has_attribute
@@ -503,7 +509,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></br></td>
+<td><a href="../dgidb_interaction_score/">dgidb_interaction_score</a>: <br> <i> A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity score. See https://dgidb.org/about/overview/interaction-score. </i></br></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../dgidb_evidence_score/">dgidb_evidence_score</a>: <br/> <i> A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../ChemicalOrGeneOrGeneProductFormOrVariantEnum/">ChemicalOrGeneOrGeneProductFormOrVariantEnum</a></td>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>mutation, late stage, severe, transplant, chemical analog</td>
@@ -576,7 +594,7 @@
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
-<td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
+<td>* <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>blood, cerebral cortext</td>
 </tr>
@@ -809,6 +827,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -865,6 +889,9 @@ description: Describes an effect that a chemical has on a gene or gene product (
   an impact of on its abundance, activity,localization, processing, expression, etc.)
 from_schema: https://w3id.org/biolink/vocab/
 is_a: chemical affects biological entity association
+slots:
+- dgidb interaction score
+- dgidb evidence score
 
 </code></pre>
 </details>

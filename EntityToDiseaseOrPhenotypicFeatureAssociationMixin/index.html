@@ -296,7 +296,7 @@
 <div class="mermaid"> classDiagram
     class EntityToDiseaseOrPhenotypicFeatureAssociationMixin
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- CellLineToDiseaseOrPhenotypicFeatureAssociation
-      EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalToDiseaseOrPhenotypicFeatureAssociation
+      EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
       EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
@@ -373,7 +373,7 @@
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>direct</td>
 <td>blood, cerebral cortext</td>
 </tr>
@@ -393,7 +393,7 @@
 <td>An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.</td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td>An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.</td>
 </tr>
 <tr>

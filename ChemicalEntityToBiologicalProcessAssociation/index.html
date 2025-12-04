@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/ChemicalToDiseaseOrPhenotypicFeatureAssociation/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/ChemicalEntityToBiologicalProcessAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Class: ChemicalToDiseaseOrPhenotypicFeatureAssociation - Biolink Model Documentation</title>
+<title>Class: ChemicalEntityToBiologicalProcessAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-chemicaltodiseaseorphenotypicfeatureassociation">
+<a class="md-skip" href="#class-chemicalentitytobiologicalprocessassociation">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ChemicalToDiseaseOrPhenotypicFeatureAssociation
+              Class: ChemicalEntityToBiologicalProcessAssociation
             
           </span>
 </div>
@@ -292,142 +292,141 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-chemicaltodiseaseorphenotypicfeatureassociation"><strong>  Class: ChemicalToDiseaseOrPhenotypicFeatureAssociation </strong></h1>
+<h1 id="class-chemicalentitytobiologicalprocessassociation"><strong>  Class: ChemicalEntityToBiologicalProcessAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.</i><br/>
+<strong>Description:</strong><i> An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class ChemicalToDiseaseOrPhenotypicFeatureAssociation
-      EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- ChemicalToDiseaseOrPhenotypicFeatureAssociation
-      Association &lt;|-- ChemicalToDiseaseOrPhenotypicFeatureAssociation
+    class ChemicalEntityToBiologicalProcessAssociation
+      Association &lt;|-- ChemicalEntityToBiologicalProcessAssociation
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : adjusted_p_value
+      ChemicalEntityToBiologicalProcessAssociation : adjusted_p_value
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : agent_type
+      ChemicalEntityToBiologicalProcessAssociation : agent_type
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; AgentTypeEnum : agent_type
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; AgentTypeEnum : agent_type
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : aggregator_knowledge_source
+      ChemicalEntityToBiologicalProcessAssociation : aggregator_knowledge_source
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : anatomical_context_qualifier
+      ChemicalEntityToBiologicalProcessAssociation : anatomical_context_qualifier
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : category
+      ChemicalEntityToBiologicalProcessAssociation : category
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : deprecated
+      ChemicalEntityToBiologicalProcessAssociation : deprecated
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : description
+      ChemicalEntityToBiologicalProcessAssociation : description
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : disease_context_qualifier
+      ChemicalEntityToBiologicalProcessAssociation : elevate_to_prediction
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; Disease : disease_context_qualifier
+      ChemicalEntityToBiologicalProcessAssociation : has_attribute
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : has_attribute
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; Attribute : has_attribute
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; Attribute : has_attribute
+      ChemicalEntityToBiologicalProcessAssociation : has_confidence_score
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : has_confidence_score
+      ChemicalEntityToBiologicalProcessAssociation : has_evidence
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : has_evidence
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; EvidenceType : has_evidence
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; EvidenceType : has_evidence
+      ChemicalEntityToBiologicalProcessAssociation : has_supporting_studies
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : has_supporting_studies
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; Study : has_supporting_studies
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; Study : has_supporting_studies
+      ChemicalEntityToBiologicalProcessAssociation : id
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : id
+      ChemicalEntityToBiologicalProcessAssociation : iri
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : iri
+      ChemicalEntityToBiologicalProcessAssociation : knowledge_level
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : knowledge_level
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
+      ChemicalEntityToBiologicalProcessAssociation : knowledge_source
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : knowledge_source
+      ChemicalEntityToBiologicalProcessAssociation : name
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : name
+      ChemicalEntityToBiologicalProcessAssociation : negated
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : negated
+      ChemicalEntityToBiologicalProcessAssociation : object
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; BiologicalProcess : object
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; DiseaseOrPhenotypicFeature : object
+      ChemicalEntityToBiologicalProcessAssociation : object_category
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_category
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; OntologyClass : object_category
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category
+      ChemicalEntityToBiologicalProcessAssociation : object_category_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_category_closure
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; OntologyClass : object_category_closure
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category_closure
+      ChemicalEntityToBiologicalProcessAssociation : object_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_closure
+      ChemicalEntityToBiologicalProcessAssociation : object_feature_name
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_feature_name
+      ChemicalEntityToBiologicalProcessAssociation : object_label_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_label_closure
+      ChemicalEntityToBiologicalProcessAssociation : object_namespace
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_namespace
+      ChemicalEntityToBiologicalProcessAssociation : original_object
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : object_specialization_qualifier
+      ChemicalEntityToBiologicalProcessAssociation : original_predicate
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : original_object
+      ChemicalEntityToBiologicalProcessAssociation : original_subject
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : original_predicate
+      ChemicalEntityToBiologicalProcessAssociation : p_value
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : original_subject
+      ChemicalEntityToBiologicalProcessAssociation : predicate
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : p_value
+      ChemicalEntityToBiologicalProcessAssociation : primary_knowledge_source
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : predicate
+      ChemicalEntityToBiologicalProcessAssociation : publications
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : primary_knowledge_source
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; Publication : publications
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : publications
+      ChemicalEntityToBiologicalProcessAssociation : qualified_predicate
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; Publication : publications
+      ChemicalEntityToBiologicalProcessAssociation : qualifier
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : qualifier
+      ChemicalEntityToBiologicalProcessAssociation : qualifiers
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : qualifiers
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; OntologyClass : qualifiers
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : qualifiers
+      ChemicalEntityToBiologicalProcessAssociation : retrieval_source_ids
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : retrieval_source_ids
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; RetrievalSource : retrieval_source_ids
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; RetrievalSource : retrieval_source_ids
+      ChemicalEntityToBiologicalProcessAssociation : sources
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : sources
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; RetrievalSource : sources
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; RetrievalSource : sources
+      ChemicalEntityToBiologicalProcessAssociation : species_context_qualifier
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; OrganismTaxon : species_context_qualifier
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; NamedThing : subject
+      ChemicalEntityToBiologicalProcessAssociation : subject
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_category
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; ChemicalEntity : subject
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category
+      ChemicalEntityToBiologicalProcessAssociation : subject_category
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_category_closure
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; OntologyClass : subject_category
 
-          ChemicalToDiseaseOrPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category_closure
+      ChemicalEntityToBiologicalProcessAssociation : subject_category_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_closure
+          ChemicalEntityToBiologicalProcessAssociation --|&gt; OntologyClass : subject_category_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_feature_name
+      ChemicalEntityToBiologicalProcessAssociation : subject_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_label_closure
+      ChemicalEntityToBiologicalProcessAssociation : subject_feature_name
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_namespace
+      ChemicalEntityToBiologicalProcessAssociation : subject_label_closure
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : subject_specialization_qualifier
+      ChemicalEntityToBiologicalProcessAssociation : subject_namespace
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : timepoint
+      ChemicalEntityToBiologicalProcessAssociation : timepoint
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : type
+      ChemicalEntityToBiologicalProcessAssociation : type
 
-      ChemicalToDiseaseOrPhenotypicFeatureAssociation : update_date
+      ChemicalEntityToBiologicalProcessAssociation : update_date
 
 
 </div>
@@ -435,7 +434,7 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><strong>ChemicalToDiseaseOrPhenotypicFeatureAssociation</strong> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
+<li><strong>ChemicalEntityToBiologicalProcessAssociation</strong></li>
 </ul>
 </li>
 </ul>
@@ -453,46 +452,40 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
-<td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></br></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>direct</td>
+<td>zebrafish, human</td>
+</tr>
+<tr>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td>blood, cerebral cortext</td>
+</tr>
+<tr>
+<td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject/">subject</a>: <br/> <i> the chemical entity that affects the biological process </i></td>
+<td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../object/">object</a>: <br/> <i> the disease or phenotype that is affected by the chemical </i></td>
-<td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a></td>
-<td>MONDO:0017314, MP:0013229</td>
-</tr>
-<tr>
-<td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
-<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
-<td>MONDO:0004979, MONDO:0005148</td>
-</tr>
-<tr>
-<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td><a href="../object/">object</a>: <br/> <i> the biological process that is affected by the chemical entity </i></td>
+<td>1 <br/> <a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td><a href="../Association/">Association</a></td>
 <td></td>
-</tr>
-<tr>
-<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
-<td>blood, cerebral cortext</td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
@@ -693,6 +686,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -744,23 +743,27 @@
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: chemical to disease or phenotypic feature association
-description: An interaction between a chemical entity and a phenotype or disease,
-  where the presence of the chemical gives rise to or exacerbates the phenotype.
+<pre><code class="language-yaml">name: chemical entity to biological process association
+description: An association between a chemical entity and a biological process, where
+  the chemical entity has some effect on the biological process.
 from_schema: https://w3id.org/biolink/vocab/
-narrow_mappings:
-- SIO:000993
 is_a: association
-mixins:
-- entity to disease or phenotypic feature association mixin
+slots:
+- species context qualifier
+- anatomical context qualifier
+- qualified predicate
 slot_usage:
+  subject:
+    name: subject
+    description: the chemical entity that affects the biological process
+    range: chemical entity
   object:
     name: object
-    description: the disease or phenotype that is affected by the chemical
-    range: disease or phenotypic feature
-defining_slots:
-- subject
-- object
+    description: the biological process that is affected by the chemical entity
+    range: biological process
+  predicate:
+    name: predicate
+    subproperty_of: affects
 
 </code></pre>
 </details>

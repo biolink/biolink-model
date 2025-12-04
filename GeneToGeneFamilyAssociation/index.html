@@ -314,6 +314,8 @@
 
       GeneToGeneFamilyAssociation : description
 
+      GeneToGeneFamilyAssociation : elevate_to_prediction
+
       GeneToGeneFamilyAssociation : has_attribute
 
           GeneToGeneFamilyAssociation --|&gt; Attribute : has_attribute
@@ -654,6 +656,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

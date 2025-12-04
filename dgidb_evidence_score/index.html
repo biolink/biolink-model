@@ -612,6 +612,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -640,7 +649,7 @@
 
 
 <h1 id="slot-dgidb_evidence_score"><strong> Slot: dgidb_evidence_score </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is  simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.</i><br>
 
 
 <br>
@@ -650,15 +659,40 @@
 <p><strong>Range:</strong>   <a href="../Integer/">Integer</a> <br></p>
 <!-- no inheritance hierarchy -->
 
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td>Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: dgidb evidence score
 description: A score defined by DGIdb that is used to report the amount of evidence
-  supporting a given interaction statement, which is  simply the sum of all supporting
+  supporting a given interaction statement, which is simply the sum of all supporting
   sources and publications. See https://dgidb.org/about/overview/interaction-score.
 from_schema: https://w3id.org/biolink/vocab/
 alias: dgidb_evidence_score
+domain_of:
+- chemical gene interaction association
+- chemical affects gene association
 range: integer
 
 </code></pre>

@@ -319,6 +319,8 @@
 
           CellLineAsAModelOfDiseaseAssociation --|&gt; Disease : disease_context_qualifier
 
+      CellLineAsAModelOfDiseaseAssociation : elevate_to_prediction
+
       CellLineAsAModelOfDiseaseAssociation : frequency_qualifier
 
       CellLineAsAModelOfDiseaseAssociation : has_attribute
@@ -472,19 +474,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> A cell line derived from an organismal entity with a disease state that is used as a model of that disease. </i></td>
 <td>1 <br/> <a href="../CellLine/">CellLine</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> The relationship to the disease </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td>MONDO:0020066</td>
 </tr>
 <tr>
@@ -507,7 +509,7 @@
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>blood, cerebral cortext</td>
 </tr>
@@ -706,6 +708,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

@@ -310,6 +310,18 @@
 
       FoodAdditive : category
 
+      FoodAdditive : chembl_availability_type
+
+      FoodAdditive : chembl_black_box_warning
+
+      FoodAdditive : chembl_chirality
+
+      FoodAdditive : chembl_drug_warning
+
+      FoodAdditive : chembl_natural_product
+
+      FoodAdditive : chembl_prodrug
+
       FoodAdditive : deprecated
 
       FoodAdditive : description
@@ -403,6 +415,42 @@
 <tr>
 <td><a href="../has_chemical_role/">has_chemical_role</a>: <br/> <i> A role is particular behaviour which a chemical entity may exhibit. </i></td>
 <td>* <br/> <a href="../ChemicalRole/">ChemicalRole</a></td>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../chembl_prodrug/">chembl_prodrug</a>: <br/> <i> Flag indicating if a drug is a prodrug that is active only after being metabolized by the body. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../chembl_black_box_warning/">chembl_black_box_warning</a>: <br/> <i> Text describing black box warnings for use of chemicals as therapeutics. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../chembl_natural_product/">chembl_natural_product</a>: <br/> <i> Flag indicating if a chemical entity is a natural product. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../chembl_availability_type/">chembl_availability_type</a>: <br/> <i> Text indicating the availability type of the chemical entity. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../chembl_chirality/">chembl_chirality</a>: <br/> <i> Tern indicating the chirality of the chemical entity. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../chembl_drug_warning/">chembl_drug_warning</a>: <br/> <i> Text describing warnings for use of chemicals as therapeutics. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
 <td></td>
 </tr>

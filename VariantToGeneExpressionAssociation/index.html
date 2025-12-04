@@ -315,6 +315,8 @@
 
       VariantToGeneExpressionAssociation : description
 
+      VariantToGeneExpressionAssociation : elevate_to_prediction
+
       VariantToGeneExpressionAssociation : expression_site
 
           VariantToGeneExpressionAssociation --|&gt; AnatomicalEntity : expression_site
@@ -488,19 +490,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> a sequence variant in which the allele state is associated with some other entity </i></td>
 <td>1 <br/> <a href="../SequenceVariant/">SequenceVariant</a></td>
-<td><a href="../Association/">Association</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td>CLINVAR:38077, ClinGen:CA024716</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../Gene/">Gene</a></td>
-<td><a href="../Association/">Association</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -698,6 +700,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

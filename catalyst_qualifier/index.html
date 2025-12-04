@@ -685,7 +685,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td>A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P</td>
 <td>yes</td>
 </tr>
@@ -703,7 +703,7 @@ is_a: association slot
 domain: association
 alias: catalyst_qualifier
 domain_of:
-- chemical to chemical derivation association
+- chemical entity to chemical derivation association
 range: macromolecular machine mixin
 multivalued: true
 

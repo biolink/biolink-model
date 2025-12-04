@@ -315,6 +315,10 @@
 
       EntityToDiseaseAssociation : description
 
+      EntityToDiseaseAssociation : elevate_to_prediction
+
+      EntityToDiseaseAssociation : FDA_regulatory_approvals
+
       EntityToDiseaseAssociation : has_attribute
 
           EntityToDiseaseAssociation --|&gt; Attribute : has_attribute
@@ -346,6 +350,8 @@
       EntityToDiseaseAssociation : name
 
       EntityToDiseaseAssociation : negated
+
+      EntityToDiseaseAssociation : number_of_cases
 
       EntityToDiseaseAssociation : object
 
@@ -455,6 +461,18 @@
 <tr>
 <td><a href="../max_research_phase/">max_research_phase</a>: <br/> <i> None </i></td>
 <td>0..1 <br/> <a href="../ResearchPhaseEnum/">ResearchPhaseEnum</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../FDA_regulatory_approvals/">FDA_regulatory_approvals</a>: <br/> <i> Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536). </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../number_of_cases/">number_of_cases</a>: <br/> <i> The number of cases in a study or clinical trial, primarily used in conversion of drug approval data. </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -675,6 +693,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -732,6 +756,8 @@ is_a: association
 slots:
 - clinical approval status
 - max research phase
+- FDA regulatory approvals
+- number of cases
 defining_slots:
 - subject
 - object

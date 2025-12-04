@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: anatomical_context_qualifier - Biolink Model Documentation</title>
+        <title>Slot: anatomical_context_qualifier (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-anatomical_context_qualifier" class="md-skip">
+        <a href="#slot-anatomical_context_qualifier-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: anatomical_context_qualifier
+              Slot: anatomical_context_qualifier (multivalued)
             
           </span>
         </div>
@@ -666,7 +666,7 @@
   
 
 
-<h1 id="slot-anatomical_context_qualifier"><strong> Slot: anatomical_context_qualifier </strong></h1>
+<h1 id="slot-anatomical_context_qualifier-multivalued"><strong> Slot: anatomical_context_qualifier </strong>  (multivalued)</h1>
 <div class="highlight-box"><strong>Description:</strong><i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).</i><br>
 
 
@@ -700,6 +700,16 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td>An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>None</td>
 <td>no</td>
@@ -708,11 +718,6 @@
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
 </tr>
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
@@ -770,11 +775,13 @@ domain: association
 alias: anatomical_context_qualifier
 domain_of:
 - predicate mapping
+- chemical entity to biological process association
 - chemical gene interaction association
 - chemical affects biological entity association
 - gene affects chemical association
 - entity to disease or phenotypic feature association mixin
 range: string
+multivalued: true
 
 </code></pre>
 

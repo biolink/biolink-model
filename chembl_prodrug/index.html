@@ -612,6 +612,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applicable Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -650,6 +659,23 @@
 <p><strong>Range:</strong>   <a href="../Boolean/">Boolean</a> <br></p>
 <!-- no inheritance hierarchy -->
 
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td>A chemical entity is a physical entity that pertains to chemistry or biochemistry.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
@@ -658,6 +684,8 @@ description: Flag indicating if a drug is a prodrug that is active only after be
   metabolized by the body.
 from_schema: https://w3id.org/biolink/vocab/
 alias: chembl_prodrug
+domain_of:
+- chemical entity
 range: boolean
 
 </code></pre>

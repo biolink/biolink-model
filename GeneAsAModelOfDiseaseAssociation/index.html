@@ -319,6 +319,8 @@
 
           GeneAsAModelOfDiseaseAssociation --|&gt; Disease : disease_context_qualifier
 
+      GeneAsAModelOfDiseaseAssociation : elevate_to_prediction
+
       GeneAsAModelOfDiseaseAssociation : frequency_qualifier
 
       GeneAsAModelOfDiseaseAssociation : has_attribute
@@ -489,19 +491,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease. </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td>HGNC:2197</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> The relationship to the disease </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../ModelToDiseaseAssociationMixin/">ModelToDiseaseAssociationMixin</a></td>
 <td>MONDO:0020066</td>
 </tr>
 <tr>
@@ -729,6 +731,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

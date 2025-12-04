@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.5
+version: 4.3.6
 
 ## ------------
 ##
@@ -144,6 +144,7 @@ prefixes:
   UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
   UniProtKB: 'http://purl.uniprot.org/uniprot/'
   UNIPROT.ISOFORM: 'http://purl.uniprot.org/isoforms/'
+  uspto-patent: "http://www.uspto.gov/patent/grant/v1/"
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
   VMC: 'https://github.com/ga4gh/vr-spec/'
@@ -1170,6 +1171,12 @@ slots:
 
   ## Clinical Trials
 
+  elevate to prediction:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.
+    range: boolean
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -1244,7 +1251,7 @@ slots:
     is_a: node property
     description: >-
       The start date of a clinical trial as determined by clinicaltrials.gov
-    range: date
+    range: string
     domain: clinical trial
   clinical trial enrollment:
     is_a: node property
@@ -1259,6 +1266,7 @@ slots:
       The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
     range: ClinicalTrialAgeStageEnum
     domain: clinical trial
+    multivalued: true
 
   clinical trial age range:
     is_a: node property
@@ -1508,6 +1516,14 @@ slots:
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
+
+
+  FDA regulatory approvals:
+    description: >-
+      Numbers that identify specific drug applications. Each drug can have multiple approval numbers
+      (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).
+    range: string
+    multivalued: true
 
   drug regulatory status world wide:
     aliases: ['max phase']
@@ -1910,6 +1926,7 @@ slots:
       - value: cerebral cortext  # UBERON:0000956
     in_subset:
       - translator_minimal
+    multivalued: true
 
   species context qualifier:
     is_a: statement qualifier
@@ -6526,6 +6543,11 @@ slots:
     is_a: association slot
     range: ResearchPhaseEnum
 
+  number of cases:
+    is_a: has count
+    description: >-
+      The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.
+
   has supporting studies:
     is_a: association slot
     range: study
@@ -7809,6 +7831,12 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - chembl prodrug
+      - chembl black box warning
+      - chembl natural product
+      - chembl availability type
+      - chembl chirality
+      - chembl drug warning
     exact_mappings:
       - CHEBI:24431
       - SIO:010004  # Chemical entity
@@ -9968,6 +9996,7 @@ classes:
       - has supporting studies
       - update date
       - has confidence score
+      - elevate to prediction
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10435,7 +10464,7 @@ classes:
         range: case
         description: "the case (e.g. patient) that has the property"
 
-  chemical to chemical association:
+  chemical entity to chemical entity association:
     description: >-
       A relationship between two chemical entities. This can encompass actual
       interactions as well as temporal causal edges, e.g. one chemical converted to another.
@@ -10455,7 +10484,7 @@ classes:
 
   reaction to participant association:
     description:
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     slots:
       - stoichiometry
       - reaction direction
@@ -10475,14 +10504,14 @@ classes:
       object:
         range: gene or gene product
 
-  chemical to chemical derivation association:
+  chemical entity to chemical derivation association:
     description: >-
       A causal relationship between two chemical entities, where the subject
       represents the upstream entity and the object represents the downstream.
       For any such association there is an implicit reaction: IF R has-input C1 AND
       R has-output C2 AND R enabled-by P AND
       R type Reaction THEN C1 derives-into C2 catalyst qualifier P
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     defining_slots:
       - subject
       - predicate
@@ -10506,7 +10535,7 @@ classes:
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
-  chemical to disease or phenotypic feature association:
+  chemical entity to disease or phenotypic feature association:
     description: >-
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -10585,7 +10614,7 @@ classes:
       predicate:
         subproperty_of: part of
 
-  chemical to pathway association:
+  chemical entity to pathway association:
     description: >-
       An interaction between a chemical entity and a biological process or pathway.
     is_a: association
@@ -10601,6 +10630,25 @@ classes:
       object:
         range: pathway
         description: "the pathway that is affected by the chemical"
+
+  chemical entity to biological process association:
+    description: >-
+      An association between a chemical entity and a biological process,
+      where the chemical entity has some effect on the biological process.
+    is_a: association
+    slots:
+      - species context qualifier
+      - anatomical context qualifier
+      - qualified predicate
+    slot_usage:
+      subject:
+        range: chemical entity
+        description: "the chemical entity that affects the biological process"
+      object:
+        range: biological process
+        description: "the biological process that is affected by the chemical entity"
+      predicate:
+        subproperty_of: affects
 
   named thing associated with likelihood of named thing association:
      # TODO: better name
@@ -10649,10 +10697,16 @@ classes:
       - subject part qualifier
       - subject derivative qualifier
       - subject context qualifier
+      - qualified predicate
+      - object direction qualifier
+      - object aspect qualifier
       - object form or variant qualifier
       - object part qualifier
       - object context qualifier
       - anatomical context qualifier
+      - causal mechanism qualifier
+      - dgidb interaction score
+      - dgidb evidence score
     slot_usage:
       subject:
         range: chemical entity
@@ -10668,6 +10722,10 @@ classes:
         range: ChemicalEntityDerivativeEnum
       subject context qualifier:
         range: anatomical entity
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10676,6 +10734,8 @@ classes:
         range: anatomical entity
       anatomical context qualifier:
         range: anatomical entity
+      causal mechanism qualifier:
+        range: CausalMechanismQualifierEnum
 
   gene regulates gene association:
     is_a: association
@@ -10789,7 +10849,9 @@ classes:
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
-
+    slots:
+      - dgidb interaction score
+      - dgidb evidence score
 
   gene affects chemical association:
     description: >-
@@ -12083,6 +12145,8 @@ classes:
     slots:
       - clinical approval status
       - max research phase
+      - FDA regulatory approvals
+      - number of cases
     defining_slots:
       - subject
       - object
@@ -12093,6 +12157,8 @@ classes:
     slots:
       - clinical approval status
       - max research phase
+      - FDA regulatory approvals
+      - number of cases
     defining_slots:
       - subject
       - object

@@ -321,12 +321,13 @@
       Association &lt;|-- BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
       Association &lt;|-- BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
       Association &lt;|-- CellLineToDiseaseOrPhenotypicFeatureAssociation
-      Association &lt;|-- ChemicalToChemicalAssociation
-      Association &lt;|-- ChemicalToDiseaseOrPhenotypicFeatureAssociation
+      Association &lt;|-- ChemicalEntityToChemicalEntityAssociation
+      Association &lt;|-- ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
       Association &lt;|-- ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
       Association &lt;|-- GeneToPathwayAssociation
       Association &lt;|-- MolecularActivityToPathwayAssociation
-      Association &lt;|-- ChemicalToPathwayAssociation
+      Association &lt;|-- ChemicalEntityToPathwayAssociation
+      Association &lt;|-- ChemicalEntityToBiologicalProcessAssociation
       Association &lt;|-- NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
       Association &lt;|-- ChemicalGeneInteractionAssociation
       Association &lt;|-- GeneRegulatesGeneAssociation
@@ -391,6 +392,8 @@
       Association : deprecated
 
       Association : description
+
+      Association : elevate_to_prediction
 
       Association : has_attribute
 
@@ -515,12 +518,13 @@
 <li><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></li>
 <li><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></li>
 <li><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a> <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
-<li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></li>
-<li><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
+<li><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></li>
+<li><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>]</li>
 <li><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a> [ <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a> <a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a>]</li>
 <li><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a> [ <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>]</li>
 <li><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></li>
-<li><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></li>
+<li><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></li>
+<li><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></li>
 <li><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></li>
 <li><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></li>
 <li><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></li>
@@ -799,6 +803,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -4812,205 +4822,205 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../predicate/">predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../qualifier/">qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../qualifiers/">qualifiers</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../publications/">publications</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../sources/">sources</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../has_evidence/">has_evidence</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../knowledge_source/">knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../knowledge_level/">knowledge_level</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../agent_type/">agent_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../original_subject/">original_subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../original_predicate/">original_predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../original_object/">original_object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject_feature_name/">subject_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object_feature_name/">object_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject_category/">subject_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object_category/">object_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject_closure/">subject_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object_closure/">object_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject_category_closure/">subject_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object_category_closure/">object_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject_namespace/">subject_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object_namespace/">object_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../subject_label_closure/">subject_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../object_label_closure/">object_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../p_value/">p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -5460,433 +5470,433 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../catalyst_qualifier/">catalyst_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../predicate/">predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../qualifier/">qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../qualifiers/">qualifiers</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../publications/">publications</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../sources/">sources</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../has_evidence/">has_evidence</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../knowledge_source/">knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../knowledge_level/">knowledge_level</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../agent_type/">agent_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../original_subject/">original_subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../original_predicate/">original_predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../original_object/">original_object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject_feature_name/">subject_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object_feature_name/">object_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject_category/">subject_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object_category/">object_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject_closure/">subject_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object_closure/">object_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject_category_closure/">subject_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object_category_closure/">object_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject_namespace/">subject_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object_namespace/">object_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../subject_label_closure/">subject_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../object_label_closure/">object_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../p_value/">p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToChemicalDerivationAssociation/">ChemicalToChemicalDerivationAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../predicate/">predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../qualifier/">qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../qualifiers/">qualifiers</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../publications/">publications</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../sources/">sources</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_evidence/">has_evidence</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../knowledge_source/">knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../knowledge_level/">knowledge_level</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../agent_type/">agent_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../original_subject/">original_subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../original_predicate/">original_predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../original_object/">original_object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_feature_name/">subject_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_feature_name/">object_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_category/">subject_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_category/">object_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_closure/">subject_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_closure/">object_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_category_closure/">subject_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_category_closure/">object_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_namespace/">subject_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_namespace/">object_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../subject_label_closure/">subject_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../object_label_closure/">object_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../p_value/">p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToDiseaseOrPhenotypicFeatureAssociation/">ChemicalToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -6816,199 +6826,415 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../predicate/">predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../negated/">negated</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../qualifier/">qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../qualifiers/">qualifiers</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../publications/">publications</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../sources/">sources</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../has_evidence/">has_evidence</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../knowledge_source/">knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../knowledge_level/">knowledge_level</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../agent_type/">agent_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../original_subject/">original_subject</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../original_predicate/">original_predicate</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../original_object/">original_object</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject_feature_name/">subject_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object_feature_name/">object_feature_name</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject_category/">subject_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object_category/">object_category</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject_closure/">subject_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object_closure/">object_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject_category_closure/">subject_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object_category_closure/">object_category_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject_namespace/">subject_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object_namespace/">object_namespace</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../subject_label_closure/">subject_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../object_label_closure/">object_label_closure</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../p_value/">p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalToPathwayAssociation/">ChemicalToPathwayAssociation</a></td>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
+<td><a href="../has_confidence_score/">has_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject/">subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../predicate/">predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object/">object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../negated/">negated</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../qualifiers/">qualifiers</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../sources/">sources</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../has_evidence/">has_evidence</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../knowledge_source/">knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../primary_knowledge_source/">primary_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../aggregator_knowledge_source/">aggregator_knowledge_source</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../knowledge_level/">knowledge_level</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../agent_type/">agent_type</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../original_subject/">original_subject</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../original_predicate/">original_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../original_object/">original_object</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject_feature_name/">subject_feature_name</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object_feature_name/">object_feature_name</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject_category/">subject_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object_category/">object_category</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject_closure/">subject_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object_closure/">object_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject_category_closure/">subject_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object_category_closure/">object_category_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject_namespace/">subject_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object_namespace/">object_namespace</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../subject_label_closure/">subject_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../object_label_closure/">object_label_closure</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../p_value/">p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../adjusted_p_value/">adjusted_p_value</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../has_supporting_studies/">has_supporting_studies</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
 <td><a href="../has_confidence_score/">has_confidence_score</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -7267,6 +7493,24 @@
 </tr>
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../qualified_predicate/">qualified_predicate</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
 <td><a href="../object_form_or_variant_qualifier/">object_form_or_variant_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
@@ -7286,6 +7530,12 @@
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23840,6 +24090,7 @@ slots:
 - has supporting studies
 - update date
 - has confidence score
+- elevate to prediction
 slot_usage:
   type:
     name: type

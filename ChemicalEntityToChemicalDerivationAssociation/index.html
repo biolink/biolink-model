@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/ChemicalToChemicalDerivationAssociation/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/ChemicalEntityToChemicalDerivationAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Class: ChemicalToChemicalDerivationAssociation - Biolink Model Documentation</title>
+<title>Class: ChemicalEntityToChemicalDerivationAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-chemicaltochemicalderivationassociation">
+<a class="md-skip" href="#class-chemicalentitytochemicalderivationassociation">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ChemicalToChemicalDerivationAssociation
+              Class: ChemicalEntityToChemicalDerivationAssociation
             
           </span>
 </div>
@@ -292,139 +292,141 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-chemicaltochemicalderivationassociation"><strong>  Class: ChemicalToChemicalDerivationAssociation </strong></h1>
+<h1 id="class-chemicalentitytochemicalderivationassociation"><strong>  Class: ChemicalEntityToChemicalDerivationAssociation </strong></h1>
 <div class="highlight-box">
 <strong>Description:</strong><i> A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class ChemicalToChemicalDerivationAssociation
-      ChemicalToChemicalAssociation &lt;|-- ChemicalToChemicalDerivationAssociation
+    class ChemicalEntityToChemicalDerivationAssociation
+      ChemicalEntityToChemicalEntityAssociation &lt;|-- ChemicalEntityToChemicalDerivationAssociation
 
-      ChemicalToChemicalDerivationAssociation : adjusted_p_value
+      ChemicalEntityToChemicalDerivationAssociation : adjusted_p_value
 
-      ChemicalToChemicalDerivationAssociation : agent_type
+      ChemicalEntityToChemicalDerivationAssociation : agent_type
 
-          ChemicalToChemicalDerivationAssociation --|&gt; AgentTypeEnum : agent_type
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; AgentTypeEnum : agent_type
 
-      ChemicalToChemicalDerivationAssociation : aggregator_knowledge_source
+      ChemicalEntityToChemicalDerivationAssociation : aggregator_knowledge_source
 
-      ChemicalToChemicalDerivationAssociation : catalyst_qualifier
+      ChemicalEntityToChemicalDerivationAssociation : catalyst_qualifier
 
-          ChemicalToChemicalDerivationAssociation --|&gt; MacromolecularMachineMixin : catalyst_qualifier
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; MacromolecularMachineMixin : catalyst_qualifier
 
-      ChemicalToChemicalDerivationAssociation : category
+      ChemicalEntityToChemicalDerivationAssociation : category
 
-      ChemicalToChemicalDerivationAssociation : deprecated
+      ChemicalEntityToChemicalDerivationAssociation : deprecated
 
-      ChemicalToChemicalDerivationAssociation : description
+      ChemicalEntityToChemicalDerivationAssociation : description
 
-      ChemicalToChemicalDerivationAssociation : has_attribute
+      ChemicalEntityToChemicalDerivationAssociation : elevate_to_prediction
 
-          ChemicalToChemicalDerivationAssociation --|&gt; Attribute : has_attribute
+      ChemicalEntityToChemicalDerivationAssociation : has_attribute
 
-      ChemicalToChemicalDerivationAssociation : has_confidence_score
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; Attribute : has_attribute
 
-      ChemicalToChemicalDerivationAssociation : has_evidence
+      ChemicalEntityToChemicalDerivationAssociation : has_confidence_score
 
-          ChemicalToChemicalDerivationAssociation --|&gt; EvidenceType : has_evidence
+      ChemicalEntityToChemicalDerivationAssociation : has_evidence
 
-      ChemicalToChemicalDerivationAssociation : has_supporting_studies
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; EvidenceType : has_evidence
 
-          ChemicalToChemicalDerivationAssociation --|&gt; Study : has_supporting_studies
+      ChemicalEntityToChemicalDerivationAssociation : has_supporting_studies
 
-      ChemicalToChemicalDerivationAssociation : id
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; Study : has_supporting_studies
 
-      ChemicalToChemicalDerivationAssociation : iri
+      ChemicalEntityToChemicalDerivationAssociation : id
 
-      ChemicalToChemicalDerivationAssociation : knowledge_level
+      ChemicalEntityToChemicalDerivationAssociation : iri
 
-          ChemicalToChemicalDerivationAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
+      ChemicalEntityToChemicalDerivationAssociation : knowledge_level
 
-      ChemicalToChemicalDerivationAssociation : knowledge_source
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; KnowledgeLevelEnum : knowledge_level
 
-      ChemicalToChemicalDerivationAssociation : name
+      ChemicalEntityToChemicalDerivationAssociation : knowledge_source
 
-      ChemicalToChemicalDerivationAssociation : negated
+      ChemicalEntityToChemicalDerivationAssociation : name
 
-      ChemicalToChemicalDerivationAssociation : object
+      ChemicalEntityToChemicalDerivationAssociation : negated
 
-          ChemicalToChemicalDerivationAssociation --|&gt; ChemicalEntity : object
+      ChemicalEntityToChemicalDerivationAssociation : object
 
-      ChemicalToChemicalDerivationAssociation : object_category
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; ChemicalEntity : object
 
-          ChemicalToChemicalDerivationAssociation --|&gt; OntologyClass : object_category
+      ChemicalEntityToChemicalDerivationAssociation : object_category
 
-      ChemicalToChemicalDerivationAssociation : object_category_closure
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; OntologyClass : object_category
 
-          ChemicalToChemicalDerivationAssociation --|&gt; OntologyClass : object_category_closure
+      ChemicalEntityToChemicalDerivationAssociation : object_category_closure
 
-      ChemicalToChemicalDerivationAssociation : object_closure
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; OntologyClass : object_category_closure
 
-      ChemicalToChemicalDerivationAssociation : object_feature_name
+      ChemicalEntityToChemicalDerivationAssociation : object_closure
 
-      ChemicalToChemicalDerivationAssociation : object_label_closure
+      ChemicalEntityToChemicalDerivationAssociation : object_feature_name
 
-      ChemicalToChemicalDerivationAssociation : object_namespace
+      ChemicalEntityToChemicalDerivationAssociation : object_label_closure
 
-      ChemicalToChemicalDerivationAssociation : original_object
+      ChemicalEntityToChemicalDerivationAssociation : object_namespace
 
-      ChemicalToChemicalDerivationAssociation : original_predicate
+      ChemicalEntityToChemicalDerivationAssociation : original_object
 
-      ChemicalToChemicalDerivationAssociation : original_subject
+      ChemicalEntityToChemicalDerivationAssociation : original_predicate
 
-      ChemicalToChemicalDerivationAssociation : p_value
+      ChemicalEntityToChemicalDerivationAssociation : original_subject
 
-      ChemicalToChemicalDerivationAssociation : predicate
+      ChemicalEntityToChemicalDerivationAssociation : p_value
 
-      ChemicalToChemicalDerivationAssociation : primary_knowledge_source
+      ChemicalEntityToChemicalDerivationAssociation : predicate
 
-      ChemicalToChemicalDerivationAssociation : publications
+      ChemicalEntityToChemicalDerivationAssociation : primary_knowledge_source
 
-          ChemicalToChemicalDerivationAssociation --|&gt; Publication : publications
+      ChemicalEntityToChemicalDerivationAssociation : publications
 
-      ChemicalToChemicalDerivationAssociation : qualifier
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; Publication : publications
 
-      ChemicalToChemicalDerivationAssociation : qualifiers
+      ChemicalEntityToChemicalDerivationAssociation : qualifier
 
-          ChemicalToChemicalDerivationAssociation --|&gt; OntologyClass : qualifiers
+      ChemicalEntityToChemicalDerivationAssociation : qualifiers
 
-      ChemicalToChemicalDerivationAssociation : retrieval_source_ids
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; OntologyClass : qualifiers
 
-          ChemicalToChemicalDerivationAssociation --|&gt; RetrievalSource : retrieval_source_ids
+      ChemicalEntityToChemicalDerivationAssociation : retrieval_source_ids
 
-      ChemicalToChemicalDerivationAssociation : sources
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; RetrievalSource : retrieval_source_ids
 
-          ChemicalToChemicalDerivationAssociation --|&gt; RetrievalSource : sources
+      ChemicalEntityToChemicalDerivationAssociation : sources
 
-      ChemicalToChemicalDerivationAssociation : species_context_qualifier
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; RetrievalSource : sources
 
-          ChemicalToChemicalDerivationAssociation --|&gt; OrganismTaxon : species_context_qualifier
+      ChemicalEntityToChemicalDerivationAssociation : species_context_qualifier
 
-      ChemicalToChemicalDerivationAssociation : subject
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; OrganismTaxon : species_context_qualifier
 
-          ChemicalToChemicalDerivationAssociation --|&gt; ChemicalEntity : subject
+      ChemicalEntityToChemicalDerivationAssociation : subject
 
-      ChemicalToChemicalDerivationAssociation : subject_category
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; ChemicalEntity : subject
 
-          ChemicalToChemicalDerivationAssociation --|&gt; OntologyClass : subject_category
+      ChemicalEntityToChemicalDerivationAssociation : subject_category
 
-      ChemicalToChemicalDerivationAssociation : subject_category_closure
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; OntologyClass : subject_category
 
-          ChemicalToChemicalDerivationAssociation --|&gt; OntologyClass : subject_category_closure
+      ChemicalEntityToChemicalDerivationAssociation : subject_category_closure
 
-      ChemicalToChemicalDerivationAssociation : subject_closure
+          ChemicalEntityToChemicalDerivationAssociation --|&gt; OntologyClass : subject_category_closure
 
-      ChemicalToChemicalDerivationAssociation : subject_feature_name
+      ChemicalEntityToChemicalDerivationAssociation : subject_closure
 
-      ChemicalToChemicalDerivationAssociation : subject_label_closure
+      ChemicalEntityToChemicalDerivationAssociation : subject_feature_name
 
-      ChemicalToChemicalDerivationAssociation : subject_namespace
+      ChemicalEntityToChemicalDerivationAssociation : subject_label_closure
 
-      ChemicalToChemicalDerivationAssociation : timepoint
+      ChemicalEntityToChemicalDerivationAssociation : subject_namespace
 
-      ChemicalToChemicalDerivationAssociation : type
+      ChemicalEntityToChemicalDerivationAssociation : timepoint
 
-      ChemicalToChemicalDerivationAssociation : update_date
+      ChemicalEntityToChemicalDerivationAssociation : type
+
+      ChemicalEntityToChemicalDerivationAssociation : update_date
 
 
 </div>
@@ -432,8 +434,8 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../Association/">Association</a><ul>
-<li><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a><ul>
-<li><strong>ChemicalToChemicalDerivationAssociation</strong></li>
+<li><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a><ul>
+<li><strong>ChemicalEntityToChemicalDerivationAssociation</strong></li>
 </ul>
 </li>
 </ul>
@@ -461,25 +463,25 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> the upstream chemical entity </i></td>
 <td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../Association/">Association</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. </i></td>
 <td>1 <br/> <a href="../PredicateType/">PredicateType</a></td>
-<td><a href="../Association/">Association</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the downstream chemical entity </i></td>
 <td>1 <br/> <a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../Association/">Association</a>, <a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
 <td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
-<td><a href="../ChemicalToChemicalAssociation/">ChemicalToChemicalAssociation</a></td>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td>zebrafish, human</td>
 </tr>
 <tr>
@@ -681,6 +683,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -732,14 +740,14 @@
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: chemical to chemical derivation association
+<pre><code class="language-yaml">name: chemical entity to chemical derivation association
 description: 'A causal relationship between two chemical entities, where the subject
   represents the upstream entity and the object represents the downstream. For any
   such association there is an implicit reaction: IF R has-input C1 AND R has-output
   C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier
   P'
 from_schema: https://w3id.org/biolink/vocab/
-is_a: chemical to chemical association
+is_a: chemical entity to chemical entity association
 slots:
 - catalyst qualifier
 slot_usage:

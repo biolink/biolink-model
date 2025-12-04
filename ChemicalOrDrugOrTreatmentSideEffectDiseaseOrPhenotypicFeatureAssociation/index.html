@@ -321,6 +321,8 @@
 
           ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation --|&gt; Disease : disease_context_qualifier
 
+      ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : elevate_to_prediction
+
       ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation : FDA_adverse_event_level
 
           ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation --|&gt; FDAIDAAdverseEventEnum : FDA_adverse_event_level
@@ -513,7 +515,7 @@
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>blood, cerebral cortext</td>
 </tr>
@@ -748,6 +750,12 @@
 <tr>
 <td><a href="../has_confidence_score/">has_confidence_score</a>: <br/> <i> connects an association to a quantitative (numeric) value that can be interpreted as an indicator of the degree of confidence that a piece of information is true, and accurately reflects the aspect of reality it is about. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>

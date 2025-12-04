@@ -2,10 +2,10 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/vocab/",
-  "version": "4.3.4",
+  "version": "4.3.6",
   "imports": [
     "linkml:types",
-    "https://w3id.org/biolink/biolink-model/attributes"
+    "attributes"
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "prefixes": [
@@ -488,6 +488,10 @@
     {
       "prefix_prefix": "UNIPROT.ISOFORM",
       "prefix_reference": "http://purl.uniprot.org/isoforms/"
+    },
+    {
+      "prefix_prefix": "uspto-patent",
+      "prefix_reference": "http://www.uspto.gov/patent/grant/v1/"
     },
     {
       "prefix_prefix": "VANDF",
@@ -4196,6 +4200,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "elevate_to_prediction",
+      "definition_uri": "https://w3id.org/biolink/vocab/elevate_to_prediction",
+      "description": "A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/elevate_to_prediction",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "clinical_trial_phase",
       "definition_uri": "https://w3id.org/biolink/vocab/clinical_trial_phase",
       "description": "The phase that a clinical trials study represents",
@@ -4339,7 +4358,7 @@
       "domain_of": [
         "ClinicalTrial"
       ],
-      "range": "date",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -4370,6 +4389,7 @@
         "ClinicalTrial"
       ],
       "range": "ClinicalTrialAgeStageEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4882,6 +4902,21 @@
         "ChemicalMixture"
       ],
       "range": "ApprovalStatusEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FDA_regulatory_approvals",
+      "definition_uri": "https://w3id.org/biolink/vocab/FDA_regulatory_approvals",
+      "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "slot_uri": "https://w3id.org/biolink/vocab/FDA_regulatory_approvals",
+      "owner": "EntityToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "EntityToDiseaseAssociation",
+        "EntityToPhenotypicFeatureAssociation"
+      ],
+      "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5428,6 +5463,7 @@
       "domain_of": [
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5582,6 +5618,7 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5609,6 +5646,8 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityToBiologicalProcessAssociation",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5649,6 +5688,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5682,12 +5722,14 @@
       "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5717,7 +5759,8 @@
       "owner": "MacromolecularMachineToEntityAssociationMixin",
       "domain_of": [
         "PredicateMapping",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
+        "ChemicalEntityToBiologicalProcessAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5910,9 +5953,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
@@ -13006,7 +13049,7 @@
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
@@ -13066,7 +13109,7 @@
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
@@ -13130,7 +13173,7 @@
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
@@ -14322,6 +14365,22 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "number_of_cases",
+      "definition_uri": "https://w3id.org/biolink/vocab/number_of_cases",
+      "description": "The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "has_count",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/number_of_cases",
+      "owner": "EntityToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "EntityToDiseaseAssociation",
+        "EntityToPhenotypicFeatureAssociation"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "has_supporting_studies",
       "definition_uri": "https://w3id.org/biolink/vocab/has_supporting_studies",
       "description": "Studies that produced information used as evidence to generate the knowledge expressed in an Association.",
@@ -14553,6 +14612,10 @@
       "description": "Text describing warnings for use of chemicals as therapeutics.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/chembl_drug_warning",
+      "owner": "ChemicalEntity",
+      "domain_of": [
+        "ChemicalEntity"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -14562,6 +14625,10 @@
       "description": "Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/chembl_prodrug",
+      "owner": "ChemicalEntity",
+      "domain_of": [
+        "ChemicalEntity"
+      ],
       "range": "boolean",
       "@type": "SlotDefinition"
     },
@@ -14571,6 +14638,49 @@
       "description": "Tern indicating the chirality of the chemical entity.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/chembl_chirality",
+      "owner": "ChemicalEntity",
+      "domain_of": [
+        "ChemicalEntity"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_black_box_warning",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_black_box_warning",
+      "description": "Text describing black box warnings for use of chemicals as therapeutics.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_black_box_warning",
+      "owner": "ChemicalEntity",
+      "domain_of": [
+        "ChemicalEntity"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_natural_product",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_natural_product",
+      "description": "Flag indicating if a chemical entity is a natural product.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_natural_product",
+      "owner": "ChemicalEntity",
+      "domain_of": [
+        "ChemicalEntity"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_availability_type",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_availability_type",
+      "description": "Text indicating the availability type of the chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_availability_type",
+      "owner": "ChemicalEntity",
+      "domain_of": [
+        "ChemicalEntity"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -14608,18 +14718,28 @@
     {
       "name": "dgidb_interaction_score",
       "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_interaction_score",
-      "description": "A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence  score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity score. See https://dgidb.org/about/overview/interaction-score.",
+      "description": "A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity score. See https://dgidb.org/about/overview/interaction-score.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/dgidb_interaction_score",
+      "owner": "ChemicalAffectsGeneAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation",
+        "ChemicalAffectsGeneAssociation"
+      ],
       "range": "float",
       "@type": "SlotDefinition"
     },
     {
       "name": "dgidb_evidence_score",
       "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_evidence_score",
-      "description": "A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is  simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.",
+      "description": "A score defined by DGIdb that is used to report the amount of evidence supporting a given interaction statement, which is simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/dgidb_evidence_score",
+      "owner": "ChemicalAffectsGeneAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation",
+        "ChemicalAffectsGeneAssociation"
+      ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
@@ -17839,7 +17959,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_association_object",
+      "name": "chemical_entity_to_chemical_entity_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -17861,12 +17981,12 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalToChemicalAssociation",
+      "domain": "ChemicalEntityToChemicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToChemicalAssociation",
+      "owner": "ChemicalEntityToChemicalEntityAssociation",
       "domain_of": [
-        "ChemicalToChemicalAssociation"
+        "ChemicalEntityToChemicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -17932,7 +18052,7 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "chemical_to_chemical_association_object",
+      "is_a": "chemical_entity_to_chemical_entity_association_object",
       "domain": "ReactionToCatalystAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
@@ -17948,7 +18068,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_subject",
+      "name": "chemical_entity_to_chemical_derivation_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -17970,12 +18090,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -17984,7 +18104,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_object",
+      "name": "chemical_entity_to_chemical_derivation_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18005,13 +18125,13 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "chemical_to_chemical_association_object",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "is_a": "chemical_entity_to_chemical_entity_association_object",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -18020,7 +18140,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_predicate",
+      "name": "chemical_entity_to_chemical_derivation_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18045,12 +18165,12 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "subproperty_of": "derives_into",
       "is_usage_slot": true,
@@ -18060,17 +18180,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_catalyst_qualifier",
+      "name": "chemical_entity_to_chemical_derivation_association_catalyst_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
       "description": "this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "catalyst_qualifier",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
       "alias": "catalyst qualifier",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "catalyst qualifier",
@@ -18080,7 +18200,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_disease_or_phenotypic_feature_association_object",
+      "name": "chemical_entity_to_disease_or_phenotypic_feature_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18102,12 +18222,12 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "domain": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
-        "ChemicalToDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -18381,7 +18501,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_pathway_association_subject",
+      "name": "chemical_entity_to_pathway_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -18403,12 +18523,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "ChemicalToPathwayAssociation",
+      "domain": "ChemicalEntityToPathwayAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "ChemicalToPathwayAssociation",
+      "owner": "ChemicalEntityToPathwayAssociation",
       "domain_of": [
-        "ChemicalToPathwayAssociation"
+        "ChemicalEntityToPathwayAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -18417,7 +18537,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_pathway_association_object",
+      "name": "chemical_entity_to_pathway_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18439,16 +18559,128 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalToPathwayAssociation",
+      "domain": "ChemicalEntityToPathwayAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToPathwayAssociation",
+      "owner": "ChemicalEntityToPathwayAssociation",
       "domain_of": [
-        "ChemicalToPathwayAssociation"
+        "ChemicalEntityToPathwayAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "Pathway",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_biological_process_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the chemical entity that affects the biological process",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ChemicalEntityToBiologicalProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ChemicalEntityToBiologicalProcessAssociation",
+      "domain_of": [
+        "ChemicalEntityToBiologicalProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ChemicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_biological_process_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "the biological process that is affected by the chemical entity",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalEntityToBiologicalProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ChemicalEntityToBiologicalProcessAssociation",
+      "domain_of": [
+        "ChemicalEntityToBiologicalProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "BiologicalProcess",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_biological_process_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "ChemicalEntityToBiologicalProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "ChemicalEntityToBiologicalProcessAssociation",
+      "domain_of": [
+        "ChemicalEntityToBiologicalProcessAssociation"
+      ],
+      "subproperty_of": "affects",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -18835,6 +19067,66 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "chemical_gene_interaction_association_object_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_direction_qualifier",
+      "domain": "ChemicalGeneInteractionAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "alias": "object direction qualifier",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_interaction_association_object_aspect_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_aspect_qualifier",
+      "domain": "ChemicalGeneInteractionAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "alias": "object aspect qualifier",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "chemical_gene_interaction_association_object_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
@@ -18950,6 +19242,28 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_interaction_association_causal_mechanism_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
+      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "causal_mechanism_qualifier",
+      "domain": "ChemicalGeneInteractionAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
+      "alias": "causal mechanism qualifier",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "causal mechanism qualifier",
+      "range": "CausalMechanismQualifierEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -19767,6 +20081,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20306,6 +20621,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -28245,6 +28561,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_metabolite"
       ],
       "slot_usage": {},
@@ -28326,7 +28648,13 @@
         "available_from",
         "max_tolerated_dose",
         "is_toxic",
-        "has_chemical_role"
+        "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntity",
@@ -28407,6 +28735,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_metabolite"
       ],
       "slot_usage": {},
@@ -28479,6 +28813,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
         "drug_regulatory_status_world_wide",
@@ -28559,6 +28899,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_metabolite",
         "has_biological_sequence",
         "in_taxon",
@@ -28754,6 +29100,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
         "drug_regulatory_status_world_wide",
@@ -28816,6 +29168,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
         "drug_regulatory_status_world_wide",
@@ -29187,6 +29545,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
         "drug_regulatory_status_world_wide",
@@ -29271,6 +29635,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
         "drug_regulatory_status_world_wide",
@@ -29335,7 +29705,13 @@
         "available_from",
         "max_tolerated_dose",
         "is_toxic",
-        "has_chemical_role"
+        "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant",
@@ -29396,7 +29772,13 @@
         "available_from",
         "max_tolerated_dose",
         "is_toxic",
-        "has_chemical_role"
+        "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/FoodAdditive",
@@ -29457,6 +29839,12 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "chembl_prodrug",
+        "chembl_black_box_warning",
+        "chembl_natural_product",
+        "chembl_availability_type",
+        "chembl_chirality",
+        "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
         "drug_regulatory_status_world_wide",
@@ -33225,6 +33613,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category"
       ],
@@ -33278,6 +33667,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "response_context_qualifier",
@@ -33343,6 +33733,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "chemical_entity_assesses_named_thing_association_subject",
@@ -33398,6 +33789,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "contributor_association_subject",
@@ -33460,6 +33852,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "genotype_to_genotype_part_association_predicate",
@@ -33520,6 +33913,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "genotype_to_gene_association_predicate",
@@ -33580,6 +33974,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "genotype_to_variant_association_predicate",
@@ -33645,6 +34040,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_gene_association_subject",
@@ -33704,6 +34100,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_gene_homology_association_subject",
@@ -33765,6 +34162,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_gene_family_association_subject",
@@ -33826,6 +34224,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_family_to_gene_or_gene_product_or_gene_family_association_subject",
@@ -33887,6 +34286,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_subject",
@@ -33948,6 +34348,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject",
@@ -34009,6 +34410,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "biological_process_or_activity_to_biological_process_or_activity_association_subject",
@@ -34089,6 +34491,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_gene_association_subject",
@@ -34157,6 +34560,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_gene_association_subject",
@@ -34217,6 +34621,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "interacting_molecules_category",
@@ -34304,6 +34709,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "cell_line_to_disease_or_phenotypic_feature_association_subject",
@@ -34394,8 +34800,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToChemicalAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation",
+      "name": "ChemicalEntityToChemicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalEntityAssociation",
       "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
@@ -34439,15 +34845,16 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "subject",
         "predicate",
-        "chemical_to_chemical_association_object",
+        "chemical_entity_to_chemical_entity_association_object",
         "species_context_qualifier"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalEntityAssociation",
       "defining_slots": [
         "subject",
         "object"
@@ -34458,7 +34865,7 @@
       "name": "ReactionToParticipantAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ReactionToParticipantAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "ChemicalToChemicalAssociation",
+      "is_a": "ChemicalEntityToChemicalEntityAssociation",
       "slots": [
         "id",
         "iri",
@@ -34499,10 +34906,11 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "predicate",
-        "chemical_to_chemical_association_object",
+        "chemical_entity_to_chemical_entity_association_object",
         "species_context_qualifier",
         "stoichiometry",
         "reaction_direction",
@@ -34563,6 +34971,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "predicate",
@@ -34578,11 +34987,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToChemicalDerivationAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation",
+      "name": "ChemicalEntityToChemicalDerivationAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalDerivationAssociation",
       "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "ChemicalToChemicalAssociation",
+      "is_a": "ChemicalEntityToChemicalEntityAssociation",
       "slots": [
         "id",
         "iri",
@@ -34623,16 +35032,17 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "species_context_qualifier",
-        "chemical_to_chemical_derivation_association_catalyst_qualifier",
-        "chemical_to_chemical_derivation_association_subject",
-        "chemical_to_chemical_derivation_association_object",
-        "chemical_to_chemical_derivation_association_predicate"
+        "chemical_entity_to_chemical_derivation_association_catalyst_qualifier",
+        "chemical_entity_to_chemical_derivation_association_subject",
+        "chemical_entity_to_chemical_derivation_association_object",
+        "chemical_entity_to_chemical_derivation_association_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalDerivationAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -34641,8 +35051,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "name": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
@@ -34694,16 +35104,17 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
-        "chemical_to_disease_or_phenotypic_feature_association_object",
+        "chemical_entity_to_disease_or_phenotypic_feature_association_object",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "defining_slots": [
         "subject",
         "object"
@@ -34762,6 +35173,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
@@ -34837,6 +35249,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
@@ -34911,6 +35324,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_pathway_association_subject",
@@ -34970,6 +35384,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "molecular_activity_to_pathway_association_subject",
@@ -34981,8 +35396,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToPathwayAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation",
+      "name": "ChemicalEntityToPathwayAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToPathwayAssociation",
       "description": "An interaction between a chemical entity and a biological process or pathway.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
@@ -35030,17 +35445,78 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
-        "chemical_to_pathway_association_subject",
-        "chemical_to_pathway_association_object"
+        "chemical_entity_to_pathway_association_subject",
+        "chemical_entity_to_pathway_association_object"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToPathwayAssociation",
       "defining_slots": [
         "subject",
         "object"
       ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalEntityToBiologicalProcessAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToBiologicalProcessAssociation",
+      "description": "An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "association_type",
+        "association_category",
+        "species_context_qualifier",
+        "anatomical_context_qualifier",
+        "qualified_predicate",
+        "chemical_entity_to_biological_process_association_subject",
+        "chemical_entity_to_biological_process_association_object",
+        "chemical_entity_to_biological_process_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToBiologicalProcessAssociation",
       "@type": "ClassDefinition"
     },
     {
@@ -35089,6 +35565,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "subject",
@@ -35163,16 +35640,23 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "chemical_gene_interaction_association_subject_form_or_variant_qualifier",
         "chemical_gene_interaction_association_subject_part_qualifier",
         "chemical_gene_interaction_association_subject_derivative_qualifier",
         "chemical_gene_interaction_association_subject_context_qualifier",
+        "qualified_predicate",
+        "chemical_gene_interaction_association_object_direction_qualifier",
+        "chemical_gene_interaction_association_object_aspect_qualifier",
         "chemical_gene_interaction_association_object_form_or_variant_qualifier",
         "chemical_gene_interaction_association_object_part_qualifier",
         "chemical_gene_interaction_association_object_context_qualifier",
         "chemical_gene_interaction_association_anatomical_context_qualifier",
+        "chemical_gene_interaction_association_causal_mechanism_qualifier",
+        "dgidb_interaction_score",
+        "dgidb_evidence_score",
         "chemical_gene_interaction_association_subject",
         "chemical_gene_interaction_association_object",
         "chemical_gene_interaction_association_predicate"
@@ -35233,6 +35717,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_regulates_gene_association_object_aspect_qualifier",
@@ -35293,6 +35778,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "process_regulates_process_association_subject",
@@ -35349,6 +35835,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
@@ -35420,6 +35907,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "chemical_affects_biological_entity_association_subject_form_or_variant_qualifier",
@@ -35439,7 +35927,9 @@
         "chemical_affects_biological_entity_association_species_context_qualifier",
         "chemical_affects_biological_entity_association_subject",
         "chemical_affects_biological_entity_association_predicate",
-        "chemical_affects_biological_entity_association_object"
+        "chemical_affects_biological_entity_association_object",
+        "dgidb_interaction_score",
+        "dgidb_evidence_score"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
@@ -35497,6 +35987,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_affects_chemical_association_subject_form_or_variant_qualifier",
@@ -35577,6 +36068,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "drug_to_gene_association_object"
@@ -35653,6 +36145,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "material_sample_derivation_association_subject",
@@ -35720,6 +36213,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "disease_context_qualifier",
@@ -35823,6 +36317,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category"
       ],
@@ -35904,6 +36399,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "population_context_qualifier",
@@ -36142,6 +36638,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "frequency_qualifier",
@@ -36215,6 +36712,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "information_content_entity_to_named_thing_association_subject",
@@ -36323,6 +36821,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "disease_or_phenotypic_feature_to_location_association_object"
@@ -36381,6 +36880,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "disease_or_phenotypic_feature_to_genetic_inheritance_association_predicate",
@@ -36481,6 +36981,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "genotype_to_phenotypic_feature_association_predicate",
@@ -36557,6 +37058,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "exposure_event_to_phenotypic_feature_association_subject",
@@ -36636,6 +37138,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "onset_qualifier",
@@ -36714,6 +37217,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "negated",
@@ -36789,6 +37293,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "subject",
@@ -36849,6 +37354,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "subject",
@@ -36909,6 +37415,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "subject",
@@ -36969,6 +37476,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "behavior_to_behavioral_feature_association_subject",
@@ -37094,6 +37602,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -37170,6 +37679,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -37255,6 +37765,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -37331,6 +37842,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -37408,6 +37920,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -37486,6 +37999,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -37567,6 +38081,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "phenotypic_feature_to_disease_association_predicate",
@@ -37642,6 +38157,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "variant_to_gene_association_object",
@@ -37706,6 +38222,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "variant_to_gene_association_object",
@@ -37776,6 +38293,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "variant_to_population_association_subject",
@@ -37840,6 +38358,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "population_to_population_association_subject",
@@ -37905,6 +38424,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "variant_to_phenotypic_feature_association_subject",
@@ -37981,6 +38501,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "variant_to_disease_association_subject",
@@ -38054,6 +38575,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "genotype_to_disease_association_subject",
@@ -38139,6 +38661,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
@@ -38217,6 +38740,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "variant_to_disease_association_predicate",
@@ -38288,6 +38812,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "genotype_to_disease_association_predicate",
@@ -38361,6 +38886,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "disease_context_qualifier",
@@ -38435,6 +38961,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "organismal_entity_as_a_model_of_disease_association_subject",
@@ -38501,6 +39028,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "organism_to_organism_association_subject",
@@ -38561,6 +39089,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "taxon_to_taxon_association_subject",
@@ -38620,6 +39149,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
@@ -38701,6 +39231,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_expression_site_association_stage_qualifier",
@@ -38770,6 +39301,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "sequence_variant_modulates_treatment_association_subject",
@@ -38830,6 +39362,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "functional_association_subject",
@@ -38905,6 +39438,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "functional_association_subject",
@@ -38965,6 +39499,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "functional_association_subject",
@@ -39025,6 +39560,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "functional_association_subject",
@@ -39082,6 +39618,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "molecular_activity_to_chemical_entity_association_subject",
@@ -39138,6 +39675,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "molecular_activity_to_molecular_activity_association_subject",
@@ -39199,6 +39737,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_go_term_association_subject",
@@ -39260,10 +39799,13 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "clinical_approval_status",
-        "max_research_phase"
+        "max_research_phase",
+        "FDA_regulatory_approvals",
+        "number_of_cases"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
@@ -39321,10 +39863,13 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "clinical_approval_status",
-        "max_research_phase"
+        "max_research_phase",
+        "FDA_regulatory_approvals",
+        "number_of_cases"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation",
@@ -39383,6 +39928,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category"
       ],
@@ -39442,6 +39988,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "start_interbase_coordinate",
@@ -39507,6 +40054,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "sequence_feature_relationship_subject",
@@ -39567,6 +40115,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "transcript_to_gene_relationship_subject",
@@ -39626,6 +40175,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_to_gene_product_relationship_subject",
@@ -39687,6 +40237,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "exon_to_transcript_relationship_subject",
@@ -39746,6 +40297,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier",
@@ -39804,6 +40356,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "anatomical_entity_to_anatomical_entity_association_subject",
@@ -39863,6 +40416,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "anatomical_entity_to_anatomical_entity_part_of_association_subject",
@@ -39922,6 +40476,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "anatomical_entity_to_anatomical_entity_ontogenic_association_subject",
@@ -39982,6 +40537,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject",
@@ -40042,6 +40598,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "biological_process_or_activity_to_anatomical_entity_association_subject",
@@ -40124,6 +40681,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "organism_taxon_to_organism_taxon_association_subject",
@@ -40183,6 +40741,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "organism_taxon_to_organism_taxon_specialization_subject",
@@ -40242,6 +40801,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "organism_taxon_to_organism_taxon_interaction_associated_environmental_context",
@@ -40305,6 +40865,7 @@
         "association_has_supporting_studies",
         "update_date",
         "has_confidence_score",
+        "elevate_to_prediction",
         "association_type",
         "association_category",
         "organism_taxon_to_environment_association_subject",
@@ -40318,14 +40879,14 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-21T23:08:13",
-  "source_file_size": 453105,
-  "generation_date": "2025-11-21T23:08:20",
+  "source_file_date": "2025-12-04T23:36:15",
+  "source_file_size": 455362,
+  "generation_date": "2025-12-04T23:36:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
-    "https://w3id.org/biolink/biolink-model/attributes.context.jsonld",
+    "attributes.context.jsonld",
     {
       "@base": "https://w3id.org/biolink/vocab/"
     }
