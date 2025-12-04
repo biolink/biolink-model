@@ -1926,6 +1926,7 @@ slots:
       - value: cerebral cortext  # UBERON:0000956
     in_subset:
       - translator_minimal
+    multivalued: true
 
   species context qualifier:
     is_a: statement qualifier
@@ -10630,6 +10631,25 @@ classes:
         range: pathway
         description: "the pathway that is affected by the chemical"
 
+  chemical entity to biological process association:
+    description: >-
+      An association between a chemical entity and a biological process,
+      where the chemical entity has some effect on the biological process.
+    is_a: association
+    slots:
+      - species context qualifier
+      - anatomical context qualifier
+      - qualified predicate
+    slot_usage:
+      subject:
+        range: chemical entity
+        description: "the chemical entity that affects the biological process"
+      object:
+        range: biological process
+        description: "the biological process that is affected by the chemical entity"
+      predicate:
+        subproperty_of: affects
+
   named thing associated with likelihood of named thing association:
      # TODO: better name
     description: >-
@@ -10685,8 +10705,8 @@ classes:
       - object context qualifier
       - anatomical context qualifier
       - causal mechanism qualifier
-      - dgidb interaction score 
-      - dgidb evidence score 
+      - dgidb interaction score
+      - dgidb evidence score
     slot_usage:
       subject:
         range: chemical entity
@@ -10830,8 +10850,8 @@ classes:
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
     slots:
-      - dgidb interaction score 
-      - dgidb evidence score 
+      - dgidb interaction score
+      - dgidb evidence score
 
   gene affects chemical association:
     description: >-
