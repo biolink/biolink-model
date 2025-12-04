@@ -10432,23 +10432,6 @@ classes:
         range: drug
         description: "the drug that is an interactor"
 
-  chemical entity to entity association mixin:
-    deprecated: true
-    description: >-
-      An interaction between a chemical entity and another entity
-    is_a: chemical entity to entity association mixin
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: chemical entity or gene or gene product
-        description: "the chemical entity or entity that is an interactor"
-
   case to entity association mixin:
     description: >-
       An abstract association for use where the case is the subject
