@@ -13047,6 +13047,7 @@
         "CellLineToEntityAssociationMixin",
         "ChemicalEntityToEntityAssociationMixin",
         "DrugToEntityAssociationMixin",
+        "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
         "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
@@ -13106,6 +13107,7 @@
         "CellLineToEntityAssociationMixin",
         "ChemicalEntityToEntityAssociationMixin",
         "DrugToEntityAssociationMixin",
+        "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
         "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
@@ -13169,6 +13171,7 @@
         "CellLineToEntityAssociationMixin",
         "ChemicalEntityToEntityAssociationMixin",
         "DrugToEntityAssociationMixin",
+        "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
         "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
@@ -17880,6 +17883,43 @@
       "usage_slot_name": "subject",
       "range": "Drug",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_to_entity_association_mixin_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the chemical entity or entity that is an interactor",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "chemical_entity_to_entity_association_mixin_subject",
+      "domain": "ChemicalToEntityAssociationMixin",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ChemicalToEntityAssociationMixin",
+      "domain_of": [
+        "ChemicalToEntityAssociationMixin"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
+      "required": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -34721,6 +34761,27 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ChemicalToEntityAssociationMixin",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin",
+      "description": "An interaction between a chemical entity and another entity",
+      "deprecated": "True",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "ChemicalEntityToEntityAssociationMixin",
+      "mixin": true,
+      "slots": [
+        "subject",
+        "predicate",
+        "object",
+        "chemical_to_entity_association_mixin_subject"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin",
+      "defining_slots": [
+        "subject"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "CaseToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin",
       "description": "An abstract association for use where the case is the subject",
@@ -40818,9 +40879,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-12-04T15:03:41",
-  "source_file_size": 454887,
-  "generation_date": "2025-12-04T15:03:53",
+  "source_file_date": "2025-12-04T15:12:25",
+  "source_file_size": 455370,
+  "generation_date": "2025-12-04T15:12:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -6102,6 +6102,15 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
 
 
+class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
+    """
+    An interaction between a chemical entity and another entity
+    """
+    subject: str = Field(default=..., description="""the chemical entity or entity that is an interactor""")
+    predicate: str = Field(default=..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+
+
 class CaseToEntityAssociationMixin(ConfiguredBaseModel):
     """
     An abstract association for use where the case is the subject
@@ -11320,6 +11329,7 @@ PairwiseMolecularInteraction.model_rebuild()
 CellLineToEntityAssociationMixin.model_rebuild()
 ChemicalEntityToEntityAssociationMixin.model_rebuild()
 DrugToEntityAssociationMixin.model_rebuild()
+ChemicalToEntityAssociationMixin.model_rebuild()
 CaseToEntityAssociationMixin.model_rebuild()
 ChemicalEntityToChemicalEntityAssociation.model_rebuild()
 ReactionToParticipantAssociation.model_rebuild()

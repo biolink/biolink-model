@@ -2549,6 +2549,13 @@ type ChemicalRole
     iri: IriType
   }
 
+interface ChemicalToEntityAssociationMixin
+  {
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+  }
+
 type ChiSquaredAnalysisResult
   {
     id: String!

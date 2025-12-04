@@ -1102,15 +1102,17 @@ linkml:Sparqlpath xsd:string
 }
 
 <ChemicalEntityToEntityAssociationMixin>  (
-    {
-       (  $<ChemicalEntityToEntityAssociationMixin_tes> (  rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
-             rdf:predicate @<PredicateType> ;
-             rdf:object @<NamedThing>
-          ) ;
-          rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ?
-       )
-    } OR @<DrugToEntityAssociationMixin>
+    @<ChemicalToEntityAssociationMixin> OR @<DrugToEntityAssociationMixin>
 )
+
+<ChemicalEntityToEntityAssociationMixin_struct> {
+    (  $<ChemicalEntityToEntityAssociationMixin_tes> (  rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<NamedThing>
+       ) ;
+       rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ?
+    )
+}
 
 <ChemicalEntityToPathwayAssociation> CLOSED {
     (  $<ChemicalEntityToPathwayAssociation_tes> (  &<Association_tes> ;
@@ -1455,6 +1457,15 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Attribute> ] ?
        ) ;
        rdf:type [ <ChemicalRole> ]
+    )
+}
+
+<ChemicalToEntityAssociationMixin> {
+    (  $<ChemicalToEntityAssociationMixin_tes> (  &<ChemicalEntityToEntityAssociationMixin_tes> ;
+          rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ? ;
+          rdf:subject @<NamedThing>
+       ) ;
+       rdf:type [ <ChemicalToEntityAssociationMixin> ] ?
     )
 }
 

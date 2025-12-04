@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-04T15:04:19
+# Generation date: 2025-12-04T15:13:03
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8850,6 +8850,46 @@ class DrugToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
 
 
 @dataclass(repr=False)
+class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
+    """
+    An interaction between a chemical entity and another entity
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToEntityAssociationMixin"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalToEntityAssociationMixin"
+    class_name: ClassVar[str] = "chemical to entity association mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToEntityAssociationMixin
+
+    subject: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, NamedThingId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, ChemicalEntityOrGeneOrGeneProduct):
+            self.subject = ChemicalEntityOrGeneOrGeneProduct()
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class CaseToEntityAssociationMixin(YAMLRoot):
     """
     An abstract association for use where the case is the subject
@@ -17016,6 +17056,9 @@ slots.chemical_entity_to_entity_association_mixin_subject = Slot(uri=RDF.subject
 
 slots.drug_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="drug to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.drug_to_entity_association_mixin_subject, domain=None, range=Union[str, DrugId])
+
+slots.chemical_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="chemical to entity association mixin_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_to_entity_association_mixin_subject, domain=None, range=Union[dict, ChemicalEntityOrGeneOrGeneProduct])
 
 slots.case_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="case to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.case_to_entity_association_mixin_subject, domain=None, range=Union[str, CaseId])
