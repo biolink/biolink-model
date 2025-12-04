@@ -5646,6 +5646,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
@@ -5721,12 +5722,14 @@
       "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5756,7 +5759,8 @@
       "owner": "MacromolecularMachineToEntityAssociationMixin",
       "domain_of": [
         "PredicateMapping",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
+        "ChemicalEntityToBiologicalProcessAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5949,9 +5953,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
@@ -13045,7 +13049,7 @@
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
@@ -13105,7 +13109,7 @@
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
@@ -13169,7 +13173,7 @@
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
         "CaseToEntityAssociationMixin",
-        "ChemicalToChemicalAssociation",
+        "ChemicalEntityToChemicalEntityAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
@@ -17955,7 +17959,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_association_object",
+      "name": "chemical_entity_to_chemical_entity_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -17977,12 +17981,12 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalToChemicalAssociation",
+      "domain": "ChemicalEntityToChemicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToChemicalAssociation",
+      "owner": "ChemicalEntityToChemicalEntityAssociation",
       "domain_of": [
-        "ChemicalToChemicalAssociation"
+        "ChemicalEntityToChemicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -18048,7 +18052,7 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "chemical_to_chemical_association_object",
+      "is_a": "chemical_entity_to_chemical_entity_association_object",
       "domain": "ReactionToCatalystAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
@@ -18064,7 +18068,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_subject",
+      "name": "chemical_entity_to_chemical_derivation_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -18086,12 +18090,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -18100,7 +18104,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_object",
+      "name": "chemical_entity_to_chemical_derivation_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18121,13 +18125,13 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "chemical_to_chemical_association_object",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "is_a": "chemical_entity_to_chemical_entity_association_object",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -18136,7 +18140,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_predicate",
+      "name": "chemical_entity_to_chemical_derivation_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18161,12 +18165,12 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "subproperty_of": "derives_into",
       "is_usage_slot": true,
@@ -18176,17 +18180,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_chemical_derivation_association_catalyst_qualifier",
+      "name": "chemical_entity_to_chemical_derivation_association_catalyst_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
       "description": "this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "catalyst_qualifier",
-      "domain": "ChemicalToChemicalDerivationAssociation",
+      "domain": "ChemicalEntityToChemicalDerivationAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/catalyst_qualifier",
       "alias": "catalyst qualifier",
-      "owner": "ChemicalToChemicalDerivationAssociation",
+      "owner": "ChemicalEntityToChemicalDerivationAssociation",
       "domain_of": [
-        "ChemicalToChemicalDerivationAssociation"
+        "ChemicalEntityToChemicalDerivationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "catalyst qualifier",
@@ -18196,7 +18200,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_disease_or_phenotypic_feature_association_object",
+      "name": "chemical_entity_to_disease_or_phenotypic_feature_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18218,12 +18222,12 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "domain": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
-        "ChemicalToDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -18497,7 +18501,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_pathway_association_subject",
+      "name": "chemical_entity_to_pathway_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -18519,12 +18523,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "ChemicalToPathwayAssociation",
+      "domain": "ChemicalEntityToPathwayAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "ChemicalToPathwayAssociation",
+      "owner": "ChemicalEntityToPathwayAssociation",
       "domain_of": [
-        "ChemicalToPathwayAssociation"
+        "ChemicalEntityToPathwayAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -18533,7 +18537,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_to_pathway_association_object",
+      "name": "chemical_entity_to_pathway_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -18555,16 +18559,128 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "ChemicalToPathwayAssociation",
+      "domain": "ChemicalEntityToPathwayAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "ChemicalToPathwayAssociation",
+      "owner": "ChemicalEntityToPathwayAssociation",
       "domain_of": [
-        "ChemicalToPathwayAssociation"
+        "ChemicalEntityToPathwayAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "Pathway",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_biological_process_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the chemical entity that affects the biological process",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ChemicalEntityToBiologicalProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ChemicalEntityToBiologicalProcessAssociation",
+      "domain_of": [
+        "ChemicalEntityToBiologicalProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ChemicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_biological_process_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "the biological process that is affected by the chemical entity",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalEntityToBiologicalProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ChemicalEntityToBiologicalProcessAssociation",
+      "domain_of": [
+        "ChemicalEntityToBiologicalProcessAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "BiologicalProcess",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_biological_process_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+      "notes": [
+        "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "ChemicalEntityToBiologicalProcessAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "ChemicalEntityToBiologicalProcessAssociation",
+      "domain_of": [
+        "ChemicalEntityToBiologicalProcessAssociation"
+      ],
+      "subproperty_of": "affects",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "predicate_type",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -19126,6 +19242,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19964,6 +20081,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20503,6 +20621,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "anatomical context qualifier",
       "range": "AnatomicalEntity",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -34681,8 +34800,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToChemicalAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation",
+      "name": "ChemicalEntityToChemicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalEntityAssociation",
       "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
@@ -34731,11 +34850,11 @@
         "association_category",
         "subject",
         "predicate",
-        "chemical_to_chemical_association_object",
+        "chemical_entity_to_chemical_entity_association_object",
         "species_context_qualifier"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalEntityAssociation",
       "defining_slots": [
         "subject",
         "object"
@@ -34746,7 +34865,7 @@
       "name": "ReactionToParticipantAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ReactionToParticipantAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "ChemicalToChemicalAssociation",
+      "is_a": "ChemicalEntityToChemicalEntityAssociation",
       "slots": [
         "id",
         "iri",
@@ -34791,7 +34910,7 @@
         "association_type",
         "association_category",
         "predicate",
-        "chemical_to_chemical_association_object",
+        "chemical_entity_to_chemical_entity_association_object",
         "species_context_qualifier",
         "stoichiometry",
         "reaction_direction",
@@ -34868,11 +34987,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToChemicalDerivationAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation",
+      "name": "ChemicalEntityToChemicalDerivationAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalDerivationAssociation",
       "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "ChemicalToChemicalAssociation",
+      "is_a": "ChemicalEntityToChemicalEntityAssociation",
       "slots": [
         "id",
         "iri",
@@ -34917,13 +35036,13 @@
         "association_type",
         "association_category",
         "species_context_qualifier",
-        "chemical_to_chemical_derivation_association_catalyst_qualifier",
-        "chemical_to_chemical_derivation_association_subject",
-        "chemical_to_chemical_derivation_association_object",
-        "chemical_to_chemical_derivation_association_predicate"
+        "chemical_entity_to_chemical_derivation_association_catalyst_qualifier",
+        "chemical_entity_to_chemical_derivation_association_subject",
+        "chemical_entity_to_chemical_derivation_association_object",
+        "chemical_entity_to_chemical_derivation_association_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalDerivationAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -34932,8 +35051,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "name": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
@@ -34988,14 +35107,14 @@
         "elevate_to_prediction",
         "association_type",
         "association_category",
-        "chemical_to_disease_or_phenotypic_feature_association_object",
+        "chemical_entity_to_disease_or_phenotypic_feature_association_object",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "defining_slots": [
         "subject",
         "object"
@@ -35277,8 +35396,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalToPathwayAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation",
+      "name": "ChemicalEntityToPathwayAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToPathwayAssociation",
       "description": "An interaction between a chemical entity and a biological process or pathway.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
@@ -35329,15 +35448,75 @@
         "elevate_to_prediction",
         "association_type",
         "association_category",
-        "chemical_to_pathway_association_subject",
-        "chemical_to_pathway_association_object"
+        "chemical_entity_to_pathway_association_subject",
+        "chemical_entity_to_pathway_association_object"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToPathwayAssociation",
       "defining_slots": [
         "subject",
         "object"
       ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalEntityToBiologicalProcessAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToBiologicalProcessAssociation",
+      "description": "An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "association_type",
+        "association_category",
+        "species_context_qualifier",
+        "anatomical_context_qualifier",
+        "qualified_predicate",
+        "chemical_entity_to_biological_process_association_subject",
+        "chemical_entity_to_biological_process_association_object",
+        "chemical_entity_to_biological_process_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToBiologicalProcessAssociation",
       "@type": "ClassDefinition"
     },
     {
@@ -40700,9 +40879,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-11-26T20:28:52",
-  "source_file_size": 454603,
-  "generation_date": "2025-11-26T20:28:59",
+  "source_file_date": "2025-12-04T15:12:25",
+  "source_file_size": 455370,
+  "generation_date": "2025-12-04T15:12:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

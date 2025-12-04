@@ -1926,6 +1926,7 @@ slots:
       - value: cerebral cortext  # UBERON:0000956
     in_subset:
       - translator_minimal
+    multivalued: true
 
   species context qualifier:
     is_a: statement qualifier
@@ -10447,7 +10448,7 @@ classes:
       subject:
         range: chemical entity or gene or gene product
         description: "the chemical entity or entity that is an interactor"
-
+        
   case to entity association mixin:
     description: >-
       An abstract association for use where the case is the subject
@@ -10463,7 +10464,7 @@ classes:
         range: case
         description: "the case (e.g. patient) that has the property"
 
-  chemical to chemical association:
+  chemical entity to chemical entity association:
     description: >-
       A relationship between two chemical entities. This can encompass actual
       interactions as well as temporal causal edges, e.g. one chemical converted to another.
@@ -10483,7 +10484,7 @@ classes:
 
   reaction to participant association:
     description:
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     slots:
       - stoichiometry
       - reaction direction
@@ -10503,14 +10504,14 @@ classes:
       object:
         range: gene or gene product
 
-  chemical to chemical derivation association:
+  chemical entity to chemical derivation association:
     description: >-
       A causal relationship between two chemical entities, where the subject
       represents the upstream entity and the object represents the downstream.
       For any such association there is an implicit reaction: IF R has-input C1 AND
       R has-output C2 AND R enabled-by P AND
       R type Reaction THEN C1 derives-into C2 catalyst qualifier P
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     defining_slots:
       - subject
       - predicate
@@ -10534,7 +10535,7 @@ classes:
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
-  chemical to disease or phenotypic feature association:
+  chemical entity to disease or phenotypic feature association:
     description: >-
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -10613,7 +10614,7 @@ classes:
       predicate:
         subproperty_of: part of
 
-  chemical to pathway association:
+  chemical entity to pathway association:
     description: >-
       An interaction between a chemical entity and a biological process or pathway.
     is_a: association
@@ -10629,6 +10630,25 @@ classes:
       object:
         range: pathway
         description: "the pathway that is affected by the chemical"
+
+  chemical entity to biological process association:
+    description: >-
+      An association between a chemical entity and a biological process,
+      where the chemical entity has some effect on the biological process.
+    is_a: association
+    slots:
+      - species context qualifier
+      - anatomical context qualifier
+      - qualified predicate
+    slot_usage:
+      subject:
+        range: chemical entity
+        description: "the chemical entity that affects the biological process"
+      object:
+        range: biological process
+        description: "the biological process that is affected by the chemical entity"
+      predicate:
+        subproperty_of: affects
 
   named thing associated with likelihood of named thing association:
      # TODO: better name
@@ -10685,8 +10705,8 @@ classes:
       - object context qualifier
       - anatomical context qualifier
       - causal mechanism qualifier
-      - dgidb interaction score 
-      - dgidb evidence score 
+      - dgidb interaction score
+      - dgidb evidence score
     slot_usage:
       subject:
         range: chemical entity
@@ -10830,8 +10850,8 @@ classes:
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
     slots:
-      - dgidb interaction score 
-      - dgidb evidence score 
+      - dgidb interaction score
+      - dgidb evidence score
 
   gene affects chemical association:
     description: >-

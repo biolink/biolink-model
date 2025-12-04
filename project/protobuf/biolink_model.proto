@@ -1130,7 +1130,7 @@ message CellLineAsAModelOfDiseaseAssociation
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
@@ -1190,7 +1190,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // A location in or around a cell
 message CellularComponent
@@ -1290,7 +1290,7 @@ message ChemicalAffectsBiologicalEntityAssociation
   anatomicalEntity objectContextQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
-  anatomicalEntity anatomicalContextQualifier = 0
+ repeated  anatomicalEntity anatomicalContextQualifier = 0
   string qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   chemicalEntity subject = 0
@@ -1354,7 +1354,7 @@ message ChemicalAffectsGeneAssociation
   anatomicalEntity objectContextQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
-  anatomicalEntity anatomicalContextQualifier = 0
+ repeated  anatomicalEntity anatomicalContextQualifier = 0
   string qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   chemicalEntity subject = 0
@@ -1491,6 +1491,261 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   chemicalEntityOrGeneOrGeneProduct subject = 0
   geneOrGeneProduct object = 0
  }
+// An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.
+message ChemicalEntityToBiologicalProcessAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  organismTaxon speciesContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  string qualifiedPredicate = 0
+  chemicalEntity subject = 0
+  biologicalProcess object = 0
+  predicateType predicate = 0
+ }
+// A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
+message ChemicalEntityToChemicalDerivationAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  organismTaxon speciesContextQualifier = 0
+ repeated  macromolecularMachineMixin catalystQualifier = 0
+  chemicalEntity subject = 0
+  chemicalEntity object = 0
+  predicateType predicate = 0
+ }
+// A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+message ChemicalEntityToChemicalEntityAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  chemicalEntity object = 0
+  organismTaxon speciesContextQualifier = 0
+ }
+// An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
+message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  namedThing subject = 0
+  predicateType predicate = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  diseaseOrPhenotypicFeature object = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+ }
+// An interaction between a chemical entity and a biological process or pathway.
+message ChemicalEntityToPathwayAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  predicateType predicate = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  chemicalEntity subject = 0
+  pathway object = 0
+ }
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
  {
@@ -1575,7 +1830,7 @@ message ChemicalGeneInteractionAssociation
   chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   anatomicalEntity objectContextQualifier = 0
-  anatomicalEntity anatomicalContextQualifier = 0
+ repeated  anatomicalEntity anatomicalContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   float dgidbInteractionScore = 0
   integer dgidbEvidenceScore = 0
@@ -1668,7 +1923,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -1729,7 +1984,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -1758,209 +2013,6 @@ message ChemicalRole
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
- }
-// A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
-message ChemicalToChemicalAssociation
- {
-  string id = 0
-  iriType iri = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
-  boolean negated = 0
-  string qualifier = 0
- repeated  ontologyClass qualifiers = 0
- repeated  publication publications = 0
- repeated  retrievalSource sources = 0
- repeated  evidenceType hasEvidence = 0
-  string knowledgeSource = 0
-  string primaryKnowledgeSource = 0
- repeated  string aggregatorKnowledgeSource = 0
-  knowledgeLevelEnum knowledgeLevel = 0
-  agentTypeEnum agentType = 0
-  timeType timepoint = 0
-  string originalSubject = 0
-  uriorcurie originalPredicate = 0
-  string originalObject = 0
-  string subjectFeatureName = 0
-  string objectFeatureName = 0
-  ontologyClass subjectCategory = 0
-  ontologyClass objectCategory = 0
- repeated  string subjectClosure = 0
- repeated  string objectClosure = 0
- repeated  ontologyClass subjectCategoryClosure = 0
- repeated  ontologyClass objectCategoryClosure = 0
-  string subjectNamespace = 0
-  string objectNamespace = 0
- repeated  string subjectLabelClosure = 0
- repeated  string objectLabelClosure = 0
- repeated  retrievalSource retrievalSourceIds = 0
-  float pValue = 0
-  float adjustedPValue = 0
- repeated  study hasSupportingStudies = 0
-  date updateDate = 0
-  float hasConfidenceScore = 0
-  boolean elevateToPrediction = 0
- repeated  string type = 0
- repeated  uriorcurie category = 0
-  namedThing subject = 0
-  predicateType predicate = 0
-  chemicalEntity object = 0
-  organismTaxon speciesContextQualifier = 0
- }
-// A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
-message ChemicalToChemicalDerivationAssociation
- {
-  string id = 0
-  iriType iri = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
-  boolean negated = 0
-  string qualifier = 0
- repeated  ontologyClass qualifiers = 0
- repeated  publication publications = 0
- repeated  retrievalSource sources = 0
- repeated  evidenceType hasEvidence = 0
-  string knowledgeSource = 0
-  string primaryKnowledgeSource = 0
- repeated  string aggregatorKnowledgeSource = 0
-  knowledgeLevelEnum knowledgeLevel = 0
-  agentTypeEnum agentType = 0
-  timeType timepoint = 0
-  string originalSubject = 0
-  uriorcurie originalPredicate = 0
-  string originalObject = 0
-  string subjectFeatureName = 0
-  string objectFeatureName = 0
-  ontologyClass subjectCategory = 0
-  ontologyClass objectCategory = 0
- repeated  string subjectClosure = 0
- repeated  string objectClosure = 0
- repeated  ontologyClass subjectCategoryClosure = 0
- repeated  ontologyClass objectCategoryClosure = 0
-  string subjectNamespace = 0
-  string objectNamespace = 0
- repeated  string subjectLabelClosure = 0
- repeated  string objectLabelClosure = 0
- repeated  retrievalSource retrievalSourceIds = 0
-  float pValue = 0
-  float adjustedPValue = 0
- repeated  study hasSupportingStudies = 0
-  date updateDate = 0
-  float hasConfidenceScore = 0
-  boolean elevateToPrediction = 0
- repeated  string type = 0
- repeated  uriorcurie category = 0
-  organismTaxon speciesContextQualifier = 0
- repeated  macromolecularMachineMixin catalystQualifier = 0
-  chemicalEntity subject = 0
-  chemicalEntity object = 0
-  predicateType predicate = 0
- }
-// An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
-message ChemicalToDiseaseOrPhenotypicFeatureAssociation
- {
-  string id = 0
-  iriType iri = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
-  namedThing subject = 0
-  predicateType predicate = 0
-  boolean negated = 0
-  string qualifier = 0
- repeated  ontologyClass qualifiers = 0
- repeated  publication publications = 0
- repeated  retrievalSource sources = 0
- repeated  evidenceType hasEvidence = 0
-  string knowledgeSource = 0
-  string primaryKnowledgeSource = 0
- repeated  string aggregatorKnowledgeSource = 0
-  knowledgeLevelEnum knowledgeLevel = 0
-  agentTypeEnum agentType = 0
-  timeType timepoint = 0
-  string originalSubject = 0
-  uriorcurie originalPredicate = 0
-  string originalObject = 0
-  string subjectFeatureName = 0
-  string objectFeatureName = 0
-  ontologyClass subjectCategory = 0
-  ontologyClass objectCategory = 0
- repeated  string subjectClosure = 0
- repeated  string objectClosure = 0
- repeated  ontologyClass subjectCategoryClosure = 0
- repeated  ontologyClass objectCategoryClosure = 0
-  string subjectNamespace = 0
-  string objectNamespace = 0
- repeated  string subjectLabelClosure = 0
- repeated  string objectLabelClosure = 0
- repeated  retrievalSource retrievalSourceIds = 0
-  float pValue = 0
-  float adjustedPValue = 0
- repeated  study hasSupportingStudies = 0
-  date updateDate = 0
-  float hasConfidenceScore = 0
-  boolean elevateToPrediction = 0
- repeated  string type = 0
- repeated  uriorcurie category = 0
-  diseaseOrPhenotypicFeature object = 0
-  disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
- }
-// An interaction between a chemical entity and a biological process or pathway.
-message ChemicalToPathwayAssociation
- {
-  string id = 0
-  iriType iri = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
-  predicateType predicate = 0
-  boolean negated = 0
-  string qualifier = 0
- repeated  ontologyClass qualifiers = 0
- repeated  publication publications = 0
- repeated  retrievalSource sources = 0
- repeated  evidenceType hasEvidence = 0
-  string knowledgeSource = 0
-  string primaryKnowledgeSource = 0
- repeated  string aggregatorKnowledgeSource = 0
-  knowledgeLevelEnum knowledgeLevel = 0
-  agentTypeEnum agentType = 0
-  timeType timepoint = 0
-  string originalSubject = 0
-  uriorcurie originalPredicate = 0
-  string originalObject = 0
-  string subjectFeatureName = 0
-  string objectFeatureName = 0
-  ontologyClass subjectCategory = 0
-  ontologyClass objectCategory = 0
- repeated  string subjectClosure = 0
- repeated  string objectClosure = 0
- repeated  ontologyClass subjectCategoryClosure = 0
- repeated  ontologyClass objectCategoryClosure = 0
-  string subjectNamespace = 0
-  string objectNamespace = 0
- repeated  string subjectLabelClosure = 0
- repeated  string objectLabelClosure = 0
- repeated  retrievalSource retrievalSourceIds = 0
-  float pValue = 0
-  float adjustedPValue = 0
- repeated  study hasSupportingStudies = 0
-  date updateDate = 0
-  float hasConfidenceScore = 0
-  boolean elevateToPrediction = 0
- repeated  string type = 0
- repeated  uriorcurie category = 0
-  chemicalEntity subject = 0
-  pathway object = 0
  }
 // A result of a chi squared analysis.
 message ChiSquaredAnalysisResult
@@ -3815,7 +3867,7 @@ message GeneAffectsChemicalAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
-  anatomicalEntity anatomicalContextQualifier = 0
+ repeated  anatomicalEntity anatomicalContextQualifier = 0
   string qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   geneOrGeneProduct subject = 0
@@ -5863,7 +5915,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
-  string anatomicalContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 message MicroRNA
  {
@@ -7249,7 +7301,7 @@ message PredicateMapping
   string objectDerivativeQualifier = 0
   string objectContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
-  string anatomicalContextQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   organismTaxon speciesContextQualifier = 0
  repeated  namedThing exactMatch = 0
  repeated  namedThing narrowMatch = 0

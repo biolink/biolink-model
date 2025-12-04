@@ -266,8 +266,9 @@ linkml:Sparqlpath xsd:string
     @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation> OR
     @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsBiologicalEntityAssociation> OR
     @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR
+    @<ChemicalEntityToBiologicalProcessAssociation> OR @<ChemicalEntityToChemicalEntityAssociation> OR
+    @<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalEntityToPathwayAssociation> OR
     @<ChemicalGeneInteractionAssociation> OR @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR
     @<ContributorAssociation> OR @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR
     @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
     @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
@@ -654,7 +655,7 @@ linkml:Sparqlpath xsd:string
              <disease_context_qualifier> @<Disease> ? ;
              <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
              <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-             <anatomical_context_qualifier> @linkml:String ?
+             <anatomical_context_qualifier> @linkml:String *
           ) ;
           rdf:type [ <CellLineToDiseaseOrPhenotypicFeatureAssociation> ]
        )
@@ -957,7 +958,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
-             <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+             <anatomical_context_qualifier> @<AnatomicalEntity> * ;
              <qualified_predicate> @linkml:String ? ;
              <species_context_qualifier> @<OrganismTaxon> ? ;
              rdf:subject @<ChemicalEntity> ;
@@ -1047,6 +1048,59 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<ChemicalEntityToBiologicalProcessAssociation> CLOSED {
+    (  $<ChemicalEntityToBiologicalProcessAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <species_context_qualifier> @<OrganismTaxon> ? ;
+          <anatomical_context_qualifier> @linkml:String * ;
+          <qualified_predicate> @linkml:String ? ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:object @<BiologicalProcess> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <ChemicalEntityToBiologicalProcessAssociation> ]
+    )
+}
+
+<ChemicalEntityToChemicalDerivationAssociation> CLOSED {
+    (  $<ChemicalEntityToChemicalDerivationAssociation_tes> (  &<ChemicalEntityToChemicalEntityAssociation_tes> ;
+          rdf:type [ <ChemicalEntityToChemicalEntityAssociation> ] ? ;
+          <catalyst_qualifier> @<MacromolecularMachineMixin> * ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:object @<ChemicalEntity> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <ChemicalEntityToChemicalDerivationAssociation> ]
+    )
+}
+
+<ChemicalEntityToChemicalEntityAssociation>  (
+    CLOSED {
+       (  $<ChemicalEntityToChemicalEntityAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             rdf:object @<ChemicalEntity> ;
+             <species_context_qualifier> @<OrganismTaxon> ?
+          ) ;
+          rdf:type [ <ChemicalEntityToChemicalEntityAssociation> ]
+       )
+    } OR @<ChemicalEntityToChemicalDerivationAssociation> OR @<ReactionToParticipantAssociation>
+)
+
+<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> CLOSED {
+    (  $<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
+          rdf:object @<DiseaseOrPhenotypicFeature> ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String *
+       ) ;
+       rdf:type [ <ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> ]
+    )
+}
+
 <ChemicalEntityToEntityAssociationMixin>  (
     @<ChemicalToEntityAssociationMixin> OR @<DrugToEntityAssociationMixin>
 )
@@ -1057,6 +1111,16 @@ linkml:Sparqlpath xsd:string
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ?
+    )
+}
+
+<ChemicalEntityToPathwayAssociation> CLOSED {
+    (  $<ChemicalEntityToPathwayAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:object @<Pathway>
+       ) ;
+       rdf:type [ <ChemicalEntityToPathwayAssociation> ]
     )
 }
 
@@ -1176,7 +1240,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
           <object_context_qualifier> @<AnatomicalEntity> ? ;
-          <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+          <anatomical_context_qualifier> @<AnatomicalEntity> * ;
           <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#modulation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_modulation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_allosteric_modulation>
@@ -1369,7 +1433,7 @@ linkml:Sparqlpath xsd:string
              <disease_context_qualifier> @<Disease> ? ;
              <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
              <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-             <anatomical_context_qualifier> @linkml:String ? ;
+             <anatomical_context_qualifier> @linkml:String * ;
              <frequency_qualifier> @<FrequencyValue> ? ;
              <subject_aspect_qualifier> @linkml:String ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
@@ -1396,61 +1460,12 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<ChemicalToChemicalAssociation>  (
-    CLOSED {
-       (  $<ChemicalToChemicalAssociation_tes> (  &<Association_tes> ;
-             rdf:type [ <Association> ] ? ;
-             rdf:object @<ChemicalEntity> ;
-             <species_context_qualifier> @<OrganismTaxon> ?
-          ) ;
-          rdf:type [ <ChemicalToChemicalAssociation> ]
-       )
-    } OR @<ChemicalToChemicalDerivationAssociation> OR @<ReactionToParticipantAssociation>
-)
-
-<ChemicalToChemicalDerivationAssociation> CLOSED {
-    (  $<ChemicalToChemicalDerivationAssociation_tes> (  &<ChemicalToChemicalAssociation_tes> ;
-          rdf:type [ <ChemicalToChemicalAssociation> ] ? ;
-          <catalyst_qualifier> @<MacromolecularMachineMixin> * ;
-          rdf:subject @<ChemicalEntity> ;
-          rdf:object @<ChemicalEntity> ;
-          rdf:predicate @<PredicateType>
-       ) ;
-       rdf:type [ <ChemicalToChemicalDerivationAssociation> ]
-    )
-}
-
-<ChemicalToDiseaseOrPhenotypicFeatureAssociation> CLOSED {
-    (  $<ChemicalToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
-          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-          rdf:object @<DiseaseOrPhenotypicFeature> ;
-          <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ?
-       ) ;
-       rdf:type [ <ChemicalToDiseaseOrPhenotypicFeatureAssociation> ]
-    )
-}
-
 <ChemicalToEntityAssociationMixin> {
     (  $<ChemicalToEntityAssociationMixin_tes> (  &<ChemicalEntityToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ? ;
           rdf:subject @<NamedThing>
        ) ;
        rdf:type [ <ChemicalToEntityAssociationMixin> ] ?
-    )
-}
-
-<ChemicalToPathwayAssociation> CLOSED {
-    (  $<ChemicalToPathwayAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          rdf:subject @<ChemicalEntity> ;
-          rdf:object @<Pathway>
-       ) ;
-       rdf:type [ <ChemicalToPathwayAssociation> ]
     )
 }
 
@@ -2002,7 +2017,7 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
           <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ?
+          <anatomical_context_qualifier> @linkml:String *
        ) ;
        rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ?
     )
@@ -2649,7 +2664,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
-          <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+          <anatomical_context_qualifier> @<AnatomicalEntity> * ;
           <qualified_predicate> @linkml:String ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           rdf:subject @<GeneOrGeneProduct> ;
@@ -3605,7 +3620,7 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
           <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-          <anatomical_context_qualifier> @linkml:String ?
+          <anatomical_context_qualifier> @linkml:String *
        ) ;
        rdf:type [ <MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -4427,7 +4442,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
-          <anatomical_context_qualifier> @linkml:String ? ;
+          <anatomical_context_qualifier> @linkml:String * ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           <exact_match> @<NamedThing> * ;
           <narrow_match> @<NamedThing> * ;
@@ -4560,8 +4575,8 @@ linkml:Sparqlpath xsd:string
 
 <ReactionToParticipantAssociation>  (
     CLOSED {
-       (  $<ReactionToParticipantAssociation_tes> (  &<ChemicalToChemicalAssociation_tes> ;
-             rdf:type [ <ChemicalToChemicalAssociation> ] ? ;
+       (  $<ReactionToParticipantAssociation_tes> (  &<ChemicalEntityToChemicalEntityAssociation_tes> ;
+             rdf:type [ <ChemicalEntityToChemicalEntityAssociation> ] ? ;
              <stoichiometry> @linkml:Integer ? ;
              <reaction_direction> [ <https://w3id.org/biolink/vocab/ReactionDirectionEnum#left_to_right>
                 <https://w3id.org/biolink/vocab/ReactionDirectionEnum#right_to_left>

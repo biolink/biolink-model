@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-26T20:29:15
+# Generation date: 2025-12-04T15:13:03
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1134,11 +1134,11 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
-class ChemicalToChemicalAssociationId(AssociationId):
+class ChemicalEntityToChemicalEntityAssociationId(AssociationId):
     pass
 
 
-class ReactionToParticipantAssociationId(ChemicalToChemicalAssociationId):
+class ReactionToParticipantAssociationId(ChemicalEntityToChemicalEntityAssociationId):
     pass
 
 
@@ -1146,11 +1146,11 @@ class ReactionToCatalystAssociationId(ReactionToParticipantAssociationId):
     pass
 
 
-class ChemicalToChemicalDerivationAssociationId(ChemicalToChemicalAssociationId):
+class ChemicalEntityToChemicalDerivationAssociationId(ChemicalEntityToChemicalEntityAssociationId):
     pass
 
 
-class ChemicalToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
+class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
@@ -1170,7 +1170,11 @@ class MolecularActivityToPathwayAssociationId(AssociationId):
     pass
 
 
-class ChemicalToPathwayAssociationId(AssociationId):
+class ChemicalEntityToPathwayAssociationId(AssociationId):
+    pass
+
+
+class ChemicalEntityToBiologicalProcessAssociationId(AssociationId):
     pass
 
 
@@ -1590,7 +1594,7 @@ class PredicateMapping(YAMLRoot):
     object_derivative_qualifier: Optional[str] = None
     object_context_qualifier: Optional[str] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
     exact_match: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
     narrow_match: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
@@ -1647,8 +1651,9 @@ class PredicateMapping(YAMLRoot):
         if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
             self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
             self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
@@ -8727,7 +8732,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -8759,8 +8764,9 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
         if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
             self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -8919,19 +8925,19 @@ class CaseToEntityAssociationMixin(YAMLRoot):
 
 
 @dataclass(repr=False)
-class ChemicalToChemicalAssociation(Association):
+class ChemicalEntityToChemicalEntityAssociation(Association):
     """
     A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal
     edges, e.g. one chemical converted to another.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToChemicalAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalToChemicalAssociation"
-    class_name: ClassVar[str] = "chemical to chemical association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToChemicalEntityAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToChemicalEntityAssociation"
+    class_name: ClassVar[str] = "chemical entity to chemical entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToChemicalEntityAssociation
 
-    id: Union[str, ChemicalToChemicalAssociationId] = None
+    id: Union[str, ChemicalEntityToChemicalEntityAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
@@ -8942,8 +8948,8 @@ class ChemicalToChemicalAssociation(Association):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalToChemicalAssociationId):
-            self.id = ChemicalToChemicalAssociationId(self.id)
+        if not isinstance(self.id, ChemicalEntityToChemicalEntityAssociationId):
+            self.id = ChemicalEntityToChemicalEntityAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -8970,7 +8976,7 @@ class ChemicalToChemicalAssociation(Association):
 
 
 @dataclass(repr=False)
-class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
+class ReactionToParticipantAssociation(ChemicalEntityToChemicalEntityAssociation):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToParticipantAssociation"]
@@ -9048,7 +9054,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
 
 
 @dataclass(repr=False)
-class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
+class ChemicalEntityToChemicalDerivationAssociation(ChemicalEntityToChemicalEntityAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
     object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R
@@ -9056,12 +9062,12 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToChemicalDerivationAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalToChemicalDerivationAssociation"
-    class_name: ClassVar[str] = "chemical to chemical derivation association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalDerivationAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToChemicalDerivationAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToChemicalDerivationAssociation"
+    class_name: ClassVar[str] = "chemical entity to chemical derivation association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToChemicalDerivationAssociation
 
-    id: Union[str, ChemicalToChemicalDerivationAssociationId] = None
+    id: Union[str, ChemicalEntityToChemicalDerivationAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
@@ -9072,8 +9078,8 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalToChemicalDerivationAssociationId):
-            self.id = ChemicalToChemicalDerivationAssociationId(self.id)
+        if not isinstance(self.id, ChemicalEntityToChemicalDerivationAssociationId):
+            self.id = ChemicalEntityToChemicalDerivationAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9101,19 +9107,19 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
 
 
 @dataclass(repr=False)
-class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
+class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
     to or exacerbates the phenotype.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToDiseaseOrPhenotypicFeatureAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "chemical to disease or phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "chemical entity to disease or phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
 
-    id: Union[str, ChemicalToDiseaseOrPhenotypicFeatureAssociationId] = None
+    id: Union[str, ChemicalEntityToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
@@ -9122,13 +9128,13 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = ChemicalToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, ChemicalEntityToDiseaseOrPhenotypicFeatureAssociationId):
+            self.id = ChemicalEntityToDiseaseOrPhenotypicFeatureAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9154,8 +9160,9 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
         if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
             self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9186,7 +9193,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -9227,8 +9234,9 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
         if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
             self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
             self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
@@ -9276,7 +9284,7 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -9308,8 +9316,9 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
         if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
             self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9410,18 +9419,18 @@ class MolecularActivityToPathwayAssociation(Association):
 
 
 @dataclass(repr=False)
-class ChemicalToPathwayAssociation(Association):
+class ChemicalEntityToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalToPathwayAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalToPathwayAssociation"
-    class_name: ClassVar[str] = "chemical to pathway association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToPathwayAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToPathwayAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToPathwayAssociation"
+    class_name: ClassVar[str] = "chemical entity to pathway association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToPathwayAssociation
 
-    id: Union[str, ChemicalToPathwayAssociationId] = None
+    id: Union[str, ChemicalEntityToPathwayAssociationId] = None
     predicate: Union[str, PredicateType] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
@@ -9431,8 +9440,8 @@ class ChemicalToPathwayAssociation(Association):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalToPathwayAssociationId):
-            self.id = ChemicalToPathwayAssociationId(self.id)
+        if not isinstance(self.id, ChemicalEntityToPathwayAssociationId):
+            self.id = ChemicalEntityToPathwayAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9443,6 +9452,66 @@ class ChemicalToPathwayAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, PathwayId):
             self.object = PathwayId(self.object)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class ChemicalEntityToBiologicalProcessAssociation(Association):
+    """
+    An association between a chemical entity and a biological process, where the chemical entity has some effect on
+    the biological process.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToBiologicalProcessAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToBiologicalProcessAssociation"
+    class_name: ClassVar[str] = "chemical entity to biological process association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToBiologicalProcessAssociation
+
+    id: Union[str, ChemicalEntityToBiologicalProcessAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, ChemicalEntityId] = None
+    object: Union[str, BiologicalProcessId] = None
+    predicate: Union[str, PredicateType] = None
+    species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
+    qualified_predicate: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalEntityToBiologicalProcessAssociationId):
+            self.id = ChemicalEntityToBiologicalProcessAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, ChemicalEntityId):
+            self.subject = ChemicalEntityId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, BiologicalProcessId):
+            self.object = BiologicalProcessId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
+            self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
+
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
+            self.qualified_predicate = str(self.qualified_predicate)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9543,7 +9612,7 @@ class ChemicalGeneInteractionAssociation(Association):
     object_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
-    anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
+    anatomical_context_qualifier: Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]] = empty_list()
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
     dgidb_interaction_score: Optional[float] = None
     dgidb_evidence_score: Optional[int] = None
@@ -9599,8 +9668,9 @@ class ChemicalGeneInteractionAssociation(Association):
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalEntityId):
-            self.anatomical_context_qualifier = AnatomicalEntityId(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, AnatomicalEntityId) else AnatomicalEntityId(v) for v in self.anatomical_context_qualifier]
 
         if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
             self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
@@ -9762,7 +9832,7 @@ class ChemicalAffectsBiologicalEntityAssociation(Association):
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
-    anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
+    anatomical_context_qualifier: Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]] = empty_list()
     qualified_predicate: Optional[str] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
@@ -9823,8 +9893,9 @@ class ChemicalAffectsBiologicalEntityAssociation(Association):
         if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
             self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalEntityId):
-            self.anatomical_context_qualifier = AnatomicalEntityId(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, AnatomicalEntityId) else AnatomicalEntityId(v) for v in self.anatomical_context_qualifier]
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
@@ -9910,7 +9981,7 @@ class GeneAffectsChemicalAssociation(Association):
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
-    anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
+    anatomical_context_qualifier: Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]] = empty_list()
     qualified_predicate: Optional[str] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
@@ -9974,8 +10045,9 @@ class GeneAffectsChemicalAssociation(Association):
         if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
             self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalEntityId):
-            self.anatomical_context_qualifier = AnatomicalEntityId(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, AnatomicalEntityId) else AnatomicalEntityId(v) for v in self.anatomical_context_qualifier]
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
@@ -10137,7 +10209,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -10169,8 +10241,9 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
         if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
             self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -10972,7 +11045,7 @@ class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[str] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
@@ -10999,8 +11072,9 @@ class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
         if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
             self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
-            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
         super().__post_init__(**kwargs)
 
@@ -15609,7 +15683,7 @@ slots.causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, 
                    model_uri=BIOLINK.causal_mechanism_qualifier, domain=Association, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
                    model_uri=BIOLINK.species_context_qualifier, domain=Association, range=Optional[Union[str, OrganismTaxonId]])
@@ -16989,8 +17063,8 @@ slots.chemical_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name=
 slots.case_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="case to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.case_to_entity_association_mixin_subject, domain=None, range=Union[str, CaseId])
 
-slots.chemical_to_chemical_association_object = Slot(uri=RDF.object, name="chemical to chemical association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_to_chemical_association_object, domain=ChemicalToChemicalAssociation, range=Union[str, ChemicalEntityId])
+slots.chemical_entity_to_chemical_entity_association_object = Slot(uri=RDF.object, name="chemical entity to chemical entity association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_to_chemical_entity_association_object, domain=ChemicalEntityToChemicalEntityAssociation, range=Union[str, ChemicalEntityId])
 
 slots.reaction_to_participant_association_subject = Slot(uri=RDF.subject, name="reaction to participant association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.reaction_to_participant_association_subject, domain=ReactionToParticipantAssociation, range=Union[str, MolecularEntityId])
@@ -16998,20 +17072,20 @@ slots.reaction_to_participant_association_subject = Slot(uri=RDF.subject, name="
 slots.reaction_to_catalyst_association_object = Slot(uri=RDF.object, name="reaction to catalyst association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.reaction_to_catalyst_association_object, domain=ReactionToCatalystAssociation, range=Union[dict, GeneOrGeneProduct])
 
-slots.chemical_to_chemical_derivation_association_subject = Slot(uri=RDF.subject, name="chemical to chemical derivation association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.chemical_to_chemical_derivation_association_subject, domain=ChemicalToChemicalDerivationAssociation, range=Union[str, ChemicalEntityId])
+slots.chemical_entity_to_chemical_derivation_association_subject = Slot(uri=RDF.subject, name="chemical entity to chemical derivation association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_entity_to_chemical_derivation_association_subject, domain=ChemicalEntityToChemicalDerivationAssociation, range=Union[str, ChemicalEntityId])
 
-slots.chemical_to_chemical_derivation_association_object = Slot(uri=RDF.object, name="chemical to chemical derivation association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_to_chemical_derivation_association_object, domain=ChemicalToChemicalDerivationAssociation, range=Union[str, ChemicalEntityId])
+slots.chemical_entity_to_chemical_derivation_association_object = Slot(uri=RDF.object, name="chemical entity to chemical derivation association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_to_chemical_derivation_association_object, domain=ChemicalEntityToChemicalDerivationAssociation, range=Union[str, ChemicalEntityId])
 
-slots.chemical_to_chemical_derivation_association_predicate = Slot(uri=RDF.predicate, name="chemical to chemical derivation association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.chemical_to_chemical_derivation_association_predicate, domain=ChemicalToChemicalDerivationAssociation, range=Union[str, PredicateType])
+slots.chemical_entity_to_chemical_derivation_association_predicate = Slot(uri=RDF.predicate, name="chemical entity to chemical derivation association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_entity_to_chemical_derivation_association_predicate, domain=ChemicalEntityToChemicalDerivationAssociation, range=Union[str, PredicateType])
 
-slots.chemical_to_chemical_derivation_association_catalyst_qualifier = Slot(uri=BIOLINK.catalyst_qualifier, name="chemical to chemical derivation association_catalyst qualifier", curie=BIOLINK.curie('catalyst_qualifier'),
-                   model_uri=BIOLINK.chemical_to_chemical_derivation_association_catalyst_qualifier, domain=ChemicalToChemicalDerivationAssociation, range=Optional[Union[Union[dict, MacromolecularMachineMixin], list[Union[dict, MacromolecularMachineMixin]]]])
+slots.chemical_entity_to_chemical_derivation_association_catalyst_qualifier = Slot(uri=BIOLINK.catalyst_qualifier, name="chemical entity to chemical derivation association_catalyst qualifier", curie=BIOLINK.curie('catalyst_qualifier'),
+                   model_uri=BIOLINK.chemical_entity_to_chemical_derivation_association_catalyst_qualifier, domain=ChemicalEntityToChemicalDerivationAssociation, range=Optional[Union[Union[dict, MacromolecularMachineMixin], list[Union[dict, MacromolecularMachineMixin]]]])
 
-slots.chemical_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="chemical to disease or phenotypic feature association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_to_disease_or_phenotypic_feature_association_object, domain=ChemicalToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
+slots.chemical_entity_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="chemical entity to disease or phenotypic feature association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_to_disease_or_phenotypic_feature_association_object, domain=ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
 slots.chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment to disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, PredicateType])
@@ -17034,11 +17108,20 @@ slots.molecular_activity_to_pathway_association_object = Slot(uri=RDF.object, na
 slots.molecular_activity_to_pathway_association_predicate = Slot(uri=RDF.predicate, name="molecular activity to pathway association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.molecular_activity_to_pathway_association_predicate, domain=MolecularActivityToPathwayAssociation, range=Union[str, PredicateType])
 
-slots.chemical_to_pathway_association_subject = Slot(uri=RDF.subject, name="chemical to pathway association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.chemical_to_pathway_association_subject, domain=ChemicalToPathwayAssociation, range=Union[str, ChemicalEntityId])
+slots.chemical_entity_to_pathway_association_subject = Slot(uri=RDF.subject, name="chemical entity to pathway association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_entity_to_pathway_association_subject, domain=ChemicalEntityToPathwayAssociation, range=Union[str, ChemicalEntityId])
 
-slots.chemical_to_pathway_association_object = Slot(uri=RDF.object, name="chemical to pathway association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_to_pathway_association_object, domain=ChemicalToPathwayAssociation, range=Union[str, PathwayId])
+slots.chemical_entity_to_pathway_association_object = Slot(uri=RDF.object, name="chemical entity to pathway association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_to_pathway_association_object, domain=ChemicalEntityToPathwayAssociation, range=Union[str, PathwayId])
+
+slots.chemical_entity_to_biological_process_association_subject = Slot(uri=RDF.subject, name="chemical entity to biological process association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_entity_to_biological_process_association_subject, domain=ChemicalEntityToBiologicalProcessAssociation, range=Union[str, ChemicalEntityId])
+
+slots.chemical_entity_to_biological_process_association_object = Slot(uri=RDF.object, name="chemical entity to biological process association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_to_biological_process_association_object, domain=ChemicalEntityToBiologicalProcessAssociation, range=Union[str, BiologicalProcessId])
+
+slots.chemical_entity_to_biological_process_association_predicate = Slot(uri=RDF.predicate, name="chemical entity to biological process association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_entity_to_biological_process_association_predicate, domain=ChemicalEntityToBiologicalProcessAssociation, range=Union[str, PredicateType])
 
 slots.named_thing_associated_with_likelihood_of_named_thing_association_predicate = Slot(uri=RDF.predicate, name="named thing associated with likelihood of named thing association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.named_thing_associated_with_likelihood_of_named_thing_association_predicate, domain=NamedThingAssociatedWithLikelihoodOfNamedThingAssociation, range=Union[str, PredicateType])
@@ -17092,7 +17175,7 @@ slots.chemical_gene_interaction_association_object_context_qualifier = Slot(uri=
                    model_uri=BIOLINK.chemical_gene_interaction_association_object_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
 slots.chemical_gene_interaction_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical gene interaction association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.chemical_gene_interaction_association_anatomical_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+                   model_uri=BIOLINK.chemical_gene_interaction_association_anatomical_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]])
 
 slots.chemical_gene_interaction_association_causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="chemical gene interaction association_causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_causal_mechanism_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
@@ -17173,7 +17256,7 @@ slots.chemical_affects_biological_entity_association_causal_mechanism_qualifier 
                    model_uri=BIOLINK.chemical_affects_biological_entity_association_causal_mechanism_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.chemical_affects_biological_entity_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical affects biological entity association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_biological_entity_association_anatomical_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+                   model_uri=BIOLINK.chemical_affects_biological_entity_association_anatomical_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]])
 
 slots.chemical_affects_biological_entity_association_species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="chemical affects biological entity association_species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_biological_entity_association_species_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, OrganismTaxonId]])
@@ -17227,7 +17310,7 @@ slots.gene_affects_chemical_association_causal_mechanism_qualifier = Slot(uri=BI
                    model_uri=BIOLINK.gene_affects_chemical_association_causal_mechanism_qualifier, domain=GeneAffectsChemicalAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.gene_affects_chemical_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="gene affects chemical association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.gene_affects_chemical_association_anatomical_context_qualifier, domain=GeneAffectsChemicalAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+                   model_uri=BIOLINK.gene_affects_chemical_association_anatomical_context_qualifier, domain=GeneAffectsChemicalAssociation, range=Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]])
 
 slots.gene_affects_chemical_association_species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="gene affects chemical association_species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
                    model_uri=BIOLINK.gene_affects_chemical_association_species_context_qualifier, domain=GeneAffectsChemicalAssociation, range=Optional[Union[str, OrganismTaxonId]])
