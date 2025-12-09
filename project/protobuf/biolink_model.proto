@@ -1539,6 +1539,7 @@ message ChemicalEntityToBiologicalProcessAssociation
   organismTaxon speciesContextQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   string qualifiedPredicate = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   chemicalEntity subject = 0
   biologicalProcess object = 0
   predicateType predicate = 0

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-04T23:36:36
+# Generation date: 2025-12-09T22:52:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -9481,6 +9481,7 @@ class ChemicalEntityToBiologicalProcessAssociation(Association):
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
     anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
     qualified_predicate: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -9512,6 +9513,9 @@ class ChemicalEntityToBiologicalProcessAssociation(Association):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, str):
             self.qualified_predicate = str(self.qualified_predicate)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):

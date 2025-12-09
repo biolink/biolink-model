@@ -11628,6 +11628,10 @@
                         "null"
                     ]
                 },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [

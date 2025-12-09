@@ -5618,6 +5618,7 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
@@ -35511,6 +35512,7 @@
         "species_context_qualifier",
         "anatomical_context_qualifier",
         "qualified_predicate",
+        "object_direction_qualifier",
         "chemical_entity_to_biological_process_association_subject",
         "chemical_entity_to_biological_process_association_object",
         "chemical_entity_to_biological_process_association_predicate"
@@ -40879,9 +40881,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2025-12-04T23:36:15",
-  "source_file_size": 455362,
-  "generation_date": "2025-12-04T23:36:21",
+  "source_file_date": "2025-12-09T22:51:47",
+  "source_file_size": 455397,
+  "generation_date": "2025-12-09T22:51:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

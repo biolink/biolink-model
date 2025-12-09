@@ -1054,6 +1054,10 @@ linkml:Sparqlpath xsd:string
           <species_context_qualifier> @<OrganismTaxon> ? ;
           <anatomical_context_qualifier> @linkml:String * ;
           <qualified_predicate> @linkml:String ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           rdf:subject @<ChemicalEntity> ;
           rdf:object @<BiologicalProcess> ;
           rdf:predicate @<PredicateType>

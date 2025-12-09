@@ -2062,6 +2062,7 @@ type ChemicalEntityToBiologicalProcessAssociation
     speciesContextQualifier: OrganismTaxon
     anatomicalContextQualifier: [String]
     qualifiedPredicate: String
+    objectDirectionQualifier: DirectionQualifierEnum
     subject: ChemicalEntity!
     object: BiologicalProcess!
     predicate: PredicateType!
