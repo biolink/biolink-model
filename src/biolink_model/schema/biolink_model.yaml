@@ -109,6 +109,7 @@ prefixes:
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
+  OBA: 'http://purl.obolibrary.org/obo/OBA_'
   OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
   ORCID: 'https://orcid.org/'
   orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -147,6 +148,7 @@ prefixes:
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
   VMC: 'https://github.com/ga4gh/vr-spec/'
+  VT: 'http://purl.obolibrary.org/obo/VT_'
   WBls: 'http://purl.obolibrary.org/obo/WBls_'
   WBbt: 'http://purl.obolibrary.org/obo/WBbt_'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
@@ -6625,6 +6627,53 @@ classes:
       - CHEBI:51086
     examples:
       - value: CHEBI:35469  # antidepressant role
+
+  biological attribute:
+    aliases: ['trait', 'biological trait', 'organismal attribute']
+    is_a: attribute
+    description: >-
+      A measurable or observable characteristic of a biological entity, organism, or part of an
+      organism that describes an inherent or acquired feature without reference to a specific
+      abnormal or pathological state. Biological attributes can include anatomical properties
+      (e.g., size, shape, color), physiological measurements (e.g., blood glucose level, metabolic
+      rate), or behavioral characteristics. Unlike phenotypic features, which may emphasize deviation
+      from normal states, biological attributes represent neutral descriptors that can be measured
+      or observed across populations. These attributes form the basis for quantitative trait loci
+      (QTL) and genome-wide association studies (GWAS), where they serve as the traits being mapped
+      to genetic variants.
+    comments:
+      - >-
+        Biological attributes differ from phenotypic features in that they represent
+        generic, measurable characteristics without an inherent notion of abnormality.
+        For example, 'lysine in blood amount' is a biological attribute, while 'hypolysinemia'
+        (decreased blood lysine) is a phenotypic feature that denotes deviation from normal.
+      - >-
+        OBA terms use the Entity-Quality (EQ) pattern, combining entities (from ontologies
+        like UBERON, ChEBI, GO, CL) with qualities (from PATO) to create composite biological
+        attributes.
+    examples:
+      - value: OBA:2020005
+        description: lysine in blood amount
+      - value: OBA:0002360
+        description: trochanter size
+      - value: OBA:VT0000188
+        description: blood glucose amount
+      - value: OBA:VT0000047
+        description: head circumference
+      - value: OBA:0002294
+        description: brain ventricle size
+    exact_mappings:
+      - OBA:0000001  # biological attribute (root term)
+    broad_mappings:
+      - PATO:0000001  # characteristic
+    related_mappings:
+      - SIO:000614  # attribute (already mapped to parent class)
+    id_prefixes:
+      - OBA
+      - VT  # Vertebrate Trait Ontology (integrated into OBA)
+    see_also:
+      - https://github.com/obophenotype/bio-attribute-ontology
+      - https://pubmed.ncbi.nlm.nih.gov/36747660/
 
   biological sex:
     is_a: attribute
