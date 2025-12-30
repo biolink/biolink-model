@@ -7269,7 +7269,9 @@ classes:
       - SEPIO:0000167
 
   evidence type:
-    is_a: information content entity
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['evidence code']
     description: >-
       Class of evidence that supports an association
