@@ -21,9 +21,9 @@ pytest = "^8.1.1"
 beautifulsoup4 = ">=4.0.0"
 yamllint = "^1.35.1"
 path = "^17.0.0"
-linkml-runtime = "1.9.5"
+linkml-runtime = {git = "https://github.com/linkml/linkml.git", subdirectory = "packages/linkml_runtime", branch = "improve-subproperty-of-support"}
 requests = ">=2.32.3"
-linkml = "1.9.4"
+linkml = {git = "https://github.com/linkml/linkml.git", subdirectory = "packages/linkml", branch = "improve-subproperty-of-support"}
 click = ">8.0.0,<8.2.0"
 
 [tool.poetry-dynamic-versioning]
@@ -32,7 +32,6 @@ vcs = "git"
 style = "pep440"
 
 [tool.poetry.group.dev.dependencies]
-linkml = ">=1.6.3"
 mkdocs = "^1.4.2"
 mkdocs-material = "^9.5.17"
 mkdocs-mermaid2-plugin = "^1.1.1"
