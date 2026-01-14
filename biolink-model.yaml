@@ -5966,12 +5966,13 @@ slots:
 
   has evidence:
     is_a: association slot
-    range: evidence
+    range: information content entity
     description: >-
-      Connects an association to a detailed instance of supporting evidence.
+      Connects an association to detailed information providing supporting evidence.
     exact_mappings:
       - RO:0002558
     multivalued: true
+    inlined: false
 
   has study results:
     is_a: association slot
