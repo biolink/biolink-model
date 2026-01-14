@@ -699,7 +699,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -857,6 +867,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:develops_from"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -1083,7 +1096,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -1241,6 +1264,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:food_component_of",
+                        "biolink:is_active_ingredient_of",
+                        "biolink:is_excipient_of",
+                        "biolink:nutrient_of",
+                        "biolink:part_of",
+                        "biolink:plasma_membrane_part_of",
+                        "biolink:variant_part_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -1730,7 +1762,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -2623,7 +2665,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -3788,7 +3840,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -4172,7 +4234,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -4330,6 +4402,9 @@
                 },
                 "predicate": {
                     "description": "One biological processes or activities is a subclass of another.",
+                    "enum": [
+                        "biolink:subclass_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -4556,7 +4631,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -4714,6 +4799,17 @@
                 },
                 "predicate": {
                     "description": "Relationship in which a biological process has the participation of a gene or gene product or gene family in a  (e.g., pathway has participant gene product).",
+                    "enum": [
+                        "biolink:actively_involves",
+                        "biolink:can_be_carried_out_by",
+                        "biolink:consumes",
+                        "biolink:enabled_by",
+                        "biolink:has_catalyst",
+                        "biolink:has_input",
+                        "biolink:has_output",
+                        "biolink:has_participant",
+                        "biolink:has_substrate"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -5903,7 +5999,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -6294,7 +6400,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -6699,7 +6815,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -7146,7 +7272,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -7565,7 +7701,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -7754,6 +7900,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -8439,7 +8594,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -8615,6 +8780,9 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
+                    "enum": [
+                        "biolink:model_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -8883,7 +9051,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -9597,7 +9775,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -9777,6 +9965,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -9798,6 +9995,9 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "enum": [
+                        "causes"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -10071,7 +10271,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -10251,6 +10461,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -10272,6 +10491,9 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "enum": [
+                        "causes"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -10734,7 +10956,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -10892,6 +11124,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:was_tested_for_effect_on"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -11126,7 +11361,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -11288,6 +11533,9 @@
                 },
                 "predicate": {
                     "description": "the direction is always from regulator to regulated",
+                    "enum": [
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -11524,7 +11772,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -11686,6 +11944,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -11936,7 +12203,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -12094,6 +12371,10 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:derives_into",
+                        "biolink:has_metabolite"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -12327,7 +12608,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -12735,7 +13026,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -13133,7 +13434,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -13754,7 +14065,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -13934,6 +14255,17 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:binds",
+                        "biolink:directly_physically_interacts_with",
+                        "biolink:gene_fusion_with",
+                        "biolink:genetic_neighborhood_of",
+                        "biolink:genetically_interacts_with",
+                        "biolink:indirectly_physically_interacts_with",
+                        "biolink:interacts_with",
+                        "biolink:physically_interacts_with",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -14455,7 +14787,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -14631,6 +14973,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_side_effect"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -14910,7 +15255,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -15086,6 +15441,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_adverse_event"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -18528,7 +18886,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -18686,6 +19054,13 @@
                 },
                 "predicate": {
                     "description": "generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'",
+                    "enum": [
+                        "biolink:author",
+                        "biolink:contributor",
+                        "biolink:editor",
+                        "biolink:provider",
+                        "biolink:publisher"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -18941,7 +19316,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -19130,6 +19515,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:biomarker_for",
+                        "biolink:coexpressed_with",
+                        "biolink:correlated_with",
+                        "biolink:has_biomarker",
+                        "biolink:negatively_correlated_with",
+                        "biolink:occurs_together_in_literature_with",
+                        "biolink:positively_correlated_with"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -20502,7 +20896,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -20660,6 +21064,11 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:associated_with_resistance_to",
+                        "biolink:associated_with_response_to",
+                        "biolink:associated_with_sensitivity_to"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -21257,7 +21666,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -21415,6 +21834,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_mode_of_inheritance"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -21641,7 +22063,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -22025,7 +22457,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -22430,7 +22872,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -23563,7 +24015,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -24206,7 +24668,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "$ref": "#/$defs/DruggableGeneCategoryEnum"
                     },
@@ -24395,6 +24867,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:target_for"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -24667,7 +25142,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -25075,7 +25560,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -26216,14 +26711,14 @@
             "title": "Event",
             "type": "object"
         },
-        "EvidenceType": {
+        "Evidence": {
             "additionalProperties": false,
-            "description": "Class of evidence that supports an association",
+            "description": "Dereferences detailed evidence that supports an association",
             "properties": {
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
-                        "biolink:EvidenceType"
+                        "biolink:Evidence"
                     ],
                     "items": {
                         "type": "string"
@@ -26329,6 +26824,140 @@
                 "rights": {
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "taxon": {
+                    "description": "A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Evidence",
+            "type": "object"
+        },
+        "EvidenceType": {
+            "additionalProperties": false,
+            "description": "Class of evidence that supports an association",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "enum": [
+                        "biolink:EvidenceType"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deprecated": {
+                    "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "equivalent_identifiers": {
+                    "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_attribute": {
+                    "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "information_content": {
+                    "description": "Information content (IC) value for a term, primarily from Automats.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -26604,7 +27233,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -27187,7 +27826,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -27607,7 +28256,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -28517,7 +29176,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -29231,7 +29900,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -29415,6 +30094,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -29436,6 +30124,9 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "enum": [
+                        "causes"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -29713,7 +30404,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -29902,6 +30603,9 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
+                    "enum": [
+                        "biolink:model_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -30315,7 +31019,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -30473,6 +31187,15 @@
                 },
                 "predicate": {
                     "description": "membership of a gene or gene product, or strict subset relationship gene family, in the given gene family.",
+                    "enum": [
+                        "biolink:has_active_ingredient",
+                        "biolink:has_excipient",
+                        "biolink:has_food_component",
+                        "biolink:has_nutrient",
+                        "biolink:has_part",
+                        "biolink:has_plasma_membrane_part",
+                        "biolink:has_variant_part"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -30728,7 +31451,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -30917,6 +31650,10 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:causes",
+                        "biolink:contributes_to"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -31247,7 +31984,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -31631,7 +32378,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -31789,6 +32546,17 @@
                 },
                 "predicate": {
                     "description": "participation of a gene or gene product or gene family in a given biological process or activity (e.g., gene product participates in biological process; gene catalyzes molecular activity; gene family is actively involved in a pathway).",
+                    "enum": [
+                        "biolink:actively_involved_in",
+                        "biolink:capable_of",
+                        "biolink:catalyzes",
+                        "biolink:consumed_by",
+                        "biolink:enables",
+                        "biolink:is_input_of",
+                        "biolink:is_output_of",
+                        "biolink:is_substrate_of",
+                        "biolink:participates_in"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -32015,7 +32783,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -32202,6 +32980,9 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included.  This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "enum": [
+                        "causes"
+                    ],
                     "type": "string"
                 },
                 "qualifier": {
@@ -32450,7 +33231,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -32639,6 +33430,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -32920,7 +33720,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -33109,6 +33919,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -33361,7 +34180,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -33526,6 +34355,9 @@
                 },
                 "predicate": {
                     "description": "expression relationship",
+                    "enum": [
+                        "biolink:expressed_in"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -33773,7 +34605,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -33938,6 +34780,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:coexpressed_with"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -34178,7 +35023,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -34336,6 +35191,9 @@
                 },
                 "predicate": {
                     "description": "membership of the gene in the given gene family.",
+                    "enum": [
+                        "biolink:member_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -34562,7 +35420,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -34720,6 +35588,12 @@
                 },
                 "predicate": {
                     "description": "homology relationship type",
+                    "enum": [
+                        "biolink:homologous_to",
+                        "biolink:orthologous_to",
+                        "biolink:paralogous_to",
+                        "biolink:xenologous_to"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -34946,7 +35820,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -35104,6 +35988,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_gene_product"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -35330,7 +36217,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -35714,7 +36611,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -36127,7 +37034,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -36316,6 +37233,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -37121,7 +38047,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -37283,6 +38219,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_sequence_location"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -37698,7 +38637,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -37867,6 +38816,9 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
+                    "enum": [
+                        "biolink:model_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -38125,7 +39077,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -38294,6 +39256,9 @@
                 },
                 "predicate": {
                     "description": "E.g. is pathogenic for",
+                    "enum": [
+                        "biolink:related_condition"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -38538,7 +39503,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -38922,7 +39897,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -39080,6 +40065,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_variant_part"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -39327,7 +40315,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -39516,6 +40514,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:has_phenotype"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -39767,7 +40768,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -41780,7 +42791,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -41938,6 +42959,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:mentions"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -43093,6 +44117,9 @@
                                 "$ref": "#/$defs/Event"
                             },
                             {
+                                "$ref": "#/$defs/EvidenceType"
+                            },
+                            {
                                 "$ref": "#/$defs/PhysicalEntity"
                             },
                             {
@@ -43432,7 +44459,7 @@
                                 "$ref": "#/$defs/ConfidenceLevel"
                             },
                             {
-                                "$ref": "#/$defs/EvidenceType"
+                                "$ref": "#/$defs/Evidence"
                             },
                             {
                                 "$ref": "#/$defs/Publication"
@@ -44106,7 +45133,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -44497,7 +45534,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -44888,7 +45935,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -45564,7 +46621,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -45722,6 +46789,10 @@
                 },
                 "predicate": {
                     "description": "derivation relationship",
+                    "enum": [
+                        "biolink:derives_from",
+                        "biolink:is_metabolite_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -45965,7 +47036,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -46695,7 +47776,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -47079,7 +48170,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -47463,7 +48564,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -47621,6 +48732,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:food_component_of",
+                        "biolink:is_active_ingredient_of",
+                        "biolink:is_excipient_of",
+                        "biolink:nutrient_of",
+                        "biolink:part_of",
+                        "biolink:plasma_membrane_part_of",
+                        "biolink:variant_part_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -48453,7 +49573,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -48631,6 +49761,32 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:associated_with",
+                        "biolink:associated_with_decreased_likelihood_of",
+                        "biolink:associated_with_increased_likelihood_of",
+                        "biolink:associated_with_likelihood_of",
+                        "biolink:associated_with_resistance_to",
+                        "biolink:associated_with_response_to",
+                        "biolink:associated_with_sensitivity_to",
+                        "biolink:biomarker_for",
+                        "biolink:coexpressed_with",
+                        "biolink:condition_associated_with_gene",
+                        "biolink:correlated_with",
+                        "biolink:decreased_likelihood_associated_with",
+                        "biolink:gene_associated_with_condition",
+                        "biolink:genetic_association",
+                        "biolink:genetically_associated_with",
+                        "biolink:has_biomarker",
+                        "biolink:increased_likelihood_associated_with",
+                        "biolink:likelihood_associated_with",
+                        "biolink:negatively_correlated_with",
+                        "biolink:occurs_together_in_literature_with",
+                        "biolink:positively_correlated_with",
+                        "biolink:resistance_associated_with",
+                        "biolink:response_associated_with",
+                        "biolink:sensitivity_associated_with"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -50203,7 +51359,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -50361,6 +51527,17 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:binds",
+                        "biolink:directly_physically_interacts_with",
+                        "biolink:gene_fusion_with",
+                        "biolink:genetic_neighborhood_of",
+                        "biolink:genetically_interacts_with",
+                        "biolink:indirectly_physically_interacts_with",
+                        "biolink:interacts_with",
+                        "biolink:physically_interacts_with",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -50587,7 +51764,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -50745,6 +51932,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:subclass_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -50971,7 +52161,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -51369,7 +52569,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -51538,6 +52748,9 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
+                    "enum": [
+                        "biolink:model_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -51782,7 +52995,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -51940,6 +53163,17 @@
                 },
                 "predicate": {
                     "description": "interaction relationship type",
+                    "enum": [
+                        "biolink:binds",
+                        "biolink:directly_physically_interacts_with",
+                        "biolink:gene_fusion_with",
+                        "biolink:genetic_neighborhood_of",
+                        "biolink:genetically_interacts_with",
+                        "biolink:indirectly_physically_interacts_with",
+                        "biolink:interacts_with",
+                        "biolink:physically_interacts_with",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -52166,7 +53400,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -52330,6 +53574,17 @@
                 },
                 "predicate": {
                     "description": "interaction relationship type",
+                    "enum": [
+                        "biolink:binds",
+                        "biolink:directly_physically_interacts_with",
+                        "biolink:gene_fusion_with",
+                        "biolink:genetic_neighborhood_of",
+                        "biolink:genetically_interacts_with",
+                        "biolink:indirectly_physically_interacts_with",
+                        "biolink:interacts_with",
+                        "biolink:physically_interacts_with",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -54017,7 +55272,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -54206,6 +55471,32 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:associated_with",
+                        "biolink:associated_with_decreased_likelihood_of",
+                        "biolink:associated_with_increased_likelihood_of",
+                        "biolink:associated_with_likelihood_of",
+                        "biolink:associated_with_resistance_to",
+                        "biolink:associated_with_response_to",
+                        "biolink:associated_with_sensitivity_to",
+                        "biolink:biomarker_for",
+                        "biolink:coexpressed_with",
+                        "biolink:condition_associated_with_gene",
+                        "biolink:correlated_with",
+                        "biolink:decreased_likelihood_associated_with",
+                        "biolink:gene_associated_with_condition",
+                        "biolink:genetic_association",
+                        "biolink:genetically_associated_with",
+                        "biolink:has_biomarker",
+                        "biolink:increased_likelihood_associated_with",
+                        "biolink:likelihood_associated_with",
+                        "biolink:negatively_correlated_with",
+                        "biolink:occurs_together_in_literature_with",
+                        "biolink:positively_correlated_with",
+                        "biolink:resistance_associated_with",
+                        "biolink:response_associated_with",
+                        "biolink:sensitivity_associated_with"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -54478,7 +55769,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -56132,7 +57433,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -57172,7 +58483,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -57330,6 +58651,9 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -58981,7 +60305,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -59387,7 +60721,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -60520,7 +61864,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -60913,7 +62267,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -63433,7 +64797,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -64201,7 +65575,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -64986,7 +66370,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -65155,6 +66549,9 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
+                    "enum": [
+                        "biolink:model_of"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -65413,7 +66810,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -65582,6 +66989,9 @@
                 },
                 "predicate": {
                     "description": "E.g. is pathogenic for",
+                    "enum": [
+                        "biolink:related_condition"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -65826,7 +67236,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -65984,6 +67404,11 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:condition_associated_with_gene",
+                        "biolink:gene_associated_with_condition",
+                        "biolink:genetically_associated_with"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -66217,7 +67642,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -66382,6 +67817,15 @@
                 },
                 "predicate": {
                     "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "enum": [
+                        "biolink:affects",
+                        "biolink:ameliorates_condition",
+                        "biolink:disrupts",
+                        "biolink:exacerbates_condition",
+                        "biolink:has_adverse_event",
+                        "biolink:has_side_effect",
+                        "biolink:regulates"
+                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -66643,7 +68087,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },
@@ -67097,7 +68551,17 @@
                     ]
                 },
                 "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
+                    "description": "Connects an association to a detailed instance of supporting evidence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_type": {
+                    "description": "Connects an association to an evidence type ontology term. Generally represents terms from the ECO ontology.",
                     "items": {
                         "type": "string"
                     },

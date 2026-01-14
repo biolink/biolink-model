@@ -5956,11 +5956,19 @@ slots:
       - SEPIO:0000187
       - SEPIO:0000167
 
-  has evidence:
+  has evidence type:
     is_a: association slot
     range: evidence type
     description: >-
-      connects an association to an instance of supporting evidence
+      Connects an association to an evidence type ontology term.
+      Generally represents terms from the ECO ontology.
+    multivalued: true
+
+  has evidence:
+    is_a: association slot
+    range: evidence
+    description: >-
+      Connects an association to a detailed instance of supporting evidence.
     exact_mappings:
       - RO:0002558
     multivalued: true
@@ -7269,7 +7277,9 @@ classes:
       - SEPIO:0000167
 
   evidence type:
-    is_a: information content entity
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['evidence code']
     description: >-
       Class of evidence that supports an association
@@ -7278,7 +7288,12 @@ classes:
     exact_mappings:
       - ECO:0000000
 
-   ## Publications
+  evidence:
+    is_a: information content entity
+    description: >-
+      Dereferences detailed evidence that supports an association
+
+    ## Publications
 
    # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
@@ -8699,9 +8714,6 @@ classes:
       distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
       for their independent descriptions.  This class is helpful to enforce domains and ranges
       that may involve either a disease or a phenotypic feature.
-    union_of:
-      - disease
-      - phenotypic feature
     narrow_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
@@ -8941,7 +8953,7 @@ classes:
       - FAO
 
 
-   ## entity mixins
+  ## entity mixins
 
   chemical entity or gene or gene product:
     description: >-
@@ -9967,6 +9979,7 @@ classes:
       - qualifiers  # deprecated
       - publications
       - sources
+      - has evidence type
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -11606,7 +11619,7 @@ classes:
           this leads to a protective or improving disease state.
       predicate:
         subproperty_of: target for
-      has evidence:
+      has evidence type:
         range: DruggableGeneCategoryEnum
     defining_slots:
       - subject

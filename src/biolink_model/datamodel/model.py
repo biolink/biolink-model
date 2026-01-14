@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-09T22:52:09
+# Generation date: 2026-01-13T18:37:20
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -546,7 +546,11 @@ class ConfidenceLevelId(InformationContentEntityId):
     pass
 
 
-class EvidenceTypeId(InformationContentEntityId):
+class EvidenceTypeId(NamedThingId):
+    pass
+
+
+class EvidenceId(InformationContentEntityId):
     pass
 
 
@@ -2928,7 +2932,7 @@ class ConfidenceLevel(InformationContentEntity):
 
 
 @dataclass(repr=False)
-class EvidenceType(InformationContentEntity):
+class EvidenceType(NamedThing):
     """
     Class of evidence that supports an association
     """
@@ -2947,6 +2951,35 @@ class EvidenceType(InformationContentEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EvidenceTypeId):
             self.id = EvidenceTypeId(self.id)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class Evidence(InformationContentEntity):
+    """
+    Dereferences detailed evidence that supports an association
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Evidence"]
+    class_class_curie: ClassVar[str] = "biolink:Evidence"
+    class_name: ClassVar[str] = "evidence"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Evidence
+
+    id: Union[str, EvidenceId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, EvidenceId):
+            self.id = EvidenceId(self.id)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -7690,7 +7723,8 @@ class Association(Entity):
     qualifiers: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]] = empty_list()
     sources: Optional[Union[dict[Union[str, RetrievalSourceId], Union[dict, RetrievalSource]], list[Union[dict, RetrievalSource]]]] = empty_dict()
-    has_evidence: Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]] = empty_list()
+    has_evidence_type: Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]] = empty_list()
+    has_evidence: Optional[Union[Union[str, EvidenceId], list[Union[str, EvidenceId]]]] = empty_list()
     knowledge_source: Optional[str] = None
     primary_knowledge_source: Optional[str] = None
     aggregator_knowledge_source: Optional[Union[str, list[str]]] = empty_list()
@@ -7767,9 +7801,13 @@ class Association(Entity):
 
         self._normalize_inlined_as_list(slot_name="sources", slot_type=RetrievalSource, key_name="id", keyed=True)
 
+        if not isinstance(self.has_evidence_type, list):
+            self.has_evidence_type = [self.has_evidence_type] if self.has_evidence_type is not None else []
+        self.has_evidence_type = [v if isinstance(v, EvidenceTypeId) else EvidenceTypeId(v) for v in self.has_evidence_type]
+
         if not isinstance(self.has_evidence, list):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
-        self.has_evidence = [v if isinstance(v, EvidenceTypeId) else EvidenceTypeId(v) for v in self.has_evidence]
+        self.has_evidence = [v if isinstance(v, EvidenceId) else EvidenceId(v) for v in self.has_evidence]
 
         if self.knowledge_source is not None and not isinstance(self.knowledge_source, str):
             self.knowledge_source = str(self.knowledge_source)
@@ -12056,7 +12094,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    has_evidence: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
+    has_evidence_type: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12089,9 +12127,9 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if not isinstance(self.has_evidence, list):
-            self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
-        self.has_evidence = [v if isinstance(v, DruggableGeneCategoryEnum) else DruggableGeneCategoryEnum(v) for v in self.has_evidence]
+        if not isinstance(self.has_evidence_type, list):
+            self.has_evidence_type = [self.has_evidence_type] if self.has_evidence_type is not None else []
+        self.has_evidence_type = [v if isinstance(v, DruggableGeneCategoryEnum) else DruggableGeneCategoryEnum(v) for v in self.has_evidence_type]
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -16547,8 +16585,11 @@ slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has co
 slots.has_confidence_score = Slot(uri=BIOLINK.has_confidence_score, name="has confidence score", curie=BIOLINK.curie('has_confidence_score'),
                    model_uri=BIOLINK.has_confidence_score, domain=Association, range=Optional[float])
 
+slots.has_evidence_type = Slot(uri=BIOLINK.has_evidence_type, name="has evidence type", curie=BIOLINK.curie('has_evidence_type'),
+                   model_uri=BIOLINK.has_evidence_type, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
+
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
-                   model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
+                   model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceId], list[Union[str, EvidenceId]]]])
 
 slots.has_study_results = Slot(uri=BIOLINK.has_study_results, name="has study results", curie=BIOLINK.curie('has_study_results'),
                    model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
@@ -17469,8 +17510,8 @@ slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name
 slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="druggable gene to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, PredicateType])
 
-slots.druggable_gene_to_disease_association_has_evidence = Slot(uri=BIOLINK.has_evidence, name="druggable gene to disease association_has evidence", curie=BIOLINK.curie('has_evidence'),
-                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]])
+slots.druggable_gene_to_disease_association_has_evidence_type = Slot(uri=BIOLINK.has_evidence_type, name="druggable gene to disease association_has evidence type", curie=BIOLINK.curie('has_evidence_type'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence_type, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]])
 
 slots.phenotypic_feature_to_disease_association_predicate = Slot(uri=RDF.predicate, name="phenotypic feature to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.phenotypic_feature_to_disease_association_predicate, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, PredicateType])
