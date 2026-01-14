@@ -6682,6 +6682,10 @@ slots:
     required: false
     range: biological sex
 
+  druggable gene category:
+    description: Classification of druggable genes based on knowledge about drug or small molecule activities.
+    range: DruggableGeneCategoryEnum
+
 classes:
   # Add the KGX-specific classes without modifying biolink classes
   KnowledgeGraph:
@@ -11610,6 +11614,8 @@ classes:
 
   druggable gene to disease association:
     is_a: gene to disease association
+    slots:
+      - druggable gene category
     slot_usage:
       subject:
         range: gene or gene product
@@ -11619,8 +11625,6 @@ classes:
           this leads to a protective or improving disease state.
       predicate:
         subproperty_of: target for
-      has evidence of type:
-        range: DruggableGeneCategoryEnum
     defining_slots:
       - subject
       - object
@@ -13400,9 +13404,8 @@ enums:
         description: >-
           These targets do not have known drug or small molecule activities that satisfy the activity
           thresholds detailed below AND satisfy one or more of the following criteria:
-          target is above the cutoff criteria for Tdark
-          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
-          with an Experimental Evidence code
+          target is above the cutoff criteria for the target is annotated with a
+          Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
       "tdark":
         description: >-
           These are targets about which virtually nothing is known. They do not have known drug or small
