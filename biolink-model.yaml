@@ -8714,9 +8714,6 @@ classes:
       distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
       for their independent descriptions.  This class is helpful to enforce domains and ranges
       that may involve either a disease or a phenotypic feature.
-    union_of:
-      - disease
-      - phenotypic feature
     narrow_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
