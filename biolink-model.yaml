@@ -5956,7 +5956,7 @@ slots:
       - SEPIO:0000187
       - SEPIO:0000167
 
-  has evidence type:
+  has evidence of type:
     is_a: association slot
     range: evidence type
     description: >-
@@ -9979,7 +9979,7 @@ classes:
       - qualifiers  # deprecated
       - publications
       - sources
-      - has evidence type
+      - has evidence of type
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -11619,7 +11619,7 @@ classes:
           this leads to a protective or improving disease state.
       predicate:
         subproperty_of: target for
-      has evidence type:
+      has evidence of type:
         range: DruggableGeneCategoryEnum
     defining_slots:
       - subject
