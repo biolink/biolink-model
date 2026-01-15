@@ -214,7 +214,8 @@ linkml:Sparqlpath xsd:string
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <sources> @<RetrievalSource> * ;
-             <has_evidence> @<EvidenceType> * ;
+             <has_evidence_type> @<EvidenceType> * ;
+             <has_evidence> @<Evidence> * ;
              <knowledge_source> @<String> ? ;
              <primary_knowledge_source> @<String> ? ;
              <aggregator_knowledge_source> @<String> * ;
@@ -1955,7 +1956,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:predicate [ <target_for> ] ;
-          <has_evidence> [ <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin>
+          <has_evidence_type> [ <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tbio>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] *
@@ -2213,9 +2214,19 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<EvidenceType> CLOSED {
-    (  $<EvidenceType_tes> (  &<InformationContentEntity_tes> ;
+<Evidence> CLOSED {
+    (  $<Evidence_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <Evidence> ]
+    )
+}
+
+<EvidenceType> CLOSED {
+    (  $<EvidenceType_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <EvidenceType> ]
     )
@@ -3446,7 +3457,7 @@ linkml:Sparqlpath xsd:string
 
 <InformationContentEntity>  (
     @<CommonDataElement> OR @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR
-    @<EvidenceType> OR @<Publication> OR @<RetrievalSource> OR @<StudyResult> OR @<StudyVariable>
+    @<Evidence> OR @<Publication> OR @<RetrievalSource> OR @<StudyResult> OR @<StudyVariable>
 )
 
 <InformationContentEntity_struct> {
@@ -3761,8 +3772,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
-    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<ExposureEvent> OR @<InformationContentEntity> OR @<OrganismTaxon> OR
-    @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
+    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<EvidenceType> OR @<ExposureEvent> OR @<InformationContentEntity> OR
+    @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
 )
 
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
