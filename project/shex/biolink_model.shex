@@ -214,8 +214,8 @@ linkml:Sparqlpath xsd:string
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <sources> @<RetrievalSource> * ;
-             <has_evidence_type> @<EvidenceType> * ;
-             <has_evidence> @<Evidence> * ;
+             <has_evidence_of_type> @<EvidenceType> * ;
+             <has_evidence> @<InformationContentEntity> * ;
              <knowledge_source> @<String> ? ;
              <primary_knowledge_source> @<String> ? ;
              <aggregator_knowledge_source> @<String> * ;
@@ -1954,12 +1954,12 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate [ <target_for> ] ;
-          <has_evidence_type> [ <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin>
+          <druggable_gene_category> [ <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tbio>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem>
-             <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] *
+             <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] ? ;
+          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:predicate [ <target_for> ]
        ) ;
        rdf:type [ <DruggableGeneToDiseaseAssociation> ]
     )

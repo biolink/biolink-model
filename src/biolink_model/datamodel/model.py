@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-13T19:15:48
+# Generation date: 2026-01-15T02:27:22
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -7723,8 +7723,8 @@ class Association(Entity):
     qualifiers: Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]] = empty_list()
     sources: Optional[Union[dict[Union[str, RetrievalSourceId], Union[dict, RetrievalSource]], list[Union[dict, RetrievalSource]]]] = empty_dict()
-    has_evidence_type: Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]] = empty_list()
-    has_evidence: Optional[Union[Union[str, EvidenceId], list[Union[str, EvidenceId]]]] = empty_list()
+    has_evidence_of_type: Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]] = empty_list()
+    has_evidence: Optional[Union[Union[str, InformationContentEntityId], list[Union[str, InformationContentEntityId]]]] = empty_list()
     knowledge_source: Optional[str] = None
     primary_knowledge_source: Optional[str] = None
     aggregator_knowledge_source: Optional[Union[str, list[str]]] = empty_list()
@@ -7801,13 +7801,13 @@ class Association(Entity):
 
         self._normalize_inlined_as_list(slot_name="sources", slot_type=RetrievalSource, key_name="id", keyed=True)
 
-        if not isinstance(self.has_evidence_type, list):
-            self.has_evidence_type = [self.has_evidence_type] if self.has_evidence_type is not None else []
-        self.has_evidence_type = [v if isinstance(v, EvidenceTypeId) else EvidenceTypeId(v) for v in self.has_evidence_type]
+        if not isinstance(self.has_evidence_of_type, list):
+            self.has_evidence_of_type = [self.has_evidence_of_type] if self.has_evidence_of_type is not None else []
+        self.has_evidence_of_type = [v if isinstance(v, EvidenceTypeId) else EvidenceTypeId(v) for v in self.has_evidence_of_type]
 
         if not isinstance(self.has_evidence, list):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
-        self.has_evidence = [v if isinstance(v, EvidenceId) else EvidenceId(v) for v in self.has_evidence]
+        self.has_evidence = [v if isinstance(v, InformationContentEntityId) else InformationContentEntityId(v) for v in self.has_evidence]
 
         if self.knowledge_source is not None and not isinstance(self.knowledge_source, str):
             self.knowledge_source = str(self.knowledge_source)
@@ -12094,7 +12094,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object_aspect_qualifier: Optional[str] = None
     qualified_predicate: Optional[str] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    has_evidence_type: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
+    druggable_gene_category: Optional[Union[str, "DruggableGeneCategoryEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12127,9 +12127,8 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if not isinstance(self.has_evidence_type, list):
-            self.has_evidence_type = [self.has_evidence_type] if self.has_evidence_type is not None else []
-        self.has_evidence_type = [v if isinstance(v, DruggableGeneCategoryEnum) else DruggableGeneCategoryEnum(v) for v in self.has_evidence_type]
+        if self.druggable_gene_category is not None and not isinstance(self.druggable_gene_category, DruggableGeneCategoryEnum):
+            self.druggable_gene_category = DruggableGeneCategoryEnum(self.druggable_gene_category)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -15077,7 +15076,7 @@ class DruggableGeneCategoryEnum(EnumDefinitionImpl):
         description="""These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.""")
     tchem = PermissibleValue(
         text="tchem",
-        description="""These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code""")
+        description="""These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for the target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code""")
     tdark = PermissibleValue(
         text="tdark",
         description="""These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.""")
@@ -16585,11 +16584,11 @@ slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has co
 slots.has_confidence_score = Slot(uri=BIOLINK.has_confidence_score, name="has confidence score", curie=BIOLINK.curie('has_confidence_score'),
                    model_uri=BIOLINK.has_confidence_score, domain=Association, range=Optional[float])
 
-slots.has_evidence_type = Slot(uri=BIOLINK.has_evidence_type, name="has evidence type", curie=BIOLINK.curie('has_evidence_type'),
-                   model_uri=BIOLINK.has_evidence_type, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
+slots.has_evidence_of_type = Slot(uri=BIOLINK.has_evidence_of_type, name="has evidence of type", curie=BIOLINK.curie('has_evidence_of_type'),
+                   model_uri=BIOLINK.has_evidence_of_type, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], list[Union[str, EvidenceTypeId]]]])
 
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
-                   model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceId], list[Union[str, EvidenceId]]]])
+                   model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, InformationContentEntityId], list[Union[str, InformationContentEntityId]]]])
 
 slots.has_study_results = Slot(uri=BIOLINK.has_study_results, name="has study results", curie=BIOLINK.curie('has_study_results'),
                    model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
@@ -16801,6 +16800,9 @@ slots.agent_type = Slot(uri=BIOLINK.agent_type, name="agent type", curie=BIOLINK
 
 slots.has_biological_sex = Slot(uri=BIOLINK.has_biological_sex, name="has biological sex", curie=BIOLINK.curie('has_biological_sex'),
                    model_uri=BIOLINK.has_biological_sex, domain=None, range=Optional[Union[str, BiologicalSexId]])
+
+slots.druggable_gene_category = Slot(uri=BIOLINK.druggable_gene_category, name="druggable gene category", curie=BIOLINK.curie('druggable_gene_category'),
+                   model_uri=BIOLINK.druggable_gene_category, domain=None, range=Optional[Union[str, "DruggableGeneCategoryEnum"]])
 
 slots.information_content = Slot(uri=BIOLINK.information_content, name="information content", curie=BIOLINK.curie('information_content'),
                    model_uri=BIOLINK.information_content, domain=None, range=Optional[float])
@@ -17509,9 +17511,6 @@ slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name
 
 slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="druggable gene to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, PredicateType])
-
-slots.druggable_gene_to_disease_association_has_evidence_type = Slot(uri=BIOLINK.has_evidence_type, name="druggable gene to disease association_has evidence type", curie=BIOLINK.curie('has_evidence_type'),
-                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence_type, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], list[Union[str, "DruggableGeneCategoryEnum"]]]])
 
 slots.phenotypic_feature_to_disease_association_predicate = Slot(uri=RDF.predicate, name="phenotypic feature to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.phenotypic_feature_to_disease_association_predicate, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, PredicateType])
