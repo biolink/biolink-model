@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-15T02:27:22
+# Generation date: 2026-01-15T02:38:07
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -173,6 +173,7 @@ MAXO = CurieNamespace('MAXO', 'http://purl.obolibrary.org/obo/MAXO_')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
 MESH = CurieNamespace('MESH', 'http://id.nlm.nih.gov/mesh/')
 METANETX_REACTION = CurieNamespace('METANETX_REACTION', 'https://www.metanetx.org/equa_info/')
+METPO = CurieNamespace('METPO', 'https://w3id.org/metpo/')
 MGI = CurieNamespace('MGI', 'http://identifiers.org/mgi/')
 MI = CurieNamespace('MI', 'http://purl.obolibrary.org/obo/MI_')
 MIR = CurieNamespace('MIR', 'http://identifiers.org/mir/')
