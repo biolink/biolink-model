@@ -2996,8 +2996,7 @@ linkml:Sparqlpath xsd:string
              <allelic_requirement> @<String> ? ;
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<DiseaseOrPhenotypicFeature> ;
-             rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
-                <has_side_effect> <regulates> ] ;
+             rdf:predicate [ <causes> <contributes_to> ] ;
              <frequency_qualifier> @<FrequencyValue> ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
