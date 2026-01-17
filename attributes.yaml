@@ -245,3 +245,9 @@ slots:
       simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
     range: integer
 
+  diseases confidence score:
+    description: >-
+      A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars. 
+      It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations,
+      but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.
+    range: integer
