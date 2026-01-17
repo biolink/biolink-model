@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-16T17:07:48
+# Generation date: 2026-01-17T00:18:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -15214,6 +15214,9 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
     statistical_association = PermissibleValue(
         text="statistical_association",
         description="""A statement that reports concepts representing variables in a dataset to be statistically associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1) is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').""")
+    text_co_occurrence = PermissibleValue(
+        text="text_co_occurrence",
+        description="""A statement reporting that mentions of two concepts in some corpus of text (e.g. the biomedical literature) occur together at a statistically significant frequency - suggesting that a real-world biological or clinical relationship may exist between the concepts.""")
     observation = PermissibleValue(
         text="observation",
         description="""A statement reporting (and possibly quantifying) a phenomenon that was observed to occur - absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.""")
@@ -16843,6 +16846,9 @@ slots.dgidb_interaction_score = Slot(uri=BIOLINK.dgidb_interaction_score, name="
 
 slots.dgidb_evidence_score = Slot(uri=BIOLINK.dgidb_evidence_score, name="dgidb evidence score", curie=BIOLINK.curie('dgidb_evidence_score'),
                    model_uri=BIOLINK.dgidb_evidence_score, domain=None, range=Optional[int])
+
+slots.diseases_confidence_score = Slot(uri=BIOLINK.diseases_confidence_score, name="diseases confidence score", curie=BIOLINK.curie('diseases_confidence_score'),
+                   model_uri=BIOLINK.diseases_confidence_score, domain=None, range=Optional[int])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])

@@ -900,6 +900,10 @@ class KnowledgeLevelEnum(str, Enum):
     """
     A statement that reports concepts representing variables in a dataset to be statistically associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1) is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').
     """
+    text_co_occurrence = "text_co_occurrence"
+    """
+    A statement reporting that mentions of two concepts in some corpus of text (e.g. the biomedical literature) occur together at a statistically significant frequency - suggesting that a real-world biological or clinical relationship may exist between the concepts. 
+    """
     observation = "observation"
     """
     A statement reporting (and possibly quantifying) a phenomenon that was observed to occur - absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.
