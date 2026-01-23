@@ -230,13 +230,6 @@ types:
     description: >-
       A string that provides a human-readable name for an entity
 
-  predicate type:
-    uri: xsd:string
-    typeof: uriorcurie
-    description: >-
-      A CURIE from the biolink related_to hierarchy.
-      For example, biolink:related_to, biolink:causes, biolink:treats.
-
   narrative text:
     uri: xsd:string
     typeof: string
@@ -1877,14 +1870,15 @@ slots:
 
   qualified predicate:
     is_a: qualifier
-    range: predicate type
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or
-      increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that
-      expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based
-      semantics are included.  This is necessary only in cases where the primary predicate does not work in a
-      full statement reading.
+      increase the specificity of the full statement reading.  Has a value from the Biolink 
+      'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats
+      This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
+      in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
+      This is necessary only in cases where the primary predicate does not work in a full statement reading.
+    range: uriorcurie
     notes: >-
       to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
       using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using
@@ -5905,15 +5899,11 @@ slots:
   predicate:
     is_a: association slot
     description: >-
-      A high-level grouping for the relationship type. AKA minimal predicate.
-      This is analogous to category for nodes.
-    domain: association
-    notes: >-
-      Has a value from the Biolink related_to hierarchy. In RDF,  this
+      Has a value from the Biolink 'related_to' hierarchy. In RDF,  this
       corresponds to rdf:predicate and in Neo4j this corresponds to the
       relationship type. The convention is for an edge label in snake_case
       form. For example, biolink:related_to, biolink:causes, biolink:treats
-    range: predicate type
+    range: uriorcurie
     required: true
     local_names:
       ga4gh: annotation predicate
