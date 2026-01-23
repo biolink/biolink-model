@@ -125,15 +125,17 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
   anatomicalEntity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 message AnatomicalEntityToAnatomicalEntityPartOfAssociation
@@ -175,15 +177,17 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
   anatomicalEntity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // a piece of writing on a particular topic presented as a stand-alone section of a larger publication
 message Article
@@ -228,7 +232,7 @@ message Association
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -261,10 +265,12 @@ message Association
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -343,7 +349,7 @@ message BehaviorToBehavioralFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -375,10 +381,12 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   behavior subject = 0
@@ -388,7 +396,7 @@ message BehaviorToBehavioralFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -503,7 +511,7 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -535,10 +543,12 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -584,15 +594,17 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
   biologicalProcessOrActivity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // Relationship between a biological processor activity (e.g. molecular activity, biological process or pathway) to gene or gene product or gene family.
 message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
@@ -634,15 +646,17 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
   geneOrGeneProductOrGeneFamily object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 message BiologicalSex
  {
@@ -815,14 +829,16 @@ message CaseToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   disease object = 0
   onset onsetQualifier = 0
  }
@@ -866,14 +882,16 @@ message CaseToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   geneOrGeneProduct object = 0
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
@@ -886,7 +904,7 @@ message CaseToPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -918,10 +936,12 @@ message CaseToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   boolean negated = 0
@@ -931,7 +951,7 @@ message CaseToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -979,14 +999,16 @@ message CaseToVariantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   sequenceVariant object = 0
   zygosity hasZygosity = 0
  }
@@ -1029,21 +1051,23 @@ message CausalGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -1101,7 +1125,7 @@ message CellLineAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -1134,10 +1158,12 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease diseaseContextQualifier = 0
@@ -1150,7 +1176,7 @@ message CellLineAsAModelOfDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -1161,7 +1187,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -1194,10 +1220,12 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
@@ -1287,10 +1315,12 @@ message ChemicalAffectsBiologicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1306,10 +1336,10 @@ message ChemicalAffectsBiologicalEntityAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
  repeated  anatomicalEntity anatomicalContextQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   chemicalEntity subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   biologicalEntity object = 0
  }
 // Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
@@ -1352,10 +1382,12 @@ message ChemicalAffectsGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1371,10 +1403,10 @@ message ChemicalAffectsGeneAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
  repeated  anatomicalEntity anatomicalContextQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   chemicalEntity subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   biologicalEntity object = 0
   float dgidbInteractionScore = 0
   integer dgidbEvidenceScore = 0
@@ -1448,15 +1480,17 @@ message ChemicalEntityAssessesNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
   namedThing object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A regulatory relationship between two genes
 message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
@@ -1498,14 +1532,16 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   chemicalEntityOrGeneOrGeneProduct subject = 0
   geneOrGeneProduct object = 0
  }
@@ -1549,19 +1585,21 @@ message ChemicalEntityToBiologicalProcessAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon speciesContextQualifier = 0
  repeated  string anatomicalContextQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   directionQualifierEnum objectDirectionQualifier = 0
   chemicalEntity subject = 0
   biologicalProcess object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction: IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THEN C1 derives-into C2 catalyst qualifier P
 message ChemicalEntityToChemicalDerivationAssociation
@@ -1603,17 +1641,19 @@ message ChemicalEntityToChemicalDerivationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon speciesContextQualifier = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
   chemicalEntity subject = 0
   chemicalEntity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalEntityToChemicalEntityAssociation
@@ -1655,14 +1695,16 @@ message ChemicalEntityToChemicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   chemicalEntity object = 0
   organismTaxon speciesContextQualifier = 0
  }
@@ -1676,7 +1718,7 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -1708,12 +1750,15 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  clinicalApprovalStatusEnum clinicalApprovalStatus = 0
   diseaseOrPhenotypicFeature object = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
@@ -1729,7 +1774,7 @@ message ChemicalEntityToPathwayAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -1761,10 +1806,12 @@ message ChemicalEntityToPathwayAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -1839,17 +1886,19 @@ message ChemicalGeneInteractionAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   directionQualifierEnum objectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
@@ -1861,7 +1910,7 @@ message ChemicalGeneInteractionAssociation
   integer dgidbEvidenceScore = 0
   chemicalEntity subject = 0
   geneOrGeneProduct object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
@@ -1939,10 +1988,12 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -1955,8 +2006,8 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
-  predicateType predicate = 0
+  uriorcurie qualifiedPredicate = 0
+  uriorcurie predicate = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
 message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
@@ -2000,14 +2051,16 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
@@ -2017,7 +2070,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
  }
 // A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
@@ -2457,14 +2510,16 @@ message ContributorAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   informationContentEntity subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   agent object = 0
  repeated  ontologyClass qualifiers = 0
  }
@@ -2507,10 +2562,12 @@ message CorrelatedGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -2520,7 +2577,7 @@ message CorrelatedGeneToDiseaseAssociation
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -2530,7 +2587,7 @@ message CorrelatedGeneToDiseaseAssociation
   float zScore = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // an item that refers to a collection of data from a data source.
 message Dataset
@@ -2730,17 +2787,19 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   responseEnum responseContextQualifier = 0
   responseTargetEnum responseTargetContextQualifier = 0
   disease subject = 0
   chemicalEntity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.
 message DiseaseOrPhenotypicFeature
@@ -2833,13 +2892,15 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   geneticInheritance object = 0
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
@@ -2852,7 +2913,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -2884,10 +2945,12 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity object = 0
@@ -2902,7 +2965,7 @@ message DiseaseToExposureEventAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -2935,10 +2998,12 @@ message DiseaseToExposureEventAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -2951,7 +3016,7 @@ message DiseaseToPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -2983,10 +3048,12 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   onset onsetQualifier = 0
@@ -3001,7 +3068,7 @@ message DiseaseToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
  }
@@ -3107,7 +3174,7 @@ message DrugToGeneAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -3139,10 +3206,12 @@ message DrugToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct object = 0
@@ -3216,10 +3285,12 @@ message DruggableGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -3229,7 +3300,7 @@ message DruggableGeneToDiseaseAssociation
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -3239,7 +3310,7 @@ message DruggableGeneToDiseaseAssociation
   disease object = 0
   druggableGeneCategoryEnum druggableGeneCategory = 0
   geneOrGeneProduct subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 message EntityToDiseaseAssociation
  {
@@ -3250,7 +3321,7 @@ message EntityToDiseaseAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -3283,10 +3354,12 @@ message EntityToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -3303,7 +3376,7 @@ message EntityToPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -3336,10 +3409,12 @@ message EntityToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -3531,7 +3606,7 @@ message ExonToTranscriptRelationship
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -3563,10 +3638,12 @@ message ExonToTranscriptRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exon subject = 0
@@ -3610,7 +3687,7 @@ message ExposureEventToOutcomeAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -3643,10 +3720,12 @@ message ExposureEventToOutcomeAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -3661,7 +3740,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -3694,10 +3773,12 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
@@ -3706,7 +3787,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -3786,7 +3867,7 @@ message FunctionalAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -3818,10 +3899,12 @@ message FunctionalAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -3911,10 +3994,12 @@ message GeneAffectsChemicalAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -3931,10 +4016,10 @@ message GeneAffectsChemicalAssociation
   chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
  repeated  anatomicalEntity anatomicalContextQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   geneOrGeneProduct subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   chemicalEntity object = 0
  }
 message GeneAsAModelOfDiseaseAssociation
@@ -3976,21 +4061,23 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -4062,15 +4149,17 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
   geneFamily object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -4111,10 +4200,12 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -4123,7 +4214,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -4133,7 +4224,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // An association between a gene or gene product or gene family and an anatomical entity.
 message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
@@ -4144,7 +4235,7 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -4176,10 +4267,12 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrGeneFamily subject = 0
@@ -4225,15 +4318,17 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrGeneFamily subject = 0
   biologicalProcessOrActivity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // Describes a regulatory relationship between two genes or gene products.
 message GeneRegulatesGeneAssociation
@@ -4275,18 +4370,20 @@ message GeneRegulatesGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
   geneOrGeneProduct subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   geneOrGeneProduct object = 0
  }
 message GeneToDiseaseAssociation
@@ -4328,21 +4425,23 @@ message GeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -4391,10 +4490,12 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -4403,11 +4504,11 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   string allelicRequirement = 0
   geneOrGeneProduct subject = 0
   diseaseOrPhenotypicFeature object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -4455,10 +4556,12 @@ message GeneToExpressionSiteAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
@@ -4466,7 +4569,7 @@ message GeneToExpressionSiteAssociation
   uriorcurie objectSpecializationQualifier = 0
   geneOrGeneProduct subject = 0
   anatomicalEntity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // Indicates that two genes are co-expressed, generally under the same conditions.
 message GeneToGeneCoexpressionAssociation
@@ -4508,15 +4611,17 @@ message GeneToGeneCoexpressionAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
   geneOrGeneProduct object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   ontologyClass quantifierQualifier = 0
   anatomicalEntity expressionSite = 0
   lifeStage stageQualifier = 0
@@ -4562,15 +4667,17 @@ message GeneToGeneFamilyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
   geneFamily object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
@@ -4612,14 +4719,16 @@ message GeneToGeneHomologyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   geneOrGeneProduct object = 0
  }
 // A gene is transcribed and potentially translated to a gene product
@@ -4662,15 +4771,17 @@ message GeneToGeneProductRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
   geneProductMixin object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 message GeneToGoTermAssociation
  {
@@ -4680,7 +4791,7 @@ message GeneToGoTermAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -4712,10 +4823,12 @@ message GeneToGoTermAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -4730,7 +4843,7 @@ message GeneToPathwayAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -4762,10 +4875,12 @@ message GeneToPathwayAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -4810,21 +4925,23 @@ message GeneToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -4949,10 +5066,12 @@ message GenomicSequenceLocalization
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   integer startInterbaseCoordinate = 0
@@ -4962,7 +5081,7 @@ message GenomicSequenceLocalization
   phaseEnum phase = 0
   nucleicAcidEntity subject = 0
   nucleicAcidEntity object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
 message Genotype
@@ -5026,20 +5145,22 @@ message GenotypeAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   genotype subject = 0
  }
@@ -5082,21 +5203,23 @@ message GenotypeToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
@@ -5139,13 +5262,15 @@ message GenotypeToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   genotype subject = 0
   gene object = 0
  }
@@ -5189,13 +5314,15 @@ message GenotypeToGenotypePartAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   genotype subject = 0
   genotype object = 0
  }
@@ -5240,20 +5367,22 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   genotype subject = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -5301,13 +5430,15 @@ message GenotypeToVariantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   genotype subject = 0
   sequenceVariant object = 0
  }
@@ -5577,15 +5708,17 @@ message InformationContentEntityToNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
   namedThing object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // An animal lacking a vertebral column. This group consists of 98% of all animal species.
 message Invertebrate
@@ -5721,7 +5854,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -5753,10 +5886,12 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -5772,7 +5907,7 @@ message MacromolecularMachineToCellularComponentAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -5804,10 +5939,12 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -5823,7 +5960,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -5855,10 +5992,12 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -5945,14 +6084,16 @@ message MaterialSampleDerivationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   materialSample subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
  }
 // An association between a material sample and a disease or phenotype.
@@ -5965,7 +6106,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -5998,10 +6139,12 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease diseaseContextQualifier = 0
@@ -6062,7 +6205,7 @@ message MolecularActivityToChemicalEntityAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -6094,10 +6237,12 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -6112,7 +6257,7 @@ message MolecularActivityToMolecularActivityAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -6144,10 +6289,12 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -6193,15 +6340,17 @@ message MolecularActivityToPathwayAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
   pathway object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 message MolecularEntity
@@ -6326,16 +6475,18 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
   string subjectAspectQualifier = 0
   ontologyClass subjectContextQualifier = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   string objectAspectQualifier = 0
   ontologyClass objectContextQualifier = 0
@@ -6565,16 +6716,18 @@ message OrganismTaxonToOrganismTaxonInteraction
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string associatedEnvironmentalContext = 0
   organismTaxon subject = 0
   organismTaxon object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 message OrganismTaxonToOrganismTaxonSpecialization
@@ -6616,15 +6769,17 @@ message OrganismTaxonToOrganismTaxonSpecialization
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
   organismTaxon object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 message OrganismToOrganismAssociation
  {
@@ -6634,7 +6789,7 @@ message OrganismToOrganismAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -6666,10 +6821,12 @@ message OrganismToOrganismAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   individualOrganism subject = 0
@@ -6683,7 +6840,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -6716,10 +6873,12 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
@@ -6728,7 +6887,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
@@ -6771,15 +6930,17 @@ message PairwiseGeneToGeneInteraction
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
   geneOrGeneProduct object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // An interaction at the molecular level between two physical entities
 message PairwiseMolecularInteraction
@@ -6820,16 +6981,18 @@ message PairwiseMolecularInteraction
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   ontologyClass interactingMoleculesCategory = 0
   molecularEntity subject = 0
   string id = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   molecularEntity object = 0
  }
 // a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use and sell an invention for a set period of time.
@@ -7067,19 +7230,21 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -7097,7 +7262,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -7130,10 +7295,12 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
@@ -7141,7 +7308,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -7356,15 +7523,17 @@ message PopulationToPopulationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms subject = 0
   populationOfIndividualOrganisms object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
 message PosttranslationalModification
@@ -7397,8 +7566,8 @@ message PredicateMapping
   string subjectPartQualifier = 0
   string subjectDerivativeQualifier = 0
   string subjectContextQualifier = 0
-  predicateType predicate = 0
-  string qualifiedPredicate = 0
+  uriorcurie predicate = 0
+  uriorcurie qualifiedPredicate = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string objectFormOrVariantQualifier = 0
@@ -7500,14 +7669,16 @@ message ProcessRegulatesProcessAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcess subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   biologicalProcess object = 0
  }
 // A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
@@ -7703,13 +7874,15 @@ message ReactionToCatalystAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   organismTaxon speciesContextQualifier = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
@@ -7756,13 +7929,15 @@ message ReactionToParticipantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   chemicalEntity object = 0
   organismTaxon speciesContextQualifier = 0
   integer stoichiometry = 0
@@ -7920,7 +8095,7 @@ message SequenceAssociation
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -7953,10 +8128,12 @@ message SequenceAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -7969,7 +8146,7 @@ message SequenceFeatureRelationship
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -8001,10 +8178,12 @@ message SequenceFeatureRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   nucleicAcidEntity subject = 0
@@ -8286,7 +8465,7 @@ message TaxonToTaxonAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -8318,10 +8497,12 @@ message TaxonToTaxonAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -8392,7 +8573,7 @@ message TranscriptToGeneRelationship
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -8424,10 +8605,12 @@ message TranscriptToGeneRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   transcript subject = 0
@@ -8525,20 +8708,22 @@ message VariantAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   sequenceVariant subject = 0
  }
@@ -8581,21 +8766,23 @@ message VariantToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
  }
 // An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
@@ -8639,14 +8826,16 @@ message VariantToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
  }
 // An association between a variant and expression of a gene (i.e. e-QTL)
 message VariantToGeneExpressionAssociation
@@ -8689,14 +8878,16 @@ message VariantToGeneExpressionAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   ontologyClass quantifierQualifier = 0
   anatomicalEntity expressionSite = 0
   lifeStage stageQualifier = 0
@@ -8710,7 +8901,7 @@ message VariantToPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   namedThing object = 0
   boolean negated = 0
   string qualifier = 0
@@ -8743,10 +8934,12 @@ message VariantToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
@@ -8755,7 +8948,7 @@ message VariantToPhenotypicFeatureAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
-  string qualifiedPredicate = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
@@ -8772,7 +8965,7 @@ message VariantToPopulationAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
-  predicateType predicate = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -8804,10 +8997,12 @@ message VariantToPopulationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+ repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
   boolean elevateToPrediction = 0
+  integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0

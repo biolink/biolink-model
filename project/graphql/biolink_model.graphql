@@ -509,7 +509,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -541,10 +541,12 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: AnatomicalEntity!
@@ -590,15 +592,17 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type AnatomicalEntityToAnatomicalEntityPartOfAssociation
@@ -640,15 +644,17 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 interface Annotation
@@ -697,7 +703,7 @@ type Association
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -730,10 +736,12 @@ type Association
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
   }
@@ -813,7 +821,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -845,10 +853,12 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Behavior!
@@ -998,7 +1008,7 @@ type BiologicalProcessOrActivityToAnatomicalEntityAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1030,10 +1040,12 @@ type BiologicalProcessOrActivityToAnatomicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: BiologicalProcessOrActivity!
@@ -1079,15 +1091,17 @@ type BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: BiologicalProcessOrActivity!
     object: BiologicalProcessOrActivity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
@@ -1129,15 +1143,17 @@ type BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: BiologicalProcessOrActivity!
     object: GeneOrGeneProductOrGeneFamily!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type BiologicalSex
@@ -1312,14 +1328,16 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: Disease!
     onsetQualifier: Onset
   }
@@ -1327,7 +1345,7 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
 interface CaseToEntityAssociationMixin
   {
     subject: Case!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -1370,14 +1388,16 @@ type CaseToGeneAssociation implements CaseToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: GeneOrGeneProduct!
   }
 
@@ -1390,7 +1410,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1422,10 +1442,12 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     negated: Boolean
@@ -1483,14 +1505,16 @@ type CaseToVariantAssociation implements CaseToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: SequenceVariant!
     hasZygosity: Zygosity
   }
@@ -1534,17 +1558,19 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
-    predicate: PredicateType!
+    predicate: String!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -1609,7 +1635,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -1642,10 +1668,12 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     diseaseContextQualifier: Disease
@@ -1669,7 +1697,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -1702,10 +1730,12 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: DiseaseOrPhenotypicFeature!
@@ -1718,7 +1748,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
 interface CellLineToEntityAssociationMixin
   {
     subject: CellLine!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -1803,10 +1833,12 @@ type ChemicalAffectsBiologicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1825,7 +1857,7 @@ type ChemicalAffectsBiologicalEntityAssociation
     qualifiedPredicate: String
     speciesContextQualifier: OrganismTaxon
     subject: ChemicalEntity!
-    predicate: PredicateType!
+    predicate: String!
     object: BiologicalEntity!
   }
 
@@ -1868,10 +1900,12 @@ type ChemicalAffectsGeneAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1890,7 +1924,7 @@ type ChemicalAffectsGeneAssociation
     qualifiedPredicate: String
     speciesContextQualifier: OrganismTaxon
     subject: ChemicalEntity!
-    predicate: PredicateType!
+    predicate: String!
     object: BiologicalEntity!
     dgidbInteractionScore: Float
     dgidbEvidenceScore: Int
@@ -1965,15 +1999,17 @@ type ChemicalEntityAssessesNamedThingAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: ChemicalEntity!
     object: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 interface ChemicalEntityOrGeneOrGeneProduct
@@ -2019,14 +2055,16 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     objectDirectionQualifier: DirectionQualifierEnum
-    predicate: PredicateType!
+    predicate: String!
     subject: ChemicalEntityOrGeneOrGeneProduct!
     object: GeneOrGeneProduct!
   }
@@ -2074,10 +2112,12 @@ type ChemicalEntityToBiologicalProcessAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     speciesContextQualifier: OrganismTaxon
@@ -2086,7 +2126,7 @@ type ChemicalEntityToBiologicalProcessAssociation
     objectDirectionQualifier: DirectionQualifierEnum
     subject: ChemicalEntity!
     object: BiologicalProcess!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type ChemicalEntityToChemicalDerivationAssociation
@@ -2128,17 +2168,19 @@ type ChemicalEntityToChemicalDerivationAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     speciesContextQualifier: OrganismTaxon
     catalystQualifier: [MacromolecularMachineMixin]
     subject: ChemicalEntity!
     object: ChemicalEntity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type ChemicalEntityToChemicalEntityAssociation
@@ -2180,14 +2222,16 @@ type ChemicalEntityToChemicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: ChemicalEntity!
     speciesContextQualifier: OrganismTaxon
   }
@@ -2201,7 +2245,7 @@ type ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation implements EntityToDi
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2233,12 +2277,15 @@ type ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation implements EntityToDi
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
+    clinicalApprovalStatus: ClinicalApprovalStatusEnum
     object: DiseaseOrPhenotypicFeature!
     diseaseContextQualifier: Disease
     subjectSpecializationQualifier: String
@@ -2249,7 +2296,7 @@ type ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation implements EntityToDi
 interface ChemicalEntityToEntityAssociationMixin
   {
     subject: ChemicalEntityOrGeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -2261,7 +2308,7 @@ type ChemicalEntityToPathwayAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -2293,10 +2340,12 @@ type ChemicalEntityToPathwayAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: ChemicalEntity!
@@ -2371,10 +2420,12 @@ type ChemicalGeneInteractionAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -2393,7 +2444,7 @@ type ChemicalGeneInteractionAssociation
     dgidbEvidenceScore: Int
     subject: ChemicalEntity!
     object: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type ChemicalMixture implements OntologyClass
@@ -2475,10 +2526,12 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -2492,7 +2545,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: String
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
@@ -2536,14 +2589,16 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
-    predicate: PredicateType!
+    predicate: String!
     diseaseContextQualifier: Disease
     subjectSpecializationQualifier: String
     objectSpecializationQualifier: String
@@ -2581,7 +2636,7 @@ type ChemicalRole
 interface ChemicalToEntityAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -3002,14 +3057,16 @@ type ContributorAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: InformationContentEntity!
-    predicate: PredicateType!
+    predicate: String!
     object: Agent!
     qualifiers: [OntologyClass]
   }
@@ -3053,10 +3110,12 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -3076,7 +3135,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     zScore: Float
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type Dataset
@@ -3276,17 +3335,19 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     responseContextQualifier: ResponseEnum
     responseTargetContextQualifier: ResponseTargetEnum
     subject: Disease!
     object: ChemicalEntity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type DiseaseOrPhenotypicFeature implements OntologyClass
@@ -3346,7 +3407,7 @@ type DiseaseOrPhenotypicFeatureOutcome implements Outcome
 interface DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     subject: DiseaseOrPhenotypicFeature!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -3390,13 +3451,15 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     object: GeneticInheritance!
   }
 
@@ -3409,7 +3472,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3441,10 +3504,12 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     object: AnatomicalEntity!
@@ -3453,7 +3518,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
 interface DiseaseToEntityAssociationMixin
   {
     subject: Disease!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -3466,7 +3531,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -3499,10 +3564,12 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
   }
@@ -3515,7 +3582,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3547,10 +3614,12 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     onsetQualifier: Onset
@@ -3665,7 +3734,7 @@ type DrugLabel
 interface DrugToEntityAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -3678,7 +3747,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -3710,10 +3779,12 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     object: GeneOrGeneProduct!
@@ -3788,10 +3859,12 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -3811,7 +3884,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     object: Disease!
     druggableGeneCategory: DruggableGeneCategoryEnum
     subject: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type Edge
@@ -3839,7 +3912,7 @@ type EntityToDiseaseAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -3872,10 +3945,12 @@ type EntityToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -3888,7 +3963,7 @@ interface EntityToDiseaseAssociationMixin
   {
     frequencyQualifier: FrequencyValue
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -3901,7 +3976,7 @@ interface EntityToDiseaseAssociationMixin
 interface EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: DiseaseOrPhenotypicFeature!
     diseaseContextQualifier: Disease
     subjectSpecializationQualifier: String
@@ -3912,7 +3987,7 @@ interface EntityToDiseaseOrPhenotypicFeatureAssociationMixin
 interface EntityToExposureEventAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: ExposureEvent!
   }
 
@@ -3920,7 +3995,7 @@ interface EntityToFeatureOrDiseaseQualifiersMixin
   {
     frequencyQualifier: FrequencyValue
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3934,7 +4009,7 @@ interface EntityToFeatureOrGeneQualifiersMixin
   {
     frequencyQualifier: FrequencyValue
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3947,7 +4022,7 @@ interface EntityToFeatureOrVariantQualifiersMixin
   {
     frequencyQualifier: FrequencyValue
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -3959,7 +4034,7 @@ interface EntityToFeatureOrVariantQualifiersMixin
 interface EntityToOutcomeAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: Outcome!
   }
 
@@ -3972,7 +4047,7 @@ type EntityToPhenotypicFeatureAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -4005,10 +4080,12 @@ type EntityToPhenotypicFeatureAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -4027,7 +4104,7 @@ type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
     qualifiedPredicate: String
     diseaseContextQualifier: Disease
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: PhenotypicFeature!
     sexQualifier: BiologicalSex
     hasCount: Int
@@ -4231,7 +4308,7 @@ type ExonToTranscriptRelationship
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4263,10 +4340,12 @@ type ExonToTranscriptRelationship
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Exon!
@@ -4310,7 +4389,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -4343,10 +4422,12 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -4361,7 +4442,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -4394,10 +4475,12 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: ExposureEvent!
@@ -4419,7 +4502,7 @@ interface FeatureOrDiseaseQualifiersToEntityMixin
   {
     frequencyQualifier: FrequencyValue
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -4496,7 +4579,7 @@ interface FrequencyQualifierMixin
   {
     frequencyQualifier: FrequencyValue
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -4516,7 +4599,7 @@ type FunctionalAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4548,10 +4631,12 @@ type FunctionalAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MacromolecularMachineMixin!
@@ -4641,10 +4726,12 @@ type GeneAffectsChemicalAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -4664,7 +4751,7 @@ type GeneAffectsChemicalAssociation
     qualifiedPredicate: String
     speciesContextQualifier: OrganismTaxon
     subject: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
     object: ChemicalEntity!
   }
 
@@ -4707,17 +4794,19 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
-    predicate: PredicateType!
+    predicate: String!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -4801,15 +4890,17 @@ type GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Gene!
     object: GeneFamily!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 interface GeneGroupingMixin
@@ -4856,10 +4947,12 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -4878,7 +4971,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 interface GeneOrGeneProduct
@@ -4898,7 +4991,7 @@ type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -4930,10 +5023,12 @@ type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProductOrGeneFamily!
@@ -4979,15 +5074,17 @@ type GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProductOrGeneFamily!
     object: BiologicalProcessOrActivity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 interface GeneProductIsoformMixin
@@ -5043,10 +5140,12 @@ type GeneRegulatesGeneAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum!
@@ -5054,7 +5153,7 @@ type GeneRegulatesGeneAssociation
     qualifiedPredicate: String!
     speciesContextQualifier: OrganismTaxon
     subject: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
     object: GeneOrGeneProduct!
   }
 
@@ -5097,17 +5196,19 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
-    predicate: PredicateType!
+    predicate: String!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -5161,10 +5262,12 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -5173,7 +5276,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     allelicRequirement: String
     subject: GeneOrGeneProduct!
     object: DiseaseOrPhenotypicFeature!
-    predicate: PredicateType!
+    predicate: String!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -5189,7 +5292,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
 interface GeneToEntityAssociationMixin
   {
     subject: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -5232,10 +5335,12 @@ type GeneToExpressionSiteAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     stageQualifier: LifeStage
@@ -5243,7 +5348,7 @@ type GeneToExpressionSiteAssociation
     objectSpecializationQualifier: String
     subject: GeneOrGeneProduct!
     object: AnatomicalEntity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 interface GeneToGeneAssociation
@@ -5254,7 +5359,7 @@ interface GeneToGeneAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5286,10 +5391,12 @@ interface GeneToGeneAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProduct!
@@ -5335,15 +5442,17 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
     quantifierQualifier: OntologyClass
     expressionSite: AnatomicalEntity
     stageQualifier: LifeStage
@@ -5389,15 +5498,17 @@ type GeneToGeneFamilyAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Gene!
     object: GeneFamily!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type GeneToGeneHomologyAssociation
@@ -5439,14 +5550,16 @@ type GeneToGeneHomologyAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
     object: GeneOrGeneProduct!
   }
 
@@ -5489,15 +5602,17 @@ type GeneToGeneProductRelationship
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Gene!
     object: GeneProductMixin!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type GeneToGoTermAssociation
@@ -5508,7 +5623,7 @@ type GeneToGoTermAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5540,10 +5655,12 @@ type GeneToGoTermAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Gene!
@@ -5558,7 +5675,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5590,10 +5707,12 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProduct!
@@ -5639,17 +5758,19 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
-    predicate: PredicateType!
+    predicate: String!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
@@ -5783,10 +5904,12 @@ type GenomicSequenceLocalization
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     startInterbaseCoordinate: Int
@@ -5796,7 +5919,7 @@ type GenomicSequenceLocalization
     phase: PhaseEnum
     subject: NucleicAcidEntity!
     object: NucleicAcidEntity!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
@@ -5861,13 +5984,15 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
@@ -5918,14 +6043,16 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
@@ -5939,7 +6066,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
 interface GenotypeToEntityAssociationMixin
   {
     subject: Genotype!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -5982,13 +6109,15 @@ type GenotypeToGeneAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     subject: Genotype!
     object: Gene!
   }
@@ -6032,13 +6161,15 @@ type GenotypeToGenotypePartAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     subject: Genotype!
     object: Genotype!
   }
@@ -6083,13 +6214,15 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     subject: Genotype!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
@@ -6144,13 +6277,15 @@ type GenotypeToVariantAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     subject: Genotype!
     object: SequenceVariant!
   }
@@ -6449,15 +6584,17 @@ type InformationContentEntityToNamedThingAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
     object: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type Invertebrate
@@ -6604,7 +6741,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -6636,10 +6773,12 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MacromolecularMachineMixin!
@@ -6655,7 +6794,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -6687,10 +6826,12 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MacromolecularMachineMixin!
@@ -6701,7 +6842,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
 interface MacromolecularMachineToEntityAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     speciesContextQualifier: OrganismTaxon
   }
@@ -6714,7 +6855,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -6746,10 +6887,12 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MacromolecularMachineMixin!
@@ -6841,14 +6984,16 @@ type MaterialSampleDerivationAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MaterialSample!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -6861,7 +7006,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -6894,10 +7039,12 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     diseaseContextQualifier: Disease
@@ -6909,7 +7056,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
 interface MaterialSampleToEntityAssociationMixin
   {
     subject: MaterialSample!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -6937,7 +7084,7 @@ type MicroRNA
 interface ModelToDiseaseAssociationMixin
   {
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -6973,7 +7120,7 @@ type MolecularActivityToChemicalEntityAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -7005,10 +7152,12 @@ type MolecularActivityToChemicalEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MolecularActivity!
@@ -7023,7 +7172,7 @@ type MolecularActivityToMolecularActivityAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -7055,10 +7204,12 @@ type MolecularActivityToMolecularActivityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MolecularActivity!
@@ -7104,15 +7255,17 @@ type MolecularActivityToPathwayAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: MolecularActivity!
     object: Pathway!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type MolecularEntity implements OntologyClass
@@ -7242,16 +7395,18 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
     subjectAspectQualifier: String
     subjectContextQualifier: OntologyClass
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     objectAspectQualifier: String
     objectContextQualifier: OntologyClass
@@ -7459,7 +7614,7 @@ type OrganismTaxon
 interface OrganismTaxonToEntityAssociation
   {
     subject: OrganismTaxon!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -7502,15 +7657,17 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: OrganismTaxon!
     object: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAssociation
@@ -7521,7 +7678,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -7553,10 +7710,12 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: OrganismTaxon!
@@ -7602,16 +7761,18 @@ type OrganismTaxonToOrganismTaxonInteraction
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     associatedEnvironmentalContext: String
     subject: OrganismTaxon!
     object: OrganismTaxon!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type OrganismTaxonToOrganismTaxonSpecialization
@@ -7653,15 +7814,17 @@ type OrganismTaxonToOrganismTaxonSpecialization
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: OrganismTaxon!
     object: OrganismTaxon!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type OrganismToOrganismAssociation
@@ -7672,7 +7835,7 @@ type OrganismToOrganismAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -7704,10 +7867,12 @@ type OrganismToOrganismAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: IndividualOrganism!
@@ -7743,7 +7908,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -7776,10 +7941,12 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: OrganismalEntity!
@@ -7835,15 +8002,17 @@ type PairwiseGeneToGeneInteraction
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type PairwiseMolecularInteraction
@@ -7884,16 +8053,18 @@ type PairwiseMolecularInteraction
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     interactingMoleculesCategory: OntologyClass
     subject: MolecularEntity!
     id: String!
-    predicate: PredicateType!
+    predicate: String!
     object: MolecularEntity!
   }
 
@@ -8149,13 +8320,15 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -8173,7 +8346,7 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
 type PhenotypicFeatureToEntityAssociationMixin implements FrequencyQuantifier
   {
     frequencyQualifier: FrequencyValue
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
@@ -8197,7 +8370,7 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -8230,10 +8403,12 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     frequencyQualifier: FrequencyValue
@@ -8466,15 +8641,17 @@ type PopulationToPopulationAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type PosttranslationalModification implements GeneProductIsoformMixin
@@ -8507,7 +8684,7 @@ type PredicateMapping
     subjectPartQualifier: String
     subjectDerivativeQualifier: String
     subjectContextQualifier: String
-    predicate: PredicateType!
+    predicate: String!
     qualifiedPredicate: String
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
@@ -8610,14 +8787,16 @@ type ProcessRegulatesProcessAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: BiologicalProcess!
-    predicate: PredicateType!
+    predicate: String!
     object: BiologicalProcess!
   }
 
@@ -8815,13 +8994,15 @@ type ReactionToCatalystAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     speciesContextQualifier: OrganismTaxon
     stoichiometry: Int
     reactionDirection: ReactionDirectionEnum
@@ -8869,13 +9050,15 @@ type ReactionToParticipantAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     object: ChemicalEntity!
     speciesContextQualifier: OrganismTaxon
     stoichiometry: Int
@@ -9042,7 +9225,7 @@ type SequenceAssociation
     hasAttribute: [Attribute]
     deprecated: Boolean
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -9075,10 +9258,12 @@ type SequenceAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
   }
@@ -9091,7 +9276,7 @@ type SequenceFeatureRelationship
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -9123,10 +9308,12 @@ type SequenceFeatureRelationship
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NucleicAcidEntity!
@@ -9165,7 +9352,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -9197,10 +9384,12 @@ interface SequenceVariantModulatesTreatmentAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: SequenceVariant!
@@ -9494,7 +9683,7 @@ type TaxonToTaxonAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -9526,10 +9715,12 @@ type TaxonToTaxonAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: OrganismTaxon!
@@ -9606,7 +9797,7 @@ type TranscriptToGeneRelationship
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -9638,10 +9829,12 @@ type TranscriptToGeneRelationship
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: Transcript!
@@ -9740,13 +9933,15 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
@@ -9797,14 +9992,16 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: NamedThing!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
     subjectAspectQualifier: String
@@ -9818,7 +10015,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
 interface VariantToEntityAssociationMixin
   {
     subject: SequenceVariant!
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
   }
 
@@ -9862,14 +10059,16 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     object: Gene!
-    predicate: PredicateType!
+    predicate: String!
   }
 
 type VariantToGeneExpressionAssociation implements GeneExpressionMixin
@@ -9912,14 +10111,16 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     object: Gene!
-    predicate: PredicateType!
+    predicate: String!
     quantifierQualifier: OntologyClass
     expressionSite: AnatomicalEntity
     stageQualifier: LifeStage
@@ -9934,7 +10135,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     object: NamedThing!
     negated: Boolean
     qualifier: String
@@ -9967,10 +10168,12 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: SequenceVariant!
@@ -9996,7 +10199,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: PredicateType!
+    predicate: String!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -10028,10 +10231,12 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     retrievalSourceIds: [RetrievalSource]
     pValue: Float
     adjustedPValue: Float
+    supportingText: [String]
     hasSupportingStudies: [Study]
     updateDate: String
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
+    evidenceCount: Int
     type: [String]
     category: [String]
     subject: SequenceVariant!
