@@ -1021,8 +1021,28 @@
   ],
   "enums": [
     {
-      "name": "GeneToPhenotypePredicateEnum",
-      "definition_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypePredicateEnum",
+      "name": "GeneToPhenotypicFeaturePredicateEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum",
+      "description": "Predicates used in gene to phenotypic feature associations",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "biolink:causes"
+        },
+        {
+          "text": "biolink:contributes_to"
+        },
+        {
+          "text": "biolink:associated_with"
+        },
+        {
+          "text": "biolink:has_phenotype"
+        }
+      ]
+    },
+    {
+      "name": "GeneToDiseasePredicateEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum",
       "description": "Predicates used in gene to phenotypic feature associations",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
@@ -22181,7 +22201,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "GeneToPhenotypePredicateEnum",
+      "range": "GeneToPhenotypicFeaturePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22398,10 +22418,9 @@
       "domain_of": [
         "GeneToDiseaseAssociation"
       ],
-      "subproperty_of": "contributes_to",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "uriorcurie",
+      "range": "GeneToDiseasePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22511,7 +22530,7 @@
       "subproperty_of": "causes",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "uriorcurie",
+      "range": "GeneToDiseasePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22628,7 +22647,7 @@
       "subproperty_of": "correlated_with",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "uriorcurie",
+      "range": "GeneToDiseasePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22702,7 +22721,7 @@
       "subproperty_of": "target_for",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "uriorcurie",
+      "range": "GeneToDiseasePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23569,7 +23588,7 @@
       "subproperty_of": "model_of",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "uriorcurie",
+      "range": "GeneToDiseasePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -24367,7 +24386,7 @@
       "subproperty_of": "contributes_to",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "uriorcurie",
+      "range": "GeneToDiseasePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -35797,7 +35816,7 @@
     {
       "name": "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
-      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.",
+      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary, typically (but not always) undesirable effect.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "slots": [
@@ -41119,9 +41138,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-23T16:21:40",
-  "source_file_size": 453252,
-  "generation_date": "2026-01-23T16:21:54",
+  "source_file_date": "2026-01-23T16:39:00",
+  "source_file_size": 453531,
+  "generation_date": "2026-01-23T16:39:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

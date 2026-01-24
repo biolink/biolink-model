@@ -582,7 +582,9 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <GeneToDiseaseAssociation> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
-          rdf:predicate @linkml:Uriorcurie
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
        ) ;
        rdf:type [ <CausalGeneToDiseaseAssociation> ]
     )
@@ -1630,7 +1632,9 @@ linkml:Sparqlpath xsd:string
           <z_score> @linkml:Float ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
-          rdf:predicate @linkml:Uriorcurie
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
        ) ;
        rdf:type [ <CorrelatedGeneToDiseaseAssociation> ]
     )
@@ -1879,7 +1883,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate @linkml:Uriorcurie
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
        ) ;
        rdf:type [ <DruggableGeneToDiseaseAssociation> ]
     )
@@ -2528,7 +2534,9 @@ linkml:Sparqlpath xsd:string
 <GeneAsAModelOfDiseaseAssociation> CLOSED {
     (  $<GeneAsAModelOfDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
           rdf:type [ <GeneToDiseaseAssociation> ] ? ;
-          rdf:predicate @linkml:Uriorcurie ;
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ] ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease>
        ) ;
@@ -2582,7 +2590,9 @@ linkml:Sparqlpath xsd:string
           <subject_form_or_variant_qualifier> @linkml:String ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
-          rdf:predicate @linkml:Uriorcurie
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
        ) ;
        rdf:type [ <GeneHasVariantThatContributesToDiseaseAssociation> ]
     )
@@ -2800,7 +2810,9 @@ linkml:Sparqlpath xsd:string
              <allelic_requirement> @linkml:String ? ;
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<Disease> ;
-             rdf:predicate @linkml:Uriorcurie
+             rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acauses>
+                <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+                <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
@@ -2983,9 +2995,10 @@ linkml:Sparqlpath xsd:string
           <allelic_requirement> @linkml:String ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<PhenotypicFeature> ;
-          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToPhenotypePredicateEnum#biolink%3Acauses>
-             <https://w3id.org/biolink/vocab/GeneToPhenotypePredicateEnum#biolink%3Acontributes_to>
-             <https://w3id.org/biolink/vocab/GeneToPhenotypePredicateEnum#biolink%3Aassociated_with> ] ;
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Aassociated_with>
+             <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Ahas_phenotype> ] ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>

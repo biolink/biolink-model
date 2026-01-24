@@ -308,11 +308,19 @@ enum GeneOrGeneProductOrChemicalPartQualifierEnum
     intron
   }
 
-enum GeneToPhenotypePredicateEnum
+enum GeneToDiseasePredicateEnum
   {
     biolink__COLON__causes
     biolink__COLON__contributes_to
     biolink__COLON__associated_with
+  }
+
+enum GeneToPhenotypicFeaturePredicateEnum
+  {
+    biolink__COLON__causes
+    biolink__COLON__contributes_to
+    biolink__COLON__associated_with
+    biolink__COLON__has_phenotype
   }
 
 enum KnowledgeLevelEnum
@@ -1572,7 +1580,7 @@ type CausalGeneToDiseaseAssociation
     allelicRequirement: String
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: Uriorcurie!
+    predicate: GeneToDiseasePredicateEnum!
   }
 
 type Cell
@@ -3102,7 +3110,7 @@ type CorrelatedGeneToDiseaseAssociation
     zScore: Float
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: Uriorcurie!
+    predicate: GeneToDiseasePredicateEnum!
   }
 
 type Dataset
@@ -3827,7 +3835,7 @@ type DruggableGeneToDiseaseAssociation
     object: Disease!
     druggableGeneCategory: DruggableGeneCategoryEnum
     subject: GeneOrGeneProduct!
-    predicate: Uriorcurie!
+    predicate: GeneToDiseasePredicateEnum!
   }
 
 type Edge
@@ -4666,7 +4674,7 @@ type GeneAsAModelOfDiseaseAssociation
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
-    predicate: Uriorcurie!
+    predicate: GeneToDiseasePredicateEnum!
     subject: GeneOrGeneProduct!
     object: Disease!
   }
@@ -4811,7 +4819,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: Uriorcurie!
+    predicate: GeneToDiseasePredicateEnum!
   }
 
 interface GeneOrGeneProduct
@@ -5050,7 +5058,7 @@ type GeneToDiseaseAssociation
     allelicRequirement: String
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: Uriorcurie!
+    predicate: GeneToDiseasePredicateEnum!
   }
 
 type GeneToExpressionSiteAssociation
@@ -5484,7 +5492,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     allelicRequirement: String
     subject: GeneOrGeneProduct!
     object: PhenotypicFeature!
-    predicate: GeneToPhenotypePredicateEnum!
+    predicate: GeneToPhenotypicFeaturePredicateEnum!
     sexQualifier: BiologicalSex
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String

@@ -8019,8 +8019,8 @@
                     ]
                 },
                 "predicate": {
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneToDiseasePredicateEnum",
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -11408,7 +11408,7 @@
         },
         "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation": {
             "additionalProperties": false,
-            "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.",
+            "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary, typically (but not always) undesirable effect.",
             "properties": {
                 "FDA_adverse_event_level": {
                     "$ref": "#/$defs/FDAIDAAdverseEventEnum",
@@ -19729,8 +19729,8 @@
                     ]
                 },
                 "predicate": {
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneToDiseasePredicateEnum",
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -25121,8 +25121,8 @@
                     ]
                 },
                 "predicate": {
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneToDiseasePredicateEnum",
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -30955,8 +30955,8 @@
                     ]
                 },
                 "predicate": {
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneToDiseasePredicateEnum",
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -31958,8 +31958,8 @@
                     ]
                 },
                 "predicate": {
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneToDiseasePredicateEnum",
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -33722,8 +33722,8 @@
                     ]
                 },
                 "predicate": {
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneToDiseasePredicateEnum",
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -33889,6 +33889,16 @@
             ],
             "title": "GeneToDiseaseAssociation",
             "type": "object"
+        },
+        "GeneToDiseasePredicateEnum": {
+            "description": "Predicates used in gene to phenotypic feature associations",
+            "enum": [
+                "biolink:causes",
+                "biolink:contributes_to",
+                "biolink:associated_with"
+            ],
+            "title": "GeneToDiseasePredicateEnum",
+            "type": "string"
         },
         "GeneToExpressionSiteAssociation": {
             "additionalProperties": false,
@@ -36816,16 +36826,6 @@
             "title": "GeneToPathwayAssociation",
             "type": "object"
         },
-        "GeneToPhenotypePredicateEnum": {
-            "description": "Predicates used in gene to phenotypic feature associations",
-            "enum": [
-                "biolink:causes",
-                "biolink:contributes_to",
-                "biolink:associated_with"
-            ],
-            "title": "GeneToPhenotypePredicateEnum",
-            "type": "string"
-        },
         "GeneToPhenotypicFeatureAssociation": {
             "additionalProperties": false,
             "description": "",
@@ -36895,7 +36895,7 @@
                     "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
                 },
                 "predicate": {
-                    "$ref": "#/$defs/GeneToPhenotypePredicateEnum",
+                    "$ref": "#/$defs/GeneToPhenotypicFeaturePredicateEnum",
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "qualified_predicate": {
@@ -36936,6 +36936,17 @@
             ],
             "title": "GeneToPhenotypicFeatureAssociation",
             "type": "object"
+        },
+        "GeneToPhenotypicFeaturePredicateEnum": {
+            "description": "Predicates used in gene to phenotypic feature associations",
+            "enum": [
+                "biolink:causes",
+                "biolink:contributes_to",
+                "biolink:associated_with",
+                "biolink:has_phenotype"
+            ],
+            "title": "GeneToPhenotypicFeaturePredicateEnum",
+            "type": "string"
         },
         "GeneticInheritance": {
             "additionalProperties": false,

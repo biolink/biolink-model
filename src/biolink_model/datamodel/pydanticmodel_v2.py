@@ -63,7 +63,17 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = None
 
-class GeneToPhenotypePredicateEnum(str, Enum):
+class GeneToPhenotypicFeaturePredicateEnum(str, Enum):
+    """
+    Predicates used in gene to phenotypic feature associations
+    """
+    biolinkCOLONcauses = "biolink:causes"
+    biolinkCOLONcontributes_to = "biolink:contributes_to"
+    biolinkCOLONassociated_with = "biolink:associated_with"
+    biolinkCOLONhas_phenotype = "biolink:has_phenotype"
+
+
+class GeneToDiseasePredicateEnum(str, Enum):
     """
     Predicates used in gene to phenotypic feature associations
     """
@@ -6592,7 +6602,7 @@ class ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Ass
 
 class ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation):
     """
-    This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+    This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary, typically (but not always) undesirable effect.
     """
     disease_context_qualifier: Optional[str] = Field(default=None, description="""A context qualifier representing a disease or condition in which a relationship expressed in an association took place.""")
     subject_specialization_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.""")
@@ -8380,7 +8390,7 @@ class GeneToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""gene in which variation is correlated with the phenotypic feature""")
-    predicate: GeneToPhenotypePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToPhenotypicFeaturePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
@@ -8413,7 +8423,7 @@ class GeneToDiseaseAssociation(Association):
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model""")
-    predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
@@ -8481,7 +8491,7 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""gene in which variation is shown to cause the disease.""")
-    predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
@@ -8550,7 +8560,7 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""gene in which variation is shown to correlate with the disease.""")
-    predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
@@ -8619,7 +8629,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
-    predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
@@ -9138,7 +9148,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
-    predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")
@@ -9516,7 +9526,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
     allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
     subject: str = Field(default=..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
-    predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")

@@ -1065,7 +1065,7 @@ message CausalGeneToDiseaseAssociation
   string allelicRequirement = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 message Cell
  {
@@ -1476,7 +1476,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   namedThing object = 0
   uriorcurie predicate = 0
  }
-// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary, typically (but not always) undesirable effect.
 message ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  {
   string id = 0
@@ -2561,7 +2561,7 @@ message CorrelatedGeneToDiseaseAssociation
   float zScore = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 // an item that refers to a collection of data from a data source.
 message Dataset
@@ -3274,7 +3274,7 @@ message DruggableGeneToDiseaseAssociation
   disease object = 0
   druggableGeneCategoryEnum druggableGeneCategory = 0
   geneOrGeneProduct subject = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 message EntityToDiseaseAssociation
  {
@@ -4044,7 +4044,7 @@ message GeneAsAModelOfDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
   geneOrGeneProduct subject = 0
   disease object = 0
  }
@@ -4175,7 +4175,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 // An association between a gene or gene product or gene family and an anatomical entity.
 message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
@@ -4390,7 +4390,7 @@ message GeneToDiseaseAssociation
   string allelicRequirement = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -4770,7 +4770,7 @@ message GeneToPhenotypicFeatureAssociation
   string allelicRequirement = 0
   geneOrGeneProduct subject = 0
   phenotypicFeature object = 0
-  geneToPhenotypePredicateEnum predicate = 0
+  geneToPhenotypicFeaturePredicateEnum predicate = 0
   biologicalSex sexQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
