@@ -596,6 +596,14 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject_form_or_variant_qualifier> @linkml:String ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <allelic_requirement> @linkml:String ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease>
        ) ;

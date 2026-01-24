@@ -5293,7 +5293,7 @@
       "is_a": "aspect_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
-      "owner": "GeneToDiseaseAssociation",
+      "owner": "CausalGeneToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
@@ -5304,7 +5304,8 @@
         "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToPhenotypicFeatureAssociation",
-        "GeneToDiseaseAssociation"
+        "GeneToDiseaseAssociation",
+        "CausalGeneToDiseaseAssociation"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -5368,6 +5369,7 @@
         "GeneAffectsChemicalAssociation",
         "GeneToPhenotypicFeatureAssociation",
         "GeneToDiseaseAssociation",
+        "CausalGeneToDiseaseAssociation",
         "GeneHasVariantThatContributesToDiseaseAssociation"
       ],
       "range": "string",
@@ -5665,6 +5667,7 @@
         "FeatureOrDiseaseQualifiersToEntityMixin",
         "GeneToPhenotypicFeatureAssociation",
         "GeneToDiseaseAssociation",
+        "CausalGeneToDiseaseAssociation",
         "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
       ],
       "range": "DirectionQualifierEnum",
@@ -5681,7 +5684,7 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "owner": "GeneToDiseaseAssociation",
+      "owner": "CausalGeneToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
         "ChemicalEntityToBiologicalProcessAssociation",
@@ -5693,7 +5696,8 @@
         "EntityToFeatureOrVariantQualifiersMixin",
         "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin",
-        "GeneToDiseaseAssociation"
+        "GeneToDiseaseAssociation",
+        "CausalGeneToDiseaseAssociation"
       ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
@@ -14146,10 +14150,11 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/allelic_requirement",
-      "owner": "GeneToDiseaseAssociation",
+      "owner": "CausalGeneToDiseaseAssociation",
       "domain_of": [
         "GeneToPhenotypicFeatureAssociation",
-        "GeneToDiseaseAssociation"
+        "GeneToDiseaseAssociation",
+        "CausalGeneToDiseaseAssociation"
       ],
       "range": "string",
       "pattern": "^HP:\\d{7}$",
@@ -37927,6 +37932,11 @@
         "evidence_count",
         "association_type",
         "association_category",
+        "subject_form_or_variant_qualifier",
+        "subject_aspect_qualifier",
+        "object_direction_qualifier",
+        "allelic_requirement",
+        "qualified_predicate",
         "causal_gene_to_disease_association_subject",
         "causal_gene_to_disease_association_object"
       ],
@@ -41056,9 +41066,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-23T17:54:55",
-  "source_file_size": 457318,
-  "generation_date": "2026-01-23T17:55:06",
+  "source_file_date": "2026-01-23T18:12:29",
+  "source_file_size": 457495,
+  "generation_date": "2026-01-23T18:12:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

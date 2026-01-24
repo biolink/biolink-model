@@ -8685,6 +8685,11 @@ class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
 
 
 class CausalGeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
+    subject_form_or_variant_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    subject_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
+    allelic_requirement: Optional[str] = Field(default=None, description="""The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance.""")
+    qualified_predicate: Optional[str] = Field(default=None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.""")
     subject: str = Field(default=..., description="""gene in which variation is shown to cause the disease.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -8733,6 +8738,19 @@ class CausalGeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
+
+    @field_validator('allelic_requirement')
+    def pattern_allelic_requirement(cls, v):
+        pattern=re.compile(r"^HP:\d{7}$")
+        if isinstance(v, list):
+            for element in v:
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid allelic_requirement format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid allelic_requirement format: {v}"
+            raise ValueError(err_msg)
+        return v
 
 
 class CorrelatedGeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):

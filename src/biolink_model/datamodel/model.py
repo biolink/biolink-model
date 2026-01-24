@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-23T17:55:32
+# Generation date: 2026-01-23T18:13:07
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -11949,6 +11949,11 @@ class CausalGeneToDiseaseAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
+    subject_form_or_variant_qualifier: Optional[str] = None
+    subject_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    allelic_requirement: Optional[str] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11970,6 +11975,21 @@ class CausalGeneToDiseaseAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, DiseaseId):
             self.object = DiseaseId(self.object)
+
+        if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, str):
+            self.subject_form_or_variant_qualifier = str(self.subject_form_or_variant_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.allelic_requirement is not None and not isinstance(self.allelic_requirement, str):
+            self.allelic_requirement = str(self.allelic_requirement)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):

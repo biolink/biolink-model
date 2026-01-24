@@ -1581,6 +1581,11 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     evidenceCount: Integer
     type: [String]
     category: [Uriorcurie]
+    subjectFormOrVariantQualifier: String
+    subjectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
+    qualifiedPredicate: Uriorcurie
     subject: GeneOrGeneProduct!
     object: Disease!
   }

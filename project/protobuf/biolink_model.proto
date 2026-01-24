@@ -1060,6 +1060,11 @@ message CausalGeneToDiseaseAssociation
   integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  string subjectFormOrVariantQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string allelicRequirement = 0
+  uriorcurie qualifiedPredicate = 0
   geneOrGeneProduct subject = 0
   disease object = 0
  }
