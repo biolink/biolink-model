@@ -3864,6 +3864,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
+    qualifiedPredicate: Uriorcurie
     object: Disease!
     druggableGeneCategory: DruggableGeneCategoryEnum
     subject: GeneOrGeneProduct!
@@ -3871,7 +3872,6 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
-    qualifiedPredicate: Uriorcurie
     diseaseContextQualifier: Disease
   }
 
@@ -4794,13 +4794,13 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
+    qualifiedPredicate: Uriorcurie
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!
     subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
-    qualifiedPredicate: Uriorcurie
     diseaseContextQualifier: Disease
   }
 
@@ -4941,6 +4941,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
+    qualifiedPredicate: Uriorcurie
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -5181,6 +5182,7 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
+    qualifiedPredicate: Uriorcurie
     subject: GeneOrGeneProduct!
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!
