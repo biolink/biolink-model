@@ -266,12 +266,13 @@ linkml:Sparqlpath xsd:string
     @<BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> OR
     @<BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation> OR @<CaseToDiseaseAssociation> OR
     @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation> OR
-    @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalAffectsBiologicalEntityAssociation> OR
-    @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR
-    @<ChemicalEntityToBiologicalProcessAssociation> OR @<ChemicalEntityToChemicalEntityAssociation> OR
-    @<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalEntityToPathwayAssociation> OR
-    @<ChemicalGeneInteractionAssociation> OR @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<ContributorAssociation> OR @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR
+    @<CausalGeneToDiseaseAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR
+    @<ChemicalAffectsBiologicalEntityAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
+    @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalEntityToBiologicalProcessAssociation> OR
+    @<ChemicalEntityToChemicalEntityAssociation> OR @<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> OR
+    @<ChemicalEntityToPathwayAssociation> OR @<ChemicalGeneInteractionAssociation> OR
+    @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ContributorAssociation> OR
+    @<CorrelatedGeneToDiseaseAssociation> OR @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR
     @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
     @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
     @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
@@ -591,8 +592,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <CausalGeneToDiseaseAssociation> CLOSED {
-    (  $<CausalGeneToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
-          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+    (  $<CausalGeneToDiseaseAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
@@ -1673,8 +1674,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <CorrelatedGeneToDiseaseAssociation> CLOSED {
-    (  $<CorrelatedGeneToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
-          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+    (  $<CorrelatedGeneToDiseaseAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
           &<EntityToDiseaseAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
@@ -1682,14 +1683,18 @@ linkml:Sparqlpath xsd:string
           <z_score> @linkml:Float ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
-          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
-             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ?
        ) ;
@@ -3008,8 +3013,8 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<CausalGeneToDiseaseAssociation> OR @<CorrelatedGeneToDiseaseAssociation> OR @<DruggableGeneToDiseaseAssociation> OR
-    @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
+    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR
+    @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 
 <GeneToEntityAssociationMixin> {

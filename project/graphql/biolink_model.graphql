@@ -1541,6 +1541,7 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
+    predicate: Uriorcurie!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -1580,11 +1581,6 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     evidenceCount: Integer
     type: [String]
     category: [Uriorcurie]
-    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
-    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
-    objectDirectionQualifier: DirectionQualifierEnum
-    allelicRequirement: String
-    predicate: GeneToDiseasePredicateEnum!
     subject: GeneOrGeneProduct!
     object: Disease!
   }
@@ -3122,17 +3118,15 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     evidenceCount: Integer
     type: [String]
     category: [Uriorcurie]
-    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
-    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
-    objectDirectionQualifier: DirectionQualifierEnum
-    allelicRequirement: String
     zScore: Float
     subject: GeneOrGeneProduct!
     object: Disease!
-    predicate: GeneToDiseasePredicateEnum!
+    predicate: Uriorcurie!
     frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: Uriorcurie
     diseaseContextQualifier: Disease
   }

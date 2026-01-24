@@ -22185,14 +22185,7 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "gene in which variation is correlated with the phenotypic feature",
-      "examples": [
-        {
-          "value": "HGNC:2197",
-          "description": "COL1A1 (Human)",
-          "@type": "Example"
-        }
-      ],
+      "description": "gene in which variation is correlated with the disease",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -22413,7 +22406,7 @@
         "http://www.w3.org/2002/07/owl#annotatedSource",
         "http://purl.org/oban/association_has_subject"
       ],
-      "is_a": "gene_to_disease_association_subject",
+      "is_a": "subject",
       "domain": "CausalGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
@@ -22450,7 +22443,7 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "gene_to_disease_association_object",
+      "is_a": "object",
       "domain": "CausalGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
@@ -22486,7 +22479,7 @@
         "http://www.w3.org/2002/07/owl#annotatedSource",
         "http://purl.org/oban/association_has_subject"
       ],
-      "is_a": "gene_to_disease_association_subject",
+      "is_a": "subject",
       "domain": "CorrelatedGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
@@ -22523,7 +22516,7 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "gene_to_disease_association_object",
+      "is_a": "object",
       "domain": "CorrelatedGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
@@ -22559,7 +22552,7 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "gene_to_disease_association_predicate",
+      "is_a": "predicate",
       "domain": "CorrelatedGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
@@ -22570,7 +22563,7 @@
       "subproperty_of": "correlated_with",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
-      "range": "GeneToDiseasePredicateEnum",
+      "range": "uriorcurie",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -37716,7 +37709,6 @@
         "WBVocab:Gene-Phenotype-Association"
       ],
       "narrow_mappings": [
-        "WBVocab:Gene-Phenotype-Association",
         "dcid:DiseaseGeneAssociation",
         "SIO:000983"
       ],
@@ -37802,7 +37794,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
       "comments": [
         "NCIT:R176 refers to the inverse relationship",
-        "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype",
+        "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease",
         "if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children."
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
@@ -37882,7 +37874,7 @@
       "name": "CausalGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CausalGeneToDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "GeneToDiseaseAssociation",
+      "is_a": "Association",
       "mixins": [
         "GeneToEntityAssociationMixin"
       ],
@@ -37893,6 +37885,7 @@
         "description",
         "has_attribute",
         "deprecated",
+        "predicate",
         "negated",
         "qualifier",
         "qualifiers",
@@ -37932,11 +37925,6 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_association_subject_aspect_qualifier",
-        "gene_to_disease_association_object_direction_qualifier",
-        "allelic_requirement",
-        "gene_to_disease_association_predicate",
         "causal_gene_to_disease_association_subject",
         "causal_gene_to_disease_association_object"
       ],
@@ -37952,7 +37940,7 @@
       "name": "CorrelatedGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CorrelatedGeneToDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "GeneToDiseaseAssociation",
+      "is_a": "Association",
       "mixins": [
         "EntityToDiseaseAssociationMixin",
         "GeneToEntityAssociationMixin"
@@ -38003,17 +37991,15 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_association_subject_aspect_qualifier",
-        "gene_to_disease_association_object_direction_qualifier",
-        "allelic_requirement",
         "z_score",
         "correlated_gene_to_disease_association_subject",
         "correlated_gene_to_disease_association_object",
         "correlated_gene_to_disease_association_predicate",
         "frequency_qualifier",
+        "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
+        "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier"
       ],
@@ -41067,9 +41053,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-23T17:17:07",
-  "source_file_size": 457475,
-  "generation_date": "2026-01-23T17:17:18",
+  "source_file_date": "2026-01-23T17:50:51",
+  "source_file_size": 457290,
+  "generation_date": "2026-01-23T17:51:01",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

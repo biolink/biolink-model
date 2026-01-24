@@ -1020,6 +1020,7 @@ message CausalGeneToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean deprecated = 0
+  uriorcurie predicate = 0
   boolean negated = 0
   string qualifier = 0
  repeated  ontologyClass qualifiers = 0
@@ -1059,11 +1060,6 @@ message CausalGeneToDiseaseAssociation
   integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
-  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
-  directionQualifierEnum objectDirectionQualifier = 0
-  string allelicRequirement = 0
-  geneToDiseasePredicateEnum predicate = 0
   geneOrGeneProduct subject = 0
   disease object = 0
  }
@@ -2560,17 +2556,15 @@ message CorrelatedGeneToDiseaseAssociation
   integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
-  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
-  directionQualifierEnum objectDirectionQualifier = 0
-  string allelicRequirement = 0
   float zScore = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  geneToDiseasePredicateEnum predicate = 0
+  uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
+  string subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
  }
