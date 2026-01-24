@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-23T18:13:07
+# Generation date: 2026-01-23T18:27:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -12013,12 +12013,14 @@ class CorrelatedGeneToDiseaseAssociation(Association):
     object: Union[str, DiseaseId] = None
     predicate: Union[str, URIorCURIE] = None
     z_score: Optional[float] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_form_or_variant_qualifier: Optional[str] = None
     subject_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    allelic_requirement: Optional[str] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -12045,23 +12047,29 @@ class CorrelatedGeneToDiseaseAssociation(Association):
         if self.z_score is not None and not isinstance(self.z_score, float):
             self.z_score = float(self.z_score)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, str):
+            self.subject_form_or_variant_qualifier = str(self.subject_form_or_variant_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.allelic_requirement is not None and not isinstance(self.allelic_requirement, str):
+            self.allelic_requirement = str(self.allelic_requirement)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
             self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
 
         if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
             self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
 
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)

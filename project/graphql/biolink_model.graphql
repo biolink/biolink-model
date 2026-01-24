@@ -3124,15 +3124,17 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     type: [String]
     category: [Uriorcurie]
     zScore: Float
+    subjectFormOrVariantQualifier: String
+    subjectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    allelicRequirement: String
+    qualifiedPredicate: Uriorcurie
     subject: GeneOrGeneProduct!
     object: Disease!
     predicate: Uriorcurie!
     frequencyQualifier: FrequencyValue
-    subjectAspectQualifier: String
     subjectDirectionQualifier: DirectionQualifierEnum
     objectAspectQualifier: String
-    objectDirectionQualifier: DirectionQualifierEnum
-    qualifiedPredicate: Uriorcurie
     diseaseContextQualifier: Disease
   }
 
