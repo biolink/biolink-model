@@ -1021,6 +1021,23 @@
   ],
   "enums": [
     {
+      "name": "GeneToPhenotypePredicateEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypePredicateEnum",
+      "description": "Predicates used in gene to phenotypic feature associations",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "biolink:causes"
+        },
+        {
+          "text": "biolink:contributes_to"
+        },
+        {
+          "text": "biolink:associated_with"
+        }
+      ]
+    },
+    {
       "name": "ResponseEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ResponseEnum",
       "description": "A response to a treatment or intervention",
@@ -2764,7 +2781,6 @@
       "range": "QuantityValue",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4885,9 +4901,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/FDA_adverse_event_level",
-      "owner": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
-        "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "range": "FDAIDAAdverseEventEnum",
       "@type": "SlotDefinition"
@@ -5260,17 +5276,18 @@
       "is_a": "aspect_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "EntityToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "EntityToFeatureOrVariantQualifiersMixin",
-        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin",
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "GeneToPhenotypicFeatureAssociation",
+        "GeneToDiseaseAssociation",
+        "EntityToDiseaseAssociation"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -5286,9 +5303,13 @@
       "is_a": "specialization_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_specialization_qualifier",
-      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+      "owner": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+        "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
@@ -5332,7 +5353,8 @@
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "GeneToDiseaseOrPhenotypicFeatureAssociation",
+        "GeneToPhenotypicFeatureAssociation",
+        "GeneToDiseaseAssociation",
         "GeneHasVariantThatContributesToDiseaseAssociation"
       ],
       "range": "string",
@@ -5418,15 +5440,15 @@
       "is_a": "direction_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
-      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
+      "owner": "EntityToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "EntityToFeatureOrVariantQualifiersMixin",
-        "EntityToFeatureOrGeneQualifiersMixin",
-        "FeatureOrDiseaseQualifiersToEntityMixin"
+        "FeatureOrDiseaseQualifiersToEntityMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "EntityToDiseaseAssociation"
       ],
       "range": "DirectionQualifierEnum",
       "@type": "SlotDefinition"
@@ -5460,18 +5482,18 @@
       "is_a": "aspect_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
-      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
+      "owner": "EntityToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "EntityToFeatureOrVariantQualifiersMixin",
-        "EntityToFeatureOrGeneQualifiersMixin",
-        "FeatureOrDiseaseQualifiersToEntityMixin"
+        "FeatureOrDiseaseQualifiersToEntityMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "EntityToDiseaseAssociation"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -5489,7 +5511,11 @@
       "slot_uri": "https://w3id.org/biolink/vocab/object_specialization_qualifier",
       "owner": "GeneToExpressionSiteAssociation",
       "domain_of": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+        "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
         "GeneToExpressionSiteAssociation"
       ],
       "range": "uriorcurie",
@@ -5619,16 +5645,17 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "EntityToFeatureOrVariantQualifiersMixin",
-        "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin",
-        "GeneToDiseaseOrPhenotypicFeatureAssociation",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "GeneToPhenotypicFeatureAssociation",
+        "GeneToDiseaseAssociation",
+        "EntityToDiseaseAssociation",
         "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
       ],
       "range": "DirectionQualifierEnum",
@@ -5637,7 +5664,7 @@
     {
       "name": "qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink  'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
@@ -5645,18 +5672,18 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
+      "owner": "EntityToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "EntityToFeatureOrVariantQualifiersMixin",
-        "EntityToFeatureOrGeneQualifiersMixin",
-        "FeatureOrDiseaseQualifiersToEntityMixin"
+        "FeatureOrDiseaseQualifiersToEntityMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "EntityToDiseaseAssociation"
       ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
@@ -5721,14 +5748,18 @@
       "is_a": "statement_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
-      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+      "owner": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
         "PredicateMapping",
+        "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "range": "string",
       "multivalued": true,
@@ -5792,10 +5823,15 @@
       "is_a": "context_qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/disease_context_qualifier",
-      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+      "owner": "EntityToDiseaseAssociation",
       "domain_of": [
-        "EntityToFeatureOrDiseaseQualifiersMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+        "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+        "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "EntityToDiseaseAssociation"
       ],
       "range": "Disease",
       "@type": "SlotDefinition"
@@ -5835,9 +5871,12 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/frequency_qualifier",
-      "owner": "FrequencyQualifierMixin",
+      "owner": "EntityToDiseaseAssociation",
       "domain_of": [
-        "FrequencyQualifierMixin"
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+        "FeatureOrDiseaseQualifiersToEntityMixin",
+        "EntityToPhenotypicFeatureAssociationMixin",
+        "EntityToDiseaseAssociation"
       ],
       "range": "frequency_value",
       "@type": "SlotDefinition"
@@ -5962,7 +6001,6 @@
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6767,7 +6805,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6807,7 +6844,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6847,7 +6883,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6887,7 +6922,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6927,7 +6961,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6967,7 +7000,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7007,7 +7039,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7832,7 +7863,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7851,7 +7881,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7886,7 +7915,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7905,7 +7933,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7943,7 +7970,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7962,7 +7988,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8002,7 +8027,6 @@
       "range": "PhysicalEssenceOrOccurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8018,7 +8042,6 @@
       "range": "PhysicalEssenceOrOccurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8133,7 +8156,6 @@
       "range": "GeneProductMixin",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8572,7 +8594,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8605,7 +8626,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8632,7 +8652,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8975,7 +8994,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9031,7 +9049,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9079,7 +9096,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9129,7 +9145,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9188,7 +9203,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9283,7 +9297,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9361,7 +9374,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9380,7 +9392,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9399,7 +9410,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9477,7 +9487,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9532,7 +9541,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9581,7 +9589,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9728,7 +9735,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9752,7 +9758,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9847,7 +9852,6 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10716,7 +10720,6 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10756,7 +10759,6 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10779,7 +10781,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10795,7 +10796,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10920,7 +10920,6 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11526,7 +11525,6 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11571,7 +11569,6 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11602,7 +11599,6 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11697,7 +11693,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11738,7 +11733,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11779,7 +11773,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11823,7 +11816,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11869,7 +11861,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11915,7 +11906,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11957,7 +11947,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12002,7 +11991,6 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12097,7 +12085,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12144,7 +12131,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12203,7 +12189,6 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12606,7 +12591,6 @@
       "range": "ThingWithTaxon",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13101,29 +13085,18 @@
       "owner": "OrganismTaxonToEntityAssociation",
       "domain_of": [
         "Association",
-        "CellLineToEntityAssociationMixin",
         "ChemicalEntityToEntityAssociationMixin",
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
-        "CaseToEntityAssociationMixin",
         "ChemicalEntityToChemicalEntityAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
-        "DiseaseToEntityAssociationMixin",
-        "EntityToExposureEventAssociationMixin",
-        "EntityToOutcomeAssociationMixin",
-        "FrequencyQualifierMixin",
         "EntityToPhenotypicFeatureAssociationMixin",
-        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-        "GenotypeToEntityAssociationMixin",
         "CaseToDiseaseAssociation",
         "CaseToVariantAssociation",
         "CaseToGeneAssociation",
-        "GeneToEntityAssociationMixin",
-        "VariantToEntityAssociationMixin",
-        "ModelToDiseaseAssociationMixin",
         "MacromolecularMachineToEntityAssociationMixin",
         "OrganismTaxonToEntityAssociation"
       ],
@@ -13161,29 +13134,18 @@
       "owner": "OrganismTaxonToEntityAssociation",
       "domain_of": [
         "Association",
-        "CellLineToEntityAssociationMixin",
         "ChemicalEntityToEntityAssociationMixin",
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
-        "CaseToEntityAssociationMixin",
         "ChemicalEntityToChemicalEntityAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
-        "DiseaseToEntityAssociationMixin",
-        "EntityToExposureEventAssociationMixin",
-        "EntityToOutcomeAssociationMixin",
-        "FrequencyQualifierMixin",
         "EntityToPhenotypicFeatureAssociationMixin",
-        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-        "GenotypeToEntityAssociationMixin",
         "CaseToDiseaseAssociation",
         "CaseToVariantAssociation",
         "CaseToGeneAssociation",
-        "GeneToEntityAssociationMixin",
-        "VariantToEntityAssociationMixin",
-        "ModelToDiseaseAssociationMixin",
         "MacromolecularMachineToEntityAssociationMixin",
         "OrganismTaxonToEntityAssociation"
       ],
@@ -13222,29 +13184,18 @@
       "domain_of": [
         "PredicateMapping",
         "Association",
-        "CellLineToEntityAssociationMixin",
         "ChemicalEntityToEntityAssociationMixin",
         "DrugToEntityAssociationMixin",
         "ChemicalToEntityAssociationMixin",
-        "CaseToEntityAssociationMixin",
         "ChemicalEntityToChemicalEntityAssociation",
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MaterialSampleToEntityAssociationMixin",
         "MaterialSampleDerivationAssociation",
-        "DiseaseToEntityAssociationMixin",
-        "EntityToExposureEventAssociationMixin",
-        "EntityToOutcomeAssociationMixin",
-        "FrequencyQualifierMixin",
         "EntityToPhenotypicFeatureAssociationMixin",
-        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-        "GenotypeToEntityAssociationMixin",
         "CaseToDiseaseAssociation",
         "CaseToVariantAssociation",
         "CaseToGeneAssociation",
-        "GeneToEntityAssociationMixin",
-        "VariantToEntityAssociationMixin",
-        "ModelToDiseaseAssociationMixin",
         "MacromolecularMachineToEntityAssociationMixin",
         "OrganismTaxonToEntityAssociation"
       ],
@@ -14164,9 +14115,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/allelic_requirement",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "GeneToDiseaseAssociation",
       "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
+        "GeneToPhenotypicFeatureAssociation",
+        "GeneToDiseaseAssociation"
       ],
       "range": "string",
       "pattern": "^HP:\\d{7}$",
@@ -15541,7 +15493,6 @@
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -16840,7 +16791,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -16878,7 +16828,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -16916,7 +16865,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -16992,7 +16940,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17248,7 +17195,6 @@
       "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17395,7 +17341,6 @@
       "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17800,42 +17745,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "cell_line_to_entity_association_mixin_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "subject",
-      "domain": "CellLineToEntityAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
-      "owner": "CellLineToEntityAssociationMixin",
-      "domain_of": [
-        "CellLineToEntityAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "CellLine",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "cell_line_to_disease_or_phenotypic_feature_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -17867,6 +17776,54 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
+      "range": "CellLine",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_line_to_disease_or_phenotypic_feature_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease or phenotype",
+      "examples": [
+        {
+          "value": "MONDO:0017314",
+          "description": "Ehlers-Danlos syndrome, vascular type",
+          "@type": "Example"
+        },
+        {
+          "value": "MP:0013229",
+          "description": "abnormal brain ventricle size",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+      "domain_of": [
+        "CellLineToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
       "range": "DiseaseOrPhenotypicFeature",
       "required": true,
       "@type": "SlotDefinition"
@@ -17906,7 +17863,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17980,43 +17936,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "case_to_entity_association_mixin_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "the case (e.g. patient) that has the property",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "subject",
-      "domain": "CaseToEntityAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
-      "owner": "CaseToEntityAssociationMixin",
-      "domain_of": [
-        "CaseToEntityAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "Case",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18126,7 +18045,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18256,7 +18174,6 @@
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18272,7 +18189,19 @@
           "local_name_value": "node with incoming relationship"
         }
       },
-      "description": "the disease or phenotype that is affected by the chemical",
+      "description": "disease or phenotype",
+      "examples": [
+        {
+          "value": "MONDO:0017314",
+          "description": "Ehlers-Danlos syndrome, vascular type",
+          "@type": "Example"
+        },
+        {
+          "value": "MP:0013229",
+          "description": "abnormal brain ventricle size",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
@@ -18296,7 +18225,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
+      "name": "chemical_entity_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18318,12 +18247,12 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "domain": "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
-        "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
       ],
       "subproperty_of": "has_adverse_event",
       "is_usage_slot": true,
@@ -18333,7 +18262,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate",
+      "name": "chemical_entity_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18354,13 +18283,13 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
-      "domain": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "is_a": "chemical_entity_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
+      "domain": "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
       "domain_of": [
-        "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
       ],
       "subproperty_of": "has_side_effect",
       "is_usage_slot": true,
@@ -18404,7 +18333,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18959,7 +18887,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19345,7 +19272,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19422,7 +19348,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19490,7 +19415,7 @@
     {
       "name": "gene_regulates_gene_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink  'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
@@ -19866,7 +19791,7 @@
     {
       "name": "chemical_affects_biological_entity_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink  'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
@@ -20190,7 +20115,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20377,7 +20301,7 @@
     {
       "name": "gene_affects_chemical_association_qualified_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink  'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
       ],
@@ -20728,7 +20652,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20877,7 +20800,91 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "disease_to_entity_association_mixin_subject",
+      "name": "material_sample_to_disease_or_phenotypic_feature_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease or phenotype",
+      "examples": [
+        {
+          "value": "MONDO:0017314",
+          "description": "Ehlers-Danlos syndrome, vascular type",
+          "@type": "Example"
+        },
+        {
+          "value": "MP:0013229",
+          "description": "abnormal brain ventricle size",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
+      "domain_of": [
+        "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_to_exposure_event_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "DiseaseToExposureEventAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "DiseaseToExposureEventAssociation",
+      "domain_of": [
+        "DiseaseToExposureEventAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "ExposureEvent",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_to_exposure_event_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -20913,12 +20920,12 @@
         "ncit",
         "doid"
       ],
-      "domain": "DiseaseToEntityAssociationMixin",
+      "domain": "DiseaseToExposureEventAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "DiseaseToEntityAssociationMixin",
+      "owner": "DiseaseToExposureEventAssociation",
       "domain_of": [
-        "DiseaseToEntityAssociationMixin"
+        "DiseaseToExposureEventAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -20927,7 +20934,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "entity_to_exposure_event_association_mixin_object",
+      "name": "exposure_event_to_outcome_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -20949,55 +20956,18 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "object",
-      "domain": "EntityToExposureEventAssociationMixin",
+      "domain": "ExposureEventToOutcomeAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "EntityToExposureEventAssociationMixin",
+      "owner": "ExposureEventToOutcomeAssociation",
       "domain_of": [
-        "EntityToExposureEventAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "object",
-      "range": "ExposureEvent",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "entity_to_outcome_association_mixin_object",
-      "definition_uri": "https://w3id.org/biolink/vocab/object",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "descriptor"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with incoming relationship"
-        }
-      },
-      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedTarget",
-        "http://purl.org/oban/association_has_object"
-      ],
-      "is_a": "object",
-      "domain": "EntityToOutcomeAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-      "alias": "object",
-      "owner": "EntityToOutcomeAssociationMixin",
-      "domain_of": [
-        "EntityToOutcomeAssociationMixin"
+        "ExposureEventToOutcomeAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "Outcome",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -21060,7 +21030,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "phenotypic_feature_to_entity_association_mixin_subject",
+      "name": "phenotypic_feature_to_phenotypic_feature_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -21073,23 +21043,6 @@
         }
       },
       "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-      "examples": [
-        {
-          "value": "HP:0002487",
-          "description": "Hyperkinesis",
-          "@type": "Example"
-        },
-        {
-          "value": "WBPhenotype:0000180",
-          "description": "axon morphology variant",
-          "@type": "Example"
-        },
-        {
-          "value": "MP:0001569",
-          "description": "abnormal circulating bilirubin level",
-          "@type": "Example"
-        }
-      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -21099,21 +21052,51 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "values_from": [
-        "upheno",
-        "hp",
-        "mp",
-        "wbphenotype"
-      ],
-      "domain": "PhenotypicFeatureToEntityAssociationMixin",
+      "domain": "PhenotypicFeatureToPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "PhenotypicFeatureToEntityAssociationMixin",
+      "owner": "PhenotypicFeatureToPhenotypicFeatureAssociation",
       "domain_of": [
-        "PhenotypicFeatureToEntityAssociationMixin"
+        "PhenotypicFeatureToPhenotypicFeatureAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
+      "range": "PhenotypicFeature",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "phenotypic_feature_to_phenotypic_feature_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "PhenotypicFeatureToPhenotypicFeatureAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "PhenotypicFeatureToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "PhenotypicFeatureToPhenotypicFeatureAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
       "range": "PhenotypicFeature",
       "required": true,
       "@type": "SlotDefinition"
@@ -21228,50 +21211,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "entity_to_disease_association_mixin_object",
-      "definition_uri": "https://w3id.org/biolink/vocab/object",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "descriptor"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with incoming relationship"
-        }
-      },
-      "description": "disease",
-      "examples": [
-        {
-          "value": "MONDO:0020066",
-          "description": "Ehlers-Danlos syndrome",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedTarget",
-        "http://purl.org/oban/association_has_object"
-      ],
-      "is_a": "object",
-      "domain": "EntityToDiseaseAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-      "alias": "object",
-      "owner": "EntityToDiseaseAssociationMixin",
-      "domain_of": [
-        "EntityToDiseaseAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "object",
-      "range": "Disease",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease_or_phenotypic_feature_to_entity_association_mixin_subject",
+      "name": "disease_or_phenotypic_feature_to_location_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -21283,7 +21223,7 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "disease or phenotype",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
       "examples": [
         {
           "value": "MONDO:0017314",
@@ -21305,12 +21245,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
+      "domain": "DiseaseOrPhenotypicFeatureToLocationAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
+      "owner": "DiseaseOrPhenotypicFeatureToLocationAssociation",
       "domain_of": [
-        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
+        "DiseaseOrPhenotypicFeatureToLocationAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -21358,6 +21298,54 @@
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_or_phenotypic_feature_to_genetic_inheritance_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "examples": [
+        {
+          "value": "MONDO:0017314",
+          "description": "Ehlers-Danlos syndrome, vascular type",
+          "@type": "Example"
+        },
+        {
+          "value": "MP:0013229",
+          "description": "abnormal brain ventricle size",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
+      "domain_of": [
+        "DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "DiseaseOrPhenotypicFeature",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -21438,90 +21426,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "GeneticInheritance",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "entity_to_disease_or_phenotypic_feature_association_mixin_object",
-      "definition_uri": "https://w3id.org/biolink/vocab/object",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "descriptor"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with incoming relationship"
-        }
-      },
-      "description": "disease or phenotype",
-      "examples": [
-        {
-          "value": "MONDO:0017314",
-          "description": "Ehlers-Danlos syndrome, vascular type",
-          "@type": "Example"
-        },
-        {
-          "value": "MP:0013229",
-          "description": "abnormal brain ventricle size",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedTarget",
-        "http://purl.org/oban/association_has_object"
-      ],
-      "is_a": "object",
-      "domain": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-      "alias": "object",
-      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-      "domain_of": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "object",
-      "range": "DiseaseOrPhenotypicFeature",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "genotype_to_entity_association_mixin_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "genotype that is the subject of the association",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "subject",
-      "domain": "GenotypeToEntityAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
-      "owner": "GenotypeToEntityAssociationMixin",
-      "domain_of": [
-        "GenotypeToEntityAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "Genotype",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -21647,7 +21551,14 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "description": "disease class",
+      "examples": [
+        {
+          "value": "MONDO:0017314",
+          "description": "Ehlers-Danlos syndrome, vascular type",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -21657,6 +21568,13 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
+      "values_from": [
+        "mondo",
+        "omim",
+        "orphanet",
+        "ncit",
+        "doid"
+      ],
       "domain": "DiseaseToPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
@@ -21707,6 +21625,42 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "case_to_phenotypic_feature_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the case (e.g. patient) that has the property",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CaseToPhenotypicFeatureAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "CaseToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "CaseToPhenotypicFeatureAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Case",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "case_to_disease_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
@@ -21739,6 +21693,78 @@
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "case_to_disease_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the case (e.g. patient) that has the property",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CaseToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "CaseToDiseaseAssociation",
+      "domain_of": [
+        "CaseToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Case",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "case_to_variant_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the case (e.g. patient) that has the property",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CaseToVariantAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "CaseToVariantAssociation",
+      "domain_of": [
+        "CaseToVariantAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Case",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -21796,6 +21822,42 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "case_to_gene_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the case (e.g. patient) that has the property",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CaseToGeneAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "CaseToGeneAssociation",
+      "domain_of": [
+        "CaseToGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Case",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "case_to_gene_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
@@ -21830,7 +21892,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -21906,93 +21967,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "gene_to_entity_association_mixin_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "gene that is the subject of the association",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "subject",
-      "domain": "GeneToEntityAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
-      "owner": "GeneToEntityAssociationMixin",
-      "domain_of": [
-        "GeneToEntityAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "GeneOrGeneProduct",
-      "required": true,
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "variant_to_entity_association_mixin_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "a sequence variant in which the allele state is associated with some other entity",
-      "examples": [
-        {
-          "value": "CLINVAR:38077",
-          "description": "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)",
-          "@type": "Example"
-        },
-        {
-          "value": "ClinGen:CA024716",
-          "description": "chr13:g.32921033G>C (hg19) in ClinGen",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "subject",
-      "domain": "VariantToEntityAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
-      "owner": "VariantToEntityAssociationMixin",
-      "domain_of": [
-        "VariantToEntityAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "SequenceVariant",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "gene_to_disease_or_phenotypic_feature_association_subject",
+      "name": "gene_to_phenotypic_feature_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -22021,23 +21996,22 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "domain": "GeneToPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "GeneToPhenotypicFeatureAssociation",
       "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
+        "GeneToPhenotypicFeatureAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
+      "name": "gene_to_phenotypic_feature_association_subject_form_or_variant_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
       "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
       "examples": [
@@ -22067,12 +22041,12 @@
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "subject_form_or_variant_qualifier",
-      "domain": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "domain": "GeneToPhenotypicFeatureAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
       "alias": "subject form or variant qualifier",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "GeneToPhenotypicFeatureAssociation",
       "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
+        "GeneToPhenotypicFeatureAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject form or variant qualifier",
@@ -22080,7 +22054,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
+      "name": "gene_to_phenotypic_feature_association_subject_aspect_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
       "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
       "examples": [
@@ -22106,155 +22080,16 @@
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "subject_aspect_qualifier",
-      "domain": "GeneToDiseaseOrPhenotypicFeatureAssociation",
+      "domain": "GeneToPhenotypicFeatureAssociation",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
       "alias": "subject aspect qualifier",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject aspect qualifier",
-      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "gene_to_disease_or_phenotypic_feature_association_object",
-      "definition_uri": "https://w3id.org/biolink/vocab/object",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "descriptor"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with incoming relationship"
-        }
-      },
-      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedTarget",
-        "http://purl.org/oban/association_has_object"
-      ],
-      "is_a": "object",
-      "domain": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-      "alias": "object",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "object",
-      "range": "DiseaseOrPhenotypicFeature",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
-      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "object_direction_qualifier",
-      "domain": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
-      "alias": "object direction qualifier",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "object direction qualifier",
-      "range": "DirectionQualifierEnum",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "gene_to_disease_or_phenotypic_feature_association_predicate",
-      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation predicate"
-        },
-        "translator": {
-          "local_name_source": "translator",
-          "local_name_value": "predicate"
-        }
-      },
-      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedProperty",
-        "http://purl.org/oban/association_has_predicate"
-      ],
-      "is_a": "predicate",
-      "domain": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-      "alias": "predicate",
-      "owner": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "domain_of": [
-        "GeneToDiseaseOrPhenotypicFeatureAssociation"
-      ],
-      "subproperty_of": "contributes_to",
-      "is_usage_slot": true,
-      "usage_slot_name": "predicate",
-      "range": "uriorcurie",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "gene_to_phenotypic_feature_association_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "gene in which variation is correlated with the phenotypic feature",
-      "examples": [
-        {
-          "value": "HGNC:2197",
-          "description": "COL1A1 (Human)",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "gene_to_disease_or_phenotypic_feature_association_subject",
-      "domain": "GeneToPhenotypicFeatureAssociation",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
       "owner": "GeneToPhenotypicFeatureAssociation",
       "domain_of": [
         "GeneToPhenotypicFeatureAssociation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "GeneOrGeneProduct",
-      "required": true,
-      "inlined": true,
-      "inlined_as_list": true,
+      "usage_slot_name": "subject aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -22279,7 +22114,7 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "gene_to_disease_or_phenotypic_feature_association_object",
+      "is_a": "entity_to_phenotypic_feature_association_mixin_object",
       "domain": "GeneToPhenotypicFeatureAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
@@ -22290,6 +22125,63 @@
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "PhenotypicFeature",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_to_phenotypic_feature_association_object_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_direction_qualifier",
+      "domain": "GeneToPhenotypicFeatureAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "alias": "object direction qualifier",
+      "owner": "GeneToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "GeneToPhenotypicFeatureAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_to_phenotypic_feature_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "GeneToPhenotypicFeatureAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "GeneToPhenotypicFeatureAssociation",
+      "domain_of": [
+        "GeneToPhenotypicFeatureAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "GeneToPhenotypePredicateEnum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22315,7 +22207,7 @@
         "http://www.w3.org/2002/07/owl#annotatedSource",
         "http://purl.org/oban/association_has_subject"
       ],
-      "is_a": "gene_to_disease_or_phenotypic_feature_association_subject",
+      "is_a": "subject",
       "domain": "GeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
@@ -22328,7 +22220,88 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_to_disease_association_subject_form_or_variant_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_form_or_variant_qualifier",
+      "domain": "GeneToDiseaseAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "alias": "subject form or variant qualifier",
+      "owner": "GeneToDiseaseAssociation",
+      "domain_of": [
+        "GeneToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject form or variant qualifier",
+      "range": "ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_to_disease_association_subject_aspect_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_aspect_qualifier",
+      "domain": "GeneToDiseaseAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "alias": "subject aspect qualifier",
+      "owner": "GeneToDiseaseAssociation",
+      "domain_of": [
+        "GeneToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -22344,7 +22317,14 @@
           "local_name_value": "node with incoming relationship"
         }
       },
-      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
@@ -22353,7 +22333,7 @@
         "http://www.w3.org/2002/07/owl#annotatedTarget",
         "http://purl.org/oban/association_has_object"
       ],
-      "is_a": "gene_to_disease_or_phenotypic_feature_association_object",
+      "is_a": "object",
       "domain": "GeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
@@ -22364,6 +22344,64 @@
       "is_usage_slot": true,
       "usage_slot_name": "object",
       "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_to_disease_association_object_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_direction_qualifier",
+      "domain": "GeneToDiseaseAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "alias": "object direction qualifier",
+      "owner": "GeneToDiseaseAssociation",
+      "domain_of": [
+        "GeneToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_to_disease_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "GeneToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "GeneToDiseaseAssociation",
+      "domain_of": [
+        "GeneToDiseaseAssociation"
+      ],
+      "subproperty_of": "contributes_to",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22402,7 +22440,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22442,6 +22479,43 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "causal_gene_to_disease_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "gene_to_disease_association_predicate",
+      "domain": "CausalGeneToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "CausalGeneToDiseaseAssociation",
+      "domain_of": [
+        "CausalGeneToDiseaseAssociation"
+      ],
+      "subproperty_of": "causes",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "correlated_gene_to_disease_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -22476,7 +22550,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22492,7 +22565,14 @@
           "local_name_value": "node with incoming relationship"
         }
       },
-      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
@@ -22537,7 +22617,7 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "predicate",
+      "is_a": "gene_to_disease_association_predicate",
       "domain": "CorrelatedGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
@@ -22587,7 +22667,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22612,7 +22691,7 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "predicate",
+      "is_a": "gene_to_disease_association_predicate",
       "domain": "DruggableGeneToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
@@ -22624,6 +22703,42 @@
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "phenotypic_feature_to_disease_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "PhenotypicFeatureToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "PhenotypicFeatureToDiseaseAssociation",
+      "domain_of": [
+        "PhenotypicFeatureToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "PhenotypicFeature",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -22661,6 +22776,97 @@
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "phenotypic_feature_to_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "PhenotypicFeatureToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "PhenotypicFeatureToDiseaseAssociation",
+      "domain_of": [
+        "PhenotypicFeatureToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant_to_gene_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "a sequence variant in which the allele state is associated in some way with the gene",
+      "examples": [
+        {
+          "value": "CLINVAR:38077",
+          "description": "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)",
+          "@type": "Example"
+        },
+        {
+          "value": "ClinGen:CA024716",
+          "description": "chr13:g.32921033G>C (hg19) in ClinGen",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "VariantToGeneAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "VariantToGeneAssociation",
+      "domain_of": [
+        "VariantToGeneAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "SequenceVariant",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23094,8 +23300,18 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "a sequence variant in which the allele state is associated in some way with the disease state",
+      "description": "a sequence variant in which the allele state is associated in some way with the gene",
       "examples": [
+        {
+          "value": "CLINVAR:38077",
+          "description": "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)",
+          "@type": "Example"
+        },
+        {
+          "value": "ClinGen:CA024716",
+          "description": "chr13:g.32921033G>C (hg19) in ClinGen",
+          "@type": "Example"
+        },
         {
           "value": "CLINVAR:52241",
           "description": "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)",
@@ -23120,7 +23336,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "SequenceVariant",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23217,7 +23433,7 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "a genotype that is associated in some way with a disease state",
+      "description": "genotype that is the subject of the association",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -23236,7 +23452,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "Genotype",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23321,43 +23537,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "model_to_disease_association_mixin_subject",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject",
-      "local_names": {
-        "ga4gh": {
-          "local_name_source": "ga4gh",
-          "local_name_value": "annotation subject"
-        },
-        "neo4j": {
-          "local_name_source": "neo4j",
-          "local_name_value": "node with outgoing relationship"
-        }
-      },
-      "description": "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-      ],
-      "exact_mappings": [
-        "http://www.w3.org/2002/07/owl#annotatedSource",
-        "http://purl.org/oban/association_has_subject"
-      ],
-      "is_a": "subject",
-      "domain": "ModelToDiseaseAssociationMixin",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "alias": "subject",
-      "owner": "ModelToDiseaseAssociationMixin",
-      "domain_of": [
-        "ModelToDiseaseAssociationMixin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "NamedThing",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "model_to_disease_association_mixin_predicate",
+      "name": "gene_as_a_model_of_disease_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -23369,7 +23549,7 @@
           "local_name_value": "predicate"
         }
       },
-      "description": "The relationship to the disease",
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
@@ -23378,13 +23558,13 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "predicate",
-      "domain": "ModelToDiseaseAssociationMixin",
+      "is_a": "gene_to_disease_association_predicate",
+      "domain": "GeneAsAModelOfDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ModelToDiseaseAssociationMixin",
+      "owner": "GeneAsAModelOfDiseaseAssociation",
       "domain_of": [
-        "ModelToDiseaseAssociationMixin"
+        "GeneAsAModelOfDiseaseAssociation"
       ],
       "subproperty_of": "model_of",
       "is_usage_slot": true,
@@ -23428,7 +23608,49 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_as_a_model_of_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "gene_to_disease_association_object",
+      "domain": "GeneAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "GeneAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "GeneAsAModelOfDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23464,6 +23686,86 @@
       "is_usage_slot": true,
       "usage_slot_name": "subject",
       "range": "SequenceVariant",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant_as_a_model_of_disease_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "variant_to_disease_association_predicate",
+      "domain": "VariantAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "VariantAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "VariantAsAModelOfDiseaseAssociation"
+      ],
+      "subproperty_of": "model_of",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant_as_a_model_of_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "variant_to_disease_association_object",
+      "domain": "VariantAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "VariantAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "VariantAsAModelOfDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23504,6 +23806,86 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "genotype_as_a_model_of_disease_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "genotype_to_disease_association_predicate",
+      "domain": "GenotypeAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "GenotypeAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "GenotypeAsAModelOfDiseaseAssociation"
+      ],
+      "subproperty_of": "model_of",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "genotype_as_a_model_of_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "genotype_to_disease_association_object",
+      "domain": "GenotypeAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "GenotypeAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "GenotypeAsAModelOfDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "cell_line_as_a_model_of_disease_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -23516,7 +23898,7 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "A cell line derived from an organismal entity with a disease state that is used as a model of that disease.",
+      "description": "A cell line derived from an organismal entity with a disease state that is used as a   that disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -23536,6 +23918,86 @@
       "is_usage_slot": true,
       "usage_slot_name": "subject",
       "range": "CellLine",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_line_as_a_model_of_disease_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "CellLineAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "CellLineAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "CellLineAsAModelOfDiseaseAssociation"
+      ],
+      "subproperty_of": "model_of",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_line_as_a_model_of_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "cell_line_to_disease_or_phenotypic_feature_association_object",
+      "domain": "CellLineAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "CellLineAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "CellLineAsAModelOfDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23572,6 +24034,86 @@
       "is_usage_slot": true,
       "usage_slot_name": "subject",
       "range": "OrganismalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "organismal_entity_as_a_model_of_disease_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "OrganismalEntityAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "OrganismalEntityAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "OrganismalEntityAsAModelOfDiseaseAssociation"
+      ],
+      "subproperty_of": "model_of",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "organismal_entity_as_a_model_of_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "OrganismalEntityAsAModelOfDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "OrganismalEntityAsAModelOfDiseaseAssociation",
+      "domain_of": [
+        "OrganismalEntityAsAModelOfDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -23754,7 +24296,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23815,7 +24356,7 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "gene_to_disease_or_phenotypic_feature_association_predicate",
+      "is_a": "gene_to_disease_association_predicate",
       "domain": "GeneHasVariantThatContributesToDiseaseAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
@@ -23865,7 +24406,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24115,7 +24655,6 @@
       "range": "MacromolecularMachineMixin",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24547,6 +25086,49 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "entity_to_disease_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "disease",
+      "examples": [
+        {
+          "value": "MONDO:0020066",
+          "description": "Ehlers-Danlos syndrome",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "EntityToDiseaseAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "EntityToDiseaseAssociation",
+      "domain_of": [
+        "EntityToDiseaseAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "Disease",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "genomic_sequence_localization_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -24876,7 +25458,6 @@
       "range": "GeneProductMixin",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25061,7 +25642,6 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25100,7 +25680,6 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25449,7 +26028,6 @@
       "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
       "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -34677,33 +35255,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "CellLineToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/CellLineToEntityAssociationMixin",
-      "description": "An relationship between a cell line and another entity",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "cell_line_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/CellLineToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation",
       "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "CellLineToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -34712,7 +35268,6 @@
         "has_attribute",
         "deprecated",
         "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -34752,14 +35307,20 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "cell_line_to_disease_or_phenotypic_feature_association_subject",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "cell_line_to_disease_or_phenotypic_feature_association_subject",
+        "cell_line_to_disease_or_phenotypic_feature_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -34816,24 +35377,6 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "CaseToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin",
-      "description": "An abstract association for use where the case is the subject",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "case_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin",
       "defining_slots": [
         "subject"
       ],
@@ -35111,9 +35654,6 @@
         "SIO:000993"
       ],
       "is_a": "Association",
-      "mixins": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -35121,8 +35661,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
-        "predicate",
         "negated",
         "qualifier",
         "qualifiers",
@@ -35162,31 +35700,30 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "clinical_approval_status",
+        "subject",
+        "predicate",
         "chemical_entity_to_disease_or_phenotypic_feature_association_object",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "clinical_approval_status"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "defining_slots": [
         "subject",
+        "predicate",
         "object"
       ],
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "name": "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-        "EntityToFeatureOrDiseaseQualifiersMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -35236,20 +35773,20 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
-        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
         "disease_context_qualifier",
-        "subject_specialization_qualifier",
-        "object_specialization_qualifier",
         "anatomical_context_qualifier",
-        "frequency_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
+        "subject_specialization_qualifier",
+        "qualified_predicate",
+        "object_specialization_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate"
+        "frequency_qualifier",
+        "chemical_entity_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -35258,14 +35795,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "name": "ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
       "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
-      "mixins": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
-      ],
+      "is_a": "ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "slots": [
         "id",
         "iri",
@@ -35315,20 +35849,20 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "qualified_predicate",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "frequency_qualifier",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate"
+        "chemical_entity_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -35342,9 +35876,6 @@
       "description": "An interaction between a gene or gene product and a biological process or pathway.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "GeneToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -36269,8 +36800,7 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
-        "MaterialSampleToEntityAssociationMixin",
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "MaterialSampleToEntityAssociationMixin"
       ],
       "slots": [
         "id",
@@ -36281,7 +36811,6 @@
         "deprecated",
         "subject",
         "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -36324,7 +36853,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "material_sample_to_disease_or_phenotypic_feature_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
@@ -36335,50 +36865,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "DiseaseToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "disease_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "EntityToExposureEventAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToExposureEventAssociationMixin",
-      "description": "An association between some entity and an exposure event.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "subject",
-        "predicate",
-        "entity_to_exposure_event_association_mixin_object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToExposureEventAssociationMixin",
-      "defining_slots": [
-        "object"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "DiseaseToExposureEventAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseToExposureEventAssociation",
       "description": "An association between an exposure event and a disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "DiseaseToEntityAssociationMixin",
-        "EntityToExposureEventAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -36386,9 +36877,7 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -36427,7 +36916,9 @@
         "elevate_to_prediction",
         "evidence_count",
         "association_type",
-        "association_category"
+        "association_category",
+        "disease_to_exposure_event_association_object",
+        "disease_to_exposure_event_association_subject"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToExposureEventAssociation",
@@ -36438,32 +36929,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "EntityToOutcomeAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToOutcomeAssociationMixin",
-      "description": "An association between some entity and an outcome",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "subject",
-        "predicate",
-        "entity_to_outcome_association_mixin_object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToOutcomeAssociationMixin",
-      "defining_slots": [
-        "object"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "ExposureEventToOutcomeAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation",
       "description": "An association between an exposure event and an outcome.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "EntityToOutcomeAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -36473,7 +36943,6 @@
         "deprecated",
         "subject",
         "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -36514,7 +36983,8 @@
         "association_type",
         "association_category",
         "population_context_qualifier",
-        "temporal_context_qualifier"
+        "temporal_context_qualifier",
+        "exposure_event_to_outcome_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation",
@@ -36525,105 +36995,18 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "FrequencyQualifierMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/FrequencyQualifierMixin",
-      "description": "Qualifier for frequency type associations",
+      "name": "FeatureOrDiseaseQualifiersToEntityMixin",
+      "definition_uri": "https://w3id.org/biolink/vocab/FeatureOrDiseaseQualifiersToEntityMixin",
+      "description": "Qualifiers for disease or phenotype to entity associations.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slots": [
-        "frequency_qualifier",
-        "subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/FrequencyQualifierMixin",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "EntityToFeatureOrDiseaseQualifiersMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin",
-      "description": "Qualifiers for entity to disease or phenotype associations.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "FrequencyQualifierMixin",
-      "mixin": true,
-      "slots": [
-        "frequency_qualifier",
-        "subject",
-        "predicate",
-        "object",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
-        "disease_context_qualifier"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "EntityToFeatureOrVariantQualifiersMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrVariantQualifiersMixin",
-      "description": "Qualifiers for entity to variant associations.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "FrequencyQualifierMixin",
-      "mixin": true,
-      "slots": [
-        "frequency_qualifier",
-        "subject",
-        "predicate",
-        "object",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrVariantQualifiersMixin",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "EntityToFeatureOrGeneQualifiersMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrGeneQualifiersMixin",
-      "description": "Qualifiers for entity to gene associations.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "FrequencyQualifierMixin",
-      "mixin": true,
-      "slots": [
-        "frequency_qualifier",
-        "subject",
-        "predicate",
-        "object",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToFeatureOrGeneQualifiersMixin",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "FeatureOrDiseaseQualifiersToEntityMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/FeatureOrDiseaseQualifiersToEntityMixin",
-      "description": "Qualifiers for disease or phenotype to entity associations.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "FrequencyQualifierMixin",
-      "mixin": true,
-      "slots": [
-        "frequency_qualifier",
-        "subject",
-        "predicate",
-        "object",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate"
+        "frequency_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/FeatureOrDiseaseQualifiersToEntityMixin",
@@ -36633,23 +37016,22 @@
       "name": "EntityToPhenotypicFeatureAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "EntityToFeatureOrDiseaseQualifiersMixin",
       "mixin": true,
       "mixins": [
         "FrequencyQuantifier"
       ],
       "slots": [
-        "frequency_qualifier",
+        "subject",
+        "predicate",
+        "entity_to_phenotypic_feature_association_mixin_object",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "subject",
-        "predicate",
-        "entity_to_phenotypic_feature_association_mixin_object",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -36674,16 +37056,13 @@
         "FrequencyQuantifier"
       ],
       "slots": [
-        "frequency_qualifier",
-        "predicate",
-        "object",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "frequency_qualifier",
         "sex_qualifier",
-        "phenotypic_feature_to_entity_association_mixin_subject",
         "has_count",
         "has_total",
         "has_quotient",
@@ -36713,9 +37092,7 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -36755,12 +37132,14 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "frequency_qualifier",
+        "phenotypic_feature_to_phenotypic_feature_association_subject",
+        "phenotypic_feature_to_phenotypic_feature_association_object",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
+        "frequency_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -36845,57 +37224,11 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "EntityToDiseaseAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin",
-      "description": "mixin class for any association whose object (target node) is a disease",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "EntityToFeatureOrDiseaseQualifiersMixin",
-      "mixin": true,
-      "slots": [
-        "frequency_qualifier",
-        "subject",
-        "predicate",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "entity_to_disease_association_mixin_object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin",
-      "defining_slots": [
-        "object"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "disease_or_phenotypic_feature_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "DiseaseOrPhenotypicFeatureToLocationAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToLocationAssociation",
       "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -36903,7 +37236,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "predicate",
         "negated",
         "qualifier",
@@ -36944,6 +37276,7 @@
         "evidence_count",
         "association_type",
         "association_category",
+        "disease_or_phenotypic_feature_to_location_association_subject",
         "disease_or_phenotypic_feature_to_location_association_object"
       ],
       "slot_usage": {},
@@ -36956,9 +37289,6 @@
       "description": "An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -36966,7 +37296,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "negated",
         "qualifier",
         "qualifiers",
@@ -37006,51 +37335,12 @@
         "evidence_count",
         "association_type",
         "association_category",
+        "disease_or_phenotypic_feature_to_genetic_inheritance_association_subject",
         "disease_or_phenotypic_feature_to_genetic_inheritance_association_predicate",
         "disease_or_phenotypic_feature_to_genetic_inheritance_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "subject",
-        "predicate",
-        "entity_to_disease_or_phenotypic_feature_association_mixin_object",
-        "disease_context_qualifier",
-        "subject_specialization_qualifier",
-        "object_specialization_qualifier",
-        "anatomical_context_qualifier"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-      "defining_slots": [
-        "subject",
-        "predicate",
-        "object"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "GenotypeToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/GenotypeToEntityAssociationMixin",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "genotype_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/GenotypeToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
       "@type": "ClassDefinition"
     },
     {
@@ -37060,8 +37350,7 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
-        "EntityToPhenotypicFeatureAssociationMixin",
-        "GenotypeToEntityAssociationMixin"
+        "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
         "id",
@@ -37112,14 +37401,14 @@
         "association_category",
         "genotype_to_phenotypic_feature_association_predicate",
         "genotype_to_phenotypic_feature_association_subject",
-        "frequency_qualifier",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -37191,14 +37480,14 @@
         "association_type",
         "association_category",
         "exposure_event_to_phenotypic_feature_association_subject",
-        "frequency_qualifier",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -37223,8 +37512,7 @@
       "is_a": "Association",
       "mixins": [
         "FrequencyQuantifier",
-        "EntityToPhenotypicFeatureAssociationMixin",
-        "DiseaseToEntityAssociationMixin"
+        "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
         "id",
@@ -37280,14 +37568,14 @@
         "has_total",
         "has_quotient",
         "has_percentage",
-        "frequency_qualifier",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier"
+        "frequency_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation",
@@ -37304,8 +37592,7 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
-        "EntityToPhenotypicFeatureAssociationMixin",
-        "CaseToEntityAssociationMixin"
+        "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
         "id",
@@ -37314,7 +37601,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "predicate",
         "object",
         "qualifier",
@@ -37357,14 +37643,15 @@
         "association_category",
         "negated",
         "onset_qualifier",
-        "frequency_qualifier",
+        "case_to_phenotypic_feature_association_subject",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -37385,9 +37672,6 @@
       "description": "An association between a Case (patient) and a Disease",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "CaseToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -37434,7 +37718,7 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "subject",
+        "case_to_disease_association_subject",
         "predicate",
         "case_to_disease_association_object",
         "onset_qualifier"
@@ -37449,9 +37733,6 @@
       "description": "Association between a Case and a Genetic Variant",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "CaseToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -37498,7 +37779,7 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "subject",
+        "case_to_variant_association_subject",
         "predicate",
         "case_to_variant_association_object",
         "case_to_variant_association_has_zygosity"
@@ -37513,9 +37794,6 @@
       "description": "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "CaseToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -37562,7 +37840,7 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "subject",
+        "case_to_gene_association_subject",
         "predicate",
         "case_to_gene_association_object"
       ],
@@ -37628,14 +37906,14 @@
         "association_category",
         "behavior_to_behavioral_feature_association_subject",
         "behavior_to_behavioral_feature_association_object",
-        "frequency_qualifier",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -37650,208 +37928,33 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "GeneToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "gene_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "VariantToEntityAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin",
-      "local_names": [
-        {
-          "local_name_source": "ga4gh",
-          "local_name_value": "variant annotation",
-          "@type": "LocalName"
-        }
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "variant_to_entity_association_mixin_subject",
-        "predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin",
-      "defining_slots": [
-        "subject"
-      ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "comments": [
-        "NCIT:R176 refers to the inverse relationship",
-        "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype",
-        "if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children."
-      ],
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "narrow_mappings": [
-        "WBVocab:Gene-Phenotype-Association",
-        "dcid:DiseaseGeneAssociation",
-        "SIO:000983"
-      ],
-      "is_a": "Association",
-      "mixins": [
-        "EntityToPhenotypicFeatureAssociationMixin",
-        "GeneToEntityAssociationMixin"
-      ],
-      "slots": [
-        "id",
-        "iri",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "negated",
-        "qualifier",
-        "qualifiers",
-        "publications",
-        "association_sources",
-        "has_evidence_of_type",
-        "has_evidence",
-        "knowledge_source",
-        "primary_knowledge_source",
-        "aggregator_knowledge_source",
-        "knowledge_level",
-        "agent_type",
-        "timepoint",
-        "original_subject",
-        "original_predicate",
-        "original_object",
-        "subject_feature_name",
-        "object_feature_name",
-        "subject_category",
-        "object_category",
-        "subject_closure",
-        "object_closure",
-        "subject_category_closure",
-        "object_category_closure",
-        "subject_namespace",
-        "object_namespace",
-        "subject_label_closure",
-        "object_label_closure",
-        "retrieval_source_ids",
-        "p_value",
-        "adjusted_p_value",
-        "supporting_text",
-        "association_has_supporting_studies",
-        "update_date",
-        "has_confidence_score",
-        "elevate_to_prediction",
-        "evidence_count",
-        "association_type",
-        "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
-        "allelic_requirement",
-        "gene_to_disease_or_phenotypic_feature_association_subject",
-        "gene_to_disease_or_phenotypic_feature_association_object",
-        "gene_to_disease_or_phenotypic_feature_association_predicate",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "GeneToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "WBVocab:Gene-Phenotype-Association"
       ],
-      "is_a": "GeneToDiseaseOrPhenotypicFeatureAssociation",
       "mixins": [
-        "EntityToPhenotypicFeatureAssociationMixin",
-        "GeneToEntityAssociationMixin"
+        "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
-        "id",
-        "iri",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "negated",
-        "qualifier",
-        "qualifiers",
-        "publications",
-        "association_sources",
-        "has_evidence_of_type",
-        "has_evidence",
-        "knowledge_source",
-        "primary_knowledge_source",
-        "aggregator_knowledge_source",
-        "knowledge_level",
-        "agent_type",
-        "timepoint",
-        "original_subject",
-        "original_predicate",
-        "original_object",
-        "subject_feature_name",
-        "object_feature_name",
-        "subject_category",
-        "object_category",
-        "subject_closure",
-        "object_closure",
-        "subject_category_closure",
-        "object_category_closure",
-        "subject_namespace",
-        "object_namespace",
-        "subject_label_closure",
-        "object_label_closure",
-        "retrieval_source_ids",
-        "p_value",
-        "adjusted_p_value",
-        "supporting_text",
-        "association_has_supporting_studies",
-        "update_date",
-        "has_confidence_score",
-        "elevate_to_prediction",
-        "evidence_count",
-        "association_type",
-        "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_phenotypic_feature_association_subject_form_or_variant_qualifier",
+        "gene_to_phenotypic_feature_association_subject_aspect_qualifier",
+        "gene_to_phenotypic_feature_association_object_direction_qualifier",
         "allelic_requirement",
-        "gene_to_disease_or_phenotypic_feature_association_predicate",
-        "frequency_qualifier",
+        "gene_to_phenotypic_feature_association_subject",
+        "gene_to_phenotypic_feature_association_object",
+        "gene_to_phenotypic_feature_association_predicate",
+        "sex_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
-        "has_percentage",
-        "gene_to_phenotypic_feature_association_subject",
-        "gene_to_phenotypic_feature_association_object"
+        "has_percentage"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
@@ -37865,7 +37968,8 @@
       "name": "GeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
       "comments": [
-        "NCIT:R176 refers to the inverse relationship"
+        "NCIT:R176 refers to the inverse relationship",
+        "for use in describing the effect that the loss of function of a gene can have on exacerbating or ameliorating a disease"
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
@@ -37874,10 +37978,7 @@
       "close_mappings": [
         "dcid:DiseaseGeneAssociation"
       ],
-      "is_a": "GeneToDiseaseOrPhenotypicFeatureAssociation",
-      "mixins": [
-        "GeneToEntityAssociationMixin"
-      ],
+      "is_a": "Association",
       "slots": [
         "id",
         "iri",
@@ -37924,23 +38025,13 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_disease_association_subject_form_or_variant_qualifier",
+        "gene_to_disease_association_subject_aspect_qualifier",
+        "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
-        "gene_to_disease_or_phenotypic_feature_association_predicate",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage",
         "gene_to_disease_association_subject",
-        "gene_to_disease_association_object"
+        "gene_to_disease_association_object",
+        "gene_to_disease_association_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
@@ -37955,9 +38046,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/CausalGeneToDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
-      "mixins": [
-        "GeneToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38004,23 +38092,13 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_disease_association_subject_form_or_variant_qualifier",
+        "gene_to_disease_association_subject_aspect_qualifier",
+        "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
-        "gene_to_disease_or_phenotypic_feature_association_predicate",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage",
         "causal_gene_to_disease_association_subject",
-        "causal_gene_to_disease_association_object"
+        "causal_gene_to_disease_association_object",
+        "causal_gene_to_disease_association_predicate"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CausalGeneToDiseaseAssociation",
@@ -38035,10 +38113,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/CorrelatedGeneToDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
-      "mixins": [
-        "EntityToDiseaseAssociationMixin",
-        "GeneToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38085,20 +38159,10 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_disease_association_subject_form_or_variant_qualifier",
+        "gene_to_disease_association_subject_aspect_qualifier",
+        "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage",
         "z_score",
         "correlated_gene_to_disease_association_subject",
         "correlated_gene_to_disease_association_object",
@@ -38118,10 +38182,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
-      "mixins": [
-        "EntityToDiseaseAssociationMixin",
-        "GeneToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38168,20 +38228,10 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_disease_association_subject_form_or_variant_qualifier",
+        "gene_to_disease_association_subject_aspect_qualifier",
+        "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage",
         "gene_to_disease_association_object",
         "druggable_gene_category",
         "druggable_gene_to_disease_association_subject",
@@ -38202,7 +38252,6 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
-        "EntityToDiseaseAssociationMixin",
         "PhenotypicFeatureToEntityAssociationMixin"
       ],
       "slots": [
@@ -38212,8 +38261,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -38253,14 +38300,15 @@
         "evidence_count",
         "association_type",
         "association_category",
+        "phenotypic_feature_to_disease_association_subject",
         "phenotypic_feature_to_disease_association_predicate",
-        "frequency_qualifier",
+        "phenotypic_feature_to_disease_association_object",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
-        "disease_context_qualifier",
+        "frequency_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -38282,9 +38330,6 @@
       "description": "An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "VariantToEntityAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38292,7 +38337,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "negated",
         "qualifier",
         "qualifiers",
@@ -38332,6 +38376,7 @@
         "evidence_count",
         "association_type",
         "association_category",
+        "variant_to_gene_association_subject",
         "variant_to_gene_association_object",
         "variant_to_gene_association_predicate"
       ],
@@ -38360,7 +38405,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "subject",
         "negated",
         "qualifier",
         "qualifiers",
@@ -38400,6 +38444,7 @@
         "evidence_count",
         "association_type",
         "association_category",
+        "variant_to_gene_association_subject",
         "variant_to_gene_association_object",
         "variant_to_gene_expression_association_predicate",
         "gene_expression_mixin_quantifier_qualifier",
@@ -38423,9 +38468,7 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
-        "VariantToEntityAssociationMixin",
-        "FrequencyQuantifier",
-        "FrequencyQualifierMixin"
+        "FrequencyQuantifier"
       ],
       "slots": [
         "id",
@@ -38479,14 +38522,14 @@
         "variant_to_population_association_has_quotient",
         "variant_to_population_association_has_count",
         "variant_to_population_association_has_total",
-        "has_percentage",
-        "frequency_qualifier"
+        "has_percentage"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToPopulationAssociation",
       "defining_slots": [
         "subject",
-        "object"
+        "object",
+        "frequency_qualifier"
       ],
       "@type": "ClassDefinition"
     },
@@ -38560,7 +38603,6 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
-        "VariantToEntityAssociationMixin",
         "EntityToPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
@@ -38612,14 +38654,14 @@
         "association_type",
         "association_category",
         "variant_to_phenotypic_feature_association_subject",
-        "frequency_qualifier",
+        "sex_qualifier",
         "subject_aspect_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
         "qualified_predicate",
         "disease_context_qualifier",
-        "sex_qualifier",
+        "frequency_qualifier",
         "has_count",
         "has_total",
         "has_quotient",
@@ -38641,10 +38683,6 @@
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "VariantToEntityAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38693,14 +38731,7 @@
         "association_category",
         "variant_to_disease_association_subject",
         "variant_to_disease_association_predicate",
-        "variant_to_disease_association_object",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier"
+        "variant_to_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToDiseaseAssociation",
@@ -38718,10 +38749,6 @@
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "GenotypeToEntityAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38770,14 +38797,7 @@
         "association_category",
         "genotype_to_disease_association_subject",
         "genotype_to_disease_association_predicate",
-        "genotype_to_disease_association_object",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier"
+        "genotype_to_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
@@ -38788,29 +38808,10 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ModelToDiseaseAssociationMixin",
-      "definition_uri": "https://w3id.org/biolink/vocab/ModelToDiseaseAssociationMixin",
-      "description": "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "mixin": true,
-      "slots": [
-        "model_to_disease_association_mixin_subject",
-        "model_to_disease_association_mixin_predicate",
-        "object"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ModelToDiseaseAssociationMixin",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "GeneAsAModelOfDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
-      "mixins": [
-        "ModelToDiseaseAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38857,23 +38858,13 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_disease_association_subject_form_or_variant_qualifier",
+        "gene_to_disease_association_subject_aspect_qualifier",
+        "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
-        "gene_to_disease_or_phenotypic_feature_association_predicate",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage",
-        "gene_to_disease_association_object",
-        "gene_as_a_model_of_disease_association_subject"
+        "gene_as_a_model_of_disease_association_predicate",
+        "gene_as_a_model_of_disease_association_subject",
+        "gene_as_a_model_of_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation",
@@ -38889,10 +38880,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/VariantAsAModelOfDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "VariantToDiseaseAssociation",
-      "mixins": [
-        "ModelToDiseaseAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -38939,16 +38926,9 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "variant_to_disease_association_predicate",
-        "variant_to_disease_association_object",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "variant_as_a_model_of_disease_association_subject"
+        "variant_as_a_model_of_disease_association_subject",
+        "variant_as_a_model_of_disease_association_predicate",
+        "variant_as_a_model_of_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantAsAModelOfDiseaseAssociation",
@@ -38964,10 +38944,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/GenotypeAsAModelOfDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GenotypeToDiseaseAssociation",
-      "mixins": [
-        "ModelToDiseaseAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -39014,16 +38990,9 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "genotype_to_disease_association_predicate",
-        "genotype_to_disease_association_object",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "genotype_as_a_model_of_disease_association_subject"
+        "genotype_as_a_model_of_disease_association_subject",
+        "genotype_as_a_model_of_disease_association_predicate",
+        "genotype_as_a_model_of_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeAsAModelOfDiseaseAssociation",
@@ -39039,10 +39008,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
-      "mixins": [
-        "ModelToDiseaseAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -39050,8 +39015,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -39096,12 +39059,8 @@
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
         "cell_line_as_a_model_of_disease_association_subject",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate"
+        "cell_line_as_a_model_of_disease_association_predicate",
+        "cell_line_as_a_model_of_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation",
@@ -39117,10 +39076,6 @@
       "definition_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
-      "mixins": [
-        "ModelToDiseaseAssociationMixin",
-        "EntityToDiseaseAssociationMixin"
-      ],
       "slots": [
         "id",
         "iri",
@@ -39128,8 +39083,6 @@
         "description",
         "has_attribute",
         "deprecated",
-        "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -39170,13 +39123,8 @@
         "association_type",
         "association_category",
         "organismal_entity_as_a_model_of_disease_association_subject",
-        "frequency_qualifier",
-        "subject_aspect_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "object_direction_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier"
+        "organismal_entity_as_a_model_of_disease_association_predicate",
+        "organismal_entity_as_a_model_of_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -39366,19 +39314,9 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier",
-        "gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier",
+        "gene_to_disease_association_subject_aspect_qualifier",
+        "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
-        "frequency_qualifier",
-        "subject_direction_qualifier",
-        "object_aspect_qualifier",
-        "qualified_predicate",
-        "disease_context_qualifier",
-        "sex_qualifier",
-        "has_count",
-        "has_total",
-        "has_quotient",
-        "has_percentage",
         "subject_form_or_variant_qualifier",
         "gene_has_variant_that_contributes_to_disease_association_subject",
         "gene_has_variant_that_contributes_to_disease_association_object",
@@ -40006,7 +39944,6 @@
         "deprecated",
         "subject",
         "predicate",
-        "object",
         "negated",
         "qualifier",
         "qualifiers",
@@ -40049,7 +39986,15 @@
         "clinical_approval_status",
         "max_research_phase",
         "FDA_regulatory_approvals",
-        "number_of_cases"
+        "number_of_cases",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate",
+        "disease_context_qualifier",
+        "frequency_qualifier",
+        "entity_to_disease_association_object"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
@@ -41174,9 +41119,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-23T01:08:25",
-  "source_file_size": 456527,
-  "generation_date": "2026-01-23T01:08:31",
+  "source_file_date": "2026-01-23T16:21:40",
+  "source_file_size": 453252,
+  "generation_date": "2026-01-23T16:21:54",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-23T01:08:47
+# Generation date: 2026-01-23T16:22:23
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1151,11 +1151,11 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
-class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
+class ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
-class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
+class ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId(ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
     pass
 
 
@@ -1271,15 +1271,7 @@ class BehaviorToBehavioralFeatureAssociationId(AssociationId):
     pass
 
 
-class GeneToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
-    pass
-
-
-class GeneToPhenotypicFeatureAssociationId(GeneToDiseaseOrPhenotypicFeatureAssociationId):
-    pass
-
-
-class GeneToDiseaseAssociationId(GeneToDiseaseOrPhenotypicFeatureAssociationId):
+class GeneToDiseaseAssociationId(AssociationId):
     pass
 
 
@@ -8716,41 +8708,6 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
 
 
 @dataclass(repr=False)
-class CellLineToEntityAssociationMixin(YAMLRoot):
-    """
-    An relationship between a cell line and another entity
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:CellLineToEntityAssociationMixin"
-    class_name: ClassVar[str] = "cell line to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineToEntityAssociationMixin
-
-    subject: Union[str, CellLineId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, CellLineId):
-            self.subject = CellLineId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
@@ -8765,10 +8722,10 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
 
     id: Union[str, CellLineToDiseaseOrPhenotypicFeatureAssociationId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
+    subject: Union[str, CellLineId] = None
+    object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
@@ -8780,20 +8737,15 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
         if not isinstance(self.id, CellLineToDiseaseOrPhenotypicFeatureAssociationId):
             self.id = CellLineToDiseaseOrPhenotypicFeatureAssociationId(self.id)
 
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, CellLineId):
+            self.subject = CellLineId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, DiseaseOrPhenotypicFeatureId):
-            self.subject = DiseaseOrPhenotypicFeatureId(self.subject)
+        if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
+            self.object = DiseaseOrPhenotypicFeatureId(self.object)
 
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
@@ -8925,41 +8877,6 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, ChemicalEntityOrGeneOrGeneProduct):
             self.subject = ChemicalEntityOrGeneOrGeneProduct()
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class CaseToEntityAssociationMixin(YAMLRoot):
-    """
-    An abstract association for use where the case is the subject
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["CaseToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:CaseToEntityAssociationMixin"
-    class_name: ClassVar[str] = "case to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.CaseToEntityAssociationMixin
-
-    subject: Union[str, CaseId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, CaseId):
-            self.subject = CaseId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
 
         super().__post_init__(**kwargs)
 
@@ -9160,16 +9077,16 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
 
     id: Union[str, ChemicalEntityToDiseaseOrPhenotypicFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, NamedThingId] = None
+    predicate: Union[str, URIorCURIE] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
+    clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -9192,9 +9109,6 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
         if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
             self.object = DiseaseOrPhenotypicFeatureId(self.object)
 
-        if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
-            self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
-
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
@@ -9208,6 +9122,9 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
             self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
         self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
+        if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
+            self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
+
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -9215,19 +9132,19 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 
 @dataclass(repr=False)
-class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Association):
+class ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
     feature where the disease or phenotypic feature is a secondary undesirable effect.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "chemical or drug or treatment to disease or phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "chemical entity or drug or treatment to disease or phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
 
-    id: Union[str, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId] = None
+    id: Union[str, ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
@@ -9235,31 +9152,21 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     predicate: Union[str, URIorCURIE] = None
     FDA_adverse_event_level: Optional[Union[str, "FDAIDAAdverseEventEnum"]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(self.id)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.id, ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
+            self.id = ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(self.id)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -9272,18 +9179,9 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.subject_specialization_qualifier is not None and not isinstance(self.subject_specialization_qualifier, URIorCURIE):
-            self.subject_specialization_qualifier = URIorCURIE(self.subject_specialization_qualifier)
-
-        if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
-            self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
-
         if not isinstance(self.anatomical_context_qualifier, list):
             self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
         self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -9291,14 +9189,23 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
         if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
             self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
 
+        if self.subject_specialization_qualifier is not None and not isinstance(self.subject_specialization_qualifier, URIorCURIE):
+            self.subject_specialization_qualifier = URIorCURIE(self.subject_specialization_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
+            self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
+
         if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
             self.object_aspect_qualifier = str(self.object_aspect_qualifier)
 
         if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
             self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
 
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9307,19 +9214,19 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
 
 
 @dataclass(repr=False)
-class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation):
+class ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
     feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "chemical or drug or treatment side effect disease or phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "chemical entity or drug or treatment side effect disease or phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
 
-    id: Union[str, ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId] = None
+    id: Union[str, ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
@@ -9333,18 +9240,8 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId(self.id)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.id, ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId):
+            self.id = ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId(self.id)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -9394,11 +9291,6 @@ class GeneToPathwayAssociation(Association):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToPathwayAssociationId):
             self.id = GeneToPathwayAssociationId(self.id)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -10251,9 +10143,9 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: Union[str, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
@@ -10277,8 +10169,8 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
+            self.object = DiseaseOrPhenotypicFeatureId(self.object)
 
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
@@ -10300,73 +10192,6 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 
 @dataclass(repr=False)
-class DiseaseToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:DiseaseToEntityAssociationMixin"
-    class_name: ClassVar[str] = "disease to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToEntityAssociationMixin
-
-    subject: Union[str, DiseaseId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, DiseaseId):
-            self.subject = DiseaseId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class EntityToExposureEventAssociationMixin(YAMLRoot):
-    """
-    An association between some entity and an exposure event.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToExposureEventAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToExposureEventAssociationMixin"
-    class_name: ClassVar[str] = "entity to exposure event association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToExposureEventAssociationMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, ExposureEventId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, ExposureEventId):
-            self.object = ExposureEventId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class DiseaseToExposureEventAssociation(Association):
     """
     An association between an exposure event and a disease.
@@ -10379,11 +10204,11 @@ class DiseaseToExposureEventAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToExposureEventAssociation
 
     id: Union[str, DiseaseToExposureEventAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    object: Union[str, ExposureEventId] = None
+    subject: Union[str, DiseaseId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -10391,60 +10216,20 @@ class DiseaseToExposureEventAssociation(Association):
         if not isinstance(self.id, DiseaseToExposureEventAssociationId):
             self.id = DiseaseToExposureEventAssociationId(self.id)
 
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.object, ExposureEventId):
+            self.object = ExposureEventId(self.object)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, DiseaseId):
+            self.subject = DiseaseId(self.subject)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class EntityToOutcomeAssociationMixin(YAMLRoot):
-    """
-    An association between some entity and an outcome
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToOutcomeAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToOutcomeAssociationMixin"
-    class_name: ClassVar[str] = "entity to outcome association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToOutcomeAssociationMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[dict, Outcome] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, Outcome):
-            self.object = Outcome()
-
-        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -10462,9 +10247,9 @@ class ExposureEventToOutcomeAssociation(Association):
     id: Union[str, ExposureEventToOutcomeAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    object: Union[dict, Outcome] = None
     population_context_qualifier: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
     temporal_context_qualifier: Optional[Union[str, TimeType]] = None
 
@@ -10474,20 +10259,10 @@ class ExposureEventToOutcomeAssociation(Association):
         if not isinstance(self.id, ExposureEventToOutcomeAssociationId):
             self.id = ExposureEventToOutcomeAssociationId(self.id)
 
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.object, Outcome):
+            self.object = Outcome()
 
         if self.population_context_qualifier is not None and not isinstance(self.population_context_qualifier, PopulationOfIndividualOrganismsId):
             self.population_context_qualifier = PopulationOfIndividualOrganismsId(self.population_context_qualifier)
@@ -10502,170 +10277,7 @@ class ExposureEventToOutcomeAssociation(Association):
 
 
 @dataclass(repr=False)
-class FrequencyQualifierMixin(YAMLRoot):
-    """
-    Qualifier for frequency type associations
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["FrequencyQualifierMixin"]
-    class_class_curie: ClassVar[str] = "biolink:FrequencyQualifierMixin"
-    class_name: ClassVar[str] = "frequency qualifier mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.FrequencyQualifierMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
-    """
-    Qualifiers for entity to disease or phenotype associations.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToFeatureOrDiseaseQualifiersMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToFeatureOrDiseaseQualifiersMixin"
-    class_name: ClassVar[str] = "entity to feature or disease qualifiers mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrDiseaseQualifiersMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class EntityToFeatureOrVariantQualifiersMixin(FrequencyQualifierMixin):
-    """
-    Qualifiers for entity to variant associations.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToFeatureOrVariantQualifiersMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToFeatureOrVariantQualifiersMixin"
-    class_name: ClassVar[str] = "entity to feature or variant qualifiers mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrVariantQualifiersMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class EntityToFeatureOrGeneQualifiersMixin(FrequencyQualifierMixin):
-    """
-    Qualifiers for entity to gene associations.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToFeatureOrGeneQualifiersMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToFeatureOrGeneQualifiersMixin"
-    class_name: ClassVar[str] = "entity to feature or gene qualifiers mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrGeneQualifiersMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
+class FeatureOrDiseaseQualifiersToEntityMixin(YAMLRoot):
     """
     Qualifiers for disease or phenotype to entity associations.
     """
@@ -10676,14 +10288,12 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
     class_name: ClassVar[str] = "feature or disease qualifiers to entity mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FeatureOrDiseaseQualifiersToEntityMixin
 
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
@@ -10701,11 +10311,14 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
             self.qualified_predicate = URIorCURIE(self.qualified_predicate)
 
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
+class EntityToPhenotypicFeatureAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociationMixin"]
@@ -10717,6 +10330,13 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, PhenotypicFeatureId] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    subject_aspect_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_quotient: Optional[float] = None
@@ -10740,6 +10360,27 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         if self.has_count is not None and not isinstance(self.has_count, int):
             self.has_count = int(self.has_count)
@@ -10765,9 +10406,6 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
     class_name: ClassVar[str] = "phenotypic feature to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeatureToEntityAssociationMixin
 
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-    subject: Union[str, PhenotypicFeatureId] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
@@ -10775,11 +10413,6 @@ class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEnti
     has_percentage: Optional[float] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, PhenotypicFeatureId):
-            self.subject = PhenotypicFeatureId(self.subject)
-
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
@@ -10812,17 +10445,17 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeatureToPhenotypicFeatureAssociation
 
     id: Union[str, PhenotypicFeatureToPhenotypicFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject: Union[str, PhenotypicFeatureId] = None
+    object: Union[str, PhenotypicFeatureId] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
@@ -10832,23 +10465,20 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
         if not isinstance(self.id, PhenotypicFeatureToPhenotypicFeatureAssociationId):
             self.id = PhenotypicFeatureToPhenotypicFeatureAssociationId(self.id)
 
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
 
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, PhenotypicFeatureId):
+            self.subject = PhenotypicFeatureId(self.subject)
+
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if not isinstance(self.object, PhenotypicFeatureId):
+            self.object = PhenotypicFeatureId(self.object)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -10864,6 +10494,9 @@ class PhenotypicFeatureToPhenotypicFeatureAssociation(Association):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
             self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
@@ -10929,63 +10562,6 @@ class InformationContentEntityToNamedThingAssociation(Association):
 
 
 @dataclass(repr=False)
-class EntityToDiseaseAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
-    """
-    mixin class for any association whose object (target node) is a disease
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociationMixin"
-    class_name: ClassVar[str] = "entity to disease association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociationMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, DiseaseId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, DiseaseId):
-            self.object = DiseaseId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class DiseaseOrPhenotypicFeatureToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseOrPhenotypicFeatureToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
-    class_name: ClassVar[str] = "disease or phenotypic feature to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToEntityAssociationMixin
-
-    subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, DiseaseOrPhenotypicFeatureId):
-            self.subject = DiseaseOrPhenotypicFeatureId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     """
     An association between either a disease or a phenotypic feature and an anatomical entity, where the
@@ -10999,10 +10575,10 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToLocationAssociation
 
     id: Union[str, DiseaseOrPhenotypicFeatureToLocationAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
     object: Union[str, AnatomicalEntityId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -11013,13 +10589,8 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
+        if not isinstance(self.subject, DiseaseOrPhenotypicFeatureId):
+            self.subject = DiseaseOrPhenotypicFeatureId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -11045,9 +10616,9 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
 
     id: Union[str, DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, GeneticInheritanceId] = None
 
@@ -11059,8 +10630,8 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, DiseaseOrPhenotypicFeatureId):
+            self.subject = DiseaseOrPhenotypicFeatureId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -11076,87 +10647,6 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseOrPhenotypicFeatureAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
-    class_name: ClassVar[str] = "entity to disease or phenotypic feature association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseOrPhenotypicFeatureAssociationMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
-    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
-            self.object = DiseaseOrPhenotypicFeatureId(self.object)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
-
-        if self.subject_specialization_qualifier is not None and not isinstance(self.subject_specialization_qualifier, URIorCURIE):
-            self.subject_specialization_qualifier = URIorCURIE(self.subject_specialization_qualifier)
-
-        if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
-            self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
-
-        if not isinstance(self.anatomical_context_qualifier, list):
-            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
-        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class GenotypeToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:GenotypeToEntityAssociationMixin"
-    class_name: ClassVar[str] = "genotype to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToEntityAssociationMixin
-
-    subject: Union[str, GenotypeId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GenotypeId):
-            self.subject = GenotypeId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -11178,14 +10668,14 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, URIorCURIE] = None
     subject: Union[str, GenotypeId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11208,8 +10698,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         if not isinstance(self.subject, GenotypeId):
             self.subject = GenotypeId(self.subject)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -11229,8 +10719,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11257,14 +10747,14 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ExposureEventId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11287,8 +10777,8 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
         if not isinstance(self.subject, ExposureEventId):
             self.subject = ExposureEventId(self.subject)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -11308,8 +10798,8 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11341,14 +10831,14 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     has_total: Optional[int] = None
     has_quotient: Optional[float] = None
     has_percentage: Optional[float] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11386,8 +10876,8 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         if self.has_percentage is not None and not isinstance(self.has_percentage, float):
             self.has_percentage = float(self.has_percentage)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -11407,8 +10897,8 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11430,32 +10920,27 @@ class CaseToPhenotypicFeatureAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.CaseToPhenotypicFeatureAssociation
 
     id: Union[str, CaseToPhenotypicFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, CaseId] = None
     negated: Optional[Union[bool, Bool]] = None
     onset_qualifier: Optional[Union[str, OnsetId]] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CaseToPhenotypicFeatureAssociationId):
             self.id = CaseToPhenotypicFeatureAssociationId(self.id)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -11467,14 +10952,19 @@ class CaseToPhenotypicFeatureAssociation(Association):
         if not isinstance(self.object, NamedThingId):
             self.object = NamedThingId(self.object)
 
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, CaseId):
+            self.subject = CaseId(self.subject)
+
         if self.negated is not None and not isinstance(self.negated, Bool):
             self.negated = Bool(self.negated)
 
         if self.onset_qualifier is not None and not isinstance(self.onset_qualifier, OnsetId):
             self.onset_qualifier = OnsetId(self.onset_qualifier)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -11494,8 +10984,8 @@ class CaseToPhenotypicFeatureAssociation(Association):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11518,7 +11008,7 @@ class CaseToDiseaseAssociation(Association):
     id: Union[str, CaseToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, NamedThingId] = None
+    subject: Union[str, CaseId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, DiseaseId] = None
     onset_qualifier: Optional[Union[str, OnsetId]] = None
@@ -11531,8 +11021,8 @@ class CaseToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, CaseId):
+            self.subject = CaseId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -11568,7 +11058,7 @@ class CaseToVariantAssociation(Association):
     id: Union[str, CaseToVariantAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, NamedThingId] = None
+    subject: Union[str, CaseId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, SequenceVariantId] = None
     has_zygosity: Optional[Union[str, ZygosityId]] = None
@@ -11581,8 +11071,8 @@ class CaseToVariantAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, CaseId):
+            self.subject = CaseId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -11618,7 +11108,7 @@ class CaseToGeneAssociation(Association):
     id: Union[str, CaseToGeneAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, NamedThingId] = None
+    subject: Union[str, CaseId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
@@ -11630,8 +11120,8 @@ class CaseToGeneAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, CaseId):
+            self.subject = CaseId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -11668,14 +11158,14 @@ class BehaviorToBehavioralFeatureAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, BehaviorId] = None
     object: Union[str, BehavioralFeatureId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11698,8 +11188,8 @@ class BehaviorToBehavioralFeatureAssociation(Association):
         if not isinstance(self.object, BehavioralFeatureId):
             self.object = BehavioralFeatureId(self.object)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -11719,8 +11209,8 @@ class BehaviorToBehavioralFeatureAssociation(Association):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11729,17 +11219,27 @@ class BehaviorToBehavioralFeatureAssociation(Association):
 
 
 @dataclass(repr=False)
-class GeneToEntityAssociationMixin(YAMLRoot):
+class GeneToPhenotypicFeatureAssociation(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:GeneToEntityAssociationMixin"
-    class_name: ClassVar[str] = "gene to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPhenotypicFeatureAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:GeneToPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "gene to phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
 
     subject: Union[dict, GeneOrGeneProduct] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
+    object: Union[str, PhenotypicFeatureId] = None
+    predicate: Union[str, "GeneToPhenotypePredicateEnum"] = None
+    subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    allelic_requirement: Optional[str] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
@@ -11747,82 +11247,74 @@ class GeneToEntityAssociationMixin(YAMLRoot):
         if not isinstance(self.subject, GeneOrGeneProduct):
             self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.object, PhenotypicFeatureId):
+            self.object = PhenotypicFeatureId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, GeneToPhenotypePredicateEnum):
+            self.predicate = GeneToPhenotypePredicateEnum(self.predicate)
+
+        if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, ChemicalOrGeneOrGeneProductFormOrVariantEnum):
+            self.subject_form_or_variant_qualifier = ChemicalOrGeneOrGeneProductFormOrVariantEnum(self.subject_form_or_variant_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.allelic_requirement is not None and not isinstance(self.allelic_requirement, str):
+            self.allelic_requirement = str(self.allelic_requirement)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class VariantToEntityAssociationMixin(YAMLRoot):
+class GeneToDiseaseAssociation(Association):
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToEntityAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:VariantToEntityAssociationMixin"
-    class_name: ClassVar[str] = "variant to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToEntityAssociationMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseAssociation"
+    class_name: ClassVar[str] = "gene to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
 
-    subject: Union[str, SequenceVariantId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, SequenceVariantId):
-            self.subject = SequenceVariantId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseOrPhenotypicFeatureAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseOrPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "gene to disease or phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseOrPhenotypicFeatureAssociation
-
-    id: Union[str, GeneToDiseaseOrPhenotypicFeatureAssociationId] = None
+    id: Union[str, GeneToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[str, DiseaseOrPhenotypicFeatureId] = None
+    object: Union[str, DiseaseId] = None
     predicate: Union[str, URIorCURIE] = None
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     allelic_requirement: Optional[str] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, GeneToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = GeneToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, GeneToDiseaseAssociationId):
+            self.id = GeneToDiseaseAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -11831,8 +11323,8 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
-            self.object = DiseaseOrPhenotypicFeatureId(self.object)
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -11850,124 +11342,6 @@ class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
 
         if self.allelic_requirement is not None and not isinstance(self.allelic_requirement, str):
             self.allelic_requirement = str(self.allelic_requirement)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
-
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
-        super().__post_init__(**kwargs)
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPhenotypicFeatureAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:GeneToPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "gene to phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
-
-    id: Union[str, GeneToPhenotypicFeatureAssociationId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
-    agent_type: Union[str, "AgentTypeEnum"] = None
-    predicate: Union[str, URIorCURIE] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[str, PhenotypicFeatureId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GeneToPhenotypicFeatureAssociationId):
-            self.id = GeneToPhenotypicFeatureAssociationId(self.id)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, PhenotypicFeatureId):
-            self.object = PhenotypicFeatureId(self.object)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
-
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
-
-        super().__post_init__(**kwargs)
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseAssociation"
-    class_name: ClassVar[str] = "gene to disease association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
-
-    id: Union[str, GeneToDiseaseAssociationId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
-    agent_type: Union[str, "AgentTypeEnum"] = None
-    predicate: Union[str, URIorCURIE] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[str, DiseaseId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GeneToDiseaseAssociationId):
-            self.id = GeneToDiseaseAssociationId(self.id)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, DiseaseId):
-            self.object = DiseaseId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11987,9 +11361,9 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     id: Union[str, CausalGeneToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    predicate: Union[str, URIorCURIE] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
+    predicate: Union[str, URIorCURIE] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12006,6 +11380,11 @@ class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
             self.MissingRequiredField("object")
         if not isinstance(self.object, DiseaseId):
             self.object = DiseaseId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12028,11 +11407,6 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, DiseaseId] = None
     predicate: Union[str, URIorCURIE] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     z_score: Optional[float] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -12055,21 +11429,6 @@ class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         if self.z_score is not None and not isinstance(self.z_score, float):
             self.z_score = float(self.z_score)
@@ -12095,11 +11454,6 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     object: Union[str, DiseaseId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, URIorCURIE] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     druggable_gene_category: Optional[Union[str, "DruggableGeneCategoryEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -12117,21 +11471,6 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         if self.druggable_gene_category is not None and not isinstance(self.druggable_gene_category, DruggableGeneCategoryEnum):
             self.druggable_gene_category = DruggableGeneCategoryEnum(self.druggable_gene_category)
@@ -12152,18 +11491,17 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeatureToDiseaseAssociation
 
     id: Union[str, PhenotypicFeatureToDiseaseAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, PhenotypicFeatureId] = None
     predicate: Union[str, URIorCURIE] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    object: Union[str, DiseaseId] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -12174,21 +11512,18 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.subject, PhenotypicFeatureId):
+            self.subject = PhenotypicFeatureId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -12205,8 +11540,8 @@ class PhenotypicFeatureToDiseaseAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
             self.qualified_predicate = URIorCURIE(self.qualified_predicate)
 
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
@@ -12231,9 +11566,9 @@ class VariantToGeneAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneAssociation
 
     id: Union[str, VariantToGeneAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, SequenceVariantId] = None
     object: Union[str, GeneId] = None
     predicate: Union[str, URIorCURIE] = None
 
@@ -12245,8 +11580,8 @@ class VariantToGeneAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, SequenceVariantId):
+            self.subject = SequenceVariantId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -12277,9 +11612,9 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneExpressionAssociation
 
     id: Union[str, VariantToGeneExpressionAssociationId] = None
-    subject: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, SequenceVariantId] = None
     object: Union[str, GeneId] = None
     predicate: Union[str, URIorCURIE] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
@@ -12338,18 +11673,12 @@ class VariantToPopulationAssociation(Association):
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_percentage: Optional[float] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, VariantToPopulationAssociationId):
             self.id = VariantToPopulationAssociationId(self.id)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -12372,9 +11701,6 @@ class VariantToPopulationAssociation(Association):
 
         if self.has_percentage is not None and not isinstance(self.has_percentage, float):
             self.has_percentage = float(self.has_percentage)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12443,14 +11769,14 @@ class VariantToPhenotypicFeatureAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, SequenceVariantId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12473,8 +11799,8 @@ class VariantToPhenotypicFeatureAssociation(Association):
         if not isinstance(self.subject, SequenceVariantId):
             self.subject = SequenceVariantId(self.subject)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
 
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
@@ -12494,8 +11820,8 @@ class VariantToPhenotypicFeatureAssociation(Association):
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
-        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
-            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12515,16 +11841,9 @@ class VariantToDiseaseAssociation(Association):
     id: Union[str, VariantToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, NamedThingId] = None
+    subject: Union[str, SequenceVariantId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12534,8 +11853,8 @@ class VariantToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, SequenceVariantId):
+            self.subject = SequenceVariantId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -12546,27 +11865,6 @@ class VariantToDiseaseAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, NamedThingId):
             self.object = NamedThingId(self.object)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12586,16 +11884,9 @@ class GenotypeToDiseaseAssociation(Association):
     id: Union[str, GenotypeToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, NamedThingId] = None
+    subject: Union[str, GenotypeId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12605,8 +11896,8 @@ class GenotypeToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.subject, GenotypeId):
+            self.subject = GenotypeId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -12617,69 +11908,11 @@ class GenotypeToDiseaseAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, NamedThingId):
             self.object = NamedThingId(self.object)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
         self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class ModelToDiseaseAssociationMixin(YAMLRoot):
-    """
-    This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in
-    that it recapitulates some features of the disease in a way that is useful for studying the disease outside a
-    patient carrying the disease
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ModelToDiseaseAssociationMixin"]
-    class_class_curie: ClassVar[str] = "biolink:ModelToDiseaseAssociationMixin"
-    class_name: ClassVar[str] = "model to disease association mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ModelToDiseaseAssociationMixin
-
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, URIorCURIE):
-            self.predicate = URIorCURIE(self.predicate)
-
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -12695,13 +11928,8 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, DiseaseId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    object: Union[str, DiseaseId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12709,25 +11937,20 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
         if not isinstance(self.id, GeneAsAModelOfDiseaseAssociationId):
             self.id = GeneAsAModelOfDiseaseAssociationId(self.id)
 
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
+
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
             self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12747,16 +11970,9 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
     id: Union[str, VariantAsAModelOfDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     subject: Union[str, SequenceVariantId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    predicate: Union[str, URIorCURIE] = None
+    object: Union[str, DiseaseId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12769,26 +11985,15 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
         if not isinstance(self.subject, SequenceVariantId):
             self.subject = SequenceVariantId(self.subject)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
 
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12808,16 +12013,9 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
     id: Union[str, GenotypeAsAModelOfDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     subject: Union[str, GenotypeId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    predicate: Union[str, URIorCURIE] = None
+    object: Union[str, DiseaseId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12830,26 +12028,15 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
         if not isinstance(self.subject, GenotypeId):
             self.subject = GenotypeId(self.subject)
 
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
 
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12867,24 +12054,22 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineAsAModelOfDiseaseAssociation
 
     id: Union[str, CellLineAsAModelOfDiseaseAssociationId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, CellLineId] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    predicate: Union[str, URIorCURIE] = None
+    object: Union[str, DiseaseId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellLineAsAModelOfDiseaseAssociationId):
             self.id = CellLineAsAModelOfDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, CellLineId):
+            self.subject = CellLineId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -12893,34 +12078,8 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, CellLineId):
-            self.subject = CellLineId(self.subject)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12938,24 +12097,22 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntityAsAModelOfDiseaseAssociation
 
     id: Union[str, OrganismalEntityAsAModelOfDiseaseAssociationId] = None
-    predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, OrganismalEntityId] = None
-    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
-    subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[str] = None
-    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    predicate: Union[str, URIorCURIE] = None
+    object: Union[str, DiseaseId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OrganismalEntityAsAModelOfDiseaseAssociationId):
             self.id = OrganismalEntityAsAModelOfDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, OrganismalEntityId):
+            self.subject = OrganismalEntityId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -12964,34 +12121,8 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, OrganismalEntityId):
-            self.subject = OrganismalEntityId(self.subject)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
-
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
-
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
-            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
-
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
-
-        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
-            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
-
-        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
-            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
-
-        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
-            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -13573,19 +12704,31 @@ class EntityToDiseaseAssociation(Association):
     id: Union[str, EntityToDiseaseAssociationId] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
+    object: Union[str, DiseaseId] = None
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
     max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
     FDA_regulatory_approvals: Optional[Union[str, list[str]]] = empty_list()
     number_of_cases: Optional[int] = None
+    subject_aspect_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EntityToDiseaseAssociationId):
             self.id = EntityToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
 
         if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
             self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
@@ -13599,6 +12742,27 @@ class EntityToDiseaseAssociation(Association):
 
         if self.number_of_cases is not None and not isinstance(self.number_of_cases, int):
             self.number_of_cases = int(self.number_of_cases)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -14392,6 +13556,24 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class GeneToPhenotypePredicateEnum(EnumDefinitionImpl):
+    """
+    Predicates used in gene to phenotypic feature associations
+    """
+    _defn = EnumDefinition(
+        name="GeneToPhenotypePredicateEnum",
+        description="Predicates used in gene to phenotypic feature associations",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "biolink:causes",
+            PermissibleValue(text="biolink:causes"))
+        setattr(cls, "biolink:contributes_to",
+            PermissibleValue(text="biolink:contributes_to"))
+        setattr(cls, "biolink:associated_with",
+            PermissibleValue(text="biolink:associated_with"))
+
 class ResponseEnum(EnumDefinitionImpl):
     """
     A response to a treatment or intervention
@@ -17104,11 +16286,11 @@ slots.pairwise_molecular_interaction_predicate = Slot(uri=RDF.predicate, name="p
 slots.pairwise_molecular_interaction_object = Slot(uri=RDF.object, name="pairwise molecular interaction_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.pairwise_molecular_interaction_object, domain=PairwiseMolecularInteraction, range=Union[str, MolecularEntityId])
 
-slots.cell_line_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="cell line to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.cell_line_to_entity_association_mixin_subject, domain=None, range=Union[str, CellLineId])
-
 slots.cell_line_to_disease_or_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="cell line to disease or phenotypic feature association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.cell_line_to_disease_or_phenotypic_feature_association_subject, domain=CellLineToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
+                   model_uri=BIOLINK.cell_line_to_disease_or_phenotypic_feature_association_subject, domain=CellLineToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, CellLineId])
+
+slots.cell_line_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="cell line to disease or phenotypic feature association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.cell_line_to_disease_or_phenotypic_feature_association_object, domain=CellLineToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
 slots.chemical_entity_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="chemical entity to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_entity_to_entity_association_mixin_subject, domain=None, range=Union[dict, ChemicalEntityOrGeneOrGeneProduct])
@@ -17118,9 +16300,6 @@ slots.drug_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="dru
 
 slots.chemical_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="chemical to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_to_entity_association_mixin_subject, domain=None, range=Union[dict, ChemicalEntityOrGeneOrGeneProduct])
-
-slots.case_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="case to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.case_to_entity_association_mixin_subject, domain=None, range=Union[str, CaseId])
 
 slots.chemical_entity_to_chemical_entity_association_object = Slot(uri=RDF.object, name="chemical entity to chemical entity association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.chemical_entity_to_chemical_entity_association_object, domain=ChemicalEntityToChemicalEntityAssociation, range=Union[str, ChemicalEntityId])
@@ -17146,11 +16325,11 @@ slots.chemical_entity_to_chemical_derivation_association_catalyst_qualifier = Sl
 slots.chemical_entity_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="chemical entity to disease or phenotypic feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.chemical_entity_to_disease_or_phenotypic_feature_association_object, domain=ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
-slots.chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment to disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
+slots.chemical_entity_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical entity or drug or treatment to disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_entity_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate, domain=ChemicalEntityOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
 
-slots.chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment side effect disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
+slots.chemical_entity_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical entity or drug or treatment side effect disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_entity_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate, domain=ChemicalEntityOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_to_pathway_association_subject = Slot(uri=RDF.subject, name="gene to pathway association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_pathway_association_subject, domain=GeneToPathwayAssociation, range=Union[dict, GeneOrGeneProduct])
@@ -17389,20 +16568,26 @@ slots.material_sample_derivation_association_object = Slot(uri=RDF.object, name=
 slots.material_sample_derivation_association_predicate = Slot(uri=RDF.predicate, name="material sample derivation association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.material_sample_derivation_association_predicate, domain=MaterialSampleDerivationAssociation, range=Union[str, URIorCURIE])
 
-slots.disease_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="disease to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.disease_to_entity_association_mixin_subject, domain=None, range=Union[str, DiseaseId])
+slots.material_sample_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="material sample to disease or phenotypic feature association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.material_sample_to_disease_or_phenotypic_feature_association_object, domain=MaterialSampleToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
-slots.entity_to_exposure_event_association_mixin_object = Slot(uri=RDF.object, name="entity to exposure event association mixin_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.entity_to_exposure_event_association_mixin_object, domain=None, range=Union[str, ExposureEventId])
+slots.disease_to_exposure_event_association_object = Slot(uri=RDF.object, name="disease to exposure event association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.disease_to_exposure_event_association_object, domain=DiseaseToExposureEventAssociation, range=Union[str, ExposureEventId])
 
-slots.entity_to_outcome_association_mixin_object = Slot(uri=RDF.object, name="entity to outcome association mixin_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.entity_to_outcome_association_mixin_object, domain=None, range=Union[dict, Outcome])
+slots.disease_to_exposure_event_association_subject = Slot(uri=RDF.subject, name="disease to exposure event association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.disease_to_exposure_event_association_subject, domain=DiseaseToExposureEventAssociation, range=Union[str, DiseaseId])
+
+slots.exposure_event_to_outcome_association_object = Slot(uri=RDF.object, name="exposure event to outcome association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.exposure_event_to_outcome_association_object, domain=ExposureEventToOutcomeAssociation, range=Union[dict, Outcome])
 
 slots.entity_to_phenotypic_feature_association_mixin_object = Slot(uri=RDF.object, name="entity to phenotypic feature association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_phenotypic_feature_association_mixin_object, domain=None, range=Union[str, PhenotypicFeatureId])
 
-slots.phenotypic_feature_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="phenotypic feature to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.phenotypic_feature_to_entity_association_mixin_subject, domain=None, range=Union[str, PhenotypicFeatureId])
+slots.phenotypic_feature_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="phenotypic feature to phenotypic feature association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.phenotypic_feature_to_phenotypic_feature_association_subject, domain=PhenotypicFeatureToPhenotypicFeatureAssociation, range=Union[str, PhenotypicFeatureId])
+
+slots.phenotypic_feature_to_phenotypic_feature_association_object = Slot(uri=RDF.object, name="phenotypic feature to phenotypic feature association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.phenotypic_feature_to_phenotypic_feature_association_object, domain=PhenotypicFeatureToPhenotypicFeatureAssociation, range=Union[str, PhenotypicFeatureId])
 
 slots.information_content_entity_to_named_thing_association_subject = Slot(uri=RDF.subject, name="information content entity to named thing association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.information_content_entity_to_named_thing_association_subject, domain=InformationContentEntityToNamedThingAssociation, range=Union[str, NamedThingId])
@@ -17413,26 +16598,20 @@ slots.information_content_entity_to_named_thing_association_object = Slot(uri=RD
 slots.information_content_entity_to_named_thing_association_predicate = Slot(uri=RDF.predicate, name="information content entity to named thing association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.information_content_entity_to_named_thing_association_predicate, domain=InformationContentEntityToNamedThingAssociation, range=Union[str, URIorCURIE])
 
-slots.entity_to_disease_association_mixin_object = Slot(uri=RDF.object, name="entity to disease association mixin_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.entity_to_disease_association_mixin_object, domain=None, range=Union[str, DiseaseId])
-
-slots.disease_or_phenotypic_feature_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="disease or phenotypic feature to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.disease_or_phenotypic_feature_to_entity_association_mixin_subject, domain=None, range=Union[str, DiseaseOrPhenotypicFeatureId])
+slots.disease_or_phenotypic_feature_to_location_association_subject = Slot(uri=RDF.subject, name="disease or phenotypic feature to location association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.disease_or_phenotypic_feature_to_location_association_subject, domain=DiseaseOrPhenotypicFeatureToLocationAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
 slots.disease_or_phenotypic_feature_to_location_association_object = Slot(uri=RDF.object, name="disease or phenotypic feature to location association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.disease_or_phenotypic_feature_to_location_association_object, domain=DiseaseOrPhenotypicFeatureToLocationAssociation, range=Union[str, AnatomicalEntityId])
+
+slots.disease_or_phenotypic_feature_to_genetic_inheritance_association_subject = Slot(uri=RDF.subject, name="disease or phenotypic feature to genetic inheritance association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.disease_or_phenotypic_feature_to_genetic_inheritance_association_subject, domain=DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
 slots.disease_or_phenotypic_feature_to_genetic_inheritance_association_predicate = Slot(uri=RDF.predicate, name="disease or phenotypic feature to genetic inheritance association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.disease_or_phenotypic_feature_to_genetic_inheritance_association_predicate, domain=DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation, range=Union[str, URIorCURIE])
 
 slots.disease_or_phenotypic_feature_to_genetic_inheritance_association_object = Slot(uri=RDF.object, name="disease or phenotypic feature to genetic inheritance association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.disease_or_phenotypic_feature_to_genetic_inheritance_association_object, domain=DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation, range=Union[str, GeneticInheritanceId])
-
-slots.entity_to_disease_or_phenotypic_feature_association_mixin_object = Slot(uri=RDF.object, name="entity to disease or phenotypic feature association mixin_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.entity_to_disease_or_phenotypic_feature_association_mixin_object, domain=None, range=Union[str, DiseaseOrPhenotypicFeatureId])
-
-slots.genotype_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="genotype to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.genotype_to_entity_association_mixin_subject, domain=None, range=Union[str, GenotypeId])
 
 slots.genotype_to_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="genotype to phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.genotype_to_phenotypic_feature_association_predicate, domain=GenotypeToPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
@@ -17449,14 +16628,26 @@ slots.disease_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, 
 slots.disease_to_phenotypic_feature_association_object = Slot(uri=RDF.object, name="disease to phenotypic feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.disease_to_phenotypic_feature_association_object, domain=DiseaseToPhenotypicFeatureAssociation, range=Union[str, PhenotypicFeatureId])
 
+slots.case_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="case to phenotypic feature association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.case_to_phenotypic_feature_association_subject, domain=CaseToPhenotypicFeatureAssociation, range=Union[str, CaseId])
+
 slots.case_to_disease_association_object = Slot(uri=RDF.object, name="case to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.case_to_disease_association_object, domain=CaseToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.case_to_disease_association_subject = Slot(uri=RDF.subject, name="case to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.case_to_disease_association_subject, domain=CaseToDiseaseAssociation, range=Union[str, CaseId])
+
+slots.case_to_variant_association_subject = Slot(uri=RDF.subject, name="case to variant association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.case_to_variant_association_subject, domain=CaseToVariantAssociation, range=Union[str, CaseId])
 
 slots.case_to_variant_association_object = Slot(uri=RDF.object, name="case to variant association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.case_to_variant_association_object, domain=CaseToVariantAssociation, range=Union[str, SequenceVariantId])
 
 slots.case_to_variant_association_has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="case to variant association_has zygosity", curie=BIOLINK.curie('has_zygosity'),
                    model_uri=BIOLINK.case_to_variant_association_has_zygosity, domain=CaseToVariantAssociation, range=Optional[Union[str, ZygosityId]])
+
+slots.case_to_gene_association_subject = Slot(uri=RDF.subject, name="case to gene association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.case_to_gene_association_subject, domain=CaseToGeneAssociation, range=Union[str, CaseId])
 
 slots.case_to_gene_association_object = Slot(uri=RDF.object, name="case to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.case_to_gene_association_object, domain=CaseToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
@@ -17467,47 +16658,50 @@ slots.behavior_to_behavioral_feature_association_subject = Slot(uri=RDF.subject,
 slots.behavior_to_behavioral_feature_association_object = Slot(uri=RDF.object, name="behavior to behavioral feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.behavior_to_behavioral_feature_association_object, domain=BehaviorToBehavioralFeatureAssociation, range=Union[str, BehavioralFeatureId])
 
-slots.gene_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="gene to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_entity_association_mixin_subject, domain=None, range=Union[dict, GeneOrGeneProduct])
-
-slots.variant_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="variant to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.variant_to_entity_association_mixin_subject, domain=None, range=Union[str, SequenceVariantId])
-
-slots.gene_to_disease_or_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="gene to disease or phenotypic feature association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[dict, GeneOrGeneProduct])
-
-slots.gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene to disease or phenotypic feature association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
-                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject_form_or_variant_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
-
-slots.gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="gene to disease or phenotypic feature association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
-                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
-
-slots.gene_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="gene to disease or phenotypic feature association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_object, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
-
-slots.gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="gene to disease or phenotypic feature association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
-                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
-
-slots.gene_to_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="gene to disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_predicate, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
-
 slots.gene_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="gene to phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject, domain=GeneToPhenotypicFeatureAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.gene_to_phenotypic_feature_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene to phenotypic feature association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
+                   model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject_form_or_variant_qualifier, domain=GeneToPhenotypicFeatureAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
+
+slots.gene_to_phenotypic_feature_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="gene to phenotypic feature association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
+                   model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject_aspect_qualifier, domain=GeneToPhenotypicFeatureAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
 
 slots.gene_to_phenotypic_feature_association_object = Slot(uri=RDF.object, name="gene to phenotypic feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_phenotypic_feature_association_object, domain=GeneToPhenotypicFeatureAssociation, range=Union[str, PhenotypicFeatureId])
 
+slots.gene_to_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="gene to phenotypic feature association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.gene_to_phenotypic_feature_association_object_direction_qualifier, domain=GeneToPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.gene_to_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="gene to phenotypic feature association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.gene_to_phenotypic_feature_association_predicate, domain=GeneToPhenotypicFeatureAssociation, range=Union[str, "GeneToPhenotypePredicateEnum"])
+
 slots.gene_to_disease_association_subject = Slot(uri=RDF.subject, name="gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_disease_association_subject, domain=GeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
 
+slots.gene_to_disease_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene to disease association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
+                   model_uri=BIOLINK.gene_to_disease_association_subject_form_or_variant_qualifier, domain=GeneToDiseaseAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
+
+slots.gene_to_disease_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="gene to disease association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
+                   model_uri=BIOLINK.gene_to_disease_association_subject_aspect_qualifier, domain=GeneToDiseaseAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+
 slots.gene_to_disease_association_object = Slot(uri=RDF.object, name="gene to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_disease_association_object, domain=GeneToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.gene_to_disease_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="gene to disease association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.gene_to_disease_association_object_direction_qualifier, domain=GeneToDiseaseAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="gene to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.gene_to_disease_association_predicate, domain=GeneToDiseaseAssociation, range=Union[str, URIorCURIE])
 
 slots.causal_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="causal gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.causal_gene_to_disease_association_subject, domain=CausalGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
 
 slots.causal_gene_to_disease_association_object = Slot(uri=RDF.object, name="causal gene to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.causal_gene_to_disease_association_object, domain=CausalGeneToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.causal_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="causal gene to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.causal_gene_to_disease_association_predicate, domain=CausalGeneToDiseaseAssociation, range=Union[str, URIorCURIE])
 
 slots.correlated_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="correlated gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.correlated_gene_to_disease_association_subject, domain=CorrelatedGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
@@ -17524,8 +16718,17 @@ slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name
 slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="druggable gene to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, URIorCURIE])
 
+slots.phenotypic_feature_to_disease_association_subject = Slot(uri=RDF.subject, name="phenotypic feature to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.phenotypic_feature_to_disease_association_subject, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, PhenotypicFeatureId])
+
 slots.phenotypic_feature_to_disease_association_predicate = Slot(uri=RDF.predicate, name="phenotypic feature to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.phenotypic_feature_to_disease_association_predicate, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, URIorCURIE])
+
+slots.phenotypic_feature_to_disease_association_object = Slot(uri=RDF.object, name="phenotypic feature to disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.phenotypic_feature_to_disease_association_object, domain=PhenotypicFeatureToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.variant_to_gene_association_subject = Slot(uri=RDF.subject, name="variant to gene association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.variant_to_gene_association_subject, domain=VariantToGeneAssociation, range=Union[str, SequenceVariantId])
 
 slots.variant_to_gene_association_object = Slot(uri=RDF.object, name="variant to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.variant_to_gene_association_object, domain=VariantToGeneAssociation, range=Union[str, GeneId])
@@ -17564,7 +16767,7 @@ slots.variant_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, 
                    model_uri=BIOLINK.variant_to_phenotypic_feature_association_subject, domain=VariantToPhenotypicFeatureAssociation, range=Union[str, SequenceVariantId])
 
 slots.variant_to_disease_association_subject = Slot(uri=RDF.subject, name="variant to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.variant_to_disease_association_subject, domain=VariantToDiseaseAssociation, range=Union[str, NamedThingId])
+                   model_uri=BIOLINK.variant_to_disease_association_subject, domain=VariantToDiseaseAssociation, range=Union[str, SequenceVariantId])
 
 slots.variant_to_disease_association_predicate = Slot(uri=RDF.predicate, name="variant to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.variant_to_disease_association_predicate, domain=VariantToDiseaseAssociation, range=Union[str, URIorCURIE])
@@ -17573,7 +16776,7 @@ slots.variant_to_disease_association_object = Slot(uri=RDF.object, name="variant
                    model_uri=BIOLINK.variant_to_disease_association_object, domain=VariantToDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.genotype_to_disease_association_subject = Slot(uri=RDF.subject, name="genotype to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.genotype_to_disease_association_subject, domain=GenotypeToDiseaseAssociation, range=Union[str, NamedThingId])
+                   model_uri=BIOLINK.genotype_to_disease_association_subject, domain=GenotypeToDiseaseAssociation, range=Union[str, GenotypeId])
 
 slots.genotype_to_disease_association_predicate = Slot(uri=RDF.predicate, name="genotype to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.genotype_to_disease_association_predicate, domain=GenotypeToDiseaseAssociation, range=Union[str, URIorCURIE])
@@ -17581,26 +16784,50 @@ slots.genotype_to_disease_association_predicate = Slot(uri=RDF.predicate, name="
 slots.genotype_to_disease_association_object = Slot(uri=RDF.object, name="genotype to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.genotype_to_disease_association_object, domain=GenotypeToDiseaseAssociation, range=Union[str, NamedThingId])
 
-slots.model_to_disease_association_mixin_subject = Slot(uri=RDF.subject, name="model to disease association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.model_to_disease_association_mixin_subject, domain=None, range=Union[str, NamedThingId])
-
-slots.model_to_disease_association_mixin_predicate = Slot(uri=RDF.predicate, name="model to disease association mixin_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.model_to_disease_association_mixin_predicate, domain=None, range=Union[str, URIorCURIE])
+slots.gene_as_a_model_of_disease_association_predicate = Slot(uri=RDF.predicate, name="gene as a model of disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.gene_as_a_model_of_disease_association_predicate, domain=GeneAsAModelOfDiseaseAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="gene as a model of disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_as_a_model_of_disease_association_subject, domain=GeneAsAModelOfDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
 
+slots.gene_as_a_model_of_disease_association_object = Slot(uri=RDF.object, name="gene as a model of disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.gene_as_a_model_of_disease_association_object, domain=GeneAsAModelOfDiseaseAssociation, range=Union[str, DiseaseId])
+
 slots.variant_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="variant as a model of disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.variant_as_a_model_of_disease_association_subject, domain=VariantAsAModelOfDiseaseAssociation, range=Union[str, SequenceVariantId])
+
+slots.variant_as_a_model_of_disease_association_predicate = Slot(uri=RDF.predicate, name="variant as a model of disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.variant_as_a_model_of_disease_association_predicate, domain=VariantAsAModelOfDiseaseAssociation, range=Union[str, URIorCURIE])
+
+slots.variant_as_a_model_of_disease_association_object = Slot(uri=RDF.object, name="variant as a model of disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.variant_as_a_model_of_disease_association_object, domain=VariantAsAModelOfDiseaseAssociation, range=Union[str, DiseaseId])
 
 slots.genotype_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="genotype as a model of disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.genotype_as_a_model_of_disease_association_subject, domain=GenotypeAsAModelOfDiseaseAssociation, range=Union[str, GenotypeId])
 
+slots.genotype_as_a_model_of_disease_association_predicate = Slot(uri=RDF.predicate, name="genotype as a model of disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.genotype_as_a_model_of_disease_association_predicate, domain=GenotypeAsAModelOfDiseaseAssociation, range=Union[str, URIorCURIE])
+
+slots.genotype_as_a_model_of_disease_association_object = Slot(uri=RDF.object, name="genotype as a model of disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.genotype_as_a_model_of_disease_association_object, domain=GenotypeAsAModelOfDiseaseAssociation, range=Union[str, DiseaseId])
+
 slots.cell_line_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="cell line as a model of disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.cell_line_as_a_model_of_disease_association_subject, domain=CellLineAsAModelOfDiseaseAssociation, range=Union[str, CellLineId])
 
+slots.cell_line_as_a_model_of_disease_association_predicate = Slot(uri=RDF.predicate, name="cell line as a model of disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.cell_line_as_a_model_of_disease_association_predicate, domain=CellLineAsAModelOfDiseaseAssociation, range=Union[str, URIorCURIE])
+
+slots.cell_line_as_a_model_of_disease_association_object = Slot(uri=RDF.object, name="cell line as a model of disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.cell_line_as_a_model_of_disease_association_object, domain=CellLineAsAModelOfDiseaseAssociation, range=Union[str, DiseaseId])
+
 slots.organismal_entity_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="organismal entity as a model of disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.organismal_entity_as_a_model_of_disease_association_subject, domain=OrganismalEntityAsAModelOfDiseaseAssociation, range=Union[str, OrganismalEntityId])
+
+slots.organismal_entity_as_a_model_of_disease_association_predicate = Slot(uri=RDF.predicate, name="organismal entity as a model of disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.organismal_entity_as_a_model_of_disease_association_predicate, domain=OrganismalEntityAsAModelOfDiseaseAssociation, range=Union[str, URIorCURIE])
+
+slots.organismal_entity_as_a_model_of_disease_association_object = Slot(uri=RDF.object, name="organismal entity as a model of disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.organismal_entity_as_a_model_of_disease_association_object, domain=OrganismalEntityAsAModelOfDiseaseAssociation, range=Union[str, DiseaseId])
 
 slots.organism_to_organism_association_subject = Slot(uri=RDF.subject, name="organism to organism association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.organism_to_organism_association_subject, domain=OrganismToOrganismAssociation, range=Union[str, IndividualOrganismId])
@@ -17679,6 +16906,9 @@ slots.gene_to_go_term_association_subject = Slot(uri=RDF.subject, name="gene to 
 
 slots.gene_to_go_term_association_object = Slot(uri=RDF.object, name="gene to go term association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_go_term_association_object, domain=GeneToGoTermAssociation, range=Union[str, OntologyClassId])
+
+slots.entity_to_disease_association_object = Slot(uri=RDF.object, name="entity to disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.entity_to_disease_association_object, domain=EntityToDiseaseAssociation, range=Union[str, DiseaseId])
 
 slots.genomic_sequence_localization_subject = Slot(uri=RDF.subject, name="genomic sequence localization_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.genomic_sequence_localization_subject, domain=GenomicSequenceLocalization, range=Union[str, NucleicAcidEntityId])

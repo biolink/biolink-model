@@ -1873,7 +1873,7 @@ slots:
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or
-      increase the specificity of the full statement reading.  Has a value from the Biolink 
+      increase the specificity of the full statement reading.  Has a value from the Biolink
       'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats
       This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
       in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
@@ -10385,34 +10385,31 @@ classes:
       object:
         range: molecular entity
 
-  cell line to entity association mixin:
-    description: >-
-      An relationship between a cell line and another entity
-    mixin: true
+  cell line to disease or phenotypic feature association:
+    is_a: association
     slots:
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
+    defining_slots:
       - subject
       - predicate
       - object
-    defining_slots:
-      - subject
     slot_usage:
       subject:
         range: cell line
-
-   # TODO: figure out what gives with subject range
-  cell line to disease or phenotypic feature association:
-    is_a: association
-    mixins:
-      - cell line to entity association mixin
-      - entity to disease or phenotypic feature association mixin
+      object:
+        range: disease or phenotypic feature
+        description: "disease or phenotype"
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
     description: >-
       An relationship between a cell line and a disease or a phenotype, where
       the cell line is derived from an individual with that disease or phenotype.
-    slot_usage:
-      subject:
-         #        - range: cell line
-         #        - range: disease or phenotypic feature
-        range: disease or phenotypic feature
 
   chemical entity to entity association mixin:
     description: >-
@@ -10461,21 +10458,6 @@ classes:
       subject:
         range: chemical entity or gene or gene product
         description: "the chemical entity or entity that is an interactor"
-
-  case to entity association mixin:
-    description: >-
-      An abstract association for use where the case is the subject
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: case
-        description: "the case (e.g. patient) that has the property"
 
   chemical entity to chemical entity association:
     description: >-
@@ -10555,19 +10537,30 @@ classes:
     is_a: association
     narrow_mappings:
       - SIO:000993
+    slots:
+      - subject
+      - predicate
+      - object
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
+      - clinical approval status
     defining_slots:
       - subject
+      - predicate
       - object
-    mixins:
-      - entity to disease or phenotypic feature association mixin
-    slots:
-      - clinical approval status
     slot_usage:
       object:
         range: disease or phenotypic feature
-        description: "the disease or phenotype that is affected by the chemical"
+        description: "disease or phenotype"
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
 
-  chemical or drug or treatment to disease or phenotypic feature association:
+  chemical entity or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the disease or phenotypic feature is a secondary undesirable effect.
@@ -10576,26 +10569,36 @@ classes:
       - subject
       - predicate
       - object
-    mixins:
-      - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
     slots:
       - FDA adverse event level
+      - disease context qualifier
+      - anatomical context qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - subject specialization qualifier
+      - qualified predicate
+      - object specialization qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - frequency qualifier
     slot_usage:
       predicate:
         subproperty_of: has adverse event
 
-  chemical or drug or treatment side effect disease or phenotypic feature association:
+  chemical entity or drug or treatment side effect disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-    is_a: chemical or drug or treatment to disease or phenotypic feature association
+      where the disease or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+    is_a: chemical entity or drug or treatment to disease or phenotypic feature association
+    slots:
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
     defining_slots:
       - subject
       - predicate
       - object
-    mixins:
-      - entity to disease or phenotypic feature association mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
@@ -10607,8 +10610,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - gene to entity association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -11000,145 +11001,73 @@ classes:
     description: >-
       An association between a material sample and a disease or phenotype.
     is_a: association
+    slots:
+      - disease context qualifier
+      - subject specialization qualifier
+      - object specialization qualifier
+      - anatomical context qualifier
     mixins:
       - material sample to entity association mixin
-      - entity to disease or phenotypic feature association mixin
     defining_slots:
       - subject
-      - object
-
-  disease to entity association mixin:
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: disease
-        description: "disease class"
-        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
-        examples:
-          - value: MONDO:0017314
-            description: "Ehlers-Danlos syndrome, vascular type"
-
-  entity to exposure event association mixin:
-    description: >-
-      An association between some entity and an exposure event.
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
       - object
     slot_usage:
       object:
-        range: exposure event
+        range: disease or phenotypic feature
+        description: "disease or phenotype"
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
 
   disease to exposure event association:
     description: >-
       An association between an exposure event and a disease.
     is_a: association
-    mixins:
-      - disease to entity association mixin
-      - entity to exposure event association mixin
-    defining_slots:
-      - subject
-      - object
-
-
-  entity to outcome association mixin:
-    description: >-
-      An association between some entity and an outcome
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
-      - object
     slot_usage:
       object:
-        range: outcome
+        range: exposure event
+      subject:
+        range: disease
+        description: "disease class"
+        values_from: [ 'mondo', 'omim', 'orphanet', 'ncit', 'doid' ]
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+    defining_slots:
+      - subject
+      - object
 
   exposure event to outcome association:
     description: >-
       An association between an exposure event and an outcome.
     is_a: association
-    mixins:
-      - entity to outcome association mixin
     slots:
       - population context qualifier
       - temporal context qualifier
     defining_slots:
       - subject
       - object
+    slot_usage:
+      object:
+        range: outcome
 
-  frequency qualifier mixin:
-    mixin: true
-    description: >-
-      Qualifier for frequency type associations
-    slots:
-      - frequency qualifier
-      - subject
-      - predicate
-      - object
-
-  entity to feature or disease qualifiers mixin:
-    description: >-
-      Qualifiers for entity to disease or phenotype associations.
-    mixin: true
-    is_a: frequency qualifier mixin
-    slots:
-      - subject aspect qualifier
-      - subject direction qualifier
-      - object aspect qualifier
-      - object direction qualifier
-      - qualified predicate
-      - disease context qualifier
-
-  entity to feature or variant qualifiers mixin:
-    description: >-
-      Qualifiers for entity to variant associations.
-    mixin: true
-    is_a: frequency qualifier mixin
-    slots:
-      - subject aspect qualifier
-      - subject direction qualifier
-      - object aspect qualifier
-      - object direction qualifier
-      - qualified predicate
-
-  entity to feature or gene qualifiers mixin:
-    description: >-
-      Qualifiers for entity to gene associations.
-    mixin: true
-    is_a: frequency qualifier mixin
-    slots:
-      - subject aspect qualifier
-      - subject direction qualifier
-      - object aspect qualifier
-      - object direction qualifier
-      - qualified predicate
 
   feature or disease qualifiers to entity mixin:
     description: >-
       Qualifiers for disease or phenotype to entity associations.
     mixin: true
-    is_a: frequency qualifier mixin
     slots:
       - subject aspect qualifier
       - subject direction qualifier
       - object aspect qualifier
       - object direction qualifier
       - qualified predicate
+      - frequency qualifier
 
   entity to phenotypic feature association mixin:
     mixin: true
-    is_a: entity to feature or disease qualifiers mixin
     mixins:
       - frequency quantifier
     slots:
@@ -11146,6 +11075,13 @@ classes:
       - predicate
       - object
       - sex qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+      - disease context qualifier
+      - frequency qualifier
     defining_slots:
       - subject
       - predicate
@@ -11169,17 +11105,6 @@ classes:
       - frequency quantifier
     defining_slots:
       - subject
-    slot_usage:
-      subject:
-        range: phenotypic feature
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
-        examples:
-          - value: HP:0002487
-            description: Hyperkinesis
-          - value: WBPhenotype:0000180
-            description: axon morphology variant
-          - value: MP:0001569
-            description: abnormal circulating bilirubin level
     slots:
       - sex qualifier
 
@@ -11196,6 +11121,11 @@ classes:
       - subject
       - predicate
       - object
+    slot_usage:
+      subject:
+        range: phenotypic feature
+      object:
+        range: phenotypic feature
 
   information content entity to named thing association:
     description: >-
@@ -11220,47 +11150,19 @@ classes:
     in_subset:
       - model_organism_database
 
-  entity to disease association mixin:
-    description: >-
-      mixin class for any association whose object (target node) is a disease
-    mixin: true
-    is_a: entity to feature or disease qualifiers mixin
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: disease
-        description: "disease"
-        examples:
-          - value: MONDO:0020066
-            description: "Ehlers-Danlos syndrome"
-
-  disease or phenotypic feature to entity association mixin:
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: disease or phenotypic feature
-        description: "disease or phenotype"
-        examples:
-          - value: MONDO:0017314
-            description: "Ehlers-Danlos syndrome, vascular type"
-          - value: MP:0013229
-            description: "abnormal brain ventricle size"
-
   disease or phenotypic feature to location association:
     description: >-
       An association between either a disease or a phenotypic feature and
       an anatomical entity, where the disease/feature manifests in that site.
     is_a: association
-    mixins:
-      - disease or phenotypic feature to entity association mixin
     slot_usage:
+      subject:
+        range: disease or phenotypic feature
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
       object:
         range: anatomical entity
         description: >-
@@ -11274,9 +11176,14 @@ classes:
       An association between either a disease or a phenotypic feature and
       its mode of (genetic) inheritance.
     is_a: association
-    mixins:
-      - disease or phenotypic feature to entity association mixin
     slot_usage:
+      subject:
+        range: disease or phenotypic feature
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
       predicate:
         subproperty_of: has mode of inheritance
       object:
@@ -11286,43 +11193,6 @@ classes:
         examples:
           - value: HP:0001417
             description: "X-linked inheritance"
-
-  entity to disease or phenotypic feature association mixin:
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-      - disease context qualifier
-      - subject specialization qualifier
-      - object specialization qualifier
-      - anatomical context qualifier
-    defining_slots:
-      - subject
-      - predicate
-      - object
-    slot_usage:
-      object:
-        range: disease or phenotypic feature
-        description: "disease or phenotype"
-        examples:
-          - value: MONDO:0017314
-            description: "Ehlers-Danlos syndrome, vascular type"
-          - value: MP:0013229
-            description: "abnormal brain ventricle size"
-
-  genotype to entity association mixin:
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: genotype
-        description: "genotype that is the subject of the association"
 
   genotype to phenotypic feature association:
     is_a: association
@@ -11334,7 +11204,6 @@ classes:
       the genotype confers the phenotype, either in isolation or through environment
     mixins:
       - entity to phenotypic feature association mixin
-      - genotype to entity association mixin
     slot_usage:
       predicate:
         subproperty_of: has phenotype
@@ -11371,12 +11240,16 @@ classes:
     mixins:
       - frequency quantifier
       - entity to phenotypic feature association mixin
-      - disease to entity association mixin
     close_mappings:
       - dcid:DiseaseSymptomAssociation
     slot_usage:
       subject:
         range: disease
+        description: "disease class"
+        values_from: [ 'mondo', 'omim', 'orphanet', 'ncit', 'doid' ]
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
       object:
         range: phenotypic feature
 
@@ -11391,19 +11264,23 @@ classes:
       - object
     mixins:
       - entity to phenotypic feature association mixin
-      - case to entity association mixin
     slots:
       - negated
       - onset qualifier
+    slot_usage:
+      subject:
+        range: case
+        description: "the case (e.g. patient) that has the property"
 
   case to disease association:
     is_a: association
-    mixins:
-      - case to entity association mixin
     description: "An association between a Case (patient) and a Disease"
     slot_usage:
       object:
         range: disease
+      subject:
+        range: case
+        description: "the case (e.g. patient) that has the property"
     slots:
       - subject
       - predicate
@@ -11412,10 +11289,11 @@ classes:
 
   case to variant association:
     is_a: association
-    mixins:
-      - case to entity association mixin
     description: "Association between a Case and a Genetic Variant"
     slot_usage:
+      subject:
+        range: case
+        description: "the case (e.g. patient) that has the property"
       object:
         range: sequence variant
       has zygosity:
@@ -11428,10 +11306,11 @@ classes:
 
   case to gene association:
     is_a: association
-    mixins:
-      - case to entity association mixin
     description: "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)"
     slot_usage:
+      subject:
+        range: case
+        description: "the case (e.g. patient) that has the property"
       object:
         range: gene or gene product
     slots:
@@ -11461,50 +11340,14 @@ classes:
     mixins:
       - entity to phenotypic feature association mixin
 
-  gene to entity association mixin:
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
+  gene to phenotypic feature association:
+    exact_mappings:
+      - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
-    slot_usage:
-      subject:
-        range: gene or gene product
-        description: >-
-          gene that is the subject of the association
-
-  variant to entity association mixin:
-    slots:
-      - subject
-      - predicate
       - object
-    local_names:
-      ga4gh: variant annotation
-    mixin: true
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: sequence variant
-        description: >-
-          a sequence variant in which the allele state is associated with some other entity
-        examples:
-          - value: CLINVAR:38077
-            description: "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
-          - value: ClinGen:CA024716
-            description: "chr13:g.32921033G>C (hg19) in ClinGen"
-
-  gene to disease or phenotypic feature association:
-    is_a: association
     mixins:
       - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    narrow_mappings:
-      - WBVocab:Gene-Phenotype-Association
-      - dcid:DiseaseGeneAssociation
-      - SIO:000983
     slots:
       - subject form or variant qualifier
       - subject aspect qualifier
@@ -11522,40 +11365,17 @@ classes:
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
-        range: disease or phenotypic feature
+        range: phenotypic feature
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-        subproperty_of: contributes to
-    comments:
-      - NCIT:R176 refers to the inverse relationship
-      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
-      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
-
-  gene to phenotypic feature association:
-    is_a: gene to disease or phenotypic feature association
-    exact_mappings:
-      - WBVocab:Gene-Phenotype-Association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    slot_usage:
-      subject:
-        range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
-        examples:
-          - value: HGNC:2197
-            description: "COL1A1 (Human)"
-      object:
-        range: phenotypic feature
+        range: GeneToPhenotypePredicateEnum
 
   gene to disease association:
-    is_a: gene to disease or phenotypic feature association
+    is_a: association
     comments:
       - NCIT:R176 refers to the inverse relationship
+      - for use in describing the effect that the loss of function of a gene can have on exacerbating or ameliorating a disease
     exact_mappings:
       - SIO:000983
     close_mappings:
@@ -11563,24 +11383,37 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - gene to entity association mixin
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
     slot_usage:
       subject:
         range: gene or gene product
         description: >-
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
         range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      predicate:
+        subproperty_of: contributes to
 
   causal gene to disease association:
     is_a: gene to disease association
     defining_slots:
       - subject
       - object
-    mixins:
-      - gene to entity association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -11588,6 +11421,8 @@ classes:
           gene in which variation is shown to cause the disease.
       object:
         range: disease
+      predicate:
+        subproperty_of: causes
 
   correlated gene to disease association:
     is_a: gene to disease association
@@ -11597,9 +11432,6 @@ classes:
       - predicate
     slots:
       - z score
-    mixins:
-      - entity to disease association mixin
-      - gene to entity association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -11607,6 +11439,10 @@ classes:
           gene in which variation is shown to correlate with the disease.
       object:
         range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
       predicate:
         subproperty_of: correlated with
 
@@ -11627,21 +11463,25 @@ classes:
       - subject
       - object
       - predicate
-    mixins:
-      - entity to disease association mixin
-      - gene to entity association mixin
 
   phenotypic feature to disease association:
     is_a: association
     slot_usage:
+      subject:
+        range: phenotypic feature
       predicate:
         subproperty_of: associated with
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
     defining_slots:
       - subject
       - predicate
       - object
     mixins:
-      - entity to disease association mixin
       - phenotypic feature to entity association mixin
 
   variant to gene association:
@@ -11653,9 +11493,17 @@ classes:
       - subject
       - predicate
       - object
-    mixins:
-      - variant to entity association mixin
     slot_usage:
+      subject:
+        range: sequence variant
+        description: >-
+          a sequence variant in which the allele state is
+          associated in some way with the gene
+        examples:
+          - value: CLINVAR:38077
+            description: "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
+          - value: ClinGen:CA024716
+            description: "chr13:g.32921033G>C (hg19) in ClinGen"
       object:
         range: gene
       predicate:
@@ -11683,10 +11531,9 @@ classes:
     defining_slots:
       - subject
       - object
+      - frequency qualifier
     mixins:
-      - variant to entity association mixin
       - frequency quantifier
-      - frequency qualifier mixin
     slot_usage:
       subject:
         range: sequence variant
@@ -11752,7 +11599,6 @@ classes:
       - subject
       - object
     mixins:
-      - variant to entity association mixin
       - entity to phenotypic feature association mixin
     slot_usage:
       subject:
@@ -11768,15 +11614,17 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - variant to entity association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
+        range: sequence variant
         description: >-
-          a sequence variant in which the allele state
-          is associated in some way with the disease state
+          a sequence variant in which the allele state is
+          associated in some way with the gene
         examples:
+          - value: CLINVAR:38077
+            description: "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
+          - value: ClinGen:CA024716
+            description: "chr13:g.32921033G>C (hg19) in ClinGen"
           - value: CLINVAR:52241
             description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
       predicate:
@@ -11797,13 +11645,10 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - genotype to entity association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
-        description: >-
-          a genotype that is associated in some way with a disease state
+        range: genotype
+        description: "genotype that is the subject of the association"
       predicate:
         description: >-
           E.g. is pathogenic for
@@ -11815,44 +11660,27 @@ classes:
           - value: MONDO:0016419
             description: hereditary breast cancer
 
-  model to disease association mixin:
-    description: >-
-      This mixin is used for any association class for which the subject
-      (source node) plays the role of a 'model', in that it recapitulates some
-      features of the disease in a way that is useful for studying the disease
-      outside a patient carrying the disease
-    mixin: true
-    slots:
-      - subject
-      - predicate
-      - object
-    slot_usage:
-      subject:
-        description: >-
-          The entity that serves as the model of the disease. This may be
-          an organism, a strain of organism, a genotype or variant that exhibits
-          similar features, or a gene that when mutated exhibits features of the disease
-      predicate:
-        subproperty_of: model of
-        description: >-
-          The relationship to the disease
-
   gene as a model of disease association:
     is_a: gene to disease association
     defining_slots:
       - subject
       - predicate
       - object
-    mixins:
-      - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
+      predicate:
+        subproperty_of: model of
       subject:
         range: gene or gene product
         description: >-
           A gene that has a role in modeling the disease. This may be a model
           organism ortholog of a known disease gene, or it may be a gene whose
           mutants recapitulate core features of the disease.
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
 
   variant as a model of disease association:
     is_a: variant to disease association
@@ -11860,14 +11688,19 @@ classes:
       - subject
       - predicate
       - object
-    mixins:
-      - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: sequence variant
         description: >-
           A variant that has a role in modeling the disease.
+      predicate:
+        subproperty_of: model of
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
 
   genotype as a model of disease association:
     is_a: genotype to disease association
@@ -11875,14 +11708,19 @@ classes:
       - subject
       - predicate
       - object
-    mixins:
-      - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: genotype
         description: >-
           A genotype that has a role in modeling the disease.
+      predicate:
+        subproperty_of: model of
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
 
   cell line as a model of disease association:
     is_a: cell line to disease or phenotypic feature association
@@ -11890,15 +11728,20 @@ classes:
       - subject
       - predicate
       - object
-    mixins:
-      - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: cell line
         description: >-
           A cell line derived from an organismal entity with a disease state that is used
-          as a model of that disease.
+          as a   that disease.
+      predicate:
+        subproperty_of: model of
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
 
   organismal entity as a model of disease association:
     is_a: association
@@ -11906,15 +11749,20 @@ classes:
       - subject
       - predicate
       - object
-    mixins:
-      - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: organismal entity
         description: >-
           A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
           specifically to model a disease.
+      predicate:
+        subproperty_of: model of
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
 
   organism to organism association:
     is_a: association
@@ -12163,6 +12011,20 @@ classes:
       - max research phase
       - FDA regulatory approvals
       - number of cases
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+      - disease context qualifier
+      - frequency qualifier
+    slot_usage:
+      object:
+        range: disease
+        description: "disease"
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
     defining_slots:
       - subject
       - object
@@ -12473,6 +12335,14 @@ classes:
 
 
 enums:
+
+  GeneToPhenotypePredicateEnum:
+    description: >-
+      Predicates used in gene to phenotypic feature associations
+    permissible_values:
+      "biolink:causes":
+      "biolink:contributes_to":
+      "biolink:associated_with":
 
   ResponseEnum:
     description: >-
