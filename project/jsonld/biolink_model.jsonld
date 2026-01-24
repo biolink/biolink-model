@@ -5681,7 +5681,7 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
-      "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
+      "owner": "GeneToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
         "ChemicalEntityToBiologicalProcessAssociation",
@@ -5692,7 +5692,8 @@
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
         "EntityToFeatureOrGeneQualifiersMixin",
-        "FeatureOrDiseaseQualifiersToEntityMixin"
+        "FeatureOrDiseaseQualifiersToEntityMixin",
+        "GeneToDiseaseAssociation"
       ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
@@ -37858,6 +37859,7 @@
         "gene_to_disease_association_subject_aspect_qualifier",
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
+        "qualified_predicate",
         "gene_to_disease_association_subject",
         "gene_to_disease_association_object",
         "gene_to_disease_association_predicate"
@@ -38071,6 +38073,7 @@
         "gene_to_disease_association_subject_aspect_qualifier",
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
+        "qualified_predicate",
         "gene_to_disease_association_object",
         "druggable_gene_category",
         "druggable_gene_to_disease_association_subject",
@@ -38078,7 +38081,6 @@
         "frequency_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
-        "qualified_predicate",
         "disease_context_qualifier"
       ],
       "slot_usage": {},
@@ -38755,13 +38757,13 @@
         "gene_to_disease_association_subject_aspect_qualifier",
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
+        "qualified_predicate",
         "gene_to_disease_association_object",
         "gene_to_disease_association_predicate",
         "gene_as_a_model_of_disease_association_subject",
         "frequency_qualifier",
         "subject_direction_qualifier",
         "object_aspect_qualifier",
-        "qualified_predicate",
         "disease_context_qualifier"
       ],
       "slot_usage": {},
@@ -39258,6 +39260,7 @@
         "gene_to_disease_association_subject_aspect_qualifier",
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
+        "qualified_predicate",
         "subject_form_or_variant_qualifier",
         "gene_has_variant_that_contributes_to_disease_association_subject",
         "gene_has_variant_that_contributes_to_disease_association_object",
@@ -41053,9 +41056,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-23T17:50:51",
-  "source_file_size": 457290,
-  "generation_date": "2026-01-23T17:51:01",
+  "source_file_date": "2026-01-23T17:54:55",
+  "source_file_size": 457318,
+  "generation_date": "2026-01-23T17:55:06",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -1981,7 +1981,6 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <object_aspect_qualifier> @linkml:String ? ;
-          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <DruggableGeneToDiseaseAssociation> ]
@@ -2734,7 +2733,6 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <object_aspect_qualifier> @linkml:String ? ;
-          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <GeneAsAModelOfDiseaseAssociation> ]
@@ -3006,6 +3004,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
              <allelic_requirement> @linkml:String ? ;
+             <qualified_predicate> @linkml:Uriorcurie ? ;
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<Disease> ;
              rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
