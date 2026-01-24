@@ -1063,17 +1063,7 @@ message CausalGeneToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  uriorcurie predicate = 0
-  frequencyValue frequencyQualifier = 0
-  directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
-  uriorcurie qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
+  geneToDiseasePredicateEnum predicate = 0
   geneOrGeneProduct subject = 0
   disease object = 0
  }
@@ -2574,20 +2564,15 @@ message CorrelatedGeneToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
+  float zScore = 0
+  geneOrGeneProduct subject = 0
+  disease object = 0
+  geneToDiseasePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
-  float zScore = 0
-  geneOrGeneProduct subject = 0
-  disease object = 0
-  uriorcurie predicate = 0
  }
 // an item that refers to a collection of data from a data source.
 message Dataset
@@ -3297,20 +3282,15 @@ message DruggableGeneToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
+  disease object = 0
+  druggableGeneCategoryEnum druggableGeneCategory = 0
+  geneOrGeneProduct subject = 0
+  geneToDiseasePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
-  disease object = 0
-  druggableGeneCategoryEnum druggableGeneCategory = 0
-  geneOrGeneProduct subject = 0
-  uriorcurie predicate = 0
  }
 message EntityToDiseaseAssociation
  {
@@ -4073,19 +4053,14 @@ message GeneAsAModelOfDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  uriorcurie predicate = 0
+  disease object = 0
+  geneToDiseasePredicateEnum predicate = 0
+  geneOrGeneProduct subject = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
-  disease object = 0
-  geneOrGeneProduct subject = 0
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
@@ -4211,20 +4186,10 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  frequencyValue frequencyQualifier = 0
-  directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
-  uriorcurie qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
-  uriorcurie predicate = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 // An association between a gene or gene product or gene family and an anatomical entity.
 message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
@@ -4437,84 +4402,9 @@ message GeneToDiseaseAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  uriorcurie predicate = 0
-  frequencyValue frequencyQualifier = 0
-  directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
-  uriorcurie qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
   geneOrGeneProduct subject = 0
   disease object = 0
- }
-message GeneToDiseaseOrPhenotypicFeatureAssociation
- {
-  string id = 0
-  iriType iri = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
-  boolean negated = 0
-  string qualifier = 0
- repeated  ontologyClass qualifiers = 0
- repeated  publication publications = 0
- repeated  retrievalSource sources = 0
- repeated  evidenceType hasEvidenceOfType = 0
- repeated  informationContentEntity hasEvidence = 0
-  string knowledgeSource = 0
-  string primaryKnowledgeSource = 0
- repeated  string aggregatorKnowledgeSource = 0
-  knowledgeLevelEnum knowledgeLevel = 0
-  agentTypeEnum agentType = 0
-  timeType timepoint = 0
-  string originalSubject = 0
-  uriorcurie originalPredicate = 0
-  string originalObject = 0
-  string subjectFeatureName = 0
-  string objectFeatureName = 0
-  ontologyClass subjectCategory = 0
-  ontologyClass objectCategory = 0
- repeated  string subjectClosure = 0
- repeated  string objectClosure = 0
- repeated  ontologyClass subjectCategoryClosure = 0
- repeated  ontologyClass objectCategoryClosure = 0
-  string subjectNamespace = 0
-  string objectNamespace = 0
- repeated  string subjectLabelClosure = 0
- repeated  string objectLabelClosure = 0
- repeated  retrievalSource retrievalSourceIds = 0
-  float pValue = 0
-  float adjustedPValue = 0
- repeated  string supportingText = 0
- repeated  study hasSupportingStudies = 0
-  date updateDate = 0
-  float hasConfidenceScore = 0
-  boolean elevateToPrediction = 0
-  integer evidenceCount = 0
- repeated  string type = 0
- repeated  uriorcurie category = 0
-  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
-  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
-  directionQualifierEnum objectDirectionQualifier = 0
-  string allelicRequirement = 0
-  geneOrGeneProduct subject = 0
-  diseaseOrPhenotypicFeature object = 0
-  uriorcurie predicate = 0
-  frequencyValue frequencyQualifier = 0
-  directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
-  uriorcurie qualifiedPredicate = 0
-  disease diseaseContextQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -4937,7 +4827,9 @@ message GeneToPhenotypicFeatureAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  uriorcurie predicate = 0
+  geneOrGeneProduct subject = 0
+  phenotypicFeature object = 0
+  geneToPhenotypicFeaturePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
@@ -4948,8 +4840,6 @@ message GeneToPhenotypicFeatureAssociation
   integer hasTotal = 0
   double hasQuotient = 0
   double hasPercentage = 0
-  geneOrGeneProduct subject = 0
-  phenotypicFeature object = 0
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message GeneticInheritance

@@ -160,7 +160,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <AnatomicalEntityToAnatomicalEntityAssociation> ] ? ;
           rdf:subject @<AnatomicalEntity> ;
           rdf:object @<AnatomicalEntity> ;
-          rdf:predicate [ <develops_from> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ]
     )
@@ -171,8 +171,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <AnatomicalEntityToAnatomicalEntityAssociation> ] ? ;
           rdf:subject @<AnatomicalEntity> ;
           rdf:object @<AnatomicalEntity> ;
-          rdf:predicate [ <food_component_of> <is_active_ingredient_of> <is_excipient_of> <nutrient_of> <part_of>
-             <plasma_membrane_part_of> <variant_part_of> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <AnatomicalEntityToAnatomicalEntityPartOfAssociation> ]
     )
@@ -190,10 +189,10 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<Article_tes> (  &<Publication_tes> ;
              rdf:type [ <Publication> ] ? ;
-             <published_in> @<Uriorcurie> ;
-             <iso_abbreviation> @<String> ? ;
-             <volume> @<String> ? ;
-             <issue> @<String> ?
+             <published_in> @linkml:Uriorcurie ;
+             <iso_abbreviation> @linkml:String ? ;
+             <volume> @linkml:String ? ;
+             <issue> @linkml:String ?
           ) ;
           rdf:type [ <Article> ]
        )
@@ -205,18 +204,18 @@ linkml:Sparqlpath xsd:string
        (  $<Association_tes> (  &<Entity_tes> ;
              rdf:type [ <Entity> ] ? ;
              rdf:subject @<NamedThing> ;
-             rdf:predicate @<Uriorcurie> ;
+             rdf:predicate @linkml:Uriorcurie ;
              rdf:object @<NamedThing> ;
-             <negated> @<Boolean> ? ;
-             <qualifier> @<String> ? ;
+             <negated> @linkml:Boolean ? ;
+             <qualifier> @linkml:String ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <sources> @<RetrievalSource> * ;
              <has_evidence_of_type> @<EvidenceType> * ;
              <has_evidence> @<InformationContentEntity> * ;
-             <knowledge_source> @<String> ? ;
-             <primary_knowledge_source> @<String> ? ;
-             <aggregator_knowledge_source> @<String> * ;
+             <knowledge_source> @linkml:String ? ;
+             <primary_knowledge_source> @linkml:String ? ;
+             <aggregator_knowledge_source> @linkml:String * ;
              <knowledge_level> [ <https://w3id.org/biolink/vocab/KnowledgeLevelEnum#knowledge_assertion>
                 <https://w3id.org/biolink/vocab/KnowledgeLevelEnum#logical_entailment>
                 <https://w3id.org/biolink/vocab/KnowledgeLevelEnum#prediction>
@@ -233,32 +232,32 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/AgentTypeEnum#manual_validation_of_automated_agent>
                 <https://w3id.org/biolink/vocab/AgentTypeEnum#not_provided> ] ;
              <timepoint> @<TimeType> ? ;
-             <original_subject> @<String> ? ;
-             <original_predicate> @<Uriorcurie> ? ;
-             <original_object> @<String> ? ;
-             <subject_feature_name> @<String> ? ;
-             <object_feature_name> @<String> ? ;
+             <original_subject> @linkml:String ? ;
+             <original_predicate> @linkml:Uriorcurie ? ;
+             <original_object> @linkml:String ? ;
+             <subject_feature_name> @linkml:String ? ;
+             <object_feature_name> @linkml:String ? ;
              <subject_category> @<OntologyClass> ? ;
              <object_category> @<OntologyClass> ? ;
-             <subject_closure> @<String> * ;
-             <object_closure> @<String> * ;
+             <subject_closure> @linkml:String * ;
+             <object_closure> @linkml:String * ;
              <subject_category_closure> @<OntologyClass> * ;
              <object_category_closure> @<OntologyClass> * ;
-             <subject_namespace> @<String> ? ;
-             <object_namespace> @<String> ? ;
-             <subject_label_closure> @<String> * ;
-             <object_label_closure> @<String> * ;
+             <subject_namespace> @linkml:String ? ;
+             <object_namespace> @linkml:String ? ;
+             <subject_label_closure> @linkml:String * ;
+             <object_label_closure> @linkml:String * ;
              <retrieval_source_ids> @<RetrievalSource> * ;
-             <p_value> @<Float> ? ;
-             <adjusted_p_value> @<Float> ? ;
-             <supporting_text> @<String> * ;
+             <p_value> @linkml:Float ? ;
+             <adjusted_p_value> @linkml:Float ? ;
+             <supporting_text> @linkml:String * ;
              <has_supporting_studies> @<Study> * ;
-             <update_date> @<Date> ? ;
-             <has_confidence_score> @<Float> ? ;
-             <elevate_to_prediction> @<Boolean> ? ;
-             <evidence_count> @<Integer> ? ;
-             rdf:type @<String> * ;
-             <category> @<Uriorcurie> *
+             <update_date> @linkml:Date ? ;
+             <has_confidence_score> @linkml:Float ? ;
+             <elevate_to_prediction> @linkml:Boolean ? ;
+             <evidence_count> @linkml:Integer ? ;
+             rdf:type @linkml:String * ;
+             <category> @linkml:Uriorcurie *
           ) ;
           rdf:type [ <Association> ]
        )
@@ -279,8 +278,8 @@ linkml:Sparqlpath xsd:string
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneAffectsChemicalAssociation> OR
     @<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> OR @<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> OR
     @<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> OR @<GeneRegulatesGeneAssociation> OR
-    @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
-    @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
+    @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation>
+    OR @<GeneToPathwayAssociation> OR @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR
     @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
     @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation>
     OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
@@ -339,23 +338,23 @@ linkml:Sparqlpath xsd:string
           rdf:subject @<Behavior> ;
           rdf:object @<BehavioralFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <BehaviorToBehavioralFeatureAssociation> ]
     )
@@ -450,7 +449,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<BiologicalProcessOrActivity> ;
           rdf:object @<BiologicalProcessOrActivity> ;
-          rdf:predicate [ <subclass_of> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation> ]
     )
@@ -461,8 +460,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<BiologicalProcessOrActivity> ;
           rdf:object @<GeneOrGeneProductOrGeneFamily> ;
-          rdf:predicate [ <actively_involves> <can_be_carried_out_by> <consumes> <enabled_by> <has_catalyst> <has_input>
-             <has_output> <has_participant> <has_substrate> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation> ]
     )
@@ -489,7 +487,7 @@ linkml:Sparqlpath xsd:string
 <Book> CLOSED {
     (  $<Book_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          rdf:type @<String> *
+          rdf:type @linkml:String *
        ) ;
        rdf:type [ <Book> ]
     )
@@ -498,9 +496,9 @@ linkml:Sparqlpath xsd:string
 <BookChapter> CLOSED {
     (  $<BookChapter_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <published_in> @<Uriorcurie> ;
-          <volume> @<String> ? ;
-          <chapter> @<String> ?
+          <published_in> @linkml:Uriorcurie ;
+          <volume> @linkml:String ? ;
+          <chapter> @linkml:String ?
        ) ;
        rdf:type [ <BookChapter> ]
     )
@@ -531,7 +529,7 @@ linkml:Sparqlpath xsd:string
 
 <CaseToEntityAssociationMixin> {
     (  $<CaseToEntityAssociationMixin_tes> (  rdf:subject @<Case> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <CaseToEntityAssociationMixin> ] ?
@@ -558,23 +556,23 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <CaseToEntityAssociationMixin> ] ? ;
           <onset_qualifier> @<Onset> ? ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <CaseToPhenotypicFeatureAssociation> ]
     )
@@ -631,17 +629,17 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           rdf:subject @<CellLine> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ?
+          <qualified_predicate> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <CellLineAsAModelOfDiseaseAssociation> ]
     )
@@ -657,9 +655,9 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
              rdf:subject @<DiseaseOrPhenotypicFeature> ;
              <disease_context_qualifier> @<Disease> ? ;
-             <subject_specialization_qualifier> @<Uriorcurie> ? ;
-             <object_specialization_qualifier> @<Uriorcurie> ? ;
-             <anatomical_context_qualifier> @<String> *
+             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <anatomical_context_qualifier> @linkml:String *
           ) ;
           rdf:type [ <CellLineToDiseaseOrPhenotypicFeatureAssociation> ]
        )
@@ -668,7 +666,7 @@ linkml:Sparqlpath xsd:string
 
 <CellLineToEntityAssociationMixin> {
     (  $<CellLineToEntityAssociationMixin_tes> (  rdf:subject @<CellLine> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <CellLineToEntityAssociationMixin> ] ?
@@ -963,11 +961,10 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
                 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
              <anatomical_context_qualifier> @<AnatomicalEntity> * ;
-             <qualified_predicate> [ <causes> ] ? ;
+             <qualified_predicate> @linkml:Uriorcurie ? ;
              <species_context_qualifier> @<OrganismTaxon> ? ;
              rdf:subject @<ChemicalEntity> ;
-             rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
-                <has_side_effect> <regulates> ] ;
+             rdf:predicate @linkml:Uriorcurie ;
              rdf:object @<BiologicalEntity>
           ) ;
           rdf:type [ <ChemicalAffectsBiologicalEntityAssociation> ]
@@ -978,8 +975,8 @@ linkml:Sparqlpath xsd:string
 <ChemicalAffectsGeneAssociation> CLOSED {
     (  $<ChemicalAffectsGeneAssociation_tes> (  &<ChemicalAffectsBiologicalEntityAssociation_tes> ;
           rdf:type [ <ChemicalAffectsBiologicalEntityAssociation> ] ? ;
-          <dgidb_interaction_score> @<Float> ? ;
-          <dgidb_evidence_score> @<Integer> ?
+          <dgidb_interaction_score> @linkml:Float ? ;
+          <dgidb_evidence_score> @linkml:Integer ?
        ) ;
        rdf:type [ <ChemicalAffectsGeneAssociation> ]
     )
@@ -997,18 +994,18 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
              &<ChemicalEntityOrProteinOrPolypeptide_tes> ;
              rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ? ;
-             <trade_name> @<String> ? ;
+             <trade_name> @linkml:String ? ;
              <available_from> [ <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over_the_counter>
                 <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#prescription> ] * ;
-             <max_tolerated_dose> @<String> ? ;
-             <is_toxic> @<Boolean> ? ;
+             <max_tolerated_dose> @linkml:String ? ;
+             <is_toxic> @linkml:Boolean ? ;
              <has_chemical_role> @<ChemicalRole> * ;
-             <chembl_prodrug> @<Boolean> ? ;
-             <chembl_black_box_warning> @<String> ? ;
-             <chembl_natural_product> @<Boolean> ? ;
-             <chembl_availability_type> @<String> ? ;
-             <chembl_chirality> @<String> ? ;
-             <chembl_drug_warning> @<String> ?
+             <chembl_prodrug> @linkml:Boolean ? ;
+             <chembl_black_box_warning> @linkml:String ? ;
+             <chembl_natural_product> @linkml:Boolean ? ;
+             <chembl_availability_type> @linkml:String ? ;
+             <chembl_chirality> @linkml:String ? ;
+             <chembl_drug_warning> @linkml:String ?
           ) ;
           rdf:type [ <ChemicalEntity> ]
        )
@@ -1020,7 +1017,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<ChemicalEntity> ;
           rdf:object @<NamedThing> ;
-          rdf:predicate [ <was_tested_for_effect_on> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <ChemicalEntityAssessesNamedThingAssociation> ]
     )
@@ -1039,7 +1036,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          rdf:predicate [ <regulates> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
           rdf:object @<GeneOrGeneProduct>
        ) ;
@@ -1057,16 +1054,15 @@ linkml:Sparqlpath xsd:string
     (  $<ChemicalEntityToBiologicalProcessAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
-          <anatomical_context_qualifier> @<String> * ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <anatomical_context_qualifier> @linkml:String * ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           rdf:subject @<ChemicalEntity> ;
           rdf:object @<BiologicalProcess> ;
-          rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
-             <has_side_effect> <regulates> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <ChemicalEntityToBiologicalProcessAssociation> ]
     )
@@ -1078,7 +1074,7 @@ linkml:Sparqlpath xsd:string
           <catalyst_qualifier> @<MacromolecularMachineMixin> * ;
           rdf:subject @<ChemicalEntity> ;
           rdf:object @<ChemicalEntity> ;
-          rdf:predicate [ <derives_into> <has_metabolite> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <ChemicalEntityToChemicalDerivationAssociation> ]
     )
@@ -1109,9 +1105,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_provided> ] ? ;
           rdf:object @<DiseaseOrPhenotypicFeature> ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @<Uriorcurie> ? ;
-          <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String *
        ) ;
        rdf:type [ <ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -1123,7 +1119,7 @@ linkml:Sparqlpath xsd:string
 
 <ChemicalEntityToEntityAssociationMixin_struct> {
     (  $<ChemicalEntityToEntityAssociationMixin_tes> (  rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ?
@@ -1174,7 +1170,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
           <subject_derivative_qualifier> [ <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> ] ? ;
           <subject_context_qualifier> @<AnatomicalEntity> ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
@@ -1357,13 +1353,11 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
-          <dgidb_interaction_score> @<Float> ? ;
-          <dgidb_evidence_score> @<Integer> ? ;
+          <dgidb_interaction_score> @linkml:Float ? ;
+          <dgidb_evidence_score> @linkml:Integer ? ;
           rdf:subject @<ChemicalEntity> ;
           rdf:object @<GeneOrGeneProduct> ;
-          rdf:predicate [ <binds> <directly_physically_interacts_with> <gene_fusion_with> <genetic_neighborhood_of>
-             <genetically_interacts_with> <indirectly_physically_interacts_with> <interacts_with> <physically_interacts_with>
-             <regulates> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <ChemicalGeneInteractionAssociation> ]
     )
@@ -1375,7 +1369,7 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <ChemicalEntity> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <is_supplement> @<String> ? ;
+             <is_supplement> @linkml:String ? ;
              <highest_FDA_approval_status> [ <https://w3id.org/biolink/vocab/ApprovalStatusEnum#discovery_and_development_phase>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#preclinical_research_phase>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#fda_clinical_research_phase>
@@ -1429,7 +1423,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-          rdf:predicate [ <has_side_effect> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -1447,23 +1441,23 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#serious_adverse_event>
                 <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction>
                 <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> ] ? ;
-             rdf:predicate [ <has_adverse_event> ] ;
+             rdf:predicate @linkml:Uriorcurie ;
              <disease_context_qualifier> @<Disease> ? ;
-             <subject_specialization_qualifier> @<Uriorcurie> ? ;
-             <object_specialization_qualifier> @<Uriorcurie> ? ;
-             <anatomical_context_qualifier> @<String> * ;
+             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+             <anatomical_context_qualifier> @linkml:String * ;
              <frequency_qualifier> @<FrequencyValue> ? ;
-             <subject_aspect_qualifier> @<String> ? ;
+             <subject_aspect_qualifier> @linkml:String ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <object_aspect_qualifier> @<String> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
              <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <qualified_predicate> @<Uriorcurie> ?
+             <qualified_predicate> @linkml:Uriorcurie ?
           ) ;
           rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ]
        )
@@ -1573,8 +1567,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
-          <clinical_trial_primary_purpose> @<String> ? ;
-          <clinical_trial_intervention_model> @<String> ? ;
+          <clinical_trial_primary_purpose> @linkml:String ? ;
+          <clinical_trial_intervention_model> @linkml:String ? ;
           <clinical_trial_overall_status> [ <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#ACTIVE_NOT_RECRUITING>
              <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#APPROVED_FOR_MARKETING>
              <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#AVAILABLE>
@@ -1588,18 +1582,18 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#TERMINATED>
              <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#UNKNOWN>
              <https://w3id.org/biolink/vocab/ClinicalTrialStatusEnum#WITHDRAWN> ] ? ;
-          <clinical_trial_brief_title> @<String> ? ;
-          <clinical_trial_enrollment_type> @<String> ? ;
-          <clinical_trial_start_date> @<String> ? ;
-          <clinical_trial_enrollment> @<Integer> ? ;
+          <clinical_trial_brief_title> @linkml:String ? ;
+          <clinical_trial_enrollment_type> @linkml:String ? ;
+          <clinical_trial_start_date> @linkml:String ? ;
+          <clinical_trial_enrollment> @linkml:Integer ? ;
           <clinical_trial_age_stage> [ <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#adult>
              <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#child>
              <https://w3id.org/biolink/vocab/ClinicalTrialAgeStageEnum#older_adult> ] * ;
-          <clinical_trial_age_range> @<String> ? ;
-          <clinical_trial_tested_intervention> @<String> ? ;
+          <clinical_trial_age_range> @linkml:String ? ;
+          <clinical_trial_tested_intervention> @linkml:String ? ;
           <clinical_trial_interventions> @<ClinicalIntervention> * ;
           <clinical_trial_conditions> @<DiseaseOrPhenotypicFeature> * ;
-          <creation_date> @<Date> ?
+          <creation_date> @linkml:Date ?
        ) ;
        rdf:type [ <ClinicalTrial> ]
     )
@@ -1670,7 +1664,7 @@ linkml:Sparqlpath xsd:string
     (  $<ContributorAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<InformationContentEntity> ;
-          rdf:predicate [ <author> <contributor> <editor> <provider> <publisher> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<Agent> ;
           <qualifiers> @<OntologyClass> *
        ) ;
@@ -1685,11 +1679,19 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
-          <z_score> @<Float> ? ;
+          <z_score> @linkml:Float ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
-          rdf:predicate [ <biomarker_for> <coexpressed_with> <correlated_with> <has_biomarker> <negatively_correlated_with>
-             <occurs_together_in_literature_with> <positively_correlated_with> ]
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ] ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
+          <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <CorrelatedGeneToDiseaseAssociation> ]
     )
@@ -1706,7 +1708,7 @@ linkml:Sparqlpath xsd:string
 <DatasetDistribution> CLOSED {
     (  $<DatasetDistribution_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
-          <distribution_download_url> @<String> ?
+          <distribution_download_url> @linkml:String ?
        ) ;
        rdf:type [ <DatasetDistribution> ]
     )
@@ -1715,8 +1717,8 @@ linkml:Sparqlpath xsd:string
 <DatasetSummary> CLOSED {
     (  $<DatasetSummary_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
-          <source_web_page> @<String> ? ;
-          schema1:logo @<String> ?
+          <source_web_page> @linkml:String ? ;
+          schema1:logo @linkml:String ?
        ) ;
        rdf:type [ <DatasetSummary> ]
     )
@@ -1726,7 +1728,7 @@ linkml:Sparqlpath xsd:string
     (  $<DatasetVersion_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
           <has_dataset> @<Dataset> ? ;
-          <ingest_date> @<String> ? ;
+          <ingest_date> @linkml:String ? ;
           dcterms:distribution @<DatasetDistribution> ?
        ) ;
        rdf:type [ <DatasetVersion> ]
@@ -1768,7 +1770,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResponseTargetEnum#sample> ] ? ;
           rdf:subject @<Disease> ;
           rdf:object @<ChemicalEntity> ;
-          rdf:predicate [ <associated_with_resistance_to> <associated_with_response_to> <associated_with_sensitivity_to> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <DiseaseAssociatedWithResponseToChemicalEntityAssociation> ]
     )
@@ -1807,7 +1809,7 @@ linkml:Sparqlpath xsd:string
 
 <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> {
     (  $<DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes> (  rdf:subject @<DiseaseOrPhenotypicFeature> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ] ?
@@ -1819,7 +1821,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           &<DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes> ;
           rdf:type [ <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ] ? ;
-          rdf:predicate [ <has_mode_of_inheritance> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<GeneticInheritance>
        ) ;
        rdf:type [ <DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> ]
@@ -1839,7 +1841,7 @@ linkml:Sparqlpath xsd:string
 
 <DiseaseToEntityAssociationMixin> {
     (  $<DiseaseToEntityAssociationMixin_tes> (  rdf:subject @<Disease> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <DiseaseToEntityAssociationMixin> ] ?
@@ -1870,22 +1872,22 @@ linkml:Sparqlpath xsd:string
           <onset_qualifier> @<Onset> ? ;
           rdf:subject @<Disease> ;
           rdf:object @<PhenotypicFeature> ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ? ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ?
        ) ;
@@ -1966,7 +1968,16 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate [ <target_for> ]
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ] ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
+          <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <DruggableGeneToDiseaseAssociation> ]
     )
@@ -1984,12 +1995,12 @@ linkml:Sparqlpath xsd:string
 
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
-          <category> @<Uriorcurie> * ;
-          rdf:type @<String> * ;
+          <category> @linkml:Uriorcurie * ;
+          rdf:type @linkml:String * ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
           <has_attribute> @<Attribute> * ;
-          <deprecated> @<Boolean> ?
+          <deprecated> @linkml:Boolean ?
        ) ;
        rdf:type [ <Entity> ]
     )
@@ -2013,8 +2024,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
-          <FDA_regulatory_approvals> @<String> * ;
-          <number_of_cases> @<Integer> ?
+          <FDA_regulatory_approvals> @linkml:String * ;
+          <number_of_cases> @linkml:Integer ?
        ) ;
        rdf:type [ <EntityToDiseaseAssociation> ]
     )
@@ -2031,12 +2042,12 @@ linkml:Sparqlpath xsd:string
 
 <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> {
     (  $<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<DiseaseOrPhenotypicFeature> ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @<Uriorcurie> ? ;
-          <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String *
        ) ;
        rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ?
     )
@@ -2044,7 +2055,7 @@ linkml:Sparqlpath xsd:string
 
 <EntityToExposureEventAssociationMixin> {
     (  $<EntityToExposureEventAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<ExposureEvent>
        ) ;
        rdf:type [ <EntityToExposureEventAssociationMixin> ] ?
@@ -2058,17 +2069,17 @@ linkml:Sparqlpath xsd:string
 <EntityToFeatureOrDiseaseQualifiersMixin_struct> {
     (  $<EntityToFeatureOrDiseaseQualifiersMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
           rdf:type [ <FrequencyQualifierMixin> ] ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ?
@@ -2078,17 +2089,17 @@ linkml:Sparqlpath xsd:string
 <EntityToFeatureOrGeneQualifiersMixin> {
     (  $<EntityToFeatureOrGeneQualifiersMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
           rdf:type [ <FrequencyQualifierMixin> ] ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ?
+          <qualified_predicate> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <EntityToFeatureOrGeneQualifiersMixin> ] ?
     )
@@ -2097,17 +2108,17 @@ linkml:Sparqlpath xsd:string
 <EntityToFeatureOrVariantQualifiersMixin> {
     (  $<EntityToFeatureOrVariantQualifiersMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
           rdf:type [ <FrequencyQualifierMixin> ] ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ?
+          <qualified_predicate> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <EntityToFeatureOrVariantQualifiersMixin> ] ?
     )
@@ -2115,7 +2126,7 @@ linkml:Sparqlpath xsd:string
 
 <EntityToOutcomeAssociationMixin> {
     (  $<EntityToOutcomeAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<Outcome>
        ) ;
        rdf:type [ <EntityToOutcomeAssociationMixin> ] ?
@@ -2140,8 +2151,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
              <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
-          <FDA_regulatory_approvals> @<String> * ;
-          <number_of_cases> @<Integer> ?
+          <FDA_regulatory_approvals> @linkml:String * ;
+          <number_of_cases> @linkml:Integer ?
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociation> ]
     )
@@ -2154,10 +2165,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <FrequencyQuantifier> ] ? ;
           rdf:object @<PhenotypicFeature> ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ?
     )
@@ -2264,14 +2275,14 @@ linkml:Sparqlpath xsd:string
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <timepoint> @<TimeType> ? ;
-             <exposure_type> @<String> ? ;
-             <exposure_vehicle> @<String> ? ;
-             <exposure_route> @<String> ? ;
-             <exposure_start_age> @<Integer> ? ;
-             <exposure_end_age> @<Integer> ? ;
-             <exposure_duration> @<Time> ? ;
-             <exposure_magnitude> @<String> ? ;
-             <exposure_additional_condition> @<String> ?
+             <exposure_type> @linkml:String ? ;
+             <exposure_vehicle> @linkml:String ? ;
+             <exposure_route> @linkml:String ? ;
+             <exposure_start_age> @linkml:Integer ? ;
+             <exposure_end_age> @linkml:Integer ? ;
+             <exposure_duration> @linkml:Time ? ;
+             <exposure_magnitude> @linkml:String ? ;
+             <exposure_additional_condition> @linkml:String ?
           ) ;
           rdf:type [ <ExposureEvent> ]
        )
@@ -2299,23 +2310,23 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           rdf:subject @<ExposureEvent> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <ExposureEventToPhenotypicFeatureAssociation> ]
     )
@@ -2325,17 +2336,17 @@ linkml:Sparqlpath xsd:string
     {
        (  $<FeatureOrDiseaseQualifiersToEntityMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
              rdf:type [ <FrequencyQualifierMixin> ] ? ;
-             <subject_aspect_qualifier> @<String> ? ;
+             <subject_aspect_qualifier> @linkml:String ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <object_aspect_qualifier> @<String> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
              <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <qualified_predicate> @<Uriorcurie> ?
+             <qualified_predicate> @linkml:Uriorcurie ?
           ) ;
           rdf:type [ <FeatureOrDiseaseQualifiersToEntityMixin> ] ?
        )
@@ -2366,7 +2377,7 @@ linkml:Sparqlpath xsd:string
 <FrequencyQualifierMixin_struct> {
     (  $<FrequencyQualifierMixin_tes> (  <frequency_qualifier> @<FrequencyValue> ? ;
           rdf:subject @<NamedThing> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <FrequencyQualifierMixin> ] ?
@@ -2376,10 +2387,10 @@ linkml:Sparqlpath xsd:string
 <FrequencyQuantifier> {
     (  $<FrequencyQuantifier_tes> (  &<RelationshipQuantifier_tes> ;
           rdf:type [ <RelationshipQuantifier> ] ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <FrequencyQuantifier> ] ?
     )
@@ -2419,7 +2430,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <PhysicalEssence> ] ? ;
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <symbol> @<String> ? ;
+          <symbol> @linkml:String ? ;
           <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
        rdf:type [ <Gene> ]
@@ -2447,7 +2458,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ] ? ;
-          <subject_derivative_qualifier> @<String> ? ;
+          <subject_derivative_qualifier> @linkml:String ? ;
           <subject_aspect_qualifier> [
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
              <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
@@ -2694,11 +2705,10 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> * ;
-          <qualified_predicate> [ <causes> ] ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
-             <has_side_effect> <regulates> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<ChemicalEntity>
        ) ;
        rdf:type [ <GeneAffectsChemicalAssociation> ]
@@ -2712,7 +2722,15 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ModelToDiseaseAssociationMixin> ] ? ;
           &<EntityToDiseaseAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
-          rdf:subject @<GeneOrGeneProduct>
+          rdf:subject @<GeneOrGeneProduct> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
+          <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <GeneAsAModelOfDiseaseAssociation> ]
     )
@@ -2746,8 +2764,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<Gene> ;
           rdf:object @<GeneFamily> ;
-          rdf:predicate [ <has_active_ingredient> <has_excipient> <has_food_component> <has_nutrient> <has_part>
-             <has_plasma_membrane_part> <has_variant_part> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> ]
     )
@@ -2762,10 +2779,11 @@ linkml:Sparqlpath xsd:string
 <GeneHasVariantThatContributesToDiseaseAssociation> CLOSED {
     (  $<GeneHasVariantThatContributesToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
           rdf:type [ <GeneToDiseaseAssociation> ] ? ;
-          <subject_form_or_variant_qualifier> @<String> ? ;
+          <subject_form_or_variant_qualifier> @linkml:String ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
-          rdf:predicate [ <causes> <contributes_to> ]
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
        ) ;
        rdf:type [ <GeneHasVariantThatContributesToDiseaseAssociation> ]
     )
@@ -2802,8 +2820,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
           rdf:object @<BiologicalProcessOrActivity> ;
-          rdf:predicate [ <actively_involved_in> <capable_of> <catalyzes> <consumed_by> <enables> <is_input_of> <is_output_of>
-             <is_substrate_of> <participates_in> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> ]
     )
@@ -2822,7 +2839,7 @@ linkml:Sparqlpath xsd:string
        (  $<GeneProductMixin_tes> (  &<GeneOrGeneProduct_tes> ;
              rdf:type [ <GeneOrGeneProduct> ] ? ;
              <synonym> @<LabelType> * ;
-             <xref> @<Uriorcurie> *
+             <xref> @linkml:Uriorcurie *
           ) ;
           rdf:type [ <GeneProductMixin> ] ?
        )
@@ -2894,10 +2911,10 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ;
-          <qualified_predicate> [ <causes> ] ;
+          <qualified_predicate> @linkml:Uriorcurie ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <GeneRegulatesGeneAssociation> ]
@@ -2906,25 +2923,8 @@ linkml:Sparqlpath xsd:string
 
 <GeneToDiseaseAssociation>  (
     CLOSED {
-       (  $<GeneToDiseaseAssociation_tes> (  &<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> ;
-             rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
-             &<GeneToEntityAssociationMixin_tes> ;
-             rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
-             rdf:subject @<GeneOrGeneProduct> ;
-             rdf:object @<Disease>
-          ) ;
-          rdf:type [ <GeneToDiseaseAssociation> ]
-       )
-    } OR @<CausalGeneToDiseaseAssociation> OR @<CorrelatedGeneToDiseaseAssociation> OR @<DruggableGeneToDiseaseAssociation> OR
-    @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
-)
-
-<GeneToDiseaseOrPhenotypicFeatureAssociation>  (
-    CLOSED {
-       (  $<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
+       (  $<GeneToDiseaseAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
-             &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
-             rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
              &<GeneToEntityAssociationMixin_tes> ;
              rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
              <subject_form_or_variant_qualifier> [
@@ -3000,32 +3000,21 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <allelic_requirement> @<String> ? ;
+             <allelic_requirement> @linkml:String ? ;
              rdf:subject @<GeneOrGeneProduct> ;
-             rdf:object @<DiseaseOrPhenotypicFeature> ;
-             rdf:predicate [ <causes> <contributes_to> ] ;
-             <frequency_qualifier> @<FrequencyValue> ? ;
-             <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <object_aspect_qualifier> @<String> ? ;
-             <qualified_predicate> @<Uriorcurie> ? ;
-             <disease_context_qualifier> @<Disease> ? ;
-             <sex_qualifier> @<BiologicalSex> ? ;
-             <has_count> @<Integer> ? ;
-             <has_total> @<Integer> ? ;
-             <has_quotient> @<Double> ? ;
-             <has_percentage> @<Double> ?
+             rdf:object @<Disease> ;
+             rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
+                <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
           ) ;
-          rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ]
+          rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<GeneToDiseaseAssociation> OR @<GeneToPhenotypicFeatureAssociation>
+    } OR @<CausalGeneToDiseaseAssociation> OR @<CorrelatedGeneToDiseaseAssociation> OR @<DruggableGeneToDiseaseAssociation> OR
+    @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 
 <GeneToEntityAssociationMixin> {
     (  $<GeneToEntityAssociationMixin_tes> (  rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <GeneToEntityAssociationMixin> ] ?
@@ -3037,10 +3026,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           <stage_qualifier> @<LifeStage> ? ;
           <quantifier_qualifier> @<OntologyClass> ? ;
-          <object_specialization_qualifier> @<Uriorcurie> ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<AnatomicalEntity> ;
-          rdf:predicate [ <expressed_in> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <GeneToExpressionSiteAssociation> ]
     )
@@ -3065,7 +3054,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <GeneToGeneAssociation> ] ? ;
           &<GeneExpressionMixin_tes> ;
           rdf:type [ <GeneExpressionMixin> ] ? ;
-          rdf:predicate [ <coexpressed_with> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           <quantifier_qualifier> @<OntologyClass> ? ;
           <expression_site> @<AnatomicalEntity> ? ;
           <stage_qualifier> @<LifeStage> ? ;
@@ -3080,7 +3069,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<Gene> ;
           rdf:object @<GeneFamily> ;
-          rdf:predicate [ <member_of> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <GeneToGeneFamilyAssociation> ]
     )
@@ -3090,7 +3079,7 @@ linkml:Sparqlpath xsd:string
     (  $<GeneToGeneHomologyAssociation_tes> (  &<GeneToGeneAssociation_tes> ;
           rdf:type [ <GeneToGeneAssociation> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:predicate [ <homologous_to> <orthologous_to> <paralogous_to> <xenologous_to> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <GeneToGeneHomologyAssociation> ]
@@ -3102,7 +3091,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <SequenceFeatureRelationship> ] ? ;
           rdf:subject @<Gene> ;
           rdf:object @<GeneProductMixin> ;
-          rdf:predicate [ <has_gene_product> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <GeneToGeneProductRelationship> ]
     )
@@ -3131,14 +3120,105 @@ linkml:Sparqlpath xsd:string
 }
 
 <GeneToPhenotypicFeatureAssociation> CLOSED {
-    (  $<GeneToPhenotypicFeatureAssociation_tes> (  &<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> ;
-          rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
+    (  $<GeneToPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
           &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject_form_or_variant_qualifier> [
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#non_loss_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#gain_of_function_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#dominant_negative_variant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>
+             <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ] ? ;
+          <subject_aspect_qualifier> [
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#absorption>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#aggregation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#release>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#isomerization>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#splicing>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_interaction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#guanyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#adenyl_nucleotide_exchange>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>
+             <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ] ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <allelic_requirement> @linkml:String ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          rdf:object @<PhenotypicFeature>
+          rdf:object @<PhenotypicFeature> ;
+          rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Acauses>
+             <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Acontributes_to>
+             <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Aassociated_with>
+             <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Ahas_phenotype> ] ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <GeneToPhenotypicFeatureAssociation> ]
     )
@@ -3198,8 +3278,8 @@ linkml:Sparqlpath xsd:string
 <GenomicSequenceLocalization> CLOSED {
     (  $<GenomicSequenceLocalization_tes> (  &<SequenceAssociation_tes> ;
           rdf:type [ <SequenceAssociation> ] ? ;
-          <start_interbase_coordinate> @<Integer> ? ;
-          <end_interbase_coordinate> @<Integer> ? ;
+          <start_interbase_coordinate> @linkml:Integer ? ;
+          <end_interbase_coordinate> @linkml:Integer ? ;
           <genome_build> [ <https://w3id.org/biolink/vocab/StrandEnum#%2B> <https://w3id.org/biolink/vocab/StrandEnum#->
              <https://w3id.org/biolink/vocab/StrandEnum#.> <https://w3id.org/biolink/vocab/StrandEnum#%3F> ] ? ;
           <strand> [ <https://w3id.org/biolink/vocab/StrandEnum#%2B> <https://w3id.org/biolink/vocab/StrandEnum#->
@@ -3208,7 +3288,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/PhaseEnum#2> ] ? ;
           rdf:subject @<NucleicAcidEntity> ;
           rdf:object @<NucleicAcidEntity> ;
-          rdf:predicate [ <has_sequence_location> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <GenomicSequenceLocalization> ]
     )
@@ -3252,20 +3332,20 @@ linkml:Sparqlpath xsd:string
              &<EntityToDiseaseAssociationMixin_tes> ;
              rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
              rdf:subject @<NamedThing> ;
-             rdf:predicate [ <related_condition> ] ;
+             rdf:predicate @linkml:Uriorcurie ;
              rdf:object @<NamedThing> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
-             <subject_aspect_qualifier> @<String> ? ;
+             <subject_aspect_qualifier> @linkml:String ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <object_aspect_qualifier> @<String> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
              <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <qualified_predicate> @<Uriorcurie> ? ;
+             <qualified_predicate> @linkml:Uriorcurie ? ;
              <disease_context_qualifier> @<Disease> ?
           ) ;
           rdf:type [ <GenotypeToDiseaseAssociation> ]
@@ -3275,7 +3355,7 @@ linkml:Sparqlpath xsd:string
 
 <GenotypeToEntityAssociationMixin> {
     (  $<GenotypeToEntityAssociationMixin_tes> (  rdf:subject @<Genotype> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <GenotypeToEntityAssociationMixin> ] ?
@@ -3285,7 +3365,7 @@ linkml:Sparqlpath xsd:string
 <GenotypeToGeneAssociation> CLOSED {
     (  $<GenotypeToGeneAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:subject @<Genotype> ;
           rdf:object @<Gene>
        ) ;
@@ -3296,7 +3376,7 @@ linkml:Sparqlpath xsd:string
 <GenotypeToGenotypePartAssociation> CLOSED {
     (  $<GenotypeToGenotypePartAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:predicate [ <has_variant_part> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:subject @<Genotype> ;
           rdf:object @<Genotype>
        ) ;
@@ -3311,26 +3391,26 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           &<GenotypeToEntityAssociationMixin_tes> ;
           rdf:type [ <GenotypeToEntityAssociationMixin> ] ? ;
-          rdf:predicate [ <has_phenotype> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:subject @<Genotype> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <GenotypeToPhenotypicFeatureAssociation> ]
     )
@@ -3339,7 +3419,7 @@ linkml:Sparqlpath xsd:string
 <GenotypeToVariantAssociation> CLOSED {
     (  $<GenotypeToVariantAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:subject @<Genotype> ;
           rdf:object @<SequenceVariant>
        ) ;
@@ -3367,8 +3447,8 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<GeographicLocation_tes> (  &<PlanetaryEntity_tes> ;
              rdf:type [ <PlanetaryEntity> ] ? ;
-             <latitude> @<Float> ? ;
-             <longitude> @<Float> ?
+             <latitude> @linkml:Float ? ;
+             <longitude> @linkml:Float ?
           ) ;
           rdf:type [ <GeographicLocation> ]
        )
@@ -3436,14 +3516,14 @@ linkml:Sparqlpath xsd:string
 <IceesStudyResult> CLOSED {
     (  $<IceesStudyResult_tes> (  &<StudyResult_tes> ;
           rdf:type [ <StudyResult> ] ? ;
-          <chi_squared_statistic> @<Float> ? ;
-          <chi_squared_dof> @<Integer> ? ;
-          <chi_squared_p> @<Float> ? ;
-          <total_sample_size> @<Integer> ? ;
-          <fisher_exact_odds_ratio> @<Float> ? ;
-          <fisher_exact_p> @<Float> ? ;
-          <log_odds_ratio> @<Float> ? ;
-          <log_odds_ratio_95_ci> @<Float> *
+          <chi_squared_statistic> @linkml:Float ? ;
+          <chi_squared_dof> @linkml:Integer ? ;
+          <chi_squared_p> @linkml:Float ? ;
+          <total_sample_size> @linkml:Integer ? ;
+          <fisher_exact_odds_ratio> @linkml:Float ? ;
+          <fisher_exact_p> @linkml:Float ? ;
+          <log_odds_ratio> @linkml:Float ? ;
+          <log_odds_ratio_95_ci> @linkml:Float *
        ) ;
        rdf:type [ <IceesStudyResult> ]
     )
@@ -3469,10 +3549,10 @@ linkml:Sparqlpath xsd:string
 <InformationContentEntity_struct> {
     (  $<InformationContentEntity_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <license> @<String> ? ;
-          <rights> @<String> ? ;
-          <format> @<String> ? ;
-          <creation_date> @<Date> ?
+          <license> @linkml:String ? ;
+          <rights> @linkml:String ? ;
+          <format> @linkml:String ? ;
+          <creation_date> @linkml:Date ?
        ) ;
        rdf:type [ <InformationContentEntity> ]
     )
@@ -3483,7 +3563,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<NamedThing> ;
           rdf:object @<NamedThing> ;
-          rdf:predicate [ <mentions> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <InformationContentEntityToNamedThingAssociation> ]
     )
@@ -3583,7 +3663,7 @@ linkml:Sparqlpath xsd:string
 
 <MacromolecularMachineToEntityAssociationMixin> {
     (  $<MacromolecularMachineToEntityAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing> ;
           <species_context_qualifier> @<OrganismTaxon> ?
        ) ;
@@ -3635,7 +3715,7 @@ linkml:Sparqlpath xsd:string
     (  $<MaterialSampleDerivationAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<MaterialSample> ;
-          rdf:predicate [ <derives_from> <is_metabolite_of> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <MaterialSampleDerivationAssociation> ]
@@ -3650,9 +3730,9 @@ linkml:Sparqlpath xsd:string
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
           <disease_context_qualifier> @<Disease> ? ;
-          <subject_specialization_qualifier> @<Uriorcurie> ? ;
-          <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String *
        ) ;
        rdf:type [ <MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -3660,7 +3740,7 @@ linkml:Sparqlpath xsd:string
 
 <MaterialSampleToEntityAssociationMixin> {
     (  $<MaterialSampleToEntityAssociationMixin_tes> (  rdf:subject @<MaterialSample> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <MaterialSampleToEntityAssociationMixin> ] ?
@@ -3677,7 +3757,7 @@ linkml:Sparqlpath xsd:string
 
 <ModelToDiseaseAssociationMixin> {
     (  $<ModelToDiseaseAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
-          rdf:predicate [ <model_of> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <ModelToDiseaseAssociationMixin> ] ?
@@ -3724,8 +3804,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<MolecularActivity> ;
           rdf:object @<Pathway> ;
-          rdf:predicate [ <food_component_of> <is_active_ingredient_of> <is_excipient_of> <nutrient_of> <part_of>
-             <plasma_membrane_part_of> <variant_part_of> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <MolecularActivityToPathwayAssociation> ]
     )
@@ -3737,7 +3816,7 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <ChemicalEntity> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <is_metabolite> @<Boolean> ?
+             <is_metabolite> @linkml:Boolean ?
           ) ;
           rdf:type [ <MolecularEntity> ]
        )
@@ -3766,14 +3845,14 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<NamedThing_tes> (  &<Entity_tes> ;
              rdf:type [ <Entity> ] ? ;
-             <provided_by> @<String> * ;
-             <xref> @<Uriorcurie> * ;
+             <provided_by> @linkml:String * ;
+             <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
-             <equivalent_identifiers> @<Uriorcurie> * ;
-             <information_content> @<Float> ? ;
-             <taxon> @<Uriorcurie> ? ;
-             <category> @<Uriorcurie> +
+             <equivalent_identifiers> @linkml:Uriorcurie * ;
+             <information_content> @linkml:Float ? ;
+             <taxon> @linkml:Uriorcurie ? ;
+             <category> @linkml:Uriorcurie +
           ) ;
           rdf:type [ <NamedThing> ]
        )
@@ -3785,16 +3864,10 @@ linkml:Sparqlpath xsd:string
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
     (  $<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_context_qualifier> @<OntologyClass> ? ;
-          rdf:predicate [ <associated_with> <associated_with_decreased_likelihood_of> <associated_with_increased_likelihood_of>
-             <associated_with_likelihood_of> <associated_with_resistance_to> <associated_with_response_to>
-             <associated_with_sensitivity_to> <biomarker_for> <coexpressed_with> <condition_associated_with_gene> <correlated_with>
-             <decreased_likelihood_associated_with> <gene_associated_with_condition> <genetic_association>
-             <genetically_associated_with> <has_biomarker> <increased_likelihood_associated_with> <likelihood_associated_with>
-             <negatively_correlated_with> <occurs_together_in_literature_with> <positively_correlated_with>
-             <resistance_associated_with> <response_associated_with> <sensitivity_associated_with> ] ;
-          <object_aspect_qualifier> @<String> ? ;
+          rdf:predicate @linkml:Uriorcurie ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_context_qualifier> @<OntologyClass> ? ;
           <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
@@ -3917,7 +3990,7 @@ linkml:Sparqlpath xsd:string
 
 <OrganismTaxonToEntityAssociation> {
     (  $<OrganismTaxonToEntityAssociation_tes> (  rdf:subject @<OrganismTaxon> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <OrganismTaxonToEntityAssociation> ] ?
@@ -3931,7 +4004,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OrganismTaxonToEntityAssociation> ] ? ;
           rdf:subject @<OrganismTaxon> ;
           rdf:object @<NamedThing> ;
-          rdf:predicate @<Uriorcurie>
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <OrganismTaxonToEnvironmentAssociation> ]
     )
@@ -3956,12 +4029,10 @@ linkml:Sparqlpath xsd:string
 <OrganismTaxonToOrganismTaxonInteraction> CLOSED {
     (  $<OrganismTaxonToOrganismTaxonInteraction_tes> (  &<OrganismTaxonToOrganismTaxonAssociation_tes> ;
           rdf:type [ <OrganismTaxonToOrganismTaxonAssociation> ] ? ;
-          <associated_environmental_context> @<String> ? ;
+          <associated_environmental_context> @linkml:String ? ;
           rdf:subject @<OrganismTaxon> ;
           rdf:object @<OrganismTaxon> ;
-          rdf:predicate [ <binds> <directly_physically_interacts_with> <gene_fusion_with> <genetic_neighborhood_of>
-             <genetically_interacts_with> <indirectly_physically_interacts_with> <interacts_with> <physically_interacts_with>
-             <regulates> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <OrganismTaxonToOrganismTaxonInteraction> ]
     )
@@ -3972,7 +4043,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <OrganismTaxonToOrganismTaxonAssociation> ] ? ;
           rdf:subject @<OrganismTaxon> ;
           rdf:object @<OrganismTaxon> ;
-          rdf:predicate [ <subclass_of> ]
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <OrganismTaxonToOrganismTaxonSpecialization> ]
     )
@@ -4013,17 +4084,17 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           rdf:subject @<OrganismalEntity> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <OrganismalEntityAsAModelOfDiseaseAssociation> ]
@@ -4040,9 +4111,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<PairwiseGeneToGeneInteraction_tes> (  &<GeneToGeneAssociation_tes> ;
              rdf:type [ <GeneToGeneAssociation> ] ? ;
-             rdf:predicate [ <binds> <directly_physically_interacts_with> <gene_fusion_with> <genetic_neighborhood_of>
-                <genetically_interacts_with> <indirectly_physically_interacts_with> <interacts_with> <physically_interacts_with>
-                <regulates> ]
+             rdf:predicate @linkml:Uriorcurie
           ) ;
           rdf:type [ <PairwiseGeneToGeneInteraction> ]
        )
@@ -4054,9 +4123,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <PairwiseGeneToGeneInteraction> ] ? ;
           <interacting_molecules_category> @<OntologyClass> ? ;
           rdf:subject @<MolecularEntity> ;
-          rdf:predicate [ <binds> <directly_physically_interacts_with> <gene_fusion_with> <genetic_neighborhood_of>
-             <genetically_interacts_with> <indirectly_physically_interacts_with> <interacts_with> <physically_interacts_with>
-             <regulates> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<MolecularEntity>
        ) ;
        rdf:type [ <PairwiseMolecularInteraction> ]
@@ -4174,31 +4241,25 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
           &<PhenotypicFeatureToEntityAssociationMixin_tes> ;
           rdf:type [ <PhenotypicFeatureToEntityAssociationMixin> ] ? ;
-          rdf:predicate [ <associated_with> <associated_with_decreased_likelihood_of> <associated_with_increased_likelihood_of>
-             <associated_with_likelihood_of> <associated_with_resistance_to> <associated_with_response_to>
-             <associated_with_sensitivity_to> <biomarker_for> <coexpressed_with> <condition_associated_with_gene> <correlated_with>
-             <decreased_likelihood_associated_with> <gene_associated_with_condition> <genetic_association>
-             <genetically_associated_with> <has_biomarker> <increased_likelihood_associated_with> <likelihood_associated_with>
-             <negatively_correlated_with> <occurs_together_in_literature_with> <positively_correlated_with>
-             <resistance_associated_with> <response_associated_with> <sensitivity_associated_with> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <PhenotypicFeatureToDiseaseAssociation> ]
     )
@@ -4211,10 +4272,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <FrequencyQuantifier> ] ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           rdf:subject @<PhenotypicFeature> ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <PhenotypicFeatureToEntityAssociationMixin> ] ?
     )
@@ -4228,22 +4289,22 @@ linkml:Sparqlpath xsd:string
           &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ? ;
           <disease_context_qualifier> @<Disease> ?
        ) ;
        rdf:type [ <PhenotypicFeatureToPhenotypicFeatureAssociation> ]
@@ -4355,7 +4416,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           rdf:subject @<PopulationOfIndividualOrganisms> ;
           rdf:object @<PopulationOfIndividualOrganisms> ;
-          rdf:predicate @<Uriorcurie>
+          rdf:predicate @linkml:Uriorcurie
        ) ;
        rdf:type [ <PopulationToPopulationAssociation> ]
     )
@@ -4372,27 +4433,27 @@ linkml:Sparqlpath xsd:string
 }
 
 <PredicateMapping> CLOSED {
-    (  $<PredicateMapping_tes> (  <mapped_predicate> @<String> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+    (  $<PredicateMapping_tes> (  <mapped_predicate> @linkml:String ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <subject_form_or_variant_qualifier> @<String> ? ;
-          <subject_part_qualifier> @<String> ? ;
-          <subject_derivative_qualifier> @<String> ? ;
-          <subject_context_qualifier> @<String> ? ;
-          rdf:predicate @<Uriorcurie> ;
-          <qualified_predicate> @<Uriorcurie> ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <subject_form_or_variant_qualifier> @linkml:String ? ;
+          <subject_part_qualifier> @linkml:String ? ;
+          <subject_derivative_qualifier> @linkml:String ? ;
+          <subject_context_qualifier> @linkml:String ? ;
+          rdf:predicate @linkml:Uriorcurie ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_form_or_variant_qualifier> @<String> ? ;
-          <object_part_qualifier> @<String> ? ;
-          <object_derivative_qualifier> @<String> ? ;
-          <object_context_qualifier> @<String> ? ;
+          <object_form_or_variant_qualifier> @linkml:String ? ;
+          <object_part_qualifier> @linkml:String ? ;
+          <object_derivative_qualifier> @linkml:String ? ;
+          <object_context_qualifier> @linkml:String ? ;
           <causal_mechanism_qualifier> [ <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#modulation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#allosteric_modulation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#mixed_allosteric_modulation>
@@ -4493,7 +4554,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#ampylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#hydroxylation>
              <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#s_nitrosylation> ] ? ;
-          <anatomical_context_qualifier> @<String> * ;
+          <anatomical_context_qualifier> @linkml:String * ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           <exact_match> @<NamedThing> * ;
           <narrow_match> @<NamedThing> * ;
@@ -4525,7 +4586,7 @@ linkml:Sparqlpath xsd:string
     (  $<ProcessRegulatesProcessAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<BiologicalProcess> ;
-          rdf:predicate [ <regulates> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<BiologicalProcess>
        ) ;
        rdf:type [ <ProcessRegulatesProcessAssociation> ]
@@ -4593,11 +4654,11 @@ linkml:Sparqlpath xsd:string
        (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
              rdf:type [ <InformationContentEntity> ] ? ;
              <authors> @<Agent> * ;
-             <pages> @<String> * ;
-             <summary> @<String> ? ;
-             <keywords> @<String> * ;
-             <mesh_terms> @<Uriorcurie> * ;
-             dcterms:type @<String> + ;
+             <pages> @linkml:String * ;
+             <summary> @linkml:String ? ;
+             <keywords> @linkml:String * ;
+             <mesh_terms> @linkml:Uriorcurie * ;
+             dcterms:type @linkml:String + ;
              rdfs:label @<LabelType> ?
           ) ;
           rdf:type [ <Publication> ]
@@ -4609,7 +4670,7 @@ linkml:Sparqlpath xsd:string
     (  $<QuantityValue_tes> (  &<Annotation_tes> ;
           rdf:type [ <Annotation> ] ? ;
           <has_unit> @<Unit> ? ;
-          <has_numeric_value> @<Double> ?
+          <has_numeric_value> @linkml:Double ?
        ) ;
        rdf:type [ <QuantityValue> ] ?
     )
@@ -4628,7 +4689,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<ReactionToParticipantAssociation_tes> (  &<ChemicalEntityToChemicalEntityAssociation_tes> ;
              rdf:type [ <ChemicalEntityToChemicalEntityAssociation> ] ? ;
-             <stoichiometry> @<Integer> ? ;
+             <stoichiometry> @linkml:Integer ? ;
              <reaction_direction> [ <https://w3id.org/biolink/vocab/ReactionDirectionEnum#left_to_right>
                 <https://w3id.org/biolink/vocab/ReactionDirectionEnum#right_to_left>
                 <https://w3id.org/biolink/vocab/ReactionDirectionEnum#bidirectional>
@@ -4705,12 +4766,12 @@ linkml:Sparqlpath xsd:string
 <RetrievalSource> CLOSED {
     (  $<RetrievalSource_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
-          <resource_id> @<Uriorcurie> ;
+          <resource_id> @linkml:Uriorcurie ;
           <resource_role> [ <https://w3id.org/biolink/vocab/ResourceRoleEnum#primary_knowledge_source>
              <https://w3id.org/biolink/vocab/ResourceRoleEnum#aggregator_knowledge_source>
              <https://w3id.org/biolink/vocab/ResourceRoleEnum#supporting_data_source> ] ;
-          <upstream_resource_ids> @<Uriorcurie> * ;
-          <source_record_urls> @<Uriorcurie> *
+          <upstream_resource_ids> @linkml:Uriorcurie * ;
+          <source_record_urls> @linkml:Uriorcurie *
        ) ;
        rdf:type [ <RetrievalSource> ]
     )
@@ -4779,7 +4840,7 @@ linkml:Sparqlpath xsd:string
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <has_gene> @<Gene> * ;
-             <hgvs_nomenclature> @<String> * ;
+             <hgvs_nomenclature> @linkml:String * ;
              <has_biological_sequence> @<BiologicalSequence> ?
           ) ;
           rdf:type [ <SequenceVariant> ]
@@ -4800,10 +4861,10 @@ linkml:Sparqlpath xsd:string
 <Serial> CLOSED {
     (  $<Serial_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <iso_abbreviation> @<String> ? ;
-          <volume> @<String> ? ;
-          <issue> @<String> ? ;
-          rdf:type @<String> *
+          <iso_abbreviation> @linkml:String ? ;
+          <volume> @linkml:String ? ;
+          <issue> @linkml:String ? ;
+          rdf:type @linkml:String *
        ) ;
        rdf:type [ <Serial> ]
     )
@@ -4945,13 +5006,13 @@ linkml:Sparqlpath xsd:string
 <TextMiningStudyResult> CLOSED {
     (  $<TextMiningStudyResult_tes> (  &<StudyResult_tes> ;
           rdf:type [ <StudyResult> ] ? ;
-          <supporting_text> @<String> * ;
-          <subject_location_in_text> @<Integer> * ;
-          <object_location_in_text> @<Integer> * ;
-          <extraction_confidence_score> @<Integer> ? ;
-          <supporting_document_type> @<String> ? ;
-          <supporting_document_year> @<Integer> ? ;
-          <supporting_text_section_type> @<String> ?
+          <supporting_text> @linkml:String * ;
+          <subject_location_in_text> @linkml:Integer * ;
+          <object_location_in_text> @linkml:Integer * ;
+          <extraction_confidence_score> @linkml:Integer ? ;
+          <supporting_document_type> @linkml:String ? ;
+          <supporting_document_year> @linkml:Integer ? ;
+          <supporting_text_section_type> @linkml:String ?
        ) ;
        rdf:type [ <TextMiningStudyResult> ]
     )
@@ -5036,20 +5097,20 @@ linkml:Sparqlpath xsd:string
              &<EntityToDiseaseAssociationMixin_tes> ;
              rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
              rdf:subject @<NamedThing> ;
-             rdf:predicate [ <related_condition> ] ;
+             rdf:predicate @linkml:Uriorcurie ;
              rdf:object @<NamedThing> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
-             <subject_aspect_qualifier> @<String> ? ;
+             <subject_aspect_qualifier> @linkml:String ? ;
              <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <object_aspect_qualifier> @<String> ? ;
+             <object_aspect_qualifier> @linkml:String ? ;
              <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <qualified_predicate> @<Uriorcurie> ? ;
+             <qualified_predicate> @linkml:Uriorcurie ? ;
              <disease_context_qualifier> @<Disease> ?
           ) ;
           rdf:type [ <VariantToDiseaseAssociation> ]
@@ -5059,7 +5120,7 @@ linkml:Sparqlpath xsd:string
 
 <VariantToEntityAssociationMixin> {
     (  $<VariantToEntityAssociationMixin_tes> (  rdf:subject @<SequenceVariant> ;
-          rdf:predicate @<Uriorcurie> ;
+          rdf:predicate @linkml:Uriorcurie ;
           rdf:object @<NamedThing>
        ) ;
        rdf:type [ <VariantToEntityAssociationMixin> ] ?
@@ -5073,7 +5134,7 @@ linkml:Sparqlpath xsd:string
              &<VariantToEntityAssociationMixin_tes> ;
              rdf:type [ <VariantToEntityAssociationMixin> ] ? ;
              rdf:object @<Gene> ;
-             rdf:predicate [ <condition_associated_with_gene> <gene_associated_with_condition> <genetically_associated_with> ]
+             rdf:predicate @linkml:Uriorcurie
           ) ;
           rdf:type [ <VariantToGeneAssociation> ]
        )
@@ -5085,8 +5146,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <VariantToGeneAssociation> ] ? ;
           &<GeneExpressionMixin_tes> ;
           rdf:type [ <GeneExpressionMixin> ] ? ;
-          rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
-             <has_side_effect> <regulates> ] ;
+          rdf:predicate @linkml:Uriorcurie ;
           <quantifier_qualifier> @<OntologyClass> ? ;
           <expression_site> @<AnatomicalEntity> ? ;
           <stage_qualifier> @<LifeStage> ? ;
@@ -5105,23 +5165,23 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           rdf:subject @<SequenceVariant> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
-          <subject_aspect_qualifier> @<String> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <object_aspect_qualifier> @<String> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-          <qualified_predicate> @<Uriorcurie> ? ;
+          <qualified_predicate> @linkml:Uriorcurie ? ;
           <disease_context_qualifier> @<Disease> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_quotient> @<Double> ? ;
-          <has_percentage> @<Double> ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <VariantToPhenotypicFeatureAssociation> ]
     )
@@ -5138,10 +5198,10 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <FrequencyQualifierMixin> ] ? ;
           rdf:subject @<SequenceVariant> ;
           rdf:object @<PopulationOfIndividualOrganisms> ;
-          <has_quotient> @<Double> ? ;
-          <has_count> @<Integer> ? ;
-          <has_total> @<Integer> ? ;
-          <has_percentage> @<Double> ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_percentage> @linkml:Double ? ;
           <frequency_qualifier> @<FrequencyValue> ?
        ) ;
        rdf:type [ <VariantToPopulationAssociation> ]
