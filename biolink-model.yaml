@@ -11556,10 +11556,7 @@ classes:
     slot_usage:
       subject:
         range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
-        examples:
-          - value: HGNC:2197
-            description: "COL1A1 (Human)"
+        description: "gene in which variation is correlated with the disease"
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject aspect qualifier:
@@ -11572,7 +11569,7 @@ classes:
         range: GeneToDiseasePredicateEnum
     comments:
       - NCIT:R176 refers to the inverse relationship
-      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
+      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   causal gene to disease association:
