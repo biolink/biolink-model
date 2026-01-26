@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-26T21:04:31
+# Generation date: 2026-01-26T22:26:29
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1431,7 +1431,11 @@ class AnatomicalEntityToAnatomicalEntityAssociationId(AssociationId):
     pass
 
 
-class AnatomicalEntityToAnatomicalEntityPartOfAssociationId(AnatomicalEntityToAnatomicalEntityAssociationId):
+class AnatomicalEntityHasPartAnatomicalEntityAssociationId(AnatomicalEntityToAnatomicalEntityAssociationId):
+    pass
+
+
+class AnatomicalEntityPartOfAnatomicalEntityAssociationId(AnatomicalEntityToAnatomicalEntityAssociationId):
     pass
 
 
@@ -14002,20 +14006,22 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
 
 
 @dataclass(repr=False)
-class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
+class AnatomicalEntityHasPartAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
     A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are
-    related by parthood. This includes relationships between cellular components and cells, between cells and tissues,
-    tissues and whole organisms
+    related by parthood, that is, the subject is has the object entity as a part (the expected predicate is
+    "biolink:has_part" or suitable predicate slots inheriting from it, i.e., "biolink:has_plasma_membrane_part",
+    "biolink:has_variant_part", etc.). This includes relationships between cells and cellular components, between
+    issues and cells, whole organisms and tissues.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityPartOfAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation"
-    class_name: ClassVar[str] = "anatomical entity to anatomical entity part of association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityPartOfAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityHasPartAnatomicalEntityAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityHasPartAnatomicalEntityAssociation"
+    class_name: ClassVar[str] = "anatomical entity has part anatomical entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityHasPartAnatomicalEntityAssociation
 
-    id: Union[str, AnatomicalEntityToAnatomicalEntityPartOfAssociationId] = None
+    id: Union[str, AnatomicalEntityHasPartAnatomicalEntityAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, AnatomicalEntityId] = None
@@ -14025,8 +14031,58 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityPartOfAssociationId):
-            self.id = AnatomicalEntityToAnatomicalEntityPartOfAssociationId(self.id)
+        if not isinstance(self.id, AnatomicalEntityHasPartAnatomicalEntityAssociationId):
+            self.id = AnatomicalEntityHasPartAnatomicalEntityAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, AnatomicalEntityId):
+            self.subject = AnatomicalEntityId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, AnatomicalEntityId):
+            self.object = AnatomicalEntityId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
+    """
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are
+    related by parthood, that is, the subject is a part of the object entity (the expected predicate is
+    "biolink:part_of" or suitable predicate slots inheriting from it, i.e., "biolink:plasma_membrane_part_of",
+    "biolink:variant_part_of", etc.). This includes relationships between cellular components and cells, between cells
+    and tissues, tissues and whole organisms.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityPartOfAnatomicalEntityAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:AnatomicalEntityPartOfAnatomicalEntityAssociation"
+    class_name: ClassVar[str] = "anatomical entity part of anatomical entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityPartOfAnatomicalEntityAssociation
+
+    id: Union[str, AnatomicalEntityPartOfAnatomicalEntityAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, AnatomicalEntityId] = None
+    object: Union[str, AnatomicalEntityId] = None
+    predicate: Union[str, URIorCURIE] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, AnatomicalEntityPartOfAnatomicalEntityAssociationId):
+            self.id = AnatomicalEntityPartOfAnatomicalEntityAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -17778,14 +17834,23 @@ slots.anatomical_entity_to_anatomical_entity_association_subject = Slot(uri=RDF.
 slots.anatomical_entity_to_anatomical_entity_association_object = Slot(uri=RDF.object, name="anatomical entity to anatomical entity association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_association_object, domain=AnatomicalEntityToAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])
 
-slots.anatomical_entity_to_anatomical_entity_part_of_association_subject = Slot(uri=RDF.subject, name="anatomical entity to anatomical entity part of association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_part_of_association_subject, domain=AnatomicalEntityToAnatomicalEntityPartOfAssociation, range=Union[str, AnatomicalEntityId])
+slots.anatomical_entity_has_part_anatomical_entity_association_subject = Slot(uri=RDF.subject, name="anatomical entity has part anatomical entity association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.anatomical_entity_has_part_anatomical_entity_association_subject, domain=AnatomicalEntityHasPartAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])
 
-slots.anatomical_entity_to_anatomical_entity_part_of_association_object = Slot(uri=RDF.object, name="anatomical entity to anatomical entity part of association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_part_of_association_object, domain=AnatomicalEntityToAnatomicalEntityPartOfAssociation, range=Union[str, AnatomicalEntityId])
+slots.anatomical_entity_has_part_anatomical_entity_association_object = Slot(uri=RDF.object, name="anatomical entity has part anatomical entity association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.anatomical_entity_has_part_anatomical_entity_association_object, domain=AnatomicalEntityHasPartAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])
 
-slots.anatomical_entity_to_anatomical_entity_part_of_association_predicate = Slot(uri=RDF.predicate, name="anatomical entity to anatomical entity part of association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_part_of_association_predicate, domain=AnatomicalEntityToAnatomicalEntityPartOfAssociation, range=Union[str, URIorCURIE])
+slots.anatomical_entity_has_part_anatomical_entity_association_predicate = Slot(uri=RDF.predicate, name="anatomical entity has part anatomical entity association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.anatomical_entity_has_part_anatomical_entity_association_predicate, domain=AnatomicalEntityHasPartAnatomicalEntityAssociation, range=Union[str, URIorCURIE])
+
+slots.anatomical_entity_part_of_anatomical_entity_association_subject = Slot(uri=RDF.subject, name="anatomical entity part of anatomical entity association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.anatomical_entity_part_of_anatomical_entity_association_subject, domain=AnatomicalEntityPartOfAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])
+
+slots.anatomical_entity_part_of_anatomical_entity_association_object = Slot(uri=RDF.object, name="anatomical entity part of anatomical entity association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.anatomical_entity_part_of_anatomical_entity_association_object, domain=AnatomicalEntityPartOfAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])
+
+slots.anatomical_entity_part_of_anatomical_entity_association_predicate = Slot(uri=RDF.predicate, name="anatomical entity part of anatomical entity association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.anatomical_entity_part_of_anatomical_entity_association_predicate, domain=AnatomicalEntityPartOfAnatomicalEntityAssociation, range=Union[str, URIorCURIE])
 
 slots.anatomical_entity_to_anatomical_entity_ontogenic_association_subject = Slot(uri=RDF.subject, name="anatomical entity to anatomical entity ontogenic association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_ontogenic_association_subject, domain=AnatomicalEntityToAnatomicalEntityOntogenicAssociation, range=Union[str, AnatomicalEntityId])

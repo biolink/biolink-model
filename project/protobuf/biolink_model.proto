@@ -85,8 +85,8 @@ message AnatomicalEntity
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
-message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is "biolink:has_part" or suitable predicate slots inheriting from it, i.e.,  "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
+message AnatomicalEntityHasPartAnatomicalEntityAssociation
  {
   string id = 0
   iriType iri = 0
@@ -137,8 +137,60 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   anatomicalEntity object = 0
   uriorcurie predicate = 0
  }
-// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
-message AnatomicalEntityToAnatomicalEntityPartOfAssociation
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is "biolink:part_of" or suitable predicate slots inheriting from it, i.e.,  "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.
+message AnatomicalEntityPartOfAnatomicalEntityAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidenceOfType = 0
+ repeated  informationContentEntity hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  string supportingText = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+  integer evidenceCount = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  anatomicalEntity subject = 0
+  anatomicalEntity object = 0
+  uriorcurie predicate = 0
+ }
+// A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
+message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  {
   string id = 0
   iriType iri = 0

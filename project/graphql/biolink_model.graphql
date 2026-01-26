@@ -515,6 +515,110 @@ type AnatomicalEntity implements PhysicalEssence, OntologyClass
     hasAttribute: [Attribute]
   }
 
+type AnatomicalEntityHasPartAnatomicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidenceOfType: [EvidenceType]
+    hasEvidence: [InformationContentEntity]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: String
+    originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    supportingText: [String]
+    hasSupportingStudies: [Study]
+    updateDate: String
+    hasConfidenceScore: Float
+    elevateToPrediction: Boolean
+    evidenceCount: Int
+    type: [String]
+    category: [String]
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    predicate: String!
+  }
+
+type AnatomicalEntityPartOfAnatomicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidenceOfType: [EvidenceType]
+    hasEvidence: [InformationContentEntity]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: String
+    originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    supportingText: [String]
+    hasSupportingStudies: [Study]
+    updateDate: String
+    hasConfidenceScore: Float
+    elevateToPrediction: Boolean
+    evidenceCount: Int
+    type: [String]
+    category: [String]
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    predicate: String!
+  }
+
 interface AnatomicalEntityToAnatomicalEntityAssociation
   {
     id: String!
@@ -568,58 +672,6 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
   }
 
 type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    hasAttribute: [Attribute]
-    deprecated: Boolean
-    negated: Boolean
-    qualifier: String
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    sources: [RetrievalSource]
-    hasEvidenceOfType: [EvidenceType]
-    hasEvidence: [InformationContentEntity]
-    knowledgeSource: String
-    primaryKnowledgeSource: String
-    aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum!
-    agentType: AgentTypeEnum!
-    timepoint: TimeType
-    originalSubject: String
-    originalPredicate: String
-    originalObject: String
-    subjectFeatureName: String
-    objectFeatureName: String
-    subjectCategory: OntologyClass
-    objectCategory: OntologyClass
-    subjectClosure: [String]
-    objectClosure: [String]
-    subjectCategoryClosure: [OntologyClass]
-    objectCategoryClosure: [OntologyClass]
-    subjectNamespace: String
-    objectNamespace: String
-    subjectLabelClosure: [String]
-    objectLabelClosure: [String]
-    retrievalSourceIds: [RetrievalSource]
-    pValue: Float
-    adjustedPValue: Float
-    supportingText: [String]
-    hasSupportingStudies: [Study]
-    updateDate: String
-    hasConfidenceScore: Float
-    elevateToPrediction: Boolean
-    evidenceCount: Int
-    type: [String]
-    category: [String]
-    subject: AnatomicalEntity!
-    object: AnatomicalEntity!
-    predicate: String!
-  }
-
-type AnatomicalEntityToAnatomicalEntityPartOfAssociation
   {
     id: String!
     iri: IriType

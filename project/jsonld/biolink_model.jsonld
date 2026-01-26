@@ -25303,7 +25303,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "anatomical_entity_to_anatomical_entity_part_of_association_subject",
+      "name": "anatomical_entity_has_part_anatomical_entity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -25315,7 +25315,7 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "the part",
+      "description": "the whole",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -25325,12 +25325,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "anatomical_entity_to_anatomical_entity_association_subject",
-      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "domain": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "owner": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "domain_of": [
-        "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+        "AnatomicalEntityHasPartAnatomicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -25339,7 +25339,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "anatomical_entity_to_anatomical_entity_part_of_association_object",
+      "name": "anatomical_entity_has_part_anatomical_entity_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -25351,7 +25351,7 @@
           "local_name_value": "node with incoming relationship"
         }
       },
-      "description": "the whole",
+      "description": "the part",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
@@ -25361,12 +25361,12 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "anatomical_entity_to_anatomical_entity_association_object",
-      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "domain": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "owner": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "domain_of": [
-        "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+        "AnatomicalEntityHasPartAnatomicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -25375,7 +25375,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "anatomical_entity_to_anatomical_entity_part_of_association_predicate",
+      "name": "anatomical_entity_has_part_anatomical_entity_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -25397,12 +25397,121 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "domain": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "owner": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "domain_of": [
-        "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+        "AnatomicalEntityHasPartAnatomicalEntityAssociation"
+      ],
+      "subproperty_of": "has_part",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "anatomical_entity_part_of_anatomical_entity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the part",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_subject",
+      "domain": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "domain_of": [
+        "AnatomicalEntityPartOfAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "anatomical_entity_part_of_anatomical_entity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "the whole",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_object",
+      "domain": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "domain_of": [
+        "AnatomicalEntityPartOfAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "anatomical_entity_part_of_anatomical_entity_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "domain_of": [
+        "AnatomicalEntityPartOfAnatomicalEntityAssociation"
       ],
       "subproperty_of": "part_of",
       "is_usage_slot": true,
@@ -40630,9 +40739,9 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
+      "name": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityHasPartAnatomicalEntityAssociation",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
       "slots": [
@@ -40681,12 +40790,75 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "anatomical_entity_to_anatomical_entity_part_of_association_subject",
-        "anatomical_entity_to_anatomical_entity_part_of_association_object",
-        "anatomical_entity_to_anatomical_entity_part_of_association_predicate"
+        "anatomical_entity_has_part_anatomical_entity_association_subject",
+        "anatomical_entity_has_part_anatomical_entity_association_object",
+        "anatomical_entity_has_part_anatomical_entity_association_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityHasPartAnatomicalEntityAssociation",
+      "defining_slots": [
+        "predicate"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence_of_type",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "supporting_text",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "evidence_count",
+        "association_type",
+        "association_category",
+        "anatomical_entity_part_of_anatomical_entity_association_subject",
+        "anatomical_entity_part_of_anatomical_entity_association_object",
+        "anatomical_entity_part_of_anatomical_entity_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation",
       "defining_slots": [
         "predicate"
       ],
@@ -41162,9 +41334,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-26T21:04:12",
-  "source_file_size": 457661,
-  "generation_date": "2026-01-26T21:04:18",
+  "source_file_date": "2026-01-26T22:26:07",
+  "source_file_size": 458874,
+  "generation_date": "2026-01-26T22:26:14",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

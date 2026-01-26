@@ -141,8 +141,33 @@ linkml:Sparqlpath xsd:string
     } OR @<Cell> OR @<CellularComponent> OR @<GrossAnatomicalStructure> OR @<PathologicalAnatomicalStructure>
 )
 
+<AnatomicalEntityHasPartAnatomicalEntityAssociation> CLOSED {
+    (  $<AnatomicalEntityHasPartAnatomicalEntityAssociation_tes> (  &<AnatomicalEntityToAnatomicalEntityAssociation_tes> ;
+          rdf:type [ <AnatomicalEntityToAnatomicalEntityAssociation> ] ? ;
+          rdf:subject @<AnatomicalEntity> ;
+          rdf:object @<AnatomicalEntity> ;
+          rdf:predicate [ <has_active_ingredient> <has_excipient> <has_food_component> <has_nutrient> <has_part>
+             <has_plasma_membrane_part> <has_variant_part> ]
+       ) ;
+       rdf:type [ <AnatomicalEntityHasPartAnatomicalEntityAssociation> ]
+    )
+}
+
+<AnatomicalEntityPartOfAnatomicalEntityAssociation> CLOSED {
+    (  $<AnatomicalEntityPartOfAnatomicalEntityAssociation_tes> (  &<AnatomicalEntityToAnatomicalEntityAssociation_tes> ;
+          rdf:type [ <AnatomicalEntityToAnatomicalEntityAssociation> ] ? ;
+          rdf:subject @<AnatomicalEntity> ;
+          rdf:object @<AnatomicalEntity> ;
+          rdf:predicate [ <food_component_of> <is_active_ingredient_of> <is_excipient_of> <nutrient_of> <part_of>
+             <plasma_membrane_part_of> <variant_part_of> ]
+       ) ;
+       rdf:type [ <AnatomicalEntityPartOfAnatomicalEntityAssociation> ]
+    )
+}
+
 <AnatomicalEntityToAnatomicalEntityAssociation>  (
-    @<AnatomicalEntityToAnatomicalEntityOntogenicAssociation> OR @<AnatomicalEntityToAnatomicalEntityPartOfAssociation>
+    @<AnatomicalEntityHasPartAnatomicalEntityAssociation> OR @<AnatomicalEntityPartOfAnatomicalEntityAssociation> OR
+    @<AnatomicalEntityToAnatomicalEntityOntogenicAssociation>
 )
 
 <AnatomicalEntityToAnatomicalEntityAssociation_struct> {
@@ -163,18 +188,6 @@ linkml:Sparqlpath xsd:string
           rdf:predicate [ <develops_from> ]
        ) ;
        rdf:type [ <AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ]
-    )
-}
-
-<AnatomicalEntityToAnatomicalEntityPartOfAssociation> CLOSED {
-    (  $<AnatomicalEntityToAnatomicalEntityPartOfAssociation_tes> (  &<AnatomicalEntityToAnatomicalEntityAssociation_tes> ;
-          rdf:type [ <AnatomicalEntityToAnatomicalEntityAssociation> ] ? ;
-          rdf:subject @<AnatomicalEntity> ;
-          rdf:object @<AnatomicalEntity> ;
-          rdf:predicate [ <food_component_of> <is_active_ingredient_of> <is_excipient_of> <nutrient_of> <part_of>
-             <plasma_membrane_part_of> <variant_part_of> ]
-       ) ;
-       rdf:type [ <AnatomicalEntityToAnatomicalEntityPartOfAssociation> ]
     )
 }
 
