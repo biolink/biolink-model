@@ -1873,7 +1873,7 @@ slots:
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or
-      increase the specificity of the full statement reading.  Has a value from the Biolink 
+      increase the specificity of the full statement reading.  Has a value from the Biolink
       'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats
       This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
       in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
@@ -11496,20 +11496,24 @@ classes:
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
 
-  gene to disease or phenotypic feature association:
+  gene to phenotypic feature association:
     is_a: association
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    narrow_mappings:
-      - WBVocab:Gene-Phenotype-Association
-      - dcid:DiseaseGeneAssociation
-      - SIO:000983
     slots:
       - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
       - allelic requirement
+    narrow_mappings:
+      - dcid:DiseaseGeneAssociation
+      - SIO:000983
+    exact_mappings:
+      - WBVocab:Gene-Phenotype-Association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - entity to phenotypic feature association mixin
+      - gene to entity association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -11522,40 +11526,18 @@ classes:
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
-        range: disease or phenotypic feature
+        range: phenotypic feature
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-        subproperty_of: contributes to
+        range: GeneToPhenotypicFeaturePredicateEnum
     comments:
       - NCIT:R176 refers to the inverse relationship
       - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
-  gene to phenotypic feature association:
-    is_a: gene to disease or phenotypic feature association
-    exact_mappings:
-      - WBVocab:Gene-Phenotype-Association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    slot_usage:
-      subject:
-        range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
-        examples:
-          - value: HGNC:2197
-            description: "COL1A1 (Human)"
-      object:
-        range: phenotypic feature
-
   gene to disease association:
-    is_a: gene to disease or phenotypic feature association
-    comments:
-      - NCIT:R176 refers to the inverse relationship
+    is_a: association
     exact_mappings:
       - SIO:000983
     close_mappings:
@@ -11565,20 +11547,42 @@ classes:
       - object
     mixins:
       - gene to entity association mixin
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     slot_usage:
       subject:
         range: gene or gene product
-        description: >-
-          gene in which variation is correlated with the disease,
-          may be protective or causative or associative, or as a model
+        description: "gene in which variation is correlated with the disease"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object direction qualifier:
+        range: DirectionQualifierEnum
       object:
         range: disease
+      predicate:
+        range: GeneToDiseasePredicateEnum
+    comments:
+      - NCIT:R176 refers to the inverse relationship
+      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease
+      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   causal gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - gene to entity association mixin
     slot_usage:
@@ -11590,13 +11594,18 @@ classes:
         range: disease
 
   correlated gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
       - predicate
     slots:
       - z score
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - entity to disease association mixin
       - gene to entity association mixin
@@ -13684,3 +13693,21 @@ enums:
           was predicting or asserting a relationship, or merely observed it to occur).
     in_subset:
       - translator_minimal
+
+  GeneToPhenotypicFeaturePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to phenotypic feature associations.
+      This constrains the relationship types that can be used between genes and phenotypic features.
+    permissible_values:
+      "biolink:causes":
+      "biolink:contributes_to":
+      "biolink:associated_with":
+      "biolink:has_phenotype":
+
+  GeneToDiseasePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to disease associations.
+      This constrains the relationship types that can be used between genes and diseases.
+    permissible_values:
+      "biolink:contributes_to":
+      "biolink:associated_with":
