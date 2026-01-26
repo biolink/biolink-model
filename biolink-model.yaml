@@ -12303,6 +12303,31 @@ classes:
       object:
         range: anatomical entity
 
+  anatomical entity has part anatomical entity association:
+     # schema: gocam
+    is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is has the object entity as a part (the expected predicate is
+      "biolink:has_part" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.).
+      This includes relationships between cells and cellular components,
+      between issues and cells, whole organisms and tissues.
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: anatomical entity
+        description: >-
+          the whole
+      object:
+        range: anatomical entity
+        description: >-
+          the part
+      predicate:
+        subproperty_of: has part
+
   anatomical entity part of anatomical entity association:
      # schema: gocam
     is_a: anatomical entity to anatomical entity association
@@ -12310,10 +12335,10 @@ classes:
       A relationship between two anatomical entities where the relationship
       is mereological, i.e the two entities are related by parthood, that is,
       the subject is a part of the object entity (the expected predicate is
-      "biolink:part_of" or predicate slot inheriting from it, i.e., 
-      "biolink:food_component_of", biolink:plasma_membrane_part_of", 
-      "biolink:variant_part_of", etc.). This includes relationships between cellular
-      components and cells, between cells and tissues, tissues and whole organisms.
+      "biolink:part_of" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.).
+      This includes relationships between cellular components and cells,
+      between cells and tissues, tissues and whole organisms.
     defining_slots:
       - predicate
     slot_usage:
