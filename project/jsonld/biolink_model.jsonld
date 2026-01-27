@@ -14830,7 +14830,7 @@
       "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/diseases_confidence_score",
-      "range": "integer",
+      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -18707,7 +18707,7 @@
       "domain_of": [
         "ChemicalEntityToBiologicalProcessAssociation"
       ],
-      "subproperty_of": "affects",
+      "subproperty_of": "related_to_at_instance_level",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "uriorcurie",
@@ -41245,9 +41245,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-27T06:28:00",
-  "source_file_size": 458874,
-  "generation_date": "2026-01-27T06:28:06",
+  "source_file_date": "2026-01-27T16:56:33",
+  "source_file_size": 458895,
+  "generation_date": "2026-01-27T16:56:39",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

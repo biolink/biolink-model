@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-27T06:28:22
+# Generation date: 2026-01-27T16:56:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -16947,7 +16947,7 @@ slots.dgidb_evidence_score = Slot(uri=BIOLINK.dgidb_evidence_score, name="dgidb 
                    model_uri=BIOLINK.dgidb_evidence_score, domain=None, range=Optional[int])
 
 slots.diseases_confidence_score = Slot(uri=BIOLINK.diseases_confidence_score, name="diseases confidence score", curie=BIOLINK.curie('diseases_confidence_score'),
-                   model_uri=BIOLINK.diseases_confidence_score, domain=None, range=Optional[int])
+                   model_uri=BIOLINK.diseases_confidence_score, domain=None, range=Optional[float])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
