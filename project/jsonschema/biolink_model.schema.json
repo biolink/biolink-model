@@ -874,15 +874,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_active_ingredient",
-                        "biolink:has_excipient",
-                        "biolink:has_food_component",
-                        "biolink:has_nutrient",
-                        "biolink:has_part",
-                        "biolink:has_plasma_membrane_part",
-                        "biolink:has_variant_part"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -1294,15 +1285,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:food_component_of",
-                        "biolink:is_active_ingredient_of",
-                        "biolink:is_excipient_of",
-                        "biolink:nutrient_of",
-                        "biolink:part_of",
-                        "biolink:plasma_membrane_part_of",
-                        "biolink:variant_part_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -1714,9 +1696,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:develops_from"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -4914,9 +4893,6 @@
                 },
                 "predicate": {
                     "description": "One biological processes or activities is a subclass of another.",
-                    "enum": [
-                        "biolink:subclass_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -5328,17 +5304,6 @@
                 },
                 "predicate": {
                     "description": "Relationship in which a biological process has the participation of a gene or gene product or gene family in a  (e.g., pathway has participant gene product).",
-                    "enum": [
-                        "biolink:actively_involves",
-                        "biolink:can_be_carried_out_by",
-                        "biolink:consumes",
-                        "biolink:enabled_by",
-                        "biolink:has_catalyst",
-                        "biolink:has_input",
-                        "biolink:has_output",
-                        "biolink:has_participant",
-                        "biolink:has_substrate"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -9349,9 +9314,6 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
-                    "enum": [
-                        "biolink:model_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -10568,15 +10530,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:affects",
-                        "biolink:ameliorates_condition",
-                        "biolink:disrupts",
-                        "biolink:exacerbates_condition",
-                        "biolink:has_adverse_event",
-                        "biolink:has_side_effect",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -10598,9 +10551,6 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
-                    "enum": [
-                        "biolink:causes"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -11081,15 +11031,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:affects",
-                        "biolink:ameliorates_condition",
-                        "biolink:disrupts",
-                        "biolink:exacerbates_condition",
-                        "biolink:has_adverse_event",
-                        "biolink:has_side_effect",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -11111,9 +11052,6 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
-                    "enum": [
-                        "biolink:causes"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -11761,9 +11699,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:was_tested_for_effect_on"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -12187,9 +12122,6 @@
                 },
                 "predicate": {
                     "description": "the direction is always from regulator to regulated",
-                    "enum": [
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -12615,15 +12547,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:affects",
-                        "biolink:ameliorates_condition",
-                        "biolink:disrupts",
-                        "biolink:exacerbates_condition",
-                        "biolink:has_adverse_event",
-                        "biolink:has_side_effect",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -13059,10 +12982,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:derives_into",
-                        "biolink:has_metabolite"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -15015,17 +14934,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:binds",
-                        "biolink:directly_physically_interacts_with",
-                        "biolink:gene_fusion_with",
-                        "biolink:genetic_neighborhood_of",
-                        "biolink:genetically_interacts_with",
-                        "biolink:indirectly_physically_interacts_with",
-                        "biolink:interacts_with",
-                        "biolink:physically_interacts_with",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -15750,9 +15658,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_side_effect"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -16235,9 +16140,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_adverse_event"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -19865,13 +19767,6 @@
                 },
                 "predicate": {
                     "description": "generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'",
-                    "enum": [
-                        "biolink:author",
-                        "biolink:contributor",
-                        "biolink:editor",
-                        "biolink:provider",
-                        "biolink:publisher"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -20316,15 +20211,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:biomarker_for",
-                        "biolink:coexpressed_with",
-                        "biolink:correlated_with",
-                        "biolink:has_biomarker",
-                        "biolink:negatively_correlated_with",
-                        "biolink:occurs_together_in_literature_with",
-                        "biolink:positively_correlated_with"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -21881,11 +21767,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:associated_with_resistance_to",
-                        "biolink:associated_with_response_to",
-                        "biolink:associated_with_sensitivity_to"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -22668,9 +22549,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_mode_of_inheritance"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -25763,10 +25641,7 @@
                 },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "target_for"
-                    ]
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -31102,15 +30977,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:affects",
-                        "biolink:ameliorates_condition",
-                        "biolink:disrupts",
-                        "biolink:exacerbates_condition",
-                        "biolink:has_adverse_event",
-                        "biolink:has_side_effect",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -31132,9 +30998,6 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
-                    "enum": [
-                        "biolink:causes"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -31601,10 +31464,7 @@
                 },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
-                    "description": "The relationship to the disease",
-                    "enum": [
-                        "model_of"
-                    ]
+                    "description": "The relationship to the disease"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -32195,15 +32055,6 @@
                 },
                 "predicate": {
                     "description": "membership of a gene or gene product, or strict subset relationship gene family, in the given gene family.",
-                    "enum": [
-                        "biolink:has_active_ingredient",
-                        "biolink:has_excipient",
-                        "biolink:has_food_component",
-                        "biolink:has_nutrient",
-                        "biolink:has_part",
-                        "biolink:has_plasma_membrane_part",
-                        "biolink:has_variant_part"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -32627,11 +32478,7 @@
                 },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
-                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "causes",
-                        "contributes_to"
-                    ]
+                    "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
                 },
                 "primary_knowledge_source": {
                     "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
@@ -33546,17 +33393,6 @@
                 },
                 "predicate": {
                     "description": "participation of a gene or gene product or gene family in a given biological process or activity (e.g., gene product participates in biological process; gene catalyzes molecular activity; gene family is actively involved in a pathway).",
-                    "enum": [
-                        "biolink:actively_involved_in",
-                        "biolink:capable_of",
-                        "biolink:catalyzes",
-                        "biolink:consumed_by",
-                        "biolink:enables",
-                        "biolink:is_input_of",
-                        "biolink:is_output_of",
-                        "biolink:is_substrate_of",
-                        "biolink:participates_in"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -33997,9 +33833,6 @@
                 },
                 "qualified_predicate": {
                     "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
-                    "enum": [
-                        "biolink:causes"
-                    ],
                     "type": "string"
                 },
                 "qualifier": {
@@ -34858,9 +34691,6 @@
                 },
                 "predicate": {
                     "description": "expression relationship",
-                    "enum": [
-                        "biolink:expressed_in"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -35300,9 +35130,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:coexpressed_with"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -35728,9 +35555,6 @@
                 },
                 "predicate": {
                     "description": "membership of the gene in the given gene family.",
-                    "enum": [
-                        "biolink:member_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -36142,12 +35966,6 @@
                 },
                 "predicate": {
                     "description": "homology relationship type",
-                    "enum": [
-                        "biolink:homologous_to",
-                        "biolink:orthologous_to",
-                        "biolink:paralogous_to",
-                        "biolink:xenologous_to"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -36559,9 +36377,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_gene_product"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -38860,9 +38675,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_sequence_location"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -39474,9 +39286,6 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
-                    "enum": [
-                        "biolink:model_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -39931,9 +39740,6 @@
                 },
                 "predicate": {
                     "description": "E.g. is pathogenic for",
-                    "enum": [
-                        "biolink:related_condition"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -40774,9 +40580,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_variant_part"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -41240,9 +41043,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:has_phenotype"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -43719,9 +43519,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:mentions"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -47618,10 +47415,6 @@
                 },
                 "predicate": {
                     "description": "derivation relationship",
-                    "enum": [
-                        "biolink:derives_from",
-                        "biolink:is_metabolite_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -49629,15 +49422,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:food_component_of",
-                        "biolink:is_active_ingredient_of",
-                        "biolink:is_excipient_of",
-                        "biolink:nutrient_of",
-                        "biolink:part_of",
-                        "biolink:plasma_membrane_part_of",
-                        "biolink:variant_part_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -50675,32 +50459,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:associated_with",
-                        "biolink:associated_with_decreased_likelihood_of",
-                        "biolink:associated_with_increased_likelihood_of",
-                        "biolink:associated_with_likelihood_of",
-                        "biolink:associated_with_resistance_to",
-                        "biolink:associated_with_response_to",
-                        "biolink:associated_with_sensitivity_to",
-                        "biolink:biomarker_for",
-                        "biolink:coexpressed_with",
-                        "biolink:condition_associated_with_gene",
-                        "biolink:correlated_with",
-                        "biolink:decreased_likelihood_associated_with",
-                        "biolink:gene_associated_with_condition",
-                        "biolink:genetic_association",
-                        "biolink:genetically_associated_with",
-                        "biolink:has_biomarker",
-                        "biolink:increased_likelihood_associated_with",
-                        "biolink:likelihood_associated_with",
-                        "biolink:negatively_correlated_with",
-                        "biolink:occurs_together_in_literature_with",
-                        "biolink:positively_correlated_with",
-                        "biolink:resistance_associated_with",
-                        "biolink:response_associated_with",
-                        "biolink:sensitivity_associated_with"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -52458,17 +52216,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:binds",
-                        "biolink:directly_physically_interacts_with",
-                        "biolink:gene_fusion_with",
-                        "biolink:genetic_neighborhood_of",
-                        "biolink:genetically_interacts_with",
-                        "biolink:indirectly_physically_interacts_with",
-                        "biolink:interacts_with",
-                        "biolink:physically_interacts_with",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -52880,9 +52627,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:subclass_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -53730,9 +53474,6 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
-                    "enum": [
-                        "biolink:model_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -54162,17 +53903,6 @@
                 },
                 "predicate": {
                     "description": "interaction relationship type",
-                    "enum": [
-                        "biolink:binds",
-                        "biolink:directly_physically_interacts_with",
-                        "biolink:gene_fusion_with",
-                        "biolink:genetic_neighborhood_of",
-                        "biolink:genetically_interacts_with",
-                        "biolink:indirectly_physically_interacts_with",
-                        "biolink:interacts_with",
-                        "biolink:physically_interacts_with",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -54590,17 +54320,6 @@
                 },
                 "predicate": {
                     "description": "interaction relationship type",
-                    "enum": [
-                        "biolink:binds",
-                        "biolink:directly_physically_interacts_with",
-                        "biolink:gene_fusion_with",
-                        "biolink:genetic_neighborhood_of",
-                        "biolink:genetically_interacts_with",
-                        "biolink:indirectly_physically_interacts_with",
-                        "biolink:interacts_with",
-                        "biolink:physically_interacts_with",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -56504,32 +56223,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:associated_with",
-                        "biolink:associated_with_decreased_likelihood_of",
-                        "biolink:associated_with_increased_likelihood_of",
-                        "biolink:associated_with_likelihood_of",
-                        "biolink:associated_with_resistance_to",
-                        "biolink:associated_with_response_to",
-                        "biolink:associated_with_sensitivity_to",
-                        "biolink:biomarker_for",
-                        "biolink:coexpressed_with",
-                        "biolink:condition_associated_with_gene",
-                        "biolink:correlated_with",
-                        "biolink:decreased_likelihood_associated_with",
-                        "biolink:gene_associated_with_condition",
-                        "biolink:genetic_association",
-                        "biolink:genetically_associated_with",
-                        "biolink:has_biomarker",
-                        "biolink:increased_likelihood_associated_with",
-                        "biolink:likelihood_associated_with",
-                        "biolink:negatively_correlated_with",
-                        "biolink:occurs_together_in_literature_with",
-                        "biolink:positively_correlated_with",
-                        "biolink:resistance_associated_with",
-                        "biolink:response_associated_with",
-                        "biolink:sensitivity_associated_with"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -59735,9 +59428,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -67752,9 +67442,6 @@
                 },
                 "predicate": {
                     "description": "The relationship to the disease",
-                    "enum": [
-                        "biolink:model_of"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -68209,9 +67896,6 @@
                 },
                 "predicate": {
                     "description": "E.g. is pathogenic for",
-                    "enum": [
-                        "biolink:related_condition"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -68641,11 +68325,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:condition_associated_with_gene",
-                        "biolink:gene_associated_with_condition",
-                        "biolink:genetically_associated_with"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
@@ -69071,15 +68750,6 @@
                 },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
-                    "enum": [
-                        "biolink:affects",
-                        "biolink:ameliorates_condition",
-                        "biolink:disrupts",
-                        "biolink:exacerbates_condition",
-                        "biolink:has_adverse_event",
-                        "biolink:has_side_effect",
-                        "biolink:regulates"
-                    ],
                     "type": "string"
                 },
                 "primary_knowledge_source": {
