@@ -4051,7 +4051,7 @@ slots:
       Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature),
       and states that the substance, procedure, or activity is able to treat the condition, has been observed to be
       taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific
-      study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).
+      study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).f
     notes: >-
       This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a
       condition, and as a catch-all for representing sources that are not clear about the sense of treats that is
@@ -10664,7 +10664,7 @@ classes:
         range: biological process
         description: "the biological process that is affected by the chemical entity"
       predicate:
-        subproperty_of: affects
+        subproperty_of: related to at instance level
 
   named thing associated with likelihood of named thing association:
      # TODO: better name
