@@ -2,7 +2,6 @@
 
 Schema and generated objects for biolink data model and upper ontology
 
-TODO: fill in extra description here
 
 ## Repo management
 
@@ -36,9 +35,9 @@ You can run the underlying commands (with `uv run ...`) but in general justfile 
 Best practice:
 
 * For full documentation, see https://linkml.io/linkml/
-* Follow LinkML naming conventions (CamelCase for classes, snake_case for slots/attributes)
 * For schemas with polymorphism, consider using field `type` marked as a `type_designator: true`
 * Include meaningful descriptions of each element
+* always edit biolink-model.yaml in the root of the project.
 * map to standards where appropriate (e.g. dcterms)
 * Never guess OBO term IDs. Always use the OLS MCP to look for relevant ontology terms
 * be proactive in using due diligence to do deep research on the domain, and look at existing standards

@@ -7,6 +7,7 @@ SHELL := bash
 .SECONDARY:
 
 RUN = poetry run
+export PYTHONWARNINGS=ignore::UserWarning:linkml.utils.generator,ignore::UserWarning:linkml_runtime.Namespaces,ignore::UserWarning
 # get values from about.yaml file
 SCHEMA_NAME = $(shell ${SHELL} ./utils/get-value.sh name)
 SOURCE_SCHEMA_PATH = $(shell ${SHELL} ./utils/get-value.sh source_schema_path)
@@ -208,7 +209,8 @@ gendoc: $(DOCDIR)
 	cp semmed-exclude-list.yaml $(DOCDIR) ; \
 	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
-	cp biolink-model.yaml $(DOCDIR) ; \
+	# Copy biolink-model.yaml and replace local imports with remote URLs for deployment
+	sed 's|^  - attributes$$|  - https://w3id.org/biolink/biolink-model/attributes|' biolink-model.yaml > $(DOCDIR)/biolink-model.yaml ; \
 	cp attributes.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	cp -r $(SRC)/docs/images $(DOCDIR)/images ; \

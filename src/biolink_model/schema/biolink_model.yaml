@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.4
+version: 4.3.6
 
 ## ------------
 ##
@@ -96,6 +96,7 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
   METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
+  METPO: 'https://w3id.org/metpo/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
@@ -144,6 +145,7 @@ prefixes:
   UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
   UniProtKB: 'http://purl.uniprot.org/uniprot/'
   UNIPROT.ISOFORM: 'http://purl.uniprot.org/isoforms/'
+  uspto-patent: "http://www.uspto.gov/patent/grant/v1/"
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
   VMC: 'https://github.com/ga4gh/vr-spec/'
@@ -205,7 +207,7 @@ subsets:
 
 imports:
   - linkml:types
-  - https://w3id.org/biolink/biolink-model/attributes
+  - attributes
 
 types:
 
@@ -227,13 +229,6 @@ types:
     typeof: string
     description: >-
       A string that provides a human-readable name for an entity
-
-  predicate type:
-    uri: xsd:string
-    typeof: uriorcurie
-    description: >-
-      A CURIE from the biolink related_to hierarchy.
-      For example, biolink:related_to, biolink:causes, biolink:treats.
 
   narrative text:
     uri: xsd:string
@@ -1106,7 +1101,76 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Clinical Trials
+  ## Exposure Events
+
+  exposure type:
+    is_a: node property
+    description: >-
+      Type of exposure
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
+#           To some extent, the subclassing of Exposure Events provides some typing?
+
+  exposure vehicle:
+    is_a: node property
+    description: >-
+      Type of an exposure event.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure route:
+    is_a: node property
+    description: >-
+      Route of exposure.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure start age:
+    is_a: node property
+    description: >-
+      Starting age of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure end age:
+    is_a: node property
+    description: >-
+      Ending stage of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure duration:
+    is_a: node property
+    description: >-
+      Duration of an exposure event.
+    domain: exposure event
+    range: time
+
+  exposure magnitude:
+    is_a: node property
+    description: >-
+      Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
+    domain: exposure event
+    range: string   # might want to be a more constrained data type here?
+
+  exposure additional condition:
+    is_a: node property
+    description: >-
+      Additional conditions impacting an exposure event.
+    domain: exposure event
+    range: string
+
+  ## Clinical Trials
+
+  elevate to prediction:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.
+    range: boolean
+
   clinical trial phase:
     is_a: node property
     description: >-
@@ -1181,7 +1245,7 @@ slots:
     is_a: node property
     description: >-
       The start date of a clinical trial as determined by clinicaltrials.gov
-    range: date
+    range: string
     domain: clinical trial
   clinical trial enrollment:
     is_a: node property
@@ -1196,6 +1260,7 @@ slots:
       The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
     range: ClinicalTrialAgeStageEnum
     domain: clinical trial
+    multivalued: true
 
   clinical trial age range:
     is_a: node property
@@ -1445,6 +1510,14 @@ slots:
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
+
+
+  FDA regulatory approvals:
+    description: >-
+      Numbers that identify specific drug applications. Each drug can have multiple approval numbers
+      (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).
+    range: string
+    multivalued: true
 
   drug regulatory status world wide:
     aliases: ['max phase']
@@ -1800,10 +1873,12 @@ slots:
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or
-      increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that
-      expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based
-      semantics are included.  This is necessary only in cases where the primary predicate does not work in a
-      full statement reading.
+      increase the specificity of the full statement reading.  Has a value from the Biolink
+      'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats
+      This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
+      in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
+      This is necessary only in cases where the primary predicate does not work in a full statement reading.
+    range: uriorcurie
     notes: >-
       to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
       using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using
@@ -1847,6 +1922,7 @@ slots:
       - value: cerebral cortext  # UBERON:0000956
     in_subset:
       - translator_minimal
+    multivalued: true
 
   species context qualifier:
     is_a: statement qualifier
@@ -2678,14 +2754,6 @@ slots:
       canonical_predicate: true
     broad_mappings:
       - WIKIDATA_PROPERTY:P129
-    close_mappings:
-      - CHEMBL.MECHANISM:binding_agent
-      - CHEMBL.MECHANISM:chelating_agent
-      - CHEMBL.MECHANISM:cross-linking_agent
-      - CHEMBL.MECHANISM:oxidative_enzyme
-      - CHEMBL.MECHANISM:sequestering_agent
-      - CHEMBL.MECHANISM:substrate
-      - DRUGBANK:target
     narrow_mappings:
        # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
@@ -5831,15 +5899,11 @@ slots:
   predicate:
     is_a: association slot
     description: >-
-      A high-level grouping for the relationship type. AKA minimal predicate.
-      This is analogous to category for nodes.
-    domain: association
-    notes: >-
-      Has a value from the Biolink related_to hierarchy. In RDF,  this
+      Has a value from the Biolink 'related_to' hierarchy. In RDF,  this
       corresponds to rdf:predicate and in Neo4j this corresponds to the
       relationship type. The convention is for an edge label in snake_case
       form. For example, biolink:related_to, biolink:causes, biolink:treats
-    range: predicate type
+    range: uriorcurie
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -5884,14 +5948,23 @@ slots:
       - SEPIO:0000187
       - SEPIO:0000167
 
-  has evidence:
+  has evidence of type:
     is_a: association slot
     range: evidence type
     description: >-
-      connects an association to an instance of supporting evidence
+      Connects an association to an evidence type ontology term.
+      Generally represents terms from the ECO ontology.
+    multivalued: true
+
+  has evidence:
+    is_a: association slot
+    range: information content entity
+    description: >-
+      Connects an association to detailed information providing supporting evidence.
     exact_mappings:
       - RO:0002558
     multivalued: true
+    inlined: false
 
   has study results:
     is_a: association slot
@@ -6471,6 +6544,11 @@ slots:
     is_a: association slot
     range: ResearchPhaseEnum
 
+  number of cases:
+    is_a: has count
+    description: >-
+      The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.
+
   has supporting studies:
     is_a: association slot
     range: study
@@ -6596,6 +6674,10 @@ slots:
     description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
     required: false
     range: biological sex
+
+  druggable gene category:
+    description: Classification of druggable genes based on knowledge about drug or small molecule activities.
+    range: DruggableGeneCategoryEnum
 
 classes:
   # Add the KGX-specific classes without modifying biolink classes
@@ -7192,7 +7274,9 @@ classes:
       - SEPIO:0000167
 
   evidence type:
-    is_a: information content entity
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['evidence code']
     description: >-
       Class of evidence that supports an association
@@ -7201,7 +7285,12 @@ classes:
     exact_mappings:
       - ECO:0000000
 
-   ## Publications
+  evidence:
+    is_a: information content entity
+    description: >-
+      Dereferences detailed evidence that supports an association
+
+    ## Publications
 
    # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
@@ -7754,6 +7843,12 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - chembl prodrug
+      - chembl black box warning
+      - chembl natural product
+      - chembl availability type
+      - chembl chirality
+      - chembl drug warning
     exact_mappings:
       - CHEBI:24431
       - SIO:010004  # Chemical entity
@@ -8616,9 +8711,6 @@ classes:
       distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
       for their independent descriptions.  This class is helpful to enforce domains and ranges
       that may involve either a disease or a phenotypic feature.
-    union_of:
-      - disease
-      - phenotypic feature
     narrow_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
@@ -8858,7 +8950,7 @@ classes:
       - FAO
 
 
-   ## entity mixins
+  ## entity mixins
 
   chemical entity or gene or gene product:
     description: >-
@@ -8899,6 +8991,8 @@ classes:
     id_prefixes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
+    close_mappings:
+      - DRUGBANK:target
 
   gene or gene product or gene family:
     description: >-
@@ -9001,6 +9095,7 @@ classes:
       - GO
       - PR
       - REACT
+      - CHEMBL.TARGET
       - ComplexPortal
     in_subset:
       - model_organism_database
@@ -9583,14 +9678,27 @@ classes:
    ## Exposures
 
   exposure event:
-    is_a: ontology class
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['exposure', 'experimental condition']
-    mixin: true
     slots:
       - timepoint
+      - exposure type
+      - exposure vehicle
+      - exposure route
+      - exposure start age
+      - exposure end age
+      - exposure duration
+      - exposure magnitude
+      - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
+    slot_usage:
+      id:
+        description: >-
+          Could generally be a CURIE from a suitable exposure ontology like ECTO.
     exact_mappings:
       - XCO:0000000
     in_subset:
@@ -9598,9 +9706,8 @@ classes:
 
    # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
@@ -9639,9 +9746,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
       a precondition, leading to or influencing an outcome,
@@ -9658,18 +9763,15 @@ classes:
       - MPATH:603
 
   pathological anatomical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - pathological entity mixin
     description: >-
       A disease or phenotypic feature state, when viewed as an exposure,
@@ -9678,9 +9780,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     slots:
       - has quantitative value
     description: >-
@@ -9694,7 +9794,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
-    is_a: attribute
+    is_a: exposure event
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9704,8 +9804,6 @@ classes:
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
-    mixins:
-      - exposure event
     broad_mappings:
        # slightly broader than just drug effects on a biological system
       - SIO:001005
@@ -9725,9 +9823,8 @@ classes:
   treatment:
     aliases: ['medical action', 'medical intervention']
      # 'named thing' seems too generic here but not sure what applies better here
-    is_a: named thing
+    is_a: exposure event
     mixins:
-      - exposure event
       - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
@@ -9743,18 +9840,14 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
-    is_a: attribute
+    is_a: exposure event
     aliases: ['viral exposure', 'bacterial exposure']
-    mixins:
-      - exposure event
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
 
   geographic exposure:
     is_a: environmental exposure
-    mixins:
-      - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
@@ -9777,25 +9870,19 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A socioeconomic exposure is a factor relating to social and
       financial status of an affected individual (e.g. poverty).
@@ -9890,6 +9977,7 @@ classes:
       - qualifiers  # deprecated
       - publications
       - sources
+      - has evidence of type
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -9916,9 +10004,12 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - supporting text
       - has supporting studies
       - update date
       - has confidence score
+      - elevate to prediction
+      - evidence count
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10386,7 +10477,7 @@ classes:
         range: case
         description: "the case (e.g. patient) that has the property"
 
-  chemical to chemical association:
+  chemical entity to chemical entity association:
     description: >-
       A relationship between two chemical entities. This can encompass actual
       interactions as well as temporal causal edges, e.g. one chemical converted to another.
@@ -10406,7 +10497,7 @@ classes:
 
   reaction to participant association:
     description:
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     slots:
       - stoichiometry
       - reaction direction
@@ -10426,14 +10517,14 @@ classes:
       object:
         range: gene or gene product
 
-  chemical to chemical derivation association:
+  chemical entity to chemical derivation association:
     description: >-
       A causal relationship between two chemical entities, where the subject
       represents the upstream entity and the object represents the downstream.
       For any such association there is an implicit reaction: IF R has-input C1 AND
       R has-output C2 AND R enabled-by P AND
       R type Reaction THEN C1 derives-into C2 catalyst qualifier P
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     defining_slots:
       - subject
       - predicate
@@ -10457,7 +10548,7 @@ classes:
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
-  chemical to disease or phenotypic feature association:
+  chemical entity to disease or phenotypic feature association:
     description: >-
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -10469,6 +10560,8 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
+    slots:
+      - clinical approval status
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -10536,7 +10629,7 @@ classes:
       predicate:
         subproperty_of: part of
 
-  chemical to pathway association:
+  chemical entity to pathway association:
     description: >-
       An interaction between a chemical entity and a biological process or pathway.
     is_a: association
@@ -10552,6 +10645,26 @@ classes:
       object:
         range: pathway
         description: "the pathway that is affected by the chemical"
+
+  chemical entity to biological process association:
+    description: >-
+      An association between a chemical entity and a biological process,
+      where the chemical entity has some effect on the biological process.
+    is_a: association
+    slots:
+      - species context qualifier
+      - anatomical context qualifier
+      - qualified predicate
+      - object direction qualifier
+    slot_usage:
+      subject:
+        range: chemical entity
+        description: "the chemical entity that affects the biological process"
+      object:
+        range: biological process
+        description: "the biological process that is affected by the chemical entity"
+      predicate:
+        subproperty_of: affects
 
   named thing associated with likelihood of named thing association:
      # TODO: better name
@@ -10600,10 +10713,16 @@ classes:
       - subject part qualifier
       - subject derivative qualifier
       - subject context qualifier
+      - qualified predicate
+      - object direction qualifier
+      - object aspect qualifier
       - object form or variant qualifier
       - object part qualifier
       - object context qualifier
       - anatomical context qualifier
+      - causal mechanism qualifier
+      - dgidb interaction score
+      - dgidb evidence score
     slot_usage:
       subject:
         range: chemical entity
@@ -10619,6 +10738,10 @@ classes:
         range: ChemicalEntityDerivativeEnum
       subject context qualifier:
         range: anatomical entity
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10627,6 +10750,8 @@ classes:
         range: anatomical entity
       anatomical context qualifier:
         range: anatomical entity
+      causal mechanism qualifier:
+        range: CausalMechanismQualifierEnum
 
   gene regulates gene association:
     is_a: association
@@ -10740,7 +10865,9 @@ classes:
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
-
+    slots:
+      - dgidb interaction score
+      - dgidb evidence score
 
   gene affects chemical association:
     description: >-
@@ -11369,20 +11496,24 @@ classes:
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
 
-  gene to disease or phenotypic feature association:
+  gene to phenotypic feature association:
     is_a: association
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    narrow_mappings:
-      - WBVocab:Gene-Phenotype-Association
-      - dcid:DiseaseGeneAssociation
-      - SIO:000983
     slots:
       - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
       - allelic requirement
+    narrow_mappings:
+      - dcid:DiseaseGeneAssociation
+      - SIO:000983
+    exact_mappings:
+      - WBVocab:Gene-Phenotype-Association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - entity to phenotypic feature association mixin
+      - gene to entity association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -11395,40 +11526,18 @@ classes:
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
-        range: disease or phenotypic feature
+        range: phenotypic feature
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-        subproperty_of: affects
+        range: GeneToPhenotypicFeaturePredicateEnum
     comments:
       - NCIT:R176 refers to the inverse relationship
       - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
-  gene to phenotypic feature association:
-    is_a: gene to disease or phenotypic feature association
-    exact_mappings:
-      - WBVocab:Gene-Phenotype-Association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    slot_usage:
-      subject:
-        range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
-        examples:
-          - value: HGNC:2197
-            description: "COL1A1 (Human)"
-      object:
-        range: phenotypic feature
-
   gene to disease association:
-    is_a: gene to disease or phenotypic feature association
-    comments:
-      - NCIT:R176 refers to the inverse relationship
+    is_a: association
     exact_mappings:
       - SIO:000983
     close_mappings:
@@ -11438,20 +11547,42 @@ classes:
       - object
     mixins:
       - gene to entity association mixin
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     slot_usage:
       subject:
         range: gene or gene product
-        description: >-
-          gene in which variation is correlated with the disease,
-          may be protective or causative or associative, or as a model
+        description: "gene in which variation is correlated with the disease"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object direction qualifier:
+        range: DirectionQualifierEnum
       object:
         range: disease
+      predicate:
+        range: GeneToDiseasePredicateEnum
+    comments:
+      - NCIT:R176 refers to the inverse relationship
+      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease
+      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   causal gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - gene to entity association mixin
     slot_usage:
@@ -11463,13 +11594,18 @@ classes:
         range: disease
 
   correlated gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
       - predicate
     slots:
       - z score
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - entity to disease association mixin
       - gene to entity association mixin
@@ -11485,6 +11621,8 @@ classes:
 
   druggable gene to disease association:
     is_a: gene to disease association
+    slots:
+      - druggable gene category
     slot_usage:
       subject:
         range: gene or gene product
@@ -11494,8 +11632,6 @@ classes:
           this leads to a protective or improving disease state.
       predicate:
         subproperty_of: target for
-      has evidence:
-        range: DruggableGeneCategoryEnum
     defining_slots:
       - subject
       - object
@@ -12034,6 +12170,8 @@ classes:
     slots:
       - clinical approval status
       - max research phase
+      - FDA regulatory approvals
+      - number of cases
     defining_slots:
       - subject
       - object
@@ -12044,6 +12182,8 @@ classes:
     slots:
       - clinical approval status
       - max research phase
+      - FDA regulatory approvals
+      - number of cases
     defining_slots:
       - subject
       - object
@@ -12172,14 +12312,42 @@ classes:
       object:
         range: anatomical entity
 
-  anatomical entity to anatomical entity part of association:
+  anatomical entity has part anatomical entity association:
      # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
-      is mereological, i.e the two entities are related by parthood. This
-      includes relationships between cellular components and cells, between
-      cells and tissues, tissues and whole organisms
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is has the object entity as a part (the expected predicate is
+      "biolink:has_part" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.).
+      This includes relationships between cells and cellular components,
+      between issues and cells, whole organisms and tissues.
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: anatomical entity
+        description: >-
+          the whole
+      object:
+        range: anatomical entity
+        description: >-
+          the part
+      predicate:
+        subproperty_of: has part
+
+  anatomical entity part of anatomical entity association:
+     # schema: gocam
+    is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is a part of the object entity (the expected predicate is
+      "biolink:part_of" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.).
+      This includes relationships between cellular components and cells,
+      between cells and tissues, tissues and whole organisms.
     defining_slots:
       - predicate
     slot_usage:
@@ -12660,9 +12828,8 @@ enums:
         is_a: abundance
       degradation:
       cleavage:
-        is_a: degradation
       hydrolysis:
-        is_a: degradation
+        is_a: cleavage
       metabolic_processing:
       mutation_rate:
       stability:
@@ -12673,6 +12840,7 @@ enums:
       aggregation:
       interaction:
       release:
+      isomerization:
       secretion:
         is_a: transport
       uptake:
@@ -12749,14 +12917,172 @@ enums:
 
   CausalMechanismQualifierEnum:
     permissible_values:
-      binding:
+      modulation:
         description: >-
-          A causal mechanism mediated by the direct contact between effector and target chemical or
-          biomolecular entity, which form a stable physical interaction.
+          A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or
+          unclear whether action is positive or negative
+      allosteric_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different
+          binding site than the natural ('orthosteric') ligand site.
+      mixed_allosteric_modulation:
+        is_a: allosteric_modulation
+        description: >-
+          An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect
+          in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context,
+          receptor subtype, cellular environment).
+      biphasic_allosteric_modulation:
+        is_a: mixed_allosteric_modulation
+        description: >-
+          A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations,
+          and an inhibitory effect at higher concentrations.
+      mixed_agonism:
+        is_a: modulation
+        description: >-
+          An modulation mechanism in which the effector acts as both an agonist (activating a receptor) and an antagonist
+          (blocking a receptor) at different receptor sites.
+      positive_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing
+          its activity or abundance, or its sensitivity to other factors that do so.
+      potentiation:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and enhances or intensifies the effect of some
+          other chemical or drug on its target.
+      induction:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and increases the activity/rate of an enzyme that
+          processes drugs in the body.
+        close_mappings:
+          - DGIdb:inducer
+      cofactor:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion)
+          is required for a target enzyme's biological/catalytic activity.
+      activation:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and positively affects the normal functioning of its target.
+        close_mappings:
+          - CHEMBL.MECHANISM:activator
+          - DGIdb:activator
+      positive_allosteric_modulation:
+        is_a: activation
+        description: >-
+          A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
+          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+        close_mappings:
+          - CHEMBL.MECHANISM:positive_allosteric_modulator
+          - CHEMBL.MECHANISM:positive_modulator
+          - DGIdb:positive_allosteric_modulator
+        broad_mappings:
+          - DGIdb:modulator
+          - DGIdb:allosteric_modulator
+      agonism:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector binds and activates a receptor to mimic the effect of an
+          endogenous ligand.
+        close_mappings:
+          - CHEMBL.MECHANISM:agonist
+          - DGIdb:agonist
+        narrow_mappings:
+          - CHEMBL.MECHANISM:partial_agonist
+          - DGIdb:partial_agonist
+      partial_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector binds to and only partially activates a receptor
+          (relative to the response to a full agonist)
+      biased_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector  binds to a receptor and activates certain signaling
+          pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.
+      antibody_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic
+          the effect of an endogenous ligand.
+      molecular_channel_opening:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector binds to a molecular channel and facilitates transport of
+          ions through it.
+        close_mappings:
+          - CHEMBL.MECHANISM:opener
+      stimulation:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector directly or indirectly affects its target, stimulating a
+          physiological response.
+        close_mappings:
+          - DGIdb:stimulator
+          - SEMMEDDB:STIMULATES
+          - DGIdb:stimulator
+      guanyl_nucleotide_exchange:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector catalyzes the exchange of guanosine diphosphate (GDP) for
+          guanosine triphosphate (GTP) in a guanine nucleotide-binding protein (G-protein).
+      negative_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding
+          its activity or abundance, or its sensitivity to other factors that do so.
+        narrow_mappings:
+          - DGIdb:negative_modulator
+      negative_gene_editing_modulation:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which the effector elicits the negative modulation of its target through
+          a gene editing activity.
+      gtpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein,
+          promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating
+          a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose
+          activity is attenuated through gtpase activation.
+      atpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein,
+          promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating
+          a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose
+          activity is attenuated through atpase activation.
+      antisense_oligonucleotide_inhibition:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary
+          mRNA sequence through binding and targeting it for degradation. Note that while this is called "inhibition', it is not
+          inhibition in the classic biochemical sense that requires a direct interaction between effector and target.
+      rna_interference_inhibition:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys
+          messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein.
+          Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct
+          interaction between effector and target.
+      suppression:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a
+          physiological process.
+      feedback_inhibition:
+        is_a: negative_modulation
+        description: >-
+          An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway,
+          which stops the production of the final product when it's no longer needed.
       inhibition:
-        is_a: binding
+        is_a: negative_modulation
         description: >-
-          A causal mechanism in which the effector binds to the target and negatively effects its normal function,
+          A negative modulation mechanism in which the effector binds to the target and negatively effects its normal function,
           e.g. prevention of enzymatic reaction or activation of downstream pathway.
         close_mappings:
           - DGIdb:inhibitor
@@ -12774,111 +13100,280 @@ enums:
       antibody_inhibition:
         is_a: inhibition
         description: >-
-          A causal mechanism in which an antibody specifically binds to and interferes with the target.
+          An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.
       antagonism:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist
+          An inhibition mechanism in which the effector binds to a receptor and prevents activation by an agonist
           through competing for the binding site.
         close_mappings:
           - DGIdb:antagonist
           - CHEMBL.MECHANISM:antagonist
         narrow_mappings:
           - CHEMBL.MECHANISM:allosteric_antagonist
+      allosteric_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation
+          by a positive allosteric modulator at that site.
+      non_competitive_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric),
+          or irreversibly/insurmountably inactivates the receptor - reduces the receptor’s maximal response (Emax) in a way that
+          cannot be overcome by adding more agonist.
+      competitive_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding
+          of a substrate (or another binding partner) and vice versa.
+      noncompetitive_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active
+          site, in a way that reduces the activity of the target.
+      negative_allosteric_modulation:
+        is_a: noncompetitive_inhibition
+        description: >-
+          A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
+          receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding.
+        close_mappings:
+          - CHEMBL.MECHANISM:negative_allosteric_modulator
+          - DGIdb:inhibitory_allosteric_modulator
+      gating_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism mediated by the transition of ion channels between their open (conducting) and closed
+          (non-conducting) conformational states.
+      irreversible_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which an effector permanently binds to a target, permanently disrupting its activity.
       molecular_channel_blockage:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and prevents or reduces
+          An inhibition mechanism in which the effector binds to a molecular channel and prevents or reduces
           transport of ions through it.
       inverse_agonism:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
+          An inhibition mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
           its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
         close_mappings:
           - CHEMBL.MECHANISM:inverse_agonist
           - DGIdb:inverse_agonist
-      negative_allosteric_modulation:
-        is_a: inhibition
+      binding:
+        is_a: modulation
         description: >-
-          A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
-          receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:negative_allosteric_modulator
-          - DGIdb:inhibitory_allosteric_modulator
-        narrow_mappings:
-          - DGIdb:negative_modulator
-      agonism:
-        is_a: activation
+          A modulation mechanism mediated by the direct contact between effector and target chemical or
+          biomolecular entity, which form a stable physical interaction (typically non-covalent).
+      covalent_binding:
+        is_a: modulation
         description: >-
-          A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an
-          endogenous ligand.
-        close_mappings:
-          - CHEMBL.MECHANISM:agonist
-          - DGIdb:agonist
-        narrow_mappings:
-          - CHEMBL.MECHANISM:partial_agonist
-          - DGIdb:partial_agonist
-      molecular_channel_opening:
-        is_a: activation
+          A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or
+          biomolecular entity.
+      adduction:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and facilitates transport of
-          ions through it.
-        close_mappings:
-          - CHEMBL.MECHANISM:opener
-      positive_allosteric_modulation:
-        is_a: activation
+          A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their
+          reactive metabolite(s) to a target protein.
+      crosslinking:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
-          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:positive_allosteric_modulator
-          - CHEMBL.MECHANISM:positive_modulator
-          - DGIdb:positive_allosteric_modulator
-        broad_mappings:
-          - DGIdb:modulator
-          - DGIdb:allosteric_modulator
-      potentiation:
-        is_a: binding
+          A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them
+          into a rigid structure.
+      transglutamination:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some
-          other chemical or drug on its target.
-        close_mappings:
-      activation:
-        is_a: binding
+          A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.
+      disuphide_binding:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
-        close_mappings:
-          - CHEMBL.MECHANISM:activator
-          - DGIdb:activator
-      inducer:
-        is_a: binding
-        description: >-
-          A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that
-          processes drugs in the body.
-        close_mappings:
-          - DGIdb:inducer
-      transcriptional_regulation:
-        description: >-
-          A causal mechanism mediated by through the control of target gene transcription
-      signaling_mediated_control:
-        description: >-
-          A causal mechanism mediated by the activation or control of signaling events that influence the some aspect
-          of the target entity (e.g. its activity, processing, transport, etc)
+          A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.
       stabilization:
-        is_a: activation
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which the effector increases the conformational stability of a protein or complex.
         close_mappings:
           - CHEMBL.MECHANISM:stabiliser
-      stimulation:
-        is_a: activation
-        close_mappings:
-          - DGIdb:stimulator
-          - SEMMEDDB:STIMULATES
-          - DGIdb:stimulator
-      releasing_activity:
-        is_a: activation
+      chaperone_mediated_stabilization:
+        is_a: stabilization
+        description: >-
+      destabilization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize
+          the protein and allow it to complete the folding process to yield a functional protein.
+      degradation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that controls protein and cellular component levels through the regulated breakdown and recycling of molecules.
+      cleavage:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector promotes degeneration of the target protein through cleaving of the peptide bonds.
+      hydrolysis:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector cleaves its target through a chemical reaction where a molecule of water is used to
+          break a bond.
+      disruption:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.
+      opening:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector positively effects the normal functioning of an ion channel e.g., facilitates transport
+          of ions through the channel.
+      multitarget_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.
+      chelation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector binds to a metal ion target, reducing its availability/reactivity for further interactions.
+      release:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector reverses the normal functioning of a transporter, causing release of the substrate, rather than uptake
         close_mappings:
           - CHEMBL:MECHANISM:releasing_agent
+      sequestration:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for
+          further interactions.
+      oxidoreduction:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.
+      exogenous_protein:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a protein from an exogenous source acts as a substitute or supplement for a specific protein which is
+          absent or has reduced function in an affected target/subject.
+      exogenous_gene:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a nucleic acid from an exogenous source acts as a substitute or supplement for a specific gene which
+          is absent or has reduced function in an affected target/subject.
+      transcriptional_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the control of target gene transcription.
+      translational_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the control of target gene translation.
+      catalytic_activity:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the catalytic activity of the effector on the target.
+      chemical_modification:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or
+          converting it to something else.
+      relocalization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by an effector that alters the localization of a target in the cell or body.
+      isomerization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by an effector that alters the isomeric conformation of a target.
+      signaling_mediated_control:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by the activation or control of signaling events that influence the some aspect
+          of the target entity (e.g. its activity, processing, transport, etc.).
+      immune_system_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which the actions of the effector on the immune system ultimately mediate the affects a target.
+      vaccine_antigen:
+        is_a: immune_system_modulation
+        description: >-
+          An immune system modulation mechanism in which a vaccine mediates its effect through the activation of the immune
+          system against the target.
+      post_transcriptional_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism which controls expression of a target gene at the RNA level after a gene has been transcribed
+          into messenger RNA (mRNA).
+      molecular_modification:
+        is_a: modulation
+        description: >-
+          A modulation mechanism through which an effect is mediated by the modification of a target, through addition
+          of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.
+      phosphorylation:
+        is_a: molecular_modification
+      dephosphorylation:
+        is_a: molecular_modification
+      neddylation:
+        is_a: molecular_modification
+      deneddylation:
+        is_a: molecular_modification
+      lipidation:
+        is_a: molecular_modification
+      palmitoylation:
+        is_a: lipidation
+      myristoylation:
+        is_a: lipidation
+      tyrosination:
+        is_a: molecular_modification
+      carboxylation:
+        is_a: molecular_modification
+      ubiquitination:
+        is_a: molecular_modification
+      monoubiquitination:
+        is_a: ubiquitination
+      polyubiquitination:
+        is_a: ubiquitination
+      deubiquitination:
+        is_a: molecular_modification
+      sulfation:
+        is_a: molecular_modification
+      reduction:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification mechanism in which an effector modifies a target substrate via a reduction reaction.
+      oxidation:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.
+      acetylation:
+        is_a: molecular_modification
+      deacetylation:
+        is_a: molecular_modification
+      glycosylation:
+        is_a: molecular_modification
+      deglycosylation:
+        is_a: molecular_modification
+      methylation:
+        is_a: molecular_modification
+      trimethylation:
+        is_a: methylation
+      demethylation:
+        is_a: molecular_modification
+      sumoylation:
+        is_a: molecular_modification
+      desumoylation:
+        is_a: molecular_modification
+      ADP-ribosylation:
+        is_a: molecular_modification
+      de-ADP-ribosylation:
+        is_a: molecular_modification
+      ampylation:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
+      hydroxylation:
+        is_a: molecular_modification
+      s_nitrosylation:
+        is_a: molecular_modification
 
   LogicalInterpretationEnum:
     permissible_values:
@@ -12944,9 +13439,8 @@ enums:
         description: >-
           These targets do not have known drug or small molecule activities that satisfy the activity
           thresholds detailed below AND satisfy one or more of the following criteria:
-          target is above the cutoff criteria for Tdark
-          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
-          with an Experimental Evidence code
+          target is above the cutoff criteria for the target is annotated with a
+          Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
       "tdark":
         description: >-
           These are targets about which virtually nothing is known. They do not have known drug or small
@@ -13198,6 +13692,15 @@ enums:
           results, we can consider them to be inherently true statements, whose broader utility is dependent on
           subsequent generalization of the reported result to a broader population, and/or interpretation of the
           result as support for a more meaningful statements about the domain of discourse.
+      text_co_occurrence:
+        description: >-
+          A statement reporting that mentions of two concepts in some corpus of text (e.g. the biomedical literature)
+          occur together at a statistically significant frequency - suggesting that a real-world biological or clinical
+          relationship may exist between the concepts.
+        notes: >-
+          Such statements often utilize NLP/text-mining to identify concept mentions in text, but the reported statement is
+          generated by a data analysis pipeline that performs calculations on mention counts and determines the strength
+          of their correlation.
       observation:
         description: >-
           A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -
@@ -13218,3 +13721,21 @@ enums:
           was predicting or asserting a relationship, or merely observed it to occur).
     in_subset:
       - translator_minimal
+
+  GeneToPhenotypicFeaturePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to phenotypic feature associations.
+      This constrains the relationship types that can be used between genes and phenotypic features.
+    permissible_values:
+      "biolink:causes":
+      "biolink:contributes_to":
+      "biolink:associated_with":
+      "biolink:has_phenotype":
+
+  GeneToDiseasePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to disease associations.
+      This constrains the relationship types that can be used between genes and diseases.
+    permissible_values:
+      "biolink:contributes_to":
+      "biolink:associated_with":

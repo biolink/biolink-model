@@ -1,5 +1,33 @@
 CHANGES
 =======
+4.3.6
+----
+## What's Changed
+* Fix Claude action authentication to use github_token instead of OAuth app by @Copilot in https://github.com/biolink/biolink-model/pull/1651
+* Ctkp additions by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1652
+* add chembl specific terms to chemicalentity by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1653
+* fix date to string because input data isn't a date by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1654
+* add missing edge properties for DAKP by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1655
+* Dgidb updates by @colleenXu in https://github.com/biolink/biolink-model/pull/1656
+* Ctd round 2 additions by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1658
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.5...v4.3.6
+
+4.3.5
+----
+## What's Changed
+* Add species context qualifier to ChemicalToChemicalAssociation species context qualifier by @mbrush in https://github.com/biolink/biolink-model/pull/1637
+* added feature names to Association slots by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1638
+* Extend attributes.yaml with DGIdb properties by @mbrush in https://github.com/biolink/biolink-model/pull/1640
+* Add intact confidence value attribute by @mbrush in https://github.com/biolink/biolink-model/pull/1641
+* make supporting study method type multivalued by @mbrush in https://github.com/biolink/biolink-model/pull/1642
+* add clinical trial properties needed for CTKP by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1643
+* adjust ChemicalGeneInteractionAssociation by @colleenXu in https://github.com/biolink/biolink-model/pull/1639
+* add 'taxon' node property by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1644
+* revised-exposures-class-models by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1646
+* Chembl ingest by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1648
+
+
 4.3.4
 ----
 ## What's Changed
