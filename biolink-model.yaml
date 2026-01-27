@@ -9450,6 +9450,21 @@ classes:
        # slightly broader semantics than SO:0001059 - 'sequence alteration'
        # describes a sequence feature that may have 1..* sequence alterations
       - WIKIDATA:Q15304597
+    narrow_mappings:
+      - SO:0001632 # (downstream_gene_variant)
+      - SO:0001631 # (upstream_gene_variant)
+      - SO:0001627 # (intron_variant)
+      - SO:0001619 # (non_coding_transcript_variant)
+      - SO:0001970 # (non_coding_transcript_intron_variant)
+      - SO:0001792 # non_coding_transcript_exon_variant
+      - SO:0001825 # conservative_inframe_deletion
+      - SO:0001823 # conservative_inframe_insertion
+      - SO:0001826 # disruptive_inframe_deletion
+      - SO:0001824 # disruptive_inframe_insertion
+      - SO:0001624 # 3_prime_UTR_variant
+      - SO:0001623 # 5_prime_UTR_variant
+      - SO:0001632 # downstream_gene_variant
+      - SO:0001619 # non_coding_transcript_variant
     close_mappings:
       - dcid:Allele
       - SO:0001060
@@ -9494,6 +9509,17 @@ classes:
             description: ti282a allele from ZFIN
           - value: CLINVAR:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
+      type:
+        description: >-
+          The type field of a Sequence Variant is used to indicate the nature of the variation.  The value of this
+          field should be a Sequence Ontology compact URI (or CURIE).
+        examples:
+          - value: SO:0001632  # downstream gene variant
+          - value: SO:0001059  # sequence alteration
+          - value: SO:0002007  # multiple nucleotide variant (substitution)
+          - value: SO:0001825  # conservative inframe deletion
+
+
     in_subset:
       - model_organism_database
 
