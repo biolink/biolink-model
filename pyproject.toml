@@ -17,9 +17,7 @@ curies = "^0.9.0"
 prefixmaps = "^0.2.3"
 pyyaml = "^6.0.1"
 stringcase = "^1.2.0"
-pytest = "^8.1.1"
 beautifulsoup4 = ">=4.0.0"
-yamllint = "^1.35.1"
 path = "^17.0.0"
 linkml-runtime = "1.9.5"
 requests = ">=2.32.3"
@@ -31,13 +29,15 @@ enable = true
 vcs = "git"
 style = "pep440"
 
-[poetry.group.dev.dependencies]
+[tool.poetry.group.dev.dependencies]
 linkml = ">=1.6.3"
 mkdocs = "^1.4.2"
 mkdocs-material = "^9.5.17"
 mkdocs-mermaid2-plugin = "^1.1.1"
 schemasheets = "^0.2.1"
 codespell = "^2.2.6"
+pytest = "^8.1.1"
+yamllint = "^1.35.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
