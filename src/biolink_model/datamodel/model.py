@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-28T17:16:39
+# Generation date: 2026-01-28T20:37:38
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -2593,7 +2593,7 @@ class TextMiningStudyResult(StudyResult):
     supporting_text: Optional[Union[str, list[str]]] = empty_list()
     subject_location_in_text: Optional[Union[int, list[int]]] = empty_list()
     object_location_in_text: Optional[Union[int, list[int]]] = empty_list()
-    extraction_confidence_score: Optional[int] = None
+    extraction_confidence_score: Optional[float] = None
     supporting_document_type: Optional[str] = None
     supporting_document_year: Optional[int] = None
     supporting_text_section_type: Optional[str] = None
@@ -2616,8 +2616,8 @@ class TextMiningStudyResult(StudyResult):
             self.object_location_in_text = [self.object_location_in_text] if self.object_location_in_text is not None else []
         self.object_location_in_text = [v if isinstance(v, int) else int(v) for v in self.object_location_in_text]
 
-        if self.extraction_confidence_score is not None and not isinstance(self.extraction_confidence_score, int):
-            self.extraction_confidence_score = int(self.extraction_confidence_score)
+        if self.extraction_confidence_score is not None and not isinstance(self.extraction_confidence_score, float):
+            self.extraction_confidence_score = float(self.extraction_confidence_score)
 
         if self.supporting_document_type is not None and not isinstance(self.supporting_document_type, str):
             self.supporting_document_type = str(self.supporting_document_type)
@@ -7750,6 +7750,7 @@ class Association(Entity):
     has_confidence_score: Optional[float] = None
     elevate_to_prediction: Optional[Union[bool, Bool]] = None
     evidence_count: Optional[int] = None
+    semmed_agreement_count: Optional[int] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -7899,6 +7900,9 @@ class Association(Entity):
 
         if self.evidence_count is not None and not isinstance(self.evidence_count, int):
             self.evidence_count = int(self.evidence_count)
+
+        if self.semmed_agreement_count is not None and not isinstance(self.semmed_agreement_count, int):
+            self.semmed_agreement_count = int(self.semmed_agreement_count)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -10097,6 +10101,8 @@ class ChemicalAffectsGeneAssociation(ChemicalAffectsBiologicalEntityAssociation)
     object: Union[str, BiologicalEntityId] = None
     dgidb_interaction_score: Optional[float] = None
     dgidb_evidence_score: Optional[int] = None
+    evidence_count: Optional[int] = None
+    supporting_documents: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -10109,6 +10115,13 @@ class ChemicalAffectsGeneAssociation(ChemicalAffectsBiologicalEntityAssociation)
 
         if self.dgidb_evidence_score is not None and not isinstance(self.dgidb_evidence_score, int):
             self.dgidb_evidence_score = int(self.dgidb_evidence_score)
+
+        if self.evidence_count is not None and not isinstance(self.evidence_count, int):
+            self.evidence_count = int(self.evidence_count)
+
+        if not isinstance(self.supporting_documents, list):
+            self.supporting_documents = [self.supporting_documents] if self.supporting_documents is not None else []
+        self.supporting_documents = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.supporting_documents]
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -16923,7 +16936,7 @@ slots.object_location_in_text = Slot(uri=BIOLINK.object_location_in_text, name="
                    model_uri=BIOLINK.object_location_in_text, domain=Association, range=Optional[Union[int, list[int]]])
 
 slots.extraction_confidence_score = Slot(uri=BIOLINK.extraction_confidence_score, name="extraction confidence score", curie=BIOLINK.curie('extraction_confidence_score'),
-                   model_uri=BIOLINK.extraction_confidence_score, domain=Association, range=Optional[int])
+                   model_uri=BIOLINK.extraction_confidence_score, domain=Association, range=Optional[float])
 
 slots.supporting_document_type = Slot(uri=BIOLINK.supporting_document_type, name="supporting document type", curie=BIOLINK.curie('supporting_document_type'),
                    model_uri=BIOLINK.supporting_document_type, domain=Association, range=Optional[str])

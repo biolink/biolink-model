@@ -560,6 +560,7 @@ type AnatomicalEntityHasPartAnatomicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -612,6 +613,7 @@ type AnatomicalEntityPartOfAnatomicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -665,6 +667,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -716,6 +719,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: AnatomicalEntity!
@@ -808,6 +812,7 @@ type Association
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
   }
@@ -925,6 +930,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Behavior!
@@ -1112,6 +1118,7 @@ type BiologicalProcessOrActivityToAnatomicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcessOrActivity!
@@ -1163,6 +1170,7 @@ type BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcessOrActivity!
@@ -1215,6 +1223,7 @@ type BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcessOrActivity!
@@ -1400,6 +1409,7 @@ type CaseToDiseaseAssociation implements CaseToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1460,6 +1470,7 @@ type CaseToGeneAssociation implements CaseToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1514,6 +1525,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     negated: Boolean
@@ -1577,6 +1589,7 @@ type CaseToVariantAssociation implements CaseToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -1631,6 +1644,7 @@ type CausalGeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: String
@@ -1731,6 +1745,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     diseaseContextQualifier: Disease
@@ -1793,6 +1808,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: DiseaseOrPhenotypicFeature!
@@ -1896,6 +1912,7 @@ type ChemicalAffectsBiologicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1962,7 +1979,7 @@ type ChemicalAffectsGeneAssociation
     updateDate: Date
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
-    evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -1985,6 +2002,8 @@ type ChemicalAffectsGeneAssociation
     object: BiologicalEntity!
     dgidbInteractionScore: Float
     dgidbEvidenceScore: Integer
+    evidenceCount: Integer
+    supportingDocuments: [Uriorcurie]
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -2062,6 +2081,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -2118,6 +2138,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     objectDirectionQualifier: DirectionQualifierEnum
@@ -2175,6 +2196,7 @@ type ChemicalEntityToBiologicalProcessAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     speciesContextQualifier: OrganismTaxon
@@ -2231,6 +2253,7 @@ type ChemicalEntityToChemicalDerivationAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     speciesContextQualifier: OrganismTaxon
@@ -2285,6 +2308,7 @@ type ChemicalEntityToChemicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -2340,6 +2364,7 @@ type ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation implements EntityToDi
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -2403,6 +2428,7 @@ type ChemicalEntityToPathwayAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: ChemicalEntity!
@@ -2483,6 +2509,7 @@ type ChemicalGeneInteractionAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -2589,6 +2616,7 @@ type ChemicalOrDrugOrTreatmentAdverseEventAssociation implements EntityToDisease
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -2652,6 +2680,7 @@ type ChemicalOrDrugOrTreatmentSideEffectAssociation implements EntityToDiseaseOr
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -2714,6 +2743,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -3181,6 +3211,7 @@ type ContributorAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: InformationContentEntity!
@@ -3234,6 +3265,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     zScore: Float
@@ -3455,6 +3487,7 @@ type DiseaseAssociatedWithResponseToChemicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     responseContextQualifier: ResponseEnum
@@ -3571,6 +3604,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -3624,6 +3658,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     object: AnatomicalEntity!
@@ -3684,6 +3719,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
   }
@@ -3734,6 +3770,7 @@ type DiseaseToPhenotypicFeatureAssociation implements FrequencyQuantifier, Entit
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     onsetQualifier: Onset
@@ -3899,6 +3936,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     object: GeneOrGeneProduct!
@@ -3979,6 +4017,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -4061,6 +4100,7 @@ type EntityToDiseaseAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -4196,6 +4236,7 @@ type EntityToPhenotypicFeatureAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
@@ -4456,6 +4497,7 @@ type ExonToTranscriptRelationship
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Exon!
@@ -4538,6 +4580,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -4591,6 +4634,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: ExposureEvent!
@@ -4747,6 +4791,7 @@ type FunctionalAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -4842,6 +4887,7 @@ type GeneAffectsChemicalAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -4910,6 +4956,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -5002,6 +5049,7 @@ type GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -5059,6 +5107,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
@@ -5127,6 +5176,7 @@ type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProductOrGeneFamily!
@@ -5178,6 +5228,7 @@ type GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProductOrGeneFamily!
@@ -5244,6 +5295,7 @@ type GeneRegulatesGeneAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum!
@@ -5300,6 +5352,7 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -5365,6 +5418,7 @@ type GeneToExpressionSiteAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     stageQualifier: LifeStage
@@ -5421,6 +5475,7 @@ interface GeneToGeneAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -5472,6 +5527,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -5528,6 +5584,7 @@ type GeneToGeneFamilyAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -5580,6 +5637,7 @@ type GeneToGeneHomologyAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -5632,6 +5690,7 @@ type GeneToGeneProductRelationship
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -5685,6 +5744,7 @@ type GeneToGoTermAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Gene!
@@ -5737,6 +5797,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -5788,6 +5849,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -5934,6 +5996,7 @@ type GenomicSequenceLocalization
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     startInterbaseCoordinate: Integer
@@ -6014,6 +6077,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -6073,6 +6137,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -6139,6 +6204,7 @@ type GenotypeToGeneAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -6191,6 +6257,7 @@ type GenotypeToGenotypePartAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -6244,6 +6311,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -6307,6 +6375,7 @@ type GenotypeToVariantAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -6614,6 +6683,7 @@ type InformationContentEntityToNamedThingAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -6803,6 +6873,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -6856,6 +6927,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -6917,6 +6989,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MacromolecularMachineMixin!
@@ -7014,6 +7087,7 @@ type MaterialSampleDerivationAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MaterialSample!
@@ -7069,6 +7143,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     diseaseContextQualifier: Disease
@@ -7182,6 +7257,7 @@ type MolecularActivityToChemicalEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -7234,6 +7310,7 @@ type MolecularActivityToMolecularActivityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -7285,6 +7362,7 @@ type MolecularActivityToPathwayAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: MolecularActivity!
@@ -7425,6 +7503,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -7687,6 +7766,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -7740,6 +7820,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -7791,6 +7872,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     associatedEnvironmentalContext: String
@@ -7844,6 +7926,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -7897,6 +7980,7 @@ type OrganismToOrganismAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: IndividualOrganism!
@@ -7971,6 +8055,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: OrganismalEntity!
@@ -8032,6 +8117,7 @@ type PairwiseGeneToGeneInteraction
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
@@ -8083,6 +8169,7 @@ type PairwiseMolecularInteraction
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     interactingMoleculesCategory: OntologyClass
@@ -8350,6 +8437,7 @@ type PhenotypicFeatureToDiseaseAssociation implements EntityToDiseaseAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -8433,6 +8521,7 @@ type PhenotypicFeatureToPhenotypicFeatureAssociation implements PhenotypicFeatur
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     frequencyQualifier: FrequencyValue
@@ -8671,6 +8760,7 @@ type PopulationToPopulationAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: PopulationOfIndividualOrganisms!
@@ -8817,6 +8907,7 @@ type ProcessRegulatesProcessAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: BiologicalProcess!
@@ -9024,6 +9115,7 @@ type ReactionToCatalystAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -9080,6 +9172,7 @@ type ReactionToParticipantAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -9288,6 +9381,7 @@ type SequenceAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
   }
@@ -9338,6 +9432,7 @@ type SequenceFeatureRelationship
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NucleicAcidEntity!
@@ -9414,6 +9509,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -9745,6 +9841,7 @@ type TaxonToTaxonAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: OrganismTaxon!
@@ -9780,7 +9877,7 @@ type TextMiningStudyResult
     supportingText: [String]
     subjectLocationInText: [Integer]
     objectLocationInText: [Integer]
-    extractionConfidenceScore: Integer
+    extractionConfidenceScore: Float
     supportingDocumentType: String
     supportingDocumentYear: Integer
     supportingTextSectionType: String
@@ -9859,6 +9956,7 @@ type TranscriptToGeneRelationship
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: Transcript!
@@ -9963,6 +10061,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     predicate: Uriorcurie!
@@ -10022,6 +10121,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: NamedThing!
@@ -10089,6 +10189,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -10141,6 +10242,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     object: Gene!
@@ -10198,6 +10300,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!
@@ -10261,6 +10364,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     hasConfidenceScore: Float
     elevateToPrediction: Boolean
     evidenceCount: Integer
+    semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
     subject: SequenceVariant!

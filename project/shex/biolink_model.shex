@@ -268,6 +268,7 @@ linkml:Sparqlpath xsd:string
              <has_confidence_score> @linkml:Float ? ;
              <elevate_to_prediction> @linkml:Boolean ? ;
              <evidence_count> @linkml:Integer ? ;
+             <semmed_agreement_count> @linkml:Integer ? ;
              rdf:type @linkml:String * ;
              <category> @linkml:Uriorcurie *
           ) ;
@@ -998,7 +999,8 @@ linkml:Sparqlpath xsd:string
     (  $<ChemicalAffectsGeneAssociation_tes> (  &<ChemicalAffectsBiologicalEntityAssociation_tes> ;
           rdf:type [ <ChemicalAffectsBiologicalEntityAssociation> ] ? ;
           <dgidb_interaction_score> @linkml:Float ? ;
-          <dgidb_evidence_score> @linkml:Integer ?
+          <dgidb_evidence_score> @linkml:Integer ? ;
+          <supporting_documents> @linkml:Uriorcurie *
        ) ;
        rdf:type [ <ChemicalAffectsGeneAssociation> ]
     )
@@ -5082,7 +5084,7 @@ linkml:Sparqlpath xsd:string
           <supporting_text> @linkml:String * ;
           <subject_location_in_text> @linkml:Integer * ;
           <object_location_in_text> @linkml:Integer * ;
-          <extraction_confidence_score> @linkml:Integer ? ;
+          <extraction_confidence_score> @linkml:Float ? ;
           <supporting_document_type> @linkml:String ? ;
           <supporting_document_year> @linkml:Integer ? ;
           <supporting_text_section_type> @linkml:String ?
