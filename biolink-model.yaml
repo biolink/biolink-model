@@ -6311,9 +6311,9 @@ slots:
       A quantitative confidence value that represents the probability of
       obtaining a result at least as extreme as that actually obtained,
       assuming that the actual value was the result of chance alone.
-    range: integer
+    range: float
     examples:
-      - value: 15
+      - value: "15.0"
 
   supporting document type:
     is_a: association slot
@@ -10010,6 +10010,7 @@ classes:
       - has confidence score
       - elevate to prediction
       - evidence count
+      - semmed agreement count
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10886,6 +10887,8 @@ classes:
     slots:
       - dgidb interaction score
       - dgidb evidence score
+      - evidence count
+      - supporting documents
 
   gene affects chemical association:
     description: >-
