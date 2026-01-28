@@ -19993,6 +19993,13 @@
                         "null"
                     ]
                 },
+                "diseases_confidence_score": {
+                    "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
                 "elevate_to_prediction": {
                     "description": "A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.",
                     "type": [
@@ -25416,6 +25423,13 @@
                     "description": "A context qualifier representing a disease or condition in which a relationship expressed in an association took place.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "diseases_confidence_score": {
+                    "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
+                    "type": [
+                        "number",
                         "null"
                     ]
                 },
@@ -31246,6 +31260,13 @@
                         "null"
                     ]
                 },
+                "diseases_confidence_score": {
+                    "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
                 "elevate_to_prediction": {
                     "description": "A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.",
                     "type": [
@@ -32271,6 +32292,13 @@
                     "description": "a human-readable description of an entity",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "diseases_confidence_score": {
+                    "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
+                    "type": [
+                        "number",
                         "null"
                     ]
                 },
@@ -34042,6 +34070,13 @@
                     "description": "a human-readable description of an entity",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "diseases_confidence_score": {
+                    "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
+                    "type": [
+                        "number",
                         "null"
                     ]
                 },

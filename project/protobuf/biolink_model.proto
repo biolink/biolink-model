@@ -2614,6 +2614,7 @@ message CorrelatedGeneToDiseaseAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   float zScore = 0
+  float diseasesConfidenceScore = 0
   string subjectFormOrVariantQualifier = 0
   string subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -3336,6 +3337,7 @@ message DruggableGeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
+  float diseasesConfidenceScore = 0
   disease object = 0
   druggableGeneCategoryEnum druggableGeneCategory = 0
   geneOrGeneProduct subject = 0
@@ -4107,6 +4109,7 @@ message GeneAsAModelOfDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
+  float diseasesConfidenceScore = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
   geneOrGeneProduct subject = 0
@@ -4240,6 +4243,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
+  float diseasesConfidenceScore = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -4457,6 +4461,7 @@ message GeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
+  float diseasesConfidenceScore = 0
   geneOrGeneProduct subject = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0

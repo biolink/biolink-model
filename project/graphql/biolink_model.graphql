@@ -3176,6 +3176,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     type: [String]
     category: [Uriorcurie]
     zScore: Float
+    diseasesConfidenceScore: Float
     subjectFormOrVariantQualifier: String
     subjectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
@@ -3924,6 +3925,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     object: Disease!
     druggableGeneCategory: DruggableGeneCategoryEnum
     subject: GeneOrGeneProduct!
@@ -4854,6 +4856,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!
     subject: GeneOrGeneProduct!
@@ -5001,6 +5004,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -5242,6 +5246,7 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     subject: GeneOrGeneProduct!
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!
